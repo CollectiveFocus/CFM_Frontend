@@ -29,11 +29,11 @@
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "postinstall": "npx simple-git-hooks",
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && csslint --format=compact --config=.csslintrc.json styles/*.css",
-    "format": "prettier --write pages styles script"
+    "lint": "next lint && csslint --format=compact --config=.csslintrc.json {components,styles}/**/*.css",
+    "format": "prettier --write {components,pages,script,styles}/**"
   },
   "browserslist": [
     ">0.3%",
@@ -47,13 +47,13 @@
     "commit-msg": "node script/verifyCommit.mjs $1"
   },
   "lint-staged": {
-    "{pages,styles,script}/**": [
+    "{components,pages,script,styles}/**": [
       "prettier --write --ignore-unknown"
     ],
-    "pages/**": [
+    "{components,pages}": [
       "next lint"
     ],
-    "styles/*.css": [
+    "{components,styles}/**/*.css": [
       "csslint --format=compact --config=.csslintrc.json"
     ]
   },
