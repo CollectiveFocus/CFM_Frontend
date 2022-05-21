@@ -31,7 +31,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && csslint --format=compact --config=.csslintrc.json styles/*.css"
+    "lint": "next lint && csslint --format=compact --config=.csslintrc.json styles/*.css",
+    "format": "prettier --write pages styles"
   },
   "browserslist": [
     ">0.3%",
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0"
   }
 }
