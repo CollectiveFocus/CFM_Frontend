@@ -28,11 +28,12 @@
   },
   "scripts": {
     "preinstall": "npx only-allow yarn",
+    "postinstall": "npx simple-git-hooks",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint && csslint --format=compact --config=.csslintrc.json styles/*.css",
-    "format": "prettier --write pages styles"
+    "format": "prettier --write pages styles script"
   },
   "browserslist": [
     ">0.3%",
@@ -41,6 +42,21 @@
     "not op_mini all"
   ],
   "packageManager": "yarn@1.22.15",
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged --concurrent false",
+    "commit-msg": "node script/verifyCommit.mjs $1"
+  },
+  "lint-staged": {
+    "{pages,styles,script}/**": [
+      "prettier --write --ignore-unknown"
+    ],
+    "pages/**": [
+      "next lint"
+    ],
+    "styles/*.css": [
+      "csslint --format=compact --config=.csslintrc.json"
+    ]
+  },
   "dependencies": {
     "next": "12.1.6",
     "react": "18.1.0",
@@ -49,6 +65,9 @@
   "devDependencies": {
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-prettier": "^8.5.0",
+    "lint-staged": "^12.4.1",
+    "picocolors": "^1.0.0",
+    "simple-git-hooks": "^2.7.0"
   }
 }
