@@ -1,13 +1,43 @@
 {
-  "name": "community-fridge-map",
   "version": "0.1.0",
+  "name": "community-fridge-map",
+  "description": "A mobile friendly website that displays an interactive map of all the community fridges in and around New York City.",
+  "keywords": [
+    "nyc",
+    "food bank",
+    "community fridge",
+    "map"
+  ],
+  "homepage": "https://github.com/CollectiveFocus/CFM_Frontend#readme",
+  "author": "Collective Focus <info@collectivefocus.site> (https://collectivefocus.site/)",
+  "contributors": [
+    "Jean Paul Torre",
+    "Bernard Martis (https://bernardm.github.io/)"
+  ],
+  "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CollectiveFocus/CFM_Frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CollectiveFocus/CFM_Frontend/issues"
+  },
+  "directories": {
+    "doc": "./doc"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "next": "12.1.6",
     "react": "18.1.0",
