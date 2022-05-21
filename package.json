@@ -31,7 +31,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && csslint --format=compact --config=.csslintrc.json styles/*.css"
   },
   "browserslist": [
     ">0.3%",
