@@ -11,7 +11,7 @@ Messages must be matched by the following regex:
 
 <!-- prettier-ignore -->
 ```js
-/^(revert: )?(feat|fix|refactor|test|perf|style|docs|ci|chore|wip)(\(.+\))?: [A-Z].{1,49}/
+/^(revert: )?(feat|fix|refactor|test|perf|style|asset|doc|ci|chore|wip)(\(.+\))?: [A-Z].{1,49}/
 ```
 
 ## commit message
@@ -47,10 +47,12 @@ The types are as follows:
 
 - `feat`: new feature for the user, not a new feature for build script
 - `fix`: bug fix for the user, not a fix to a build script
-- `style`: formatting, missing semi colons, etc; no production code change
-- `docs`: changes to the documentation
 - `refactor`: refactoring production code, eg. renaming a variable
 - `test`: adding missing tests, refactoring tests; no production code change
+- `perf`: performance improvements to production code
+- `style`: formatting, missing semi colons, etc; no production code change
+- `asset`: changing static assets. ie: css files, images, etc
+- `doc`: changes to the documentation
 - `ci`: updating CD/CI pipeline; no local script changes
 - `chore`: updating grunt tasks etc; no production code change
 - `revert`: reverting a previously published commit

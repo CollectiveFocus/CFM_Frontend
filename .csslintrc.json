@@ -1,11 +1,6 @@
 {
-  "ignore": [
-    "box-sizing",
-    "universal-selector"
-  ],
-  "warnings": [
-
-  ],
+  "ignore": ["box-sizing", "universal-selector"],
+  "warnings": [],
   "errors": [
     "adjoining-classes",
     "box-model",

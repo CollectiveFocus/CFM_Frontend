@@ -32,8 +32,8 @@
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && csslint --format=compact --config=.csslintrc.json {components,styles}/**/*.css",
-    "format": "prettier --write {components,pages,script,styles}/**"
+    "lint": "next lint && csslint --format=compact --config=.csslintrc.json src/**/*.css",
+    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages}/*"
   },
   "browserslist": [
     ">0.3%",
@@ -44,17 +44,23 @@
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged --concurrent false",
-    "commit-msg": "node script/verifyCommit.mjs $1"
+    "commit-msg": "node ci/verifyCommit.mjs $1"
   },
   "lint-staged": {
-    "{components,pages,script,styles}/**": [
+    "src/{components,pages}/*": [
+      "eslint --fix"
+    ],
+    "src/**/*.css": [
+      "csslint --format=compact --config=.csslintrc.json"
+    ],
+    "*.{json,md,js}": [
       "prettier --write --ignore-unknown"
     ],
-    "{components,pages}": [
-      "next lint"
+    "{ci,docs}/*": [
+      "prettier --write --ignore-unknown"
     ],
-    "{components,styles}/**/*.css": [
-      "csslint --format=compact --config=.csslintrc.json"
+    "src/{assets/css,components,pages}/*": [
+      "prettier --write --ignore-unknown"
     ]
   },
   "dependencies": {

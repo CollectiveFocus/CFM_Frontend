@@ -1,5 +1,5 @@
 const About = ({}) => {
-  return <div>About nyc community fridges</div>
+  return <div>About NYC community fridges</div>
 }
 
 export default About
