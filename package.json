@@ -27,13 +27,13 @@
     "doc": "./doc"
   },
   "scripts": {
-    "preinstall": "npm i -g only-allow prettier csslint svgo && npx only-allow yarn",
+    "preinstall": "npm i -g csslint prettier svgo only-allow lint-staged && only-allow yarn",
     "postinstall": "npx simple-git-hooks",
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint && csslint --format=compact --config=.csslintrc.json src/**/*.css",
-    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages}/* && svgo public/**/*.svg"
+    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages,theme,lib}/* && svgo public/**/*.svg"
   },
   "browserslist": [
     ">0.3%",
@@ -43,11 +43,11 @@
   ],
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged --concurrent false",
+    "pre-commit": "lint-staged --concurrent false",
     "commit-msg": "node ci/verifyCommit.mjs $1"
   },
   "lint-staged": {
-    "src/{components,pages}/*": [
+    "src/{components,pages,theme,lib}/*": [
       "eslint --fix"
     ],
     "src/**/*.css": [
@@ -59,7 +59,7 @@
     "{ci,docs}/*": [
       "prettier --write --ignore-unknown"
     ],
-    "src/{assets/css,components,pages}/*": [
+    "src/{assets/css,components,pages,theme,lib}/*": [
       "prettier --write --ignore-unknown"
     ],
     "public/**/*.svg": [
@@ -67,7 +67,14 @@
     ]
   },
   "dependencies": {
+    "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/material": "^5.8.1",
     "next": "12.1.6",
+    "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
@@ -75,7 +82,6 @@
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
-    "lint-staged": "^12.4.1",
     "picocolors": "^1.0.0",
     "simple-git-hooks": "^2.7.0"
   }
