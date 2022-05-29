@@ -27,13 +27,13 @@
     "doc": "./doc"
   },
   "scripts": {
-    "preinstall": "npx only-allow yarn",
+    "preinstall": "npm i -g only-allow prettier csslint svgo && npx only-allow yarn",
     "postinstall": "npx simple-git-hooks",
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint && csslint --format=compact --config=.csslintrc.json src/**/*.css",
-    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages}/*"
+    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages}/* && svgo public/**/*.svg"
   },
   "browserslist": [
     ">0.3%",
@@ -61,6 +61,9 @@
     ],
     "src/{assets/css,components,pages}/*": [
       "prettier --write --ignore-unknown"
+    ],
+    "public/**/*.svg": [
+      "svgo"
     ]
   },
   "dependencies": {
