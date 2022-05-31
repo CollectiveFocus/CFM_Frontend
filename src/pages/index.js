@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
 //import Image from 'next/image'
-import About from 'components/LandingPage/About'
-import FindAFridge from 'components/LandingPage/FindAFridge'
-import GetInvolved from 'components/LandingPage/GetInvolved'
+import About from 'components/LandingPage/About';
+import FindAFridge from 'components/LandingPage/FindAFridge';
+import GetInvolved from 'components/LandingPage/GetInvolved';
 
 export default function Home() {
   return (
@@ -14,5 +14,5 @@ export default function Home() {
       <About />
       <GetInvolved />
     </div>
-  )
+  );
 }

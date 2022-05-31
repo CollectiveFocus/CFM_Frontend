@@ -1,5 +1,5 @@
 function AddFridge() {
-  return <div>Add Fridge</div>
+  return <div>Add Fridge</div>;
 }
 
-export default AddFridge
+export default AddFridge;

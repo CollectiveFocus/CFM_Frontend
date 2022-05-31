@@ -1,5 +1,5 @@
 function BestPractices() {
-  return <div>Best Practices</div>
+  return <div>Best Practices</div>;
 }
 
-export default BestPractices
+export default BestPractices;

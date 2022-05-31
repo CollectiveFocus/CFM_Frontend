@@ -1,5 +1,5 @@
 function FindFridge() {
-  return <div>Find Fridge</div>
+  return <div>Find Fridge</div>;
 }
 
-export default FindFridge
+export default FindFridge;

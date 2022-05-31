@@ -1,5 +1,5 @@
 function FridgeCheckIn() {
-  return <div>Fridge Check In</div>
+  return <div>Fridge Check In</div>;
 }
 
-export default FridgeCheckIn
+export default FridgeCheckIn;
