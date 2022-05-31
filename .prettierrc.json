@@ -1,17 +1,10 @@
 {
-  "semi": false,
   "tabWidth": 2,
-  "singleQuote": true,
   "printWidth": 80,
-  "trailingComma": "none",
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
   "overrides": [
-    {
-      "files": ["*.json5"],
-      "options": {
-        "singleQuote": false,
-        "quoteProps": "preserve"
-      }
-    },
     {
       "files": ["*.yml"],
       "options": {

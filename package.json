@@ -33,7 +33,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme && csslint --format=compact --config=.csslintrc.json src/",
-    "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages,theme,lib}/* && svgo public/**/*.svg"
+    "style": "prettier --write --ignore-unknown . && svgo --folder public/"
   },
   "browserslist": [
     ">0.3%",
