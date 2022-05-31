@@ -43,28 +43,8 @@
   ],
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
-    "pre-commit": "lint-staged --concurrent false",
+    "pre-commit": "lint-staged --no-stash --concurrent false",
     "commit-msg": "node ci/verifyCommit.mjs $1"
-  },
-  "lint-staged": {
-    "src/{components,pages,theme,lib}/*": [
-      "eslint --fix"
-    ],
-    "src/**/*.css": [
-      "csslint --format=compact --config=.csslintrc.json"
-    ],
-    "*.{json,md,js}": [
-      "prettier --write --ignore-unknown"
-    ],
-    "{ci,docs}/*": [
-      "prettier --write --ignore-unknown"
-    ],
-    "src/{assets/css,components,pages,theme,lib}/*": [
-      "prettier --write --ignore-unknown"
-    ],
-    "public/**/*.svg": [
-      "svgo"
-    ]
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
