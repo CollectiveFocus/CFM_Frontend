@@ -32,7 +32,7 @@
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && csslint --format=compact --config=.csslintrc.json src/**/*.css",
+    "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme && csslint --format=compact --config=.csslintrc.json src/",
     "format": "prettier --write --ignore-unknown *.{json,md,js} {ci,docs}/* src/{assets/css,components,pages,theme,lib}/* && svgo public/**/*.svg"
   },
   "browserslist": [
@@ -79,6 +79,8 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@emotion/eslint-plugin": "^11.7.0",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",

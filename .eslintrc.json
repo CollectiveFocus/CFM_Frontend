@@ -1,3 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["next/core-web-vitals", "prettier"], // prettier has to be last
+  "plugins": ["@emotion"],
+  "rules": {
+    "@emotion/jsx-import": "error",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
