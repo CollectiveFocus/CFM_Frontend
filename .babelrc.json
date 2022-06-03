@@ -1,4 +1,0 @@
-{
-  "presets": ["next/babel"],
-  "plugins": ["@emotion"] // emotion must be the first plugin
-}

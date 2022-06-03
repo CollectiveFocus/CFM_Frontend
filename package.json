@@ -43,7 +43,7 @@
   ],
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
-    "pre-commit": "lint-staged --no-stash --concurrent false",
+    "pre-commit": "lint-staged --concurrent false",
     "commit-msg": "node ci/verifyCommit.mjs $1"
   },
   "dependencies": {
