@@ -33,7 +33,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme && csslint --format=compact --config=.csslintrc.json src/",
-    "style": "prettier --write --ignore-unknown . && svgo --folder public/"
+    "style": "prettier --write --ignore-unknown . && svgo --recursive --folder public/"
   },
   "browserslist": [
     ">0.3%",
