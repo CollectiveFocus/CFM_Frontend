@@ -21,7 +21,6 @@ export default function Backtrack() {
           minWidth: '100%',
           height: '54px',
           paddingLeft: '17px',
-          backgroundColor: '#f6f6f6',
           display: 'flex',
           alignItems: 'center',
           color: themeOptions.palette.text.secondary,
