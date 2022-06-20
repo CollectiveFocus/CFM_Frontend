@@ -16,7 +16,7 @@
 1. Install global dependencies
 
    ```bash
-   npm install --global only-allow yarn prettier csslint
+   npm install --global only-allow yarn prettier
    corepack enable
    ```
 

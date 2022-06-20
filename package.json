@@ -27,12 +27,12 @@
     "doc": "./doc"
   },
   "scripts": {
-    "preinstall": "npm i -g csslint prettier svgo only-allow lint-staged && only-allow yarn",
+    "preinstall": "npm i -g prettier svgo only-allow lint-staged && only-allow yarn",
     "postinstall": "npx simple-git-hooks",
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme && csslint --format=compact --config=.csslintrc.json src/",
+    "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme",
     "style": "prettier --write --ignore-unknown . && svgo --recursive --folder public/"
   },
   "browserslist": [
