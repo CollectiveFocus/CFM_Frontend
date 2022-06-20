@@ -7,7 +7,6 @@ const buildEslintCommand = (filenames) =>
 
 module.exports = {
   '*.{js,jsx}': [buildEslintCommand],
-  '*.css': ['csslint --format=compact --config=.csslintrc.json'],
   '*': ['prettier --write --ignore-unknown'],
-  'public/**/*.svg': ['svgo'],
+  '{public,src/components}/**/*.svg': ['svgo'],
 };
