@@ -14,6 +14,11 @@ const theme = responsiveFontSizes(
       },
     },
     components: {
+      MuiAppBar: {
+        defaultProps: {
+          color: 'secondary',
+        },
+      },
       MuiButton: {
         styleOverrides: {
           root: {
