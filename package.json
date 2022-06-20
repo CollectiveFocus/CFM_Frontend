@@ -33,7 +33,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme",
-    "style": "prettier --write --ignore-unknown . && svgo --recursive --folder public/"
+    "style": "prettier --write --ignore-unknown . && svgo -qrf public/ && svgo -qrf src/"
   },
   "browserslist": [
     ">0.3%",
@@ -43,7 +43,7 @@
   ],
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
-    "pre-commit": "lint-staged --concurrent false",
+    "pre-commit": "lint-staged --quiet --no-stash --concurrent true",
     "commit-msg": "node ci/verifyCommit.mjs $1"
   },
   "dependencies": {
