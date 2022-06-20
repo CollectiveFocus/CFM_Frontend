@@ -1,11 +1,25 @@
 module.exports = {
-  multipass: true, // boolean. false by default
-
+  multipass: true,
   plugins: [
-    // set of built-in plugins enabled by default
     'preset-default',
-
-    // or by expanded notation which allows to configure plugin
+    'removeOffCanvasPaths',
+    'convertStyleToAttrs',
+    'sortAttrs',
+    {
+      name: 'removeAttributesBySelector',
+      params: {
+        selectors: [
+          {
+            selector: '[stroke-opacity="1"]',
+            attributes: ['path', 'circle'],
+          },
+          {
+            selector: '[stroke-dasharray="none"]',
+            attributes: ['path', 'circle'],
+          },
+        ],
+      },
+    },
     {
       name: 'sortAttrs',
       params: {
