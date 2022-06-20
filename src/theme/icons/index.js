@@ -6,10 +6,28 @@ import HomeSVG from './home.svg';
 import LogoSVG from './logo.svg';
 import MapPinSVG from './mapPin.svg';
 import StatusSVG from './status.svg';
+import LogoTitleSVG from './logoTitle.svg';
 import VolunteerSVG from './volunteer.svg';
 
-import ThemeIcon from 'components/atoms/ThemeIcon';
+import { SvgIcon } from '@mui/material';
+import { ThemeIcon } from 'components/atoms';
 
+// logo with text
+export const LogoText = (props) => (
+  <SvgIcon
+    inheritViewBox
+    component={LogoTitleSVG}
+    sx={{
+      height: '43px',
+      width: '115px',
+      color: '#222',
+      backgroundColor: 'inherit',
+    }}
+    {...props}
+  />
+);
+
+// icons
 export const AboutIcon = (props) =>
   ThemeIcon({ svgComponent: AboutSVG, ...props });
 export const FridgeAddIcon = (props) =>
@@ -21,7 +39,7 @@ export const GuidelineIcon = (props) =>
 export const HomeIcon = (props) =>
   ThemeIcon({ svgComponent: HomeSVG, ...props });
 export const LogoIcon = (props) =>
-  ThemeIcon({ svgComponent: LogoSVG, backgroundColor: 'inherit', ...props });
+  ThemeIcon({ svgComponent: LogoSVG, ...props });
 export const MapPinIcon = (props) =>
   ThemeIcon({ svgComponent: MapPinSVG, ...props });
 export const StatusIcon = (props) =>

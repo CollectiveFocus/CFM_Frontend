@@ -17,14 +17,16 @@ const designColor = {
   },
 };
 
-export const themeOptions = {
+const themeOptions = {
   palette: {
     type: 'light',
     primary: {
       main: designColor.blue.dark,
+      contrastText: designColor.grayscale.gradient[0],
     },
     secondary: {
       main: designColor.blue.light,
+      contrastText: designColor.grayscale.gradient[0],
     },
     background: {
       default: designColor.grayscale.gradient[0],
@@ -61,16 +63,17 @@ export const themeOptions = {
     caption: { fontSize: '15pt', fontWeight: 700, letterSpacing: 0.5 },
   },
   spacing: 4,
-  props: {
-    MuiAppBar: {
-      color: designColor.blue.light,
-    },
-    MuiButton: {
-      variant: 'outlined',
-    },
-  },
   components: {
+    MuiAppBar: {
+      defaultProps: {
+        color: 'secondary',
+      },
+    },
     MuiButton: {
+      defaultProps: {
+        variant: 'outlined',
+        disableRipple: true,
+      },
       styleOverrides: {
         root: {
           color: designColor.grayscale.gradient[5],
