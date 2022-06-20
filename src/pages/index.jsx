@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import { Typography, Grid } from '@mui/material';
 import MascotCard from 'components/MascotCard';
-
+import AboutCommunityFridges from 'components/AboutCommunityFridges';
 const data = [
   {
     img: {
@@ -52,6 +52,9 @@ export default function HomePage() {
         spacing={4}
       >
         <Grid item xs={12} md={12} lg={12}>
+          <AboutCommunityFridges />
+        </Grid>
+        <Grid item xs={12} md={12} lg={12}>
           <Typography
             variant="h2"
             textAlign="center"
@@ -60,6 +63,7 @@ export default function HomePage() {
             Get involved with community fridges!
           </Typography>
         </Grid>
+
         {data.map((card, index) => (
           <Grid item key={index} xs={12} md={4} lg={4}>
             <MascotCard key={'GetInvolved' + index} {...card} />
