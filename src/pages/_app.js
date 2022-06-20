@@ -7,6 +7,8 @@ import Head from 'next/head';
 import createEmotionCache from 'lib/createEmotionCache';
 import theme from 'theme';
 
+import { AppBar } from 'components/organisms';
+
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = (props) => {
@@ -20,6 +22,7 @@ const MyApp = (props) => {
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <AppBar />
           <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>
