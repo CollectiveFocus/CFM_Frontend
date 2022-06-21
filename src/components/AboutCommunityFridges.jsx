@@ -15,10 +15,7 @@ export default function AboutCommunityFridges() {
           xs: '1fr',
           md: '1fr 1fr',
         },
-        gridTemplateRows: {
-          xs: '1fr',
-          m: '1fr',
-        },
+
         placeItems: {
           xs: 'center',
           md: 'start start',
