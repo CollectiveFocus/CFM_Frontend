@@ -109,7 +109,7 @@ const FridgeUpdate = ({ fridgeName }) => {
             <Box>
               <FormLabel>
                 Upload a photo of the inside of the fridge to let others know
-                what&quot;s there!
+                what&quot;`s there!
               </FormLabel>
               <FormGroup>
                 <Button
@@ -164,16 +164,6 @@ const FridgeUpdate = ({ fridgeName }) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      checked={fridgeServiceRequest}
-                      onChange={onCheck}
-                      name="fridgeServiceRequest"
-                    />
-                  }
-                  label="Fridge needs servicing"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
                       checked={fridgeCleaningRequest}
                       onChange={onCheck}
                       name="fridgeCleaningRequest"
@@ -184,12 +174,22 @@ const FridgeUpdate = ({ fridgeName }) => {
                 <FormControlLabel
                   control={
                     <Checkbox
+                      checked={fridgeServiceRequest}
+                      onChange={onCheck}
+                      name="fridgeServiceRequest"
+                    />
+                  }
+                  label="Fridge needs servicing"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
                       checked={fridgeLocationChange}
                       onChange={onCheck}
                       name="fridgeLocationChange"
                     />
                   }
-                  label="Fridge is no longer at location"
+                  label="Fridge is no longer at this location"
                 />
               </FormGroup>
             </Box>
