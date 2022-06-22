@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Box,
   Button,
@@ -14,11 +16,14 @@ import {
 
 import { styled } from '@mui/material/styles';
 import AddAPhotoOutlinedIcon from '@mui/icons-material/AddAPhotoOutlined';
-import { themeOptions } from '../../theme/index';
-import React, { useState } from 'react';
+import theme from 'theme';
 
-const FridgeUpdate = ({ fridgeName }) => {
-  const [formValues, setFormValues] = useState({
+DialogUpdateFridgeStatus.propTypes = {
+  fridgeName: PropTypes.string.isRequired,
+};
+
+export default function DialogUpdateFridgeStatus({ fridgeName }) {
+  const [formValues, setFormValues] = React.useState({
     fridgeUpdateImage: null,
     fridgeUpdateNotes: null,
     fridgeContentScale: 0,
@@ -35,7 +40,7 @@ const FridgeUpdate = ({ fridgeName }) => {
   } = formValues;
 
   const onAddPhoto = () => {
-    //TODO need to figure out how to integrate with add photo component
+    //TODO (cfm_50) need to figure out how to integrate with add photo component
   };
 
   const onUpdateNote = (event) => {
@@ -45,7 +50,7 @@ const FridgeUpdate = ({ fridgeName }) => {
     });
   };
 
-  const onSlide = (event, newValue) => {
+  const onSlide = (_, newValue) => {
     console.log(newValue);
     setFormValues({
       ...formValues,
@@ -68,11 +73,11 @@ const FridgeUpdate = ({ fridgeName }) => {
   const FridgeSlider = styled(Slider)(() => ({
     '.MuiSlider-markLabel': {
       fontSize: 12,
-      color: 'themeOptions.palette.text.secondary',
+      color: theme.palette.text.secondary,
     },
     '.MuiSlider-markLabelActive': {
       fontSize: 12,
-      color: themeOptions.palette.text.primary,
+      color: theme.palette.text.primary,
     },
   }));
 
@@ -98,10 +103,8 @@ const FridgeUpdate = ({ fridgeName }) => {
   return (
     <Container sx={{ padding: 5 }}>
       <Box id="update-header">
-        <Typography variant="h2">Community Fridge Upate:</Typography>
-        <Typography variant="h5">
-          {(fridgeName = 'Cooper Park Community Fridge')}
-        </Typography>
+        <Typography variant="h2">Community Fridge Update:</Typography>
+        <Typography variant="h5">{fridgeName}</Typography>
       </Box>
       <Box id="update-form" mt={10}>
         <form onSubmit={onSubmit}>
@@ -194,7 +197,7 @@ const FridgeUpdate = ({ fridgeName }) => {
               </FormGroup>
             </Box>
             <Box>
-              <Button // TODO - Need to create gray/secondary button style in theme
+              <Button // TODO - cfm_37
                 type="submit"
                 variant="contained"
                 sx={{
@@ -213,6 +216,4 @@ const FridgeUpdate = ({ fridgeName }) => {
       </Box>
     </Container>
   );
-};
-
-export default FridgeUpdate;
+}
