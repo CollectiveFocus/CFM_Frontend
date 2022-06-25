@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Typography, Grid } from '@mui/material';
 import MascotCard from 'components/MascotCard';
 import AboutCommunityFridges from 'components/AboutCommunityFridges';
+import PageHero from 'components/atoms/PageHero';
 
 export async function getStaticProps() {
   return {
@@ -65,6 +66,8 @@ export default function HomePage(props) {
       <Head>
         <title>Community Fridge Map</title>
       </Head>
+
+      <PageHero />
       <Grid
         container
         direction="row"
