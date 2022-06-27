@@ -1,6 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-const designColor = {
+export const designColor = {
   blue: {
     dark: '#4467D7',
     light: '#88B3FF',
@@ -17,7 +17,7 @@ const designColor = {
   },
 };
 
-export const themeOptions = {
+const themeOptions = {
   palette: {
     type: 'light',
     primary: {
