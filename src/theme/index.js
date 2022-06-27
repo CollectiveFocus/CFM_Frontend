@@ -71,16 +71,35 @@ export const themeOptions = {
   },
   components: {
     MuiButton: {
+      variants: [
+        {
+          props: { variant: 'filled' },
+          style: {
+            color: designColor.grayscale.gradient[0],
+            backgroundColor: designColor.blue.dark,
+            border: 'none',
+            '&:hover': {
+              border: 'none',
+              backgroundColor: designColor.blue.dark,
+            },
+          },
+        },
+        {
+          props: { variant: 'outlined' },
+          style: {
+            color: designColor.grayscale.gradient[5],
+            borderColor: designColor.blue.dark,
+            border: '2px solid',
+            '&:hover': {
+              border: '2px solid',
+              borderColor: designColor.blue.dark,
+            },
+          },
+        },
+      ],
       styleOverrides: {
         root: {
-          color: designColor.grayscale.gradient[5],
-          border: '2px solid',
-          borderColor: designColor.blue.dark,
           borderRadius: 45,
-          '&:hover': {
-            border: '2px solid',
-            borderColor: designColor.blue.dark,
-          },
         },
       },
     },
