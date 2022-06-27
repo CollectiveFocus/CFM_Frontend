@@ -65,21 +65,25 @@ export const themeOptions = {
     MuiAppBar: {
       color: designColor.blue.light,
     },
-    MuiButton: {
-      variant: 'outlined',
-    },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          color: designColor.grayscale.gradient[5],
-          border: '2px solid',
-          borderColor: designColor.blue.dark,
           borderRadius: 45,
           '&:hover': {
             border: '2px solid',
             borderColor: designColor.blue.dark,
+          },
+          '&.MuiButton-outlined': {
+            color: designColor.grayscale.gradient[5],
+            border: '2px solid',
+            borderColor: designColor.blue.dark,
+          },
+          '&.Mui-disabled': {
+            border: 'none',
+            color: designColor.grayscale.gradient[0],
+            backgroundColor: designColor.grayscale.gradient[4],
           },
         },
       },
