@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import { Typography, Grid } from '@mui/material';
 import MascotCard from 'components/MascotCard';
-
+import AboutCommunityFridges from 'components/AboutCommunityFridges';
 const data = [
   {
     img: {
@@ -39,6 +39,20 @@ const data = [
   },
 ];
 
+const aboutData = {
+  img: {
+    src: '/mascot/pearAndFridge.svg',
+    alt: 'Picture of pear dancing with tomatoes stacked on top of each other',
+    width: 300,
+    height: 185,
+  },
+  title: 'About NYC Community Fridges',
+  text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
+  link: '/about',
+  buttonTitle: 'Learn More',
+  type: 'about',
+};
+
 export default function HomePage() {
   return (
     <>
@@ -51,6 +65,9 @@ export default function HomePage() {
         justifyContent="space-between"
         spacing={4}
       >
+        <Grid item xs={12} md={12} lg={12}>
+          <AboutCommunityFridges {...aboutData} />
+        </Grid>
         <Grid item xs={12} md={12} lg={12}>
           <Typography
             variant="h2"
