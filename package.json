@@ -55,10 +55,11 @@
     "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.1",
     "@svgr/webpack": "^6.2.1",
+    "formik": "^2.2.9",
     "next": "12.1.6",
     "prop-types": "^15.8.1",
-    "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react": "18.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
