@@ -1,0 +1,2333 @@
+{
+  "fridges": [
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MNK6S7VOch8H8w06Wau": "{date: \"\"2020-11-29T17:47:24.375Z\"\"}",
+        "-MPKqxFlvE8bCfNbfaci": "{date: \"\"2020-12-24T17:46:20.355Z\"\", notes: \"Please…}",
+        "-MPuv-Hpzv-LZHB1aGpW": "{date: \"\"2020-12-31T22:29:58.221Z\"\", name: \"Kim S \"…}",
+        "-MSZQIFV9TFp998f5gd3": "{date: \"\"2021-02-02T20:26:54.122Z\"\", notes: \"OPEN!\"}",
+        "-MV3COgSIse-W-HceKAF": "{date: \"\"2021-03-05T21:05:24.769Z\"\"}",
+        "-MVxv-JINpNajnIhgc45": "{date: \"\"2021-03-17T02:03:01.048Z\"\", notes: \"New mu…}",
+        "-MnE3GNhZZlz-fTU8sfH": "{date: \"\"2021-10-30T02:39:34.845Z\"\"}",
+        "-MpGzjdInHR-FWG-BaDp": "{date: \"\"2021-11-24T12:50:04.095Z\"\"}",
+        "-MwraQj6vsliQX9QbUl5": "{date: \"\"2022-02-26T19:54:55.949Z\"\", notes: \"We put…}",
+        "-MwvwnuhY2uaKnzEggn8": "{date: \"\"2022-02-27T16:11:11.197Z\"\", notes: \"Nothin…}",
+        "-N2m4Ut9dSm7EEh4QhnJ": "{date: \"\"2022-05-23T18:02:49.165Z\"\", name: \"John\", …}"
+      },
+      "confirmed": true,
+      "id": "-MCtkjPpHHey5dWF_mX6",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MCtkjPpHHey5dWF_mX6%2F-MwvwnuhY2uaKnzEggn8?alt=media&token=2be34be0-7683-47ca-9d3f-2c159a6a630a",
+      "instagram": "thegowanusfridge",
+      "lastChecked": "\"2020-07-23T16:16:36.291Z\"",
+      "lat": 40.6770146,
+      "link": "https://www.instagram.com/thegowanusfridge/",
+      "lng": -73.9915541,
+      "name": "Gowanus Community Fridge",
+      "neighborhood": "Gowanus",
+      "notes": "Outside Nature Based",
+      "streetAddress": "123 3rd St"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MMSgTpg6IxFrPeogw_a": "{date: \"\"2020-11-18T23:30:26.642Z\"\", notes: \"Novemb…}",
+        "-MSZQTK-VlaAEikIQvIG": "{date: \"\"2021-02-02T20:27:39.439Z\"\", notes: \"OPEN!\"}",
+        "-Mp7MuK4-7viynojXtzY": "{date: \"\"2021-11-22T15:59:26.971Z\"\", name: \"Leslie\"…}",
+        "-N3_pmyUJ1t-ryAC1Dfr": "{date: \"\"2022-06-02T19:14:28.773Z\"\", name: \"Anne-So…}",
+        "-N509mye5K__8b82w_4y": "{date: \"\"2022-06-20T12:51:39.730Z\"\", name: \"Hannah\"…}"
+      },
+      "confirmed": true,
+      "id": "-MCtr_sJoWm9I3c9KXCW",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MCtr_sJoWm9I3c9KXCW%2F-N509mye5K__8b82w_4y?alt=media&token=46516101-0248-4ee8-b5fd-b72d78ae8f02",
+      "instagram": "thegowanusfridge",
+      "lat": 40.671069,
+      "link": "https://www.instagram.com/thegowanusfridge/",
+      "lng": -73.9851953,
+      "name": "Gowanus Postmark Fridge",
+      "neighborhood": "Gowanus",
+      "notes": "outside Postmark Cafe",
+      "streetAddress": "326 6th St"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MD7jSBIBYjzc0dLkMaE": "{date: \"\"2020-07-26T01:30:08.017Z\"\", name: \"Mars\", …}",
+        "-MRpDTA7oAI-vdClsQbc": "{date: \"\"2021-01-24T16:28:41.861Z\"\"}",
+        "-M_7SNr834FTFwEZpk9h": "{date: \"\"2021-05-07T20:12:15.114Z\"\", notes: \"Empty …}",
+        "-MiE_xIqkncnDA35erxs": "{date: \"\"2021-08-29T01:48:16.412Z\"\", notes: \"Left s…}",
+        "-MiKgBkhWy6DCsbP1TeV": "{date: \"\"2021-08-30T06:13:14.687Z\"\"}",
+        "-MmEUSPBgvml9_3D4fjA": "{date: \"\"2021-10-17T18:22:40.458Z\"\"}",
+        "-Mn1SYdKFoUPxScoSm3I": "{date: \"\"2021-10-27T15:55:00.177Z\"\", notes: \"Lots o…}",
+        "-MpP0SPML48NGiiebNPF": "{date: \"\"2021-11-26T02:14:31.751Z\"\"}",
+        "-Mrrsnl3IAE8ep7vsxd1": "{date: \"\"2021-12-26T17:56:44.041Z\"\", notes: \"Bags o…}",
+        "-MzLrpvwmXU7ZPvPZwvq": "{date: \"\"2022-03-29T18:10:38.547Z\"\", notes: \"Indivi…}"
+      },
+      "confirmed": true,
+      "id": "-MCtvzkAPMczz0HpEDH5",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MCtvzkAPMczz0HpEDH5%2F-Mrrsnl3IAE8ep7vsxd1?alt=media&token=e14138f6-eb93-4691-afb8-f0a8de8553d6",
+      "instagram": "greenpointfridge",
+      "lat": 40.722814,
+      "link": "https://www.instagram.com/greenpointfridge/",
+      "lng": -73.95405,
+      "name": "Greenpoint Fridge",
+      "neighborhood": "Greenpoint",
+      "notes": "Maintained by North Brooklyn Mutual Aid. Next to Lot Radio.",
+      "streetAddress": "17 Nassau Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MNDrDPpCDvhm5wOobT8": "{date: \"\"2020-11-28T12:38:46.626Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD2onHw-5nkpOpuHQlC",
+      "instagram": "thefriendlyfridge",
+      "lat": 40.7036455,
+      "link": "https://www.instagram.com/thefriendlyfridge/",
+      "lng": -73.9272218,
+      "name": "Bushwick Friendly Fridge",
+      "neighborhood": "Bushwick",
+      "notes": "Open 24/7, venmo @thefriendlyfridge",
+      "streetAddress": "190 Knickerbocker Ave"
+    },
+    {
+      "borough": "Manhattan",
+      "confirmed": true,
+      "id": "-MD2pyT7SqbHTyqe-na3",
+      "instagram": "theuptownfridge",
+      "lat": 40.863175,
+      "link": "https://www.instagram.com/theuptownfridge/",
+      "lng": -73.929474,
+      "name": "Uptown Fridge",
+      "neighborhood": "Washington Heights",
+      "streetAddress": "4672 Broadway"
+    },
+    {
+      "borough": "Brooklyn",
+      "instagram": "flatbushfriendlyfridge",
+      "lat": 40.660598,
+      "link": "https://www.instagram.com/flatbushfriendlyfridge/",
+      "lng": -73.9509988,
+      "name": "Flatbush Friendly Fridge",
+      "neighborhood": "Flatbush",
+      "streetAddress": "1110 Nostrand Ave",
+      "id": "-MD2rraSn0wYkqGmOBu2"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MN5V71GaSaoqQZVcAHw": "{date: \"\"2020-11-26T21:40:53.127Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD2sGE6V2HlD9iIc8vL",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD2sGE6V2HlD9iIc8vL%2F-MN5V71GaSaoqQZVcAHw?alt=media&token=1aa671ad-6c19-4785-9aab-9e76561c27dc",
+      "instagram": "the_living_gallery",
+      "lat": 40.6941531,
+      "link": "https://www.instagram.com/the_living_pantry/",
+      "lng": -73.9306514,
+      "name": "The Living Gallery Fridge",
+      "neighborhood": "Bushwick",
+      "notes": "Free pantry Mondays at 1 pm by @the_living_pantry",
+      "streetAddress": "1094 Broadway"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MQ4hRfF17vQ3XPSyHCN": "{date: \"\"2021-01-03T00:46:33.955Z\"\"}",
+        "-MSJX_IADkH_Xi0kcUP7": "{date: \"\"2021-01-30T18:24:47.526Z\"\", name: \"Amy\", n…}",
+        "-MV_ZPAnysTmTQA_Jd7I": "{date: \"\"2021-03-12T08:33:22.935Z\"\"}",
+        "-MXrUrlXdC2ym1ODKR_I": "{date: \"\"2021-04-09T16:38:08.591Z\"\", name: \"RJ\", no…}",
+        "-MaG4Fp6rz3mMNj7NI5j": "{date: \"\"2021-05-21T22:39:06.142Z\"\", name: \"Parry\",…}",
+        "-MvGiFXnhBgmiHQ6I4vy": "{date: \"\"2022-02-07T01:07:51.266Z\"\", notes: \"empty.…}",
+        "-Mw2z77Gfv9aVK6bCpfO": "{date: \"\"2022-02-16T19:22:39.041Z\"\", name: \"Aaron S…}",
+        "-N5WWEg5i8qOM3Xvew3u": "{date: \"\"2022-06-26T19:37:35.220Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD2sg4vQ_SH4nQn1Nh4",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD2sg4vQ_SH4nQn1Nh4%2F-N5WWEg5i8qOM3Xvew3u?alt=media&token=b42c265a-500c-4814-b117-012bfd745d88",
+      "instagram": "theharlemcommunityfridge",
+      "lat": 40.8049741,
+      "link": "https://www.instagram.com/theharlemcommunityfridge/",
+      "lng": -73.9571412,
+      "name": "The Harlem Community Fridge",
+      "neighborhood": "Harlem",
+      "streetAddress": "209 West 116th Street 501 c"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MN5V3Omnx0k6pwDpKD7": "{date: \"\"2020-11-26T21:40:36.878Z\"\"}",
+        "-MNUHj56_WZU_jefiuT6": "{date: \"\"2020-12-01T17:12:53.695Z\"\", name: \"Mz Debb…}",
+        "-MObzNtQzfp_3j60c33s": "{date: \"\"2020-12-15T20:00:38.752Z\"\"}",
+        "-MSZQWJ1qCxJwuOH4kuE": "{date: \"\"2021-02-02T20:27:51.235Z\"\", name: \"\", note…}",
+        "-MSdWh4AddxUZjOoJUVy": "{date: \"\"2021-02-03T20:12:58.573Z\"\", notes: \"Semi f…}",
+        "-MTh7D-gdMFSGq_951il": "{date: \"\"2021-02-16T23:15:48.381Z\"\", name: \"Aboliti…}",
+        "-MVt19z5e14NxKqC7Npl": "{date: \"\"2021-03-16T03:16:13.557Z\"\"}",
+        "-Me80w8doQ4pv0MRC3Mn": "{date: \"\"2021-07-09T02:10:23.642Z\"\"}",
+        "-Mhu5PRQD9I7-M8FMMNE": "{date: \"\"2021-08-24T21:38:26.544Z\"\"}",
+        "-Msast8yuiKn5C5WPoJ3": "{date: \"\"2022-01-04T20:59:15.205Z\"\"}",
+        "-MzNSgd7YCx3aBfIJQzv": "{date: \"\"2022-03-30T13:36:39.070Z\"\", name: \"quinn\",…}",
+        "-N0bBn5ZKQriuaKRfvSN": "{date: \"\"2022-04-26T18:47:29.599Z\"\", name: \"Grayson…}"
+      },
+      "confirmed": true,
+      "id": "-MD2sxPipHVVJinjKlVM",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD2sxPipHVVJinjKlVM%2F-N0bBn5ZKQriuaKRfvSN?alt=media&token=2958659e-1a3c-4803-8b87-5d352518faaa",
+      "instagram": "thebushwickfridge",
+      "lat": 40.6849933,
+      "link": "https://www.instagram.com/thebushwickfridge/",
+      "lng": -73.9137547,
+      "name": "Bushwick Community Fridge",
+      "neighborhood": "Bushwick",
+      "notes": "Outside Little Skips East.\n24/7.\n\nAccepts all food.\n\nPantry also open for dry goods. \nNo clothes. \nFridge empties fast, always needs a fill, high traffic",
+      "streetAddress": "1643 Broadway"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MSJXDUCShP9g2w27Ui6": "{date: \"\"2021-01-30T18:23:14.113Z\"\", name: \"Amy\", n…}",
+        "-MVlvHoGZvnjocE-tdBP": "{date: \"\"2021-03-14T18:08:49.919Z\"\", notes: \"I just…}",
+        "-N5HBlYP0C-pHDCibRj-": "{date: \"\"2022-06-23T20:13:50.846Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD2tMIn7QNxYiWxuGjT",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD2tMIn7QNxYiWxuGjT%2F-MVlvHoGZvnjocE-tdBP?alt=media&token=accc5cce-023d-4825-ad27-8bf50cb1c7a7",
+      "instagram": "thebarriofridge",
+      "lat": 40.791179,
+      "link": "TheBarrioFridge.com",
+      "lng": -73.939453,
+      "name": "The Barrio Fridge",
+      "neighborhood": "East Harlem",
+      "notes": "💸 Cashapp: $BarrioFridge\n📧 Volunteers@thebarriofridge.com",
+      "streetAddress": "339 E 108th Street"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MScsspD4ueFFR1YCo2-": "{date: \"\"2021-02-03T17:14:38.938Z\"\", notes: \"Tons o…}",
+        "-MlcQ2xCAhG46WGZWDRH": "{date: \"\"2021-10-10T04:18:16.374Z\"\", notes: \"Added …}",
+        "-N-KBxeJzQqA2fP-cEO3": "{date: \"\"2022-04-10T20:39:19.234Z\"\", notes: \"Just d…}"
+      },
+      "confirmed": true,
+      "id": "-MD2vOxYNVhH909K5kx4",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD2vOxYNVhH909K5kx4%2F-N-KBxeJzQqA2fP-cEO3?alt=media&token=f6ec2a5a-f301-4b0c-893b-cfdc3e6b33b1",
+      "instagram": "bedfordparkcommunityfridge",
+      "lat": 40.8734788,
+      "link": "https://www.instagram.com/bedfordparkcommunityfridge/",
+      "lng": -73.88910100000001,
+      "name": "Bedford Park Community Fridge",
+      "neighborhood": "Bedford Park",
+      "notes": "Open 24/7 \nVenmo @itzsabino",
+      "streetAddress": "1 Bedford Park Blvd"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MN5fTCnfdNFM6yNXKwt": "{date: \"\"2020-11-26T22:30:27.806Z\"\"}",
+        "-MNFUMzoRS3cKbNCKTMG": "{date: \"\"2020-11-28T20:13:48.456Z\"\", notes: \"5 x 1 …}",
+        "-MqLt0MC1JG7WR5xuu33": "{date: \"\"2021-12-07T21:54:29.655Z\"\", name: \"Dru\", n…}",
+        "-MqqPZOWe7G9qsdcqyys": "{date: \"\"2021-12-14T00:49:16.536Z\"\"}",
+        "-Mtp6prhkFocJKnz2qK2": "{date: \"\"2022-01-20T01:34:56.534Z\"\", name: \"Naeemah…}",
+        "-N3AKdvyAqP2c-No9B4V": "{date: \"\"2022-05-28T15:43:52.903Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD3QUDG_AAzl9ol03aR",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3QUDG_AAzl9ol03aR%2F-N3AKdvyAqP2c-No9B4V?alt=media&token=20a8b779-2e50-4043-8760-d1b6fcf4a7cf",
+      "instagram": "flatbushfriendlyfridge",
+      "lat": 40.660598,
+      "link": "https://www.instagram.com/flatbushfriendlyfridge/",
+      "lng": -73.9509988,
+      "name": "Flatbush Friendly Fridge",
+      "neighborhood": "Flatbush",
+      "notes": "Open 24/7",
+      "streetAddress": "499 rogers ave "
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MbT3TGc5301sA7Ku_zz": "{date: \"\"2021-06-05T21:26:23.916Z\"\"}",
+        "-N30ay3LElxGojDGUS2c": "{date: \"\"2022-05-26T18:23:21.326Z\"\", notes: \"there’…}"
+      },
+      "confirmed": true,
+      "id": "-MD3TVakB4B84HdT2d8k",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3TVakB4B84HdT2d8k%2F-N30ay3LElxGojDGUS2c?alt=media&token=f5e91f7b-514c-476e-9be9-4d9f468e7afd",
+      "instagram": "fgcommunityfridge",
+      "lat": 40.6934011,
+      "link": "https://www.instagram.com/fgcommunityfridge/",
+      "lng": -73.97174009999999,
+      "name": "Fort Greene Community Fridge",
+      "neighborhood": "Fort Greene",
+      "notes": "At the corner of Myrtle & Adelphi\n🏪 Hosted by Farmer in the Deli\n📩 FGCommunityFridge@gmail.com",
+      "streetAddress": "357 Myrtle Ave"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MNISPhUhZ1jEINV8-pl": "{date: \"\"2020-11-29T10:04:07.114Z\"\", name: \"Meg Ros…}",
+        "-MO24EqPxvwZcRFTbzfe": "{date: \"\"2020-12-08T16:00:17.753Z\"\"}",
+        "-MO24LiDP8X7H2N7xEIz": "{date: \"\"2020-12-08T16:00:45.891Z\"\", name: \"SA &SR\"}",
+        "-MO2H-ZJRFNVlw4isAO-": "{date: \"\"2020-12-08T16:56:02.537Z\"\"}",
+        "-MO8lkKBJzNR_MI0rrLA": "{date: \"\"2020-12-09T23:12:28.620Z\"\", name: \"Desiree…}"
+      },
+      "confirmed": true,
+      "id": "-MD3d0MS2aJp7N36erYf",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3d0MS2aJp7N36erYf%2F-MO2H-ZJRFNVlw4isAO-?alt=media&token=a4f04dc0-0401-4941-95d2-aa9fb6f3223e",
+      "instagram": "thefriendlyfridgebx",
+      "lat": 40.8896983,
+      "link": "https://www.instagram.com/thefriendlyfridgebx/",
+      "lng": -73.8987377,
+      "name": "Friendly Fridge BX",
+      "neighborhood": "Kingsbridge",
+      "streetAddress": "5977 Broadway"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MIDbU7Jq0jFJT40cmMV": "{date: \"\"2020-09-27T08:11:30.555Z\"\", name: \"Nushrat…}",
+        "-MN1cxHAaSTHIhSzRjOg": "{date: \"\"2020-11-26T03:41:00.297Z\"\"}",
+        "-MgMQUed0sKoJ1mBaNU5": "{date: \"\"2021-08-05T17:50:02.422Z\"\", notes: \"Fridge…}"
+      },
+      "confirmed": true,
+      "id": "-MD3ek6H6fPozmWADVlt",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3ek6H6fPozmWADVlt%2F-MgMQUed0sKoJ1mBaNU5?alt=media&token=c51f62f3-40d4-42cd-8112-cda2f8cdfccc",
+      "instagram": "universecitynyc",
+      "lat": 40.6721016,
+      "link": "https://www.instagram.com/universecitynyc/",
+      "lng": -73.9021143,
+      "name": "University City NYC ",
+      "neighborhood": "Brownsville",
+      "notes": "Aquaponic Farm!\nhttps://www.universecity.nyc/\nHours : not 24 hours 10-5pm\n\n3/12/21 - fridge is broken, not accessible but pantry shelves are there",
+      "streetAddress": "234 Glenmore Ave"
+    },
+    {
+      "borough": "Staten Island",
+      "checks": {
+        "-MNx7THcDSXrOT3eb9OG": "{date: \"\"2020-12-07T12:16:39.146Z\"\", notes: \"This l…}",
+        "-MVrM0BCdUm5D-WjmL36": "{date: \"\"2021-03-15T19:28:05.671Z\"\", notes: \"This l…}",
+        "-MpP0eNeVirmbWbykstl": "{date: \"\"2021-11-26T02:15:24.733Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MD3giO-yq4ugMITLCyA",
+      "instagram": "forestavecomeunityfridge",
+      "lat": 40.6266442,
+      "link": "https://www.instagram.com/forestavecomeunityfridge/",
+      "lng": -74.1611645,
+      "name": "Forest Avenue COMEunity Fridge",
+      "neighborhood": "North Shore",
+      "notes": "ACTIVE",
+      "streetAddress": "Forest Ave/Amity Pl"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-Mq6KBBm14qgIY-PYdiN": "{date: \"\"2021-12-04T21:23:30.536Z\"\"}",
+        "-MvFlW_j1RXVhgOJD3q-": "{date: \"\"2022-02-06T20:42:30.189Z\"\", notes: \"has se…}"
+      },
+      "confirmed": true,
+      "id": "-MD3iG5i4raOU_7nN-vJ",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3iG5i4raOU_7nN-vJ%2F-MvFlW_j1RXVhgOJD3q-?alt=media&token=4c0937fe-bbc4-49dc-b971-d004c481fc44",
+      "instagram": "rockawaymutualaid",
+      "lat": 40.5969911,
+      "link": "https://www.instagram.com/rockawaymutualaid/",
+      "lng": -73.7997862,
+      "name": "Rockaway Fridge 1",
+      "neighborhood": "Arverne",
+      "notes": "https://www.rockawaymutualaid.com/",
+      "streetAddress": "69-62 Almeda Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MN5XqQGml42G4Jp0VLi": "{date: \"\"2020-11-26T21:52:47.357Z\"\"}",
+        "-MOywIMAX658mufJI5rs": "{date: \"\"2020-12-20T06:58:25.425Z\"\", name: \"Rod\"}",
+        "-MOywQLMEiZxKWPtrRC4": "{date: \"\"2020-12-20T06:58:58.404Z\"\"}",
+        "-MTnwu9T_AFdPGFSWjI6": "{date: \"\"2021-02-18T07:03:45.507Z\"\"}",
+        "-MVIu8e3XN_lh62id4H6": "{date: \"\"2021-03-08T22:15:14.095Z\"\"}",
+        "-MVIuLoKClg2aAVN9_mA": "{date: \"\"2021-03-08T22:16:08.137Z\"\"}",
+        "-MVIxVRrU9MyS1UvgPnu": "{date: \"\"2021-03-08T22:29:54.029Z\"\"}",
+        "-MYmDmXSnl5uAbPuaVRQ": "{date: \"\"2021-04-21T02:21:05.066Z\"\"}",
+        "-MYmEBfVJpP29Nbh344s": "{date: \"\"2021-04-21T02:22:52.129Z\"\"}",
+        "-MYmQTJivy4DU7BA8ekv": "{date: \"\"2021-04-21T03:16:29.704Z\"\"}",
+        "-MZ3gvW2g2Z9021ucvxD": "{date: \"\"2021-04-24T16:25:55.115Z\"\", name: \"Mike pa…}",
+        "-MdD09jZX804Rtkhz06h": "{date: \"\"2021-06-27T15:09:26.172Z\"\"}",
+        "-MzeYpwUX5u9qtkcXhn0": "{date: \"\"2022-04-02T13:55:38.349Z\"\", notes: \"21 mea…}",
+        "-N5Buu1Yd0Cn1rXM6uOV": "{date: \"\"2022-06-22T19:37:40.521Z\"\", notes: \"Green …}"
+      },
+      "confirmed": true,
+      "id": "-MD3jxQ-WWoqWCkkaM5t",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3jxQ-WWoqWCkkaM5t%2F-MzeYpwUX5u9qtkcXhn0?alt=media&token=9714bb73-0738-46ff-baa9-3cce47785c72",
+      "instagram": "iohnyc",
+      "lastCheck": "-MYmDmXSnl5uAbPuaVRQ",
+      "lat": 40.6905529,
+      "lng": -73.9406216,
+      "name": "NYCs first fridge @iohnyc",
+      "neighborhood": "Bedstuy",
+      "notes": "This was the first Community fridge in NYC , check @iohnyc for details",
+      "streetAddress": "133 Van Buren St"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MMlEy4FIqpsd7t0PAkv": "{date: \"\"2020-11-22T18:38:16.770Z\"\"}",
+        "-MN5abZGajDdvmPX-fRH": "{date: \"\"2020-11-26T22:09:15.154Z\"\"}",
+        "-MVIwwEggoWVXGjOldbN": "{date: \"\"2021-03-08T22:27:25.604Z\"\"}",
+        "-MVrG2uSyH9c_q4H3Ocr": "{date: \"\"2021-03-15T19:02:02.536Z\"\"}",
+        "-N30kKHbG442Z8o5pEg0": "{date: \"\"2022-05-26T19:04:15.791Z\"\"}",
+        "-N30ktGw0BJPa1ZquvVi": "{date: \"\"2022-05-26T19:06:42.872Z\"\", notes: \"THIS F…}",
+        "-N30lLbIqIXudtgp67jG": "{date: \"\"2022-05-26T19:08:43.248Z\"\", notes: \"staff …}",
+        "-N4w0R_HOBRZ5Sgyvzxj": "{date: \"\"2022-06-19T12:52:42.518Z\"\", notes: \"Fridge…}"
+      },
+      "confirmed": true,
+      "id": "-MD3r8JY9Bd6-Possa2r",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3r8JY9Bd6-Possa2r%2F-N30kKHbG442Z8o5pEg0?alt=media&token=55d9d367-284a-4f82-94cc-3ed47e9814e0",
+      "instagram": "playgroundcoffeeshop",
+      "lat": 40.6866132,
+      "link": "https://www.instagram.com/playgroundcoffeeshop/",
+      "lng": -73.95481629999999,
+      "name": "Playground Coffee Fridge",
+      "neighborhood": "Bed-Stuy",
+      "notes": "Run by Playground Coffee",
+      "streetAddress": "1114 Bedford Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MN5ZEsHB-3DNgThhs9o": "{date: \"\"2020-11-26T21:58:53.854Z\"\"}",
+        "-MVIxHLtWa87601dbXwT": "{date: \"\"2021-03-08T22:28:56.234Z\"\"}",
+        "-MViMnBYgrtmbQGTZDiT": "{date: \"\"2021-03-14T01:34:54.253Z\"\", notes: \"Broken…}",
+        "-Md8HH5fl1xLJ2CzcvIc": "{date: \"\"2021-06-26T17:06:06.949Z\"\", notes: \"06/262…}",
+        "-MlFrTA-n6RdaaOhb_06": "{date: \"\"2021-10-05T14:31:30.097Z\"\", notes: \"Fridge…}",
+        "-MzeWcmSzA807gzFP3ml": "{date: \"\"2022-04-02T13:46:00.294Z\"\", notes: \"30 mea…}",
+        "-N02F8eLbLJ4x2dGjJX-": "{date: \"\"2022-04-19T19:15:48.533Z\"\", notes: \"cucumb…}"
+      },
+      "confirmed": true,
+      "id": "-MD3rmgr95ZevMaUGMAT",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MD3rmgr95ZevMaUGMAT%2F-N02F8eLbLJ4x2dGjJX-?alt=media&token=690c4df0-2af5-4577-afba-5543be56d769",
+      "instagram": "sincerelytommy_",
+      "lat": 40.6860267,
+      "link": "https://www.instagram.com/sincerelytommy_/",
+      "lng": -73.94429,
+      "name": "Sincerely Tommy Fridge",
+      "neighborhood": "Bed-Stuy",
+      "notes": "They got a new fridge!",
+      "streetAddress": "343 Tompkins Ave"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MTDyS8630PmdR9OCbjI": "{date: \"\"2021-02-11T02:44:32.804Z\"\", notes: \"fridge…}",
+        "-MTwVdGtdFDsSs30ldxp": "{date: \"\"2021-02-19T22:56:49.227Z\"\", notes: \"Filled…}"
+      },
+      "confirmed": true,
+      "id": "-MGTekrFPt1UtdKSxy-9",
+      "instagram": "@sugarhillcommunityfridge",
+      "lat": 40.8308231,
+      "link": "https://docs.google.com/document/d/1hoYAmNGheqKPT4JR4qnep224CGCG2M-HsEktZawxgPQ",
+      "lng": -73.9478762,
+      "name": "Sugar Hill Community Fridge",
+      "neighborhood": "Sugar Hill",
+      "notes": "DOES NOT Accept Pork or red meat\nWe do accept Chicken,Turkey & Fish\nAnd meats (other than cold cuts) should go in the freezer!",
+      "streetAddress": "3671 Broadway "
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MMqXDEuSZUGgN9rR8jI": "{date: \"\"2020-11-23T19:16:07.705Z\"\", name: \"MARIE\",…}",
+        "-MMzv2RVLqBLFXBLD_nP": "{date: \"\"2020-11-25T15:01:11.481Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MHGYUsfASJ7SHwDFbFh",
+      "lat": 40.7040075,
+      "link": "https://www.woodbine.nyc/mutualaid",
+      "lng": -73.905107,
+      "name": "Woodbine - Hungry Monk Food Pantry ",
+      "neighborhood": "Ridgewood",
+      "streetAddress": "585 Woodward Street."
+    },
+    {
+      "active": true,
+      "borough": "Brooklyn",
+      "checks": {
+        "-MMq8Ym2doYq2fpY0m0q": "{date: \"\"2020-11-23T17:28:21.873Z\"\"}",
+        "-MSAHR7dIaTIoanGSW0G": "{date: \"\"2021-01-28T23:17:40.606Z\"\", name: \"Dondo\",…}",
+        "-MVxvMOnT9k1vGiKrypN": "{date: \"\"2021-03-17T02:04:35.633Z\"\", name: \"FELICIT…}",
+        "-Me5suHe8i6JdBRCgd93": "{date: \"\"2021-07-08T16:11:43.207Z\"\", notes: \"Lots o…}",
+        "-MgRwT_E89OVHkK3Yl7p": "{date: \"\"2021-08-06T19:30:20.640Z\"\", notes: \"50 san…}",
+        "-Mp7TCNkCGw-89Uw4hdL": "{date: \"\"2021-11-22T16:26:57.955Z\"\", notes: \"Apples…}"
+      },
+      "confirmed": true,
+      "id": "-MJhZ6-N1UB55tRgz1uy",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MJhZ6-N1UB55tRgz1uy%2F-Mp7TCNkCGw-89Uw4hdL?alt=media&token=d736ec3d-e25a-487e-a345-586cf45b287f",
+      "instagram": "hashtaglunchbagbk",
+      "lat": 40.6794914,
+      "link": "IG- @hashtaglunchbagbk",
+      "lng": -74.0051658,
+      "name": "Hashtag Lunchbag BK Community Fridge",
+      "neighborhood": "Red Hook",
+      "notes": "Open 11am-8pm daily",
+      "streetAddress": "367 Columbia Street"
+    },
+    {
+      "active": true,
+      "borough": "Manhattan",
+      "checks": {
+        "-MTDyKvhTngDU1PM0GWZ": "{date: \"\"2021-02-11T02:44:03.099Z\"\", notes: \"2/10 a…}",
+        "-MTDyWdlC_GHZEz4-zUY": "{date: \"\"2021-02-11T02:44:51.279Z\"\", notes: \"thanks…}"
+      },
+      "confirmed": true,
+      "id": "-MKgMw_rlSPuEa8ncdxk",
+      "instagram": "peoplesfridgewordup",
+      "lastCheck": "-MPoFYO7-QLhZtjpRA00",
+      "lat": 40.837642,
+      "link": "https://www.instagram.com/peoplesfridgewordup/",
+      "lng": -73.9382554,
+      "name": "the people's fridge word up",
+      "neighborhood": "Washington Heights",
+      "notes": "Outside Word Up bookstore\nDec. 29 - fridge is there, but not colder than outdoor temp",
+      "streetAddress": "2113 Amsterdam Avenue"
+    },
+    {
+      "active": true,
+      "borough": "Manhattan",
+      "checks": {
+        "-MSJXwf_5NC1IgJDapLg": "{date: \"\"2021-01-30T18:26:23.277Z\"\", name: \"Amy\", n…}",
+        "-MTDycItou2bdaUu49_V": "{date: \"\"2021-02-11T02:45:18.561Z\"\", notes: \"2/10 a…}",
+        "-MTI41QeAnBnqNpYifcI": "{date: \"\"2021-02-11T21:51:46.940Z\"\", notes: \"2/11 a…}",
+        "-MTm2VHCWaEVOFaq5p17": "{date: \"\"2021-02-17T22:13:18.493Z\"\", name: \"Cas\", n…}",
+        "-MaGCUuNL1BzN3gcwWG1": "{date: \"\"2021-05-21T23:15:05.072Z\"\", name: \"Parry\",…}",
+        "-N1fdncETXsFfRYnfykj": "{date: \"\"2022-05-10T01:48:24.666Z\"\", name: \"Desiree…}"
+      },
+      "confirmed": true,
+      "id": "-MKgRVI0vZ5U1qjSL3cX",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MKgRVI0vZ5U1qjSL3cX%2F-MaGCUuNL1BzN3gcwWG1?alt=media&token=3086a588-3d05-4e05-afc3-ee1e9e43156b",
+      "instagram": "thepeoplespeoplesfridge",
+      "lat": 40.8311752,
+      "link": "https://www.instagram.com/thepeoplespeoplesfridge/",
+      "lng": -73.9410108,
+      "name": "The Peoples Peoples Fridge",
+      "neighborhood": "Washington Heights",
+      "streetAddress": "958 St. Nicholas Avenue and W 158 th St"
+    },
+    {
+      "active": true,
+      "borough": "Manhattan",
+      "checks": {
+        "-MTRguspnwLAh9d1DeMU": "{date: \"\"2021-02-13T18:42:37.059Z\"\", name: \"@abolit…}",
+        "-Mhq-_TOTIaQ4mgaUuZS": "{date: \"\"2021-08-24T02:34:29.752Z\"\", name: \"Wanicek…}",
+        "-Mpgi_s_6Tewvf10U7DP": "{date: \"\"2021-11-29T17:24:52.413Z\"\", name: \"Amber\"}",
+        "-N30cZiuxVbBiSmH4nAQ": "{date: \"\"2022-05-26T18:30:22.100Z\"\", notes: \"EMPTY\"}",
+        "-N3pm8OQwcMf0QgMkwmT": "{date: \"\"2022-06-05T21:32:26.492Z\"\", notes: \"Two ba…}"
+      },
+      "confirmed": true,
+      "id": "-MM1JjQZRFFiigjmSNjd",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MM1JjQZRFFiigjmSNjd%2F-Mpgi_s_6Tewvf10U7DP?alt=media&token=eabbdd6c-9118-4a7e-bd6b-c10b7be3d64a",
+      "instagram": "eastvillageneighbors",
+      "lastCheck": "-Mhq-_TOTIaQ4mgaUuZS",
+      "lat": 40.730212,
+      "link": "https://www.instagram.com/eastvillageneighbors/",
+      "lng": -73.983724,
+      "name": "East Village Community Fridge",
+      "neighborhood": "East Village",
+      "notes": "open 24/7 - we empty out very fast so all donations of healthy, unopened, uneaten food welcome! There is a cupboard for dry things. Tampons, personal hygiene, etc also welcome.",
+      "streetAddress": "197 First Avenue"
+    },
+    {
+      "active": true,
+      "borough": "Manhattan",
+      "checks": {
+        "-MO7hfmSMZ3yb4uCqTfH": "{date: \"\"2020-12-09T18:15:03.705Z\"\", name: \"Desiree…}",
+        "-McXnGAr-V7rJHkkHFx6": "{date: \"\"2021-06-19T05:45:02.685Z\"\"}",
+        "-Mq2ekEwqqJifjDZX5Y1": "{date: \"\"2021-12-04T04:19:22.326Z\"\", name: \"Wanice\"}",
+        "-MsZlH8aV0wXA8FKOHDP": "{date: \"\"2022-01-04T11:06:46.021Z\"\"}",
+        "-Mv-sDwh4l6vZD9wqSHM": "{date: \"\"2022-02-03T18:37:53.430Z\"\", name: \"Amine\",…}",
+        "-MwazYuekKiA6FsH7o2D": "{date: \"\"2022-02-23T14:31:09.658Z\"\"}",
+        "-Mwaz_YdL0D1xJSDpN-1": "{date: \"\"2022-02-23T14:31:16.359Z\"\", name: \"Paul\"}"
+      },
+      "confirmed": true,
+      "id": "-MMNlh6c8qsA0zFjUHur",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MMNlh6c8qsA0zFjUHur%2F-Mv-sDwh4l6vZD9wqSHM?alt=media&token=0d3c6c91-c502-4ef8-b2a2-974008cbd3b3",
+      "instagram": "communityfridge120mm",
+      "lat": 40.8046136,
+      "link": "IG: @communityfridge120",
+      "lng": -73.9478841,
+      "name": "Community Fridge 120MM",
+      "neighborhood": "Morningside Heights",
+      "notes": "organizers do not want this location stocked without prior coordination\n\nOPEN!",
+      "streetAddress": "120th Street and Malcolm X Blvd"
+    },
+    {
+      "active": true,
+      "borough": "Manhattan",
+      "checks": {
+        "-MSIvpxPErKSBIKzvlb3": "{date: \"\"2021-01-30T15:35:31.019Z\"\", notes: \"USDA d…}",
+        "-MTgzRkuDKUG3ToWbRH6": "{date: \"\"2021-02-16T22:37:29.520Z\"\", name: \"Katie D…}",
+        "-MTpuGzPE1OErtx-a9OB": "{date: \"\"2021-02-18T16:11:29.868Z\"\", name: \"Katie D…}",
+        "-MUEw98B_R3lv2CM64ot": "{date: \"\"2021-02-23T17:29:49.544Z\"\", name: \"Katie D…}",
+        "-MUekPeGBLztvmB05DC3": "{date: \"\"2021-02-28T22:28:16.427Z\"\", name: \"Katie D…}",
+        "-MVgdOsM5PHm0itqt7vD": "{date: \"\"2021-03-13T17:32:34.323Z\"\", name: \"Katie D…}",
+        "-MW0zECk6Y3WgDkWo4Li": "{date: \"\"2021-03-17T20:59:59.246Z\"\", name: \"Katie D…}",
+        "-MX851jQwCyn2dXUcSYt": "{date: \"\"2021-03-31T16:22:45.536Z\"\", name: \"Katie D…}",
+        "-MXiazdzPnMz6lP_gTDs": "{date: \"\"2021-04-07T23:12:40.816Z\"\", name: \"Katie D…}",
+        "-MYHzRME0se2-6-DXxmh": "{date: \"\"2021-04-15T00:45:49.665Z\"\", name: \"Katie \"…}",
+        "-MZhkts4xdiyE776qUfG": "{date: \"\"2021-05-02T15:47:44.759Z\"\", name: \"Katie \"…}",
+        "-MbSSk6wvKlCLDC6qQPa": "{date: \"\"2021-06-05T18:37:10.288Z\"\"}",
+        "-MbnYaPGcODZD4GM6Hme": "{date: \"\"2021-06-10T01:34:25.906Z\"\", name: \"Katie\",…}",
+        "-MoUditXGW4V6G6P5iEk": "{date: \"\"2021-11-14T18:12:53.956Z\"\", notes: \"empty …}",
+        "-MsRn3NKSLYsv_uPVXZb": "{date: \"\"2022-01-02T21:57:35.945Z\"\"}",
+        "-MyUj77f7YlNp_0nKmKq": "{date: \"\"2022-03-19T01:13:26.284Z\"\", notes: \"Up and…}",
+        "-N58W9wh09u8Fe6K2oYl": "{date: \"\"2022-06-22T03:46:21.826Z\"\", name: \"Dan\", n…}"
+      },
+      "confirmed": true,
+      "id": "-MN0hveNwvI_tU1KUeHO",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MN0hveNwvI_tU1KUeHO%2F-N58W9wh09u8Fe6K2oYl?alt=media&token=a9855069-edad-4c36-9dd2-4d48cf9c5b66",
+      "instagram": "ujamaafridge",
+      "lat": 40.7972984,
+      "link": "https://www.linktr.ee/ujamaafridge",
+      "lng": -73.9687995,
+      "name": "Ujamaa Community Fridge",
+      "neighborhood": "Upper West Side",
+      "notes": "TEMPORARILY CLOSED FOR REPAIR",
+      "streetAddress": "101st St & Columbus Ave"
+    },
+    {
+      "active": false,
+      "borough": "Manhattan",
+      "checks": {
+        "-MSJDDavMJTpSaIBkHlB": "{date: \"\"2021-01-30T16:55:50.934Z\"\"}",
+        "-MSZc-FIglyowD8lww94": "{date: \"\"2021-02-02T21:22:23.959Z\"\", notes: \"Fridge…}",
+        "-MWoyVddW5b5kZmI_YJB": "{date: \"\"2021-03-27T18:37:25.637Z\"\", notes: \"Fridge…}",
+        "-N2c4gFxLqGQ0y08W43u": "{date: \"\"2022-05-21T19:27:26.760Z\"\", notes: \"The Ch…}",
+        "-N2c4p662TCkVpqUhDIK": "{date: \"\"2022-05-21T19:28:03.096Z\"\", notes: \"The He…}"
+      },
+      "confirmed": true,
+      "id": "-MN93FnwlsMzfOTrqZrr",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MN93FnwlsMzfOTrqZrr%2F-MWoyVddW5b5kZmI_YJB?alt=media&token=55dff134-efb2-44b5-b267-55dc88aa5b98",
+      "instagram": "westendfridge",
+      "lat": 40.7832392,
+      "link": "https://instagram.com/westendfridge",
+      "lng": -73.9817408,
+      "name": "West End Community Fridge (CLOSED)",
+      "neighborhood": "Upper West Side ",
+      "notes": "Fridge is closed as of 6/15. Actively seeking a new host location–please contact us on Instagram if you have any leads!",
+      "streetAddress": "Formerly 245 W 77th St. Seeking new host."
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MRpD0EWVOBWBE9WpemQ": "{date: \"\"2021-01-24T16:26:43.360Z\"\"}",
+        "-MRpDATGIvFCLmV52FXe": "{date: \"\"2021-01-24T16:27:25.266Z\"\", name: \"Betty\",…}"
+      },
+      "confirmed": true,
+      "id": "-MN9Ock-lxMaGqPy-GOb",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MN9Ock-lxMaGqPy-GOb%2F-MRpD0EWVOBWBE9WpemQ?alt=media&token=11cf207e-e5a8-47b6-815e-2c5d3b2346eb",
+      "instagram": "fenixcommunityfridge",
+      "lat": 40.7042015,
+      "link": "https://www.instagram.com/fenixcommunityfridge/",
+      "lng": -73.9103828,
+      "name": "Fenix Community Fridge",
+      "neighborhood": "Ridgewood",
+      "notes": "24/hrs + pantry + accepts everything",
+      "streetAddress": "586 Seneca Ave"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MQ5SecL-pDvAQBGphZj": "{date: \"\"2021-01-03T04:17:13.910Z\"\"}",
+        "-M_bxR6FgYbJdV2LMB4b": "{date: \"\"2021-05-13T23:00:29.532Z\"\", notes: \"Please…}",
+        "-M_wlaTc_WkJ6rXce5yN": "{date: \"\"2021-05-18T00:00:47.295Z\"\", name: \"Lenny J…}",
+        "-MaAK6PamyOXX2BH5jy0": "{date: \"\"2021-05-20T19:50:38.680Z\"\", name: \"Lenny J…}",
+        "-Matyj2n31oWXkjcj-Le": "{date: \"\"2021-05-29T21:15:00.715Z\"\", notes: \"Deli m…}",
+        "-MfeGsNjoERg2oFuL0uQ": "{date: \"\"2021-07-27T23:23:15.776Z\"\", notes: \"331pm …}",
+        "-MosUp24Jd44hsr7QlN7": "{date: \"\"2021-11-19T14:00:02.966Z\"\"}",
+        "-N-hwuiqNlNRqDZvXWfs": "{date: \"\"2022-04-15T15:59:45.635Z\"\"}"
+      },
+      "id": "-MNEL9gkELtC7CZQjmxd",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNEL9gkELtC7CZQjmxd%2F-N-hwuiqNlNRqDZvXWfs?alt=media&token=8776a14e-5afa-4f9a-bb76-83bb29f8049d",
+      "instagram": "laureltoncommunityfridge",
+      "lat": 40.6749812,
+      "link": "@laureltoncommunityfridge",
+      "lng": -73.7369155,
+      "name": "Laurelton Community Fridge ",
+      "neighborhood": "Laurelton ",
+      "notes": "Don’t leave Queens Out !",
+      "streetAddress": "23134 Merrick Blvd. Laurelton, NY 11413"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MTYDQSNPeBAdTpR3ldO": "{date: \"\"2021-02-15T01:06:43.232Z\"\"}",
+        "-MfeHy1BaaUVO4cnsxgX": "{date: \"\"2021-07-27T23:28:01.151Z\"\", notes: \"420pm …}"
+      },
+      "confirmed": true,
+      "id": "-MNEQwm5gkQtS1T7XTe4",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNEQwm5gkQtS1T7XTe4%2F-MfeHy1BaaUVO4cnsxgX?alt=media&token=44cc821d-5a0c-49c5-b71b-f9d3b107fbcd",
+      "instagram": "coronacomunidadfridge",
+      "lat": 40.7459116,
+      "link": "https://www.instagram.com/coronacomunidadfridge/",
+      "lng": -73.8593863,
+      "name": "Corona Comunidad Fridge",
+      "neighborhood": "Corona",
+      "notes": "Closed for the winter 2022\n\nWill resume and update \n24/7\nWe discourage raw meat and frozen meat \nWe don't accept frozen items \nPrepared meals must be labeled\nThank you! ",
+      "streetAddress": "104-05 47th ave "
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MtdVp8QokPsrE5IRzSG": "{date: \"\"2022-01-17T19:28:40.614Z\"\", name: \"Kevin B…}",
+        "-N5DrIOg7OcVHs_V8LfF": "{date: \"\"2022-06-23T04:41:09.764Z\"\", name: \"Dan\", n…}"
+      },
+      "confirmed": true,
+      "id": "-MNErJ4qJzfSX1G3fk-A",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNErJ4qJzfSX1G3fk-A%2F-N5DrIOg7OcVHs_V8LfF?alt=media&token=df2527ef-8d05-4363-80a5-acac38b4d746",
+      "instagram": "ravenswoodfridge",
+      "lat": 40.7605726,
+      "link": "https://linktr.ee/ravenswoodfridge",
+      "lng": -73.93885949999999,
+      "name": "Ravenswood Community Fridge ",
+      "neighborhood": "Astoria",
+      "streetAddress": "12-14 36th Ave"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MOnGsru3hwI90dDlA4A": "{date: \"\"2020-12-18T00:37:17.750Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MNEtV6xKf_5K-Z9R1ha",
+      "instagram": "queensbridgecommunityfridge",
+      "lat": 40.75692799999999,
+      "link": "@https://www.instagram.com/queensbridgecommunityfridge/",
+      "lng": -73.94414689999999,
+      "name": "Queensbridge Community Fridge",
+      "neighborhood": "Astoria",
+      "notes": "seeking new host",
+      "streetAddress": "[CLOSED] formerly 10-03 40th Ave"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MZYsT1wP4AoBFfx8aEJ": "{date: \"\"2021-04-30T17:44:35.503Z\"\"}",
+        "-MZYspjtmh3qge6zsx_a": "{date: \"\"2021-04-30T17:46:12.721Z\"\", name: \"Deshi\",…}",
+        "-Mf-UcmvLM7mncTYNw3s": "{date: \"\"2021-07-19T20:39:17.880Z\"\", notes: \"betwee…}",
+        "-Mg7eB0CpWL4qeivLqjK": "{date: \"\"2021-08-02T20:58:08.959Z\"\", notes: \"316pm …}",
+        "-Mmo9QUFfchIBpUkDTnM": "{date: \"\"2021-10-24T21:16:45.021Z\"\", notes: \"5:15pm…}",
+        "-MtUK8CZNHw_cXj8mrpH": "{date: \"\"2022-01-15T20:01:25.010Z\"\", name: \"Kimberl…}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNJDeqObR38_I4QLAvj%2F-MtUK8CZNHw_cXj8mrpH?alt=media&token=5dcc7bcf-f8a7-42f8-9cf3-06c0d8b1d356",
+      "instagram": "jamaicacommunityfridge",
+      "lat": 40.6930638,
+      "link": "https://www.instagram.com/jamaicacommunityfridge/",
+      "lng": -73.7997183,
+      "name": "Jamaica Community Fridge",
+      "neighborhood": "Sutphin ",
+      "streetAddress": "107-58 Sutphin Blvd",
+      "id": "-MNJDeqObR38_I4QLAvj"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MTYDhHSbZvA1PjMLTfA": "{date: \"\"2021-02-15T01:07:56.297Z\"\"}",
+        "-Me0rzRv3Z7bnspM1hCl": "{date: \"\"2021-07-07T16:49:34.421Z\"\", notes: \"still …}",
+        "-Mf9IjUfnPXJAjbS3vN-": "{date: \"\"2021-07-21T18:23:30.643Z\"\"}",
+        "-MofprRqV13wEJO42HIz": "{date: \"\"2021-11-17T03:01:20.315Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MNJELdkSquu_KUphFib",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNJELdkSquu_KUphFib%2F-MofprRqV13wEJO42HIz?alt=media&token=e8bbc2aa-cfba-4bf0-9a9c-c2fe2d936d0f",
+      "instagram": "jacksonheightscommunityfridge",
+      "lat": 40.755152,
+      "link": "https://www.instagram.com/jacksonheightscommunityfridge/",
+      "lng": -73.8869912,
+      "name": "JH Community Fridge",
+      "neighborhood": "Jackson Heights",
+      "streetAddress": "80-02 Northern Blvd"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MYRnsmzPPgY1ZE9CGbZ": "{date: \"\"2021-04-16T22:31:33.875Z\"\", notes: \"fridge…}",
+        "-M_wpFWgzYS6fFYU6sKy": "{date: \"\"2021-05-18T00:16:46.430Z\"\", name: \"Lenny J…}",
+        "-MaNs6TrQPCIzMRbxqIW": "{date: \"\"2021-05-23T10:58:36.536Z\"\"}",
+        "-MaO11bJehRJWI3C7ABj": "{date: \"\"2021-05-23T11:41:58.009Z\"\", name: \"Sparkle…}",
+        "-MbM91OZSij2ig4Kvydr": "{date: \"\"2021-06-04T13:13:21.598Z\"\", name: \"Sparkle…}",
+        "-MbSCrIcAvwNwIH6ew_V": "{date: \"\"2021-06-05T17:27:48.131Z\"\", name: \"Sparkle…}",
+        "-MbSD9-xbKaTYoZAMedv": "{date: \"\"2021-06-05T17:29:04.759Z\"\", name: \"Sparkle…}",
+        "-McaDUoSd9ghCJ1Zhqf1": "{date: \"\"2021-06-19T21:42:51.771Z\"\"}",
+        "-McaEDBZsmUIAx3fpOnq": "{date: \"\"2021-06-19T21:46:01.749Z\"\", name: \"Sparkle…}",
+        "-MdiZb22zPnkcqDmDxN2": "{date: \"\"2021-07-03T22:52:07.832Z\"\", name: \"Sparkle…}",
+        "-MjPJhObNvV-Ye6F2NML": "{date: \"\"2021-09-12T14:04:27.392Z\"\", name: \"DjSpark…}",
+        "-Mqfu9mLRAKUVnhVvOdr": "{date: \"\"2021-12-11T23:51:32.034Z\"\", notes: \"Last c…}",
+        "-MrEZ7o8AAt0Kx7CwGca": "{date: \"\"2021-12-18T22:01:36.282Z\"\", notes: \"10+ tr…}",
+        "-MwSpCbhZ0l2tXMVmH9q": "{date: \"\"2022-02-21T19:49:23.750Z\"\"}",
+        "-MzXVluVvCXs9h7tLDta": "{date: \"\"2022-04-01T00:25:14.512Z\"\"}",
+        "-N-sXYTx0vASGm9h4ZvZ": "{date: \"\"2022-04-17T17:20:23.619Z\"\", notes: \"Large …}",
+        "-N06zDEWhPMoU2tQN5_R": "{date: \"\"2022-04-20T17:19:57.238Z\"\", name: \"Lenny\",…}"
+      },
+      "confirmed": true,
+      "id": "-MNJFQBdelATL_OYfH6G",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNJFQBdelATL_OYfH6G%2F-N06zDEWhPMoU2tQN5_R?alt=media&token=ae6dc62a-2593-43e8-849b-c433324e5671",
+      "instagram": "qvcommunityfridge",
+      "lat": 40.7096782,
+      "link": "https://venmo.com/Donate-QVCF",
+      "lng": -73.76789169999999,
+      "name": "Queens Village Community Fridge",
+      "neighborhood": "Hollis",
+      "notes": "Volunteer https://calendly.com/qvcommunityfridge/volunteer-qvcf",
+      "streetAddress": "190-05 Hollis Ave "
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MVJ1d0ntAplEwsU330K": "{date: \"\"2021-03-08T22:52:19.636Z\"\", notes: \"Is emp…}",
+        "-MVJ3sqAlozRHNGBrjtP": "{date: \"\"2021-03-08T23:02:08.693Z\"\", notes: \"Nothin…}",
+        "-MXJ2V-ZFEVVmp03_TX3": "{date: \"\"2021-04-02T19:27:28.350Z\"\", name: \"David M…}",
+        "-MXmsukAeuU63jbM8Onf": "{date: \"\"2021-04-08T19:09:27.030Z\"\", name: \"David\",…}"
+      },
+      "id": "-MNW5nu_OUR2HeWorzsH",
+      "instagram": "detektor.zine ",
+      "lat": 40.7036455,
+      "link": "",
+      "lng": -73.9272218,
+      "name": "Caracoal Bushwick (CLOSED)",
+      "notes": "This fridge is maintained by the neighbors on Knickerbocker Ave.  The fridge is located outside of Nieves’ business. Many groups and organizations support this fridge. This fridge does not accept financial donations, only food and volunteer labor. ",
+      "streetAddress": "190 Knickerbocker Avenue "
+    },
+    {
+      "borough": "Brooklyn",
+      "confirmed": true,
+      "id": "-MNW6ejsARwK-Ti79A1l",
+      "lat": 40.7033285,
+      "lng": -73.9329281,
+      "name": "Bake Shop",
+      "notes": "They got rid of it to sell their own stuff, ie no longer free",
+      "streetAddress": "995 Flushing Ave"
+    },
+    {
+      "borough": "",
+      "confirmed": true,
+      "id": "-MNYlPN3nX3-ZZE2jhHB",
+      "lat": 40.700026,
+      "lng": -74.0901571,
+      "name": "Greenville Community Fridge",
+      "streetAddress": "57 Rose Avenue, Jersey City, NJ 07"
+    },
+    {
+      "borough": "",
+      "checks": {
+        "-MqbGJnm2G4lRt4Nb3Uq": "{date: \"\"2021-12-11T02:14:36.342Z\"\"}",
+        "-N4jz5tPHxRzvn3odMAf": "{date: \"\"2022-06-17T04:47:03.026Z\"\"}"
+      },
+      "id": "-MNYmlYVsvOAWC3F6Akj",
+      "instagram": "westsidecommunityfridge",
+      "lat": 40.7152507,
+      "link": "westsidecommunityfridge.com",
+      "lng": -74.0431454,
+      "name": "Westside Community Fridge",
+      "neighborhood": "Westside Jersey City",
+      "notes": "Venmo: westsidecommunityfridge\nlinktr.ee/westsidecommunityfridge\n",
+      "streetAddress": "214 Delaware Ave Jersey City NJ 07306"
+    },
+    {
+      "borough": "",
+      "id": "-MNYne4O4sBX_LPUa7fm",
+      "instagram": "jcheightscommunityfridge",
+      "lat": 40.751563,
+      "link": "linktr.ee/jcheightscommunityfridge",
+      "lng": -74.0412808,
+      "name": "JC Heights Community Fridge",
+      "neighborhood": "JC Heights (NJ)",
+      "notes": "Webster Ave X North/Congress\nIf donating they ask you do not leave any meat in the fridge. Donations for all other food accepted. Please leave pantry items in the covered drawers to protect from the elements. \n\nlinktr.ee/jcheightscommunityfridge\nVemno: @JCHeights-CommunityFridge",
+      "streetAddress": "390 Webster Ave Jersey City NJ 07307"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MNiy3Oz-Pjr5hhWAQxk": "{date: \"\"2020-12-04T18:16:31.208Z\"\", name: \"Desiree…}",
+        "-MOI74-TG9jwBZv-3f8y": "{date: \"\"2020-12-11T18:46:35.039Z\"\", name: \"Ariadna…}",
+        "-MSZQGasBxGtI0VlCcJq": "{date: \"\"2021-02-02T20:26:47.511Z\"\", notes: \"Open 2…}",
+        "-MSZQMJVpeTAcKBK1r2C": "{date: \"\"2021-02-02T20:27:10.910Z\"\"}",
+        "-MYkRLw6KB750Lxvb2Cy": "{date: \"\"2021-04-20T18:01:06.668Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MNixYlAYy-tyUG4Yimn",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MNixYlAYy-tyUG4Yimn%2F-MSZQMJVpeTAcKBK1r2C?alt=media&token=b0a66489-1e96-4f7e-85dd-9c22f1c7dc26",
+      "instagram": "anchorfridge",
+      "lastCheck": "-MYkRLw6KB750Lxvb2Cy",
+      "lat": 40.844994,
+      "link": "(646) 598-3526",
+      "lng": -73.7859127,
+      "name": "Anchor Fridge",
+      "neighborhood": "City Island",
+      "notes": "Volunteers unaffiliated with South Bronx Mutual Aid should text (646) 588-3526 before delivering to this fridge. \n\nAnchor Fridge has a freezer for meat, prepared foods welcome with labelled ingredients and preparation date. Non-labeled meals will be disposed of. ",
+      "streetAddress": "239 City Island Ave"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MObc9kwAnsmcCWe3ATi": "{date: \"\"2020-12-15T18:19:11.646Z\"\", notes: \"The fr…}",
+        "-MObcALEUiXo8YgpldCM": "{date: \"\"2020-12-15T18:19:13.662Z\"\", name: \"This is…}",
+        "-MS0tYZSiEctLZIkzpbO": "{date: \"\"2021-01-27T03:32:22.494Z\"\", name: \"Desiree…}",
+        "-Mquk0KsVcNjmMUxdZcd": "{date: \"\"2021-12-14T21:01:30.025Z\"\", name: \"Desiree…}",
+        "-Mzg4-i8cSWigxxgHrIV": "{date: \"\"2022-04-02T21:00:10.419Z\"\", notes: \"The bo…}"
+      },
+      "id": "-MO6m21Naz5oPAnFfjjd",
+      "instagram": "lovingthebronx",
+      "lastCheck": "-Mzg4-i8cSWigxxgHrIV",
+      "lat": 40.8325375,
+      "lng": -73.8607032,
+      "name": "Loving the Bronx Fridge - CLOSED",
+      "neighborhood": "Parkchester",
+      "notes": "Indoors, not 24/7\n\nGreat fridge. Filled it up with 80 pasta and ground beef and 8 vegan squash soup 8/16",
+      "streetAddress": "88 Hugh Grant Circle "
+    },
+    {
+      "borough": "Bronx",
+      "instagram": "allertonalliesfridge",
+      "lat": 40.8640568,
+      "link": "https://www.instagram.com/allertonalliesfridge/",
+      "lng": -73.8647646,
+      "name": "Allerton Fridge",
+      "neighborhood": "Allerton",
+      "streetAddress": "2527 Boston Rd",
+      "id": "-MO6mieDfwHHOzQKriH3"
+    },
+    {
+      "borough": "Bronx",
+      "id": "-MO6oVl_nLUeatOcRVIi",
+      "instagram": "hpcommunityfridge",
+      "lat": 40.813032,
+      "link": "https://www.instagram.com/hpcommunityfridge/",
+      "lng": -73.9280239,
+      "name": "HP Community Fridge",
+      "neighborhood": "Mott Haven",
+      "notes": "Open Mon - Fri, 8am - 5pm",
+      "streetAddress": "Fridge seeking new host"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MSZRFYmtJG1Mvu1CJTV": "{date: \"\"2021-02-02T20:31:05.373Z\"\", name: \"Vik\", n…}",
+        "-MVNmTcPL6c-NwZnrdG9": "{date: \"\"2021-03-09T20:59:48.715Z\"\", notes: \"4pm pu…}",
+        "-MYQO5WkZmNy9U0y3XsR": "{date: \"\"2021-04-16T15:54:53.794Z\"\", notes: \"Stocke…}",
+        "-MdT3c_g9Tlf1WLjxZ2B": "{date: \"\"2021-06-30T17:58:28.381Z\"\"}",
+        "-Ms1ygZGPULMeJdjCBF5": "{date: \"\"2021-12-28T21:38:14.986Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MO6rBK1tgT0g4EVBMMn",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MO6rBK1tgT0g4EVBMMn%2F-Ms1ygZGPULMeJdjCBF5?alt=media&token=9e6017b1-8706-4a83-8127-25a83973c9c6",
+      "instagram": "theuptownfridge",
+      "lat": 40.863175,
+      "link": "https://www.instagram.com/theuptownfridge/",
+      "lng": -73.929474,
+      "name": "The Uptown Fridge",
+      "neighborhood": "Inwood",
+      "notes": "OPEN\nVolunteer interest form: https://docs.google.com/forms/d/e/1FAIpQLSeXBnuvXUyoXiOxTG5-UR194ZFqCgUYJkijTDuE2DIi4Aa_UQ/viewform",
+      "streetAddress": "4672 Broadway"
+    },
+    {
+      "borough": "Manhattan",
+      "instagram": "the155streetfridge",
+      "lat": 40.8293433,
+      "link": "https://www.instagram.com/the155streetfridge/",
+      "lng": -73.938375,
+      "name": "The 155 Street Fridge",
+      "neighborhood": "Harlem",
+      "streetAddress": "250 Bradhurst Ave",
+      "id": "-MO6tkYdp9RFVYxAGsEZ"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MWHb5vqt5DmRmrfNCe1": "{date: \"\"2021-03-21T02:28:05.596Z\"\", name: \"Beatric…}",
+        "-MXmu7HycpnxFD3WBWpx": "{date: \"\"2021-04-08T19:14:44.729Z\"\", name: \"Mb\", no…}"
+      },
+      "instagram": "fridgeonw126th",
+      "lat": 40.814938,
+      "link": "https://www.instagram.com/fridgeonw126th/",
+      "lng": -73.9559829,
+      "name": "West Harlem Community Fridge",
+      "neighborhood": "West Harlem",
+      "streetAddress": "521 W 126 St",
+      "id": "-MO6ua5kd_8U81kxdlIf"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-N30cI952tSHrp0l44XT": "{date: \"\"2022-05-26T18:29:09.956Z\"\", notes: \"lots o…}"
+      },
+      "instagram": "sixthstreetcc",
+      "lat": 40.7236486,
+      "link": "https://www.instagram.com/sixthstreetcc/",
+      "lng": -73.98027789999999,
+      "name": "6th St Fridge",
+      "neighborhood": "Alphabet City",
+      "notes": "Not 24/7",
+      "streetAddress": "638 E 6th St",
+      "id": "-MO6wdWhn3t73Tqylhql"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MWjFI8xRDG7tf_hz14p": "{date: \"\"2021-03-26T15:57:26.524Z\"\"}",
+        "-MfeI6H122SoIXOrz6EM": "{date: \"\"2021-07-27T23:28:39.029Z\"\", notes: \"456pm …}",
+        "-Mg7CipwMyIajkzYf71f": "{date: \"\"2021-08-02T18:53:42.185Z\"\", notes: \"New sa…}",
+        "-MofhQUNh8jOMZ_74jhk": "{date: \"\"2021-11-17T02:24:28.831Z\"\", notes: \"Just u…}",
+        "-MpK0PSMJPZHCHkfSbPU": "{date: \"\"2021-11-25T02:56:13.351Z\"\", notes: \"Fridge…}",
+        "-MvUqZ2SW5u2fC8kDTJ_": "{date: \"\"2022-02-09T18:58:51.088Z\"\"}"
+      },
+      "id": "-MO6yjXJ5TGMLxTDZVkg",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MO6yjXJ5TGMLxTDZVkg%2F-MvUqZ2SW5u2fC8kDTJ_?alt=media&token=fc151d2d-3e06-4518-a51a-edcd65b0b1bb",
+      "instagram": "elmhurstcommunityfridge2",
+      "lat": 40.74340919999999,
+      "link": "https://www.instagram.com/elmhurstcommunityfridge2/",
+      "lng": -73.8877785,
+      "name": "Elmhurst Community Fridge 2",
+      "neighborhood": "Elmhurst",
+      "notes": "As of 1/18/22, fridge contains a bunch of canned fish, egg crystals, beef stew, packaged chicken.\nAs of 11/16/21, fridge is there. It was not plugged in but now it is.",
+      "streetAddress": "77-02 Woodside Ave"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MceN51pKc2nvnxej0cR": "{date: \"\"2021-06-20T17:03:16.602Z\"\", name: \"Пр\", no…}"
+      },
+      "id": "-MO6yt7ZLupZ1ByM-LMP",
+      "lat": 40.7576569,
+      "lng": -73.8739219,
+      "name": "East Elmhurst Fridge",
+      "neighborhood": "Elmhurst",
+      "notes": "This fridge is no longer here. If anyone knows where the new East Elmhurst fridge is please tweet its location to me @hkny76",
+      "streetAddress": "32-37 Junction Blvd"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MUGF37aAC2fjOPCrUcp": "{date: \"\"2021-02-23T23:36:24.725Z\"\", notes: \"Fridge…}",
+        "-MsgNFJOAHGy9H0aate_": "{date: \"\"2022-01-05T22:34:22.683Z\"\"}"
+      },
+      "confirmed": true,
+      "id": "-MOIeo9p0vPqEyJsWQgm",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MOIeo9p0vPqEyJsWQgm%2F-MsgNFJOAHGy9H0aate_?alt=media&token=dd44fcd5-ee1c-4dbe-8f1f-3c1afe13ce29",
+      "instagram": "motthavenfridge",
+      "lat": 40.8091047,
+      "link": "https://instagram.com/motthavenfridge?igshid=14un7jqqfzmvd",
+      "lng": -73.9185768,
+      "name": "Mott Haven Fridge 2",
+      "neighborhood": "Mott Haven",
+      "notes": "On Brook Ave between 140 street and 141 street. Host: Crismeli Deli",
+      "streetAddress": "297 Brook Ave "
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MVZBRZNVMJjhXrFiptD": "{date: \"\"2021-03-12T02:09:05.397Z\"\"}",
+        "-MWeby0GhbTYla9gLzYp": "{date: \"\"2021-03-25T18:22:45.492Z\"\"}",
+        "-MXN9BSfo02D9BOWjURE": "{date: \"\"2021-04-03T14:35:12.311Z\"\", name: \"Liz\", n…}",
+        "-MXbGnl0MgcyTSiyhcBR": "{date: \"\"2021-04-06T13:02:46.469Z\"\"}",
+        "-Mt_DiPQ2XRBwZ7MQORw": "{date: \"\"2022-01-16T23:31:05.788Z\"\", name: \"D\", not…}",
+        "-MtdbeESGJ9yY7WoTQkT": "{date: \"\"2022-01-17T19:58:30.935Z\"\"}",
+        "-Mw9MM0o9XPsKkep9Icq": "{date: \"\"2022-02-18T01:06:09.847Z\"\"}",
+        "-Mwd96FO4cDaYrE7CI4R": "{date: \"\"2022-02-24T00:36:30.928Z\"\", name: \"Olivia …}",
+        "-MxCfygWiRAWM1jWLZb6": "{date: \"\"2022-03-03T02:50:48.840Z\"\", name: \"Olivia\"…}",
+        "-MxaHZAhYDs_p_sURt4l": "{date: \"\"2022-03-07T21:30:16.847Z\"\", notes: \"just l…}",
+        "-MxqTPL_zcXhvX8k6Aqz": "{date: \"\"2022-03-11T00:55:57.763Z\"\", notes: \"just a…}",
+        "-Myn_5hJ6TaklndDj0ik": "{date: \"\"2022-03-22T21:42:02.435Z\"\", notes: \"Just l…}",
+        "-MzBz8GBaSHcy8A-UM4v": "{date: \"\"2022-03-27T20:06:19.170Z\"\", notes: \"3 Fren…}"
+      },
+      "confirmed": true,
+      "id": "-MOOkbXX127EGmof03KO",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MOOkbXX127EGmof03KO%2F-MzBz8GBaSHcy8A-UM4v?alt=media&token=c3516dc2-2cda-44b9-a237-7eaf76a432a0",
+      "instagram": "Theheightsfriendlyfridge",
+      "lat": 40.67236080000001,
+      "link": "@Theheightsfriendlyfridge",
+      "lng": -73.9608141,
+      "name": "The Heights Friendly Fridge",
+      "neighborhood": "Crown Heights",
+      "notes": "Fridge just stocked with 10 pints of strawberries, fresh picked today (06/9)! There is also a head of cabbage and a quart of homemade chicken soup. ",
+      "streetAddress": "461 Lincoln Place"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MSZSyap-qGXx8gXD88N": "{date: \"\"2021-02-02T20:38:36.124Z\"\", notes: \"OPEN\"}",
+        "-MjjTg68teAcEObwYSON": "{date: \"\"2021-09-16T16:40:04.270Z\"\", name: \"Harvey\"…}",
+        "-N0XFRIOM69kjFqdVisL": "{date: \"\"2022-04-25T19:45:18.918Z\"\", notes: \"freeze…}"
+      },
+      "instagram": "thefriendlyfridgebx",
+      "lat": 40.8896983,
+      "lng": -73.8987377,
+      "name": "The Friendly Fridge Bronx",
+      "streetAddress": "5977 Broadway @ 242nd",
+      "id": "-MOrPScqjZDFHeGFM3Zj"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MZdrdl0-0OAQzWPpWoH": "{date: \"\"2021-05-01T21:38:44.812Z\"\"}",
+        "-M_xLO5mhu7j-lEUM1Mu": "{date: \"\"2021-05-18T02:41:32.022Z\"\"}",
+        "-MwPRSH3GOzDmw5klOaO": "{date: \"\"2022-02-21T04:02:21.110Z\"\", notes: \"Beans …}"
+      },
+      "id": "-MOrQ_9xJgTtGaQzNY7h",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MOrQ_9xJgTtGaQzNY7h%2F-MwPRSH3GOzDmw5klOaO?alt=media&token=efcda7cc-870a-4fa9-b551-8f2dd89349e5",
+      "instagram": "allertonalliesfridge",
+      "lat": 40.8640568,
+      "lng": -73.8647646,
+      "name": "allertonalliesfridge",
+      "neighborhood": "Allerton",
+      "notes": "No raw meat or dairy.",
+      "streetAddress": " 2527 Boston Rd"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MUGEapKXeZiK3YteFxr": "{date: \"\"2021-02-23T23:34:25.048Z\"\", notes: \"Fridge…}",
+        "-MqPyqUD2JS5qbmLzBNF": "{date: \"\"2021-12-08T16:58:26.852Z\"\", notes: \"Decemb…}",
+        "-N1fjvI9E-p__hfYdgoq": "{date: \"\"2022-05-10T02:15:08.813Z\"\", notes: \"Restoc…}",
+        "-N2ErHcfZpLe2-uhH_KM": "{date: \"\"2022-05-17T02:33:39.283Z\"\", name: \"Luna\", …}"
+      },
+      "id": "-MOrR0rZhnuKwIkVxcrP",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MOrR0rZhnuKwIkVxcrP%2F-N2ErHcfZpLe2-uhH_KM?alt=media&token=ec132ee1-520c-4d7c-ba9f-5a10ebeed4f8",
+      "instagram": "motthavenfridge",
+      "lat": 40.8087998,
+      "lng": -73.91619039999999,
+      "name": "Mott Haven Community Fridge",
+      "neighborhood": "Mott Haven",
+      "notes": "Was empty: 10 boxes pasta w ground beef and 5 vegan soups 9/16",
+      "streetAddress": "141st Street & St Ann Avenue"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MPkYcVpP362Qk-gnyK2": "{date: \"\"2020-12-29T22:11:38.424Z\"\"}",
+        "-MR1kNFq81hWrH3qxpdw": "{date: \"\"2021-01-14T21:16:12.011Z\"\", name: \"Mars\", …}",
+        "-MiSdzpOODFH_rj04U3Y": "{date: \"\"2021-08-31T19:20:37.138Z\"\", name: \"Joanna …}"
+      },
+      "id": "-MP9vZltCyTdVf-QeAFy",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MP9vZltCyTdVf-QeAFy%2F-MiSdzpOODFH_rj04U3Y?alt=media&token=af9dac26-7999-4de6-8b61-4a18b429f04e",
+      "instagram": "cooperparkfridge",
+      "lat": 40.7184169,
+      "link": "Donate via Venmo! @nbkfridges",
+      "lng": -73.9401389,
+      "name": "Cooper Park Fridge",
+      "neighborhood": "East Williamsburg",
+      "notes": "Maintained by North Brooklyn Mutual Aid. Outside Cooper Park Community Center. ",
+      "streetAddress": "76 Kingsland Ave."
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MWzB78JzuK7ibIrpiyj": "{date: \"\"2021-03-29T18:13:08.339Z\"\", notes: \"Donate…}"
+      },
+      "id": "-MPK_bVY5j_PYu2bwTIU",
+      "instagram": "ozoneparkcommunityfridge",
+      "lat": 40.690504,
+      "link": "ozoneparkcommunityfridge@gmail.com",
+      "lng": -73.81370199999999,
+      "name": "Ozone Park Richmond Hill Community Fridge",
+      "neighborhood": "Ozone Park",
+      "notes": "Want to donate? ♥️\nVenmo: QPRHCommunityFridge\n\norganizers do not want this location stocked without prior coordination",
+      "streetAddress": "132-06 Liberty Avenue"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MccyP-dojz6zq2j-F8E": "{date: \"\"2021-06-20T10:31:37.432Z\"\"}",
+        "-Mq6JyFLBR82JZjeEsmc": "{date: \"\"2021-12-04T21:22:33.168Z\"\"}",
+        "-MwCTLLyIBkMy1Jzib04": "{date: \"\"2022-02-18T15:35:33.868Z\"\"}",
+        "-MyZ-jg24QyhTrGq9Wi_": "{date: \"\"2022-03-19T21:08:52.681Z\"\", notes: \"Lots o…}"
+      },
+      "id": "-MP_ZKmDcJRz0Ju426Ye",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MP_ZKmDcJRz0Ju426Ye%2F-MyZ-jg24QyhTrGq9Wi_?alt=media&token=98d1aadc-9bab-465e-8833-c4e90121eb31",
+      "instagram": "RockawayMutualAid",
+      "lat": 40.5856459,
+      "link": "RockawayMutualAid@gmail.com",
+      "lng": -73.8146766,
+      "name": "Rockaway Fridge 2",
+      "neighborhood": "Rockaway Park",
+      "notes": "20LB FROZEN TURKEY DEFROSTING IN FRIDGE KEPT IN WORKING FRIDGE WILL BE READY BY  Thanksgiving",
+      "streetAddress": "166 Beach 92nd Street"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MX2TIJ0e1xKkjApcIkA": "{date: \"\"2021-03-30T14:11:00.791Z\"\"}",
+        "-N0L_lI_Na7JGMPf-XCF": "{date: \"\"2022-04-23T13:23:03.209Z\"\", notes: \"Fridge…}",
+        "-N0L_q8L4B73P9wOAuZi": "{date: \"\"2022-04-23T13:23:23.272Z\"\", notes: \"Fridge…}"
+      },
+      "id": "-MPc5orC8nbtSBLBzoSG",
+      "instagram": "Girlsonlyny ",
+      "lat": 40.5760385,
+      "link": "@onlunchbreak",
+      "lng": -73.9919443,
+      "name": "Coney island Fridge",
+      "neighborhood": "Coney island",
+      "notes": "Corner of 25th\nNo fridge",
+      "streetAddress": "2423 mermaid ave "
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MnE2vjP9qjECVXX2OMb": "{date: \"\"2021-10-30T02:38:06.035Z\"\"}",
+        "-Mp7sMwLVVHpeKg8KG9n": "{date: \"\"2021-11-22T18:21:16.816Z\"\", notes: \"Empty\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MPc6SoJeq-PrYalGBUe%2F-Mp7sMwLVVHpeKg8KG9n?alt=media&token=bcd6b90b-7feb-4efd-a5c3-8eafa576cd49",
+      "instagram": "Copousa",
+      "lat": 40.6313849,
+      "link": "",
+      "lng": -73.9662075,
+      "name": "Halal Community fridge",
+      "neighborhood": "Midwood",
+      "notes": "Halal only\nSaturday to Thursday 24-7",
+      "streetAddress": "1077 Coney Island Ave ",
+      "id": "-MPc6SoJeq-PrYalGBUe"
+    },
+    {
+      "borough": "Brooklyn",
+      "instagram": "Penniespantrybk",
+      "lat": 40.6970551,
+      "lng": -73.9492179,
+      "name": "Pennies pantry",
+      "neighborhood": "Bed Stuy",
+      "notes": "At mlk jr pl  24 hrs",
+      "streetAddress": "535 Marcy Avenue",
+      "id": "-MPcHMF09xj20YUsx64M"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MfWYDu7PUbHCq6s4LjH": "{date: \"\"2021-07-26T06:42:26.965Z\"\"}"
+      },
+      "id": "-MPcJAWYcJz00ApUZdUT",
+      "instagram": "Hastaglunchbagbk and @wyckoffmuseum",
+      "lat": 40.64433,
+      "lng": -73.9207576,
+      "name": "HashtagLunchbag BK @ Wyckoff museum",
+      "neighborhood": "Canarasie ",
+      "notes": "Farmhouse museum and compost available, run by hastaglunchbagbk",
+      "streetAddress": "5816 clarendon rd"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MQ8xPTlVEvfIlLCHy_r": "{date: \"\"2021-01-03T20:34:48.087Z\"\", notes: \"Jan 3r…}",
+        "-MV30JVKlnLIbiEfi3ch": "{date: \"\"2021-03-05T20:12:37.903Z\"\", name: \"Jimmy \"…}"
+      },
+      "id": "-MPhRea5DV-RKON7OldM",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MPhRea5DV-RKON7OldM%2F-MQ8xPTlVEvfIlLCHy_r?alt=media&token=aa5d9386-2319-4739-b163-841cba3b85e7",
+      "instagram": "evergreenfreefridge",
+      "lat": 40.690447,
+      "lng": -73.916209,
+      "name": "Evergreen Pantry Locker",
+      "neighborhood": "Bushwick",
+      "notes": "It’s not there anymore ! ",
+      "streetAddress": "562 Evergreen Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MhjNwNKPAE-IrnOy9w6": "{date: \"\"2021-08-22T19:44:53.934Z\"\"}",
+        "-MhjO3_en4QIey3TiqM5": "{date: \"\"2021-08-22T19:45:27.501Z\"\", notes: \"Can I …}"
+      },
+      "instagram": "2fish5loaves",
+      "lat": 40.7016563,
+      "lng": -73.9444573,
+      "name": "2 fish 5 loaves fridge",
+      "neighborhood": "East Williamsburg/ Bushwick",
+      "notes": "At Bushwick Grind Cafe",
+      "streetAddress": "63 Whipple St",
+      "id": "-MRGYbPV5NIf2rbR5Q-I"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MVmZ7U7Zbn3xbUu5WBe": "{date: \"\"2021-03-14T21:07:15.616Z\"\"}",
+        "-MWWXby9pG3I5HJ0JBbY": "{date: \"\"2021-03-24T00:02:50.248Z\"\"}",
+        "-MqLtUEWrUc2Z2DahJOI": "{date: \"\"2021-12-07T21:56:32.072Z\"\", name: \"Dru\", n…}",
+        "-MtdSgPdHJ2yPviAOyL1": "{date: \"\"2022-01-17T19:14:58.252Z\"\", notes: \"Empty …}",
+        "-Mz6E76mCXvDDkFs_Fia": "{date: \"\"2022-03-26T17:18:25.101Z\"\", notes: \"One ba…}"
+      },
+      "id": "-MRMzPiRjnOuOmGjXKTq",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MRMzPiRjnOuOmGjXKTq%2F-MtdSgPdHJ2yPviAOyL1?alt=media&token=ace4cd17-5923-45e4-8a4c-99108493ed5a",
+      "instagram": "Bkfridges",
+      "lat": 40.6689239,
+      "link": "Brooklynfridges@gmail.com",
+      "lng": -73.9536277,
+      "name": "BK Community Fridges",
+      "neighborhood": "Crown Heights",
+      "notes": "No home cooked meals are accepted, only store bought foods and labeled prepared foods are allowed.\n",
+      "streetAddress": "1148 Union St"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MRpDkpHLtPFpKQVsHHg": "{date: \"\"2021-01-24T16:29:58.252Z\"\"}",
+        "-MoKRr8tp_8AAVZAYV3d": "{date: \"\"2021-11-12T18:40:26.281Z\"\", notes: \"few pa…}",
+        "-MpP0LNq8ltATQNrhiWF": "{date: \"\"2021-11-26T02:14:02.788Z\"\"}",
+        "-N1og58quo4GLI4mG-ij": "{date: \"\"2022-05-11T19:54:59.153Z\"\", notes: \"Almost…}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MRgaatcwUVyA8bjU1_4%2F-N1og58quo4GLI4mG-ij?alt=media&token=549731b2-aa7e-4d0e-b12f-2f2ca52e5b10",
+      "instagram": "@iohnyc @brotherswashndry",
+      "lat": 40.7145215,
+      "link": "Iohnyc",
+      "lng": -73.9116378,
+      "name": "Maspeth fridge / brothers wash and dry",
+      "neighborhood": "Maspeth",
+      "notes": "Burger and 54th pl",
+      "streetAddress": "5420 Nurge Ave",
+      "id": "-MRgaatcwUVyA8bjU1_4"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MhIexH7oZLbGjuXRmTs": "{date: \"\"2021-08-17T10:32:53.258Z\"\"}"
+      },
+      "id": "-MRgbvR5o0PQbdzZn9kC",
+      "instagram": "@kingsjuicebar955 @ridgewoodtenantsunion",
+      "lat": 40.7000509,
+      "lng": -73.9028134,
+      "name": "Ridgewood Tenants Union / Kings Juice Bar",
+      "neighborhood": "Ridgewood",
+      "streetAddress": "955 Seneca Ave"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MSZPtG8mvF-iJSQFu3d": "{date: \"\"2021-02-02T20:25:07.822Z\"\", name: \"CLOSED …}",
+        "-MSZPvLtfv9s8V9bm9ns": "{date: \"\"2021-02-02T20:25:16.376Z\"\", notes: \"CLOSED…}",
+        "-MTwW8H0rHqhrMB94aYR": "{date: \"\"2021-02-19T22:59:00.572Z\"\", notes: \"Filled…}",
+        "-MYkPHoUK4rOm5OgHKEa": "{date: \"\"2021-04-20T17:52:05.689Z\"\"}",
+        "-MetxJQERopOKPgDTN51": "{date: \"\"2021-07-18T14:11:36.056Z\"\", notes: \"Fridge…}",
+        "-MhiVJ-bWnOvDPnHrHDW": "{date: \"\"2021-08-22T15:36:05.970Z\"\", notes: \"Fridge…}",
+        "-Mi2WAMxDwKFEf1BK8eB": "{date: \"\"2021-08-26T17:31:57.763Z\"\", name: \"Joe\", n…}",
+        "-MkTy6W9IIsBJ8_YfHr5": "{date: \"\"2021-09-25T21:59:30.412Z\"\", notes: \"The fr…}"
+      },
+      "id": "-MSGUa0_qqFcUByFNhSc",
+      "instagram": "islafridge",
+      "lat": 40.8213458,
+      "link": "Text (646) 598-3526",
+      "lng": -73.9004564,
+      "name": "Isla Fridge",
+      "neighborhood": "Longwood",
+      "notes": "No Meat No dairy No perishables. Not plugged in.\n\nVolunteers unaffiliated with South Bronx Mutual Aid should text (646) 598-3526 before delivering. \n\nLocated next to entrance of USA Martial Arts Fitness Academy on E 162 street",
+      "streetAddress": "914 Prospect Ave"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-Mt-uFCsM7RE2dCdFZY4": "{date: \"\"2022-01-09T22:15:19.106Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MSZOv49Hf8nnFggNDOY%2F-Mt-uFCsM7RE2dCdFZY4?alt=media&token=c8c62664-7aa8-4b91-889b-f0dd8852d429",
+      "instagram": "The155streetfridge",
+      "lat": 40.8293433,
+      "link": "Tonnoirstephanie@gmail.com",
+      "lng": -73.938375,
+      "name": "The 155 street fridge ",
+      "neighborhood": "Harlem ",
+      "notes": "If anything call me 646 683 1170",
+      "streetAddress": "250 bradhust avenue ",
+      "id": "-MSZOv49Hf8nnFggNDOY"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MY1PQTVB_zfY_Lq5sYi": "{date: \"\"2021-04-11T19:30:11.297Z\"\"}",
+        "-MjFOXrXjlhEYq37UNIh": "{date: \"\"2021-09-10T15:49:21.775Z\"\", notes: \"CHECKE…}",
+        "-MlBgk59hmTLotT-55uJ": "{date: \"\"2021-10-04T19:06:12.580Z\"\", notes: \"Fridge…}"
+      },
+      "confirmed": false,
+      "id": "-MSiYYmtVce6axsetn_0",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MSiYYmtVce6axsetn_0%2F-MY1PQTVB_zfY_Lq5sYi?alt=media&token=514c4454-9ecd-4045-9a10-b84087e5b4d3",
+      "instagram": "lanevera183",
+      "lat": 40.8499265,
+      "link": "LaNevera183@gmail.com",
+      "lng": -73.9314771,
+      "name": "La Nevera 183",
+      "neighborhood": "Washington Heights ",
+      "notes": "We're plugged in! Fridge & Pantry operational & in use. Corner of 183rd at Marte Grocery. Thanks for all the love!",
+      "streetAddress": "New location: Washington Heights CORNER Project at 500 W. 180th St. Currently i doors in their programming space, will move a few months from now (11/4/21)"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MX-N0Exv4jDhY3NLu5R": "{date: \"\"2021-03-29T23:44:42.805Z\"\", name: \"Walter …}",
+        "-MX-NKA8bIf9p1Dj-wkk": "{date: \"\"2021-03-29T23:46:04.665Z\"\", name: \"Walter …}",
+        "-MX3HEod_Xt03JAKaoFu": "{date: \"\"2021-03-30T17:57:59.058Z\"\", notes: \"More f…}",
+        "-M_uYVP9pWuBTUU_nVBW": "{date: \"\"2021-05-17T13:39:58.341Z\"\", notes: \"Apple’…}",
+        "-MbvEjinqGaMt7ZAXn0O": "{date: \"\"2021-06-11T13:24:39.345Z\"\", notes: \"Prepar…}",
+        "-MdPhwCTef7UXbfNr9cK": "{date: \"\"2021-06-30T02:20:29.875Z\"\", notes: \"Lots o…}",
+        "-Meb8LlpHguW_pKlxrFd": "{date: \"\"2021-07-14T22:31:24.916Z\"\", name: \"Joe\", n…}",
+        "-Mh64L2ca1xpWXfNf7TN": "{date: \"\"2021-08-14T23:53:08.068Z\"\", notes: \"8/14/2…}",
+        "-Mhjghc9o8z1SBXB0I1M": "{date: \"\"2021-08-22T21:09:56.954Z\"\", notes: \"Still …}",
+        "-MhjiLzGYBYeA-uT6xa4": "{date: \"\"2021-08-22T21:17:08.502Z\"\"}",
+        "-MjGm6tVX7PVILz4_zMq": "{date: \"\"2021-09-10T22:16:21.868Z\"\", notes: \"Turkey…}",
+        "-MmkH1JhmcaHoVRY9U5J": "{date: \"\"2021-10-24T03:11:30.335Z\"\", notes: \"Friday…}",
+        "-Mp7PjNLpgOCDIwKdcFR": "{date: \"\"2021-11-22T16:11:48.604Z\"\", notes: \"Fridge…}",
+        "-MprmLsOEzyrpc3mXaXt": "{date: \"\"2021-12-01T20:57:09.058Z\"\", notes: \"Meals …}",
+        "-Mrw5DixOB8kEqlDor8X": "{date: \"\"2021-12-27T13:33:51.103Z\"\"}",
+        "-MvJlS49dEDznJRR_r7r": "{date: \"\"2022-02-07T15:20:40.649Z\"\", notes: \"Some b…}",
+        "-MwZwsHMUuafS-81wf2q": "{date: \"\"2022-02-23T05:00:12.869Z\"\", name: \"Joe\", n…}",
+        "-MypxU8wrg_hBByCnn80": "{date: \"\"2022-03-23T08:47:48.401Z\"\"}",
+        "-MzlPNcG05KgcJxJ58Mw": "{date: \"\"2022-04-03T21:51:40.070Z\"\", name: \"Marshal…}",
+        "-N-VELFUsczhzeI4SjTY": "{date: \"\"2022-04-13T00:05:36.096Z\"\", name: \"Marshal…}",
+        "-N2HtzDnX3I-puZNbF_b": "{date: \"\"2022-05-17T16:44:17.777Z\"\", name: \"Ray J\",…}",
+        "-N3zK_x-FCipCysk-rwy": "{date: \"\"2022-06-07T18:03:53.145Z\"\"}",
+        "-N4J71Nfo-8t49JFMLYv": "{date: \"\"2022-06-11T18:56:41.129Z\"\", notes: \"Sorry …}"
+      },
+      "id": "-MSuE6tMjjs0Y1Dte140",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MSuE6tMjjs0Y1Dte140%2F-N4J71Nfo-8t49JFMLYv?alt=media&token=1b239c88-b446-4403-9438-23908467d978",
+      "instagram": "",
+      "lat": 40.6601323,
+      "link": "La mixteca facebook",
+      "lng": -73.99413659999999,
+      "name": "Mixteca",
+      "neighborhood": "Greenwood heights ",
+      "notes": "A huge drop off happened at 6pm on 3/4/22. Bread, eggs, yogurt, butter and more! Mostly organic. ",
+      "streetAddress": "245 23rd St #2, Brooklyn, NY 11215"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MVIxp-MWgFQeGV40fzi": "{date: \"\"2021-03-08T22:31:18.157Z\"\"}",
+        "-M_RxvDnB_tJpSKMkL2z": "{date: \"\"2021-05-11T19:46:47.635Z\"\"}",
+        "-MauaV_yJhkg9Chfm4Am": "{date: \"\"2021-05-30T00:08:44.817Z\"\"}",
+        "-MhBBgDY6orQXNb0oPc5": "{date: \"\"2021-08-15T23:43:18.319Z\"\", notes: \"Donuts…}",
+        "-Mhu5e3ga6ns9mFtNllb": "{date: \"\"2021-08-24T21:39:30.556Z\"\", notes: \"Vegan …}",
+        "-MjSuDpbjhVSvk0KopaQ": "{date: \"\"2021-09-13T06:47:14.438Z\"\", name: \"Catalin…}",
+        "-MteLTrXcF6sNC494z0k": "{date: \"\"2022-01-17T23:23:04.934Z\"\", notes: \"Lots o…}",
+        "-MuNVj9wulctnes7jzuG": "{date: \"\"2022-01-26T22:30:25.214Z\"\"}",
+        "-MySdcolmLxNIX4GYxKH": "{date: \"\"2022-03-18T15:30:12.124Z\"\", name: \"Lor\", n…}",
+        "-N02MHYdS9NBMDGXA4cD": "{date: \"\"2022-04-19T19:47:00.012Z\"\", notes: \"sweet …}",
+        "-N2f53PSf7pl6cpGcPh-": "{date: \"\"2022-05-22T09:27:56.700Z\"\", notes: \"Newbor…}",
+        "-N2sCVCNzRJ8jQvU4L73": "{date: \"\"2022-05-24T22:35:30.356Z\"\", name: \"Matt\"}",
+        "-N30qZhTQ1IBbBA0HHhm": "{date: \"\"2022-05-26T19:31:31.736Z\"\", notes: \"no dry…}",
+        "-N4ya_JPQ-pYXKfVAl8R": "{date: \"\"2022-06-20T00:54:10.555Z\"\", notes: \"Fridge…}"
+      },
+      "id": "-MTi-2caAlLz4pzJWSD2",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MTi-2caAlLz4pzJWSD2%2F-N4ya_JPQ-pYXKfVAl8R?alt=media&token=0736d12a-4fd1-4a5d-a648-b57c27eae376",
+      "instagram": "Classon_Community_Fridge",
+      "lat": 40.6785732,
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSc7ZIQMhc6wV--EMmVRn0vGVMEouMvwgChioqfm1RkTzgIYsA/viewform",
+      "lng": -73.9585067,
+      "name": "Classon Community Fridge",
+      "neighborhood": "Crown Heights",
+      "streetAddress": "641 Classon Avenue"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MXgYWvtI7KlTMoB-Lq7": "{date: \"\"2021-04-07T13:38:18.378Z\"\"}",
+        "-MYMtf_6vANhxGx5iJEC": "{date: \"\"2021-04-15T23:38:45.091Z\"\", name: \"Violet\"…}",
+        "-M_qbu3h7Mb-FLt4r5gA": "{date: \"\"2021-05-16T19:20:43.360Z\"\", notes: \"5/15/2…}",
+        "-M_wx-XyNqBGidfH2T7U": "{date: \"\"2021-05-18T00:50:38.082Z\"\"}",
+        "-MatZ7UN9mjFGbC-qWKF": "{date: \"\"2021-05-29T19:18:47.014Z\"\"}",
+        "-MbKmsVt0Hs8UijVCoYQ": "{date: \"\"2021-06-04T06:52:35.790Z\"\"}",
+        "-MbKmyIqOpilYGf-IqOu": "{date: \"\"2021-06-04T06:52:59.888Z\"\"}",
+        "-MbKnILAJJbLU4BlybSR": "{date: \"\"2021-06-04T06:54:25.738Z\"\"}",
+        "-MbxYBbvkvKKY1Jprqi1": "{date: \"\"2021-06-12T00:08:52.557Z\"\"}",
+        "-Mc2G2H1zhv8u-uBWLL2": "{date: \"\"2021-06-13T02:47:13.854Z\"\"}",
+        "-McB8f-Jmg7UgxJTwfzA": "{date: \"\"2021-06-14T20:11:39.752Z\"\"}",
+        "-Mcac552g2NBB0X2lm6M": "{date: \"\"2021-06-19T23:34:42.480Z\"\"}",
+        "-Md7tMIgZM9KL3C6Bxsy": "{date: \"\"2021-06-26T15:17:14.213Z\"\"}",
+        "-MeuLPDPMBPkyUTUxU5O": "{date: \"\"2021-07-18T16:01:14.227Z\"\"}",
+        "-Mfu3JBZMdPmavh_Ns-H": "{date: \"\"2021-07-31T00:57:52.486Z\"\"}",
+        "-MozRvLLzQG4GKM3I-1u": "{date: \"\"2021-11-20T22:24:47.078Z\"\", notes: \"Plant …}",
+        "-MqkaG5ghhYSk-dB4-30": "{date: \"\"2021-12-12T21:42:40.261Z\"\"}",
+        "-MrNTaA1mYVk3sMFHgTD": "{date: \"\"2021-12-20T15:33:58.203Z\"\", name: \"Kristen…}",
+        "-N30cUXZm0EQqCy9dJ0x": "{date: \"\"2022-05-26T18:30:00.689Z\"\", notes: \"EMPTY\"}"
+      },
+      "id": "-MTvsTP-gkpD5k6aQCCc",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MTvsTP-gkpD5k6aQCCc%2F-Mfu3JBZMdPmavh_Ns-H?alt=media&token=06b7e81b-75d6-4280-ac87-5c0d1ec578af",
+      "instagram": "overthrowcommunityfridge",
+      "lat": 40.7255861,
+      "link": "https://www.instagram.com/p/CN5NqJLDtp2/?utm_source=ig_web_copy_link ",
+      "lng": -73.9928051,
+      "name": "Overthrow Community Fridge",
+      "neighborhood": "East Village",
+      "notes": "Just dropped off some carrots, onions, lemons, tomatoes, celery, ginger, clementines",
+      "streetAddress": "9 Bleeker Street"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MVb8o5uvFn2VU4wxP1_": "{date: \"\"2021-03-12T15:56:24.577Z\"\"}",
+        "-MqLFlT0_L0sd7asiXG8": "{date: \"\"2021-12-07T18:58:39.320Z\"\"}",
+        "-MtdQq-ZP5Ryuo-KXUnC": "{date: \"\"2022-01-17T19:06:53.255Z\"\", notes: \"Unable…}",
+        "-MxUUXO7iBGxHfkQEwMx": "{date: \"\"2022-03-06T13:49:36.784Z\"\"}"
+      },
+      "lat": 40.6979311,
+      "lng": -73.8459918,
+      "neighborhood": "Richmond Hill",
+      "streetAddress": "85-11 102 Street",
+      "id": "-MUaptU9Q_zJpPftDz8B"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MVhzMKF_P4Mj5qjvi37": "{date: \"\"2021-03-13T23:48:07.852Z\"\", notes: \"The fr…}",
+        "-MW1-yV9v7cgqeR49m7u": "{date: \"\"2021-03-17T21:06:08.810Z\"\"}",
+        "-MhjhxDZ71ZTzb5iutQ0": "{date: \"\"2021-08-22T21:15:22.992Z\"\", notes: \"25 san…}",
+        "-Mhji-wp3m6Ebb1S8tVs": "{date: \"\"2021-08-22T21:15:38.267Z\"\"}",
+        "-Mp7hRQR91X3j4Yw_ODE": "{date: \"\"2021-11-22T17:33:31.664Z\"\", notes: \"Cooked…}"
+      },
+      "id": "-MUfOz2KdXgQmu7hErot",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MUfOz2KdXgQmu7hErot%2F-Mp7hRQR91X3j4Yw_ODE?alt=media&token=65cef991-6cec-42c7-8fa0-3314a5ded17a",
+      "instagram": "kwtfridge",
+      "lat": 40.648437,
+      "link": "kwtfridge@gmail.com",
+      "lng": -73.979112,
+      "name": "KWT community fridge ",
+      "neighborhood": "Windsor Terrace ",
+      "notes": "Still going strong in October 2021",
+      "streetAddress": "137 East 2nd street"
+    },
+    {
+      "checks": {
+        "-MW_2aLjUw1pPWK0ALWU": "{date: \"\"2021-03-24T16:25:44.891Z\"\"}"
+      },
+      "instagram": "@fridgesandfamily",
+      "lat": 39.9349391,
+      "link": "communityfridgeorganization@gmail.com",
+      "lng": -75.15856250000002,
+      "name": "Fridges & Family",
+      "neighborhood": "South Philadelphia",
+      "streetAddress": "1149 S 9th St, Philadelphia, PA",
+      "id": "-MUjFW4IQWujduMsz6eO"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MVTamVusZR6JudSe2x3": "{date: \"\"2021-03-11T00:06:26.653Z\"\"}",
+        "-MW-vtjUU1sF3ah6ysnr": "{date: \"\"2021-03-17T16:05:48.985Z\"\", name: \"Traci\",…}",
+        "-MWykyFH4lH_eciUa_Df": "{date: \"\"2021-03-29T16:14:30.213Z\"\", notes: \"Low on…}",
+        "-MWzrJFDGuej6suKYzSg": "{date: \"\"2021-03-29T21:21:50.160Z\"\", name: \"Caleb V…}",
+        "-MX2HtoPiL_6wV3yV5xH": "{date: \"\"2021-03-30T13:21:14.087Z\"\", notes: \"Lots o…}",
+        "-MX2T1fYlJIRtJsbweJ6": "{date: \"\"2021-03-30T14:09:53.023Z\"\"}",
+        "-MX2f16kQK51y8DAs7Cg": "{date: \"\"2021-03-30T15:06:39.198Z\"\", notes: \"Fridge…}",
+        "-MX3CZ7WPnITNigfeVyI": "{date: \"\"2021-03-30T17:37:31.510Z\"\", name: \"\", note…}",
+        "-MX7cwGgwSLvETMjZ6Tc": "{date: \"\"2021-03-31T14:15:37.065Z\"\", notes: \"Lots o…}",
+        "-MX80lNEMKAVzhKsjMnO": "{date: \"\"2021-03-31T16:04:06.124Z\"\", notes: \"Lots o…}",
+        "-MX8ujWHmm0y3EFm9cHt": "{date: \"\"2021-03-31T20:12:59.841Z\"\", name: \"Kaitlin…}",
+        "-MXD8NmUdre58VigmYHe": "{date: \"\"2021-04-01T15:55:28.657Z\"\", notes: \"Low on…}",
+        "-MXDykTVJ3ejyDkgn9qX": "{date: \"\"2021-04-01T19:48:39.164Z\"\", name: \"Caleb V…}",
+        "-MXIhvUEZb7GPfMtUSAh": "{date: \"\"2021-04-02T17:53:13.912Z\"\", name: \"Caleb v…}",
+        "-MXJSjH7P6h1xvndwNay": "{date: \"\"2021-04-02T21:22:06.921Z\"\", notes: \"Lots o…}",
+        "-MXOV-icl45fiFn4yXMu": "{date: \"\"2021-04-03T20:50:08.573Z\"\", name: \"Caleb v…}",
+        "-MXT968LuTVrvZZgWNeX": "{date: \"\"2021-04-04T18:32:33.988Z\"\", notes: \"Some d…}",
+        "-MXXp0ecMnec-BDvPJb5": "{date: \"\"2021-04-05T16:18:32.284Z\"\", name: \"Mary\", …}",
+        "-MXYC3ZWr6C3Z9yMAp7U": "{date: \"\"2021-04-05T18:03:35.030Z\"\", name: \"Kaitlin…}",
+        "-MXcP9I3SAjKl-ibkIrn": "{date: \"\"2021-04-06T18:18:53.279Z\"\", notes: \"Delive…}",
+        "-MXrpftiIGz6fmI9a7rO": "{date: \"\"2021-04-09T18:13:27.187Z\"\", notes: \"Great …}",
+        "-MXsUlisgqzHml5Hk3gW": "{date: \"\"2021-04-09T21:17:14.609Z\"\", notes: \"Lots o…}",
+        "-MXwom0KxT0b1P4sXoNP": "{date: \"\"2021-04-10T17:27:36.210Z\"\", notes: \"We rec…}",
+        "-MXxPjXwjQnmYQf_Bb1C": "{date: \"\"2021-04-10T20:13:27.171Z\"\", name: \"Caleb v…}",
+        "-MY1BexiYX12ZRdBhnf4": "{date: \"\"2021-04-11T18:30:04.500Z\"\", name: \"Caleb v…}",
+        "-MY1POLOiQwfZ3fmO7Yq": "{date: \"\"2021-04-11T19:30:02.456Z\"\", notes: \"some b…}",
+        "-MYGx7FjWiwYwI3Mur_2": "{date: \"\"2021-04-14T19:56:05.407Z\"\", name: \"Kaitlin…}",
+        "-MYRTWuooX5v7G3LuOLW": "{date: \"\"2021-04-16T20:58:13.343Z\"\", name: \"Kaitlin…}",
+        "-MY_KPZ38n3Bu8K4GLqU": "{date: \"\"2021-04-18T14:14:59.210Z\"\", notes: \"Fridge…}",
+        "-MYf5eRK_U-Y9ATGg937": "{date: \"\"2021-04-19T17:08:14.658Z\"\", name: \"Ian\", n…}",
+        "-MYzKlG7LtsT5w9h9cc_": "{date: \"\"2021-04-23T15:26:38.806Z\"\", name: \"Ian\", n…}",
+        "-M_77RMQ2sYYjU2pz8tp": "{date: \"\"2021-05-07T18:40:42.164Z\"\", name: \"Ian\", n…}",
+        "-M_CO1QOo0a9NKM87N3w": "{date: \"\"2021-05-08T19:11:19.373Z\"\", name: \"C vaugh…}",
+        "-M_g73RA9XnkhXF7C_so": "{date: \"\"2021-05-14T18:25:23.336Z\"\", name: \"Ian\", n…}"
+      },
+      "id": "-MVTZf9edaVqvO-FJVUa",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MVTZf9edaVqvO-FJVUa%2F-M_g73RA9XnkhXF7C_so?alt=media&token=bdacd4b2-f683-4ddc-b7d1-c8c219457453",
+      "instagram": "fortfridge",
+      "lat": 40.8509998,
+      "link": "fortfridge@gmail.com",
+      "lng": -73.9374976,
+      "name": "The Fridge at The Fort",
+      "neighborhood": "Washington Heights",
+      "notes": "12/22: Dropped off a few things that didn't make it in the shelves. Pretty empty today. ",
+      "streetAddress": "729 W. 181st St"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-Mp7qBbiU0uNtc-vbq1F": "{date: \"\"2021-11-22T18:11:46.422Z\"\", notes: \"Lots o…}",
+        "-MyssMYx3_6gKMPFGe6I": "{date: \"\"2022-03-23T22:24:18.334Z\"\", notes: \"Steak …}",
+        "-MztVhPKcJc9aY-XyDd1": "{date: \"\"2022-04-05T11:36:16.345Z\"\", notes: \"Fresh …}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MWUtv6eR0Dc7LFxyD8e%2F-MztVhPKcJc9aY-XyDd1?alt=media&token=67a07669-07ff-4801-bcb5-9353591c741c",
+      "lat": 40.6334805,
+      "lng": -73.9675714,
+      "name": "PIN Community Fridge ",
+      "neighborhood": "Midwood/Flatbush",
+      "notes": "Top shelf is for Halal Items",
+      "streetAddress": "944 Newkirk Avenue ",
+      "id": "-MWUtv6eR0Dc7LFxyD8e"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MdOujH-kc02oOo7mLmJ": "{date: \"\"2021-06-29T22:36:47.887Z\"\"}",
+        "-MoaxOSc_VJKrpYwZSlT": "{date: \"\"2021-11-16T04:16:08.894Z\"\", name: \"Rosin \"}",
+        "-MoaxPczHQsIVd-cDwqm": "{date: \"\"2021-11-16T04:16:13.848Z\"\"}",
+        "-MudBbLAm786iSvdolSq": "{date: \"\"2022-01-30T04:16:03.319Z\"\", name: \"Nadine\"…}",
+        "-MudDkcuMA7a4pSII_vD": "{date: \"\"2022-01-30T04:25:24.702Z\"\", notes: \"We hav…}"
+      },
+      "lat": 40.8629676,
+      "link": "",
+      "lng": -73.91978499999999,
+      "name": "Saint Jude Church",
+      "neighborhood": "Inwood/upper manhattan",
+      "streetAddress": "205th and 10th Avenue at Saint Jude Church ",
+      "id": "-MXOFGCZUSA9C-ociDxC"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MphdE0tLOatgcxQwQ_A": "{date: \"\"2021-11-29T21:41:03.845Z\"\", notes: \"Needs …}",
+        "-MqLnkjHW3ckBC2Gr09S": "{date: \"\"2021-12-07T21:31:30.865Z\"\", name: \"Avery N…}",
+        "-N30_mTD9mLD5miwhbyG": "{date: \"\"2022-05-26T18:18:11.777Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MXcbDPhzpWNLs5OJlhv%2F-N30_mTD9mLD5miwhbyG?alt=media&token=b34e836b-d112-4c61-8a22-36d067afa920",
+      "instagram": "Onelovecommunityfridge ",
+      "lat": 40.6929942,
+      "link": "Onelovecommunityfridge@gmail.com",
+      "lng": -73.9682645,
+      "name": "One Love Community Fridge ",
+      "neighborhood": "Clinton Hill ",
+      "notes": "Fresh Produce only for this baby fridge 💚 Thank you! xx",
+      "streetAddress": "432 Myrtle Ave ",
+      "id": "-MXcbDPhzpWNLs5OJlhv"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MtyRArSAdbsbO_Eyhga": "{date: \"\"2022-01-21T21:00:24.662Z\"\", notes: \"Locked…}",
+        "-Mv6MKCuuyUjfHrsvnxM": "{date: \"\"2022-02-05T00:51:29.044Z\"\", notes: \"I went…}",
+        "-Mw3k14wEEKT8TaTTT-L": "{date: \"\"2022-02-16T22:56:14.685Z\"\", name: \"RMG\", n…}",
+        "-MzeTfIPAvzqFyROEspO": "{date: \"\"2022-04-02T13:33:04.171Z\"\", notes: \"25 mea…}",
+        "-N02KFAHU7W4BKzXF5ol": "{date: \"\"2022-04-19T19:38:06.077Z\"\", notes: \"carrot…}",
+        "-N2fgxFfpRylJ2Wz-s4k": "{date: \"\"2022-05-22T12:17:52.073Z\"\", notes: \"8:17 a…}",
+        "-N30p3OycFUu7G4B-8O0": "{date: \"\"2022-05-26T19:24:57.307Z\"\", notes: \"closed…}"
+      },
+      "id": "-MXhLDQSshA03NMal0qt",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MXhLDQSshA03NMal0qt%2F-N30p3OycFUu7G4B-8O0?alt=media&token=a2e37851-68bb-4726-bd2a-7650f2d2b292",
+      "instagram": "fultonstfridge",
+      "lat": 40.6828775,
+      "link": "fultonstfridge@gmail.com",
+      "lng": -73.96323629999999,
+      "name": "Fulton Street Community Fridge",
+      "neighborhood": "Clinton Hill",
+      "notes": "Locked up and closed at night!",
+      "streetAddress": "991 Fulton Street"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MdcYJbdC_OZBd4K8OrU": "{date: \"\"2021-07-02T18:48:47.428Z\"\", notes: \"Just d…}"
+      },
+      "id": "-MY5ZipUOdIunoSUxlvT",
+      "instagram": "paperboy.lovegallery",
+      "lat": 40.6977202,
+      "link": "PaperboyPrince.com ",
+      "lng": -73.9272448,
+      "name": "Paperboy Love Gallery",
+      "notes": "This fridge is hosted by Paperboy Love Prince at their vintage store called Love Gallery. This fridge hosts weekly pantry food distributions on Wednesday mornings. This fridge is also supported and maintained by OurFood.NYC",
+      "streetAddress": "1254 Myrtle Ave"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MiMdtFExbxPwP2Wnwfl": "{date: \"\"2021-08-30T15:22:26.989Z\"\", notes: \"Left s…}",
+        "-MnYaP9OPJvNPiCVWA7Q": "{date: \"\"2021-11-03T02:21:08.790Z\"\", notes: \"Just a…}",
+        "-Moftoy1KJstZVPTQdPA": "{date: \"\"2021-11-17T03:18:38.786Z\"\", notes: \"Just d…}",
+        "-MofuE47qZdTpllDeAzY": "{date: \"\"2021-11-17T03:20:25.880Z\"\", notes: \"Boxes …}",
+        "-MrxnSqUPer6Z1zC-yJZ": "{date: \"\"2021-12-27T21:31:06.744Z\"\", notes: \"Slices…}",
+        "-MvGibDcBdy7wtOJJGlT": "{date: \"\"2022-02-07T01:09:24.169Z\"\", notes: \"all bu…}"
+      },
+      "id": "-MYGO0lyTAGi9G6Z8wW7",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MYGO0lyTAGi9G6Z8wW7%2F-MrxnSqUPer6Z1zC-yJZ?alt=media&token=976baac0-464b-4e21-b622-961139e3e99d",
+      "instagram": "woodsidefridge",
+      "lat": 40.7572207,
+      "link": "https://swma.nyc/wcf",
+      "lng": -73.9080343,
+      "name": "Woodside Community Fridge",
+      "neighborhood": "Woodside",
+      "notes": "",
+      "streetAddress": "50-27 31st Ave, Woodside, NY 11377"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-Md9JzPd51sJAhuWf7ex": "{date: \"\"2021-06-26T21:57:34.048Z\"\"}",
+        "-Mg7NUnYEFbmLfKlAFes": "{date: \"\"2021-08-02T19:40:44.222Z\"\", notes: \"Added …}",
+        "-MiY0Q8B5QV20GncN-Vi": "{date: \"\"2021-09-01T20:21:02.956Z\"\", notes: \"Fridge…}",
+        "-MpJvPFy6qsr-CN5esau": "{date: \"\"2021-11-25T02:29:59.664Z\"\", notes: \"Fridge…}"
+      },
+      "id": "-MYek7d6btgsmQaGHJR_",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MYek7d6btgsmQaGHJR_%2F-MiY0Q8B5QV20GncN-Vi?alt=media&token=f0eaf9f1-ffb0-4841-956e-7d76a268c134",
+      "instagram": "flushingcommunityfridge",
+      "lat": 40.7570377,
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSeA3Sf8kKgmgFQWZlSxoaJZUvkJGt_BFCjKyWc5hlJuu3OAWQ/viewform     youth@minkwon.org",
+      "lng": -73.8281398,
+      "name": "Flushing Community Fridge",
+      "neighborhood": "Flushing",
+      "notes": "This fridge which was outside the Flushing Synagogue is definitely gone. It was  removed several weeks ago. ",
+      "streetAddress": "136-23 Sanford Ave Flushing, NY  11355 United States"
+    },
+    {
+      "instagram": "@fridgeport",
+      "lat": 41.1821597,
+      "lng": -73.19873129999999,
+      "name": "Fridgeport James St location",
+      "notes": "",
+      "streetAddress": "219 James St, Bridgeport, CT 06606",
+      "id": "-MZCzrPxms32IbauYXpZ"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MghIzhbx0sbABAHEkIS": "{date: \"\"2021-08-09T23:47:01.071Z\"\", notes: \"Droppe…}"
+      },
+      "id": "-MZJsW4_pqUSpq-dMjN_",
+      "lat": 40.7164848,
+      "lng": -73.9572669,
+      "name": "Hair Metal",
+      "neighborhood": "Williamsburg ",
+      "notes": "I don't think this is here anymore",
+      "streetAddress": "[CLOSED] formerly 578 Driggs Ave "
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-MuT6H_FQBnStH6W0EL6": "{date: \"\"2022-01-28T00:36:46.325Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MZdlGBABM27dLaVmr9g%2F-MuT6H_FQBnStH6W0EL6?alt=media&token=df104319-1bc6-46df-8354-eb06bf36c3d1",
+      "lat": 40.7057373,
+      "lng": -73.90750469999999,
+      "neighborhood": "Ridgewood",
+      "streetAddress": "612 Woodward Avenue",
+      "id": "-MZdlGBABM27dLaVmr9g"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-McRrPsG9N5b33jb5-03": "{date: \"\"2021-06-18T02:05:27.320Z\"\"}",
+        "-McS7sjVf0xHucn7KEfu": "{date: \"\"2021-06-18T03:21:46.215Z\"\"}",
+        "-McS83BsaOZmRtt6NlgY": "{date: \"\"2021-06-18T03:22:33.084Z\"\", name: \"Shaha \"}",
+        "-MgcfMfy8mNgimcKmMvj": "{date: \"\"2021-08-09T02:11:01.973Z\"\"}",
+        "-MhBMiPtarGdfRNkkl6Y": "{date: \"\"2021-08-16T00:31:30.573Z\"\"}",
+        "-Mp7rjaijiQMimkzTaNX": "{date: \"\"2021-11-22T18:18:31.108Z\"\", notes: \"Empty\"}",
+        "-MuFkCuqQ772aO-LrIy5": "{date: \"\"2022-01-25T10:21:05.858Z\"\", name: \"Waqil a…}",
+        "-N0L_Evyg3wiZVqq-6vU": "{date: \"\"2022-04-23T13:20:46.622Z\"\", notes: \"Fridge…}"
+      },
+      "id": "-MZiSzbMP1TT332sEb7C",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MZiSzbMP1TT332sEb7C%2F-MuFkCuqQ772aO-LrIy5?alt=media&token=70d3423e-f7f7-40fb-a9a7-67bca620b1fc",
+      "instagram": "Payousa1",
+      "lat": 40.6323234,
+      "link": "Info@payousa.org",
+      "lng": -73.9667324,
+      "name": "PAYO community fridge",
+      "neighborhood": "Flatbush",
+      "notes": "Fridge doesn’t work",
+      "streetAddress": "1045 coney island ave coner of Foster ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-McS7Tn-u591VCRJd5oV": "{date: \"\"2021-06-18T03:20:00.084Z\"\"}",
+        "-N30eEF8zH9fz0GwPl8E": "{date: \"\"2022-05-26T18:37:38.122Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MZv4ytC2qdLZV0y4hri%2F-N30eEF8zH9fz0GwPl8E?alt=media&token=9f925bae-30e0-476e-873c-2e0423d23679",
+      "lat": 40.6965212,
+      "link": "https://www.beautystrike.us/products/donatetobeautystrike?variant=35011183247525",
+      "lng": -73.9672396,
+      "name": "Beauty Strike Fridge",
+      "neighborhood": "Navy Yard",
+      "streetAddress": "73 Washington Ave, Brooklyn, NY 11205",
+      "id": "-MZv4ytC2qdLZV0y4hri"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-M_3BFcJyjhmwtHBFfpf": "{date: \"\"2021-05-07T00:18:58.349Z\"\"}",
+        "-MtFYRE3P-BNgiYQiq6d": "{date: \"\"2022-01-12T23:09:33.876Z\"\"}"
+      },
+      "instagram": "@theneighborhoodfridge",
+      "lat": 40.9038811,
+      "link": "theneighborhoodfridge@gmail.com https://docs.google.com/forms/d/e/1FAIpQLSdKNGXwIGGdytj5cCT-nFjIR2DYC2Q2N3dquG8LeMMjj834aA/viewform?usp=sf_link",
+      "lng": -73.9031286,
+      "name": "The Neighborhood Fridge",
+      "neighborhood": "Riverdale",
+      "streetAddress": "W 256th & Mosholu Avenue",
+      "id": "-MZxalDouoytm1idtv-3"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-Ma3GHnYAp3HWnYSW-0r": "{date: \"\"2021-05-19T10:56:35.781Z\"\", name: \"Sparkle…}",
+        "-MaD_kUVSrqNQqT5xImz": "{date: \"\"2021-05-21T11:02:12.098Z\"\"}",
+        "-MaGUFSXHeZ0XSBtjfvK": "{date: \"\"2021-05-22T00:32:39.667Z\"\"}",
+        "-MaJmXF8rLZUfVRqcvjQ": "{date: \"\"2021-05-22T15:55:44.822Z\"\"}",
+        "-MaJmhCvz7oSvHREbZkd": "{date: \"\"2021-05-22T15:56:29.650Z\"\"}",
+        "-MaNxbxHWRLQibalOpwu": "{date: \"\"2021-05-23T11:22:40.289Z\"\"}",
+        "-MasfPdrRPLzumrHglRB": "{date: \"\"2021-05-29T15:10:57.201Z\"\"}",
+        "-MbM9Lb9LQJUvRk-8-RZ": "{date: \"\"2021-06-04T13:14:44.705Z\"\", name: \"Sparkle…}",
+        "-MbM9f4G4rjqOsvh31iS": "{date: \"\"2021-06-04T13:16:08.465Z\"\", name: \"Sparkle…}",
+        "-MbN3TjEy0mGXBIXeug2": "{date: \"\"2021-06-04T17:28:42.253Z\"\"}",
+        "-MbN3jcG84gFTKVXt4IF": "{date: \"\"2021-06-04T17:29:51.360Z\"\"}",
+        "-MbRppJV5FrEqV0WL2Q7": "{date: \"\"2021-06-05T15:42:48.476Z\"\", name: \"Sparkle…}",
+        "-Mc19IqsWmcSqMP_gePF": "{date: \"\"2021-06-12T21:38:14.490Z\"\"}",
+        "-Mc4MXKXpO_a_WD__qpw": "{date: \"\"2021-06-13T12:34:53.310Z\"\"}",
+        "-Mc4UJnOD577eqw5AYx2": "{date: \"\"2021-06-13T13:08:54.580Z\"\"}",
+        "-McEL-l5w7aJP6I8bV8Y": "{date: \"\"2021-06-15T11:04:25.520Z\"\"}",
+        "-McZivDptk7ke2VwAcNe": "{date: \"\"2021-06-19T14:45:18.041Z\"\"}",
+        "-McaDqXGKcDfNn15DTVk": "{date: \"\"2021-06-19T21:44:24.895Z\"\", name: \"Sparkle…}",
+        "-McdotEIvlOK3QL0yeLO": "{date: \"\"2021-06-20T14:29:28.274Z\"\"}",
+        "-MciF9Q1VVQumiArtEwO": "{date: \"\"2021-06-21T11:07:06.460Z\"\", name: \"DjSpark…}",
+        "-McyVF5lKxxLbj06O5-I": "{date: \"\"2021-06-24T14:51:18.622Z\"\", name: \"DjSpark…}",
+        "-MdCzTSpAgN0W2sXHsXq": "{date: \"\"2021-06-27T15:02:02.269Z\"\"}",
+        "-MdHCNMsow2hW9fpptu2": "{date: \"\"2021-06-28T10:41:15.213Z\"\", name: \"DjSpark…}",
+        "-MdiZ9rnN_iFMwne1J9W": "{date: \"\"2021-07-03T22:50:12.286Z\"\", name: \"DjSpark…}",
+        "-MdlHrLAI9QQgIBpmVt2": "{date: \"\"2021-07-04T11:33:27.541Z\"\", name: \"Djspark…}",
+        "-MdqLv4ZBEeM5ji1MZT7": "{date: \"\"2021-07-05T11:09:17.332Z\"\", name: \"Djspark…}",
+        "-Me2QiqRrzvuvHjGN1xu": "{date: \"\"2021-07-08T00:05:22.095Z\"\", name: \"DjSpark…}",
+        "-MeLhxj6idy_hOzAhlBN": "{date: \"\"2021-07-11T17:57:48.154Z\"\", name: \"Djspark…}",
+        "-MeUackxrcw7HxHWoej9": "{date: \"\"2021-07-13T11:22:21.832Z\"\", name: \"DjSpark…}",
+        "-MedpQk3uiSzuvb7xSI9": "{date: \"\"2021-07-15T11:03:12.351Z\"\", name: \"Djspark…}",
+        "-Meq84B2RK-7oCxYmKai": "{date: \"\"2021-07-17T20:24:30.632Z\"\", name: \"DjSpark…}",
+        "-Meu61WV2-ZPRXKDmmmw": "{date: \"\"2021-07-18T14:54:04.154Z\"\"}",
+        "-MeyScLCM4X_S05FPTXC": "{date: \"\"2021-07-19T11:11:14.929Z\"\", name: \"Djspark…}",
+        "-Mf-T8Wh3u8z7Je7C2U1": "{date: \"\"2021-07-19T20:32:47.657Z\"\", name: \"stan\", …}",
+        "-MfCwMRuYuyg09fEKJFm": "{date: \"\"2021-07-22T11:19:51.555Z\"\", name: \"Djspark…}",
+        "-MfOJ36YzkgnYuB1W3HM": "{date: \"\"2021-07-24T16:19:12.455Z\"\", name: \"DjSpark…}",
+        "-MfeHfs4nnJzHjjmKGVL": "{date: \"\"2021-07-27T23:26:46.771Z\"\", notes: \"258pm …}",
+        "-Mg5r1JDXqhbZ2eH6ZEY": "{date: \"\"2021-08-02T12:34:55.640Z\"\", name: \"Djspark…}",
+        "-Mg7eNcF_4PdxE-j3Sz_": "{date: \"\"2021-08-02T20:59:00.711Z\"\", notes: \"417pm …}",
+        "-MjYws6sYb0nJNQ8oteR": "{date: \"\"2021-09-14T10:56:31.570Z\"\", name: \"Djspark…}",
+        "-MjdVBjU1tleL2Yr1oDE": "{date: \"\"2021-09-15T12:48:57.049Z\"\", name: \"Djspark…}",
+        "-MjiFpcy6hiO-BYY6pHN": "{date: \"\"2021-09-16T10:59:56.126Z\"\", name: \"Djspark…}",
+        "-Mjt_Fc7iERG2ev8Ckn_": "{date: \"\"2021-09-18T15:45:00.038Z\"\", name: \"djspark…}",
+        "-Mk1pQM4a98UIbWh44xY": "{date: \"\"2021-09-20T10:52:12.940Z\"\", name: \"Djspark…}",
+        "-Mn5Wnfhc65hold9WXkF": "{date: \"\"2021-10-28T10:52:03.767Z\"\", name: \"djspark…}",
+        "-Mn_Lbv4vvV_kBXxwmzc": "{date: \"\"2021-11-03T10:31:25.419Z\"\"}",
+        "-MnjhKq8CJPh-GJ8gex0": "{date: \"\"2021-11-05T10:46:52.346Z\"\", name: \"Djspark…}",
+        "-MnzJz82zECnmoQJILAa": "{date: \"\"2021-11-08T11:34:22.931Z\"\", name: \"djspark…}",
+        "-Mq6HJHJ1eVARKOBW5rd": "{date: \"\"2021-12-04T21:10:57.259Z\"\"}",
+        "-MytNiiI8Ooe7VRWLrmj": "{date: \"\"2022-03-24T00:45:30.399Z\"\"}"
+      },
+      "id": "-M_c8R2v9O2TEG_zpyac",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-M_c8R2v9O2TEG_zpyac%2F-MytNiiI8Ooe7VRWLrmj?alt=media&token=a581a961-37c0-4ca3-a894-7baba69960de",
+      "instagram": "stalbanscommunityfridge",
+      "lat": 40.6923379,
+      "link": "allthingsworkinc@gmail.com",
+      "lng": -73.7775784,
+      "name": "St. Albans Community Fridge",
+      "neighborhood": "St. Albans",
+      "notes": "Open 24/7 ",
+      "streetAddress": "172-17 Linden Blvd. St. Albans, Queens 11432 (in front of the Robert Ross Johnson Family Life Center)"
+    },
+    {
+      "borough": "Manhattan",
+      "lat": 40.8610497,
+      "lng": -73.9220665,
+      "name": "NYCHA Dyckman Houses",
+      "streetAddress": "3758 10th Avenue ",
+      "id": "-M_rJIyHTmWElHqMJXty"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-McZW4hxqkUzTk3vvIxf": "{date: \"\"2021-06-19T13:44:51.208Z\"\", name: \"Svetlan…}",
+        "-Mm_0REsnbWZMzRLlorY": "{date: \"\"2021-10-21T22:43:10.403Z\"\", name: \"L\", not…}",
+        "-MvFVRGh-Lyphu5Xf0_y": "{date: \"\"2022-02-06T19:27:51.855Z\"\", name: \"Cal\", n…}",
+        "-N2sJRQWm7XtfYxtHpGH": "{date: \"\"2022-05-24T23:05:49.959Z\"\", name: \"Erin\", …}",
+        "-N4IldmSlLOtqjmGKZzE": "{date: \"\"2022-06-11T17:18:52.816Z\"\"}",
+        "-N4OH89wKcvjVJWxn48S": "{date: \"\"2022-06-12T18:58:56.704Z\"\"}",
+        "-N4OHHX0ongIBR3B6y_k": "{date: \"\"2022-06-12T18:59:35.218Z\"\"}",
+        "-N4OHQCFgthclK_jCkyF": "{date: \"\"2022-06-12T19:00:10.748Z\"\"}",
+        "-N4mlj8LxViilO20uTHR": "{date: \"\"2022-06-17T17:47:32.303Z\"\"}"
+      },
+      "confirmed": false,
+      "id": "-Ma95YZESdVE-2bUEgjR",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-Ma95YZESdVE-2bUEgjR%2F-N2sJRQWm7XtfYxtHpGH?alt=media&token=2e2316c1-f459-4040-a4a9-6b79b9ee44bc",
+      "lat": 40.6429181,
+      "lng": -73.9635579,
+      "name": "Solidarity Fridge",
+      "neighborhood": "Flatbush",
+      "streetAddress": "315 E 16th St, 11226"
+    },
+    {
+      "borough": "Brooklyn",
+      "id": "-Ma9sGR4x80INidGbsbU",
+      "instagram": "collectivefocushub",
+      "lat": 40.6951911,
+      "link": "info@collectivefocus.site",
+      "lng": -73.9323711,
+      "name": "Collective Focus Resource Hub",
+      "neighborhood": "Bed-Stuy",
+      "notes": "Fridge is on Hart St. side of the building. There are 4 fridges at this location.",
+      "streetAddress": "1046 Broadway"
+    },
+    {
+      "borough": "Brooklyn",
+      "lat": 40.7191529,
+      "lng": -73.96174719999999,
+      "name": "Music Hall of Williamsburg",
+      "neighborhood": "Williamsburg",
+      "streetAddress": "66 N. 6th St",
+      "id": "-MbSXv-9sygO6__0-2dO"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MmVFWNHBwEEQu5f4wD5": "{date: \"\"2021-10-21T00:30:56.472Z\"\"}",
+        "-MmVF_o0nIa4dytU_Z32": "{date: \"\"2021-10-21T00:31:14.670Z\"\", name: \"Rt\"}"
+      },
+      "confirmed": false,
+      "id": "-Mbfa6ixbxY8zYog6xLL",
+      "instagram": "hullstreetblockassociation",
+      "lat": 40.6794444,
+      "lng": -73.9100962,
+      "name": "Leon Wright Little Free Pantry",
+      "neighborhood": "Ocean Hill",
+      "notes": "Non perishable food items stored in a repurposed newspaper box. We also have a Little Free Library next to it with free books",
+      "streetAddress": "144 Hull Street "
+    },
+    {
+      "id": "-Mbkt1e4kT0HmmG6xW03",
+      "instagram": "foodforusnj",
+      "lat": 40.7903711,
+      "link": "foodforusnj@gmail.com",
+      "lng": -74.0122332,
+      "name": "Food For Us ",
+      "streetAddress": "6510 Palisade Ave West New York, NJ"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MqLsbhMvJ-nd-myiv7t": "{date: \"\"2021-12-07T21:52:44.239Z\"\", name: \"Dru\", n…}",
+        "-MvkUPPX08N3sm7g02Ux": "{date: \"\"2022-02-13T00:31:13.856Z\"\"}",
+        "-Mz69uAp_km8txJEHl9A": "{date: \"\"2022-03-26T16:59:59.497Z\"\", notes: \"One lo…}"
+      },
+      "id": "-MblDYlSniaEIEiUCFUK",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MblDYlSniaEIEiUCFUK%2F-MvkUPPX08N3sm7g02Ux?alt=media&token=44a8af51-bb6e-46a1-9c82-b3a27d91591c",
+      "instagram": "bkfridges",
+      "lat": 40.6559968,
+      "link": "brooklynfridges@gmail.com",
+      "lng": -73.95282399999999,
+      "name": "BK Community Fridges",
+      "neighborhood": "Flatbush",
+      "notes": "No home cooked meals are accepted, only store bought foods and labeled prepared foods are allowed.",
+      "streetAddress": "635 Rogers Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MprCVqLHGwZ_Ria3gKv": "{date: \"\"2021-12-01T18:16:10.782Z\"\"}"
+      },
+      "id": "-MbmQvBFWc2moEUOD-7n",
+      "instagram": "nbkfridges",
+      "lat": 40.7191634,
+      "link": "greenpointfridge@gmail.com",
+      "lng": -73.96178739999999,
+      "name": "Music Hall Fridge",
+      "neighborhood": "Williamsburg",
+      "notes": "No raw meat, raw seafood, pet food, opened/half-eaten prepackaged meals, or frozen food!",
+      "streetAddress": "66 N 6th at the Music Hall Williamsburg"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-N2wcO9inAMcixYyou3Z": "{date: \"\"2022-05-25T19:11:28.616Z\"\", name: \"michell…}",
+        "-N2wdVh94OPLQ4zqz_gl": "{date: \"\"2022-05-25T19:16:21.604Z\"\", name: \"michell…}",
+        "-N30cOUd3s4-5V-Esvwc": "{date: \"\"2022-05-26T18:29:35.966Z\"\", notes: \"only a…}",
+        "-N31tRW_y5QrqwIB6qvE": "{date: \"\"2022-05-27T00:23:41.998Z\"\", name: \"michell…}"
+      },
+      "id": "-McPXv7XdRqy-Ra9zjZH",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-McPXv7XdRqy-Ra9zjZH%2F-N31tRW_y5QrqwIB6qvE?alt=media&token=7f4b937b-8fe4-4101-bc97-a9544083405f",
+      "instagram": "loisaidafridge",
+      "lat": 40.7260344,
+      "link": "loisaidacommunityfridge@gmail.com",
+      "lng": -73.980189,
+      "name": "Loisaida CommUnity Fridge",
+      "neighborhood": "Lower East Side",
+      "notes": "Open 24/7\n\nAccepts: cooked food (labeled and dated), raw/fresh foods (fruits, vegetables, dairy, meat), non-perishables (jarred or canned foods, rice, beans, pasta, cereal), non-food items (toothpaste, soap, other personal care items, we cannot accept clothing), pet food (wet and dry, please label). \n\nRequirements: Unopened, fresh, ideally healthy food; cooked food must be labeled with ingredients. ",
+      "streetAddress": "602 E 9th St."
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-McW2jn7oazPu1yQSqEB": "{date: \"\"2021-06-18T21:37:46.448Z\"\", name: \"Aliakse…}",
+        "-Mcp1ak6nVb12Q38TGLp": "{date: \"\"2021-06-22T18:45:12.523Z\"\"}"
+      },
+      "id": "-McUhk7NbTYa3Ez2MQOx",
+      "lastCheck": "-McW2jn7oazPu1yQSqEB",
+      "lat": 40.6009233,
+      "lng": -73.977126,
+      "streetAddress": "11223"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-Mca-DT9vYWUEm60LxPt": "{date: \"\"2021-06-19T20:40:30.725Z\"\"}",
+        "-MhBMpc5WqcZR2chCvwO": "{date: \"\"2021-08-16T00:32:02.492Z\"\"}"
+      },
+      "lat": 40.6131457,
+      "lng": -73.9544887,
+      "name": "Nazira Sayfullaeva",
+      "notes": "5 peopl",
+      "streetAddress": "1996 ocean Ave Apt 6f",
+      "id": "-McUoG37Lq2_9Q-2XbPv"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-McYFn-pKYX087jUTs0j": "{date: \"\"2021-06-19T07:54:03.457Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-McYFarMGD7ZBwa1XzZr%2F-McYFn-pKYX087jUTs0j?alt=media&token=03e1406c-7e7f-4dde-bcac-2c94da5b7172",
+      "instagram": "@hashtaglunchbagbk",
+      "lat": 40.6771298,
+      "link": "anaikardh@gmail.com",
+      "lng": -74.0128546,
+      "name": "HashtagLunchbag BK x Fort Defiance",
+      "neighborhood": "Red Hook",
+      "streetAddress": "347 Van Brunt St. ",
+      "id": "-McYFarMGD7ZBwa1XzZr"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-Mda_6weWj5GQOrtHzxP": "{date: \"\"2021-07-02T09:37:29.944Z\"\"}",
+        "-Mej4G9AXahxZg-wpEwc": "{date: \"\"2021-07-16T11:30:31.542Z\"\", name: \"Ant\"}"
+      },
+      "id": "-Mcl5u8G1ozrFsjnBMeH",
+      "lat": 40.57642,
+      "lng": -73.9706358,
+      "notes": "Went to fridge and couldn’t find it…",
+      "streetAddress": "Brighton ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-Mjj9K-J2viy3vGDoz2w": "{date: \"\"2021-09-16T15:11:07.200Z\"\", name: \"M\"}",
+        "-MkU7b-l-aWtCmKeSjO0": "{date: \"\"2021-09-25T22:45:22.897Z\"\"}",
+        "-MnDYPZwiocRSgAtNG7x": "{date: \"\"2021-10-30T00:16:01.608Z\"\"}",
+        "-Mul8m9IOuuyg3ZTGtA-": "{date: \"\"2022-01-31T17:20:38.833Z\"\"}"
+      },
+      "confirmed": false,
+      "id": "-MdD-MWAK-IoNt3ymO_R",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MdD-MWAK-IoNt3ymO_R%2F-MnDYPZwiocRSgAtNG7x?alt=media&token=2c3fabd1-24ef-41e5-932d-0ed316af5023",
+      "instagram": "brooklynheightscommunityfridge",
+      "lat": 40.69703490000001,
+      "lng": -73.9937004,
+      "name": "Brooklyn Heights Community Fridge",
+      "neighborhood": "Brooklyn Heights",
+      "streetAddress": "124 Henry Street"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MmNR6D3UfVahUQG8_yZ": "{date: \"\"2021-10-19T12:04:38.333Z\"\", notes: \"Empty …}",
+        "-Mum1KpV0Dlwo8dCGcYE": "{date: \"\"2022-01-31T21:27:45.878Z\"\", notes: \"5 cans…}",
+        "-MzX_4eRgdWEGnBQdc73": "{date: \"\"2022-04-01T00:44:06.753Z\"\", notes: \"Slidin…}",
+        "-N0SMHveeMW6h2oHN1bb": "{date: \"\"2022-04-24T20:57:09.346Z\"\", name: \"rioT\", …}",
+        "-N2c4O1cQR-WUAQTlpVu": "{date: \"\"2022-05-21T19:26:08.087Z\"\", notes: \"Please…}",
+        "-N30QhJaBIcotCOF78nD": "{date: \"\"2022-05-26T17:34:09.266Z\"\", notes: \"no fri…}"
+      },
+      "id": "-Mf-DQYgqWEgUZrjBYGc",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-Mf-DQYgqWEgUZrjBYGc%2F-N30QhJaBIcotCOF78nD?alt=media&token=6fe9ad3d-57e6-47cd-b274-5de28dae331d",
+      "lat": 40.717541,
+      "link": "https://www.essexmarket.nyc/community-fridge",
+      "lng": -73.988321,
+      "name": "Essex Market Plant-Based Community Fridge",
+      "neighborhood": "Lower East Side",
+      "notes": "Opened January 26, 2021, the fridge is a partnership between local community organization Artists Athletes Activists (@artistsathletesactivists) and Essex Market. It is a plant-based fridge, so it does not accept food containing meat, dairy, or eggs. \n\nTo volunteer or get involved, email eliza@essexmarket.nyc for more information.\n\nMore about AAA: https://linktr.ee/AAAorg ",
+      "streetAddress": "220 Broome St."
+    },
+    {
+      "borough": "Queens",
+      "instagram": "@iotabro",
+      "lat": 40.7634701,
+      "link": "karl.brillant@gmail.com",
+      "lng": -73.8761564,
+      "name": "Clement Smiley Community Fridge ",
+      "neighborhood": "East Elmhurst ",
+      "notes": "It's right in front of buccaneer diner.  We're currently trying to get art and a cover for a lot of the materials that go on top of the fridge. We have 2 sponsors currently and are trying to grow in areas around the community each day.",
+      "streetAddress": "93-01 Astoria Blvd. ",
+      "id": "-MfOhFs1lkFR99hEYEA7"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-N-UnGumqPJM6MqvstrN": "{date: \"\"2022-04-12T22:02:56.279Z\"\"}",
+        "-N3YEGCBLsswqjYChzgz": "{date: \"\"2022-06-02T07:06:53.494Z\"\"}",
+        "-N3YEKm9G9A5xJw6BuOF": "{date: \"\"2022-06-02T07:07:12.310Z\"\"}",
+        "-N5GupBZEjv0ydspD0Nl": "{date: \"\"2022-06-23T18:55:27.021Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MfxuT16eq60e6CiiolA%2F-N5GupBZEjv0ydspD0Nl?alt=media&token=8ec3c8d5-f89e-4a59-bf7c-d26cd50fb5db",
+      "lat": 40.7659745,
+      "lng": -73.9129392,
+      "name": "Steinway Halal Fridge",
+      "neighborhood": "Astorria",
+      "notes": "This is managed by the Saba restaurant",
+      "streetAddress": "25-75 Steinway St",
+      "id": "-MfxuT16eq60e6CiiolA"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-Mi9becq_Id1TzxVPjzK": "{date: \"\"2021-08-28T02:37:39.018Z\"\"}",
+        "-MqaaEHa7abtQrJ9W45H": "{date: \"\"2021-12-10T23:06:21.440Z\"\", notes: \"Doors …}",
+        "-MsCkhnpdDfc191X0U1X": "{date: \"\"2021-12-30T23:53:01.480Z\"\"}",
+        "-N2c49MBJKJ00P_e_EhS": "{date: \"\"2022-05-21T19:25:07.805Z\"\", notes: \"Non pe…}",
+        "-N5C9aC3rZAALWreUMQT": "{date: \"\"2022-06-22T20:46:13.879Z\"\", name: \"Sarah \"…}",
+        "-N5CFiFxgVsgiz8uSuMN": "{date: \"\"2022-06-22T21:12:59.632Z\"\", name: \"Sarah R…}"
+      },
+      "confirmed": false,
+      "id": "-MgRFmoaBadupm3mmuWx",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MgRFmoaBadupm3mmuWx%2F-N5CFiFxgVsgiz8uSuMN?alt=media&token=093c5973-b9e4-4176-86a1-52a00cf66fc2",
+      "instagram": "hkfridge",
+      "lat": 40.7620291,
+      "link": "https://airtable.com/shrB3wrYsX3JAbxPc",
+      "lng": -73.99414209999999,
+      "name": "Hell's Kitchen Community Cupboard",
+      "neighborhood": "Hell's Kitchen",
+      "notes": "Community cupboard currently accepting non-refrigerated food! (Hopefully we will have a refrigerator soon, but in the meantime, please don't bring foods that need refrigeration.)",
+      "streetAddress": "645 10th Ave, New York, NY 10036"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MwU6fcn23ssRgeFPHlS": "{date: \"\"2022-02-22T01:49:41.504Z\"\", notes: \"There …}"
+      },
+      "id": "-MieSz7ZmAW3mVXuuZ0z",
+      "lat": 40.5788395,
+      "link": "avrorapeter@gmail.com",
+      "lng": -73.9714225,
+      "name": "Nataliya",
+      "neighborhood": "Ocean Ave",
+      "streetAddress": "460 Neptune Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MjZp5savwd1QeUbgePi": "{date: \"\"2021-09-14T15:02:11.814Z\"\", name: \"Fran\", …}",
+        "-Ml2B0G5--i2h2j6EUBD": "{date: \"\"2021-10-02T22:46:36.627Z\"\", name: \"Shelby …}",
+        "-MrJLVAkZuSxPfjjG1T5": "{date: \"\"2021-12-19T20:20:07.655Z\"\", notes: \"Added …}",
+        "-N3ktV3qlf089xOhnQI0": "{date: \"\"2022-06-04T22:46:28.641Z\"\", notes: \"needs …}"
+      },
+      "id": "-MjZoDjbmX3rYTEUbIKt",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MjZoDjbmX3rYTEUbIKt%2F-MrJLVAkZuSxPfjjG1T5?alt=media&token=5dffb25c-7337-4457-956c-a1cc88602a9d",
+      "instagram": "@farmtopeople",
+      "lat": 40.7052363,
+      "link": "fran@farmtopeople.com",
+      "lng": -73.9269348,
+      "name": "Farm to People Community Fridge",
+      "neighborhood": "Bushwick",
+      "notes": "24 hr fridge. Stocked with fresh fruits and vegetables, frozen meats, pantry goods, dairy and plant-based products. We welcome all community members to take whatever they need and encourage anyone to contribute items to this fridge.  We cannot accept items such as furniture or clothing at this time. ---------- Nevera abierta las 24 horas. Abastecido con frutas y verduras frescas, carnes congeladas, lácteos, productos veganos y alimentos no perecibles. Damos la bienvenida a todos los miembros de ...",
+      "streetAddress": "1100 Flushing Avenue"
+    },
+    {
+      "instagram": "Fridgehaven ",
+      "lat": 41.3196331,
+      "lng": -72.934418,
+      "name": "Fridge Haven",
+      "streetAddress": "242 Dixwell Ave",
+      "id": "-MmTpOrbY-o44Sn693jV"
+    },
+    {
+      "borough": "Brooklyn",
+      "id": "-MmuXi9wQAIXNh3xAVfC",
+      "lat": 40.6996194,
+      "lng": -73.9106584,
+      "name": "357 Myrtle Ave",
+      "neighborhood": "Bushwick",
+      "notes": "Donate. People take. Do not waste. Thank you. \n#WhatGoesAround #ComesAround \n#NothingWasted #CommunitiesInvested #MotherEarthSaved",
+      "streetAddress": "Myrtle Ave"
+    },
+    {
+      "confirmed": false,
+      "id": "-MnhosaGRTuY6BDvUP86",
+      "instagram": "@thepcfriendlyfridge",
+      "lat": 41.0281524,
+      "link": "rhoberman7513@gmail.com",
+      "lng": -73.7335205,
+      "name": "Port Chester Friendly Fridge",
+      "neighborhood": "Port Chester",
+      "notes": "Located outside of the Carver Center, fridge serves meals, produce, frozen items ",
+      "streetAddress": "400 Westchester Avenue "
+    },
+    {
+      "borough": "Queens",
+      "instagram": "Feed The Mind & The Body",
+      "lat": 40.6840671,
+      "link": "incenseofthekings@gmail.com",
+      "lng": -73.7501144,
+      "name": "Name Withheld Name Withheld",
+      "neighborhood": "South Jamaica ",
+      "notes": "Stock up TV dinners, Almond Milk, Soy Milk, Coconut  Milk, Frozen Hens, Turkey's, Corn Bread, and other fresh uncooked vegetables and other items.",
+      "streetAddress": "130-46 217th St",
+      "id": "-MoPXraXb6YLyKR6JHpD"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MtYRiAZorNJWTA0ejDL": "{date: \"\"2022-01-16T15:13:00.542Z\"\"}",
+        "-MzNSLv0l1sbXmrDA5na": "{date: \"\"2022-03-30T13:35:10.207Z\"\", name: \"quinn\",…}"
+      },
+      "lat": 40.6855479,
+      "link": "hectorperez2005@hotmail.com",
+      "lng": -73.9190303,
+      "name": "Hector Rafael Perez",
+      "neighborhood": "11233",
+      "notes": "Soy estudiante de community impact",
+      "streetAddress": "839 halsey street Apt 1B",
+      "id": "-Mp1VQpRzI16zlWB5kDM"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-MpSWo4BNvcAUqltNj6A": "{date: \"\"2021-11-26T18:34:44.202Z\"\"}",
+        "-MqqP7SUoMGeFp1q2Fu-": "{date: \"\"2021-12-14T00:47:22.131Z\"\", notes: \"Fridge…}",
+        "-Mr4NvJvH532ascMyT6R": "{date: \"\"2021-12-16T22:36:25.044Z\"\"}",
+        "-Mv01vr_tYeT9Y-AUo-a": "{date: \"\"2022-02-03T19:24:38.359Z\"\"}",
+        "-N5Vqo_uIdEypFZWPo5J": "{date: \"\"2022-06-26T16:32:13.931Z\"\"}"
+      },
+      "id": "-MpS6gTtJATDr7WU3afx",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MpS6gTtJATDr7WU3afx%2F-Mv01vr_tYeT9Y-AUo-a?alt=media&token=fa51df82-1af2-49d1-83b2-62a889476585",
+      "instagram": "flatbushcommunityfridge ",
+      "lat": 40.650277,
+      "lng": -73.9527667,
+      "name": "Flatbush Community Fridge ",
+      "neighborhood": "Flatbush ",
+      "notes": "No home cooked meals are accepted, only store bought foods and labeled prepared foods are allowed.",
+      "streetAddress": "830 Rogers Ave "
+    },
+    {
+      "id": "-MpSJ5-xnSfeyYVyW-Cl",
+      "instagram": "uticacommunityfridge",
+      "lat": 43.0962884,
+      "lng": -75.23464299999999,
+      "name": "Utica community fridge",
+      "neighborhood": "Utica",
+      "notes": "@hopehouseutica",
+      "streetAddress": "112 South St, Utica Ny"
+    },
+    {
+      "borough": "Manhattan",
+      "checks": {
+        "-MxR6XOV2WwQuOrsxqHA": "{date: \"\"2022-03-05T22:05:52.237Z\"\", notes: \"Fridge…}"
+      },
+      "id": "-MxPzQ8fakddplhbb3-C",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MxPzQ8fakddplhbb3-C%2F-MxR6XOV2WwQuOrsxqHA?alt=media&token=f664db69-6260-43e0-8b2f-e3259854afe4",
+      "instagram": "thechelseafridge",
+      "lat": 40.73788529999999,
+      "link": "https://linktr.ee/TheChelseaFridge",
+      "lng": -73.995525,
+      "name": "The Chelsea Fridge",
+      "neighborhood": "Chelsea",
+      "notes": "Our fridge is up and running! Please feel free to stop by and take what you need and leave what you can!  We get donations every day.",
+      "streetAddress": "55 W 15th St"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-N5GuPOvGnTIYot1SYCE": "{date: \"\"2022-06-23T18:53:37.277Z\"\"}"
+      },
+      "id": "-MyFcAI8pKfyr0KbZIag",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MyFcAI8pKfyr0KbZIag%2F-N5GuPOvGnTIYot1SYCE?alt=media&token=c4fc7c39-a1e5-4903-94fb-c8f71ec4dcb0",
+      "instagram": "nexusfridge",
+      "lat": 40.7534769,
+      "link": "https://linktr.ee/nexusfridge",
+      "lng": -73.9365217,
+      "name": "Nexus 29th Street Fridge",
+      "neighborhood": "Dutch Kills",
+      "streetAddress": "39-31 29th St. Long Island City, NY 11101"
+    },
+    {
+      "borough": "Bronx",
+      "checks": {
+        "-MzkgPm8r1-VH2yGVl10": "{date: \"\"2022-04-03T18:30:50.154Z\"\", name: \"Luna \",…}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-MzkgGo8dxjj5UT9x13d%2F-MzkgPm8r1-VH2yGVl10?alt=media&token=a9ced013-407a-4847-a74f-b361e896f63e",
+      "instagram": "@nuestraxnevera",
+      "lat": 40.8189518,
+      "link": "Luna 6464746627 ",
+      "lng": -73.9035335,
+      "name": "Vieques Solidarity Library ",
+      "neighborhood": "Mott Haven ",
+      "notes": "hi! This is a little free library located at the above address. Books for all ages and reading levels. Open 24/7. If you’d like to get involved or the library is full and you’d like to drop off books, contact Luna at 6464746627 on text or  WhatsApp.  powered by @rollinglibrary and @uptownbxdsa ",
+      "streetAddress": "791 East 158th street between Tinton and Union ",
+      "id": "-MzkgGo8dxjj5UT9x13d"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-N-TSFP3wmHnHkvSCLuE": "{date: \"\"2022-04-12T15:47:07.803Z\"\"}"
+      },
+      "id": "-MzuUWbsq5o73rrHyLAL",
+      "lat": 40.7295653,
+      "link": "https://greenpointers.com/2021/07/21/ilegal-mezcal-adds-community-fridge-and-freezer-to-greenpoint-ave/://greenpointers.com/2021/07/21/ilegal-mezcal-adds-community-fridge-and-freezer-to-greenpoint-ave/",
+      "lng": -73.959626,
+      "name": "Transmitter Park Fridge",
+      "neighborhood": "Greenpoint",
+      "notes": "Empty ",
+      "streetAddress": "38 Greenpoint Ave"
+    },
+    {
+      "borough": "Brooklyn",
+      "lat": 40.6636333,
+      "link": "victoriaperkins93@yahoo.com",
+      "lng": -73.9234072,
+      "name": "Pamela Ross",
+      "neighborhood": "Eastern Parkway ",
+      "notes": "My mother is running out of food and I can't help her all the time because I have to provide for my kids, please help.",
+      "streetAddress": "110 ROCKAWAY PKWY",
+      "id": "-N-oEli4Nm1U8KoCbuU2"
+    },
+    {
+      "borough": "Brooklyn",
+      "checks": {
+        "-N3ktIW4s6KRuknhcW0l": "{date: \"\"2022-06-04T22:45:37.105Z\"\", notes: \"just a…}"
+      },
+      "instagram": "@stnickfridge",
+      "lat": 40.7041015,
+      "link": "https://www.faithstreet.com/church/bushwick-abbey-brooklyn-ny/giving?fund_id=st-nick-fridge-bushwick-abbey",
+      "lng": -73.9163523,
+      "name": "St. Nick Fridge",
+      "streetAddress": "176 Saint Nicholas",
+      "id": "-N0beoKybcmbhiCNZkpn"
+    },
+    {
+      "borough": "Queens",
+      "confirmed": false,
+      "id": "-N0lLyOVof39GbCSwSRm",
+      "instagram": "eileensfreebodega_",
+      "lat": 40.7341987,
+      "lng": -73.9863036,
+      "name": "Eileens Free Bodega ",
+      "neighborhood": "Brentwood NY ",
+      "notes": "Fridge in Brentwood Long Island NY @ Episcopal Christ Church ",
+      "streetAddress": "155 Third AVE Brentwood, NY 11717"
+    },
+    {
+      "confirmed": false,
+      "id": "-N0lMv9DgIJ6jG1AH55Z",
+      "instagram": "eileensfreebodega ",
+      "lat": 40.7833861,
+      "lng": -73.22511469999999,
+      "name": "Eileen's Free Bodega ",
+      "neighborhood": "Brentwood ",
+      "notes": "Fridge located in Brentwood Long Island NY @ The Consulate of El Salvador ",
+      "streetAddress": "151 Alkier st Brentwood NY 11717"
+    },
+    {
+      "borough": "Queens",
+      "checks": {
+        "-N3xnTETMq6AB04FM84X": "{date: \"\"2022-06-07T10:55:12.289Z\"\", name: \"Connor\"}",
+        "-N5GuHvKJRh0IoWXBoMT": "{date: \"\"2022-06-23T18:53:06.645Z\"\"}"
+      },
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/nycfridge-1595334632389.appspot.com/o/images%2F-N1IUlKWcyUIEQzJZ0o5%2F-N5GuHvKJRh0IoWXBoMT?alt=media&token=e2789931-24d4-48a6-9fa4-65071c55f8e4",
+      "lat": 40.753893,
+      "lng": -73.926073,
+      "name": "Queens vlge",
+      "streetAddress": "Qns",
+      "id": "-N1IUlKWcyUIEQzJZ0o5"
+    }
+  ]
+}
