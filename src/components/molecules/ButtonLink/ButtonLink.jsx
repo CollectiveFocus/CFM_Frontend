@@ -29,5 +29,5 @@ ButtonLink.propTypes = {
   /***
    * Style of button from theme
    */
-  variant: PropTypes.oneOf(['filled', 'contained']).isRequired,
+  variant: PropTypes.oneOf(['outlined', 'contained']).isRequired,
 };
