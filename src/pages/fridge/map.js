@@ -60,7 +60,11 @@ export default function FridgeMap() {
 
   return (
     <Container sx={{ margin: 0, padding: 0 }}>
-      {mapMode ? <DynamicMap /> : <FindFridge />}
+      {mapMode ? (
+        <DynamicMap sx={{ width: '100%' }} />
+      ) : (
+        <FindFridge fullWidth />
+      )}
       {<MapListToggleButton />}
     </Container>
   );
