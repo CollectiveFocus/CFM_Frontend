@@ -1,3 +1,4 @@
+import { Container } from '@mui/system';
 import 'leaflet/dist/leaflet.css';
 import {
   MapContainer,
@@ -28,31 +29,25 @@ export default function FridgeMapComponent() {
       </CircleMarker>
     );
   });
-  console.table(fridgeData);
+
   return (
-    <MapContainer
-      style={{ height: '100vh' }}
-      center={defaultLocation}
-      zoom={13}
-      scrollWheelZoom={false}
-    >
-      {/* <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  /> */}
-      {/* <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
-    maxZoom={20} 
-  /> */}
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
-        maxZoom={19}
-        subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
-      />
-      <Marker position={defaultLocation}></Marker>
-      {fridgeMarkers}
-    </MapContainer>
+    <Container sx={{ padding: 0, margin: 0 }}>
+      <MapContainer
+        style={{ height: '100vh', zIndex: 5 }}
+        center={defaultLocation}
+        zoom={13}
+        scrollWheelZoom={false}
+        attributionControl
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          maxZoom={19}
+          subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
+        />
+        <Marker position={defaultLocation}></Marker>
+        {fridgeMarkers}
+      </MapContainer>
+    </Container>
   );
 }
