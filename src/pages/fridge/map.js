@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import FindFridge from './find';
-import { Box, Container } from '@mui/system';
+import { Container } from '@mui/system';
 import { Button } from '@mui/material';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import SearchBar from 'components/molecules/SearchBar/SearchBar';
 
 export default function FridgeMap() {
+  const importFridgeData = require('../../components/organisms/FridgeMap/FridgeData.json');
+
   const [state, setState] = useState({
+    fridgeData: [],
+    filteredFridgeData: [null],
+    searchQuery: '',
+    queryMatches: null,
     mapMode: true,
+    setBounds: false,
   });
 
-  const { mapMode } = state;
+  const { mapMode, fridgeData, filteredFridgeData, searchQuery, queryMatches } =
+    state;
+
+  useEffect(() => {
+    setState({
+      ...state,
+      fridgeData: importFridgeData.fridges,
+    });
+  }, []);
 
   const DynamicMap = dynamic(
     () => {
@@ -19,6 +35,11 @@ export default function FridgeMap() {
     },
     { ssr: false }
   );
+
+  //  const setBounds = setState({
+  //   ...state,
+  //   setBounds: true
+  //  });
 
   const MapListToggleButton = () => {
     return (
@@ -29,7 +50,7 @@ export default function FridgeMap() {
           mapMode ? <FormatListBulletedOutlinedIcon /> : <MapOutlinedIcon />
         }
         sx={{
-          position: 'absolute',
+          position: 'fixed',
           bottom: 0,
           zIndex: 999,
           height: 60,
@@ -58,12 +79,55 @@ export default function FridgeMap() {
     });
   };
 
+  const setSearchQuery = (query) => {
+    setState({
+      ...state,
+      searchQuery: query,
+    });
+    filterData(query);
+  };
+
+  const filterData = (query) => {
+    if (query !== '') {
+      setState({
+        ...state,
+        searchQuery: query,
+        filteredFridgeData: fridgeData.filter(
+          (data) =>
+            (data.name &&
+              data.name
+                .toString()
+                .toLowerCase()
+                .includes(query.toLowerCase())) ||
+            (data.borough &&
+              data.borough
+                .toString()
+                .toLowerCase()
+                .includes(query.toLowerCase()))
+        ),
+      });
+    }
+  };
+
   return (
     <Container sx={{ margin: 0, padding: 0 }}>
+      <SearchBar
+        setSearchQuery={setSearchQuery}
+        mapMode={mapMode}
+        queryMatches={queryMatches}
+        // setBounds={setBounds}
+      />
       {mapMode ? (
-        <DynamicMap sx={{ width: '100%' }} />
+        <DynamicMap
+          fridgeData={searchQuery == '' ? fridgeData : filteredFridgeData}
+          // setBounds={state.setBounds}
+          sx={{ width: '100%' }}
+        />
       ) : (
-        <FindFridge fullWidth />
+        <FindFridge
+          fullWidth
+          fridgeData={searchQuery == '' ? fridgeData : filteredFridgeData}
+        />
       )}
       {<MapListToggleButton />}
     </Container>

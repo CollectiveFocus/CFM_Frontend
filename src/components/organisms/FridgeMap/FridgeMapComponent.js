@@ -3,12 +3,14 @@ import Leaflet from 'leaflet';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-export default function FridgeMapComponent() {
+const FridgeMapComponent = (props) => {
+  const { fridgeData } = props;
+
   const defaultLocation = [40.70580857568261, -73.99646699561376]; // Brooklyn Bridge
 
   const nycBoundBox = [-74.122221, 40.569088, -73.73564, 40.953952];
 
-  let icon = `<svg
+  const icon = `<svg
   xmlns="http://www.w3.org/2000/svg"
   width="43"
   height="43"
@@ -44,15 +46,18 @@ export default function FridgeMapComponent() {
     iconSize: [43, 43],
   });
 
-  const fridgeData = require('./FridgeData.json');
-  const fridgeMarkers = fridgeData.fridges.map((fridge) => {
-    let { lat, lng, id, name } = fridge;
-    return (
-      <Marker icon={fridgePin} position={[lat, lng]} key={id}>
-        <Popup>{name}</Popup>
-      </Marker>
-    );
-  });
+  const fridgeMarkers =
+    fridgeData.length > 0 &&
+    fridgeData.map((fridge) => {
+      let { lat, lng, id, name, streetAdress } = fridge;
+      return (
+        <Marker icon={fridgePin} position={[lat, lng]} key={id}>
+          <Popup>{name}</Popup>
+        </Marker>
+      );
+    });
+
+  // (props.fitBounds===true) && map.fitBounds(fridgeMarkers.getBounds())
 
   return (
     <Container sx={{ padding: 0, margin: 0 }}>
@@ -60,7 +65,7 @@ export default function FridgeMapComponent() {
         style={{ height: '100vh', zIndex: 5 }}
         center={defaultLocation}
         zoom={13}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         attributionControl
       >
         <TileLayer
@@ -73,4 +78,6 @@ export default function FridgeMapComponent() {
       </MapContainer>
     </Container>
   );
-}
+};
+
+export default FridgeMapComponent;
