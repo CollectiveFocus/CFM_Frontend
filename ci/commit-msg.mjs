@@ -4,21 +4,21 @@ import { readFileSync } from 'fs';
 import colors from 'picocolors';
 
 // get $1 from commit-msg script
-const msgPath = process.argv[2];
-const msg = readFileSync(msgPath, 'utf-8').trim();
+const msgFilePath = process.argv[2];
+const msgFileContents = readFileSync(msgFilePath, 'utf-8');
+const commitTitle = msgFileContents.split(/\r?\n/)[0];
 
-const releaseRE = /^v\d/;
 const commitRE =
-  /^(revert: )?(feat|fix|refactor|test|perf|style|asset|doc|ci|chore|wip)(\(.+\))?: [A-Z].{1,49}/;
+  /^(revert: )?(feat|fix|refactor|test|perf|style|asset|doc|ci|chore|wip)(\(.+\))?: [A-Z].{1,48}[^.]$/;
 
-if (!releaseRE.test(msg) && !commitRE.test(msg)) {
+if (!commitRE.test(commitTitle)) {
   console.log();
   console.error(
     `  ${colors.bgRed(colors.white(' ERROR '))} ${colors.white(
-      `Invalid commit message format.`
+      `Invalid commit title format or length.`
     )}\n\n` +
       colors.white(
-        `  Proper commit message format is required for automated changelog generation. Examples:\n\n`
+        `  Commit messages must under 50 characters and have the following format:\n\n`
       ) +
       `    ${colors.green(`feat: Add 'comments' option`)}\n` +
       `    ${colors.green(`fix: Handle events on blur (close #28)`)}\n\n` +

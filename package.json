@@ -32,7 +32,7 @@
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme",
+    "lint": "next lint --fix",
     "style": "prettier --write --ignore-unknown . && svgo -qrf public/ && svgo -qrf src/"
   },
   "browserslist": [
@@ -44,7 +44,8 @@
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
     "pre-commit": "lint-staged --quiet --no-stash --concurrent true",
-    "commit-msg": "node ci/verifyCommit.mjs $1"
+    "commit-msg": "node ci/commit-msg.mjs $1",
+    "pre-push": "./ci/pre-push.sh $1 $2"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",

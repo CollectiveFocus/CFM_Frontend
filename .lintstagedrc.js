@@ -1,16 +1,14 @@
 const path = require('path');
 
-const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`;
+const buildEslintCommand = (filenames) => `npx eslint --fix
+    ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')}`;
 
 console.log(
   'Running "yarn lint", "yarn style" on commit files. Please wait...'
 );
 
 module.exports = {
-  '*.{js,jsx,mjs}': [buildEslintCommand, 'prettier --write'],
-  '*.{json,md}': ['prettier --write'],
+  '*.{js,jsx,mjs}': ['npx eslint --fix', 'prettier --write'],
+  '*.{json,md,yaml}': ['prettier --write'],
   '*.svg': ['svgo --quiet'],
 };

@@ -9,4 +9,8 @@ module.exports = {
 
     return config;
   },
+
+  eslint: {
+    dirs: ['src/', 'ci/'],
+  },
 };
