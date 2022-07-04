@@ -22,7 +22,7 @@ if (!commitRE.test(commitTitle)) {
       ) +
       `    ${colors.green(`feat: Add 'comments' option`)}\n` +
       `    ${colors.green(`fix: Handle events on blur (close #28)`)}\n\n` +
-      colors.white(`  See .github/commit-convention.md for more details.\n`)
+      colors.white(`  See ./docs/commit-convention.md for more details.\n`)
   );
   process.exit(1);
 }
