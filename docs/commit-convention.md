@@ -7,12 +7,15 @@ This convention is adapted from:
 
 ## synopsis
 
-Messages must be matched by the following regex:
+- commit message header format: `<type>(<scope>): <subject>`
+- `subject` must start with a capital letter
+- `subject` must not end with a period
+- `subject` must not exceed 50 characters
 
-<!-- prettier-ignore -->
-```js
-/^(revert: )?(feat|fix|refactor|test|perf|style|asset|doc|ci|chore|wip)(\(.+\))?: [A-Z].{1,49}/
-```
+commit header examples:
+
+- `feat: Add hat wobble`
+- `wip: Moved commit-convention to docs`
 
 ## commit message
 
@@ -56,6 +59,7 @@ The types are as follows:
 - `ci`: updating CD/CI pipeline; no local script changes
 - `chore`: updating grunt tasks etc; no production code change
 - `revert`: reverting a previously published commit
+- `wip`: work in progress commit
 
 ##### revert
 
