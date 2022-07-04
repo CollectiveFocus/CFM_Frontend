@@ -14,3 +14,17 @@ The following functions have been deprecated because they are slow to render, ca
 import { styled } from '@mui/material/styles';
 import { styled } from '@emotion';
 ```
+
+## 2022-07-17 -- API field sizes
+
+Tag : 140 characters. The size of a twitter hash tag.
+
+Location.street : 55 characters. The longest street name in the U.S. is 38 characters long: "Jean Baptiste Point du Sable Lake Shore Drive" located in Chicago, Illinois. eg: 1001 Jean Baptiste Point du Sable Lake Shore Drive #33
+
+Location.city : 35 characters. The longest city name in the U.S. is "Village of Grosse Pointe Shores" in Michigan.
+
+Maintainer.name : 70 characters. https://stackoverflow.com/questions/30485/what-is-a-reasonable-length-limit-on-person-name-fields
+
+## 2022-07-23 -- DevOps terminal
+
+I wanted to standardize all DevOps to use bash. This has proven more complicated than it is worth. The shell is used by the `node` runtime when `yarn dev` is called. It defaults to the OS shell, and so the configuration necessary

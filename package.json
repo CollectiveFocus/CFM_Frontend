@@ -11,8 +11,13 @@
   "homepage": "https://github.com/CollectiveFocus/CFM_Frontend#readme",
   "author": "Collective Focus <info@collectivefocus.site> (https://collectivefocus.site/)",
   "contributors": [
-    "Jean Paul Torre",
-    "Bernard Martis (https://bernardm.github.io/)"
+    "Andrew R",
+    "Bernard Martis (https://bernardm.github.io/)",
+    "Hamaad Chughtai (https://github.com/Hamaad102)",
+    "Ioana Tiplea (https://github.com/ioanat94)",
+    "Scott Ly",
+    "Trillium Smith (https://github.com/Spiteless)",
+    "Weston Norwood (https://github.com/wheninseattle)"
   ],
   "license": "MIT",
   "private": true,
@@ -24,7 +29,7 @@
     "url": "https://github.com/CollectiveFocus/CFM_Frontend/issues"
   },
   "directories": {
-    "doc": "./doc"
+    "doc": "./docs"
   },
   "scripts": {
     "preinstall": "npm i -g prettier svgo only-allow lint-staged concurrently json-server && only-allow yarn",
