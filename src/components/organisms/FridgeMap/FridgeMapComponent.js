@@ -1,15 +1,51 @@
 import { Container } from '@mui/system';
 import Leaflet from 'leaflet';
-
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  CircleMarker,
+} from 'react-leaflet';
+import { useEffect } from 'react';
 
 const FridgeMapComponent = (props) => {
-  const { fridgeData } = props;
+  const {
+    fridgeData,
+    fridgeDistanceFromUser,
+    setUserLocation,
+    utilizeUserLocation,
+    userLocation,
+    setUserInBounds,
+    mapCenter,
+    getFridgeDistance,
+  } = props;
 
-  const defaultLocation = [40.70580857568261, -73.99646699561376]; // Brooklyn Bridge
+  const nycBoundBox = [
+    [40.515174, -74.164426],
+    [40.924218, -73.693387],
+  ];
 
-  const nycBoundBox = [-74.122221, 40.569088, -73.73564, 40.953952];
+  //If using user location, determine distance between user and each fridge
+  useEffect(() => {
+    if (userLocation != null && fridgeDistanceFromUser.length == 0) {
+      let userLat = userLocation[0];
+      let userLng = userLocation[1];
+      const fridgeDistances = fridgeData.map((fridge) => {
+        let { lat, lng } = fridge;
+        let userLocation = L.latLng(userLat, userLng);
+        let fridgeLocation = L.latLng(lat, lng);
+        let distance = userLocation.distanceTo(fridgeLocation);
+        let miles = distance * 0.000621371;
+        return miles;
+      });
+      getFridgeDistance(fridgeDistances);
+    }
+  }, []);
 
+  // Fridge Markers
+
+  // @TODO: Pull this into a seperate component and allow size and color as args
   const icon = `<svg
   xmlns="http://www.w3.org/2000/svg"
   width="43"
@@ -50,6 +86,7 @@ const FridgeMapComponent = (props) => {
     fridgeData.length > 0 &&
     fridgeData.map((fridge) => {
       let { lat, lng, id, name, streetAdress } = fridge;
+
       return (
         <Marker icon={fridgePin} position={[lat, lng]} key={id}>
           <Popup>{name}</Popup>
@@ -57,15 +94,14 @@ const FridgeMapComponent = (props) => {
       );
     });
 
-  // (props.fitBounds===true) && map.fitBounds(fridgeMarkers.getBounds())
-
   return (
     <Container sx={{ padding: 0, margin: 0 }}>
       <MapContainer
-        style={{ height: '100vh', zIndex: 5 }}
-        center={defaultLocation}
-        zoom={13}
+        style={{ height: '100vh' }}
+        center={mapCenter}
+        zoom={11}
         scrollWheelZoom={true}
+        bounds={nycBoundBox}
         attributionControl
       >
         <TileLayer
@@ -75,6 +111,9 @@ const FridgeMapComponent = (props) => {
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />
         {fridgeMarkers}
+        {utilizeUserLocation && (
+          <CircleMarker center={userLocation} radius={40}></CircleMarker>
+        )}
       </MapContainer>
     </Container>
   );

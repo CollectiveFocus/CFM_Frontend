@@ -6,21 +6,37 @@ import { Button } from '@mui/material';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import SearchBar from 'components/molecules/SearchBar/SearchBar';
-
 export default function FridgeMap() {
   const importFridgeData = require('../../components/organisms/FridgeMap/FridgeData.json');
 
+  const defaultLocation = [40.70580857568261, -73.99646699561376]; // default location Brooklyn Bridge
+
   const [state, setState] = useState({
     fridgeData: [],
-    filteredFridgeData: [null],
+    fridgeDistanceFromUser: [],
+    filteredFridgeData: [],
     searchQuery: '',
     queryMatches: null,
     mapMode: true,
     setBounds: false,
+    utilizeUserLocation: false,
+    userLocation: null,
+    userLocationInBounds: false,
+    selectedFridge: null,
+    mapCenter: defaultLocation,
   });
 
-  const { mapMode, fridgeData, filteredFridgeData, searchQuery, queryMatches } =
-    state;
+  const {
+    mapMode,
+    fridgeData,
+    fridgeDistanceFromUser,
+    filteredFridgeData,
+    searchQuery,
+    queryMatches,
+    utilizeUserLocation,
+    userLocation,
+    mapCenter,
+  } = state;
 
   useEffect(() => {
     setState({
@@ -35,11 +51,6 @@ export default function FridgeMap() {
     },
     { ssr: false }
   );
-
-  //  const setBounds = setState({
-  //   ...state,
-  //   setBounds: true
-  //  });
 
   const MapListToggleButton = () => {
     return (
@@ -64,6 +75,7 @@ export default function FridgeMap() {
           padding: 5,
           fontWeight: 500,
           textTransform: 'none',
+          ':hover': { backgroundColor: '#fff' },
         }}
       >
         {mapMode ? 'View list' : 'View map'}
@@ -79,6 +91,7 @@ export default function FridgeMap() {
     });
   };
 
+  // Search Functionality
   const setSearchQuery = (query) => {
     setState({
       ...state,
@@ -92,7 +105,10 @@ export default function FridgeMap() {
       setState({
         ...state,
         searchQuery: query,
-        filteredFridgeData: fridgeData.filter(
+        filteredFridgeData: (fridgeDistanceFromUser.length > 1
+          ? fridgeDistanceFromUser
+          : fridgeData
+        ).filter(
           (data) =>
             (data.name &&
               data.name
@@ -106,8 +122,96 @@ export default function FridgeMap() {
                 .includes(query.toLowerCase()))
         ),
       });
+    } else {
+      setState({
+        ...state,
+        searchQuery: '',
+        filteredFridgeData: [],
+      });
     }
   };
+
+  const setSelectedFridge = (fridge) => {
+    console.table(fridge);
+    const { lat, lng } = fridge;
+    setState({
+      ...state,
+      mapCenter: [lat, lng],
+      selectedFridge: fridge,
+    });
+    // setMapCenter([lat,lng])
+  };
+
+  // const setMapCenter = (location = defaultLocation) => {
+  //   setState({
+  //     ...state,
+  //     mapCenter: location,
+  //   });
+  // };
+
+  // User Location Functionality
+  const getUserLocation = () => {
+    console.log('Getting user location');
+    navigator.geolocation.getCurrentPosition(
+      getPositionSuccess,
+      getPositionFail,
+      { enableHighAccuracy: true, timeout: 5000 }
+    );
+  };
+
+  const setUserLocation = (userLocation) => {
+    console.log('Setting user location...');
+    let latitude = userLocation[0];
+    let longitude = userLocation[1];
+    setState({
+      ...state,
+      utilizeUserLocation: true,
+      userLocation: [latitude, longitude],
+    });
+  };
+
+  const getPositionSuccess = (newUserLocation) => {
+    let { latitude, longitude } = newUserLocation.coords;
+    setUserLocation([latitude, longitude]);
+    // checkUserInBounds([latitude, longitude]);
+  };
+  const getPositionFail = (error) => {
+    console.log(error.message);
+  };
+
+  const getFridgeDistance = (fridgeDistances) => {
+    const fridgeDistanceFromUser = fridgeData.map((fridge, i) => ({
+      ...fridge,
+      distance: fridgeDistances[i],
+    }));
+    fridgeDistanceFromUser.sort((a, b) => a.distance - b.distance);
+    setState({
+      ...state,
+      fridgeDistanceFromUser: fridgeDistanceFromUser,
+      fridgeData: fridgeDistanceFromUser,
+    });
+  };
+
+  const setUserInBounds = (userInBounds) => {
+    setState({
+      ...state,
+      userInBounds: userInBounds,
+    });
+  };
+  const nycBoundBox = [
+    [40.515174, -74.164426],
+    [40.924218, -73.693387],
+  ];
+
+  // @TODO: Cannot instantiate leaflet in this component; need to move to FridgeMapComponent
+  // const checkUserInBounds = (newUserLocation) => {
+  //   console.log(newUserLocation);
+  //   let southWestPoint = nycBoundBox[0];
+  //   let northEastPoint = nycBoundBox[1];
+  //   let bounds = Leaflet.latLngBounds(southWestPoint, northEastPoint);
+  //   let userInBounds = bounds.contains(newUserLocation);
+  //   setUserInBounds(userInBounds);
+  // };
 
   return (
     <Container sx={{ margin: 0, padding: 0 }}>
@@ -115,11 +219,23 @@ export default function FridgeMap() {
         setSearchQuery={setSearchQuery}
         mapMode={mapMode}
         queryMatches={queryMatches}
-        // setBounds={setBounds}
+        searchQuery={searchQuery}
+        getUserLocation={getUserLocation}
+        filteredFridgeData={filteredFridgeData}
+        setSelectedFridge={setSelectedFridge}
+        fridgeDistanceFromUser={fridgeDistanceFromUser}
       />
       {mapMode ? (
         <DynamicMap
-          fridgeData={searchQuery == '' ? fridgeData : filteredFridgeData}
+          fridgeData={searchQuery !== '' ? filteredFridgeData : fridgeData}
+          userLocation={userLocation}
+          utilizeUserLocation={utilizeUserLocation}
+          setUserInBounds={setUserInBounds}
+          mapCenter={mapCenter}
+          setState={setState}
+          state={state}
+          getFridgeDistance={getFridgeDistance}
+          fridgeDistanceFromUser={fridgeDistanceFromUser}
           // setBounds={state.setBounds}
           sx={{ width: '100%' }}
         />
