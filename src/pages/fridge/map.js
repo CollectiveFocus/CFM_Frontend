@@ -3,9 +3,9 @@ import dynamic from 'next/dynamic';
 import FindFridge from './find';
 import { Container } from '@mui/system';
 import { Button } from '@mui/material';
-import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import { MapOutlined, FormatListBulletedOutlined } from '@mui/icons-material';
 import SearchBar from 'components/molecules/SearchBar/SearchBar';
+
 export default function FridgeMap() {
   const importFridgeData = require('../../components/organisms/FridgeMap/FridgeData.json');
 
@@ -47,7 +47,7 @@ export default function FridgeMap() {
 
   const DynamicMap = dynamic(
     () => {
-      return import('../../components/organisms/FridgeMap/FridgeMapComponent');
+      return import('../../components/organisms/FridgeMap');
     },
     { ssr: false }
   );
@@ -57,9 +57,7 @@ export default function FridgeMap() {
       <Button
         onClick={onMapListToggle}
         fullWidth
-        startIcon={
-          mapMode ? <FormatListBulletedOutlinedIcon /> : <MapOutlinedIcon />
-        }
+        startIcon={mapMode ? <FormatListBulletedOutlined /> : <MapOutlined />}
         sx={{
           position: 'fixed',
           bottom: 0,
