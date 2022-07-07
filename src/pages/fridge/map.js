@@ -18,7 +18,7 @@ export default function FridgeMap() {
   useEffect(() => {
     setState({
       ...state,
-      fridgeData: importFridgeData.fridges,
+      fridgeData: importFridgeData,
     });
   }, []);
 
@@ -69,7 +69,7 @@ export default function FridgeMap() {
   return (
     <Container sx={{ margin: 0, padding: 0 }}>
       {mapMode ? (
-        <DynamicMap sx={{ width: '100%' }} />
+        <DynamicMap fridgeData={fridgeData} sx={{ width: '100%' }} />
       ) : (
         <FindFridge fullWidth />
       )}
