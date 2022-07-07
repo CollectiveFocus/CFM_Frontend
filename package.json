@@ -27,9 +27,9 @@
     "doc": "./doc"
   },
   "scripts": {
-    "preinstall": "npm i -g prettier svgo only-allow lint-staged && only-allow yarn",
+    "preinstall": "npm i -g prettier svgo only-allow lint-staged cross-env && only-allow yarn",
     "postinstall": "npx simple-git-hooks",
-    "dev": "next dev -p 4000",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme",
@@ -58,8 +58,8 @@
     "formik": "^2.2.9",
     "next": "12.1.6",
     "prop-types": "^15.8.1",
-    "react-dom": "18.1.0",
     "react": "18.1.0",
+    "react-dom": "18.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
