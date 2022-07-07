@@ -4,7 +4,6 @@ import { Container, Box } from '@mui/system';
 import Leaflet from 'leaflet';
 import { MapPinIcon } from '../../../theme/icons/';
 import { useState, useEffect } from 'react';
-import { Co2Sharp } from '@mui/icons-material';
 
 const FridgeMap = (props) => {
   const { fridgeData } = props;
@@ -47,6 +46,7 @@ const FridgeMap = (props) => {
 
   return (
     <Container sx={{ padding: 0, margin: 0 }}>
+      {/* <MapPinIcon sx={{}}>Test</MapPinIcon> //This will render */}
       <MapContainer
         style={{ height: '100vh' }}
         center={defaultLocation}
