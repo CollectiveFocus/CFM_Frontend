@@ -32,21 +32,26 @@ const FridgeMap = (props) => {
     html: ReactDOMServer.renderToString(<MapPinIcon fill={serviceColor} />),
   });
 
-  // const fridgeMarkers =
-  //   fridgeData.length > 1 &&
-  //   Object.keys(fridgeData).map((f,i) => {
-  //     const fridge = fridgeData[f]
-  //     const { lat, lng, borough } = fridge;
-  //     const location = [lat, lng];
+  const fridgeArray =
+    Object.keys(fridgeData).length > 1 &&
+    Object.entries(fridgeData).map((entry) => entry[1]);
 
-  //     return (
-  //       // <CircleMarker center={location} radius={50}/>)
-  //     <Marker position={location} icon={fridgeFullIcon} key={i}>Test</Marker>);
-  //   });
+  const fridgeMarkers =
+    fridgeArray.length > 1 &&
+    fridgeArray.map((fridge, i) => {
+      console.log(fridge);
+      const { lat, lng, borough } = fridge;
+      const location = [lat, lng];
+      console.log(location);
+      return (
+        <Marker position={location} icon={fridgeFullIcon} key={i}>
+          Test
+        </Marker>
+      );
+    });
 
   return (
     <Container sx={{ padding: 0, margin: 0 }}>
-      {/* <MapPinIcon sx={{}}>Test</MapPinIcon> //This will render */}
       <MapContainer
         style={{ height: '100vh' }}
         center={defaultLocation}
@@ -59,7 +64,7 @@ const FridgeMap = (props) => {
           maxZoom={19}
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />
-        {/* {fridgeMarkers} */}
+        {fridgeMarkers}
         <Marker position={defaultLocation} icon={fridgeEmptyIcon}></Marker>
         <Marker position={apollo} icon={fridgeFullIcon}></Marker>
         <Marker position={centralPark} icon={fridgeServiceIcon}></Marker>
