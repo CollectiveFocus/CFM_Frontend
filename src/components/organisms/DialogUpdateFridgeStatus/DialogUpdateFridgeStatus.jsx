@@ -33,6 +33,8 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
   });
 
   const {
+    fridgeUpdateImage,
+    fridgeUpdateNotes,
     fridgeServiceRequest,
     fridgeCleaningRequest,
     fridgeLocationChange,
@@ -100,6 +102,14 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
     },
   ];
 
+  const formUpdated =
+    fridgeUpdateImage != null ||
+    fridgeUpdateNotes != null ||
+    fridgeContentScale > 0 ||
+    fridgeCleaningRequest == true ||
+    fridgeServiceRequest == true ||
+    fridgeLocationChange == true;
+
   return (
     <Container sx={{ padding: 5 }}>
       <Box id="update-header">
@@ -118,14 +128,6 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
                 <Button
                   onClick={onAddPhoto}
                   variant="contained"
-                  sx={{
-                    marginTop: 5,
-                    minWidth: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    color: '#fff',
-                    ':hover': { cursor: 'pointer' },
-                  }}
                   startIcon={<AddAPhotoOutlinedIcon />}
                 >
                   Upload Photo
@@ -137,7 +139,6 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
                 <TextField
                   fullWidth
                   id="update-notes"
-                  // label="Notes"
                   placeholder="Got an update or request? Leave your notes here!"
                   multiline
                   rows={5}
@@ -197,16 +198,11 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
               </FormGroup>
             </Box>
             <Box>
-              <Button // TODO - cfm_37
+              <Button
                 type="submit"
                 variant="contained"
-                sx={{
-                  minWidth: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: '#fff',
-                  ':hover': { cursor: 'pointer' },
-                }}
+                fullWidth
+                disabled={!formUpdated}
               >
                 Submit Update
               </Button>
