@@ -2,9 +2,7 @@ module.exports = {
   multipass: true,
   plugins: [
     'preset-default',
-    'removeOffCanvasPaths',
     'convertStyleToAttrs',
-    'sortAttrs',
     {
       name: 'removeAttributesBySelector',
       params: {
