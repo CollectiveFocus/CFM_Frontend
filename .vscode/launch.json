@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CFM: API+Next+Browser",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: http://localhost:([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "CFM: Browser",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:4000"
+    }
+  ]
+}
