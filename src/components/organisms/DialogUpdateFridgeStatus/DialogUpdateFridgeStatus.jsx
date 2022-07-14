@@ -1,4 +1,5 @@
-import React from 'react';
+import { useState } from 'react';
+import { useFormik } from 'formik';
 import PropTypes from 'prop-types';
 import {
   Box,
@@ -10,67 +11,88 @@ import {
   FormLabel,
   Slider,
   Stack,
+  Step,
+  StepContent,
+  StepLabel,
+  Stepper,
   TextField,
   Typography,
 } from '@mui/material';
-
-import { styled } from '@mui/material/styles';
 import AddAPhotoOutlinedIcon from '@mui/icons-material/AddAPhotoOutlined';
 import theme from 'theme';
 
-DialogUpdateFridgeStatus.propTypes = {
-  fridgeName: PropTypes.string.isRequired,
-};
+import { DialogUploadImage } from 'components/molecules';
 
-export default function DialogUpdateFridgeStatus({ fridgeName }) {
-  const [formValues, setFormValues] = React.useState({
-    fridgeUpdateImage: null,
-    fridgeUpdateNotes: null,
-    fridgeContentScale: 0,
-    fridgeServiceRequest: false,
-    fridgeCleaningRequest: false,
-    fridgeLocationChange: false,
+export default function DialogUpdateFridgeStatus({
+  fridgeName = 'Community Fridge Name',
+}) {
+  //Initialize Formik form and initial form values
+  const formik = useFormik({
+    initialValues: {
+      foodPhotoURL: null,
+      foodPercentage: 0,
+      fridgeServiceRequest: false,
+      fridgeCleaningRequest: false,
+      fridgeLocationChange: false,
+      notes: '',
+    },
+    // {
+    //   "operation": "working", [working, out of order, not at location]
+    //   "foodPercentage": 100,
+    //   "foodPhotoBinary": "string",
+    //   "notes": "Filled with Mars bars and M&M candy."
+    // }
+    onSubmit: (values) => {
+      console.table(values);
+      alert(JSON.stringify(values, null, 2));
+    },
   });
 
-  const {
-    fridgeServiceRequest,
-    fridgeCleaningRequest,
-    fridgeLocationChange,
-    fridgeContentScale,
-  } = formValues;
+  // Toggle visibility of photo upload component
+  const [state, setState] = useState({
+    uploadPhoto: false,
+  });
+  const { uploadPhoto } = state;
 
   const onAddPhoto = () => {
-    //TODO (cfm_50) need to figure out how to integrate with add photo component
+    setState({ ...state, uploadPhoto: true });
   };
 
-  const onUpdateNote = (event) => {
-    setFormValues({
-      ...formValues,
-      fridgeUpdateNotes: event.target.value,
-    });
+  // Functionality for MUI stepper component
+  const [activeStep, setActiveStep] = useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const onSlide = (_, newValue) => {
-    console.log(newValue);
-    setFormValues({
-      ...formValues,
-      fridgeContentScale: newValue,
-    });
-  };
-  const onCheck = (event) => {
-    setFormValues({
-      ...formValues,
-      [event.target.name]: event.target.checked,
-    });
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.table(formValues);
-    // TODO - Need to integrate with backend
-  };
+  //Functionality for MUI slider component
 
-  const FridgeSlider = styled(Slider)(() => ({
+  const sliderMarks = [
+    {
+      value: 25,
+      label: 'Empty',
+    },
+    {
+      value: 50,
+      label: 'A Few Items',
+    },
+    {
+      value: 75,
+      label: 'Many Items',
+    },
+    {
+      value: 100,
+      label: 'Full',
+    },
+  ];
+
+  const fridgeSliderStyles = {
+    mx: 'auto',
+    width: 7 / 8,
     '.MuiSlider-markLabel': {
       fontSize: 12,
       color: theme.palette.text.secondary,
@@ -79,141 +101,188 @@ export default function DialogUpdateFridgeStatus({ fridgeName }) {
       fontSize: 12,
       color: theme.palette.text.primary,
     },
-  }));
-
-  const sliderMarks = [
-    {
-      value: 0,
-      label: 'Empty',
-    },
-    {
-      value: 1,
-      label: 'A Few Items',
-    },
-    {
-      value: 2,
-      label: 'Many Items',
-    },
-    {
-      value: 3,
-      label: 'Full',
-    },
-  ];
+  };
 
   return (
-    <Container sx={{ padding: 5 }}>
-      <Box id="update-header">
-        <Typography variant="h2">Community Fridge Update:</Typography>
-        <Typography variant="h5">{fridgeName}</Typography>
-      </Box>
-      <Box id="update-form" mt={10}>
-        <form onSubmit={onSubmit}>
-          <Stack spacing={5}>
-            <Box>
-              <FormLabel>
-                Upload a photo of the inside of the fridge to let others know
-                what&#39;s there!
-              </FormLabel>
-              <FormGroup>
-                <Button
-                  onClick={onAddPhoto}
-                  variant="contained"
-                  sx={{
-                    marginTop: 5,
-                    minWidth: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    color: '#fff',
-                    ':hover': { cursor: 'pointer' },
-                  }}
-                  startIcon={<AddAPhotoOutlinedIcon />}
-                >
-                  Upload Photo
-                </Button>
-              </FormGroup>
-            </Box>
-            <Box width={1}>
-              <FormGroup>
-                <TextField
-                  fullWidth
-                  id="update-notes"
-                  // label="Notes"
-                  placeholder="Got an update or request? Leave your notes here!"
-                  multiline
-                  rows={5}
-                  onChange={onUpdateNote}
-                />
-              </FormGroup>
-            </Box>
-            <Box fullWidth>
-              <FormLabel>How full is the fridge?</FormLabel>
-              <FormGroup>
-                <FridgeSlider
-                  aria-label="Fridge fullness"
-                  min={0}
-                  value={fridgeContentScale}
-                  max={3}
-                  step={1}
-                  marks={sliderMarks}
-                  size="medium"
-                  sx={{ mx: 'auto', width: 7 / 8 }}
-                  onChangeCommitted={onSlide}
-                />
-              </FormGroup>
-            </Box>
-            <Box>
-              <FormLabel>Check box if applicable:</FormLabel>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={fridgeServiceRequest}
-                      onChange={onCheck}
-                      name="fridgeServiceRequest"
+    <Container>
+      {uploadPhoto ? (
+        <DialogUploadImage />
+      ) : (
+        <Stack direction="column" spacing={4} mx={4} mb={4}>
+          <Box id="update-header">
+            <Typography variant="h2">Community Fridge Update:</Typography>
+            <Typography variant="h5">{fridgeName}</Typography>
+          </Box>
+          <form onSubmit={formik.handleSubmit}>
+            <Stepper activeStep={activeStep} orientation={'vertical'}>
+              <Step expanded={activeStep == 3}>
+                <StepLabel>Upload Photo</StepLabel>
+                <StepContent>
+                  <Stack
+                    direction="column"
+                    spacing={3}
+                    mt={2}
+                    justifyContent="space-between"
+                  >
+                    <Typography>
+                      If you have a photo of the fridge contents, you can upload
+                      that here. If you don&#39;t have one, select SKIP PHOTO.
+                    </Typography>
+                    {activeStep != 3 && (
+                      <Button
+                        onClick={onAddPhoto}
+                        variant="contained"
+                        startIcon={<AddAPhotoOutlinedIcon />}
+                      >
+                        Upload Photo
+                      </Button>
+                    )}
+                    {activeStep != 3 && (
+                      <Button onClick={handleNext} variant="outlined">
+                        Skip Photo
+                      </Button>
+                    )}
+                  </Stack>
+                </StepContent>
+              </Step>
+              <Step expanded={activeStep == 3}>
+                <StepLabel>Status</StepLabel>
+                <StepContent>
+                  <Stack
+                    direction="column"
+                    spacing={3}
+                    mt={2}
+                    justifyContent="space-between"
+                  >
+                    <FormLabel>How full is the fridge?</FormLabel>
+                    <FormGroup>
+                      <Slider
+                        name="fridgeContentScale"
+                        aria-label="Fridge fullness"
+                        value={formik.values.foodPercentage}
+                        onChange={formik.handleChange}
+                        min={25}
+                        max={100}
+                        step={25}
+                        marks={sliderMarks}
+                        sx={fridgeSliderStyles}
+                        size="medium"
+                      />
+                    </FormGroup>
+                    <FormLabel>Check box if applicable:</FormLabel>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={formik.values.fridgeServiceRequest}
+                            onChange={formik.handleChange}
+                            name="fridgeServiceRequest"
+                          />
+                        }
+                        label="Fridge needs servicing"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={formik.values.fridgeCleaningRequest}
+                            onChange={formik.handleChange}
+                            name="fridgeCleaningRequest"
+                          />
+                        }
+                        label="Fridge needs cleaning"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={formik.values.fridgeLocationChange}
+                            onChange={formik.handleChange}
+                            name="fridgeLocationChange"
+                          />
+                        }
+                        label="Fridge is no longer at location"
+                      />
+                    </FormGroup>
+                    {activeStep != 3 && (
+                      <Button
+                        onClick={handleNext}
+                        variant="contained"
+                        fullWidth
+                      >
+                        Continue
+                      </Button>
+                    )}
+                    {activeStep != 3 && (
+                      <Button onClick={handleBack} variant="outlined" fullWidth>
+                        Back
+                      </Button>
+                    )}
+                  </Stack>
+                </StepContent>
+              </Step>
+              <Step expanded={activeStep == 3}>
+                <StepLabel>Notes</StepLabel>
+                <StepContent>
+                  <Stack
+                    spacing={3}
+                    mt={2}
+                    direction="column"
+                    justifyContent="space-between"
+                  >
+                    <TextField
+                      name="fridgeUpdateNotes"
+                      value={formik.values.notes}
+                      id="update-notes"
+                      placeholder="Got an update or request? Leave your notes here!"
+                      onChange={formik.handleChange}
+                      multiline
+                      rows={5}
+                      fullWidth
                     />
-                  }
-                  label="Fridge needs servicing"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={fridgeCleaningRequest}
-                      onChange={onCheck}
-                      name="fridgeCleaningRequest"
-                    />
-                  }
-                  label="Fridge needs cleaning"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={fridgeLocationChange}
-                      onChange={onCheck}
-                      name="fridgeLocationChange"
-                    />
-                  }
-                  label="Fridge is no longer at location"
-                />
-              </FormGroup>
-            </Box>
-            <Box>
-              <Button // TODO - cfm_37
-                type="submit"
-                variant="contained"
-                sx={{
-                  minWidth: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: '#fff',
-                  ':hover': { cursor: 'pointer' },
-                }}
-              >
-                Submit Update
-              </Button>
-            </Box>
-          </Stack>
-        </form>
-      </Box>
+                    {activeStep != 3 && (
+                      <Button
+                        onClick={handleNext}
+                        variant="contained"
+                        fullWidth
+                      >
+                        Continue
+                      </Button>
+                    )}
+                    {activeStep != 3 && (
+                      <Button onClick={handleBack} variant="outlined" fullWidth>
+                        Back
+                      </Button>
+                    )}
+                  </Stack>
+                </StepContent>
+              </Step>
+              <Step>
+                <StepLabel>Confirm</StepLabel>
+                <StepContent>
+                  <Stack
+                    mt={2}
+                    spacing={3}
+                    justifyContent="space-between"
+                    direction="column"
+                  >
+                    <Typography>
+                      If all the details are correct, please select CONFIRM.
+                    </Typography>
+                    <Button type="submit" variant="contained" fullWidth>
+                      Confirm
+                    </Button>
+                    <Button onClick={handleBack} variant="outlined" fullWidth>
+                      Back
+                    </Button>
+                  </Stack>
+                </StepContent>
+              </Step>
+            </Stepper>
+          </form>
+        </Stack>
+      )}
     </Container>
   );
 }
+DialogUpdateFridgeStatus.propTypes = {
+  fridgeName: PropTypes.string.isRequired,
+};
