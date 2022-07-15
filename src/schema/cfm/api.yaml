@@ -1,0 +1,437 @@
+openapi: 3.0.0
+info:
+  description: Community Fridge Map API
+  version: 1.0.0
+  title: Community Fridge Map API
+  contact:
+    email: info@collectivefocus.site
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+tags:
+  - name: fridge
+    description: Fridge root record
+  - name: report
+    description: Fridge status reports
+  - name: tag
+    description: Hash tag for filtering and searching
+
+paths:
+  /v1/fridges:
+    get:
+      summary: Read all Fridge objects.
+      tags:
+        - fridge
+      responses:
+        '200':
+          description: Array of Fridge objects as JSON
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fridge'
+        '400':
+          description: Request could not be understood due to incorrect syntax.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Fridge table not found in database.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+    post:
+      summary: Create a Fridge object.
+      tags:
+        - fridge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fridge'
+      responses:
+        '201':
+          description: Fridge object was created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    pattern: '^[a-z0-9]{2,}$'
+                    description: ID of the Fridge object (fridgeId).
+                    example: greenpointfridge
+        '400':
+          description: Request could not be understood due to incorrect syntax.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Fridge table not found in database.
+        '409':
+          description: There is an existing Fridge object with the same fridge name.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+  /v1/fridges/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          pattern: '^[a-z0-9]{2,}$'
+        required: true
+        description: ID of the Fridge object (fridgeId).
+        example: greenpointfridge
+
+    get:
+      summary: Read a Fridge object.
+      tags:
+        - fridge
+      responses:
+        '200':
+          description: A Fridge object as JSON
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fridge'
+        '400':
+          description: Invalid Fridge ID.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Fridge object not found.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+    put:
+      summary: Update a Fridge object.
+      tags:
+        - fridge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fridge:
+                  $ref: '#/components/schemas/Fridge'
+      responses:
+        '201':
+          description: Fridge object was updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    pattern: '^[a-z0-9]{2,}$'
+                    description: ID of the Fridge object (fridgeId).
+                    example: greenpointfridge
+        '400':
+          description: Invalid Fridge ID.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Fridge object not found.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+    delete:
+      summary: Delete a Fridge object.
+      tags:
+        - fridge
+      responses:
+        '204':
+          description: The Fridge object was deleted successfully.
+        '400':
+          description: Invalid Fridge ID.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Fridge object not found.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+  /v1/fridges/{id}/reports:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          pattern: '^[a-z0-9]{2,}$'
+        required: true
+        description: ID of the Fridge object (fridgeId).
+        example: greenpointfridge
+
+    get:
+      summary: Read all Report objects for the specified fridge.
+      tags:
+        - report
+      responses:
+        '200':
+          description: Array of Report objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Report'
+        '400':
+          description: Invalid Fridge ID.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Report objects not found for specified Fridge ID.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+    post:
+      summary: Create a new Report object.
+      tags:
+        - report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Report'
+      responses:
+        '201':
+          description: Report object was created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: '2022-03-29T18:10:38.547Z'
+                  fridgeId:
+                    type: string
+                    pattern: '^[a-z0-9]{2,}$'
+                    example: greenpointfridge
+        '400':
+          description: Invalid Fridge ID.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Report objects not found for specified Fridge ID.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+  /v1/image:
+    post:
+      summary: Create a new image file in the S3 bucket.
+      tags:
+        - fridge
+        - report
+      requestBody:
+        required: true
+        content:
+          image/webp:
+            schema:
+              description: Blob data of the image.
+              type: string
+              format: binary
+
+      responses:
+        '201':
+          description: Image was created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  photoURL:
+                    description: Fully qualified URL path to the image.
+                    format: uri
+                    example: https://s3.amazonaws.com/bucket/path/fridge.webp
+        '400':
+          description: Request could not be understood due to incorrect syntax.
+        '401':
+          description: Request requires user authentication.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
+components:
+  schemas:
+    Fridge:
+      type: object
+
+      required:
+        - id
+        - name
+        - location
+
+      properties:
+        id:
+          description: The database key for this fridge record.
+          type: string
+          pattern: '^[a-z0-9]{2,}$'
+          readOnly: true
+          nullable: false
+          example: greenpointfridge
+
+        name:
+          description: A descriptive title for this fridge location.
+          type: string
+          example: Greenpoint Fridge
+
+        tags:
+          description: Arbitrary words to associate with this fridge.
+          type: array
+          items:
+            type: string
+          example: [harlem, halal, kashrut]
+
+        location:
+          $ref: '#/components/schemas/Location'
+
+        maintainer:
+          $ref: '#/components/schemas/Maintainer'
+
+        notes:
+          description: Notes about the fridge.
+          type: string
+          example: Next to Lot Radio.
+
+        photoURL:
+          description: Fully qualified URL path to a picture of the fridge.
+          type: string
+          format: uri
+          nullable: true
+          example: https://s3.amazonaws.com/bucket/path/fridge.webp
+
+        verified:
+          description: Signifies that the fridge data has been verified by the fridge maintainer.
+          type: boolean
+          default: false
+          example: false
+
+    Location:
+      type: object
+
+      required:
+        - street
+        - zip
+        - geoLat
+        - geoLng
+
+      properties:
+        street:
+          type: string
+          example: 17 Nassau Ave
+
+        city:
+          type: string
+          example: Brooklyn
+
+        state:
+          type: string
+          example: NY
+
+        zip:
+          type: string
+          example: 11222
+
+        geoLat:
+          description: Geographic latitude.
+          type: number
+          readOnly: true
+          example: 40.722814
+
+        geoLng:
+          description: Geographic longitude.
+          type: number
+          readOnly: true
+          example: -73.95405
+
+    Maintainer:
+      type: object
+
+      properties:
+        name:
+          description: Name of the contact person.
+          type: string
+          nullable: true
+          example: Emily Ward
+
+        organization:
+          description: Name of the organization.
+          type: string
+          nullable: true
+          example: Food For People
+
+        phone:
+          type: string
+          format: phone
+          nullable: true
+          example: 782-654-4748
+
+        email:
+          type: string
+          format: email
+          nullable: true
+          example: eward@example.net
+
+        website:
+          type: string
+          format: uri
+          nullable: true
+          example: http://gray.com/
+
+        instagram:
+          type: string
+          nullable: true
+          example: foodforpeople
+
+    Report:
+      type: object
+
+      required:
+        - timestamp
+        - operation
+
+      properties:
+        timestamp:
+          description: The ISO formatted date/time of this report.
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2022-03-29T18:10:38.547Z'
+
+        condition:
+          description: The condition of the fridge. Fridge is ...
+          type: string
+          enum: [dirty, out of order, not at location]
+
+        foodPercentage:
+          description: The percentage of food in the fridge.
+          type: integer
+          enum: [100, 75, 50, 25, 0]
+
+        foodPhotoURL:
+          description: Fully qualified URL path to a picture of the food.
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+          example: https://s3.amazonaws.com/bucket/path/food.webp
+
+        foodPhotoBinary:
+          description: Binary data for photo upload.
+          type: string
+          format: binary
+          nullable: true
+          writeOnly: true
+
+        notes:
+          description: Notes to be included with this report.
+          type: string
+          example: Filled with Mars bars and M&M candy.
