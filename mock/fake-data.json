@@ -1,0 +1,148 @@
+{
+  "fridges": [
+    {
+      "id": "greenpointfridge",
+      "name": "Greenpoint Fridge",
+      "tags": ["harlem", "halal", "kashrut"],
+      "location": {
+        "street": "17 Nassau Ave",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11222",
+        "geoLat": 40.72283,
+        "geoLng": -73.95412
+      },
+      "maintainer": {
+        "name": "Emily Ward",
+        "organization": "Food For People",
+        "phone": "782-654-4748",
+        "email": "eward@example.net",
+        "website": "http://gray.com/",
+        "instagram": "foodforpeople"
+      },
+      "notes": "Next to Lot Radio.",
+      "photoURL": "http://localhost:4000/aws/fridge.webp",
+      "verified": false
+    },
+    {
+      "id": "gowanuscommunityfridge",
+      "name": "Gowanus Community Fridge",
+      "location": {
+        "street": "326 6th St",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11215",
+        "geoLat": 40.67108,
+        "geoLng": -73.9852
+      },
+      "maintainer": {
+        "name": "Jacob Brooks",
+        "organization": "Scott Group Fridges",
+        "phone": "106-721-4096",
+        "email": "brooks@example.net",
+        "website": "https://dalton.com/",
+        "instagram": "thegowanusfridge"
+      },
+      "notes": "Outside Postmark Cafe",
+      "photoURL": "http://localhost:4000/aws/fridge.webp",
+      "verified": true
+    },
+    {
+      "id": "happyfridge",
+      "fridge": {
+        "name": "Happy Fridge",
+        "tags": ["harlem", "halal", "kashrut"],
+        "location": {
+          "street": "17 Nassau Ave",
+          "city": "Brooklyn",
+          "state": "NY",
+          "zip": "11222"
+        },
+        "maintainer": {
+          "name": "Emily Ward",
+          "organization": "Food For People",
+          "phone": "782-654-4748",
+          "email": "eward@example.net",
+          "website": "http://gray.com/",
+          "instagram": "foodforpeople"
+        },
+        "notes": "Next to Lot Radio.",
+        "photoURL": "http://localhost:4000/aws/fridge.webp",
+        "verified": true
+      }
+    },
+    {
+      "name": "Smart Fridge",
+      "tags": ["harlem", "halal", "kashrut"],
+      "location": {
+        "street": "17 Nassau Ave",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11222"
+      },
+      "maintainer": {
+        "name": "Emily Ward",
+        "organization": "Food For People",
+        "phone": "782-654-4748",
+        "email": "eward@example.net",
+        "website": "http://gray.com/",
+        "instagram": "foodforpeople"
+      },
+      "notes": "Next to Lot Radio.",
+      "photoURL": "http://localhost:4000/aws/fridge.webp",
+      "verified": false,
+      "id": "8HgVGWp"
+    }
+  ],
+  "image": [
+    {
+      "id": 1
+    }
+  ],
+  "reports": [
+    {
+      "id": "2022-03-29T18:10:38.547Z",
+      "fridgeId": "greenpointfridge",
+      "timestamp": "2022-03-29T18:10:38.547Z",
+      "operation": "working",
+      "foodPercentage": 100,
+      "foodPhotoURL": "aws/food.webp",
+      "notes": "Filled with Mars bars and M&M candy."
+    },
+    {
+      "id": "2022-03-29T18:10:38.547Z",
+      "fridgeId": "greenpointfridge",
+      "timestamp": "2022-03-29T18:10:38.547Z",
+      "operation": "fail",
+      "foodPercentage": 0,
+      "foodPhotoURL": "aws/food.webp",
+      "notes": ""
+    },
+    {
+      "id": "2022-03-29T18:10:38.547Z",
+      "fridgeId": "gowanuscommunityfridge",
+      "timestamp": "2022-03-29T18:10:38.547Z",
+      "operation": "working",
+      "foodPercentage": 100,
+      "foodPhotoURL": "aws/food.webp",
+      "notes": "Filled with Mars bars and M&M candy."
+    },
+    {
+      "id": "2022-03-29T18:10:38.547Z",
+      "fridgeId": "gowanuscommunityfridge",
+      "timestamp": "2022-03-29T18:10:38.547Z",
+      "operation": "fail",
+      "foodPercentage": 0,
+      "foodPhotoURL": "aws/food.webp",
+      "notes": ""
+    },
+    {
+      "operation": "working",
+      "foodPercentage": 100,
+      "foodPhotoBinary": "string",
+      "notes": "Filled with Mars bars and M&M candy.",
+      "fridgeId": "greenpointfridge",
+      "id": "kEuKJay"
+    }
+  ]
+}

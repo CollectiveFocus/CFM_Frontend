@@ -29,7 +29,7 @@
   "scripts": {
     "preinstall": "./ci/install-global.sh && only-allow yarn",
     "postinstall": "npx simple-git-hooks",
-    "dev": "next dev -p 4000",
+    "dev": "concurrently --names 'MOCK,NEXT' --prefix-colors 'yellow,green' --kill-others 'json-server --watch mock/fake-data.json --routes mock/server-routes.json' 'npm exec --offline -- next -p 4000'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",

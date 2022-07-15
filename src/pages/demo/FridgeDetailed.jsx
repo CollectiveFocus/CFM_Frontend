@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { Grid } from '@mui/material';
-
-import { default as Component } from '../../components/molecules/FridgeDetailed';
+import { FridgeDetailed } from 'components/molecules';
 
 const info = {
   fridge: {
@@ -37,7 +36,7 @@ const info = {
   },
 };
 
-export default function FridgeDetailed() {
+export default function page(props) {
   return (
     <>
       <Head>
@@ -50,7 +49,7 @@ export default function FridgeDetailed() {
         spacing={4}
       >
         <Grid item xs={12} md={4} lg={4}>
-          <Component
+          <FridgeDetailed
             photo={info.fridge.photoURL}
             name={info.fridge.name}
             tags={info.fridge.tags}
@@ -70,4 +69,25 @@ export default function FridgeDetailed() {
       </Grid>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const fridgeId = 'greenpointfridge';
+  const fridgeUrl =
+    process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/' + fridgeId;
+  const responses = await Promise.all([
+    fetch(fridgeUrl, { headers: { Accept: 'application/json' } }),
+    fetch(fridgeUrl + '/updates', { headers: { Accept: 'application/json' } }),
+  ]);
+  for (const response of responses) {
+    if (!response.ok) {
+      console.error(
+        `ERROR ${response.url} ${response.status}: ${response.statusText}`
+      );
+      return { notFound: true };
+    }
+  }
+  const [fridge, updates] = await Promise.all(responses.map((r) => r.json()));
+  const update = updates.length > 0 ? updates[0] : null;
+  return { props: { fridge, update } };
 }
