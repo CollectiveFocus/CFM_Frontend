@@ -27,9 +27,9 @@
     "doc": "./doc"
   },
   "scripts": {
-    "preinstall": "npm i -g prettier svgo only-allow lint-staged && only-allow yarn",
+    "preinstall": "npm i -g prettier svgo only-allow lint-staged concurrently json-server && only-allow yarn",
     "postinstall": "npx simple-git-hooks",
-    "dev": "next dev -p 4000",
+    "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"json-server --watch mock/fake-data.json --routes mock/server-routes.json --static mock/img -H 127.0.0.1\" \"npm exec --offline -- next -p 4000\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
