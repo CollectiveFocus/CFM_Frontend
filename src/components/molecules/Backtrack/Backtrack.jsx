@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { Box, Container, Typography } from '@mui/material';
-import { themeOptions } from '../../../theme/index';
+import theme from 'theme';
 import { ArrowBack } from '@mui/icons-material';
 
 export default function Backtrack() {
@@ -23,7 +23,7 @@ export default function Backtrack() {
           paddingLeft: '17px',
           display: 'flex',
           alignItems: 'center',
-          color: themeOptions.palette.text.secondary,
+          color: theme.palette.text.secondary,
           ':hover': { cursor: 'pointer' },
         }}
       >
