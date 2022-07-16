@@ -6,9 +6,12 @@ import {
   Button,
   Checkbox,
   Container,
+  FormControl,
   FormControlLabel,
   FormGroup,
   FormLabel,
+  Radio,
+  RadioGroup,
   Slider,
   Stack,
   Step,
@@ -30,18 +33,11 @@ export default function DialogUpdateFridgeStatus({
   const formik = useFormik({
     initialValues: {
       foodPhotoURL: null,
-      foodPercentage: 0,
-      fridgeServiceRequest: false,
-      fridgeCleaningRequest: false,
-      fridgeLocationChange: false,
+      foodPercentage: 25,
+      operation: 'working',
       notes: '',
     },
-    // {
-    //   "operation": "working", [working, out of order, not at location]
-    //   "foodPercentage": 100,
-    //   "foodPhotoBinary": "string",
-    //   "notes": "Filled with Mars bars and M&M candy."
-    // }
+
     onSubmit: (values) => {
       console.table(values);
       alert(JSON.stringify(values, null, 2));
@@ -70,7 +66,6 @@ export default function DialogUpdateFridgeStatus({
   };
 
   //Functionality for MUI slider component
-
   const sliderMarks = [
     {
       value: 25,
@@ -157,7 +152,7 @@ export default function DialogUpdateFridgeStatus({
                     <FormLabel>How full is the fridge?</FormLabel>
                     <FormGroup>
                       <Slider
-                        name="fridgeContentScale"
+                        name="foodPercentage"
                         aria-label="Fridge fullness"
                         value={formik.values.foodPercentage}
                         onChange={formik.handleChange}
@@ -169,39 +164,32 @@ export default function DialogUpdateFridgeStatus({
                         size="medium"
                       />
                     </FormGroup>
-                    <FormLabel>Check box if applicable:</FormLabel>
-                    <FormGroup>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            checked={formik.values.fridgeServiceRequest}
-                            onChange={formik.handleChange}
-                            name="fridgeServiceRequest"
+                    <FormControl>
+                      <FormLabel>Select if applicable:</FormLabel>
+                      <RadioGroup
+                        name="operation"
+                        value={formik.values.operation}
+                        onChange={formik.handleChange}
+                      >
+                        <FormGroup>
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="out of order"
+                            label="Fridge needs servicing"
                           />
-                        }
-                        label="Fridge needs servicing"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            checked={formik.values.fridgeCleaningRequest}
-                            onChange={formik.handleChange}
-                            name="fridgeCleaningRequest"
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="dirty"
+                            label="Fridge needs cleaning"
                           />
-                        }
-                        label="Fridge needs cleaning"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            checked={formik.values.fridgeLocationChange}
-                            onChange={formik.handleChange}
-                            name="fridgeLocationChange"
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="not at location"
+                            label="Fridge is no longer at location"
                           />
-                        }
-                        label="Fridge is no longer at location"
-                      />
-                    </FormGroup>
+                        </FormGroup>
+                      </RadioGroup>
+                    </FormControl>
                     {activeStep != 3 && (
                       <Button
                         onClick={handleNext}
@@ -229,9 +217,9 @@ export default function DialogUpdateFridgeStatus({
                     justifyContent="space-between"
                   >
                     <TextField
-                      name="fridgeUpdateNotes"
+                      name="notes"
                       value={formik.values.notes}
-                      id="update-notes"
+                      id="notes"
                       placeholder="Got an update or request? Leave your notes here!"
                       onChange={formik.handleChange}
                       multiline
