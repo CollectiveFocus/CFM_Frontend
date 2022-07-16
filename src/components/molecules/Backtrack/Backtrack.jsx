@@ -10,13 +10,26 @@ export default function Backtrack() {
   const prevLocation =
     asPath.includes('update') || asPath.includes('checkin') ? 'Fridge' : 'Map';
 
+  const onBack = () => {
+    if (window.history.length > 2) {
+      router.back();
+    } else {
+      let url =
+        asPath.includes('update') || asPath.includes('checkin')
+          ? '/fridge'
+          : 'fridge/map';
+      window.history.replaceState(null, null, url);
+      router.back();
+    }
+  };
+
   return (
     <Box>
       <Container
         fixed
         disableGutters
         maxWidth={false}
-        onClick={() => router.back()}
+        onClick={() => onBack()}
         sx={{
           minWidth: '100%',
           height: '54px',
