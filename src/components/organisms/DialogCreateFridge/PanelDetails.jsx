@@ -1,7 +1,13 @@
 import { useFormik } from 'formik';
-import { Stack, StepLabel, TextField } from '@mui/material';
+import {
+  Button,
+  Stack,
+  StepContent,
+  StepLabel,
+  TextField,
+} from '@mui/material';
 
-export default function PanelDetails() {
+export default function PanelDetails(props) {
   const formik = useFormik({
     initialValues: {
       fridgeName: '',
@@ -18,45 +24,66 @@ export default function PanelDetails() {
   return (
     <>
       <StepLabel>Fridge Details</StepLabel>
-      <Stack direction="column" spacing={3} mx={4} mb={4}>
-        <TextField
-          id="fridgeName"
-          label="Name of Fridge"
-          variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.fridgeName}
-        />
-        <TextField
-          id="address"
-          label="Street Address"
-          variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.address}
-        />
-        <TextField
-          id="city"
-          label="City"
-          variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.city}
-        />
-        <TextField
-          id="zip"
-          label="Zip Code"
-          variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.zip}
-        />
-        <TextField
-          id="description"
-          label="Description"
-          variant="outlined"
-          multiline
-          rows={4}
-          onChange={formik.handleChange}
-          value={formik.values.description}
-        />
-      </Stack>
+      <StepContent>
+        <Stack direction="column" spacing={3} mx={4} mb={4}>
+          <TextField
+            id="fridgeName"
+            label="Name of Fridge"
+            variant="outlined"
+            onChange={formik.handleChange}
+            value={formik.values.fridgeName}
+          />
+          <TextField
+            id="address"
+            label="Street Address"
+            variant="outlined"
+            onChange={formik.handleChange}
+            value={formik.values.address}
+          />
+          <TextField
+            id="city"
+            label="City"
+            variant="outlined"
+            onChange={formik.handleChange}
+            value={formik.values.city}
+          />
+          <TextField
+            id="zip"
+            label="Zip Code"
+            variant="outlined"
+            onChange={formik.handleChange}
+            value={formik.values.zip}
+          />
+          <TextField
+            id="description"
+            label="Description"
+            variant="outlined"
+            multiline
+            rows={4}
+            onChange={formik.handleChange}
+            value={formik.values.description}
+          />
+          <Stack direction="column" spacing={4} pt={4}>
+            <Button
+              aria-label="continue"
+              variant="contained"
+              onClick={props.handleNext}
+              sx={{ py: 3, border: '2px solid transparent' }}
+            >
+              Continue
+            </Button>
+            <Button
+              aria-label="back"
+              disabled
+              variant="outlined"
+              onClick={props.handleBack}
+              sx={{ py: 3 }}
+            >
+              Back
+            </Button>
+          </Stack>
+        </Stack>
+      </StepContent>
     </>
   );
 }

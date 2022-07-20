@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 # This hook is called with the following parameters:
 #
