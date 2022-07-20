@@ -36,7 +36,7 @@ const info = {
   },
 };
 
-export default function page(props) {
+export default function FridgeDetailedPage(props) {
   return (
     <>
       <Head>
