@@ -106,7 +106,7 @@
       "timestamp": "2022-03-29T18:10:38.547Z",
       "operation": "working",
       "foodPercentage": 100,
-      "foodPhotoURL": "aws/food.webp",
+      "foodPhotoURL": "http://localhost:4000/aws/food.webp",
       "notes": "Filled with Mars bars and M&M candy."
     },
     {
@@ -115,7 +115,7 @@
       "timestamp": "2022-03-29T18:10:38.547Z",
       "operation": "fail",
       "foodPercentage": 0,
-      "foodPhotoURL": "aws/food.webp",
+      "foodPhotoURL": "http://localhost:4000/aws/food.webp",
       "notes": ""
     },
     {
@@ -124,7 +124,7 @@
       "timestamp": "2022-03-29T18:10:38.547Z",
       "operation": "working",
       "foodPercentage": 100,
-      "foodPhotoURL": "aws/food.webp",
+      "foodPhotoURL": "http://localhost:4000/aws/food.webp",
       "notes": "Filled with Mars bars and M&M candy."
     },
     {
@@ -133,7 +133,7 @@
       "timestamp": "2022-03-29T18:10:38.547Z",
       "operation": "fail",
       "foodPercentage": 0,
-      "foodPhotoURL": "aws/food.webp",
+      "foodPhotoURL": "http://localhost:4000/aws/food.webp",
       "notes": ""
     },
     {

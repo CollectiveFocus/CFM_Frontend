@@ -6,6 +6,9 @@ module.exports = {
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ['localhost'],
+  },
   experimental: {
     modularizeImports: {
       '@mui/material': {
