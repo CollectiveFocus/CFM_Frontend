@@ -36,7 +36,7 @@ const info = {
   },
 };
 
-export default function page(props) {
+export default function FridgeDetailedPage(props) {
   return (
     <>
       <Head>
@@ -77,7 +77,7 @@ export async function getServerSideProps() {
     process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/' + fridgeId;
   const responses = await Promise.all([
     fetch(fridgeUrl, { headers: { Accept: 'application/json' } }),
-    fetch(fridgeUrl + '/updates', { headers: { Accept: 'application/json' } }),
+    fetch(fridgeUrl + '/reports', { headers: { Accept: 'application/json' } }),
   ]);
   for (const response of responses) {
     if (!response.ok) {
@@ -87,7 +87,7 @@ export async function getServerSideProps() {
       return { notFound: true };
     }
   }
-  const [fridge, updates] = await Promise.all(responses.map((r) => r.json()));
-  const update = updates.length > 0 ? updates[0] : null;
-  return { props: { fridge, update } };
+  const [fridge, reports] = await Promise.all(responses.map((r) => r.json()));
+  const report = reports.length > 0 ? reports[0] : null;
+  return { props: { fridge, report } };
 }

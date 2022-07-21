@@ -1,5 +1,8 @@
 import pkg from './schema/cfm/yup/index.js';
-const { FridgeDialogSchema, DialogSchema: {Fridge} }  = pkg
+const {
+  FridgeDialogSchema,
+  DialogSchema: { Fridge },
+} = pkg;
 
 if (process.env.NODE_ENV !== 'production') {
 } else {
@@ -21,14 +24,14 @@ const fridge = {
 };
 
 Fridge.validate(fridge)
-.then((data) => console.log(data))
-.catch((e) => {
-  const error = {
-    message: e.message,
-    field: e.path,
-  };
-  console.error(error);
-});
+  .then((data) => console.log(data))
+  .catch((e) => {
+    const error = {
+      message: e.message,
+      field: e.path,
+    };
+    console.error(error);
+  });
 
 // const report = {
 //   id: '2022-03-29T18:10:38.547Z',

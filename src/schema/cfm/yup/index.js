@@ -13,24 +13,24 @@ const Location = object({
 });
 
 const Maintainer = object({
-    name: string().max(70).trim().required(),
-    email: string().email().required(),
-    organization: string().max(80).trim().optional(),
-    phone: string()
-      .matches(/\(\d{3}\) \d{3}-\d{4}/)
-      .optional(),
-    website: string().url().optional(),
-    instagram: string().url().optional(),
-  }).nullable()
+  name: string().max(70).trim().required(),
+  email: string().email().required(),
+  organization: string().max(80).trim().optional(),
+  phone: string()
+    .matches(/\(\d{3}\) \d{3}-\d{4}/)
+    .optional(),
+  website: string().url().optional(),
+  instagram: string().url().optional(),
+}).nullable();
 
 const Report = object({
-    condition: string()
-      .oneOf(['good', 'dirty', 'out of order', 'not at location'])
-      .optional(),
-    foodPercentage: number().integer().oneOf([0, 33, 66, 100]),
-    foodPhotoURL: string().url().optional(),
-    notes: string().min(0).max(300).trim().default('').optional(),
-  }).nullable()
+  condition: string()
+    .oneOf(['good', 'dirty', 'out of order', 'not at location'])
+    .optional(),
+  foodPercentage: number().integer().oneOf([0, 33, 66, 100]),
+  foodPhotoURL: string().url().optional(),
+  notes: string().min(0).max(300).trim().default('').optional(),
+}).nullable();
 
 const FridgeApiSchema = object({
   id: string().min(4).max(60).required(),
@@ -42,12 +42,17 @@ const FridgeApiSchema = object({
   photoURL: string().url().optional(),
   verified: boolean().default(false),
 });
-const  FridgeDialogSchema = FridgeApiSchema.omit(['id', 'verified', 'tags', 'location']).shape({location: Location.required(),});
+const FridgeDialogSchema = FridgeApiSchema.omit([
+  'id',
+  'verified',
+  'tags',
+  'location',
+]).shape({ location: Location.required() });
 
-export default { FridgeDialogSchema, ReportDialogSchema: Report ,
+export default {
+  FridgeDialogSchema,
+  ReportDialogSchema: Report,
   DialogSchema: {
-    Fridge: FridgeDialogSchema
-  }
-
-
+    Fridge: FridgeDialogSchema,
+  },
 };
