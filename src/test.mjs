@@ -1,5 +1,5 @@
 import pkg from './schema/cfm/yup/index.js';
-const { FridgeDialogSchema, ReportDialogSchema }  = pkg
+const { FridgeDialogSchema, DialogSchema: {Fridge} }  = pkg
 
 if (process.env.NODE_ENV !== 'production') {
 } else {
@@ -20,7 +20,7 @@ const fridge = {
   notes: 'Next to Lot Radio.',
 };
 
-FridgeDialogSchema.validate(fridge)
+Fridge.validate(fridge)
 .then((data) => console.log(data))
 .catch((e) => {
   const error = {

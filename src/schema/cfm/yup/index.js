@@ -42,6 +42,12 @@ const FridgeApiSchema = object({
   photoURL: string().url().optional(),
   verified: boolean().default(false),
 });
-const  FridgeDialogSchema = FridgeApiSchema.omit(['id', 'verified', 'tags']);
+const  FridgeDialogSchema = FridgeApiSchema.omit(['id', 'verified', 'tags', 'location']).shape({location: Location.required(),});
 
-export default { FridgeDialogSchema, ReportDialogSchema: Report };
+export default { FridgeDialogSchema, ReportDialogSchema: Report ,
+  DialogSchema: {
+    Fridge: FridgeDialogSchema
+  }
+
+
+};
