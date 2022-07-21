@@ -1,1 +1,1 @@
-export { default } from './PanelDetails';
+export { default } from './DialogCreateFridge';

@@ -76,7 +76,6 @@ export default function PanelDetails(props) {
               aria-label="back"
               disabled
               variant="outlined"
-              onClick={props.handleBack}
               sx={{ py: 3 }}
             >
               Back
