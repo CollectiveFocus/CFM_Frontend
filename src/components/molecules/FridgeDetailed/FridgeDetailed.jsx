@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Button, Chip, Divider, Link, Stack, Typography } from '@mui/material';
 
+import { useState, useEffect } from 'react';
+
 // Icons
 import {
   ArrowBack as ArrowBackIcon,
@@ -18,20 +20,17 @@ import {
 } from '@mui/icons-material';
 import { StatusIcon } from 'theme/icons';
 
-export default function FridgeDetailed({
-  photo,
-  name,
-  tags,
-  location,
-  info,
-  instagram,
-  website,
-  foodPhoto,
-  lastUpdate,
-  notes,
-  status,
-  foodAvailable,
-}) {
+export default function FridgeDetailed(props) {
+  const [date, setDate] = useState('');
+  useEffect(() => {
+    const convertedDate = new Date(props.report.timestamp);
+
+    const day = convertedDate.getDate();
+    const month = convertedDate.getMonth();
+    const year = convertedDate.getFullYear().toString().substr(-2);
+    setDate(`${month}/${day}/${year}`);
+  }, []);
+
   return (
     <Stack direction="column" spacing={7} mx={4} mb={4}>
       {/* Navigation  */}
@@ -53,7 +52,7 @@ export default function FridgeDetailed({
       {/* Fridge Picture + Name + Location  */}
       <Stack>
         <Image
-          src={photo}
+          src={props.fridge.photoURL}
           alt="Picture of the fridge"
           width="100%"
           height="100%"
@@ -64,10 +63,10 @@ export default function FridgeDetailed({
 
       <Stack spacing={3}>
         <Stack direction="column" spacing={1}>
-          <Typography variant="h2">{name}</Typography>
+          <Typography variant="h2">{props.fridge.name}</Typography>
         </Stack>
         <Stack direction="row" spacing={2}>
-          {tags.map((tag) => (
+          {props.fridge.tags.map((tag) => (
             <Chip label={`#${tag}`} key={tag} />
           ))}
         </Stack>
@@ -93,7 +92,8 @@ export default function FridgeDetailed({
       <Stack direction="row" spacing={5} alignItems="center">
         <LocationOnOutlinedIcon />
         <Typography variant="h5" color="text.secondary">
-          {location.street}, {location.city}, {location.state} {location.zip}
+          {props.fridge.location.street}, {props.fridge.location.city},{' '}
+          {props.fridge.location.state} {props.fridge.location.zip}
         </Typography>
       </Stack>
       <Stack direction="row" spacing={5}>
@@ -101,23 +101,25 @@ export default function FridgeDetailed({
         <Stack direction="column">
           <Typography variant="h4">Info:</Typography>
           <Typography variant="h5" color="text.secondary">
-            {info}
+            {props.fridge.notes}
           </Typography>
         </Stack>
       </Stack>
       <Stack direction="row" spacing={5} alignItems="center">
         <InstagramIcon />
-        <Link href={`https://www.instagram.com/${instagram}/`}>
+        <Link
+          href={`https://www.instagram.com/${props.fridge.maintainer.instagram}/`}
+        >
           <Typography variant="h5" color="text.secondary">
-            @{instagram}
+            @{props.fridge.maintainer.instagram}
           </Typography>
         </Link>
       </Stack>
       <Stack direction="row" spacing={5} alignItems="center">
         <LanguageIcon />
-        <Link href={website}>
+        <Link href={props.fridge.maintainer.website}>
           <Typography variant="h5" color="text.secondary">
-            {website}
+            {props.fridge.maintainer.website}
           </Typography>
         </Link>
       </Stack>
@@ -126,7 +128,7 @@ export default function FridgeDetailed({
 
       <Stack>
         <Image
-          src={foodPhoto}
+          src={props.report.foodPhotoURL}
           alt="Picture of the food within the fridge"
           width="100%"
           height="100%"
@@ -140,7 +142,33 @@ export default function FridgeDetailed({
         <Stack direction="row" spacing={2}>
           <Typography variant="h4">Last Update:</Typography>
           <Typography variant="h5" color="text.secondary">
-            {lastUpdate}
+            {date}
+          </Typography>
+        </Stack>
+      </Stack>
+
+      <Stack direction="row" spacing={5}>
+        <StatusIcon />
+        <Stack direction="row" spacing={2}>
+          <Typography variant="h4">Status:</Typography>
+          <Typography variant="h5">{props.report.operation}</Typography>
+        </Stack>
+      </Stack>
+
+      <Stack direction="row" spacing={5}>
+        <KitchenIcon />
+        <Stack direction="column">
+          <Typography variant="h4">Food Available:</Typography>
+          <Typography variant="h5">
+            {props.report.foodPercentage === 0
+              ? 'Empty'
+              : props.report.foodPercentage > 0 &&
+                props.report.foodPercentage <= 25
+              ? 'Few items'
+              : props.report.foodPercentage > 25 &&
+                props.report.foodPercentage < 100
+              ? 'Many Items'
+              : 'Full'}
           </Typography>
         </Stack>
       </Stack>
@@ -150,31 +178,7 @@ export default function FridgeDetailed({
         <Stack direction="column" spacing={1}>
           <Typography variant="h4">Notes:</Typography>
           <Typography variant="h5" color="text.secondary">
-            {notes}
-          </Typography>
-        </Stack>
-      </Stack>
-
-      <Stack direction="row" spacing={5}>
-        <StatusIcon />
-        <Stack direction="column">
-          <Typography variant="h4">Status:</Typography>
-          <Typography variant="h5">{status}</Typography>
-        </Stack>
-      </Stack>
-
-      <Stack direction="row" spacing={5}>
-        <KitchenIcon />
-        <Stack direction="column">
-          <Typography variant="h4">Food Available:</Typography>
-          <Typography variant="h5">
-            {foodAvailable === 0
-              ? 'Empty'
-              : foodAvailable > 0 && foodAvailable <= 25
-              ? 'Few items'
-              : foodAvailable > 25 && foodAvailable < 100
-              ? 'Many Items'
-              : 'Full'}
+            {props.report.notes}
           </Typography>
         </Stack>
       </Stack>

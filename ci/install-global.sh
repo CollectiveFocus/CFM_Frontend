@@ -8,6 +8,5 @@ which only-allow   &>/dev/null || package="$package only-allow"
 which lint-staged  &>/dev/null || package="$package lint-staged"
 which concurrently &>/dev/null || package="$package concurrently"
 which json-server  &>/dev/null || package="$package json-server"
-echo $package
+
 [ -z "$package" ] || npm install --global $package
-echo end

@@ -15,22 +15,7 @@ export default function FridgeDetailedPage(props) {
         spacing={4}
       >
         <Grid item xs={12} md={4} lg={4}>
-          <FridgeDetailed
-            photo={props.fridge.photoURL}
-            name={props.fridge.name}
-            tags={props.fridge.tags}
-            location={props.fridge.location}
-            info={props.fridge.notes}
-            instagram={props.fridge.maintainer.instagram}
-            website={props.fridge.maintainer.website}
-            foodPhoto={props.report.foodPhotoURL}
-            lastUpdate={props.report.timestamp
-              .split('T')[0]
-              .replaceAll('-', '/')}
-            notes={props.report.notes}
-            status={props.report.operation}
-            foodAvailable={props.report.foodPercentage}
-          />
+          <FridgeDetailed {...props} />
         </Grid>
       </Grid>
     </>
