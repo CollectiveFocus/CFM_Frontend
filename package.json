@@ -44,7 +44,7 @@
   "packageManager": "yarn@1.22.15",
   "simple-git-hooks": {
     "pre-commit": "lint-staged --quiet --no-stash --concurrent true",
-    "commit-msg": "node ci/verifyCommit.mjs $1"
+    "commit-msg": "node ci/commit-msg.mjs $1"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
