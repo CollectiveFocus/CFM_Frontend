@@ -32,7 +32,7 @@
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix && next lint --fix --dir ci --dir src/theme",
+    "lint": "next lint --fix",
     "style": "prettier --write --ignore-unknown . && svgo -qrf public/ && svgo -qrf src/"
   },
   "browserslist": [
@@ -64,8 +64,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@emotion/eslint-plugin": "^11.7.0",
+    "@babel/core": "^7.18.6",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
