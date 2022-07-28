@@ -1,5 +1,4 @@
-import styled from '@emotion/styled';
-import { designColor } from 'theme';
+import { designColor } from 'theme/palette';
 import { Box, Typography } from '@mui/material';
 
 const converted = {
