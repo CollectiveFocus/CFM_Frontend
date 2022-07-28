@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 import Head from 'next/head';
 
 import createEmotionCache from 'lib/createEmotionCache';
@@ -9,11 +9,11 @@ import theme from 'theme';
 
 const clientSideEmotionCache = createEmotionCache();
 
-const MyApp = (props) => {
+function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
@@ -23,9 +23,9 @@ const MyApp = (props) => {
           <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>
-    </React.Fragment>
+    </>
   );
-};
+}
 
 export default MyApp;
 
