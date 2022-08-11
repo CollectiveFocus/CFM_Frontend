@@ -43,7 +43,7 @@ Contributing to the project requires a shell terminal. On Windows, we recommend 
 
 These settings are not requirements of the project. They are provided as a service for people who are [new to git](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners).
 
-This configuration sets up VS Code as your git editor, diff and merge tool. These commands should be pasted into a shell terminal.
+This configuration sets up VS Code 1.70 and above as your git editor, diff and merge tool. These commands can be run in any shell terminal.
 
 ```bash
 git config --global user.name "<name you use on your resume>"
@@ -53,25 +53,30 @@ git config --global core.autocrlf false
 git config --global core.filemode false
 git config --global core.editor "code --wait"
 
-git config --global default.push current
-git config --global default.pull current
+git config --global push.default current
+git config --global pull.default matching
 git config --global pull.ff only
 
 git config --global pretty.all "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(55,trunc)%s %C(yellow)%<(30,trunc)%S %C(auto)%d"
 git config --global pretty.summary "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(55,trunc)%s %C(auto)%d"
 
 git config --global diff.guitool vscode
-git config --global difftool.prompt false
-git config --global difftool.vscode.cmd "code --wait --diff \"$LOCAL\" \"$REMOTE\""
-git config --global difftool.meld.cmd "meld \"$LOCAL\" \"$BASE\" --output \"$BASE\""
-
 git config --global merge.guitool vscode
+
+git config --global difftool.prompt false
 git config --global mergetool.prompt false
-git config --global mergetool.vscode.cmd "code --wait $MERGED"
-git config --global mergetool.vscode.keepbackup false
+git config --global mergetool.keepBackup false
+
+git config --global difftool.vscode.cmd 'code --wait --diff "$LOCAL" "$REMOTE"'
+git config --global mergetool.vscode.cmd 'code --wait --merge "$REMOTE" "$LOCAL" "$BASE" "$MERGED"'
 git config --global mergetool.vscode.trustexitcode true
-git config --global mergetool.meld.cmd "meld \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\""
-git config --global mergetool.meld.keepbackup true
+```
+
+Run these commands only if you are using Windows Command or PowerShell as your shell terminal:
+
+```shell
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+git config --global mergetool.vscode.cmd "code --wait --merge $REMOTE $LOCAL $BASE $MERGED"
 ```
 
 The following creates git aliases for the bash and zsh shells. Add these lines to your shell configuration file. Type `code ~/.bashrc` to open the bash shell configuration file. Type `code ~/.zshrc` to open the zsh configuration file.
@@ -104,10 +109,10 @@ alias gri='  git rebase --interactive'
 alias gra='  git rebase --abort'
 alias grc='  git rebase --continue'
 alias gr-d=' git fetch --prune && git rebase origin/dev'
-alias gop='  git push -u origin'
+alias gop='  git push origin -u'
 alias gol='  git pull --ff-only'
-alias gof='  git fetch --prune'
-alias clean='f() { find . -type d \( -name .git -o -name node_modules -o -name .next \) -prune -o -type f -name "*.orig" -print | xargs -I % rm %; git gc --auto; };f'
+alias gof==' f() { git fetch --prune $@; git gc --auto; };f'
+alias clean='f() { find . -type d \( -name .git -o -name node_modules -o -name .next \) -prune -o -type f -name "*.orig" -print | xargs -I % rm %; git gc --aggressive; };f'
 
 HISTIGNORE="$HISTIGNORE:gaa:gca:gm:gpop;gpush:gs:gra:grc:gr-d:gof:clean"
 
