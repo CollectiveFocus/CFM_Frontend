@@ -1,8 +1,10 @@
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { Typography, Grid } from '@mui/material';
 import MascotCard from 'components/MascotCard';
 import AboutCommunityFridges from 'components/AboutCommunityFridges';
 import PageHero from 'components/atoms/PageHero';
+import Footer from 'components/atoms/PageFooter';
 
 export async function getStaticProps() {
   return {
@@ -73,6 +75,8 @@ export default function HomePage(props) {
         direction="row"
         justifyContent="space-between"
         spacing={4}
+        mb={4}
+        px={4}
       >
         <Grid item xs={12} md={12} lg={12}>
           <AboutCommunityFridges {...aboutData} />
@@ -81,7 +85,7 @@ export default function HomePage(props) {
           <Typography
             variant="h2"
             textAlign="center"
-            sx={{ mb: { xs: 3, lg: 5 } }}
+            sx={{ mb: { xs: 1, lg: 3 } }}
           >
             Get involved with community fridges!
           </Typography>
@@ -92,6 +96,25 @@ export default function HomePage(props) {
           </Grid>
         ))}
       </Grid>
+      <Footer />
     </>
   );
 }
+
+const imageShape = PropTypes.shape({
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+});
+
+PropTypes.HomePage = {
+  mascotCard: PropTypes.arrayOf(
+    PropTypes.shape({
+      img: PropTypes.shape(imageShape).isRequired,
+      title: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

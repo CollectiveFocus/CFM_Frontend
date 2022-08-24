@@ -14,6 +14,7 @@ export default function AboutCommunityFridges({
   return (
     <Box
       sx={{
+        pt: 2,
         display: 'flex',
         flexDirection: {
           xs: 'column',
@@ -31,6 +32,7 @@ export default function AboutCommunityFridges({
       />
       <Box
         sx={{
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: {
@@ -41,6 +43,11 @@ export default function AboutCommunityFridges({
           textAlign: { xs: 'center', md: type === 'about' ? 'left' : 'center' },
         }}
       >
+        <Box>
+          <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+            {title}
+          </Typography>
+        </Box>
         <Box
           component="img"
           alt={img.alt}
@@ -49,9 +56,6 @@ export default function AboutCommunityFridges({
             display: { xs: 'inline-block', md: 'none' },
           }}
         ></Box>
-        <Box>
-          <Typography variant="h3">{title}</Typography>
-        </Box>
         <Box>
           <Typography variant="body1">{text}</Typography>
         </Box>

@@ -40,14 +40,14 @@ export default function PageHero({}) {
           objectFit="cover"
           alt={props.img.alt}
         />
-        <Button variant="contained" sx={{ minWidth: 348 }}>
+        <Button variant="contained" sx={{ minWidth: '75%' }}>
           {props.buttonTitle}
         </Button>
       </Box>
-      <Typography variant="h2" sx={{ mb: 2 }}>
+      <Typography variant="h2" sx={{ mb: 2, px: 2 }}>
         {props.title}
       </Typography>
-      <Typography variant="body1" sx={{ mb: 4 }}>
+      <Typography variant="body1" sx={{ mb: 4, px: 4 }}>
         {props.text}
       </Typography>
     </Box>

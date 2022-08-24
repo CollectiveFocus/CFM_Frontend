@@ -11,7 +11,7 @@ export default function MascotCard({ img, title, text, link, buttonTitle }) {
       direction="column"
       justifyContent="space-between"
       alignItems="center"
-      spacing={4}
+      spacing={2}
     >
       <Image {...img} />
       <Typography variant="h3">{title}</Typography>
@@ -19,7 +19,7 @@ export default function MascotCard({ img, title, text, link, buttonTitle }) {
         {text}
       </Typography>
       <Link href={link} passHref>
-        <Button component="a" fullWidth={true}>
+        <Button component="a" variant="outlined" fullWidth={true}>
           {buttonTitle || 'LEARN MORE'}
         </Button>
       </Link>
