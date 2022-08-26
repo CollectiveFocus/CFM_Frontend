@@ -2,10 +2,11 @@
   "contact": [],
   "fridges": [
     {
-      "id": "greenpointfridge",
-      "name": "Greenpoint Fridge",
+      "id": "allfieldsfridge",
+      "name": "All Fields Fridge",
       "tags": ["harlem", "halal", "kashrut"],
       "location": {
+        "name": "The Bakery Store",
         "street": "17 Nassau Ave",
         "city": "Brooklyn",
         "state": "NY",
@@ -15,19 +16,19 @@
       },
       "maintainer": {
         "name": "Emily Ward",
+        "email": "eward@example.net",
         "organization": "Food For People",
         "phone": "(782) 654-4748",
-        "email": "eward@example.net",
         "website": "http://gray.com/",
-        "instagram": "https://www.instagram.com/greenpointfridge/?hl=en"
+        "instagram": "https://www.instagram.com/theneighborhoodfridge"
       },
-      "notes": "Next to Lot Radio.",
-      "photoURL": "http://127.0.0.1:3000/fridge.webp",
+      "notes": "Next to Lot Radio. Go up the stairs and to the right.",
+      "photoUrl": "http://127.0.0.1:3000/fridge.webp",
       "verified": false
     },
     {
-      "id": "gowanuscommunityfridge",
-      "name": "Gowanus Community Fridge",
+      "id": "requiredfieldsfridge",
+      "name": "Required Fields Fridge",
       "location": {
         "street": "326 6th St",
         "city": "Brooklyn",
@@ -35,44 +36,11 @@
         "zip": "11215",
         "geoLat": 40.67108,
         "geoLng": -73.9852
-      },
-      "maintainer": {
-        "name": "Jacob Brooks",
-        "organization": "Scott Group Fridges",
-        "phone": "(106) 721-4096",
-        "email": "brooks@example.net",
-        "website": "https://dalton.com/",
-        "instagram": "https://www.instagram.com/greenpointfridge/?hl=en"
-      },
-      "notes": "Outside Postmark Cafe",
-      "photoURL": "http://127.0.0.1:3000/fridge.webp",
-      "verified": true
-    },
-    {
-      "id": "happyfridge",
-      "fridge": {
-        "name": "Happy Fridge",
-        "tags": ["harlem", "halal", "kashrut"],
-        "location": {
-          "street": "17 Nassau Ave",
-          "city": "Brooklyn",
-          "state": "NY",
-          "zip": "11222"
-        },
-        "maintainer": {
-          "name": "Emily Ward",
-          "organization": "Food For People",
-          "phone": "(782) 654-4748",
-          "email": "eward@example.net",
-          "website": "http://gray.com/"
-        },
-        "notes": "Next to Lot Radio.",
-        "photoURL": "http://127.0.0.1:3000/fridge.webp",
-        "verified": true
       }
     },
     {
-      "name": "Smart Fridge",
+      "id": "happyfridge",
+      "name": "Happy Fridge",
       "tags": ["harlem", "halal", "kashrut"],
       "location": {
         "street": "17 Nassau Ave",
@@ -82,15 +50,30 @@
       },
       "maintainer": {
         "name": "Emily Ward",
+        "email": "eward@example.net",
         "organization": "Food For People",
         "phone": "(782) 654-4748",
-        "email": "eward@example.net",
+        "instagram": "https://www.instagram.com/theneighborhoodfridge"
+      },
+      "notes": "Next to Lot Radio.",
+      "photoUrl": "http://127.0.0.1:3000/fridge.webp",
+      "verified": true
+    },
+    {
+      "id": "smartfridge",
+      "name": "Smart Fridge",
+      "tags": ["harlem", "halal", "kashrut"],
+      "location": {
+        "street": "17 Nassau Ave",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11222"
+      },
+      "maintainer": {
         "website": "http://gray.com/"
       },
       "notes": "Next to Lot Radio.",
-      "photoURL": "http://127.0.0.1:3000/fridge.webp",
-      "verified": false,
-      "id": "8HgVGWp"
+      "verified": false
     }
   ],
   "image": [
@@ -101,39 +84,35 @@
   "reports": [
     {
       "id": "2022-03-29T18:10:38.547Z",
-      "fridgeId": "greenpointfridge",
+      "fridgeId": "allfieldsfridge",
       "timestamp": "2022-03-29T18:10:38.547Z",
-      "operation": "working",
+      "condition": "good",
       "foodPercentage": 100,
-      "foodPhotoURL": "http://127.0.0.1:3000/food.webp",
+      "photoUrl": "http://127.0.0.1:3000/food.webp",
       "notes": "Filled with Mars bars and M&M candy."
     },
     {
       "id": "2022-03-29T18:10:38.547Z",
-      "fridgeId": "greenpointfridge",
+      "fridgeId": "allfieldsfridge",
       "timestamp": "2022-03-29T18:10:38.547Z",
-      "operation": "fail",
+      "condition": "dirty",
       "foodPercentage": 0,
-      "foodPhotoURL": "http://127.0.0.1:3000/food.webp",
+      "photoUrl": "http://127.0.0.1:3000/food.webp",
       "notes": ""
     },
     {
       "id": "2022-03-29T18:10:38.547Z",
-      "fridgeId": "gowanuscommunityfridge",
+      "fridgeId": "requiredfieldsfridge",
       "timestamp": "2022-03-29T18:10:38.547Z",
-      "operation": "working",
-      "foodPercentage": 100,
-      "foodPhotoURL": "http://127.0.0.1:3000/food.webp",
-      "notes": "Filled with Mars bars and M&M candy."
+      "condition": "out of order",
+      "foodPercentage": 100
     },
     {
       "id": "2022-03-29T18:10:38.547Z",
-      "fridgeId": "gowanuscommunityfridge",
+      "fridgeId": "requiredfieldsfridge",
       "timestamp": "2022-03-29T18:10:38.547Z",
-      "operation": "fail",
-      "foodPercentage": 0,
-      "foodPhotoURL": "http://127.0.0.1:3000/food.webp",
-      "notes": ""
+      "condition": "not at location",
+      "foodPercentage": 0
     }
   ]
 }

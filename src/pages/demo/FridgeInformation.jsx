@@ -23,7 +23,7 @@ export default function FridgeInformationPage(props) {
 }
 
 export async function getServerSideProps() {
-  const fridgeId = 'greenpointfridge';
+  const fridgeId = 'allfieldsfridge';
   const fridgeUrl =
     process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/' + fridgeId;
   const responses = await Promise.all([

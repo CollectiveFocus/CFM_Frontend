@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Image from 'next/image';
 import {
   Button,
@@ -25,23 +24,47 @@ import {
 } from '@mui/icons-material';
 import { StatusIcon } from 'theme/icons';
 
-import Backtrack from '../Backtrack';
+import PropTypes from 'prop-types';
+import typesValidation from 'schema/api/fridge/prop-types';
 
-function FridgeStatusIcon(props) {
+const enumCondition = {
+  good: {
+    text: 'Fridge is working properly',
+    color: 'success',
+  },
+  dirty: {
+    text: 'Fridge is dirty',
+    color: 'info',
+  },
+  'out of order': {
+    text: 'Fridge is not working properly',
+    color: 'error',
+  },
+  'not at location': {
+    text: 'No fridge at this address',
+    color: 'warning',
+  },
+};
+
+function FridgeStatusIcon({ condition }) {
+  const color = enumCondition[condition].color;
   return (
     <StatusIcon
-      color="success"
+      color={color}
       sx={{ mr: 3, fontSize: '20pt', verticalAlign: 'text-bottom' }}
     />
   );
 }
+FridgeStatusIcon.propTypes = {
+  condition: typesValidation.ReportCondition,
+};
 
-function InformationLine({ icon, text, caption = null, link = null }) {
+function InformationLine({ icon, text, caption = null }) {
   const IconComponent = icon;
-  const CaptionComponent = ({ str }) =>
-    str ? (
+  const CaptionComponent = (caption) =>
+    caption ? (
       <Box component="span" sx={{ fontWeight: 600, mr: 2 }}>
-        {str}:
+        {caption}:
       </Box>
     ) : null;
   return (
@@ -49,93 +72,245 @@ function InformationLine({ icon, text, caption = null, link = null }) {
       <IconComponent
         sx={{ mr: 2, fontSize: '22pt', verticalAlign: 'text-bottom' }}
       />
-      <CaptionComponent str={caption} />
+      {CaptionComponent(caption)}
       {text}
     </Typography>
   );
 }
+InformationLine.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  text: PropTypes.string.isRequired,
+  caption: PropTypes.string,
+};
 
-function ImageContainer({ src, alt }) {
-  return (
-    <Stack>
-      <Image
-        src={src}
-        alt={alt}
-        width="100%"
-        height="100%"
-        layout="responsive"
-        objectFit="contain"
-      />
-    </Stack>
-  );
-}
-
-function LinkLine({ icon, link, text = null }) {
-  const IconComponent = icon;
-  return (
-    <Stack direction="row" spacing={5} alignItems="center">
-      <IconComponent />
-      <Link href={link}>
-        <Typography variant="body1">{text ? `@${text}` : link}</Typography>
-      </Link>
-    </Stack>
-  );
-}
-
-function NotesLine({ icon, text, link }) {
-  const IconComponent = icon;
-  return (
-    <Stack direction="row">
-      <IconComponent
-        sx={{ mr: 3, fontSize: '20pt', verticalAlign: 'text-bottom' }}
-      />
-      <Stack direction="column">
-        <Typography variant="body1">
-          <Box component="span" sx={{ fontWeight: 600 }}>
-            {text}
-          </Box>
-          :
-        </Typography>
-        <Typography variant="body1">{link}</Typography>
+function ImageContainer({ src = null, alt }) {
+  if (src) {
+    return (
+      <Stack>
+        <Image
+          src={src}
+          alt={alt}
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        />
       </Stack>
-    </Stack>
-  );
+    );
+  }
+  return null;
 }
+ImageContainer.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string.isRequired,
+};
 
-export default function FridgeInformation(props) {
-  const { fridge, report } = props;
-  const address = `${fridge.location.street}, ${fridge.location.city}, ${fridge.location.state} ${fridge.location.zip}`;
-  const reportDate = new Date(report.timestamp).toLocaleDateString();
+function TagsContainer({ tags }) {
+  if (tags) {
+    return (
+      <Stack direction="row" spacing={2}>
+        {tags.map((tag) => (
+          <Chip label={`#${tag}`} key={tag} />
+        ))}
+      </Stack>
+    );
+  } else return null;
+}
+TagsContainer.propTypes = {
+  tags: typesValidation.Tags,
+};
 
-  const instagramRegex =
-    /(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)/gim;
+function LinkLine({ icon, obj, url }) {
+  if (obj) {
+    const IconComponent = icon;
 
-  const shortenedInstagram = instagramRegex.exec(fridge.maintainer.instagram);
-
-  const fridgeStatus = {
-    good: 'Fridge is working properly',
-    dirty: 'Fridge is dirty',
-    'out of order': 'Fridge is not working properly',
-    'not at location': 'No fridge at this address',
-  }[report.operation];
-  const foodAvailable = {
-    0: 'Empty',
-    33: 'Few items',
-    66: 'Many Items',
-    100: 'Full',
-  }[report.foodPercentage];
-
-  const shareResponse = () => {
-    if (navigator.share) {
-      navigator
-        .share({
-          title: `${fridge.name}`,
-          url: `${location.href}`,
-        })
-        .catch(console.error);
+    if (url === 'instagram' && obj.instagram) {
+      const instagramRegex =
+        /(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)/gim;
+      const insta = instagramRegex.exec(obj.instagram);
+      return (
+        <Stack direction="row" spacing={5} alignItems="center">
+          <IconComponent />
+          <Link href={obj.instagram}>
+            <Typography variant="body1">{`@${insta[1]}`}</Typography>
+          </Link>
+        </Stack>
+      );
     }
-  };
+    if (url === 'website' && obj.website) {
+      return (
+        <Stack direction="row" spacing={5} alignItems="center">
+          <IconComponent />
+          <Link href={obj.website}>
+            <Typography variant="body1">{obj.website}</Typography>
+          </Link>
+        </Stack>
+      );
+    }
+  } else return null;
+}
+LinkLine.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  obj: typesValidation.Maintainer,
+  url: PropTypes.string.isRequired,
+};
 
+function NotesLine({ icon, text, link = null }) {
+  if (link) {
+    const IconComponent = icon;
+    return (
+      <Stack direction="row">
+        <IconComponent
+          sx={{ mr: 3, fontSize: '20pt', verticalAlign: 'text-bottom' }}
+        />
+        <Stack direction="column">
+          <Typography variant="body1">
+            <Box component="span" sx={{ fontWeight: 600 }}>
+              {text}
+            </Box>
+            :
+          </Typography>
+          <Typography variant="body1">{link}</Typography>
+        </Stack>
+      </Stack>
+    );
+  } else return null;
+}
+NotesLine.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  text: PropTypes.string.isRequired,
+  link: PropTypes.string,
+};
+
+function FridgeContainer({ fridge }) {
+  if (fridge) {
+    const {
+      name,
+      location,
+      tags = null,
+      maintainer = null,
+      photoUrl = null,
+      notes = null,
+    } = fridge;
+
+    const shareResponse = () => {
+      if (navigator.share) {
+        navigator
+          .share({
+            title: `${name}`,
+            url: `${location.href}`,
+          })
+          .catch(console.error);
+      }
+    };
+    const address = `${location.street}, ${location.city}, ${location.state} ${location.zip}`;
+
+    return (
+      <>
+        {/* Fridge Picture + Name + Location  */}
+        <ImageContainer src={photoUrl} alt="Picture of the fridge" />
+
+        <Stack spacing={3}>
+          <Stack direction="column" spacing={1}>
+            <Typography variant="h2">{name}</Typography>
+          </Stack>
+          <TagsContainer tags={tags} />
+        </Stack>
+
+        <Divider />
+
+        <Stack direction="row" justifyContent="space-between">
+          <Button
+            aria-label="Click to get directions to the fridge"
+            variant="outlined"
+            sx={{ width: '47%' }}
+            target="_blank"
+            href={encodeURI(`https://www.google.com/maps/place/${address}`)}
+          >
+            <DirectionsOutlinedIcon sx={{ pr: 1 }} />
+            Directions
+          </Button>
+          <Button
+            aria-label="Click to share this page"
+            variant="outlined"
+            sx={{ width: '47%' }}
+            onClick={shareResponse}
+          >
+            <MobileScreenShareOutlinedIcon sx={{ pr: 1 }} />
+            Share
+          </Button>
+        </Stack>
+
+        <InformationLine icon={LocationOnOutlinedIcon} text={address} />
+        <NotesLine icon={InfoOutlinedIcon} text="Info" link={notes} />
+        <LinkLine icon={InstagramIcon} obj={maintainer} url="instagram" />
+        <LinkLine icon={LanguageIcon} obj={maintainer} url="website" />
+      </>
+    );
+  } else return null;
+}
+FridgeContainer.propTypes = {
+  fridge: typesValidation.Fridge,
+};
+
+function ReportContainer({ report }) {
+  if (report) {
+    const {
+      timestamp,
+      condition,
+      foodPercentage,
+      photoUrl = null,
+      notes = null,
+    } = report;
+
+    const reportDate = new Date(timestamp).toLocaleDateString();
+
+    const foodAvailable = {
+      0: 'Empty',
+      33: 'Few items',
+      66: 'Many Items',
+      100: 'Full',
+    }[foodPercentage];
+
+    return (
+      <>
+        <Divider style={{ width: '100%' }} />
+
+        <ImageContainer
+          src={photoUrl}
+          alt="Picture of the food within the fridge"
+        />
+
+        <InformationLine
+          icon={CalendarMonthIcon}
+          caption="Reported on"
+          text={reportDate}
+        />
+        <InformationLine
+          icon={() => FridgeStatusIcon({ condition })}
+          caption="Fridge Status"
+          text={enumCondition[condition].text}
+        />
+        <InformationLine
+          icon={KitchenIcon}
+          caption="Food Available"
+          text={foodAvailable}
+        />
+
+        <NotesLine
+          icon={ChatBubbleOutlineOutlinedIcon}
+          text="Notes"
+          link={notes}
+        />
+      </>
+    );
+  } else return null;
+}
+ReportContainer.propTypes = {
+  report: typesValidation.Report,
+};
+
+export default function FridgeInformation({ fridge, report }) {
   return (
     <Stack direction="column" spacing={7} mx={4} mb={4}>
       {/* Navigation  */}
@@ -149,81 +324,8 @@ export default function FridgeInformation(props) {
         </Link>
       </Stack>
 
-      {/* Fridge Picture + Name + Location  */}
-      <ImageContainer src={fridge.photoURL} alt="Picture of the fridge" />
-
-      <Stack spacing={3}>
-        <Stack direction="column" spacing={1}>
-          <Typography variant="h2">{fridge.name}</Typography>
-        </Stack>
-        <Stack direction="row" spacing={2}>
-          {fridge.tags.map((tag) => (
-            <Chip label={`#${tag}`} key={tag} />
-          ))}
-        </Stack>
-      </Stack>
-
-      <Divider />
-
-      <Stack direction="row" justifyContent="space-between">
-        <Button
-          aria-label="Click to get directions to the fridge"
-          variant="outlined"
-          sx={{ width: '47%' }}
-          target="_blank"
-          href={encodeURI(`https://www.google.com/maps/place/${address}`)}
-        >
-          <DirectionsOutlinedIcon sx={{ pr: 1 }} />
-          Directions
-        </Button>
-        <Button
-          aria-label="Click to share this page"
-          variant="outlined"
-          sx={{ width: '47%' }}
-          onClick={shareResponse}
-        >
-          <MobileScreenShareOutlinedIcon sx={{ pr: 1 }} />
-          Share
-        </Button>
-      </Stack>
-
-      <InformationLine icon={LocationOnOutlinedIcon} text={address} />
-      <NotesLine icon={InfoOutlinedIcon} text="Info" link={fridge.notes} />
-      <LinkLine
-        icon={InstagramIcon}
-        link={fridge.maintainer.instagram}
-        text={shortenedInstagram[1]}
-      />
-      <LinkLine icon={LanguageIcon} link={fridge.maintainer.website} />
-
-      <Divider style={{ width: '100%' }} />
-
-      <ImageContainer
-        src={report.foodPhotoURL}
-        alt="Picture of the food within the fridge"
-      />
-
-      <InformationLine
-        icon={CalendarMonthIcon}
-        caption="Reported on"
-        text={reportDate}
-      />
-      <InformationLine
-        icon={FridgeStatusIcon}
-        caption="Fridge Status"
-        text={fridgeStatus}
-      />
-      <InformationLine
-        icon={KitchenIcon}
-        caption="Food Available"
-        text={foodAvailable}
-      />
-
-      <NotesLine
-        icon={ChatBubbleOutlineOutlinedIcon}
-        text="Notes"
-        link={report.notes}
-      />
+      {FridgeContainer({ fridge })}
+      {ReportContainer({ report })}
 
       <Button
         aria-label="Click to report the status of the fridge"
@@ -235,3 +337,7 @@ export default function FridgeInformation(props) {
     </Stack>
   );
 }
+FridgeInformation.propTypes = {
+  fridge: typesValidation.Fridge,
+  report: typesValidation.Report,
+};
