@@ -3,10 +3,10 @@ import React from 'react';
 import {
   AppBar,
   Box,
+  Drawer,
   IconButton,
-  Menu,
-  MenuItem,
-  MenuList,
+  List,
+  ListItem,
   ListItemIcon,
   Toolbar,
   Tooltip,
@@ -19,12 +19,13 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 
 import {
   AboutIcon,
+  ContactUsIcon,
   FridgeAddIcon,
   FridgeFindIcon,
+  GetInvolvedIcon,
   GuidelineIcon,
   HomeIcon,
   LogoAndTitleSvg,
-  VolunteerIcon,
 } from 'theme/icons';
 
 const menuItems = [
@@ -33,19 +34,22 @@ const menuItems = [
   { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/fridge/add' },
   { icon: AboutIcon, title: 'About', link: '/about' },
   { icon: GuidelineIcon, title: 'Best Practices', link: '/guideline' },
-  { icon: VolunteerIcon, title: 'Volunteer', link: '/volunteer' },
+  { icon: GetInvolvedIcon, title: 'Get Involved', link: '/volunteer' },
+  { icon: ContactUsIcon, title: 'Contact Us', link: '/contact' },
 ];
 const menuDesktopFirstItem = 1;
+const sxDesktopIcon = {
+  sx: { borderRadius: '50%', width: '48px', height: '48px' },
+};
+const sxMobileIcon = {
+  sx: { borderRadius: '50%', width: '40px', height: '40px' },
+};
 
 export default function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleOpenMenuMobile = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseMenuMobile = () => {
-    setAnchorElNav(null);
+  const handleMobileMenuToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
 
   const MenuDesktop = () =>
@@ -61,27 +65,16 @@ export default function ResponsiveAppBar() {
             p: 0,
           }}
         >
-          <item.icon
-            sx={{
-              borderRadius: '50%',
-              width: '48px',
-              height: '48px',
-              color: 'red',
-            }}
-          />
+          {item.icon(sxDesktopIcon)}
         </IconButton>
       </Tooltip>
     ));
 
   const MenuMobile = () => (
-    <MenuList>
+    <List>
       {menuItems.map((item) => (
-        <MenuItem key={item.title} onClick={handleCloseMenuMobile}>
-          <ListItemIcon>
-            <item.icon
-              sx={{ borderRadius: '50%', width: '40px', height: '40px' }}
-            />
-          </ListItemIcon>
+        <ListItem key={item.title}>
+          <ListItemIcon>{item.icon(sxMobileIcon)}</ListItemIcon>
           <Typography
             aria-label={item.title}
             component={NextLinkAnchor}
@@ -90,9 +83,9 @@ export default function ResponsiveAppBar() {
           >
             {item.title}
           </Typography>
-        </MenuItem>
+        </ListItem>
       ))}
-    </MenuList>
+    </List>
   );
 
   return (
@@ -100,7 +93,7 @@ export default function ResponsiveAppBar() {
       <Toolbar sx={{ p: 0 }}>
         <IconButton
           disableRipple
-          aria-label="Home"
+          aria-label="Go to Home page"
           component={NextLinkAnchor}
           to="/"
           sx={{ display: 'block', m: 0, p: 0, width: '122px', height: '48px' }}
@@ -110,53 +103,45 @@ export default function ResponsiveAppBar() {
         <Box
           id="desktop"
           aria-label="navigation menu"
+          textAlign="right"
           sx={{
-            mx: 0,
-            px: 0,
-            display: { xs: 'none', md: 'flex' },
-            flexGrow: 1,
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
+            display: { xs: 'none', md: 'block' },
+            width: '100%',
           }}
         >
           <MenuDesktop />
         </Box>
         <Box
           id="mobile"
+          textAlign="right"
           sx={{
-            display: { xs: 'flex', md: 'none' },
-            flexGrow: 1,
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
+            display: { xs: 'block', md: 'none' },
+            width: '100%',
           }}
         >
           <IconButton
             size="large"
             aria-label="navigation menu"
-            aria-controls="menu-mobile"
+            aria-controls="mobile-menu"
             aria-haspopup="true"
-            onClick={handleOpenMenuMobile}
+            onClick={handleMobileMenuToggle}
             color="inherit"
           >
             <MenuIcon />
           </IconButton>
-          <Menu
-            id="menu-mobile"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
+          <Drawer
+            id="mobile-menu"
+            variant="temporary"
+            anchor="right"
             keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+            open={mobileOpen}
+            onClick={handleMobileMenuToggle}
+            sx={{
+              maxWidth: '100vw',
             }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseMenuMobile}
           >
             <MenuMobile />
-          </Menu>
+          </Drawer>
         </Box>
       </Toolbar>
     </AppBar>
