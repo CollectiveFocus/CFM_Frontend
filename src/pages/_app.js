@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
-import { CacheProvider } from '@emotion/react';
-import { CssBaseline } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
 import Head from 'next/head';
+import { CacheProvider } from '@emotion/react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+
+import AppBar from 'components/molecules/AppBar';
 
 import createEmotionCache from 'lib/createEmotionCache';
 import theme from 'theme';
 
-import { AppBar } from 'components/organisms';
-
 const clientSideEmotionCache = createEmotionCache();
 
-function MyApp(props) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+export default function MyApp({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps,
+}) {
   return (
     <>
       <Head>
@@ -29,9 +31,6 @@ function MyApp(props) {
     </>
   );
 }
-
-export default MyApp;
-
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   emotionCache: PropTypes.object,
