@@ -1,23 +1,35 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
-import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
-import TaskAltRoundedIcon from '@mui/icons-material/TaskAltRounded';
+import {
+  WarningAmberRounded as ErrorIcon,
+  TaskAltRounded as SuccessIcon,
+} from '@mui/icons-material';
 import { ButtonLink } from 'components/molecules';
 
+const sxSuccessIcon = { fontSize: '1.1em', verticalAlign: 'top' };
+const sxErrorIcon = { fontSize: '1.3em', verticalAlign: 'text-bottom' };
 const displayHeading = {
   EmailSuccess: (
     <>
-      Success! <TaskAltRoundedIcon color="success" />
+      Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
     </>
   ),
   EmailError: (
     <>
-      Error! <WarningAmberRoundedIcon />
+      Error! <ErrorIcon color="error" sx={sxErrorIcon} />
     </>
   ),
-  ReportStatus: <>Success!</>,
-  CreateFridge: <>Success!</>,
+  ReportStatus: (
+    <>
+      Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
+    </>
+  ),
+  CreateFridge: (
+    <>
+      Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
+    </>
+  ),
 };
 
 const displayText = {
@@ -29,25 +41,25 @@ const displayText = {
 
 const displayImg = {
   EmailSuccess: {
-    src: '/mascot/fridgeEmailSuccess.svg',
+    src: '/feedback/emailSuccess.svg',
     width: 313,
     height: 280,
-    alt: 'Happy fridge image',
+    alt: 'Email success image',
   },
   EmailError: {
-    src: '/mascot/fridgeEmailError.svg',
+    src: '/feedback/emailError.svg',
     width: 163,
-    height: 244,
-    alt: 'Sad fridge image',
+    height: 245,
+    alt: 'Email error image',
   },
   ReportStatus: {
-    src: '/mascot/happyFridge.svg',
+    src: '/feedback/happyFridge.svg',
     width: 163,
     height: 245,
     alt: 'Happy fridge image',
   },
   CreateFridge: {
-    src: '/mascot/happyFridge.svg',
+    src: '/feedback/happyFridge.svg',
     width: 163,
     height: 245,
     alt: 'Happy fridge image',
@@ -60,7 +72,7 @@ const displayButton = {
       to="/"
       aria-label="Go to Home page"
       variant="contained"
-      sx={{ mb: 2, minWidth: 345 }}
+      sx={{ mt: 8, mb: 2, minWidth: 345 }}
     >
       BACK TO HOME
     </ButtonLink>
@@ -70,7 +82,7 @@ const displayButton = {
       to="/contact"
       aria-label="Resubmit message"
       variant="contained"
-      sx={{ mb: 2, minWidth: 345 }}
+      sx={{ mt: 8, mb: 2, minWidth: 345 }}
     >
       TRY AGAIN
     </ButtonLink>
@@ -80,7 +92,7 @@ const displayButton = {
       to="#"
       aria-label="View Fridge details"
       variant="contained"
-      sx={{ mb: 2, minWidth: 345 }}
+      sx={{ mt: 8, mb: 2, minWidth: 345 }}
     >
       GO TO FRIDGE
     </ButtonLink>
@@ -91,7 +103,7 @@ const displayButton = {
         to="#"
         aria-label="View Fridge details"
         variant="contained"
-        sx={{ mb: 2, minWidth: 345 }}
+        sx={{ mt: 8, mb: 2, minWidth: 345 }}
       >
         GO TO FRIDGE
       </ButtonLink>
@@ -107,60 +119,37 @@ const displayButton = {
   ),
 };
 
-export default function FeedbackMessage({ type }) {
+export default function FeedbackCard({ type }) {
   return (
     <Box
       sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        textAlign: 'center',
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          marginTop: 4,
-        }}
-      >
-        <Typography
-          sx={type === 'EmailError' ? { color: 'red' } : {}}
-          textAlign="center"
-          variant="h2"
-        >
-          {displayHeading[type]}
-        </Typography>
-        <Typography textAlign="center" variant="body1" sx={{ mb: 4 }}>
-          {displayText[type]}
-        </Typography>
-
-        <Box
-          sx={{
-            mb: 8,
-            display: 'flex',
-            alignItems: 'flex-end',
-            minHeight: 280,
-          }}
-        >
-          <Image
-            width={displayImg[type].width}
-            height={displayImg[type].height}
-            src={displayImg[type].src}
-            alt={displayImg[type].alt}
-          />
-        </Box>
-      </Box>
+      <Typography textAlign="center" variant="h1" sx={{ marginTop: 4 }}>
+        {displayHeading[type]}
+      </Typography>
+      <Typography textAlign="center" variant="body1" sx={{ mb: 4 }}>
+        {displayText[type]}
+      </Typography>
+      <Image
+        width={displayImg[type].width}
+        height={displayImg[type].height}
+        src={displayImg[type].src}
+        alt={displayImg[type].alt}
+      />
       {displayButton[type]}
     </Box>
   );
 }
-
-FeedbackMessage.propTypes = {
+FeedbackCard.propTypes = PropTypes.exact({
   type: PropTypes.oneOf([
     'ReportStatus',
     'CreateFridge',
     'EmailSuccess',
     'EmailError',
   ]),
-};
+}).isRequired;
