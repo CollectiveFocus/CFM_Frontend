@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.fridgemap.com/">
-    <img src="https://raw.githubusercontent.com/CollectiveFocus/CFM_Frontend/dev/public/mascot/happyFridge.svg" height="128">
+    <img src="https://raw.githubusercontent.com/CollectiveFocus/CFM_Frontend/dev/public/feedback/happyFridge.svg" height="128">
   </a>
     <h1 align="center">Community Fridge Map</h1>
 </p>
@@ -53,7 +53,19 @@ The Community Fridge Map is project sponsored by [Collective Focus](https://coll
    cd frontend
    git checkout dev
    yarn install
+   ```
+
+1. Run the application locally
+
+   ```bash
+   # to run both development database and Next.js web server
    yarn dev
+
+   # to run only the web server
+   yarn web
+
+   # to run only the development database
+   yarn data
    ```
 
    in a different terminal window
