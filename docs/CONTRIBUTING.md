@@ -111,7 +111,7 @@ alias grc='  git rebase --continue'
 alias gr-d=' git fetch --prune && git rebase origin/dev'
 alias gop='  git push origin -u'
 alias gol='  git pull --ff-only'
-alias gof==' f() { git fetch --prune $@; git gc --auto; };f'
+alias gof='  f() { git fetch --prune $@; git gc --auto; };f'
 alias clean='f() { find . -type d \( -name .git -o -name node_modules -o -name .next \) -prune -o -type f -name "*.orig" -print | xargs -I % rm %; git gc --aggressive; };f'
 
 HISTIGNORE="$HISTIGNORE:gaa:gca:gm:gpop;gpush:gs:gra:grc:gr-d:gof:clean"
