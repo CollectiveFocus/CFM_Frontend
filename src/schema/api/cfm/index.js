@@ -1,5 +1,6 @@
-import { array, boolean, date, number, object, string } from 'Yup';
+import { array, boolean, date, number, object, string } from 'yup';
 
+// fridge database records
 const Tag = string().max(140).trim().required();
 const Tags = array().of(Tag).nullable();
 
@@ -46,5 +47,13 @@ const Report = object({
   notes: string().min(0).max(300).trim().optional(),
 });
 
-const API = { Fridge, Report, Location };
+// website contact form data
+const Contact = object({
+  name: string().max(70).trim().required(),
+  email: string().email().required(),
+  subject: string().max(70).trim().required(),
+  message: string().max(2048).trim().required(),
+});
+
+const API = { Contact, Fridge, Report, Location };
 export default API;

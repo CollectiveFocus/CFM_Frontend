@@ -8,5 +8,5 @@ const Fridge = CFM.Fridge.omit(['id', 'verified', 'tags', 'location']).shape({
 
 const Report = CFM.Report.omit(['timestamp']);
 
-const dialog = { Fridge, Report };
+const dialog = { Contact: CFM.Contact, Fridge, Report };
 export default dialog;
