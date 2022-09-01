@@ -30,7 +30,7 @@ const palette = {
   },
   background: {
     default: designColor.grayscale.gradient[0],
-    paper: designColor.grayscale.gradient[0],
+    paper: designColor.grayscale.gradient[1],
   },
   text: {
     primary: designColor.grayscale.gradient[5],
