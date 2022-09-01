@@ -14,6 +14,8 @@ tags:
     description: Fridge root record
   - name: report
     description: Fridge status reports
+  - name: contact
+    description: Website contact form data
   - name: tag
     description: Hash tag for filtering and searching
 
@@ -259,6 +261,25 @@ paths:
         '500':
           description: Unexpected error prevented server from fulfilling request.
 
+  /v1/contact:
+    post:
+      summary: Store website user message
+      tags:
+        - contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        '201':
+          description: Message was successfully received.
+        '400':
+          description: Request could not be understood due to incorrect syntax.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
 components:
   schemas:
     Fridge:
@@ -457,3 +478,40 @@ components:
           maxLength: 300
           nullable: true
           example: Filled with Mars bars and M&M candy.
+
+    Contact:
+      type: object
+
+      required:
+        - name
+        - email
+        - subject
+        - message
+
+      properties:
+        name:
+          description: Senders name.
+          type: string
+          minLength: 1
+          maxLength: 70
+          example: Emily Ward
+
+        email:
+          description: Senders email.
+          type: string
+          format: email
+          example: eward@example.net
+
+        subject:
+          description: Title of the message.
+          type: string
+          minLength: 1
+          maxLength: 70
+          example: Questions About Press Opportunity
+
+        message:
+          description: Body of the message.
+          type: string
+          minLength: 1
+          maxLength: 2048
+          example: We are looking to write a piece about this website.
