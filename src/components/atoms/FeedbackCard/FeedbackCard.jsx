@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import {
   WarningAmberRounded as ErrorIcon,
   TaskAltRounded as SuccessIcon,
@@ -77,16 +77,7 @@ const displayButton = {
       BACK TO HOME
     </ButtonLink>
   ),
-  EmailError: (
-    <ButtonLink
-      to="/contact"
-      aria-label="Resubmit message"
-      variant="contained"
-      sx={{ mt: 8, mb: 2, minWidth: 345 }}
-    >
-      TRY AGAIN
-    </ButtonLink>
-  ),
+  EmailError: null,
   ReportStatus: (
     <ButtonLink
       to="#"
@@ -119,7 +110,27 @@ const displayButton = {
   ),
 };
 
-export default function FeedbackCard({ type }) {
+export default function FeedbackCard({ type, action = null }) {
+  /**
+   * TODO This is a temporary bypass until I figure out how the other dialogs handle failure. There is no point in implementing a Button factory until then -- Bernard
+   */
+  if (type === 'EmailError') {
+    if (action) {
+      displayButton[type] = (
+        <Button
+          onClick={action}
+          aria-label="Click to resend message"
+          variant="contained"
+          sx={{ mt: 8, mb: 2, minWidth: 345 }}
+        >
+          TRY AGAIN
+        </Button>
+      );
+    } else {
+      throw 'Missing EmailError callback function';
+    }
+  }
+
   return (
     <Box
       sx={{
@@ -135,12 +146,7 @@ export default function FeedbackCard({ type }) {
       <Typography textAlign="center" variant="body1" sx={{ mb: 4 }}>
         {displayText[type]}
       </Typography>
-      <Image
-        width={displayImg[type].width}
-        height={displayImg[type].height}
-        src={displayImg[type].src}
-        alt={displayImg[type].alt}
-      />
+      <Image alt="" {...displayImg[type]} />
       {displayButton[type]}
     </Box>
   );
@@ -152,4 +158,5 @@ FeedbackCard.propTypes = PropTypes.exact({
     'EmailSuccess',
     'EmailError',
   ]),
+  action: PropTypes.func,
 }).isRequired;
