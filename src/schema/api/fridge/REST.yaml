@@ -227,7 +227,7 @@ paths:
         '500':
           description: Unexpected error prevented server from fulfilling request.
 
-  /v1/image:
+  /v1/photo:
     post:
       summary: Create a new image file in the S3 bucket.
       tags:
@@ -250,7 +250,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  photoURL:
+                  photoUrl:
                     description: Fully qualified URL path to the image.
                     format: uri
                     example: https://s3.amazonaws.com/bucket/path/fridge.webp
@@ -324,7 +324,7 @@ components:
           $ref: '#/components/schemas/Maintainer'
           nullable: true
 
-        photoURL:
+        photoUrl:
           description: Fully qualified URL path to a picture of the fridge.
           type: string
           format: uri
@@ -358,15 +358,20 @@ components:
         - geoLng
 
       properties:
+        name:
+          type: string
+          maxLength: 70
+          example: Ralph and Nash Deli
+
         street:
           type: string
           maxLength: 55
-          example: 17 Nassau Ave
+          example: 352 West 116th Street
 
         city:
           type: string
           maxLength: 35
-          example: Brooklyn
+          example: New York
 
         state:
           type: string
@@ -378,32 +383,27 @@ components:
         zip:
           type: string
           pattern: '(^\d{5}$)|(^\d{5}-\d{4}$)'
-          example: 11222
+          example: 10026
 
         geoLat:
           description: Geographic latitude.
           type: number
           readOnly: true
-          example: 40.722814
+          example: 40.8049571
 
         geoLng:
           description: Geographic longitude.
           type: number
           readOnly: true
-          example: -73.95405
+          example: -73.9570766
 
     Maintainer:
       type: object
-
-      required:
-        - name
-        - email
 
       properties:
         name:
           description: Name of the contact person.
           type: string
-          minLength: 1
           maxLength: 70
           example: Emily Ward
 
@@ -462,9 +462,9 @@ components:
         foodPercentage:
           description: The percentage of food in the fridge.
           type: integer
-          enum: [0, 33, 66, 100]
+          enum: [0, 33, 67, 100]
 
-        photoURL:
+        photoUrl:
           description: Fully qualified URL path to a picture of the food.
           type: string
           format: uri
@@ -474,7 +474,6 @@ components:
         notes:
           description: Notes to be included with this report.
           type: string
-          minLength: 1
           maxLength: 300
           nullable: true
           example: Filled with Mars bars and M&M candy.
