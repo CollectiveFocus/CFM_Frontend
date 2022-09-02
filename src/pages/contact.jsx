@@ -1,12 +1,14 @@
 import Head from 'next/head';
-import { useState } from 'react';
 
+import { useState } from 'react';
 import { useFormik } from 'formik';
+
 import { Button, Stack, TextField, Typography } from '@mui/material';
 import { ButtonLink } from 'components/molecules';
 import { FeedbackCard } from 'components/atoms';
 
-import dataValidation from 'schema/dialog';
+import { typesFormik } from 'schema/component/prop-types';
+import { dialogContact } from 'schema/dialog/yup';
 
 const fridgeUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/contact/';
 const enumDisplay = Object.freeze({
@@ -37,7 +39,7 @@ export default function ContactPage() {
       subject: '',
       message: '',
     },
-    validationSchema: dataValidation.Contact,
+    validationSchema: dialogContact,
     onSubmit: onSubmitFn,
   });
 
@@ -145,6 +147,6 @@ function ContactForm({ formik }) {
     </Stack>
   );
 }
-ContactForm.propTypes = PropTypes.exact({
-  formik: PropTypes.object.isRequired,
-});
+ContactForm.propTypes = {
+  formik: typesFormik.isRequired,
+};

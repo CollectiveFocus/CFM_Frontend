@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
+import { Box, Button, Typography } from '@mui/material';
 
-const props = {
+const data = {
   img: {
     src: '/img/hero.webp',
     alt: 'Community fridges in New York',
@@ -11,7 +11,7 @@ const props = {
   buttonTitle: 'FIND A FRIDGE',
 };
 
-export default function PageHero({}) {
+export default function PageHero() {
   return (
     <Box
       sx={{
@@ -35,20 +35,20 @@ export default function PageHero({}) {
       >
         <Image
           priority
-          src={props.img.src}
+          src={data.img.src}
           layout="fill"
           objectFit="cover"
-          alt={props.img.alt}
+          alt={data.img.alt}
         />
         <Button variant="contained" sx={{ minWidth: '75%' }}>
-          {props.buttonTitle}
+          {data.buttonTitle}
         </Button>
       </Box>
       <Typography variant="h2" sx={{ mb: 2, px: 2 }}>
-        {props.title}
+        {data.title}
       </Typography>
       <Typography variant="body1" sx={{ mb: 4, px: 4 }}>
-        {props.text}
+        {data.text}
       </Typography>
     </Box>
   );
