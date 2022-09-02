@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import { typesNextImage } from 'schema/component/prop-types';
 import { Typography, Box, Divider } from '@mui/material';
 import { designColor } from 'theme/palette';
 
@@ -49,16 +50,9 @@ export default function DecoratedParagraph({
     </>
   );
 }
-const imgShape = PropTypes.exact({
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-});
-
 DecoratedParagraph.propTypes = PropTypes.exact({
   variant: PropTypes.oneOf(['h1', 'h2']).isRequired,
-  img: imgShape,
+  img: typesNextImage,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   hasDivider: PropTypes.bool,

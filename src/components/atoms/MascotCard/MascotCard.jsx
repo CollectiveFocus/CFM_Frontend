@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Typography, Box } from '@mui/material';
-import ButtonLink from 'components/molecules/ButtonLink';
+import { typesNextImage } from 'schema/component/prop-types';
+import { Box, Typography } from '@mui/material';
+import { ButtonLink } from 'components/molecules';
 
 export default function MascotCard({ variant, img, title, text, link }) {
   if (variant === 'h2') {
@@ -63,17 +64,10 @@ export default function MascotCard({ variant, img, title, text, link }) {
     );
   }
 }
-
-const imgShape = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-};
-
+// img: typesImage.isRequired,
 MascotCard.propTypes = PropTypes.exact({
   variant: PropTypes.oneOf(['h2', 'h3']).isRequired,
-  img: PropTypes.exact(imgShape).isRequired,
+  img: typesNextImage.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,

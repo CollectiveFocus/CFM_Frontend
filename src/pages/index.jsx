@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Typography, Grid } from '@mui/material';
+import Head from 'next/head';
+import { Grid, Typography } from '@mui/material';
 import { MascotCard, PageFooter, PageHero } from 'components/atoms';
 
 export async function getStaticProps() {
@@ -112,8 +112,7 @@ export default function HomePage({ mascotCard }) {
     </>
   );
 }
-
-HomePage.propTypes = PropTypes.shape({
+HomePage.propTypes = PropTypes.exact({
   props: {
     MascotCard: {
       h2: MascotCard.propTypes,

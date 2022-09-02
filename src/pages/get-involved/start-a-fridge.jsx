@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
-
 import Head from 'next/head';
-import Box from '@mui/material/Box';
-
 import Image from 'next/image';
+import { Box } from '@mui/material';
 import { ButtonLink } from 'components/molecules';
 import { DecoratedParagraph, PageScroll } from 'components/atoms';
 
