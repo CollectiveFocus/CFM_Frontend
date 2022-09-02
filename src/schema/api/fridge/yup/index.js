@@ -1,10 +1,11 @@
 import { array, boolean, date, number, object, string } from 'yup';
 
 // fridge database records
-const Tag = string().max(140).trim().required();
-const Tags = array().of(Tag).nullable();
+export const dataTag = string().max(140).trim().required();
+export const dataTags = array().of(dataTag).nullable();
 
-const Location = object({
+export const dataLocation = object({
+  name: string().max(70).trim().optional(),
   street: string().max(55).trim().required(),
   city: string().max(35).trim().required(),
   state: string().length(2).uppercase().required(),
@@ -15,9 +16,9 @@ const Location = object({
   geoLng: number().required(),
 });
 
-const Maintainer = object({
-  name: string().max(70).trim().required(),
-  email: string().email().required(),
+export const dataMaintainer = object({
+  name: string().max(70).trim().optional(),
+  email: string().email().lowercase().optional(),
   organization: string().max(80).trim().optional(),
   phone: string()
     .matches(/^\(\d{3}\) \d{3}-\d{4}$/)
@@ -26,34 +27,41 @@ const Maintainer = object({
   instagram: string().url().optional(),
 }).nullable();
 
-const Fridge = object({
+export const dataFridge = object({
   id: string().min(4).max(60).required(),
   name: string().min(4).max(60).trim().required(),
-  location: Location.required(),
-  tags: Tags.optional(),
-  maintainer: Maintainer.optional(),
-  photoURL: string().url().optional(),
+  location: dataLocation.required(),
+  tags: dataTag.optional(),
+  maintainer: dataMaintainer.optional(),
+  photoUrl: string().url().optional(),
   notes: string().min(1).max(300).trim().optional(),
   verified: boolean().default(false),
 });
 
-const Report = object({
+export const dataReport = object({
   timestamp: date().required(),
   condition: string()
     .oneOf(['good', 'dirty', 'out of order', 'not at location'])
     .required(),
-  foodPercentage: number().integer().oneOf([0, 33, 66, 100]).required(),
-  photoURL: string().url().optional(),
+  foodPercentage: number().integer().oneOf([0, 33, 67, 100]).required(),
+  photoUrl: string().url().optional(),
   notes: string().min(0).max(300).trim().optional(),
 });
 
 // website contact form data
-const Contact = object({
+export const dataContact = object({
   name: string().max(70).trim().required(),
   email: string().email().required(),
   subject: string().max(70).trim().required(),
   message: string().max(2048).trim().required(),
 });
 
-const API = { Contact, Fridge, Report, Location };
-export default API;
+const dataValidation = {
+  Contact: dataContact,
+  Fridge: dataFridge,
+  Location: dataLocation,
+  Report: dataReport,
+  Tag: dataTag,
+  Tags: dataTags,
+};
+export default dataValidation;
