@@ -24,6 +24,7 @@ import {
 } from '@mui/icons-material';
 import { StatusIcon } from 'theme/icons';
 
+<<<<<<< HEAD
 import PropTypes from 'prop-types';
 import typesValidation from 'model/data/fridge/prop-types';
 
@@ -45,6 +46,9 @@ const enumCondition = {
     color: 'warning',
   },
 };
+=======
+import { BackEdit } from 'components/atoms';
+>>>>>>> wip: Squash 82 for rebase with dev
 
 function FridgeStatusIcon({ condition }) {
   const color = enumCondition[condition].color;
@@ -314,15 +318,7 @@ export default function FridgeInformation({ fridge, report }) {
   return (
     <Stack direction="column" spacing={7} mx={4} mb={4}>
       {/* Navigation  */}
-      <Stack direction="row" justifyContent="space-between">
-        {/* <Backtrack /> */}
-        <Link href="/demo/CreateFridgeDialog">
-          <Stack direction="row" spacing={2}>
-            <EditOutlinedIcon />
-            <Typography variant="body1">Edit Fridge</Typography>
-          </Stack>
-        </Link>
-      </Stack>
+      <BackEdit />
 
       {FridgeContainer({ fridge })}
       {ReportContainer({ report })}
