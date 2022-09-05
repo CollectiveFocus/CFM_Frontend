@@ -10,6 +10,7 @@ export default function DecoratedParagraph({
   title,
   body,
   hasDivider = false,
+  sx = {},
 }) {
   const headingStyles = {
     h1: {
@@ -25,7 +26,7 @@ export default function DecoratedParagraph({
   const grey = designColor.grayscale.gradient[6];
 
   return (
-    <>
+    <Box sx={sx}>
       {hasDivider && <Divider sx={{ mt: 10, borderColor: grey }} />}
 
       <Typography variant={variant} sx={{ ...headingStyles[variant] }}>
@@ -47,7 +48,7 @@ export default function DecoratedParagraph({
       <Typography variant="body1" sx={{ mt: 2 }}>
         {body}
       </Typography>
-    </>
+    </Box>
   );
 }
 DecoratedParagraph.propTypes = PropTypes.exact({
@@ -56,4 +57,5 @@ DecoratedParagraph.propTypes = PropTypes.exact({
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   hasDivider: PropTypes.bool,
+  sx: PropTypes.object,
 }).isRequired;
