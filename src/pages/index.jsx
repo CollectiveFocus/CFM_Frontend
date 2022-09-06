@@ -9,10 +9,10 @@ export async function getStaticProps() {
       mascotCard: {
         h2: {
           img: {
-            src: '/mascot/pearTomatoAndFridge.svg',
+            src: '/card/paragraph/pearTomatoAndFridge.svg',
             alt: 'Picture of pear dancing with tomatoes stacked on top of each other',
-            width: 300,
-            height: 190,
+            width: 125,
+            height: 95,
           },
           title: 'About NYC Community Fridges',
           text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
@@ -21,10 +21,10 @@ export async function getStaticProps() {
         h3: [
           {
             img: {
-              src: '/mascot/apple.svg',
+              src: '/card/paragraph/apple.svg',
               alt: 'Picture of smiling apple holding a list',
-              width: 300,
-              height: 185,
+              width: 125,
+              height: 95,
             },
             title: 'Read Best Practices',
             text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
@@ -32,10 +32,10 @@ export async function getStaticProps() {
           },
           {
             img: {
-              src: '/mascot/jumpingBlueberries.svg',
+              src: '/card/paragraph/jumpingBlueberries.svg',
               alt: 'Picture of blueberries jumping and waving',
-              width: 300,
-              height: 185,
+              width: 125,
+              height: 95,
             },
             title: 'Volunteer',
             text: 'There are many ways to volunteer to help out the fridges, from driving, bringing food to fridges, or hosting a fridge.',
@@ -43,10 +43,10 @@ export async function getStaticProps() {
           },
           {
             img: {
-              src: '/mascot/plumAndFridge.svg',
+              src: '/card/paragraph/plumAndFridge.svg',
               alt: 'Picture of smiling plum and smiling fridge',
-              width: 300,
-              height: 185,
+              width: 125,
+              height: 95,
             },
             title: 'Host A Fridge',
             text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
@@ -113,10 +113,8 @@ export default function HomePage({ mascotCard }) {
   );
 }
 HomePage.propTypes = PropTypes.exact({
-  props: {
-    MascotCard: {
-      h2: MascotCard.propTypes,
-      h3: PropTypes.arrayOf(MascotCard.propTypes),
-    },
+  MascotCard: {
+    h2: MascotCard.propTypes,
+    h3: PropTypes.arrayOf(MascotCard.propTypes),
   },
 }).isRequired;
