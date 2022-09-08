@@ -43,10 +43,12 @@
       "name": "Happy Fridge",
       "tags": ["harlem", "halal", "kashrut"],
       "location": {
-        "street": "17 Nassau Ave",
+        "street": "326 6th St",
         "city": "Brooklyn",
         "state": "NY",
-        "zip": "11222"
+        "zip": "11215",
+        "geoLat": 40.67108,
+        "geoLng": -73.9852
       },
       "maintainer": {
         "name": "Emily Ward",
@@ -64,10 +66,12 @@
       "name": "Smart Fridge",
       "tags": ["harlem", "halal", "kashrut"],
       "location": {
-        "street": "17 Nassau Ave",
+        "street": "326 6th St",
         "city": "Brooklyn",
         "state": "NY",
-        "zip": "11222"
+        "zip": "11215",
+        "geoLat": 40.67108,
+        "geoLng": -73.9852
       },
       "maintainer": {
         "website": "http://gray.com/"
@@ -76,7 +80,7 @@
       "verified": false
     }
   ],
-  "image": [
+  "photo": [
     {
       "id": 1
     }

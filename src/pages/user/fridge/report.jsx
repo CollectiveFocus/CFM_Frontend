@@ -1,10 +1,8 @@
 import { DialogUpdateFridgeStatus } from 'components/organisms';
-import { Backtrack } from 'components/molecules';
 
-export default function UpdateFridgeStatus() {
+export default function FridgeReportPage() {
   return (
     <div>
-      <Backtrack />
       <DialogUpdateFridgeStatus fridgeName="Cooper Park Community Fridge" />
     </div>
   );
