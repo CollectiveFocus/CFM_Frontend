@@ -8,7 +8,7 @@ import { DecoratedParagraph, PageScroll } from 'components/atoms';
 export async function getStaticProps() {
   return {
     props: {
-      decoratedParagraph: [
+      content: [
         {
           title: 'Start a Fridge',
           variant: 'h1',
@@ -90,7 +90,7 @@ export async function getStaticProps() {
   };
 } // getStaticProps()
 
-export default function StartAFridgePage({ decoratedParagraph }) {
+export default function StartAFridgePage({ content }) {
   const headerImg = {
     src: '/img/hero.webp',
     alt: 'stand in hero img',
@@ -106,7 +106,7 @@ export default function StartAFridgePage({ decoratedParagraph }) {
         <Image {...headerImg} alt={headerImg.alt} />
       </Box>
       <Box mx={3} mt={12}>
-        {decoratedParagraph.map((para, index) => (
+        {content.map((para, index) => (
           <DecoratedParagraph
             {...para}
             key={para.title}
@@ -129,5 +129,5 @@ export default function StartAFridgePage({ decoratedParagraph }) {
   );
 }
 StartAFridgePage.propTypes = PropTypes.exact({
-  decoratedParagraph: PropTypes.arrayOf(DecoratedParagraph.propTypes),
+  content: PropTypes.arrayOf(DecoratedParagraph.propTypes),
 }).isRequired;

@@ -30,12 +30,20 @@ import {
 
 const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
-  { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/fridge/find' },
-  { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/fridge/add' },
-  { icon: AboutIcon, title: 'About', link: '/about' },
-  { icon: GuidelineIcon, title: 'Best Practices', link: '/guideline' },
-  { icon: GetInvolvedIcon, title: 'Get Involved', link: '/volunteer' },
-  { icon: ContactUsIcon, title: 'Contact Us', link: '/contact' },
+  { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse/map' },
+  { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/user/fridge/add' },
+  { icon: AboutIcon, title: 'About', link: '/pamphlet/about' },
+  {
+    icon: GuidelineIcon,
+    title: 'Best Practices',
+    link: '/pamphlet/best-practices',
+  },
+  {
+    icon: GetInvolvedIcon,
+    title: 'Get Involved',
+    link: '/pamphlet/get-involved',
+  },
+  { icon: ContactUsIcon, title: 'Contact Us', link: '/user/contact' },
 ];
 const menuDesktopFirstItem = 1;
 const sxDesktopIcon = {
