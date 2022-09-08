@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid, Typography } from '@mui/material';
-import { MascotCard, PageFooter, PageHero } from 'components/atoms';
+import { PageFooter, PageHero, ParagraphCard } from 'components/atoms';
 
 export async function getStaticProps() {
   return {
     props: {
-      mascotCard: {
+      paragraphCard: {
         h2: {
           img: {
             src: '/card/paragraph/pearTomatoAndFridge.svg',
@@ -14,9 +14,9 @@ export async function getStaticProps() {
             width: 125,
             height: 95,
           },
-          title: 'About NYC Community Fridges',
+          title: 'About Community Fridges',
           text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
-          link: '/about',
+          link: '/pamphlet/about',
         },
         h3: [
           {
@@ -28,7 +28,7 @@ export async function getStaticProps() {
             },
             title: 'Read Best Practices',
             text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
-            link: '/guideline',
+            link: '/pamphlet/best-practices',
           },
           {
             img: {
@@ -37,9 +37,9 @@ export async function getStaticProps() {
               width: 125,
               height: 95,
             },
-            title: 'Volunteer',
-            text: 'There are many ways to volunteer to help out the fridges, from driving, bringing food to fridges, or hosting a fridge.',
-            link: '/volunteer',
+            title: 'Get Involved',
+            text: 'There are many ways to get involved with community fridges: from driving; donating food; or hosting a fridge.',
+            link: '/pamphlet/get-involved',
           },
           {
             img: {
@@ -50,7 +50,7 @@ export async function getStaticProps() {
             },
             title: 'Host A Fridge',
             text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
-            link: '/host',
+            link: '/pamphlet/get-involved/host-a-fridge',
           },
         ],
       },
@@ -58,7 +58,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({ mascotCard }) {
+export default function HomePage({ paragraphCard }) {
   return (
     <>
       <Head>
@@ -69,7 +69,7 @@ export default function HomePage({ mascotCard }) {
       <Grid
         container
         direction="row"
-        justifyContent="space-between"
+        justifyContent="center"
         spacing={4}
         mb={4}
         px={4}
@@ -80,10 +80,10 @@ export default function HomePage({ mascotCard }) {
           direction="row"
           justifyContent="center"
           xs={12}
-          md={12}
-          lg={12}
+          sm={10}
+          lg={8}
         >
-          <MascotCard {...mascotCard.h2} variant="h2" />
+          <ParagraphCard {...paragraphCard.h2} variant="h2" />
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
           <Typography
@@ -101,9 +101,13 @@ export default function HomePage({ mascotCard }) {
           justifyContent="space-evenly"
           spacing={4}
         >
-          {mascotCard.h3.map((card, index) => (
-            <Grid item key={index} xs={12} sm={8} md={4} lg={3}>
-              <MascotCard key={'MascotCard' + index} {...card} variant="h3" />
+          {paragraphCard.h3.map((card, index) => (
+            <Grid item key={'Grid' + index} xs={12} sm={8} md={4} lg={3}>
+              <ParagraphCard
+                key={'ParagraphCard' + index}
+                {...card}
+                variant="h3"
+              />
             </Grid>
           ))}
         </Grid>
@@ -113,8 +117,8 @@ export default function HomePage({ mascotCard }) {
   );
 }
 HomePage.propTypes = PropTypes.exact({
-  MascotCard: {
-    h2: MascotCard.propTypes,
-    h3: PropTypes.arrayOf(MascotCard.propTypes),
+  paragraphCard: {
+    h2: ParagraphCard.propTypes,
+    h3: PropTypes.arrayOf(ParagraphCard.propTypes),
   },
 }).isRequired;
