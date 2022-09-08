@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { FridgeInformation } from 'components/molecules';
+import Fridge from 'components/organisms/Information';
 
 export default function FridgePage(props) {
   return (
@@ -8,11 +8,11 @@ export default function FridgePage(props) {
       <Head>
         <title>{'CFM: ' + props.fridge.name}</title>
       </Head>
-      <FridgeInformation {...props} />
+      <Fridge {...props} />
     </>
   );
 }
-FridgePage.propTypes = FridgeInformation.propTypes.isRequired;
+FridgePage.propTypes = Fridge.propTypes.isRequired;
 
 const baseUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/';
 
