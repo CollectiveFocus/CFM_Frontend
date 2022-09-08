@@ -35,9 +35,10 @@ import { StatusIcon } from 'theme/icons';
 function StatusIconDecorator({ condition }) {
   const color = uiAttributeCondition[condition].color;
 
-  return (props) => {
+  const StatusIconClosure = (props) => {
     return <StatusIcon {...mergeDeep({}, props, { sx: { color } })} />;
   };
+  return StatusIconClosure;
 }
 StatusIconDecorator.propTypes = {
   condition: typesValidation.ReportCondition.isRequired,
