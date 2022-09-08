@@ -1,3 +1,12 @@
+import PropTypes from 'prop-types';
+import typesValidation from 'schema/api/fridge/prop-types';
+import {
+  uiAttributeCondition,
+  uiAttributeFoodPercentage,
+} from 'schema/api/fridge';
+
+import { mergeDeep } from 'lib/dataStructure';
+
 import Image from 'next/image';
 import {
   Box,
@@ -14,7 +23,6 @@ import {
   CalendarMonth as ReportDateIcon,
   ChatBubbleOutlineOutlined as ReportNotesIcon,
   DirectionsOutlined as DirectionsIcon,
-  EditOutlined as EditIcon,
   InfoOutlined as FridgeNotesIcon,
   Instagram as InstagramIcon,
   Kitchen as FoodAvailableIcon,
@@ -24,41 +32,15 @@ import {
 } from '@mui/icons-material';
 import { StatusIcon } from 'theme/icons';
 
-import PropTypes from 'prop-types';
-import typesValidation from 'schema/api/fridge/prop-types';
-
-const enumCondition = {
-  good: {
-    text: 'Fridge is working properly',
-    color: '#0f0',
-  },
-  dirty: {
-    text: 'Fridge is dirty',
-    color: '#00f',
-  },
-  'out of order': {
-    text: 'Fridge is not working properly',
-    color: '#ff0',
-  },
-  'not at location': {
-    text: 'No fridge at this address',
-    color: '#f00',
-  },
-};
-
 function StatusIconDecorator({ condition }) {
-  const color = enumCondition[condition].color
+  const color = uiAttributeCondition[condition].color;
 
-  const StatusIconClosure = (props) => {
-    const propsSx = Object.assign({}, props['sx'], {color})
-    const iconProps = Object.assign({}, props, {sx: propsSx})
-    return <StatusIcon {...iconProps} />;
+  return (props) => {
+    return <StatusIcon {...mergeDeep({}, props, { sx: { color } })} />;
   };
-
-  return StatusIconClosure;
 }
 StatusIconDecorator.propTypes = {
-  condition: ValidateProp.ReportCondition.isRequired,
+  condition: typesValidation.ReportCondition.isRequired,
 };
 
 function CaptionText({ caption }) {
@@ -176,31 +158,6 @@ function ImageContainer({ photoUrl, alt }) {
 ImageContainer.propTypes = {
   photoUrl: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-=======
-function NotesLine({ icon, caption, notes }) {
-  return notes ? (
-    <Typography variant="body1">
-      {IconStyled({ icon })}
-      {CaptionText({ caption })}
-      <Box
-        component="p"
-        sx={{
-          m: 0,
-          ml: 2,
-          p: 0,
-          pl: '1.8em',
-        }}
-      >
-        {notes}
-      </Box>
-    </Typography>
-  ) : null;
-}
-NotesLine.propTypes = {
-  icon: PropTypes.elementType.isRequired,
-  caption: PropTypes.string.isRequired,
-  notes: PropTypes.string.isRequired,
->>>>>>> ce36af3... wip: Bernard
 };
 
 function TagsContainer({ tags }) {
@@ -213,11 +170,10 @@ function TagsContainer({ tags }) {
   ) : null;
 }
 TagsContainer.propTypes = {
-  tags: ValidateProp.Tags,
+  tags: typesValidation.Tags,
 };
-// ---
 
-function FridgeContainer(fridge) {
+function FridgeContainer({ fridge }) {
   if (!fridge) return null;
 
   const {
@@ -243,7 +199,6 @@ function FridgeContainer(fridge) {
 
   return (
     <>
-      {/* Fridge Picture + Name + Location  */}
       {ImageContainer({ photoUrl, alt: 'Photo of ' + name })}
 
       <Stack spacing={3}>
@@ -288,9 +243,9 @@ function FridgeContainer(fridge) {
     </>
   );
 }
-PropTypes.FridgeContainer = ValidateProp.Fridge;
+PropTypes.FridgeContainer = typesValidation.Fridge;
 
-function ReportContainer(report) {
+function ReportContainer({ report }) {
   if (!report) return null;
   const {
     timestamp,
@@ -301,16 +256,8 @@ function ReportContainer(report) {
   } = report;
   const reportDate = new Date(timestamp).toLocaleDateString();
 
-  const foodAvailable = {
-    0: 'Empty',
-    33: 'Few items',
-    67: 'Many Items',
-    100: 'Full',
-  }[foodPercentage];
   return (
     <>
-      <Divider style={{ width: '100%' }} />
-
       {ImageContainer({ photoUrl, alt: 'Photo of fridge contents' })}
 
       {InformationLine({
@@ -321,35 +268,25 @@ function ReportContainer(report) {
       {InformationLine({
         icon: StatusIconDecorator({ condition }),
         caption: 'Status',
-        text: enumCondition[condition].text,
+        text: uiAttributeCondition[condition].text,
       })}
       {InformationLine({
         icon: FoodAvailableIcon,
         caption: 'Contents',
-        text: foodAvailable,
+        text: uiAttributeFoodPercentage[foodPercentage].text,
       })}
       {NotesLine({ icon: ReportNotesIcon, caption: 'Notes', notes })}
     </>
   );
 }
-PropTypes.ReportContainer = ValidateProp.Report;
+PropTypes.ReportContainer = typesValidation.Report;
 
 export default function FridgeInformation({ fridge, report }) {
   return (
     <Stack direction="column" spacing={7} mx={4} mb={4}>
-      <Stack direction="row" justifyContent="space-between">
-        {/* <Backtrack /> */}
-        <Link href="/demo/CreateFridgeDialog">
-          <Stack direction="row" spacing={2}>
-            <EditIcon />
-            <Typography variant="body1">Edit Fridge</Typography>
-          </Stack>
-        </Link>
-      </Stack>
-
       {FridgeContainer({ fridge })}
+      {fridge && report ? <Divider sx={{ width: '100%' }} /> : null}
       {ReportContainer({ report })}
-
       <Button
         aria-label="Click to report the status of the fridge"
         variant="contained"
@@ -361,6 +298,6 @@ export default function FridgeInformation({ fridge, report }) {
   );
 }
 FridgeInformation.propTypes = {
-  fridge: ValidateProp.Fridge,
-  report: ValidateProp.Report,
+  fridge: typesValidation.Fridge,
+  report: typesValidation.Report,
 };
