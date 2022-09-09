@@ -2,7 +2,7 @@ export const designColor = {
   white: '#FFFFFF',
   black: '#000000',
   blue: {
-    dark: '#4467D7',
+    dark: '#1543D4',
     light: '#88B3FF',
   },
   grayscale: {
