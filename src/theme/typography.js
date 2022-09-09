@@ -19,6 +19,7 @@ const typography = {
   body2: { fontSize: '16pt', fontWeight: 400 },
   button: { fontSize: '18pt', fontWeight: 700 },
   caption: { fontSize: '15pt', fontWeight: 700, letterSpacing: 0.5 },
+  footer: { fontSize: '65%', fontWeight: 600 },
 };
 
 export default typography;
