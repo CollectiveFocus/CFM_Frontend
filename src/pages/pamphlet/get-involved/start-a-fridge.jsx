@@ -117,7 +117,7 @@ export default function StartAFridgePage({ content }) {
         <ButtonLink
           variant="contained"
           sx={{ my: 7, minWidth: 345 }}
-          to="/fridge/add"
+          to="/user/add-fridge"
           aria-label="Add a fridge location to the map"
         >
           ADD A FRIDGE

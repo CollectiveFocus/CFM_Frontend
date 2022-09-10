@@ -6,8 +6,9 @@ import {
   StepLabel,
   TextField,
 } from '@mui/material';
+import typesValidation from './prop-types';
 
-export default function PanelDetails(props) {
+export default function PanelFridge({ handleBack, handleNext }) {
   const formik = useFormik({
     initialValues: {
       fridgeName: '',
@@ -63,20 +64,25 @@ export default function PanelDetails(props) {
             onChange={formik.handleChange}
             value={formik.values.description}
           />
-          <Stack direction="column" spacing={4} pt={4}>
+          <Stack
+            direction={{ md: 'row-reverse', xs: 'column' }}
+            justifyContent="space-between"
+            spacing={4}
+            pt={4}
+          >
             <Button
               aria-label="Click to continue to the next panel"
               variant="contained"
-              onClick={props.handleNext}
-              sx={{ py: 3, border: '2px solid transparent' }}
+              onClick={handleNext}
+              sx={{ width: { md: '345px', xs: '100%' } }}
             >
-              Next
+              Continue
             </Button>
             <Button
-              aria-label="Click to return to the preview panel"
+              aria-label="Click to return to the previous panel"
               variant="outlined"
-              onClick={props.handleBack}
-              sx={{ py: 3 }}
+              onClick={handleBack}
+              sx={{ width: { md: '345px', xs: '100%' } }}
             >
               Back
             </Button>
@@ -86,3 +92,4 @@ export default function PanelDetails(props) {
     </>
   );
 }
+PanelFridge.propTypes = typesValidation.Panel;

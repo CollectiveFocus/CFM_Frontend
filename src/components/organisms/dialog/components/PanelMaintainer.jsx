@@ -6,8 +6,9 @@ import {
   StepLabel,
   TextField,
 } from '@mui/material';
+import typesValidation from './prop-types';
 
-export default function MaintainerDetails(props) {
+export default function PanelMaintainer(props) {
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -68,20 +69,25 @@ export default function MaintainerDetails(props) {
             onChange={formik.handleChange}
             value={formik.values.instagram}
           />
-          <Stack direction="column" spacing={4} pt={4}>
+          <Stack
+            direction={{ md: 'row-reverse', xs: 'column' }}
+            justifyContent="space-between"
+            spacing={4}
+            pt={4}
+          >
             <Button
               aria-label="Click to continue to the next panel"
               variant="contained"
               onClick={props.handleNext}
-              sx={{ py: 3, border: '2px solid transparent' }}
+              sx={{ width: { md: '345px', xs: '100%' } }}
             >
-              Next
+              Continue
             </Button>
             <Button
-              aria-label="Click to return to the preview panel"
+              aria-label="Click to return to the previous panel"
               variant="outlined"
               onClick={props.handleBack}
-              sx={{ py: 3 }}
+              sx={{ width: { md: '345px', xs: '100%' } }}
             >
               Back
             </Button>
@@ -91,3 +97,4 @@ export default function MaintainerDetails(props) {
     </>
   );
 }
+PanelMaintainer.propTypes = typesValidation.Panel;

@@ -31,7 +31,7 @@ import {
 const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
   { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse' },
-  { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/user/fridge/add' },
+  { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/user/add-fridge' },
   { icon: AboutIcon, title: 'About', link: '/pamphlet/about' },
   {
     icon: GuidelineIcon,
