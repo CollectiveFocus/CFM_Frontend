@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import {
   Button,
   Stack,
@@ -6,11 +5,12 @@ import {
   StepLabel,
   Typography,
 } from '@mui/material';
+import typesValidation from './prop-types';
 
-export default function PhotoPanel(props) {
+export default function PanelConfirm(props) {
   return (
     <>
-      <StepLabel>Upload Photo</StepLabel>
+      <StepLabel>Confirm</StepLabel>
       <StepContent>
         <Stack
           direction="column"
@@ -19,25 +19,22 @@ export default function PhotoPanel(props) {
           justifyContent="space-between"
         >
           <Typography variant="h5">
-            If you have a photo of the fridge, you can upload it here. If you
-            don't have one, select SKIP PHOTO.
+            If all the details are correct, please select ADD FRIDGE to confirm.
           </Typography>
           <Stack direction="column" spacing={4} pt={4}>
             <Button
-              aria-label="Click to upload a photo of the fridge"
+              aria-label="Click to add fridge"
               variant="contained"
-              onClick={props.handleNext}
-              sx={{ py: 3, border: '2px solid transparent' }}
+              sx={{ py: 3 }}
             >
-              UPLOAD PHOTO
+              ADD FRIDGE
             </Button>
             <Button
-              aria-label="Click to skip uploading a photo and continue to the next page"
-              onClick={props.handleNext}
+              aria-label="Click to cancel adding a new fridge"
               sx={{ py: 3 }}
               variant="outlined"
             >
-              SKIP PHOTO
+              CANCEL
             </Button>
           </Stack>
         </Stack>
@@ -45,3 +42,4 @@ export default function PhotoPanel(props) {
     </>
   );
 }
+PanelConfirm.propTypes = typesValidation.Panel;

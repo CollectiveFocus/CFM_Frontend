@@ -6,16 +6,17 @@ import {
   StepLabel,
   TextField,
 } from '@mui/material';
+import typesValidation from './prop-types';
 
-export default function MaintainerDetails(props) {
+export default function PanelFridge({ handleBack, handleNext }) {
   const formik = useFormik({
     initialValues: {
-      fullName: '',
-      organization: '',
-      phoneNumber: '',
-      email: '',
-      website: '',
-      instagram: '',
+      fridgeName: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      description: '',
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -23,64 +24,59 @@ export default function MaintainerDetails(props) {
   });
   return (
     <>
-      <StepLabel>Maintainer Contact Information</StepLabel>
+      <StepLabel>Fridge Location Information</StepLabel>
       <StepContent>
         <Stack direction="column" spacing={3} mx={4} mb={4}>
           <TextField
-            id="fullName"
-            label="Full Name"
+            id="fridgeName"
+            label="Name of Fridge"
             variant="outlined"
             onChange={formik.handleChange}
-            value={formik.values.fullName}
+            value={formik.values.fridgeName}
           />
           <TextField
-            id="organization"
-            label="Organization"
+            id="address"
+            label="Street Address"
             variant="outlined"
             onChange={formik.handleChange}
-            value={formik.values.organization}
+            value={formik.values.address}
           />
           <TextField
-            id="phoneNumber"
-            label="Phone Number"
+            id="city"
+            label="City"
             variant="outlined"
             onChange={formik.handleChange}
-            value={formik.values.phoneNumber}
+            value={formik.values.city}
           />
           <TextField
-            id="email"
-            label="Email"
+            id="zip"
+            label="Zip Code"
             variant="outlined"
             onChange={formik.handleChange}
-            value={formik.values.email}
+            value={formik.values.zip}
           />
           <TextField
-            id="website"
-            label="Website"
+            id="description"
+            label="Description"
             variant="outlined"
+            multiline
+            rows={4}
             onChange={formik.handleChange}
-            value={formik.values.website}
-          />
-          <TextField
-            id="instagram"
-            label="Instagram"
-            variant="outlined"
-            onChange={formik.handleChange}
-            value={formik.values.instagram}
+            value={formik.values.description}
           />
           <Stack direction="column" spacing={4} pt={4}>
             <Button
               aria-label="Click to continue to the next panel"
               variant="contained"
-              onClick={props.handleNext}
-              sx={{ py: 3, border: '2px solid transparent' }}
+              onClick={handleNext}
+              sx={{ py: 3 }}
             >
               Next
             </Button>
             <Button
               aria-label="Click to return to the preview panel"
               variant="outlined"
-              onClick={props.handleBack}
+              onClick={handleBack}
               sx={{ py: 3 }}
             >
               Back
@@ -91,3 +87,4 @@ export default function MaintainerDetails(props) {
     </>
   );
 }
+PanelFridge.propTypes = typesValidation.Panel;
