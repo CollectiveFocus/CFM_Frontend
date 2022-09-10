@@ -23,9 +23,6 @@ module.exports = {
       'components/molecules': {
         transform: 'components/molecules/{{member}}',
       },
-      'components/organisms': {
-        transform: 'components/organisms/{{member}}',
-      },
     },
   },
   // ---

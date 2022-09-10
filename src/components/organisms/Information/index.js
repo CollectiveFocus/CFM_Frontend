@@ -1,1 +1,1 @@
-export { default } from './Fridge';
+export { default } from './FridgeComplete';

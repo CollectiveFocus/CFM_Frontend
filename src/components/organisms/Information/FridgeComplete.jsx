@@ -9,7 +9,7 @@ import {
   ReportContainer,
 } from './components';
 
-export default function FridgeInformation({ fridge, report }) {
+export default function FridgeComplete({ fridge, report }) {
   return (
     <Stack direction="column" spacing={7} mx={4} mb={4}>
       {FridgeContainer({ fridge })}
@@ -25,7 +25,7 @@ export default function FridgeInformation({ fridge, report }) {
     </Stack>
   );
 }
-FridgeInformation.propTypes = {
+FridgeComplete.propTypes = {
   fridge: typesValidation.Fridge,
   report: typesValidation.Report,
 };
