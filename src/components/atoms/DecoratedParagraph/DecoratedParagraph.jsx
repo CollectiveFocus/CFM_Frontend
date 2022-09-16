@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { typesNextImage } from 'schema/component/prop-types';
+import { typesNextImage } from 'model/view/component/prop-types';
 import { Typography, Box, Divider } from '@mui/material';
 import { designColor } from 'theme/palette';
 

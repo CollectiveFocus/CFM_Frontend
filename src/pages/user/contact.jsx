@@ -6,8 +6,8 @@ import { useFormik } from 'formik';
 import { Button, Stack, TextField, Typography } from '@mui/material';
 import { ButtonLink, FeedbackCard } from 'components/atoms';
 
-import { typesFormik } from 'schema/component/prop-types';
-import { dialogContact } from 'schema/dialog/yup';
+import { typesFormik } from 'model/view/component/prop-types';
+import { dialogContact } from 'model/view/dialog/yup';
 
 const fridgeUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/contact/';
 const enumDisplay = Object.freeze({

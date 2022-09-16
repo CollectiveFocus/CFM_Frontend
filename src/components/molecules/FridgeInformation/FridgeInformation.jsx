@@ -25,7 +25,7 @@ import {
 import { StatusIcon } from 'theme/icons';
 
 import PropTypes from 'prop-types';
-import typesValidation from 'schema/api/fridge/prop-types';
+import typesValidation from 'model/data/fridge/prop-types';
 
 const enumCondition = {
   good: {

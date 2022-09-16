@@ -1,4 +1,4 @@
-import apiFridge from 'schema/api/fridge/yup';
+import apiFridge from 'model/data/fridge/yup.mjs';
 
 export const dialogContact = apiFridge.Contact;
 

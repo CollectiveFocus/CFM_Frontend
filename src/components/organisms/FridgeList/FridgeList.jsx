@@ -10,7 +10,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { formatDate } from 'lib/helperFunctions';
 import { getInstagramHandleFromUrl } from 'lib/helperFunctions';
-import typesValidation from 'schema/api/fridge/prop-types';
+import typesValidation from 'model/data/fridge/prop-types';
 import { useMemo } from 'react';
 
 function indexReportsByFridgeId(reports) {
