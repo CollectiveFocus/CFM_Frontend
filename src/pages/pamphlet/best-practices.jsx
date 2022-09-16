@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Box, Button, Tab, Tabs, Typography } from '@mui/material';
 import { FileDownloadOutlined as DownloadIcon } from '@mui/icons-material';
+import { PageFooter } from 'components/atoms';
 
 export async function getStaticProps() {
   return {
@@ -65,22 +66,15 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `tab-${index}`,
-    'aria-controls': `tab-panel-${index}`,
-  };
-}
-
 export default function BestPracticesPage({ panelList }) {
-  const [ixCurrentPanel, setCurrentPanelIndex] = React.useState(0);
+  const [ixCurrentPanel, setCurrentPanelIndex] = useState(0);
 
   const handleChange = (event, newValue) => {
     setCurrentPanelIndex(newValue);
   };
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>CFM: Best Practices</title>
       </Head>
@@ -89,7 +83,7 @@ export default function BestPracticesPage({ panelList }) {
       </Typography>
       <Tabs
         sx={{ mx: 4 }}
-        value={panelList}
+        value={ixCurrentPanel}
         onChange={handleChange}
         aria-label="Tabs of Best Practices"
         variant="fullWidth"
@@ -97,10 +91,11 @@ export default function BestPracticesPage({ panelList }) {
       >
         {panelList.map((panel, index) => (
           <Tab
-            key={`tab-title-${panel.title}`}
+            key={'tab-title-' + panel.title}
             label={panel.title}
             sx={{ textTransform: 'none' }}
-            {...a11yProps(index)}
+            id={'tab-' + index}
+            aria-controls={'tab-panel-' + index}
           />
         ))}
       </Tabs>
@@ -130,7 +125,8 @@ export default function BestPracticesPage({ panelList }) {
           Download PDF
         </Button>
       </Box>
-    </React.Fragment>
+      <PageFooter fixedAtBottom={true} />
+    </>
   );
 }
 const panelShape = PropTypes.exact({

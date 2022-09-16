@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Grid, Box } from '@mui/material';
-import { TitleCard, DecoratedParagraph } from 'components/atoms';
+import { DecoratedParagraph, PageFooter, TitleCard } from 'components/atoms';
 
 export async function getStaticProps() {
   return {
@@ -78,7 +78,6 @@ export default function GetInvolvedPage({ titleCards, introParagraph }) {
       <Head>
         <title>CFM: Get Involved!</title>
       </Head>
-
       <Box
         sx={{
           width: '100%',
@@ -88,12 +87,10 @@ export default function GetInvolvedPage({ titleCards, introParagraph }) {
       >
         <Image alt="" {...headerImg} layout="responsive" />
       </Box>
-
       <DecoratedParagraph
         sx={{ mx: { xs: 4, sm: 4, md: 2 } }}
         {...introParagraph}
       />
-
       <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} my={{ xs: 4, md: 6 }}>
         {titleCards.map((card, index) => (
           <Grid
@@ -108,6 +105,7 @@ export default function GetInvolvedPage({ titleCards, introParagraph }) {
           </Grid>
         ))}
       </Grid>
+      <PageFooter scrollButton={false} />
     </>
   );
 }
