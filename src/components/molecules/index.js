@@ -4,4 +4,3 @@ export { default as ButtonLink } from './ButtonLink';
 export { default as DialogUploadImage } from './DialogUploadImage';
 export { default as FridgeInformation } from './FridgeInformation';
 export { default as FridgeDialog } from './FridgeDialog';
-export { default as IconLink } from './IconLink';
