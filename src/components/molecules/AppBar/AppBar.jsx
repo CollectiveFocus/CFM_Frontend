@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   ListItemIcon,
+  Paper,
   Toolbar,
   Tooltip,
   Typography,
@@ -16,7 +17,11 @@ import {
 import theme from 'theme';
 import { NextLinkAnchor } from 'components/atoms';
 
-import { Menu as MenuIcon, Search as SearchIcon } from '@mui/icons-material';
+import {
+  Menu as MenuIcon,
+  Search as SearchIcon,
+  MyLocation as MyLocationIcon,
+} from '@mui/icons-material';
 
 import {
   AboutIcon,
@@ -64,6 +69,7 @@ const Search = {
     sm: theme.spacing(6),
   },
   width: { xs: '100%', sm: 'auto' },
+  display: 'flex',
 };
 
 const SearchIconWrapper = {
@@ -89,7 +95,7 @@ const StyledInputBase = {
 function SearchBox({ currentPath }) {
   if (currentPath === '/browse/map' || currentPath === '/browse/list') {
     return (
-      <Box sx={Search}>
+      <Paper sx={Search} elevation={1}>
         <Box sx={SearchIconWrapper}>
           <SearchIcon />
         </Box>
@@ -98,7 +104,10 @@ function SearchBox({ currentPath }) {
           placeholder="Search"
           inputProps={{ 'aria-label': 'search' }}
         />
-      </Box>
+        <IconButton>
+          <MyLocationIcon />
+        </IconButton>
+      </Paper>
     );
   } else return null;
 }
