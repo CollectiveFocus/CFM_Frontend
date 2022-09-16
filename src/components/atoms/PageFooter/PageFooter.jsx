@@ -2,20 +2,28 @@ import PropTypes from 'prop-types';
 import { designColor } from 'theme/palette';
 import { Box, Typography } from '@mui/material';
 
-export default function PageFooter({ scrollButton = true }) {
+export default function PageFooter({
+  scrollButton = true,
+  fixedAtBottom = false,
+}) {
+  const sxFooter = {
+    padding: 2,
+    backgroundColor: designColor.grayscale.gradient[3],
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    rowGap: '0.2em',
+  };
+
+  if (fixedAtBottom) {
+    sxFooter['position'] = 'fixed';
+    sxFooter['bottom'] = 0;
+    scrollButton = false;
+  }
+
   return (
-    <Box
-      component="footer"
-      sx={{
-        padding: 2,
-        backgroundColor: designColor.grayscale.gradient[3],
-        width: '100%',
-        display: 'flex',
-        flexFlow: 'row wrap',
-        rowGap: '0.2em',
-      }}
-    >
-      {scrollButton ? PageScroll() : null}
+    <Box component="footer" sx={sxFooter}>
+      {PageScroll(scrollButton)}
       <Typography variant="footer">
         &copy; 2022, Collective Focus. All rights reserved.&nbsp;
       </Typography>
@@ -28,10 +36,15 @@ export default function PageFooter({ scrollButton = true }) {
 }
 PageFooter.propTypes = PropTypes.exact({
   scrollButton: PropTypes.bool,
+  fixedAtBottom: PropTypes.bool,
 }).isRequired;
+PageFooter.defaultProps = {
+  scrollButton: true,
+  fixedAtBottom: false,
+};
 
-function PageScroll() {
-  return (
+function PageScroll(display) {
+  return display ? (
     <a
       href="#"
       title="Top of page"
@@ -48,5 +61,5 @@ function PageScroll() {
         opacity: 0.6,
       }}
     />
-  );
+  ) : null;
 }
