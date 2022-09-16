@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Box } from '@mui/material';
-import { ButtonLink } from 'components/molecules';
-import { DecoratedParagraph, PageScroll } from 'components/atoms';
+import { ButtonLink, DecoratedParagraph, PageScroll } from 'components/atoms';
 
 export async function getStaticProps() {
   return {

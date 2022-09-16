@@ -5,7 +5,7 @@ import {
   WarningAmberRounded as ErrorIcon,
   TaskAltRounded as SuccessIcon,
 } from '@mui/icons-material';
-import { ButtonLink } from 'components/molecules';
+import { ButtonLink } from 'components/atoms';
 
 const sxSuccessIcon = { fontSize: '1.1em', verticalAlign: 'top' };
 const sxErrorIcon = { fontSize: '1.3em', verticalAlign: 'text-bottom' };

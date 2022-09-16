@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 
 import { Button, Stack, TextField, Typography } from '@mui/material';
-import { ButtonLink } from 'components/molecules';
-import { FeedbackCard } from 'components/atoms';
+import { ButtonLink, FeedbackCard } from 'components/atoms';
 
 import { typesFormik } from 'schema/component/prop-types';
 import { dialogContact } from 'schema/dialog/yup';
