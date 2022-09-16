@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Box } from '@mui/material';
-import { ButtonLink, DecoratedParagraph, PageScroll } from 'components/atoms';
+import { ButtonLink, DecoratedParagraph, PageFooter } from 'components/atoms';
 
 export async function getStaticProps() {
   return {
@@ -123,7 +123,7 @@ export default function StartAFridgePage({ content }) {
           ADD A FRIDGE
         </ButtonLink>
       </Box>
-      <PageScroll />
+      <PageFooter />
     </>
   );
 }
