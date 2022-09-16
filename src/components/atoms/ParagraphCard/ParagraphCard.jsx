@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { typesNextImage } from 'schema/component/prop-types';
 import { Box, Typography, Card, CardContent, CardActions } from '@mui/material';
-import { ButtonLink } from 'components/molecules';
+import { ButtonLink } from 'components/atoms';
 
 export default function ParagraphCard({ variant, img, title, text, link }) {
   if (variant === 'h2') {

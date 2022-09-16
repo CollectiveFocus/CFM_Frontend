@@ -1,3 +1,4 @@
+export { default as ButtonLink } from './ButtonLink';
 export { default as DecoratedParagraph } from './DecoratedParagraph';
 export { default as FeedbackCard } from './FeedbackCard';
 export { default as NextLinkAnchor } from './NextLinkAnchor';
