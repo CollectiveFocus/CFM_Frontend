@@ -5,11 +5,13 @@ import {
   FormatListBulletedOutlined as ListIcon,
 } from '@mui/icons-material';
 
-export default function ToggleButton({ mode }) {
+export default function ToggleButton({ currentPage }) {
   return (
     <Button
       fullWidth
-      startIcon={mode === ToggleButton.Mode.List ? <ListIcon /> : <MapIcon />}
+      startIcon={
+        currentPage === ToggleButton.page.map ? <ListIcon /> : <MapIcon />
+      }
       sx={{
         position: 'fixed',
         bottom: 0,
@@ -28,15 +30,15 @@ export default function ToggleButton({ mode }) {
         ':hover': { backgroundColor: '#fff' },
       }}
     >
-      {mode === ToggleButton.Mode.List ? 'List View' : 'Map View'}
+      {currentPage === ToggleButton.page.map ? 'List View' : 'Map View'}
     </Button>
   );
 }
 ToggleButton.propTypes = PropTypes.exact({
-  mode: PropTypes.symbol,
+  currentPage: PropTypes.symbol,
 }).isRequired;
 
-ToggleButton.Mode = Object.freeze({
-  Map: Symbol(0),
-  List: Symbol(1),
+ToggleButton.page = Object.freeze({
+  map: Symbol(0),
+  list: Symbol(1),
 });

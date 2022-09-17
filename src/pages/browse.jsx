@@ -11,7 +11,7 @@ const locationBrooklynBridge = {
 export default function BrowseMapPage() {
   const DynamicMap = dynamic(
     () => {
-      return import('../../components/organisms/map/LeafletMap');
+      return import('../components/organisms/browse/Map');
     },
     { ssr: false }
   );
