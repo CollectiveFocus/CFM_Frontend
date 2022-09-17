@@ -31,7 +31,7 @@ import {
 
 const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
-  { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse/map' },
+  { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse' },
   { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/user/fridge/add' },
   { icon: AboutIcon, title: 'About', link: '/pamphlet/about' },
   {
@@ -54,7 +54,7 @@ const sxMobileIcon = {
   sx: { borderRadius: '50%', width: '40px', height: '40px' },
 };
 
-const Search = {
+const sxSearch = {
   position: 'relative',
   borderRadius: 45,
   backgroundColor: 'white',
@@ -66,7 +66,7 @@ const Search = {
   width: { xs: '100%', sm: 'auto' },
 };
 
-const SearchIconWrapper = {
+const sxSearchIconWrapper = {
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
@@ -76,7 +76,7 @@ const SearchIconWrapper = {
   justifyContent: 'center',
 };
 
-const StyledInputBase = {
+const sxInputBase = {
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 2, 1, 0),
@@ -87,20 +87,18 @@ const StyledInputBase = {
 };
 
 function SearchBox({ currentPath }) {
-  if (currentPath === '/browse/map' || currentPath === '/browse/list') {
-    return (
-      <Box sx={Search}>
-        <Box sx={SearchIconWrapper}>
-          <SearchIcon />
-        </Box>
-        <InputBase
-          sx={StyledInputBase}
-          placeholder="Search"
-          inputProps={{ 'aria-label': 'search' }}
-        />
+  return currentPath === '/browse' ? (
+    <Box sx={sxSearch}>
+      <Box sx={sxSearchIconWrapper}>
+        <SearchIcon />
       </Box>
-    );
-  } else return null;
+      <InputBase
+        sx={sxInputBase}
+        placeholder="Search"
+        inputProps={{ 'aria-label': 'search' }}
+      />
+    </Box>
+  ) : null;
 }
 
 export default function ResponsiveAppBar() {
