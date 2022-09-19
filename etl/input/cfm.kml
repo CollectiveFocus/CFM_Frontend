@@ -1,0 +1,3527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>NYC Community Fridges</name>
+    <description><![CDATA[Community Food Fridges are fridges that offer free food, to whoever wants it. Take what you need, leave what you don't. Set up and maintained by community members, many of the fridges are available 24/7. Community members can take however much they need from the fridges, and give what they can to the fridges. These fridges are autonomous-reach out to each fridge to learn more about them, how you can get involved, or how you can start a fridge nearby!<br><br>Fill out the survey to get your fridge on the map!<br>Link to survey: https://forms.gle/GTxQAsehVBJAZHFN6<br>]]></description>
+    <Style id="icon-1578-006064-normal">
+      <IconStyle>
+        <color>ff646000</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1578-006064-highlight">
+      <IconStyle>
+        <color>ff646000</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1578-006064">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1578-006064-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1578-006064-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1578-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1578-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1578-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1578-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1578-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1578-0F9D58-normal">
+      <IconStyle>
+        <color>ff589d0f</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1578-0F9D58-highlight">
+      <IconStyle>
+        <color>ff589d0f</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1578-0F9D58">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1578-0F9D58-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1578-0F9D58-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1578-9C27B0-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1578-9C27B0-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1578-9C27B0">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1578-9C27B0-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1578-9C27B0-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1578-F9A825-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1578-F9A825-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1578-F9A825">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1578-F9A825-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1578-F9A825-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Manhattan Fridges</name>
+      <Placemark>
+        <name>The Community Fridge</name>
+        <address>466 GRAND ST Lower East Side, NY 10002</address>
+        <description><![CDATA[ig handle: @les_communityfridge<br>address: 466 GRAND ST<br>city state zip: Lower East Side, NY 10002<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no prepared meals<br>accepts donations?: no<br>Additional Information: linktr.ee/lescommunityfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@les_communityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>466 GRAND ST</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Lower East Side, NY 10002</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no prepared meals</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>no</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/lescommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Barrio Fridge</name>
+        <address>339 E 108th Street Harlem, NY 10029</address>
+        <description><![CDATA[ig handle: @thebarriofridge<br>address: 339 E 108th Street<br>city state zip: Harlem, NY 10029<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: yes: Cashapp: $TheBarrioFridge<br>Additional Information: Volunteers@thebarriofridge.com ; thebarriofridge.com]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thebarriofridge</value>
+          </Data>
+          <Data name="address">
+            <value>339 E 108th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Harlem, NY 10029</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>yes: Cashapp: $TheBarrioFridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>Volunteers@thebarriofridge.com ; thebarriofridge.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Harlem Community Fridge</name>
+        <address>352 West 116th Street Harlem, NY 10026</address>
+        <description><![CDATA[ig handle: @theharlemcommunityfridge<br>address: 352 West 116th Street<br>city state zip: Harlem, NY 10026<br>Hours open: 24/7<br>Has a freezer: no<br>What the Fridge does not accept: NO raw meat, fish or frozen foods. All prepared meals MUST be clearly dated and labeld. If produce, potatoes, carrots, apples etc. are in big bags, please remove them from the bag(s) and put them in the containers provided<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@theharlemcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>352 West 116th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Harlem, NY 10026</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>NO raw meat, fish or frozen foods. All prepared meals MUST be clearly dated and labeld. If produce, potatoes, carrots, apples etc. are in big bags, please remove them from the bag(s) and put them in the containers provided</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Uptown Fridge</name>
+        <address>4672 Broadway Inwood, NY 10040</address>
+        <description><![CDATA[ig handle: @theuptownfridge<br>address: 4672 Broadway<br>city state zip: Inwood, NY 10040<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: Venmo/Cashapp: aditivarshneya<br>Additional Information: forms.gle/J8eDt4cC4vpFQSpT6]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@theuptownfridge</value>
+          </Data>
+          <Data name="address">
+            <value>4672 Broadway</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Inwood, NY 10040</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo/Cashapp: aditivarshneya</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>forms.gle/J8eDt4cC4vpFQSpT6</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Madison Sq Boys and Girls Club</name>
+        <address>250 Bradhurst Ave New York, NY 10039</address>
+        <description><![CDATA[ig handle: @the155streetfridge<br>address: 250 Bradhurst Ave<br>city state zip: New York, NY 10039<br>Hours open: 24/7<br>Has a freezer: nope<br>What the Fridge does not accept: no prepared meals, no meat products, limited dairy products<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@the155streetfridge</value>
+          </Data>
+          <Data name="address">
+            <value>250 Bradhurst Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10039</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>nope</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no prepared meals, no meat products, limited dairy products</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>West Harlem Community Fridge</name>
+        <address>521 W 126th St  New York, NY 10027</address>
+        <description><![CDATA[ig handle: @FridgeOnW126th<br>address: 521 W 126th St <br>city state zip: New York, NY 10027<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no restrictions<br>accepts donations?: not yet<br>Additional Information: uppermorningsidemutualaid.org]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@FridgeOnW126th</value>
+          </Data>
+          <Data name="address">
+            <value>521 W 126th St </value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10027</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>not yet</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>uppermorningsidemutualaid.org</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Community Fridge 120th MMM</name>
+        <address>86 West 120th Street  New York, NY 10027</address>
+        <description><![CDATA[ig handle: @Communityfridge120mmm <br>address: 86 West 120th Street <br>city state zip: New York, NY 10027<br>Hours open: 7am-9pm<br>Has a freezer: yes<br>What the Fridge does not accept: Pantry items <br>accepts donations?: Venmo Donations- missatlantisg<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@Communityfridge120mmm </value>
+          </Data>
+          <Data name="address">
+            <value>86 West 120th Street </value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10027</value>
+          </Data>
+          <Data name="Hours open">
+            <value>7am-9pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Pantry items </value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo Donations- missatlantisg</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[The Peoplee's Fridge Word Up]]></name>
+        <address>2113 Amsterdam Ave New York, NY 10032</address>
+        <description><![CDATA[ig handle: @peoplesfridgewordup<br>address: 2113 Amsterdam Ave<br>city state zip: New York, NY 10032<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: We do not accept:<br><br>Opened or half-eaten foods: Please do not give food that you have eaten.<br>Non-labeled foods: If a food item (besides produce) is not labeled with what it is or what ingredients are in it, we will have to throw it away.<br>Homemade prepared meals: We are not currently accepting prepared meals that are homemade.<br><br>Non-labeled foods: If a food item (besides produce) is not labeled with what it is or what ingredients are in it, we will have to throw it away.<br>Homemade prepared meals: We are not currently accepting prepared meals that are homemade.<br>accepts donations?: venmo: @elise-stumpf<br>Additional Information: https://linktr.ee/wordupfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@peoplesfridgewordup</value>
+          </Data>
+          <Data name="address">
+            <value>2113 Amsterdam Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10032</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>We do not accept:
+
+Opened or half-eaten foods: Please do not give food that you have eaten.
+Non-labeled foods: If a food item (besides produce) is not labeled with what it is or what ingredients are in it, we will have to throw it away.
+Homemade prepared meals: We are not currently accepting prepared meals that are homemade.
+
+Non-labeled foods: If a food item (besides produce) is not labeled with what it is or what ingredients are in it, we will have to throw it away.
+Homemade prepared meals: We are not currently accepting prepared meals that are homemade.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: @elise-stumpf</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/wordupfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ujamaa Solidarity Fridge </name>
+        <address>830 Columbus Ave  New York, NY 10026</address>
+        <description><![CDATA[ig handle: @1freedom4all<br>address: 830 Columbus Ave <br>city state zip: New York, NY 10026<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@1freedom4all</value>
+          </Data>
+          <Data name="address">
+            <value>830 Columbus Ave </value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10026</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>East Village Community Fridge</name>
+        <address>638 east 6th Street New York, NY 10009</address>
+        <description><![CDATA[ig handle: @eastvillage_communityfridge<br>address: 638 east 6th Street<br>city state zip: New York, NY 10009<br>Hours open: M-F 11am-4pm. Located in the side yard of sixth street community center<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@eastvillage_communityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>638 east 6th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10009</value>
+          </Data>
+          <Data name="Hours open">
+            <value>M-F 11am-4pm. Located in the side yard of sixth street community center</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Sugar Hill Community Fridges </name>
+        <address>152 Street Broadway  New York, NY 10031</address>
+        <description><![CDATA[ig handle: @sugarhillcommunityfridge<br>address: 152 Street Broadway <br>city state zip: New York, NY 10031<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: ACCEPTS: Fresh produce<br><br>Prepackaged food and grains<br>Canned goods<br>Baked goods<br>Prepared meals*<br>Dairy products and eggs<br>Chicken and seafood,<br>Cleaning and sanitary supplies<br>Bottled water and beverages <br><br>DOES NOT ACCEPT: Red meat,<br>Alcohol, Already eaten food<br>Anything expired,<br>unlabled, or otherwise<br>not in good condition<br>accepts donations?: https://www.gofundme.com/f/west-harlem-community-fridges<br>Additional Information: linktr.ee/sugarhillfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@sugarhillcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>152 Street Broadway </value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10031</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>ACCEPTS: Fresh produce
+
+Prepackaged food and grains
+Canned goods
+Baked goods
+Prepared meals*
+Dairy products and eggs
+Chicken and seafood,
+Cleaning and sanitary supplies
+Bottled water and beverages
+
+DOES NOT ACCEPT: Red meat,
+Alcohol, Already eaten food
+Anything expired,
+unlabled, or otherwise
+not in good condition</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://www.gofundme.com/f/west-harlem-community-fridges</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/sugarhillfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The West End Community Fridge</name>
+        <address>245 W 77th Street New York, NY 10024</address>
+        <description><![CDATA[ig handle: @westendfridge<br>address: 245 W 77th Street<br>city state zip: New York, NY 10024<br>Hours open: mini fridge outside on the sidewalk: 24/7<br>fridge up the stairs, inside the gate: 9-5, Monday-Friday<br>Has a freezer: yes<br>What the Fridge does not accept: prefer refrigerated items (does not have dry storage). No expired foods or unlabled/unsealed prepared meals <br>accepts donations?: Venmo @westendfridge<br>Additional Information: linktr.ee/westendfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@westendfridge</value>
+          </Data>
+          <Data name="address">
+            <value>245 W 77th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10024</value>
+          </Data>
+          <Data name="Hours open">
+            <value>mini fridge outside on the sidewalk: 24/7
+fridge up the stairs, inside the gate: 9-5, Monday-Friday</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>prefer refrigerated items (does not have dry storage). No expired foods or unlabled/unsealed prepared meals </value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo @westendfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/westendfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Peoples Peoples Fridge</name>
+        <address>908 St. Nicholas Ave Harlem, NY 10032</address>
+        <description><![CDATA[ig handle: @thepeoplespeoplesfridge<br>address: 908 St. Nicholas Ave<br>city state zip: Harlem, NY 10032<br>Hours open: 24/7<br>Has a freezer: no<br>What the Fridge does not accept: We can't accept raw meat (frozen is okay), already-opened/unlabeled prepared or packaged foods, or alcohol<br>accepts donations?: venmo: @thepeoplespeoplesfridge<br>Additional Information: https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thepeoplespeoplesfridge</value>
+          </Data>
+          <Data name="address">
+            <value>908 St. Nicholas Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Harlem, NY 10032</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>We can't accept raw meat (frozen is okay), already-opened/unlabeled prepared or packaged foods, or alcohol</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: @thepeoplespeoplesfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>East Village Community Fridge</name>
+        <address><![CDATA[12th St. and 1st Ave, outside S'mac at 197 1st Ave. NY, NY, 10003]]></address>
+        <description><![CDATA[ig handle: @eastvillageneighbors<br>address: 12th St. and 1st Ave, outside S'mac at 197 1st Ave.<br>city state zip: NY, NY, 10003<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: No Opened or partially eaten food<br>accepts donations?: bit.ly/EVNfunds<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@eastvillageneighbors</value>
+          </Data>
+          <Data name="address">
+            <value><![CDATA[12th St. and 1st Ave, outside S'mac at 197 1st Ave.]]></value>
+          </Data>
+          <Data name="city state zip">
+            <value>NY, NY, 10003</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No Opened or partially eaten food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>bit.ly/EVNfunds</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[The Chelsea Community Fridge & Cupboard]]></name>
+        <address>55 West 15th St New York NY 10011</address>
+        <description><![CDATA[ig handle: @Thechelseafridge<br>address: 55 West 15th St<br>city state zip: New York NY 10011<br>Hours open: 24/7<br>Has a freezer: Yes!<br>What the Fridge does not accept: raw meat/seafood, unlabeled prepared items, expired/opened items<br>accepts donations?: venmo @thechelseafridge, cashapp $thechelseafridge, paypal thechelseafridge@gmail.com<br>Additional Information: http://linktr.ee/thechelseafridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@Thechelseafridge</value>
+          </Data>
+          <Data name="address">
+            <value>55 West 15th St</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York NY 10011</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes!</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>raw meat/seafood, unlabeled prepared items, expired/opened items</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo @thechelseafridge, cashapp $thechelseafridge, paypal thechelseafridge@gmail.com</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/thechelseafridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Broome & Bowery Fridge]]></name>
+        <address>329 Broome St. New York, NY., 10002</address>
+        <description><![CDATA[ig handle: @broomeboweryfridge<br>address: 329 Broome St.<br>city state zip: New York, NY., 10002<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no ready-to-eat meals/foods that aren't labeled with the date it was made, and the ingredients.<br>accepts donations?: PayPal: artofsamcdade@gmail.com<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@broomeboweryfridge</value>
+          </Data>
+          <Data name="address">
+            <value>329 Broome St.</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY., 10002</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no ready-to-eat meals/foods that aren't labeled with the date it was made, and the ingredients.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>PayPal: artofsamcdade@gmail.com</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>La Nevera 183</name>
+        <address>183rd street and Audubon Avenue New York, NY 10033</address>
+        <description><![CDATA[ig handle: @lanevera183<br>address: 183rd street and Audubon Avenue<br>city state zip: New York, NY 10033<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: No homemade foods<br>accepts donations?: https://www.gofundme.com/f/lanevera183<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@lanevera183</value>
+          </Data>
+          <Data name="address">
+            <value>183rd street and Audubon Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10033</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No homemade foods</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://www.gofundme.com/f/lanevera183</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Overthrow Community Fridge</name>
+        <address>9 Bleeker Street New York, NY 10012</address>
+        <description><![CDATA[ig handle: @overthrowcommunityfridge<br>address: 9 Bleeker Street<br>city state zip: New York, NY 10012<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: **Plant based fridge** NO meat, dairy, eggs<br>accepts donations?: venmo.com/u/plantbasedcommunityfridge<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@overthrowcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>9 Bleeker Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10012</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>**Plant based fridge** NO meat, dairy, eggs</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo.com/u/plantbasedcommunityfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Barrio Fridge (2nd location)</name>
+        <address>314 E 106th Street Harlem, NY 10029</address>
+        <description><![CDATA[ig handle: @thebarriofridge<br>address: 314 E 106th Street<br>city state zip: Harlem, NY 10029<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: yes: Cashapp: $TheBarrioFridge<br>Additional Information: Volunteers@thebarriofridge.com ; thebarriofridge.com]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thebarriofridge</value>
+          </Data>
+          <Data name="address">
+            <value>314 E 106th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Harlem, NY 10029</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>yes: Cashapp: $TheBarrioFridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>Volunteers@thebarriofridge.com ; thebarriofridge.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Fort Fridge</name>
+        <address><![CDATA[181st St & Fort Washington Ave New York, NY 10033]]></address>
+        <description><![CDATA[ig handle: @fortfridge<br>address: 181st St & Fort Washington Ave<br>city state zip: New York, NY 10033<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@fortfridge</value>
+          </Data>
+          <Data name="address">
+            <value><![CDATA[181st St & Fort Washington Ave]]></value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10033</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Community fridge at St. Jude</name>
+        <address>205th Street and 10th Ave New York, NY 10034</address>
+        <description><![CDATA[ig handle: @altagraciafaith<br>address: 205th Street and 10th Ave<br>city state zip: New York, NY 10034<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@altagraciafaith</value>
+          </Data>
+          <Data name="address">
+            <value>205th Street and 10th Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, NY 10034</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Queens</name>
+      <Placemark>
+        <name>Astoria Fridge</name>
+        <address>8-01 astoria blvd Astoria, NY 11102</address>
+        <description><![CDATA[ig handle: @astoriafridge<br>address: 8-01 astoria blvd<br>city state zip: Astoria, NY 11102<br>Hours open: 24/7<br>Has a freezer: nope <br>What the Fridge does not accept: no raw meat, no frozen food<br>accepts donations?: venmo: @astoriafridge<br>Additional Information: linktr.ee/Astoriafridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@astoriafridge</value>
+          </Data>
+          <Data name="address">
+            <value>8-01 astoria blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Astoria, NY 11102</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>nope </value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat, no frozen food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: @astoriafridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/Astoriafridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Jackson Heights Community Fridge</name>
+        <address>80-02 Northern Blvd Jackson Heights, NY 11372</address>
+        <description><![CDATA[ig handle: @jacksonheightscommunityfridge<br>address: 80-02 Northern Blvd<br>city state zip: Jackson Heights, NY 11372<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no raw meat, no prepared food<br>accepts donations?: Venmo: @jacksonheightscommunityfridge<br>Additional Information: rb.gy/koufel]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@jacksonheightscommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>80-02 Northern Blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jackson Heights, NY 11372</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat, no prepared food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo: @jacksonheightscommunityfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>rb.gy/koufel</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>FENIX Fridge</name>
+        <address>586 Seneca Ave Ridgewood, NY 11385</address>
+        <description><![CDATA[ig handle: @fenixcommunityfridge<br>address: 586 Seneca Ave<br>city state zip: Ridgewood, NY 11385<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@fenixcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>586 Seneca Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Ridgewood, NY 11385</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Elmhurst Community Fridge #2</name>
+        <address>77th Street and Woodside Ave Elmhurst, NY 11373</address>
+        <description><![CDATA[ig handle: @elmhurstcommunityfridge2<br>address: 77th Street and Woodside Ave<br>city state zip: Elmhurst, NY 11373<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: bit.ly/3j7YkBy]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@elmhurstcommunityfridge2</value>
+          </Data>
+          <Data name="address">
+            <value>77th Street and Woodside Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Elmhurst, NY 11373</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>bit.ly/3j7YkBy</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Far Rockaway Community Fridge</name>
+        <address>69-62 Almeda Ave Arverne, NY 11692</address>
+        <description><![CDATA[ig handle: @rockawaymutualaid<br>address: 69-62 Almeda Ave<br>city state zip: Arverne, NY 11692<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: https://chuffed.org/project/rockaway-mutual-aid-covid-19-relief-fund#<br>Additional Information: linktr.ee/rockawaymutualaid]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@rockawaymutualaid</value>
+          </Data>
+          <Data name="address">
+            <value>69-62 Almeda Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Arverne, NY 11692</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://chuffed.org/project/rockaway-mutual-aid-covid-19-relief-fund#</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/rockawaymutualaid</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Jamaica Community Fridge</name>
+        <address>107-58 Sutphin Blvd Jamaica, NY 11435</address>
+        <description><![CDATA[ig handle: @jamaicacommunityfridge<br>address: 107-58 Sutphin Blvd<br>city state zip: Jamaica, NY 11435<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: no frozen meat/chicken/seafood, unlabeled prepared meals, or expired food<br>accepts donations?: venmo: JamaicaCommunityFridge<br>Additional Information: http://forms.gle/jmF5HpgEKHD7ctFF8]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@jamaicacommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>107-58 Sutphin Blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jamaica, NY 11435</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no frozen meat/chicken/seafood, unlabeled prepared meals, or expired food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: JamaicaCommunityFridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://forms.gle/jmF5HpgEKHD7ctFF8</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Rockaway Mutual Aid</name>
+        <address>166 Beach 92nd Street Far Rockaway, NY 11693</address>
+        <description><![CDATA[ig handle: @rockawaymutualaid<br>address: 166 Beach 92nd Street<br>city state zip: Far Rockaway, NY 11693<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: http://linktr.ee/rockawaymutualaid]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@rockawaymutualaid</value>
+          </Data>
+          <Data name="address">
+            <value>166 Beach 92nd Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Far Rockaway, NY 11693</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/rockawaymutualaid</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Laurelton Community Fridge</name>
+        <address>231-34 Merrick Blvd Laurelton, NY 11413</address>
+        <description><![CDATA[ig handle: <br>address: 231-34 Merrick Blvd<br>city state zip: Laurelton, NY 11413<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value>231-34 Merrick Blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Laurelton, NY 11413</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>RTU Community Fridge</name>
+        <address>Kings Juice Bar - 955 Seneca Ave Ridgewood (Queens), NY 11385</address>
+        <description><![CDATA[ig handle: @ridgewoodtenantsunion<br>address: Kings Juice Bar - 955 Seneca Ave<br>city state zip: Ridgewood (Queens), NY 11385<br>Hours open: 24/7<br>Has a freezer: No<br>What the Fridge does not accept: Atm we are missing a part, so we are not accepting dairy, frozen foods, or meat. We check the fridge 2x daily for any fruit/veggies that may need to be removed<br>accepts donations?: Venmo @ridgewoodtenantsunion or Chuffed: https://chuffed.org/project/ridgewoodmutualaidnetwork <br>Additional Information: https://www.ridgewoodtenantsunion.org/]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@ridgewoodtenantsunion</value>
+          </Data>
+          <Data name="address">
+            <value>Kings Juice Bar - 955 Seneca Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Ridgewood (Queens), NY 11385</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>No</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Atm we are missing a part, so we are not accepting dairy, frozen foods, or meat. We check the fridge 2x daily for any fruit/veggies that may need to be removed</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo @ridgewoodtenantsunion or Chuffed: https://chuffed.org/project/ridgewoodmutualaidnetwork </value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://www.ridgewoodtenantsunion.org/</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Brothers Wash n Dry community fridge</name>
+        <address>5420 Nurge Ave Maspeth, NY 11378</address>
+        <description><![CDATA[ig handle: @brotherswashndry<br>address: 5420 Nurge Ave<br>city state zip: Maspeth, NY 11378<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: anything half eaten<br>accepts donations?: sampson-hollander (venmo)<br>Additional Information: http://sampsondahl.com]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@brotherswashndry</value>
+          </Data>
+          <Data name="address">
+            <value>5420 Nurge Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Maspeth, NY 11378</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>anything half eaten</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>sampson-hollander (venmo)</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://sampsondahl.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Corona Comunidad Fridge</name>
+        <address>104-05 47th Ave Corona, ny 11368</address>
+        <description><![CDATA[ig handle: @CoronaComunidadFridge<br>address: 104-05 47th Ave<br>city state zip: Corona, ny 11368<br>Hours open: 20/7 for now. Centro operates a food distribution on sat, but next week will be their last week. They have to regroup. So for now it's 20/7<br>Has a freezer: No<br>What the Fridge does not accept: No Meat and expired food<br>accepts donations?: Venmo: CoronaComunidadFridge cashapp: $CoronaComunidad<br>Additional Information: https://linktr.ee/coronacomunidadfridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@CoronaComunidadFridge</value>
+          </Data>
+          <Data name="address">
+            <value>104-05 47th Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Corona, ny 11368</value>
+          </Data>
+          <Data name="Hours open">
+            <value><![CDATA[20/7 for now. Centro operates a food distribution on sat, but next week will be their last week. They have to regroup. So for now it's 20/7]]></value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>No</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No Meat and expired food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo: CoronaComunidadFridge cashapp: $CoronaComunidad</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/coronacomunidadfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Jamaica Community Fridge-2nd location</name>
+        <address>92-15 149th Street Jamaica, NY 11435</address>
+        <description><![CDATA[ig handle: @jamaicacommunityfridge<br>address: 92-15 149th Street<br>city state zip: Jamaica, NY 11435<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: venmo: JamaicaCommunityFridge<br>Additional Information: http://forms.gle/jmF5HpgEKHD7ctFF8]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@jamaicacommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>92-15 149th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jamaica, NY 11435</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: JamaicaCommunityFridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://forms.gle/jmF5HpgEKHD7ctFF8</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Queens Village Community Fridge</name>
+        <address>190-03 Hollis Avenue Hollis, NY 11423</address>
+        <description><![CDATA[ig handle: @qvcommunityfridge<br>address: 190-03 Hollis Avenue<br>city state zip: Hollis, NY 11423<br>Hours open: 24/7<br>Has a freezer: Yes!<br>What the Fridge does not accept: Meat, prepared meals, or expired foods<br>accepts donations?: Venmo "QVCF" to @frankliniv<br>Additional Information: http://linktr.ee/qvcommunityfridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@qvcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>190-03 Hollis Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Hollis, NY 11423</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes!</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Meat, prepared meals, or expired foods</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value><![CDATA[Venmo "QVCF" to @frankliniv]]></value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/qvcommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ravenswood Community Fridge</name>
+        <address>12-14 36th Ave Astoria, NY 11106</address>
+        <description><![CDATA[ig handle: @ravenswoodfridge<br>address: 12-14 36th Ave<br>city state zip: Astoria, NY 11106<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: givebutter.com/RxhlJX<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@ravenswoodfridge</value>
+          </Data>
+          <Data name="address">
+            <value>12-14 36th Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Astoria, NY 11106</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>givebutter.com/RxhlJX</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ozone Park Community Fridge</name>
+        <address>132-02 Liberty Avenue Ozone Park, NY 11419</address>
+        <description><![CDATA[ig handle: @southsideactionpact<br>address: 132-02 Liberty Avenue<br>city state zip: Ozone Park, NY 11419<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@southsideactionpact</value>
+          </Data>
+          <Data name="address">
+            <value>132-02 Liberty Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Ozone Park, NY 11419</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ridgewood Community Fridge</name>
+        <address>612 Woodward Avenue Ridgewood NY, 11385</address>
+        <description><![CDATA[ig handle: @woodbine.nyc<br>address: 612 Woodward Avenue<br>city state zip: Ridgewood NY, 11385<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: https://www.gofundme.com/f/woodbine-moving-fundraiser<br>Additional Information: woodbine.nyc/mutualaid]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@woodbine.nyc</value>
+          </Data>
+          <Data name="address">
+            <value>612 Woodward Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Ridgewood NY, 11385</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://www.gofundme.com/f/woodbine-moving-fundraiser</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>woodbine.nyc/mutualaid</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Astoria Halal Fridge</name>
+        <address>25-75 steinway st Astoria, NY, 11103</address>
+        <description><![CDATA[ig handle: @astoriahalalfridge<br>address: 25-75 steinway st<br>city state zip: Astoria, NY, 11103<br>Hours open: 9 am - 11 pm daily<br>Has a freezer: No<br>What the Fridge does not accept: Pork, non halal meat, alcohol<br>accepts donations?: Venmo @little-egypt<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@astoriahalalfridge</value>
+          </Data>
+          <Data name="address">
+            <value>25-75 steinway st</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Astoria, NY, 11103</value>
+          </Data>
+          <Data name="Hours open">
+            <value>9 am - 11 pm daily</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>No</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Pork, non halal meat, alcohol</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo @little-egypt</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>St. Albans Community Fridge</name>
+        <address>In front of the Robert Ross Johnson Family Life Center
+172-17 Linden Blvd Jamaica, NY 11434</address>
+        <description><![CDATA[ig handle: @stalbanscommunityfridge<br>address: In front of the Robert Ross Johnson Family Life Center<br>172-17 Linden Blvd<br>city state zip: Jamaica, NY 11434<br>Hours open: 24/7<br>Has a freezer: It has a freezer. ONLY accepting, ice, frozen fruits and veggies.<br>What the Fridge does not accept: NO raw meat, seafood, processed foods, canned goods.<br>accepts donations?: GOFUNDME: https://gofund.me/b08d672f<br>Additional Information: https://linktr.ee/st.albanscommunityfridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@stalbanscommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>In front of the Robert Ross Johnson Family Life Center
+172-17 Linden Blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jamaica, NY 11434</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>It has a freezer. ONLY accepting, ice, frozen fruits and veggies.</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>NO raw meat, seafood, processed foods, canned goods.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>GOFUNDME: https://gofund.me/b08d672f</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/st.albanscommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Nexus Fridge</name>
+        <address>39-31 29th Street Long Island City, NY, 11101</address>
+        <description><![CDATA[ig handle: @nexusfridge<br>address: 39-31 29th Street<br>city state zip: Long Island City, NY, 11101<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: n/a<br>accepts donations?: https://my.cheddarup.com/c/nexus-29th-st-free-fridge<br>Additional Information: https://linktr.ee/nexusfridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@nexusfridge</value>
+          </Data>
+          <Data name="address">
+            <value>39-31 29th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Long Island City, NY, 11101</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>n/a</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://my.cheddarup.com/c/nexus-29th-st-free-fridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/nexusfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Flushing Community Fridge</name>
+        <address>136-23 Sanford Avenue, Flushing New York, New York, 11355</address>
+        <description><![CDATA[ig handle: @flushingcommunityfridge<br>address: 136-23 Sanford Avenue, Flushing<br>city state zip: New York, New York, 11355<br>Hours open: 24 hours a day/ everyday (Volunteers are present Weekdays 10:30 am- 7pm and Weekends 9:45-7pm)<br>Has a freezer: Yes<br>What the Fridge does not accept: Pork in general, fresh/frozen meat, and fresh/frozen seafood.<br>accepts donations?: (Click dedicate gift and put Flushing Community Fridge) https://secure.givelively.org/donate/minkwon-center-for-community-action-inc<br>Additional Information: https://linktr.ee/flushingcommunityfridge]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@flushingcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>136-23 Sanford Avenue, Flushing</value>
+          </Data>
+          <Data name="city state zip">
+            <value>New York, New York, 11355</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24 hours a day/ everyday (Volunteers are present Weekdays 10:30 am- 7pm and Weekends 9:45-7pm)</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Pork in general, fresh/frozen meat, and fresh/frozen seafood.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>(Click dedicate gift and put Flushing Community Fridge) https://secure.givelively.org/donate/minkwon-center-for-community-action-inc</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/flushingcommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Woodside Community Fridge</name>
+        <address>50-27 31st Ave Woodside, NY 11377</address>
+        <description><![CDATA[ig handle: @woodsidefridge<br>address: 50-27 31st Ave<br>city state zip: Woodside, NY 11377<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: https://swma.nyc/don<br>Additional Information: https://swma.nyc/wcf]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@woodsidefridge</value>
+          </Data>
+          <Data name="address">
+            <value>50-27 31st Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Woodside, NY 11377</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://swma.nyc/don</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://swma.nyc/wcf</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Brooklyn</name>
+      <Placemark>
+        <name>Beauty Strike</name>
+        <address>73 Washington Ave Brooklyn, NY 11205</address>
+        <description><![CDATA[ig handle: @beautystrikeny<br>address: 73 Washington Ave<br>city state zip: Brooklyn, NY 11205<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@beautystrikeny</value>
+          </Data>
+          <Data name="address">
+            <value>73 Washington Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11205</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Crown Heights Community Fridge</name>
+        <address>1144 Bergen Street Crown Heights, NY 11216</address>
+        <description><![CDATA[ig handle: @bergencommunityfridge<br>address: 1144 Bergen Street<br>city state zip: Crown Heights, NY 11216<br>Hours open: 24/7<br>Has a freezer: no<br>What the Fridge does not accept: accepts everything but frozen foods. Please label, date, and properly package all prepared meals<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@bergencommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>1144 Bergen Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Crown Heights, NY 11216</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>accepts everything but frozen foods. Please label, date, and properly package all prepared meals</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Downtown Brooklyn Community Fridge</name>
+        <address>136 Lawrence Street Brooklyn, NY 11201</address>
+        <description><![CDATA[ig handle: @dtbkfridge<br>address: 136 Lawrence Street<br>city state zip: Brooklyn, NY 11201<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: accepts everything, prefers prepared food best<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@dtbkfridge</value>
+          </Data>
+          <Data name="address">
+            <value>136 Lawrence Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11201</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>accepts everything, prefers prepared food best</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Flatbush Friendly Fridge</name>
+        <address>1110 Nostrand ave Brooklyn, NY 11225</address>
+        <description><![CDATA[ig handle: @flatbushfriendlyfridge<br>address: 1110 Nostrand ave<br>city state zip: Brooklyn, NY 11225<br>Hours open: 24/7<br>Has a freezer: no, but will take frozen foods<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@flatbushfriendlyfridge</value>
+          </Data>
+          <Data name="address">
+            <value>1110 Nostrand ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11225</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no, but will take frozen foods</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Gowanus Community Fridge-Nature Based</name>
+        <address>123 3rd St Brooklyn, NY 11231</address>
+        <description><![CDATA[ig handle: @thegowanusfridge<br>address: 123 3rd St<br>city state zip: Brooklyn, NY 11231<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no raw meat<br>accepts donations?: Cash app $thegowanusfridge Venmo @thegowanusfridge<br>Additional Information: forms.gle/pLdjsrE1PVxPTFQHA]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thegowanusfridge</value>
+          </Data>
+          <Data name="address">
+            <value>123 3rd St</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11231</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Cash app $thegowanusfridge Venmo @thegowanusfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>forms.gle/pLdjsrE1PVxPTFQHA</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Gowanus Fridge-Postmark Cafe</name>
+        <address>326 6th Street Brooklyn, NY 11215</address>
+        <description><![CDATA[ig handle: @thegowanusfridge<br>address: 326 6th Street<br>city state zip: Brooklyn, NY 11215<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no raw meat<br>accepts donations?: Cash app $thegowanusfridge Venmo @thegowanusfridge<br>Additional Information: forms.gle/pLdjsrE1PVxPTFQHA]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thegowanusfridge</value>
+          </Data>
+          <Data name="address">
+            <value>326 6th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11215</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Cash app $thegowanusfridge Venmo @thegowanusfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>forms.gle/pLdjsrE1PVxPTFQHA</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Greenpoint Fridge</name>
+        <address>17 Nassau Ave Brooklyn, NY 11222</address>
+        <description><![CDATA[ig handle: @greenpointfridge<br>address: 17 Nassau Ave<br>city state zip: Brooklyn, NY 11222<br>Hours open: 24/7<br>Has a freezer: no<br>What the Fridge does not accept: nothing expired, no raw meat, nothing frozen<br>accepts donations?: <br>Additional Information: bit.ly/nbkfridgevolunteer]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@greenpointfridge</value>
+          </Data>
+          <Data name="address">
+            <value>17 Nassau Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11222</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>nothing expired, no raw meat, nothing frozen</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>bit.ly/nbkfridgevolunteer</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Playground Coffee Shop</name>
+        <address>1114 Bedford Ave Brooklyn, NY 11216</address>
+        <description><![CDATA[ig handle: @playgroundcoffeeshop<br>address: 1114 Bedford Ave<br>city state zip: Brooklyn, NY 11216<br>Hours open: <br>Has a freezer: no<br>What the Fridge does not accept: no frozen foods, only fresh produce<br>accepts donations?: yes: Venmo @PlaygroundYouth or via Paypal to youth@playgroundcoffeeshop.com<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@playgroundcoffeeshop</value>
+          </Data>
+          <Data name="address">
+            <value>1114 Bedford Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11216</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no frozen foods, only fresh produce</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>yes: Venmo @PlaygroundYouth or via Paypal to youth@playgroundcoffeeshop.com</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Sincerely Tommy</name>
+        <address>343 Tompkins Brooklyn, NY 11216</address>
+        <description><![CDATA[ig handle: @sincerelytommy_<br>address: 343 Tompkins<br>city state zip: Brooklyn, NY 11216<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@sincerelytommy_</value>
+          </Data>
+          <Data name="address">
+            <value>343 Tompkins</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11216</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Living Gallery</name>
+        <address>1094 Broadway Brooklyn, NY 11221</address>
+        <description><![CDATA[ig handle: @the_living_gallery<br>address: 1094 Broadway<br>city state zip: Brooklyn, NY 11221<br>Hours open: M,W,F 1pm-5pm<br>Has a freezer: yes<br>What the Fridge does not accept: We need things dated and labeled- and packaged- like no huge bags of veggies etc- everything needs to be fresh<br>accepts donations?: <br>Additional Information: linktr.ee/Thelivinggallery]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@the_living_gallery</value>
+          </Data>
+          <Data name="address">
+            <value>1094 Broadway</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11221</value>
+          </Data>
+          <Data name="Hours open">
+            <value>M,W,F 1pm-5pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>We need things dated and labeled- and packaged- like no huge bags of veggies etc- everything needs to be fresh</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/Thelivinggallery</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Universe City Fridge</name>
+        <address>234 Glenmore Ave Brownsville, NY 11207</address>
+        <description><![CDATA[ig handle: @universecitynyc<br>address: 234 Glenmore Ave<br>city state zip: Brownsville, NY 11207<br>Hours open: <br>Has a freezer: no, but will take frozen foods<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@universecitynyc</value>
+          </Data>
+          <Data name="address">
+            <value>234 Glenmore Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brownsville, NY 11207</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no, but will take frozen foods</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Van Buren Fridge</name>
+        <address>133 Van Buren Street Brooklyn, NY 11221</address>
+        <description><![CDATA[ig handle: @iohnyc<br>address: 133 Van Buren Street<br>city state zip: Brooklyn, NY 11221<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@iohnyc</value>
+          </Data>
+          <Data name="address">
+            <value>133 Van Buren Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11221</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Public Assistants Community Frige</name>
+        <address>711 Franklin Ave Brooklyn, NY</address>
+        <description><![CDATA[ig handle: @publicassistants<br>address: 711 Franklin Ave<br>city state zip: Brooklyn, NY<br>Hours open: 11AM-7PM M-Sa<br>Has a freezer: yes<br>What the Fridge does not accept: no meat products<br>accepts donations?: venmo: donchristian-jones | cashapp: $publicassistants |paypal: publicassitants8@gmail.com<br>Additional Information: www.publicassistants.org]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@publicassistants</value>
+          </Data>
+          <Data name="address">
+            <value>711 Franklin Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY</value>
+          </Data>
+          <Data name="Hours open">
+            <value>11AM-7PM M-Sa</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no meat products</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo: donchristian-jones | cashapp: $publicassistants |paypal: publicassitants8@gmail.com</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>www.publicassistants.org</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>HashtagLunchbag BK Red Hook</name>
+        <address>367 Columbia St  Red Hook, BK 11231</address>
+        <description><![CDATA[ig handle: @hashtaglunchbagbk<br>address: 367 Columbia St <br>city state zip: Red Hook, BK 11231<br>Hours open: Daily from 11am-8pm<br>Has a freezer: yes<br>What the Fridge does not accept: -no raw meats -no prepared foods, no opened or partially wrapped foods<br>accepts donations?: PayPal.me/ProofedPerfectly<br>Additional Information: https://linktr.ee/PerfectlyAnaika]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@hashtaglunchbagbk</value>
+          </Data>
+          <Data name="address">
+            <value>367 Columbia St </value>
+          </Data>
+          <Data name="city state zip">
+            <value>Red Hook, BK 11231</value>
+          </Data>
+          <Data name="Hours open">
+            <value>Daily from 11am-8pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>-no raw meats -no prepared foods, no opened or partially wrapped foods</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>PayPal.me/ProofedPerfectly</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/PerfectlyAnaika</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Friendly Fridge</name>
+        <address>190 Knickerbocker Ave Bushwick, NY 11237</address>
+        <description><![CDATA[ig handle: @thefriendlyfridge<br>address: 190 Knickerbocker Ave<br>city state zip: Bushwick, NY 11237<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: yes: venmo:@thefriendlyfridge<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thefriendlyfridge</value>
+          </Data>
+          <Data name="address">
+            <value>190 Knickerbocker Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bushwick, NY 11237</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>yes: venmo:@thefriendlyfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Hair Metal</name>
+        <address>578 Driggs Ave Brooklyn, NY 11211</address>
+        <description><![CDATA[ig handle: @hairmetalsalon<br>address: 578 Driggs Ave<br>city state zip: Brooklyn, NY 11211<br>Hours open: <br>Has a freezer: no<br>What the Fridge does not accept: Produce only<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@hairmetalsalon</value>
+          </Data>
+          <Data name="address">
+            <value>578 Driggs Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11211</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Produce only</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Cooper Park Fridge</name>
+        <address>76 Kingsland Ave Brooklyn, NY 11211</address>
+        <description><![CDATA[ig handle: @cooperparkfridge<br>address: 76 Kingsland Ave<br>city state zip: Brooklyn, NY 11211<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: Fish & cold cuts <br>accepts donations?: https://opencollective.com/north-brooklyn-mutual-aid<br>Additional Information: https://linktr.ee/northbrooklynmutualaid]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@cooperparkfridge</value>
+          </Data>
+          <Data name="address">
+            <value>76 Kingsland Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11211</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value><![CDATA[Fish & cold cuts ]]></value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://opencollective.com/north-brooklyn-mutual-aid</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/northbrooklynmutualaid</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Koinonia Juan Bautista church, Community Fridge</name>
+        <address>98 Richards Street Red Hook, NY 11231</address>
+        <description><![CDATA[ig handle: <br>address: 98 Richards Street<br>city state zip: Red Hook, NY 11231<br>Hours open: N/A<br>Has a freezer: N/A<br>What the Fridge does not accept: N/A<br>accepts donations?: N/A<br>Additional Information: N/A]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value>98 Richards Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Red Hook, NY 11231</value>
+          </Data>
+          <Data name="Hours open">
+            <value>N/A</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>N/A</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>N/A</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>N/A</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>N/A</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Evergreen Free Fridge</name>
+        <address>562 Evergreen  Ave Brooklyn, NY 11221</address>
+        <description><![CDATA[ig handle: @evergreenfreefridge<br>address: 562 Evergreen  Ave<br>city state zip: Brooklyn, NY 11221<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no raw meat<br>accepts donations?: Cashapp:  $evergreenfreefridge<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@evergreenfreefridge</value>
+          </Data>
+          <Data name="address">
+            <value>562 Evergreen  Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11221</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Cashapp:  $evergreenfreefridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Solidarity Fridge-Ditmas Park</name>
+        <address>East 16th Street between Beverley and Cortelyou Flatbush, NY 11226</address>
+        <description><![CDATA[ig handle: <br>address: East 16th Street between Beverley and Cortelyou<br>city state zip: Flatbush, NY 11226<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value>East 16th Street between Beverley and Cortelyou</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Flatbush, NY 11226</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Bake Shop Fridge</name>
+        <address>995 Flushing Ave Brooklyn, NY 11206</address>
+        <description><![CDATA[ig handle: <br>address: 995 Flushing Ave<br>city state zip: Brooklyn, NY 11206<br>Hours open: 9 am - 8 pm<br>Has a freezer: No<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: 718-381-3706]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value>995 Flushing Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11206</value>
+          </Data>
+          <Data name="Hours open">
+            <value>9 am - 8 pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>No</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>718-381-3706</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Heights Friendly Fridge</name>
+        <address>461 Lincoln Pl Brooklyn, NY 11238</address>
+        <description><![CDATA[ig handle: @theheightsfriendlyfridge<br>address: 461 Lincoln Pl<br>city state zip: Brooklyn, NY 11238<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@theheightsfriendlyfridge</value>
+          </Data>
+          <Data name="address">
+            <value>461 Lincoln Pl</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11238</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Fort Greene Community Fridge</name>
+        <address>357 Myrtle Ave at Farmer in the Deli Brooklyn, NY 11205</address>
+        <description><![CDATA[ig handle: @fgcommunityfridge<br>address: 357 Myrtle Ave at Farmer in the Deli<br>city state zip: Brooklyn, NY 11205<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: Raw meat in freezer only. Prepared foods must be labeled.<br>accepts donations?: venmo/cashapp @fgcommunityfridge<br>Additional Information: http://linktr.ee/fgcommunityfridge]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@fgcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>357 Myrtle Ave at Farmer in the Deli</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11205</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Raw meat in freezer only. Prepared foods must be labeled.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo/cashapp @fgcommunityfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/fgcommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Bushwick Community Fridge</name>
+        <address>1643 Broadway Bushwick, NY 11207</address>
+        <description><![CDATA[ig handle: @thebushwickfridge<br>address: 1643 Broadway<br>city state zip: Bushwick, NY 11207<br>Hours open: 24/7<br>Has a freezer: no<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thebushwickfridge</value>
+          </Data>
+          <Data name="address">
+            <value>1643 Broadway</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bushwick, NY 11207</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Pennie's Pantry</name>
+        <address>535 Marcy Avenue (corner of MLK Jr. Place) Brooklyn, NY, 11206</address>
+        <description><![CDATA[ig handle: @penniespantrybk or penniespantrybk@gmail.com<br>address: 535 Marcy Avenue (corner of MLK Jr. Place)<br>city state zip: Brooklyn, NY, 11206<br>Hours open: 24/7<br>Has a freezer: Yes, freezer on bottom (deep freezer-style, no shelving)<br>What the Fridge does not accept: currently, we accept all foods. I check contents for quality and freshness very regularly as I live across the street.<br>accepts donations?: Venmo: @penniespantrybk Cash App: $penniespantrybk<br>Additional Information: https://linktr.ee/penniespantrybk]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@penniespantrybk or penniespantrybk@gmail.com</value>
+          </Data>
+          <Data name="address">
+            <value>535 Marcy Avenue (corner of MLK Jr. Place)</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY, 11206</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes, freezer on bottom (deep freezer-style, no shelving)</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>currently, we accept all foods. I check contents for quality and freshness very regularly as I live across the street.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo: @penniespantrybk Cash App: $penniespantrybk</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/penniespantrybk</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Wyckoff Farmhouse Museum</name>
+        <address>5816 Clarendon Rd Brooklyn, NY 11236</address>
+        <description><![CDATA[ig handle: @hashtaglunchbagbk @wyckoffmuseum<br>address: 5816 Clarendon Rd<br>city state zip: Brooklyn, NY 11236<br>Hours open: 7 days/24 hours<br>Has a freezer: Yes<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@hashtaglunchbagbk @wyckoffmuseum</value>
+          </Data>
+          <Data name="address">
+            <value>5816 Clarendon Rd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11236</value>
+          </Data>
+          <Data name="Hours open">
+            <value>7 days/24 hours</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>La Nevera de Marcy</name>
+        <address>280 Marcy Avenue Brooklyn, NY 11211</address>
+        <description><![CDATA[ig handle: @neverademarcy<br>address: 280 Marcy Avenue<br>city state zip: Brooklyn, NY 11211<br>Hours open: Building hours: Mon. - Thurs. | 9am-5pm | Fridge: 24 hrs.<br>Has a freezer: Yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@neverademarcy</value>
+          </Data>
+          <Data name="address">
+            <value>280 Marcy Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11211</value>
+          </Data>
+          <Data name="Hours open">
+            <value>Building hours: Mon. - Thurs. | 9am-5pm | Fridge: 24 hrs.</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>BROOKLYN COMMUNITY FRIDGES</name>
+        <address>198A Rogers Ave Brooklyn, NY 11225</address>
+        <description><![CDATA[ig handle: @bkfridges<br>address: 198A Rogers Ave<br>city state zip: Brooklyn, NY 11225<br>Hours open: 24 hours/ 7 days a week<br>Has a freezer: Yes, sealed food only.<br>What the Fridge does not accept: Leftover foods from home, everything must be sealed.<br>accepts donations?: https://www.gofundme.com/manage/bkyouthevents<br>Additional Information: linktr.ee/bk4bl]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@bkfridges</value>
+          </Data>
+          <Data name="address">
+            <value>198A Rogers Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11225</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24 hours/ 7 days a week</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes, sealed food only.</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Leftover foods from home, everything must be sealed.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://www.gofundme.com/manage/bkyouthevents</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/bk4bl</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>TEMPORARILY OFFLINE (cannot accept food due to no electricity): Know Waste Lands Community Fridge • Nevera Comunitaria de Tierra Sin Desecho</name>
+        <address>1309 DeKalb Avenue Brooklyn, NY 11221</address>
+        <description><![CDATA[ig handle: @kwlgarden E: kwlfridge@gmail.com<br>address: 1309 DeKalb Avenue<br>city state zip: Brooklyn, NY 11221<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: No restrictions<br>accepts donations?: <br>Additional Information: http://knowwastelands.org]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@kwlgarden E: kwlfridge@gmail.com</value>
+          </Data>
+          <Data name="address">
+            <value>1309 DeKalb Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11221</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://knowwastelands.org</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2 Fish 5 Loaves Fridge</name>
+        <address>63 Whipple Street Brooklyn, NY 11206</address>
+        <description><![CDATA[ig handle: @2fish5loavesfridge<br>address: 63 Whipple Street<br>city state zip: Brooklyn, NY 11206<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@2fish5loavesfridge</value>
+          </Data>
+          <Data name="address">
+            <value>63 Whipple Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11206</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Paperboy Prince Love Gallery</name>
+        <address>1254 Myrtle Ave. Brooklyn Ny 11221</address>
+        <description><![CDATA[ig handle: <br>address: 1254 Myrtle Ave.<br>city state zip: Brooklyn Ny 11221<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value>1254 Myrtle Ave.</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn Ny 11221</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Classon Community Fridge</name>
+        <address>641 Classon Avenue Brooklyn, NY 11238</address>
+        <description><![CDATA[ig handle: @Classon_Community_Fridge<br>address: 641 Classon Avenue<br>city state zip: Brooklyn, NY 11238<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: Raw meat should go in freezer only<br>accepts donations?: Yes, you can send via PayPal to gphmutualaid@gmail.com w/ fridge specific memo<br>Additional Information: https://linktr.ee/Classon_Community_Fridge]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@Classon_Community_Fridge</value>
+          </Data>
+          <Data name="address">
+            <value>641 Classon Avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11238</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Raw meat should go in freezer only</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes, you can send via PayPal to gphmutualaid@gmail.com w/ fridge specific memo</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/Classon_Community_Fridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Mixteca's community fridge</name>
+        <address>245 23rd street Brooklyn, NY 11215</address>
+        <description><![CDATA[ig handle: @mixtecaorg<br>address: 245 23rd street<br>city state zip: Brooklyn, NY 11215<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: can food<br>accepts donations?: Yes, Venmo @Mixteca-Organization<br>Additional Information: https://www.mixteca.org]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@mixtecaorg</value>
+          </Data>
+          <Data name="address">
+            <value>245 23rd street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11215</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>can food</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes, Venmo @Mixteca-Organization</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://www.mixteca.org</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Copo Halal Community Fridge</name>
+        <address>1077 Coney Island Ave Brooklyn, NY 11230</address>
+        <description><![CDATA[ig handle: @copousa<br>address: 1077 Coney Island Ave<br>city state zip: Brooklyn, NY 11230<br>Hours open: 24/7 Sat-Thurs<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@copousa</value>
+          </Data>
+          <Data name="address">
+            <value>1077 Coney Island Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11230</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7 Sat-Thurs</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>@onlunchbreak x @girlsonlyny fridge</name>
+        <address>2423 Mermaid Ave Brooklyn, NY 11224</address>
+        <description><![CDATA[ig handle: @onlunchbreak , @girlsonlyny<br>address: 2423 Mermaid Ave<br>city state zip: Brooklyn, NY 11224<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@onlunchbreak , @girlsonlyny</value>
+          </Data>
+          <Data name="address">
+            <value>2423 Mermaid Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11224</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Success Garden Community</name>
+        <address>461 Williams Ave Brooklyn, NY 11207</address>
+        <description><![CDATA[ig handle: @successgardencommunity<br>address: 461 Williams Ave<br>city state zip: Brooklyn, NY 11207<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@successgardencommunity</value>
+          </Data>
+          <Data name="address">
+            <value>461 Williams Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11207</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Fulton St. Fridge</name>
+        <address>911 Fulton St Brooklyn, NY 11238</address>
+        <description><![CDATA[ig handle: @fultonstfridge<br>address: 911 Fulton St<br>city state zip: Brooklyn, NY 11238<br>Hours open: 7 am - 9 pm<br>Has a freezer: Yes<br>What the Fridge does not accept: <br>accepts donations?: Venmo @fultonst-fridge<br>Additional Information: https://linktr.ee/fultonstfridge]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@fultonstfridge</value>
+          </Data>
+          <Data name="address">
+            <value>911 Fulton St</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY 11238</value>
+          </Data>
+          <Data name="Hours open">
+            <value>7 am - 9 pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo @fultonst-fridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/fultonstfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>One Love Community Fridge</name>
+        <address>432 Myrtle Ave Brooklyn, NY, 11238</address>
+        <description><![CDATA[ig handle: @Onelovecommunityfridge <br>address: 432 Myrtle Ave<br>city state zip: Brooklyn, NY, 11238<br>Hours open: 24/7<br>Has a freezer: No- no frozen foods<br>What the Fridge does not accept: Accepts only Fresh produce or fresh plant based meals<br>accepts donations?: Yes donations - Venmo: @onelovecommunityfridge GoFundMe: https://gofund.me/492b5445<br>Additional Information: http://www.onelovecommunityfridge.org]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@Onelovecommunityfridge </value>
+          </Data>
+          <Data name="address">
+            <value>432 Myrtle Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn, NY, 11238</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>No- no frozen foods</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Accepts only Fresh produce or fresh plant based meals</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes donations - Venmo: @onelovecommunityfridge GoFundMe: https://gofund.me/492b5445</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://www.onelovecommunityfridge.org</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Fulton St Fridge</name>
+        <address>991 Fulton street Brooklyn NY 11238</address>
+        <description><![CDATA[ig handle: @fultonstfridge<br>address: 991 Fulton street<br>city state zip: Brooklyn NY 11238<br>Hours open: M-F 8:30-8:30<br>Has a freezer: Yes!<br>What the Fridge does not accept: Raw meats, unlabeled homemade foods<br>accepts donations?: Yes! Venmo at @fultonst-fridge<br>Additional Information: https://linktr.ee/fultonstfridge/]]></description>
+        <styleUrl>#icon-1578-9C27B0</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@fultonstfridge</value>
+          </Data>
+          <Data name="address">
+            <value>991 Fulton street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Brooklyn NY 11238</value>
+          </Data>
+          <Data name="Hours open">
+            <value>M-F 8:30-8:30</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes!</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Raw meats, unlabeled homemade foods</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes! Venmo at @fultonst-fridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/fultonstfridge/</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>The Bronx</name>
+      <Placemark>
+        <name>Bedford Park Community Fridge</name>
+        <address>1 Bedford Park Blvd Bronx, NY 10468</address>
+        <description><![CDATA[ig handle: @bedfordparkcommunityfridge<br>address: 1 Bedford Park Blvd<br>city state zip: Bronx, NY 10468<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: No Dairy or Raw Meat<br>accepts donations?: Venmo : @itzsabino<br>Additional Information: docs.google.com/spreadsheets/d/1zTP3wQ6iSNL6D0LS7HwgbkFH4y]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@bedfordparkcommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>1 Bedford Park Blvd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10468</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No Dairy or Raw Meat</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo : @itzsabino</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>docs.google.com/spreadsheets/d/1zTP3wQ6iSNL6D0LS7HwgbkFH4y</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>SYB Community Fridge</name>
+        <address>237 McClellan Street Bronx, NY 10456</address>
+        <description><![CDATA[ig handle: @1freedom4all<br>address: 237 McClellan Street<br>city state zip: Bronx, NY 10456<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@1freedom4all</value>
+          </Data>
+          <Data name="address">
+            <value>237 McClellan Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10456</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Friendly Fridge Bronx</name>
+        <address>5977 Broadway Bronx, NY 10472</address>
+        <description><![CDATA[ig handle: @thefriendlyfridgebx<br>address: 5977 Broadway<br>city state zip: Bronx, NY 10472<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@thefriendlyfridgebx</value>
+          </Data>
+          <Data name="address">
+            <value>5977 Broadway</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10472</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Allerton Allies Community Fridge</name>
+        <address>2527 Boston Rd East Bronx, NY 10467</address>
+        <description><![CDATA[ig handle: @allertonalliesfridge<br>address: 2527 Boston Rd<br>city state zip: East Bronx, NY 10467<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: no raw meat or dairy<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@allertonalliesfridge</value>
+          </Data>
+          <Data name="address">
+            <value>2527 Boston Rd</value>
+          </Data>
+          <Data name="city state zip">
+            <value>East Bronx, NY 10467</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no raw meat or dairy</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Loving the Bronx Fridge</name>
+        <address>88 Hugh Grant Circle Bronx, NY 10472</address>
+        <description><![CDATA[ig handle: @lovingthebronx<br>address: 88 Hugh Grant Circle<br>city state zip: Bronx, NY 10472<br>Hours open: 7 days a week, 7 am to 7 pm<br>Has a freezer: <br>What the Fridge does not accept: no meat<br>accepts donations?: <br>Additional Information: "Do NOT place any items in the refrigerator.<br>If you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you"]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@lovingthebronx</value>
+          </Data>
+          <Data name="address">
+            <value>88 Hugh Grant Circle</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10472</value>
+          </Data>
+          <Data name="Hours open">
+            <value>7 days a week, 7 am to 7 pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no meat</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value><![CDATA["Do NOT place any items in the refrigerator.
+If you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you"]]></value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Mott Haven Fridge </name>
+        <address><![CDATA[Corner of 140th Street & Brook Avenue  Bronx, NY, 10454]]></address>
+        <description><![CDATA[ig handle: <br>address: Corner of 140th Street & Brook Avenue <br>city state zip: Bronx, NY, 10454<br>Hours open: 24/7<br>Has a freezer: Yes <br>What the Fridge does not accept: We currently accept ALL! <br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value><![CDATA[Corner of 140th Street & Brook Avenue ]]></value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY, 10454</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes </value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>We currently accept ALL! </value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Nuestra Nevera</name>
+        <address>737 East 156th Street Bronx NY 10456</address>
+        <description><![CDATA[ig handle: @nuestraxnevera<br>address: 737 East 156th Street<br>city state zip: Bronx NY 10456<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: All food accepted<br>accepts donations?: venmo @booksandroses<br>Additional Information: http://linktr.ee/bumdsa]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@nuestraxnevera</value>
+          </Data>
+          <Data name="address">
+            <value>737 East 156th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx NY 10456</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>All food accepted</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo @booksandroses</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/bumdsa</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Soundview Community Fridge</name>
+        <address>400 Soundview Ave The Bronx, NY 10473</address>
+        <description><![CDATA[ig handle: @nuestraxnevera<br>address: 400 Soundview Ave<br>city state zip: The Bronx, NY 10473<br>Hours open: <br>Has a freezer: yes<br>What the Fridge does not accept: no restrictions<br>accepts donations?: <br>Additional Information: https://www.eastbronxdems.com/]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@nuestraxnevera</value>
+          </Data>
+          <Data name="address">
+            <value>400 Soundview Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>The Bronx, NY 10473</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>no restrictions</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://www.eastbronxdems.com/</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Mott Haven Fridge #2</name>
+        <address><![CDATA[141st Street between St Ann's Avenue & Crimmins Avenue  Bronx New York]]></address>
+        <description><![CDATA[ig handle: <br>address: 141st Street between St Ann's Avenue & Crimmins Avenue <br>city state zip: Bronx New York <br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: Currently accepting all!<br>accepts donations?: <br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value/>
+          </Data>
+          <Data name="address">
+            <value><![CDATA[141st Street between St Ann's Avenue & Crimmins Avenue ]]></value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx New York </value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Currently accepting all!</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Anchor Fridge</name>
+        <address>239 City Island Ave Bronx, NY 10464</address>
+        <description><![CDATA[ig handle: @anchorfridge<br>address: 239 City Island Ave<br>city state zip: Bronx, NY 10464<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: Partially opened foods (please reseal in a ziplock/container and label)<br>accepts donations?: https://www.paypal.me/southbronxmutualaid<br>Additional Information: http://www.linktr.ee/southbronxmutualaid]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@anchorfridge</value>
+          </Data>
+          <Data name="address">
+            <value>239 City Island Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10464</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Partially opened foods (please reseal in a ziplock/container and label)</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://www.paypal.me/southbronxmutualaid</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://www.linktr.ee/southbronxmutualaid</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>FJM Fridge </name>
+        <address>260 West 231 Street  Kingsbridge, NY 10463</address>
+        <description><![CDATA[ig handle: @food_justice_ministry<br>address: 260 West 231 Street <br>city state zip: Kingsbridge, NY 10463<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: We don't accept dairy and no meat items!<br>accepts donations?: <br>Additional Information: http://linktr.ee/foodjusticeministry]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@food_justice_ministry</value>
+          </Data>
+          <Data name="address">
+            <value>260 West 231 Street </value>
+          </Data>
+          <Data name="city state zip">
+            <value>Kingsbridge, NY 10463</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value><![CDATA[We don't accept dairy and no meat items!]]></value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>http://linktr.ee/foodjusticeministry</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Yonkers Community Fridge</name>
+        <address>17 riverdale avenue Yonkers, NY 10701</address>
+        <description><![CDATA[ig handle: @yonkerscommunityfridge<br>address: 17 riverdale avenue<br>city state zip: Yonkers, NY 10701<br>Hours open: 24 hours/ 7 days a week<br>Has a freezer: Yes<br>What the Fridge does not accept: n/a<br>accepts donations?: Yes. Yonkers Arts Link.<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@yonkerscommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>17 riverdale avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Yonkers, NY 10701</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24 hours/ 7 days a week</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>n/a</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes. Yonkers Arts Link.</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>The Neighborhood Fridge</name>
+        <address>Corner of W. 256th St and Mosholu Ave Bronx, NY 10471</address>
+        <description><![CDATA[ig handle: @theneighborhoodfridge<br>address: Corner of W. 256th St and Mosholu Ave<br>city state zip: Bronx, NY 10471<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: List of accepted items: https://docs.google.com/document/d/1PcwSzetLgBqyD6WIDbMxQHuO-N-4VbwH4WGmVgVs7ig/edit?usp=sharing <br>DOES NOT ACCEPT:<br>No alcohol <br>● No opened/partially consumed items <br>● No expired items <br>● No unlabeled perishable items/prepared meals and/or perishables that were not stored in safe food-handling conditions for several hours prior to being placed in fridge<br>accepts donations?: <br>Additional Information: https://linktr.ee/theneighborhoodfridge]]></description>
+        <styleUrl>#icon-1578-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@theneighborhoodfridge</value>
+          </Data>
+          <Data name="address">
+            <value>Corner of W. 256th St and Mosholu Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Bronx, NY 10471</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>List of accepted items: https://docs.google.com/document/d/1PcwSzetLgBqyD6WIDbMxQHuO-N-4VbwH4WGmVgVs7ig/edit?usp=sharing
+DOES NOT ACCEPT:
+No alcohol
+● No opened/partially consumed items
+● No expired items
+● No unlabeled perishable items/prepared meals and/or perishables that were not stored in safe food-handling conditions for several hours prior to being placed in fridge</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/theneighborhoodfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Staten Island</name>
+      <Placemark>
+        <name>Forest Ave ComeUnity Fridge</name>
+        <address>2142 Forest Avenue  Staten Island, NY 10303</address>
+        <description><![CDATA[ig handle: @forestavecomeunityfridge<br>address: 2142 Forest Avenue <br>city: Staten Island, NY 10303<br>Hours open: 24/7<br>Has a freezer: yes<br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: kingstoncommunityfridges.com]]></description>
+        <styleUrl>#icon-1578-006064</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@forestavecomeunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>2142 Forest Avenue </value>
+          </Data>
+          <Data name="city">
+            <value>Staten Island, NY 10303</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>kingstoncommunityfridges.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Upstate NY</name>
+      <Placemark>
+        <name>Kingston Community Fridge</name>
+        <address>14 Van Buren St Kingston, NY 12401</address>
+        <description><![CDATA[ig handle: @kingstoncommunityfridge<br>address: 14 Van Buren St<br>city: Kingston, NY 12401<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: kingstoncommunityfridges.com]]></description>
+        <styleUrl>#icon-1578-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@kingstoncommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>14 Van Buren St</value>
+          </Data>
+          <Data name="city">
+            <value>Kingston, NY 12401</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>kingstoncommunityfridges.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Buffalo Community Fridge</name>
+        <address>257 E Ferry St Buffalo, NY, 14208</address>
+        <description><![CDATA[ig handle: @buffalocommunityfridge<br>address: 257 E Ferry St<br>city: Buffalo, NY, 14208<br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: Raw meats and seafood<br>accepts donations?: Yes. CashApp<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@buffalocommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>257 E Ferry St</value>
+          </Data>
+          <Data name="city">
+            <value>Buffalo, NY, 14208</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>Raw meats and seafood</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Yes. CashApp</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Kingston Community Fridge</name>
+        <address>122 Clinton Ave Kingston, NY 12401</address>
+        <description><![CDATA[ig handle: @kingstoncommunityfridge<br>address: 122 Clinton Ave<br>city: Kingston, NY 12401<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: <br>Additional Information: kingstoncommunityfridges.com]]></description>
+        <styleUrl>#icon-1578-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@kingstoncommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>122 Clinton Ave</value>
+          </Data>
+          <Data name="city">
+            <value>Kingston, NY 12401</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value/>
+          </Data>
+          <Data name="Additional Information">
+            <value>kingstoncommunityfridges.com</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>New Jersey</name>
+      <Placemark>
+        <name>Greenville Community Fridge</name>
+        <address>57 Rose avenue Greenville, NJ 07305</address>
+        <description><![CDATA[ig handle: @GreenvilleCommunityFridge<br>address: 57 Rose avenue<br>city state zip: Greenville, NJ 07305<br>Hours open: <br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: venmo is @GreenvilleFridge and cash app $GreenvilleFridge<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@GreenvilleCommunityFridge</value>
+          </Data>
+          <Data name="address">
+            <value>57 Rose avenue</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Greenville, NJ 07305</value>
+          </Data>
+          <Data name="Hours open">
+            <value/>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>venmo is @GreenvilleFridge and cash app $GreenvilleFridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Union City Community Fridge</name>
+        <address>709 15th Street Union City, NJ 07087</address>
+        <description><![CDATA[ig handle: @ucfridge<br>address: 709 15th Street<br>city state zip: Union City, NJ 07087<br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: charity.gofundme.com/o/en/campaign/feedingthehungryinnewjersey<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@ucfridge</value>
+          </Data>
+          <Data name="address">
+            <value>709 15th Street</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Union City, NJ 07087</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>charity.gofundme.com/o/en/campaign/feedingthehungryinnewjersey</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>West Side Community Fridge</name>
+        <address>300 Delaware Ave Jersey Ciy, NJ 07306</address>
+        <description><![CDATA[ig handle: @westsidecommunityfridge<br>address: 300 Delaware Ave<br>city state zip: Jersey Ciy, NJ 07306<br><br>Hours open: 24/7<br>Has a freezer: <br>What the Fridge does not accept: <br>accepts donations?: Venmo:westsidecommunityfridge<br>Additional Information: linktr.ee/westsidecommunityfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@westsidecommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>300 Delaware Ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jersey Ciy, NJ 07306
+</value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value/>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value/>
+          </Data>
+          <Data name="accepts donations?">
+            <value>Venmo:westsidecommunityfridge</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>linktr.ee/westsidecommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Food For Us</name>
+        <address>6510 palisade ave West New York, NJ 07093</address>
+        <description><![CDATA[ig handle: @foodforusnj<br>address: 6510 palisade ave<br>city state zip: West New York, NJ 07093<br><br>Hours open: Open from 8:30am-8:30pm<br>Has a freezer: no<br>What the Fridge does not accept: No: frozen food, expired food, raw meat, seafood, dairy. The fridge accepts: Breads, fruits, veggies, beans,  pasta, tomato sauce, oats, apple sauce, rice, canned veggies, etc.<br>accepts donations?: cashapp $food4usnj<br>Additional Information: ]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>@foodforusnj</value>
+          </Data>
+          <Data name="address">
+            <value>6510 palisade ave</value>
+          </Data>
+          <Data name="city state zip">
+            <value>West New York, NJ 07093
+</value>
+          </Data>
+          <Data name="Hours open">
+            <value>Open from 8:30am-8:30pm</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>no</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No: frozen food, expired food, raw meat, seafood, dairy. The fridge accepts: Breads, fruits, veggies, beans,  pasta, tomato sauce, oats, apple sauce, rice, canned veggies, etc.</value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>cashapp $food4usnj</value>
+          </Data>
+          <Data name="Additional Information">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>jc heights community fridge </name>
+        <address>Webster Avenue at North Street  Jersey City NJ</address>
+        <description><![CDATA[ig handle: Jcheightscommunityfridge<br>address: Webster Avenue at North Street <br>city state zip: Jersey City NJ <br>Hours open: 24/7<br>Has a freezer: Yes<br>What the Fridge does not accept: No raw meat <br>accepts donations?: https://venmo.com/code?user_id=3111374192377856767<br>Additional Information: https://linktr.ee/jcheightscommunityfridge]]></description>
+        <styleUrl>#icon-1578-0F9D58</styleUrl>
+        <ExtendedData>
+          <Data name="ig handle">
+            <value>Jcheightscommunityfridge</value>
+          </Data>
+          <Data name="address">
+            <value>Webster Avenue at North Street </value>
+          </Data>
+          <Data name="city state zip">
+            <value>Jersey City NJ </value>
+          </Data>
+          <Data name="Hours open">
+            <value>24/7</value>
+          </Data>
+          <Data name="Has a freezer">
+            <value>Yes</value>
+          </Data>
+          <Data name="What the Fridge does not accept">
+            <value>No raw meat </value>
+          </Data>
+          <Data name="accepts donations?">
+            <value>https://venmo.com/code?user_id=3111374192377856767</value>
+          </Data>
+          <Data name="Additional Information">
+            <value>https://linktr.ee/jcheightscommunityfridge</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
