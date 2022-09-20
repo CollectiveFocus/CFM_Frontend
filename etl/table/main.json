@@ -1,9 +1,9 @@
 [
   {
-    "id": 0,
-    "fridgeName": "The Community Fridge",
-    "fridgeInstagram": "@les_communityfridge",
-    "fridgeWebsite": "linktr.ee/lescommunityfridge",
+    "mainId": 0,
+    "fridgeName": "The LES Community Fridge",
+    "maintainerInstagram": "@les_communityfridge",
+    "maintainerWebsite": "https://linktr.ee/lescommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -15,13 +15,14 @@
     "locationState": "NY",
     "locationZip": "10002",
     "locationGeoLat": 40.715207,
-    "locationGeoLng": -73.983748
+    "locationGeoLng": -73.983748,
+    "searchLocation": ["Lower East Side", "Manhattan"]
   },
   {
-    "id": 1,
+    "mainId": 1,
     "fridgeName": "Barrio Fridge #1",
-    "fridgeInstagram": "@thebarriofridge",
-    "fridgeWebsite": "thebarriofridge.com",
+    "maintainerInstagram": "@thebarriofridge",
+    "maintainerWebsite": "https://thebarriofridge.com/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -33,13 +34,14 @@
     "locationState": "NY",
     "locationZip": "10029",
     "locationGeoLat": 40.7911604,
-    "locationGeoLng": -73.9393979
+    "locationGeoLng": -73.9393979,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 2,
+    "mainId": 2,
     "fridgeName": "The Harlem Community Fridge",
-    "fridgeInstagram": "@theharlemcommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@theharlemcommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -52,13 +54,13 @@
     "locationState": "NY",
     "locationZip": "10026",
     "locationGeoLat": 40.8049571,
-    "locationGeoLng": -73.9570766
+    "locationGeoLng": -73.9570766,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 3,
+    "mainId": 3,
     "fridgeName": "The Uptown Fridge",
-    "fridgeInstagram": "@theuptownfridge",
-    "fridgeWebsite": "forms.gle/J8eDt4cC4vpFQSpT6",
+    "maintainerInstagram": "@theuptownfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -70,13 +72,14 @@
     "locationState": "NY",
     "locationZip": "10040",
     "locationGeoLat": 40.863154,
-    "locationGeoLng": -73.929629
+    "locationGeoLng": -73.929629,
+    "searchLocation": ["Inwood", "Manhattan"]
   },
   {
-    "id": 4,
+    "mainId": 4,
     "fridgeName": "Madison Square Boys and Girls Club",
-    "fridgeInstagram": "@the155streetfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@the155streetfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -88,12 +91,13 @@
     "locationState": "NY",
     "locationZip": "10039",
     "locationGeoLat": 40.8294203,
-    "locationGeoLng": -73.9386208
+    "locationGeoLng": -73.9386208,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 5,
+    "mainId": 5,
     "fridgeName": "West Harlem Community Fridge",
-    "fridgeInstagram": "@FridgeOnW126th",
+    "maintainerInstagram": "@FridgeOnW126th",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -106,13 +110,14 @@
     "locationState": "NY",
     "locationZip": "10027",
     "locationGeoLat": 40.8149431,
-    "locationGeoLng": -73.9562415
+    "locationGeoLng": -73.9562415,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 6,
-    "fridgeName": "Community Fridge 120th MMM",
-    "fridgeInstagram": "@Communityfridge120",
-    "fridgeWebsite": "",
+    "mainId": 6,
+    "fridgeName": "Community Fridge - West 120th Street",
+    "maintainerInstagram": "@Communityfridge120",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -124,13 +129,14 @@
     "locationState": "NY",
     "locationZip": "10026",
     "locationGeoLat": 40.8043636,
-    "locationGeoLng": -73.94754
+    "locationGeoLng": -73.94754,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 7,
+    "mainId": 7,
     "fridgeName": "The People&apos;s Fridge Word Up",
-    "fridgeInstagram": "@peoplesfridgewordup",
-    "fridgeWebsite": "https://linktr.ee/wordupfridge",
+    "maintainerInstagram": "@peoplesfridgewordup",
+    "maintainerWebsite": "https://linktr.ee/wordupfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -143,13 +149,14 @@
     "locationState": "NY",
     "locationZip": "10032",
     "locationGeoLat": 40.8376548,
-    "locationGeoLng": -73.9382991
+    "locationGeoLng": -73.9382991,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 8,
+    "mainId": 8,
     "fridgeName": "Ujamaa Solidarity Fridge",
-    "fridgeInstagram": "https://www.instagram.com/ujamaafridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/ujamaafridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -160,14 +167,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "10025",
-    "locationGeoLat": 40.79646,
-    "locationGeoLng": -73.965376
+    "locationGeoLat": 40.796449550000006,
+    "locationGeoLng": -73.96528990317628,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 9,
+    "mainId": 9,
     "fridgeName": "Sixth Street Community Center Fridge",
-    "fridgeInstagram": "https://www.instagram.com/sixthstreetcc",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/sixthstreetcc",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -179,13 +187,14 @@
     "locationState": "NY",
     "locationZip": "10009",
     "locationGeoLat": 40.7236719,
-    "locationGeoLng": -73.98025568410296
+    "locationGeoLng": -73.98025568410296,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 10,
+    "mainId": 10,
     "fridgeName": "Sugar Hill Community Fridges",
-    "fridgeInstagram": "@sugarhillfridge",
-    "fridgeWebsite": "linktr.ee/sugarhillfridge",
+    "maintainerInstagram": "@sugarhillfridge",
+    "maintainerWebsite": "linktr.ee/sugarhillfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -198,13 +207,14 @@
     "locationState": "NY",
     "locationZip": "10031",
     "locationGeoLat": 40.830788,
-    "locationGeoLng": -73.947599
+    "locationGeoLng": -73.947599,
+    "searchLocation": ["Hamilton Heights", "Manhattan"]
   },
   {
-    "id": 11,
+    "mainId": 11,
     "fridgeName": "The West End Community Fridge",
-    "fridgeInstagram": "@westendfridge",
-    "fridgeWebsite": "linktr.ee/westendfridge",
+    "maintainerInstagram": "@westendfridge",
+    "maintainerWebsite": "linktr.ee/westendfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -216,13 +226,14 @@
     "locationState": "NY",
     "locationZip": "10024",
     "locationGeoLat": 40.7830061,
-    "locationGeoLng": -73.981814
+    "locationGeoLng": -73.981814,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 12,
-    "fridgeName": "The Peoples Peoples Fridge",
-    "fridgeInstagram": "@thepeoplespeoplesfridge",
-    "fridgeWebsite": "https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform",
+    "mainId": 12,
+    "fridgeName": "The People&apos;s People&apos;s Fridge",
+    "maintainerInstagram": "@thepeoplespeoplesfridge",
+    "maintainerWebsite": "https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -234,13 +245,14 @@
     "locationState": "NY",
     "locationZip": "10032",
     "locationGeoLat": 40.8311013,
-    "locationGeoLng": -73.9410869
+    "locationGeoLng": -73.9410869,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 13,
+    "mainId": 13,
     "fridgeName": "S'MAC Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/eastvillageneighbors/",
-    "fridgeWebsite": "https://linktr.ee/Eastvillageneighbors",
+    "maintainerInstagram": "https://www.instagram.com/eastvillageneighbors/",
+    "maintainerWebsite": "https://linktr.ee/Eastvillageneighbors",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -252,14 +264,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "10003",
-    "locationGeoLat": 40.730168,
-    "locationGeoLng": -73.983649
+    "locationGeoLat": 40.730191,
+    "locationGeoLng": -73.983639,
+    "searchLocation": ["East Village", "Manhattan"]
   },
   {
-    "id": 14,
+    "mainId": 14,
     "fridgeName": "The Chelsea Community Fridge &amp; Cupboard",
-    "fridgeInstagram": "@Thechelseafridge",
-    "fridgeWebsite": "http://linktr.ee/thechelseafridge",
+    "maintainerInstagram": "@Thechelseafridge",
+    "maintainerWebsite": "http://linktr.ee/thechelseafridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -271,13 +284,14 @@
     "locationState": "NY",
     "locationZip": "10011",
     "locationGeoLat": 40.7378597,
-    "locationGeoLng": -73.99558230349778
+    "locationGeoLng": -73.99558230349778,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 15,
+    "mainId": 15,
     "fridgeName": "Broome &amp; Bowery Fridge",
-    "fridgeInstagram": "@broomeboweryfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@broomeboweryfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -289,13 +303,14 @@
     "locationState": "NY",
     "locationZip": "10002",
     "locationGeoLat": 40.719040449999994,
-    "locationGeoLng": -73.99389033403406
+    "locationGeoLng": -73.99389033403406,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 16,
+    "mainId": 16,
     "fridgeName": "La Nevera 183",
-    "fridgeInstagram": "@lanevera183",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@lanevera183",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "On the 2nd Floor",
     "maintainerName": "",
@@ -308,13 +323,14 @@
     "locationState": "NY",
     "locationZip": "10033",
     "locationGeoLat": 40.8474732,
-    "locationGeoLng": -73.931775
+    "locationGeoLng": -73.931775,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 17,
+    "mainId": 17,
     "fridgeName": "Overthrow Community Fridge",
-    "fridgeInstagram": "@overthrowcommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@overthrowcommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -327,13 +343,14 @@
     "locationState": "NY",
     "locationZip": "10012",
     "locationGeoLat": 40.72553285,
-    "locationGeoLng": -73.992831965796
+    "locationGeoLng": -73.992831965796,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 18,
+    "mainId": 18,
     "fridgeName": "Barrio Fridge #2",
-    "fridgeInstagram": "@thebarriofridge",
-    "fridgeWebsite": "thebarriofridge.com",
+    "maintainerInstagram": "@thebarriofridge",
+    "maintainerWebsite": "https://thebarriofridge.com/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -345,13 +362,14 @@
     "locationState": "NY",
     "locationZip": "10029",
     "locationGeoLat": 40.78999785,
-    "locationGeoLng": -73.94161519709277
+    "locationGeoLng": -73.94161519709277,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 19,
+    "mainId": 19,
     "fridgeName": "The Fridge at the Fort",
-    "fridgeInstagram": "@fortfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@fortfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -364,13 +382,14 @@
     "locationState": "NY",
     "locationZip": "10033",
     "locationGeoLat": 40.8507466,
-    "locationGeoLng": -73.9381774
+    "locationGeoLng": -73.9381774,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 20,
-    "fridgeName": "Community Fridge at St. Jude",
-    "fridgeInstagram": "@altagraciafaith",
-    "fridgeWebsite": "",
+    "mainId": 20,
+    "fridgeName": "Community Fridge at Saint Jude",
+    "maintainerInstagram": "@altagraciafaith",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -383,13 +402,14 @@
     "locationState": "NY",
     "locationZip": "10032",
     "locationGeoLat": 40.837692950000005,
-    "locationGeoLng": -73.93940732299878
+    "locationGeoLng": -73.93940732299878,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 21,
+    "mainId": 21,
     "fridgeName": "Astoria Fridge",
-    "fridgeInstagram": "@astoriafridge",
-    "fridgeWebsite": "linktr.ee/Astoriafridge",
+    "maintainerInstagram": "@astoriafridge",
+    "maintainerWebsite": "linktr.ee/Astoriafridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -401,13 +421,14 @@
     "locationState": "NY",
     "locationZip": "11102",
     "locationGeoLat": 40.77280815,
-    "locationGeoLng": -73.93241274910629
+    "locationGeoLng": -73.93241274910629,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 22,
+    "mainId": 22,
     "fridgeName": "Jackson Heights Community Fridge",
-    "fridgeInstagram": "@jacksonheightscommunityfridge",
-    "fridgeWebsite": "rb.gy/koufel",
+    "maintainerInstagram": "@jacksonheightscommunityfridge",
+    "maintainerWebsite": "rb.gy/koufel",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -419,13 +440,14 @@
     "locationState": "NY",
     "locationZip": "11372",
     "locationGeoLat": 40.7552278,
-    "locationGeoLng": -73.8870637
+    "locationGeoLng": -73.8870637,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 23,
+    "mainId": 23,
     "fridgeName": "FENIX Fridge",
-    "fridgeInstagram": "@fenixcommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@fenixcommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -437,17 +459,18 @@
     "locationState": "NY",
     "locationZip": "11385",
     "locationGeoLat": 40.7041427,
-    "locationGeoLng": -73.9103173780007
+    "locationGeoLng": -73.9103173780007,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 24,
+    "mainId": 24,
     "fridgeName": "Elmhurst Community Fridge #2",
-    "fridgeInstagram": "@elmhurstcommunityfridge2",
-    "fridgeWebsite": "bit.ly/3j7YkBy",
+    "maintainerInstagram": "@elmhurstcommunityfridge2",
+    "maintainerWebsite": "http://bit.ly/3j7YkBy",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
-    "maintainerEmail": "",
+    "maintainerEmail": "Elmhurstcommunityfridge2@gmail.com",
     "maintainerOrganization": "",
     "maintainerPhone": "",
     "locationStreet": "77-02 Woodside Avenue",
@@ -455,13 +478,14 @@
     "locationState": "NY",
     "locationZip": "11373",
     "locationGeoLat": 40.743449,
-    "locationGeoLng": -73.887837
+    "locationGeoLng": -73.887837,
+    "searchLocation": ["Elmhurst", "Queens"]
   },
   {
-    "id": 25,
+    "mainId": 25,
     "fridgeName": "Rockaway Mutual Aid - Almeda Avenue",
-    "fridgeInstagram": "@rockawaymutualaid",
-    "fridgeWebsite": "linktr.ee/rockawaymutualaid",
+    "maintainerInstagram": "@rockawaymutualaid",
+    "maintainerWebsite": "linktr.ee/rockawaymutualaid",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -473,13 +497,14 @@
     "locationState": "NY",
     "locationZip": "11692",
     "locationGeoLat": 40.596882,
-    "locationGeoLng": -73.8009287
+    "locationGeoLng": -73.8009287,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 26,
+    "mainId": 26,
     "fridgeName": "Jamaica Community Fridge #1",
-    "fridgeInstagram": "@jamaicacommunityfridge",
-    "fridgeWebsite": "http://forms.gle/jmF5HpgEKHD7ctFF8",
+    "maintainerInstagram": "@jamaicacommunityfridge",
+    "maintainerWebsite": "http://forms.gle/jmF5HpgEKHD7ctFF8",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -491,13 +516,14 @@
     "locationState": "NY",
     "locationZip": "11435",
     "locationGeoLat": 40.6930826,
-    "locationGeoLng": -73.799676
+    "locationGeoLng": -73.799676,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 27,
+    "mainId": 27,
     "fridgeName": "Rockaway Mutual Aid - Beach 92nd Street",
-    "fridgeInstagram": "@rockawaymutualaid",
-    "fridgeWebsite": "http://linktr.ee/rockawaymutualaid",
+    "maintainerInstagram": "@rockawaymutualaid",
+    "maintainerWebsite": "http://linktr.ee/rockawaymutualaid",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -509,13 +535,14 @@
     "locationState": "NY",
     "locationZip": "11693",
     "locationGeoLat": 40.585683700000004,
-    "locationGeoLng": -73.81458874999998
+    "locationGeoLng": -73.81458874999998,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 28,
+    "mainId": 28,
     "fridgeName": "Justus Farai the Fridge",
-    "fridgeInstagram": "https://www.instagram.com/laureltoncommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/laureltoncommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -527,13 +554,14 @@
     "locationState": "NY",
     "locationZip": "11413",
     "locationGeoLat": 40.6752317,
-    "locationGeoLng": -73.7383116
+    "locationGeoLng": -73.7383116,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 29,
+    "mainId": 29,
     "fridgeName": "RTU Community Fridge",
-    "fridgeInstagram": "@ridgewoodtenantsunion",
-    "fridgeWebsite": "https://www.ridgewoodtenantsunion.org/",
+    "maintainerInstagram": "@ridgewoodtenantsunion",
+    "maintainerWebsite": "https://www.ridgewoodtenantsunion.org/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -545,13 +573,14 @@
     "locationState": "NY",
     "locationZip": "11385",
     "locationGeoLat": 40.7000279,
-    "locationGeoLng": -73.9027766
+    "locationGeoLng": -73.9027766,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 30,
+    "mainId": 30,
     "fridgeName": "Brothers Wash &amp; Dry Community Fridge",
-    "fridgeInstagram": "@brotherswashndry",
-    "fridgeWebsite": "http://sampsondahl.com",
+    "maintainerInstagram": "@brotherswashndry",
+    "maintainerWebsite": "http://sampsondahl.com",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -564,13 +593,14 @@
     "locationState": "NY",
     "locationZip": "11378",
     "locationGeoLat": 40.715399,
-    "locationGeoLng": -73.910843
+    "locationGeoLng": -73.910843,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 31,
+    "mainId": 31,
     "fridgeName": "Corona Comunidad Fridge",
-    "fridgeInstagram": "@CoronaComunidadFridge",
-    "fridgeWebsite": "https://linktr.ee/coronacomunidadfridge",
+    "maintainerInstagram": "@CoronaComunidadFridge",
+    "maintainerWebsite": "https://linktr.ee/coronacomunidadfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -583,13 +613,14 @@
     "locationZip": "11368",
     "locationGeoLat": 40.745935200000005,
     "locationGeoLng": -73.85931074670697,
-    "locationName": "Tortilleria Nixtamal"
+    "locationName": "Tortilleria Nixtamal",
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 32,
+    "mainId": 32,
     "fridgeName": "Jamaica Community Fridge #2",
-    "fridgeInstagram": "@jamaicacommunityfridge",
-    "fridgeWebsite": "http://forms.gle/jmF5HpgEKHD7ctFF8",
+    "maintainerInstagram": "@jamaicacommunityfridge",
+    "maintainerWebsite": "http://forms.gle/jmF5HpgEKHD7ctFF8",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -601,13 +632,14 @@
     "locationState": "NY",
     "locationZip": "11435",
     "locationGeoLat": 40.7017391,
-    "locationGeoLng": -73.8053557
+    "locationGeoLng": -73.8053557,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 33,
+    "mainId": 33,
     "fridgeName": "Queens Village Community Fridge",
-    "fridgeInstagram": "@qvcommunityfridge",
-    "fridgeWebsite": "http://linktr.ee/qvcommunityfridge",
+    "maintainerInstagram": "@qvcommunityfridge",
+    "maintainerWebsite": "http://linktr.ee/qvcommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -619,13 +651,14 @@
     "locationState": "NY",
     "locationZip": "11423",
     "locationGeoLat": 40.70957,
-    "locationGeoLng": -73.767468
+    "locationGeoLng": -73.767468,
+    "searchLocation": ["Hollis", "Queens"]
   },
   {
-    "id": 34,
+    "mainId": 34,
     "fridgeName": "Ravenswood Community Fridge",
-    "fridgeInstagram": "@ravenswoodfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@ravenswoodfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -637,13 +670,14 @@
     "locationState": "NY",
     "locationZip": "11106",
     "locationGeoLat": 40.7605726,
-    "locationGeoLng": -73.9388595
+    "locationGeoLng": -73.9388595,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 35,
+    "mainId": 35,
     "fridgeName": "Ozone Park Community Fridge",
-    "fridgeInstagram": "@southsideactionpact",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@southsideactionpact",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -654,14 +688,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11419",
-    "locationGeoLat": 40.690491949999995,
-    "locationGeoLng": -73.81383571431844
+    "locationGeoLat": 40.690548,
+    "locationGeoLng": -73.813862,
+    "searchLocation": ["Richmond Hill", "Queens"]
   },
   {
-    "id": 36,
+    "mainId": 36,
     "fridgeName": "Ridgewood Community Fridge",
-    "fridgeInstagram": "@woodbine.nyc",
-    "fridgeWebsite": "woodbine.nyc/mutualaid",
+    "maintainerInstagram": "@woodbine.nyc",
+    "maintainerWebsite": "woodbine.nyc/mutualaid",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -673,13 +708,14 @@
     "locationState": "NY",
     "locationZip": "11385",
     "locationGeoLat": 40.7057463,
-    "locationGeoLng": -73.9074909
+    "locationGeoLng": -73.9074909,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 37,
+    "mainId": 37,
     "fridgeName": "Astoria Halal Fridge",
-    "fridgeInstagram": "@astoriahalalfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@astoriahalalfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -691,13 +727,14 @@
     "locationState": "NY",
     "locationZip": "11103",
     "locationGeoLat": 40.7659946,
-    "locationGeoLng": -73.91298101122449
+    "locationGeoLng": -73.91298101122449,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 38,
+    "mainId": 38,
     "fridgeName": "Saint Albans Community Fridge",
-    "fridgeInstagram": "@stalbanscommunityfridge",
-    "fridgeWebsite": "https://linktr.ee/st.albanscommunityfridge",
+    "maintainerInstagram": "@stalbanscommunityfridge",
+    "maintainerWebsite": "https://linktr.ee/st.albanscommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "In front of the Robert Ross Johnson Family Life Center",
     "maintainerName": "",
@@ -710,13 +747,14 @@
     "locationState": "NY",
     "locationZip": "11433",
     "locationGeoLat": 40.6924179,
-    "locationGeoLng": -73.77767680425106
+    "locationGeoLng": -73.77767680425106,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 39,
+    "mainId": 39,
     "fridgeName": "Nexus Fridge",
-    "fridgeInstagram": "@nexusfridge",
-    "fridgeWebsite": "https://linktr.ee/nexusfridge",
+    "maintainerInstagram": "@nexusfridge",
+    "maintainerWebsite": "https://linktr.ee/nexusfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -729,13 +767,14 @@
     "locationState": "NY",
     "locationZip": "11101",
     "locationGeoLat": 40.7527012,
-    "locationGeoLng": -73.9350775
+    "locationGeoLng": -73.9350775,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 40,
+    "mainId": 40,
     "fridgeName": "The Flushing Community Fridge",
-    "fridgeInstagram": "@flushingcommunityfridge",
-    "fridgeWebsite": "https://linktr.ee/flushingcommunityfridge",
+    "maintainerInstagram": "@flushingcommunityfridge",
+    "maintainerWebsite": "https://linktr.ee/flushingcommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -747,13 +786,14 @@
     "locationState": "NY",
     "locationZip": "11355",
     "locationGeoLat": 40.75713255,
-    "locationGeoLng": -73.82817982051716
+    "locationGeoLng": -73.82817982051716,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 41,
+    "mainId": 41,
     "fridgeName": "Woodside Community Fridge",
-    "fridgeInstagram": "@woodsidefridge",
-    "fridgeWebsite": "https://swma.nyc/wcf",
+    "maintainerInstagram": "@woodsidefridge",
+    "maintainerWebsite": "https://swma.nyc/wcf",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -765,13 +805,14 @@
     "locationState": "NY",
     "locationZip": "11377",
     "locationGeoLat": 40.7572375,
-    "locationGeoLng": -73.9080539
+    "locationGeoLng": -73.9080539,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 42,
+    "mainId": 42,
     "fridgeName": "Beauty Strike",
-    "fridgeInstagram": "@beautystrikeny",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@beautystrikeny",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -783,13 +824,14 @@
     "locationState": "NY",
     "locationZip": "11205",
     "locationGeoLat": 40.696509,
-    "locationGeoLng": -73.967347
+    "locationGeoLng": -73.967347,
+    "searchLocation": ["Clinton Hill", "Brooklyn"]
   },
   {
-    "id": 43,
+    "mainId": 43,
     "fridgeName": "Crown Heights Community Fridge",
-    "fridgeInstagram": "@bergencommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@bergencommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -801,13 +843,14 @@
     "locationState": "NY",
     "locationZip": "11216",
     "locationGeoLat": 40.67575415,
-    "locationGeoLng": -73.94781344792531
+    "locationGeoLng": -73.94781344792531,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 44,
+    "mainId": 44,
     "fridgeName": "Downtown Brooklyn Community Fridge",
-    "fridgeInstagram": "@dtbkfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@dtbkfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -819,13 +862,14 @@
     "locationState": "NY",
     "locationZip": "11201",
     "locationGeoLat": 40.6920518,
-    "locationGeoLng": -73.9864185
+    "locationGeoLng": -73.9864185,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 45,
+    "mainId": 45,
     "fridgeName": "Friendly Fridge - Flatbush",
-    "fridgeInstagram": "@flatbushfriendlyfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@flatbushfriendlyfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -837,13 +881,14 @@
     "locationState": "NY",
     "locationZip": "11225",
     "locationGeoLat": 40.66059,
-    "locationGeoLng": -73.950819
+    "locationGeoLng": -73.950819,
+    "searchLocation": ["Prospect-Lefferts Gardens", "Brooklyn"]
   },
   {
-    "id": 46,
+    "mainId": 46,
     "fridgeName": "Gowanus Fridge - Nature Based",
-    "fridgeInstagram": "@thegowanusfridge",
-    "fridgeWebsite": "forms.gle/pLdjsrE1PVxPTFQHA",
+    "maintainerInstagram": "@thegowanusfridge",
+    "maintainerWebsite": "forms.gle/pLdjsrE1PVxPTFQHA",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -855,31 +900,32 @@
     "locationState": "NY",
     "locationZip": "11231",
     "locationGeoLat": 40.67697,
-    "locationGeoLng": -73.991601
+    "locationGeoLng": -73.991601,
+    "searchLocation": ["Gowanus", "Brooklyn"]
   },
   {
-    "id": 47,
+    "mainId": 47,
     "fridgeName": "Gowanus Fridge - Postmark Cafe",
-    "fridgeInstagram": "@thegowanusfridge",
-    "fridgeWebsite": "forms.gle/pLdjsrE1PVxPTFQHA",
+    "maintainerInstagram": "@thegowanusfridge",
+    "maintainerWebsite": "forms.gle/pLdjsrE1PVxPTFQHA",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
     "maintainerEmail": "",
     "maintainerOrganization": "",
     "maintainerPhone": "",
-    "locationStreet": "326 6 Street",
+    "locationStreet": "326 6th Street",
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11215",
     "locationGeoLat": 40.671071,
-    "locationGeoLng": -73.985199
+    "locationGeoLng": -73.985199,
+    "searchLocation": ["Park Slope", "Brooklyn"]
   },
   {
-    "id": 48,
+    "mainId": 48,
     "fridgeName": "Greenpoint Fridge",
-    "fridgeInstagram": "@greenpointfridge",
-    "fridgeWebsite": "bit.ly/nbkfridgevolunteer",
+    "maintainerInstagram": "@greenpointfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -892,13 +938,14 @@
     "locationState": "NY",
     "locationZip": "11222",
     "locationGeoLat": 40.722877,
-    "locationGeoLng": -73.954146
+    "locationGeoLng": -73.954146,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 49,
+    "mainId": 49,
     "fridgeName": "Playground Coffee Shop",
-    "fridgeInstagram": "@playgroundcoffeeshop",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@playgroundcoffeeshop",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -910,13 +957,14 @@
     "locationState": "NY",
     "locationZip": "11216",
     "locationGeoLat": 40.6866024,
-    "locationGeoLng": -73.95480865648646
+    "locationGeoLng": -73.95480865648646,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 50,
+    "mainId": 50,
     "fridgeName": "Sincerely Tommy",
-    "fridgeInstagram": "@sincerelytommy_",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@sincerelytommy_",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -928,13 +976,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.6860681,
-    "locationGeoLng": -73.9443146
+    "locationGeoLng": -73.9443146,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 51,
+    "mainId": 51,
     "fridgeName": "The Living Gallery",
-    "fridgeInstagram": "@the_living_gallery",
-    "fridgeWebsite": "linktr.ee/Thelivinggallery",
+    "maintainerInstagram": "@the_living_gallery",
+    "maintainerWebsite": "linktr.ee/Thelivinggallery",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -946,13 +995,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.694207,
-    "locationGeoLng": -73.930599
+    "locationGeoLng": -73.930599,
+    "searchLocation": ["Bedford-Stuyvesant", "Brooklyn"]
   },
   {
-    "id": 52,
+    "mainId": 52,
     "fridgeName": "Universe City Fridge",
-    "fridgeInstagram": "@universecitynyc",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@universecitynyc",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -964,13 +1014,14 @@
     "locationState": "NY",
     "locationZip": "11207",
     "locationGeoLat": 40.67219753846154,
-    "locationGeoLng": -73.9020948846154
+    "locationGeoLng": -73.9020948846154,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 53,
+    "mainId": 53,
     "fridgeName": "In Our Hearts - Van Buren",
-    "fridgeInstagram": "@iohnyc",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@iohnyc",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -982,13 +1033,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.69053555,
-    "locationGeoLng": -73.94067625466758
+    "locationGeoLng": -73.94067625466758,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 54,
+    "mainId": 54,
     "fridgeName": "Public Assistants Community Fridge",
-    "fridgeInstagram": "@publicassistants",
-    "fridgeWebsite": "www.publicassistants.org",
+    "maintainerInstagram": "@publicassistants",
+    "maintainerWebsite": "www.publicassistants.org",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1000,13 +1052,14 @@
     "locationState": "NY",
     "locationZip": "11216",
     "locationGeoLat": 40.674284,
-    "locationGeoLng": -73.956511
+    "locationGeoLng": -73.956511,
+    "searchLocation": ["Crown Heights", "Brooklyn"]
   },
   {
-    "id": 55,
-    "fridgeName": "HashtagLunchbag BK Red Hook",
-    "fridgeInstagram": "@hashtaglunchbagbk",
-    "fridgeWebsite": "https://linktr.ee/PerfectlyAnaika",
+    "mainId": 55,
+    "fridgeName": "HashtagLunchbag BK x Red Hook",
+    "maintainerInstagram": "@hashtaglunchbagbk",
+    "maintainerWebsite": "https://linktr.ee/PerfectlyAnaika",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1017,14 +1070,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11231",
-    "locationGeoLat": 40.6794847,
-    "locationGeoLng": -74.00515945000001
+    "locationGeoLat": 40.679498,
+    "locationGeoLng": -74.005209,
+    "searchLocation": ["Red Hook", "Brooklyn"]
   },
   {
-    "id": 56,
+    "mainId": 56,
     "fridgeName": "Friendly Fridge - Knickerbocker",
-    "fridgeInstagram": "@thefriendlyfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@thefriendlyfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1036,13 +1090,14 @@
     "locationState": "NY",
     "locationZip": "11237",
     "locationGeoLat": 40.703637,
-    "locationGeoLng": -73.9272235
+    "locationGeoLng": -73.9272235,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 57,
+    "mainId": 57,
     "fridgeName": "Hair Metal",
-    "fridgeInstagram": "@hairmetalsalon",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@hairmetalsalon",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1054,13 +1109,14 @@
     "locationState": "NY",
     "locationZip": "11211",
     "locationGeoLat": 40.7164659,
-    "locationGeoLng": -73.9572052
+    "locationGeoLng": -73.9572052,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 58,
+    "mainId": 58,
     "fridgeName": "Cooper Park Fridge",
-    "fridgeInstagram": "@cooperparkfridge",
-    "fridgeWebsite": "https://linktr.ee/northbrooklynmutualaid",
+    "maintainerInstagram": "@cooperparkfridge",
+    "maintainerWebsite": "https://linktr.ee/northbrooklynmutualaid",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1072,12 +1128,13 @@
     "locationState": "NY",
     "locationZip": "11211",
     "locationGeoLat": 40.7183849,
-    "locationGeoLng": -73.9402009
+    "locationGeoLng": -73.9402009,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 59,
+    "mainId": 59,
     "fridgeName": "Koinonia Juan Bautista Church Community Fridge",
-    "fridgeInstagram": "",
+    "maintainerInstagram": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1090,13 +1147,14 @@
     "locationState": "NY",
     "locationZip": "11231",
     "locationGeoLat": 40.6788566,
-    "locationGeoLng": -74.0088169594481
+    "locationGeoLng": -74.0088169594481,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 60,
+    "mainId": 60,
     "fridgeName": "Evergreen Free Fridge",
-    "fridgeInstagram": "@evergreenfreefridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@evergreenfreefridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1108,13 +1166,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.6905271,
-    "locationGeoLng": -73.9161505
+    "locationGeoLng": -73.9161505,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 61,
+    "mainId": 61,
     "fridgeName": "Solidarity Fridge",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1127,12 +1186,13 @@
     "locationZip": "11226",
     "locationGeoLat": 40.6429095,
     "locationGeoLng": -73.96358101823799,
-    "locationName": "11226"
+    "locationName": "11226",
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 62,
+    "mainId": 62,
     "fridgeName": "Bake Shop Fridge",
-    "fridgeInstagram": "",
+    "maintainerInstagram": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1144,13 +1204,14 @@
     "locationState": "NY",
     "locationZip": "11206",
     "locationGeoLat": 40.7032349,
-    "locationGeoLng": -73.9328618
+    "locationGeoLng": -73.9328618,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 63,
+    "mainId": 63,
     "fridgeName": "Friendly Fridge - Heights",
-    "fridgeInstagram": "@theheightsfriendlyfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@theheightsfriendlyfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1163,13 +1224,14 @@
     "locationState": "NY",
     "locationZip": "11238",
     "locationGeoLat": 40.6723208,
-    "locationGeoLng": -73.9608401
+    "locationGeoLng": -73.9608401,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 64,
+    "mainId": 64,
     "fridgeName": "Fort Greene Community Fridge",
-    "fridgeInstagram": "@fgcommunityfridge",
-    "fridgeWebsite": "http://linktr.ee/fgcommunityfridge",
+    "maintainerInstagram": "@fgcommunityfridge",
+    "maintainerWebsite": "http://linktr.ee/fgcommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1181,13 +1243,14 @@
     "locationState": "NY",
     "locationZip": "11205",
     "locationGeoLat": 40.693319,
-    "locationGeoLng": -73.971718
+    "locationGeoLng": -73.971718,
+    "searchLocation": ["Fort Greene", "Brooklyn"]
   },
   {
-    "id": 65,
+    "mainId": 65,
     "fridgeName": "Bushwick Community Fridge",
-    "fridgeInstagram": "@thebushwickfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@thebushwickfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1199,13 +1262,14 @@
     "locationState": "NY",
     "locationZip": "11207",
     "locationGeoLat": 40.684963,
-    "locationGeoLng": -73.913824
+    "locationGeoLng": -73.913824,
+    "searchLocation": ["Bushwick", "Brooklyn"]
   },
   {
-    "id": 66,
+    "mainId": 66,
     "fridgeName": "Pennies Pantry",
-    "fridgeInstagram": "@penniespantrybk",
-    "fridgeWebsite": "https://linktr.ee/penniespantrybk",
+    "maintainerInstagram": "@penniespantrybk",
+    "maintainerWebsite": "https://linktr.ee/penniespantrybk",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1217,13 +1281,14 @@
     "locationState": "NY",
     "locationZip": "11206",
     "locationGeoLat": 40.6969936,
-    "locationGeoLng": -73.9493842
+    "locationGeoLng": -73.9493842,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 67,
-    "fridgeName": "Wyckoff Farmhouse Museum",
-    "fridgeInstagram": "@hashtaglunchbagbk",
-    "fridgeWebsite": "",
+    "mainId": 67,
+    "fridgeName": "HashtagLunchbag BK x Wyckoff Farmhouse Museum",
+    "maintainerInstagram": "@hashtaglunchbagbk",
+    "maintainerWebsite": "https://linktr.ee/PerfectlyAnaika",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1236,13 +1301,14 @@
     "locationState": "NY",
     "locationZip": "11203",
     "locationGeoLat": 40.6443616,
-    "locationGeoLng": -73.9208761
+    "locationGeoLng": -73.9208761,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 68,
+    "mainId": 68,
     "fridgeName": "La Nevera de Marcy",
-    "fridgeInstagram": "@neverademarcy",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@neverademarcy",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1254,31 +1320,33 @@
     "locationState": "NY",
     "locationZip": "11211",
     "locationGeoLat": 40.70501,
-    "locationGeoLng": -73.95599750000001
+    "locationGeoLng": -73.95599750000001,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 69,
-    "fridgeName": "Brooklyn Community Fridge",
-    "fridgeInstagram": "@bkfridges",
-    "fridgeWebsite": "linktr.ee/bk4bl",
+    "mainId": 69,
+    "fridgeName": "Brooklyn Community Fridges - Flatbush",
+    "maintainerInstagram": "@bkfridges",
+    "maintainerWebsite": "linktr.ee/bk4bl",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
     "maintainerEmail": "",
     "maintainerOrganization": "",
     "maintainerPhone": "",
-    "locationStreet": "198 Rogers Avenue",
+    "locationStreet": "625 Rogers Avenue",
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11225",
-    "locationGeoLat": 40.66892765,
-    "locationGeoLng": -73.95359260000001
+    "locationGeoLat": 40.656318850000005,
+    "locationGeoLng": -73.95284655860519,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 70,
+    "mainId": 70,
     "fridgeName": "Know Waste Lands Community Fridge",
-    "fridgeInstagram": "@kwlgarden",
-    "fridgeWebsite": "http://knowwastelands.org",
+    "maintainerInstagram": "@kwlgarden",
+    "maintainerWebsite": "http://knowwastelands.org",
     "fridgeVerified": false,
     "fridgeNotes": "TEMPORARILY OFFLINE (cannot accept food due to no electricity)",
     "maintainerName": "",
@@ -1290,13 +1358,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.698164999999996,
-    "locationGeoLng": -73.925404
+    "locationGeoLng": -73.925404,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 71,
+    "mainId": 71,
     "fridgeName": "2 Fish 5 Loaves Fridge",
-    "fridgeInstagram": "@2fish5loavesfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@2fish5loavesfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1308,13 +1377,14 @@
     "locationState": "NY",
     "locationZip": "11206",
     "locationGeoLat": 40.701704250000006,
-    "locationGeoLng": -73.94450872865644
+    "locationGeoLng": -73.94450872865644,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 72,
+    "mainId": 72,
     "fridgeName": "Paperboy Love Gallery",
-    "fridgeInstagram": "https://www.instagram.com/paperboy.lovegallery",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/paperboy.lovegallery",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1326,13 +1396,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.697759,
-    "locationGeoLng": -73.927282
+    "locationGeoLng": -73.927282,
+    "searchLocation": ["Bushwick", "Brooklyn"]
   },
   {
-    "id": 73,
+    "mainId": 73,
     "fridgeName": "Classon Community Fridge",
-    "fridgeInstagram": "@Classon_Community_Fridge",
-    "fridgeWebsite": "https://linktr.ee/Classon_Community_Fridge",
+    "maintainerInstagram": "@Classon_Community_Fridge",
+    "maintainerWebsite": "https://linktr.ee/Classon_Community_Fridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1344,13 +1415,14 @@
     "locationState": "NY",
     "locationZip": "11238",
     "locationGeoLat": 40.67855745,
-    "locationGeoLng": -73.95853808690475
+    "locationGeoLng": -73.95853808690475,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 74,
+    "mainId": 74,
     "fridgeName": "Mixteca&apos;s Community Fridge",
-    "fridgeInstagram": "@mixtecaorg",
-    "fridgeWebsite": "https://www.mixteca.org",
+    "maintainerInstagram": "@mixtecaorg",
+    "maintainerWebsite": "https://www.mixteca.org",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1362,13 +1434,14 @@
     "locationState": "NY",
     "locationZip": "11215",
     "locationGeoLat": 40.6601147,
-    "locationGeoLng": -73.9941986
+    "locationGeoLng": -73.9941986,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 75,
-    "fridgeName": "Copo Halal Community Fridge",
-    "fridgeInstagram": "@copousa",
-    "fridgeWebsite": "",
+    "mainId": 75,
+    "fridgeName": "COPO Halal Community Fridge",
+    "maintainerInstagram": "@copousa",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1380,13 +1453,14 @@
     "locationState": "NY",
     "locationZip": "11230",
     "locationGeoLat": 40.6313315,
-    "locationGeoLng": -73.96621703154759
+    "locationGeoLng": -73.96621703154759,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 76,
+    "mainId": 76,
     "fridgeName": "@onlunchbreak x @girlsonlyny Fridge",
-    "fridgeInstagram": "@onlunchbreak",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@onlunchbreak",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1398,13 +1472,14 @@
     "locationState": "NY",
     "locationZip": "11224",
     "locationGeoLat": 40.57602215,
-    "locationGeoLng": -73.99194985
+    "locationGeoLng": -73.99194985,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 77,
+    "mainId": 77,
     "fridgeName": "Success Garden Community",
-    "fridgeInstagram": "@successgardencommunity",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@successgardencommunity",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1416,13 +1491,14 @@
     "locationState": "NY",
     "locationZip": "11207",
     "locationGeoLat": 40.663794255319154,
-    "locationGeoLng": -73.8975444680851
+    "locationGeoLng": -73.8975444680851,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 78,
+    "mainId": 78,
     "fridgeName": "One Love Community Fridge",
-    "fridgeInstagram": "@Onelovecommunityfridge",
-    "fridgeWebsite": "http://www.onelovecommunityfridge.org",
+    "maintainerInstagram": "@Onelovecommunityfridge",
+    "maintainerWebsite": "http://www.onelovecommunityfridge.org",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1434,13 +1510,14 @@
     "locationState": "NY",
     "locationZip": "11205",
     "locationGeoLat": 40.693043,
-    "locationGeoLng": -73.968396
+    "locationGeoLng": -73.968396,
+    "searchLocation": ["Clinton Hill", "Brooklyn"]
   },
   {
-    "id": 79,
+    "mainId": 79,
     "fridgeName": "Fulton Street Fridge",
-    "fridgeInstagram": "@fultonstfridge",
-    "fridgeWebsite": "https://linktr.ee/fultonstfridge/",
+    "maintainerInstagram": "@fultonstfridge",
+    "maintainerWebsite": "https://linktr.ee/fultonstfridge/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1452,12 +1529,13 @@
     "locationState": "NY",
     "locationZip": "11238",
     "locationGeoLat": 40.68284,
-    "locationGeoLng": -73.963217
+    "locationGeoLng": -73.963217,
+    "searchLocation": ["Clinton Hill", "Brooklyn"]
   },
   {
-    "id": 80,
+    "mainId": 80,
     "fridgeName": "Bedford Park Community Fridge",
-    "fridgeInstagram": "@bedfordparkcommunityfridge",
+    "maintainerInstagram": "@bedfordparkcommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1469,13 +1547,14 @@
     "locationState": "NY",
     "locationZip": "10468",
     "locationGeoLat": 40.8734189,
-    "locationGeoLng": -73.8891388
+    "locationGeoLng": -73.8891388,
+    "searchLocation": ["Bedford Park", ""]
   },
   {
-    "id": 81,
+    "mainId": 81,
     "fridgeName": "SYB Community Fridge",
-    "fridgeInstagram": "@1freedom4all",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@1freedom4all",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1487,12 +1566,13 @@
     "locationState": "NY",
     "locationZip": "10456",
     "locationGeoLat": 40.832265899999996,
-    "locationGeoLng": -73.91622935571675
+    "locationGeoLng": -73.91622935571675,
+    "searchLocation": ["Bronx County", ""]
   },
   {
-    "id": 82,
+    "mainId": 82,
     "fridgeName": "Friendly Fridge - Bronx",
-    "fridgeInstagram": "@thefriendlyfridgebx",
+    "maintainerInstagram": "@thefriendlyfridgebx",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1504,13 +1584,14 @@
     "locationState": "NY",
     "locationZip": "10463",
     "locationGeoLat": 40.88975,
-    "locationGeoLng": -73.898535
+    "locationGeoLng": -73.898535,
+    "searchLocation": ["Riverdale", "Bronx"]
   },
   {
-    "id": 83,
+    "mainId": 83,
     "fridgeName": "Allerton Allies Community Fridge",
-    "fridgeInstagram": "@allertonalliesfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@allertonalliesfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1522,12 +1603,13 @@
     "locationState": "NY",
     "locationZip": "10467",
     "locationGeoLat": 40.86401,
-    "locationGeoLng": -73.864721
+    "locationGeoLng": -73.864721,
+    "searchLocation": ["Allerton", "Bronx"]
   },
   {
-    "id": 84,
+    "mainId": 84,
     "fridgeName": "Loving the Bronx Fridge",
-    "fridgeInstagram": "@lovingthebronx",
+    "maintainerInstagram": "@lovingthebronx",
     "fridgeNotes": "Do NOT place any items in the refrigerator.\nIf you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you",
     "fridgeVerified": false,
     "maintainerName": "",
@@ -1539,13 +1621,14 @@
     "locationState": "NY",
     "locationZip": "10472",
     "locationGeoLat": 40.83332398979592,
-    "locationGeoLng": -73.86147191836734
+    "locationGeoLng": -73.86147191836734,
+    "searchLocation": ["Bronx County", ""]
   },
   {
-    "id": 85,
+    "mainId": 85,
     "fridgeName": "Mott Haven Fridge #1",
-    "fridgeInstagram": "https://www.instagram.com/motthavenfridge/",
-    "fridgeWebsite": "https://www.motthavenfridge.com/",
+    "maintainerInstagram": "https://www.instagram.com/motthavenfridge/",
+    "maintainerWebsite": "https://www.motthavenfridge.com/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1557,13 +1640,14 @@
     "locationState": "NY",
     "locationZip": "10454",
     "locationGeoLat": 40.8090972,
-    "locationGeoLng": -73.9185003
+    "locationGeoLng": -73.9185003,
+    "searchLocation": ["Mott Haven", ""]
   },
   {
-    "id": 86,
+    "mainId": 86,
     "fridgeName": "Nuestra Nevera",
-    "fridgeInstagram": "@nuestraxnevera",
-    "fridgeWebsite": "http://linktr.ee/bumdsa",
+    "maintainerInstagram": "@nuestraxnevera",
+    "maintainerWebsite": "http://linktr.ee/bumdsa",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1575,12 +1659,13 @@
     "locationState": "NY",
     "locationZip": "10456",
     "locationGeoLat": 40.8182998,
-    "locationGeoLng": -73.906351
+    "locationGeoLng": -73.906351,
+    "searchLocation": ["Melrose", ""]
   },
   {
-    "id": 87,
+    "mainId": 87,
     "fridgeName": "Soundview Community Fridge",
-    "fridgeInstagram": "@nuestraxnevera",
+    "maintainerInstagram": "@nuestraxnevera",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "Desiree Joy Frias",
@@ -1592,13 +1677,14 @@
     "locationState": "NY",
     "locationZip": "10473",
     "locationGeoLat": 40.8135149,
-    "locationGeoLng": -73.85765
+    "locationGeoLng": -73.85765,
+    "searchLocation": ["Clason Point", ""]
   },
   {
-    "id": 88,
+    "mainId": 88,
     "fridgeName": "Mott Haven Fridge #2",
-    "fridgeInstagram": "https://www.instagram.com/motthavenfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/motthavenfridge",
+    "maintainerWebsite": "https://www.motthavenfridge.com/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1610,13 +1696,14 @@
     "locationState": "NY",
     "locationZip": "10454",
     "locationGeoLat": 40.808354800000004,
-    "locationGeoLng": -73.91583282000796
+    "locationGeoLng": -73.91583282000796,
+    "searchLocation": ["Port Morris", ""]
   },
   {
-    "id": 89,
+    "mainId": 89,
     "fridgeName": "Anchor Fridge",
-    "fridgeInstagram": "@anchorfridge",
-    "fridgeWebsite": "http://www.linktr.ee/southbronxmutualaid",
+    "maintainerInstagram": "@anchorfridge",
+    "maintainerWebsite": "http://www.linktr.ee/southbronxmutualaid",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1628,31 +1715,33 @@
     "locationState": "NY",
     "locationZip": "10464",
     "locationGeoLat": 40.844986500000005,
-    "locationGeoLng": -73.78592059779425
+    "locationGeoLng": -73.78592059779425,
+    "searchLocation": ["City Island", ""]
   },
   {
-    "id": 90,
+    "mainId": 90,
     "fridgeName": "FJM Fridge",
-    "fridgeInstagram": "@food_justice_ministry",
-    "fridgeWebsite": "http://linktr.ee/foodjusticeministry",
+    "maintainerInstagram": "@food_justice_ministry",
+    "maintainerWebsite": "http://linktr.ee/foodjusticeministry",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
     "maintainerEmail": "",
     "maintainerOrganization": "",
     "maintainerPhone": "",
-    "locationStreet": "260 West 231 Street",
+    "locationStreet": "260 West 231st Street",
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "10463",
     "locationGeoLat": 40.880019,
-    "locationGeoLng": -73.907255
+    "locationGeoLng": -73.907255,
+    "searchLocation": ["Kingsbridge", "Bronx"]
   },
   {
-    "id": 91,
+    "mainId": 91,
     "fridgeName": "Yonkers Community Fridge",
-    "fridgeInstagram": "@yonkerscommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@yonkerscommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1664,13 +1753,14 @@
     "locationState": "NY",
     "locationZip": "10701",
     "locationGeoLat": 40.93300672015364,
-    "locationGeoLng": -73.9002516758224
+    "locationGeoLng": -73.9002516758224,
+    "searchLocation": ["Ludlow", ""]
   },
   {
-    "id": 92,
+    "mainId": 92,
     "fridgeName": "The Neighborhood Fridge",
-    "fridgeInstagram": "@theneighborhoodfridge",
-    "fridgeWebsite": "https://linktr.ee/theneighborhoodfridge",
+    "maintainerInstagram": "@theneighborhoodfridge",
+    "maintainerWebsite": "https://linktr.ee/theneighborhoodfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1683,13 +1773,14 @@
     "locationState": "NY",
     "locationZip": "10471",
     "locationGeoLat": 40.90366705,
-    "locationGeoLng": -73.90272705322482
+    "locationGeoLng": -73.90272705322482,
+    "searchLocation": ["Riverdale", ""]
   },
   {
-    "id": 93,
-    "fridgeName": "Forest Ave ComeUnity Fridge",
-    "fridgeInstagram": "@forestavecomeunityfridge",
-    "fridgeWebsite": "https://www.facebook.com/forestavecomeunityfridge/",
+    "mainId": 93,
+    "fridgeName": "Forest Avenue ComeUnity Fridge",
+    "maintainerInstagram": "@forestavecomeunityfridge",
+    "maintainerWebsite": "https://www.facebook.com/forestavecomeunityfridge/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1700,14 +1791,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "10303",
-    "locationGeoLat": 40.626431,
-    "locationGeoLng": -74.161089
+    "locationGeoLat": 40.62648790909091,
+    "locationGeoLng": -74.16090545454546,
+    "searchLocation": ["Staten Island", ""]
   },
   {
-    "id": 94,
+    "mainId": 94,
     "fridgeName": "Kingston Community Fridge - Van Buren",
-    "fridgeInstagram": "@kingstoncommunityfridge",
-    "fridgeWebsite": "https://www.facebook.com/kingstoncommunityfridge/",
+    "maintainerInstagram": "@kingstoncommunityfridge",
+    "maintainerWebsite": "https://www.facebook.com/kingstoncommunityfridge/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1719,13 +1811,14 @@
     "locationState": "NY",
     "locationZip": "12401",
     "locationGeoLat": 41.930009299999995,
-    "locationGeoLng": -74.00731654893085
+    "locationGeoLng": -74.00731654893085,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 95,
+    "mainId": 95,
     "fridgeName": "Buffalo Community Fridge",
-    "fridgeInstagram": "@buffalocommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@buffalocommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1737,13 +1830,14 @@
     "locationState": "NY",
     "locationZip": "14208",
     "locationGeoLat": 42.9149516,
-    "locationGeoLng": -78.8547615
+    "locationGeoLng": -78.8547615,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 96,
+    "mainId": 96,
     "fridgeName": "Kingston Community Fridge - Clinton Avenue",
-    "fridgeInstagram": "@kingstoncommunityfridge",
-    "fridgeWebsite": "https://www.facebook.com/kingstoncommunityfridge/",
+    "maintainerInstagram": "@kingstoncommunityfridge",
+    "maintainerWebsite": "https://www.facebook.com/kingstoncommunityfridge/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1756,13 +1850,14 @@
     "locationState": "NY",
     "locationZip": "12401",
     "locationGeoLat": 41.929698450000004,
-    "locationGeoLng": -74.01215210000001
+    "locationGeoLng": -74.01215210000001,
+    "searchLocation": ["Stockade District", ""]
   },
   {
-    "id": 97,
+    "mainId": 97,
     "fridgeName": "Greenville Community Fridge",
-    "fridgeInstagram": "@GreenvilleCommunityFridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@GreenvilleCommunityFridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1774,13 +1869,14 @@
     "locationState": "NJ",
     "locationZip": "07305",
     "locationGeoLat": 40.700012,
-    "locationGeoLng": -74.09015
+    "locationGeoLng": -74.09015,
+    "searchLocation": ["", "Jersey City"]
   },
   {
-    "id": 98,
+    "mainId": 98,
     "fridgeName": "Union City Community Fridge",
-    "fridgeInstagram": "@ucfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@ucfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1792,13 +1888,14 @@
     "locationState": "NJ",
     "locationZip": "07087",
     "locationGeoLat": 40.76273637688739,
-    "locationGeoLng": -74.03923744745303
+    "locationGeoLng": -74.03923744745303,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 99,
+    "mainId": 99,
     "fridgeName": "West Side Community Fridge",
-    "fridgeInstagram": "@westsidecommunityfridge",
-    "fridgeWebsite": "linktr.ee/westsidecommunityfridge",
+    "maintainerInstagram": "@westsidecommunityfridge",
+    "maintainerWebsite": "linktr.ee/westsidecommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1810,13 +1907,14 @@
     "locationState": "NJ",
     "locationZip": "07306",
     "locationGeoLat": 40.72754376271187,
-    "locationGeoLng": -74.07707477966102
+    "locationGeoLng": -74.07707477966102,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 100,
+    "mainId": 100,
     "fridgeName": "Food For Us",
-    "fridgeInstagram": "@foodforusnj",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "@foodforusnj",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1828,13 +1926,14 @@
     "locationState": "NJ",
     "locationZip": "07093",
     "locationGeoLat": 40.792199,
-    "locationGeoLng": -74.010348
+    "locationGeoLng": -74.010348,
+    "searchLocation": ["", "West New York"]
   },
   {
-    "id": 101,
+    "mainId": 101,
     "fridgeName": "JC Heights Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/jcheightscommunityfridge/",
-    "fridgeWebsite": "https://linktr.ee/jcheightscommunityfridge",
+    "maintainerInstagram": "https://www.instagram.com/jcheightscommunityfridge/",
+    "maintainerWebsite": "https://linktr.ee/jcheightscommunityfridge",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1846,31 +1945,14 @@
     "locationState": "NJ",
     "locationZip": "07307",
     "locationGeoLat": 40.751017,
-    "locationGeoLng": -74.041621
+    "locationGeoLng": -74.041621,
+    "searchLocation": ["", "Jersey City"]
   },
   {
-    "id": 103,
-    "fridgeName": "PAYO Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/Payousa1",
-    "fridgeWebsite": "",
-    "fridgeVerified": false,
-    "fridgeNotes": "",
-    "maintainerName": "",
-    "maintainerEmail": "",
-    "maintainerOrganization": "",
-    "maintainerPhone": "",
-    "locationStreet": "1045 Coney Island Avenue",
-    "locationCity": "New York",
-    "locationState": "NY",
-    "locationZip": "11230",
-    "locationGeoLat": 40.632187,
-    "locationGeoLng": -73.9665339
-  },
-  {
-    "id": 104,
+    "mainId": 102,
     "fridgeName": "Collective Focus Resource Hub",
-    "fridgeInstagram": "https://www.instagram.com/collectivefocushub",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/collectivefocushub",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1882,13 +1964,14 @@
     "locationState": "NY",
     "locationZip": "11221",
     "locationGeoLat": 40.695189,
-    "locationGeoLng": -73.932345
+    "locationGeoLng": -73.932345,
+    "searchLocation": ["Bedford-Stuyvesant", "Brooklyn"]
   },
   {
-    "id": 108,
+    "mainId": 103,
     "fridgeName": "Farm to People Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/farmtopeople",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/farmtopeople",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1900,13 +1983,14 @@
     "locationState": "NY",
     "locationZip": "11237",
     "locationGeoLat": 40.7051413,
-    "locationGeoLng": -73.92706200131855
+    "locationGeoLng": -73.92706200131855,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 111,
+    "mainId": 104,
     "fridgeName": "Utica Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/uticacommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/uticacommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1918,13 +2002,14 @@
     "locationState": "NY",
     "locationZip": "13501",
     "locationGeoLat": 43.0962845,
-    "locationGeoLng": -75.2346536
+    "locationGeoLng": -75.2346536,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 112,
-    "fridgeName": "BK Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/Bkfridges",
-    "fridgeWebsite": "",
+    "mainId": 105,
+    "fridgeName": "Brooklyn Community Fridges - Crown Heights",
+    "maintainerInstagram": "@bkfridges",
+    "maintainerWebsite": "linktr.ee/bk4bl",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1935,14 +2020,15 @@
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11225",
-    "locationGeoLat": 40.66902,
-    "locationGeoLng": -73.953653
+    "locationGeoLat": 40.66900205,
+    "locationGeoLng": -73.95365084817391,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 113,
+    "mainId": 106,
     "fridgeName": "Fridges & Family",
-    "fridgeInstagram": "https://www.instagram.com/fridgesandfamily",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/fridgesandfamily",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1954,13 +2040,14 @@
     "locationState": "PA",
     "locationZip": "19147",
     "locationGeoLat": 39.935031200000005,
-    "locationGeoLng": -75.158604
+    "locationGeoLng": -75.158604,
+    "searchLocation": ["South Philadelphia", ""]
   },
   {
-    "id": 115,
+    "mainId": 107,
     "fridgeName": "Brooklyn Heights Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/brooklynheightscommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/brooklynheightscommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1972,13 +2059,14 @@
     "locationState": "NY",
     "locationZip": "11201",
     "locationGeoLat": 40.696995,
-    "locationGeoLng": -73.993431
+    "locationGeoLng": -73.993431,
+    "searchLocation": ["Brooklyn Heights", "Brooklyn"]
   },
   {
-    "id": 120,
+    "mainId": 108,
     "fridgeName": "KWT Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/kwtfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/kwtfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -1990,13 +2078,14 @@
     "locationState": "NY",
     "locationZip": "10009",
     "locationGeoLat": 40.7230038,
-    "locationGeoLng": -73.98635715974333
+    "locationGeoLng": -73.98635715974333,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 121,
+    "mainId": 109,
     "fridgeName": "Leon Wright Little Free Pantry",
-    "fridgeInstagram": "https://www.instagram.com/hullstreetblockassociation",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/hullstreetblockassociation",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2008,13 +2097,14 @@
     "locationState": "NY",
     "locationZip": "11233",
     "locationGeoLat": 40.679435350000006,
-    "locationGeoLng": -73.91009056174387
+    "locationGeoLng": -73.91009056174387,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 122,
+    "mainId": 110,
     "fridgeName": "Eileens Free Bodega",
-    "fridgeInstagram": "https://www.instagram.com/eileensfreebodega_",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/eileensfreebodega_",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2025,14 +2115,15 @@
     "locationCity": "Keyport",
     "locationState": "NJ",
     "locationZip": "07735",
-    "locationGeoLat": 40.43726,
-    "locationGeoLng": -74.192854
+    "locationGeoLat": 40.437275,
+    "locationGeoLng": -74.192853,
+    "searchLocation": ["", "Keyport"]
   },
   {
-    "id": 127,
-    "fridgeName": "St. Nick Fridge",
-    "fridgeInstagram": "https://www.instagram.com/stnickfridge",
-    "fridgeWebsite": "",
+    "mainId": 111,
+    "fridgeName": "Saint Nick Fridge",
+    "maintainerInstagram": "https://www.instagram.com/stnickfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2045,13 +2136,14 @@
     "locationState": "NY",
     "locationZip": "11237",
     "locationGeoLat": 40.70406485,
-    "locationGeoLng": -73.91621383866075
+    "locationGeoLng": -73.91621383866075,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 128,
+    "mainId": 112,
     "fridgeName": "Mott Haven Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/motthavenfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2063,13 +2155,14 @@
     "locationState": "NY",
     "locationZip": "10028",
     "locationGeoLat": 40.7785447,
-    "locationGeoLng": -73.954845
+    "locationGeoLng": -73.954845,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 130,
-    "fridgeName": "In Our Hearts",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "mainId": 113,
+    "fridgeName": "In Our Hearts - West Farms",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2081,13 +2174,14 @@
     "locationState": "NY",
     "locationZip": "10460",
     "locationGeoLat": 40.83904002040039,
-    "locationGeoLng": -73.88085618225176
+    "locationGeoLng": -73.88085618225176,
+    "searchLocation": ["The Bronx", ""]
   },
   {
-    "id": 135,
-    "fridgeName": "Fridgeport James St location",
-    "fridgeInstagram": "https://www.instagram.com/fridgeport",
-    "fridgeWebsite": "",
+    "mainId": 114,
+    "fridgeName": "Fridgeport - James Street",
+    "maintainerInstagram": "https://www.instagram.com/fridgeport",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2099,13 +2193,14 @@
     "locationState": "CT",
     "locationZip": "06604",
     "locationGeoLat": 41.1821854,
-    "locationGeoLng": -73.1987195
+    "locationGeoLng": -73.1987195,
+    "searchLocation": ["Golden Hill Historic District", ""]
   },
   {
-    "id": 136,
+    "mainId": 115,
     "fridgeName": "Essex Market Plant-Based Community Fridge",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2117,13 +2212,14 @@
     "locationState": "NY",
     "locationZip": "10002",
     "locationGeoLat": 40.71784438095238,
-    "locationGeoLng": -73.9890200952381
+    "locationGeoLng": -73.9890200952381,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 139,
+    "mainId": 116,
     "fridgeName": "Fridge Haven",
-    "fridgeInstagram": "https://www.instagram.com/Fridgehaven",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/Fridgehaven",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2135,13 +2231,14 @@
     "locationState": "CT",
     "locationZip": "06511",
     "locationGeoLat": 41.3194993,
-    "locationGeoLng": -72.9343647
+    "locationGeoLng": -72.9343647,
+    "searchLocation": ["Winchester Repeating Arms Historic District", ""]
   },
   {
-    "id": 145,
+    "mainId": 117,
     "fridgeName": "We Do It Too Fridge",
-    "fridgeInstagram": "https://www.instagram.com/Wefridgetoo",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/Wefridgetoo",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2153,13 +2250,14 @@
     "locationState": "NY",
     "locationZip": "10039",
     "locationGeoLat": 40.8268962,
-    "locationGeoLng": -73.939288436322
+    "locationGeoLng": -73.939288436322,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 148,
+    "mainId": 118,
     "fridgeName": "East Elmhurst Fridge",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2171,13 +2269,14 @@
     "locationState": "NY",
     "locationZip": "11369",
     "locationGeoLat": 40.75764635,
-    "locationGeoLng": -73.87386342776941
+    "locationGeoLng": -73.87386342776941,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 152,
+    "mainId": 119,
     "fridgeName": "HashtagLunchbag BK x Fort Defiance",
-    "fridgeInstagram": "https://www.instagram.com/hashtaglunchbagbk",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/hashtaglunchbagbk",
+    "maintainerWebsite": "https://linktr.ee/PerfectlyAnaika",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2189,13 +2288,14 @@
     "locationState": "NY",
     "locationZip": "11231",
     "locationGeoLat": 40.67710495,
-    "locationGeoLng": -74.01282123900364
+    "locationGeoLng": -74.01282123900364,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 155,
+    "mainId": 120,
     "fridgeName": "NYCHA Dyckman Houses",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2207,13 +2307,14 @@
     "locationState": "NY",
     "locationZip": "10034",
     "locationGeoLat": 40.86098,
-    "locationGeoLng": -73.9219493
+    "locationGeoLng": -73.9219493,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 156,
+    "mainId": 121,
     "fridgeName": "Transmitter Park Fridge",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2225,13 +2326,14 @@
     "locationState": "NY",
     "locationZip": "11101",
     "locationGeoLat": 40.7382092,
-    "locationGeoLng": -73.9278923
+    "locationGeoLng": -73.9278923,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 159,
+    "mainId": 122,
     "fridgeName": "Port Chester Friendly Fridge",
-    "fridgeInstagram": "https://www.instagram.com/thepcfriendlyfridge/?hl=en",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/thepcfriendlyfridge/?hl=en",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2243,13 +2345,14 @@
     "locationState": "NY",
     "locationZip": "10573",
     "locationGeoLat": 41.0045693,
-    "locationGeoLng": -73.672907
+    "locationGeoLng": -73.672907,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 162,
+    "mainId": 123,
     "fridgeName": "Vinny's Pet Store Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/Vinnyspetshop",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/Vinnyspetshop",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2261,13 +2364,14 @@
     "locationState": "NY",
     "locationZip": "11220",
     "locationGeoLat": 40.63411595,
-    "locationGeoLng": -74.02196570642596
+    "locationGeoLng": -74.02196570642596,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 174,
+    "mainId": 124,
     "fridgeName": "Loisaida CommUnity Fridge",
-    "fridgeInstagram": "https://www.instagram.com/loisaidafridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/loisaidafridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2280,31 +2384,14 @@
     "locationState": "NY",
     "locationZip": "10009",
     "locationGeoLat": 40.7260202,
-    "locationGeoLng": -73.98012276021979
+    "locationGeoLng": -73.98012276021979,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 177,
-    "fridgeName": "BK Community Fridges",
-    "fridgeInstagram": "https://www.instagram.com/bkfridges",
-    "fridgeWebsite": "",
-    "fridgeVerified": false,
-    "fridgeNotes": "",
-    "maintainerName": "",
-    "maintainerEmail": "",
-    "maintainerOrganization": "",
-    "maintainerPhone": "",
-    "locationStreet": "635 Rogers Avenue",
-    "locationCity": "New York",
-    "locationState": "NY",
-    "locationZip": "11226",
-    "locationGeoLat": 40.6559839,
-    "locationGeoLng": -73.95287
-  },
-  {
-    "id": 180,
+    "mainId": 125,
     "fridgeName": "Hell's Kitchen Community Cupboard",
-    "fridgeInstagram": "https://www.instagram.com/hkfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/hkfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2316,13 +2403,14 @@
     "locationState": "NY",
     "locationZip": "10036",
     "locationGeoLat": 40.7620639,
-    "locationGeoLng": -73.9939254
+    "locationGeoLng": -73.9939254,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 182,
-    "fridgeName": "NBK - Music Hall Fridge",
-    "fridgeInstagram": "https://www.instagram.com/nbkfridges",
-    "fridgeWebsite": "",
+    "mainId": 126,
+    "fridgeName": "North Brooklyn Fridges - Music Hall",
+    "maintainerInstagram": "https://www.instagram.com/nbkfridges",
+    "maintainerWebsite": "https://linktr.ee/Nbkfridges",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2335,13 +2423,14 @@
     "locationState": "NY",
     "locationZip": "11249",
     "locationGeoLat": 40.719152300000005,
-    "locationGeoLng": -73.96178357116047
+    "locationGeoLng": -73.96178357116047,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 187,
+    "mainId": 127,
     "fridgeName": "Vieques Solidarity Library",
-    "fridgeInstagram": "https://www.instagram.com/nuestraxnevera",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/nuestraxnevera",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2353,13 +2442,14 @@
     "locationState": "NY",
     "locationZip": "10456",
     "locationGeoLat": 40.81914285714286,
-    "locationGeoLng": -73.90380071428571
+    "locationGeoLng": -73.90380071428571,
+    "searchLocation": ["Melrose", ""]
   },
   {
-    "id": 190,
+    "mainId": 128,
     "fridgeName": "Flatbush Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/flatbushcommunityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/flatbushcommunityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2371,13 +2461,14 @@
     "locationState": "NY",
     "locationZip": "11226",
     "locationGeoLat": 40.6502762,
-    "locationGeoLng": -73.9525846
+    "locationGeoLng": -73.9525846,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 191,
+    "mainId": 129,
     "fridgeName": "Hector Rafael Perez",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2389,13 +2480,14 @@
     "locationState": "NY",
     "locationZip": "11233",
     "locationGeoLat": 40.6855108,
-    "locationGeoLng": -73.91903355364005
+    "locationGeoLng": -73.91903355364005,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 194,
+    "mainId": 130,
     "fridgeName": "Clement Smiley Community Fridge",
-    "fridgeInstagram": "https://www.instagram.com/iotabro",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/iotabro",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2407,13 +2499,14 @@
     "locationState": "NY",
     "locationZip": "11369",
     "locationGeoLat": 40.76334,
-    "locationGeoLng": -73.876162
+    "locationGeoLng": -73.876162,
+    "searchLocation": ["East Elmhurst", "Queens"]
   },
   {
-    "id": 195,
+    "mainId": 131,
     "fridgeName": "PIN Community Fridge",
-    "fridgeInstagram": "",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2425,13 +2518,14 @@
     "locationState": "NY",
     "locationZip": "11230",
     "locationGeoLat": 40.6335233,
-    "locationGeoLng": -73.967415
+    "locationGeoLng": -73.967415,
+    "searchLocation": ["Brooklyn", ""]
   },
   {
-    "id": 197,
+    "mainId": 132,
     "fridgeName": "Chinatown Community Fridge & Pantry",
-    "fridgeInstagram": "https://www.instagram.com/chinatown.communityfridge",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/chinatown.communityfridge",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2443,13 +2537,14 @@
     "locationState": "NY",
     "locationZip": "10013",
     "locationGeoLat": 40.7172118,
-    "locationGeoLng": -73.9996427
+    "locationGeoLng": -73.9996427,
+    "searchLocation": ["Manhattan", ""]
   },
   {
-    "id": 201,
+    "mainId": 133,
     "fridgeName": "Maspeth Fridge",
-    "fridgeInstagram": "https://www.instagram.com/iohnyc",
-    "fridgeWebsite": "",
+    "maintainerInstagram": "https://www.instagram.com/iohnyc",
+    "maintainerWebsite": "",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2461,13 +2556,13 @@
     "locationState": "NY",
     "locationZip": "11378",
     "locationGeoLat": 40.7145983,
-    "locationGeoLng": -73.9117254
+    "locationGeoLng": -73.9117254,
+    "searchLocation": ["Queens", ""]
   },
   {
-    "id": 202,
+    "mainId": 134,
     "fridgeName": "The Fridge Etc.",
-    "fridgeInstagram": "https://www.etcproduce.com/the-fridge-etc",
-    "fridgeWebsite": "",
+    "maintainerWebsite": "https://www.etcproduce.com/the-fridge-etc",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2479,13 +2574,13 @@
     "locationState": "OH",
     "locationZip": "45225",
     "locationGeoLat": 39.135825,
-    "locationGeoLng": -84.536666
+    "locationGeoLng": -84.536666,
+    "searchLocation": ["Camp Washington", "Cincinnati"]
   },
   {
-    "id": 203,
+    "mainId": 135,
     "fridgeName": "COVUNITY Fridge",
-    "fridgeInstagram": "http://reddengardens.org/",
-    "fridgeWebsite": "",
+    "maintainerWebsite": "http://reddengardens.org/",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
@@ -2497,13 +2592,14 @@
     "locationState": "KY",
     "locationZip": "41011",
     "locationGeoLat": 39.081137,
-    "locationGeoLng": -84.508031
+    "locationGeoLng": -84.508031,
+    "searchLocation": ["", ""]
   },
   {
-    "id": 204,
+    "mainId": 136,
     "fridgeName": "North Brooklyn Fridges - Leonard Library",
-    "fridgeInstagram": "https://www.instagram.com/nbkfridges",
-    "fridgeWebsite": "https://linktr.ee/Nbkfridges",
+    "maintainerInstagram": "https://www.instagram.com/nbkfridges",
+    "maintainerWebsite": "https://linktr.ee/Nbkfridges",
     "fridgeVerified": false,
     "fridgeNotes": "",
     "maintainerName": "",
