@@ -1,0 +1,2216 @@
+{
+  "fridges": [
+    {
+      "id": "lescommunityfridge",
+      "name": "LES Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "466 Grand Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10002",
+        "geoLat": 40.715207,
+        "geoLng": -73.983748
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/les_communityfridge",
+        "website": "https://linktr.ee/lescommunityfridge"
+      }
+    },
+    {
+      "id": "barriofridge1",
+      "name": "Barrio Fridge #1",
+      "verified": false,
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thebarriofridge",
+        "website": "https://thebarriofridge.com/",
+        "email": "volunteers@thebarriofridge.com"
+      },
+      "location": {
+        "street": "339 East 108th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10029",
+        "geoLat": 40.7911604,
+        "geoLng": -73.9393979
+      }
+    },
+    {
+      "id": "harlemcommunityfridge",
+      "name": "Harlem Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "352 West 116th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10026",
+        "geoLat": 40.8049571,
+        "geoLng": -73.9570766,
+        "name": "Ralph & Nash Deli"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/theharlemcommunityfridge"
+      }
+    },
+    {
+      "id": "uptownfridge",
+      "name": "Uptown Fridge",
+      "verified": false,
+      "location": {
+        "street": "4672 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10040",
+        "geoLat": 40.863154,
+        "geoLng": -73.929629
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/theuptownfridge" }
+    },
+    {
+      "id": "madisonsquareboysandgirlsclub",
+      "name": "Madison Square Boys and Girls Club",
+      "verified": false,
+      "location": {
+        "street": "250 Bradhurst Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10039",
+        "geoLat": 40.8294203,
+        "geoLng": -73.9386208
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/the155streetfridge"
+      }
+    },
+    {
+      "id": "westharlemcommunityfridge",
+      "name": "West Harlem Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "521 West 126th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10027",
+        "geoLat": 40.8149431,
+        "geoLng": -73.9562415,
+        "name": "Saint Mary's Church of Manhattanville"
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/FridgeOnW126th" }
+    },
+    {
+      "id": "communityfridgewest120thstreet",
+      "name": "Community Fridge - West 120th Street",
+      "verified": false,
+      "location": {
+        "street": "86 West 120th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10026",
+        "geoLat": 40.8043636,
+        "geoLng": -73.94754
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Communityfridge120"
+      }
+    },
+    {
+      "id": "peoplesfridgewordup",
+      "name": "People's Fridge Word Up",
+      "verified": false,
+      "location": {
+        "street": "2113 Amsterdam Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10032",
+        "geoLat": 40.8376548,
+        "geoLng": -73.9382991,
+        "name": "Word Up Community Bookshop"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/peoplesfridgewordup",
+        "website": "https://linktr.ee/wordupfridge"
+      }
+    },
+    {
+      "id": "ujamaasolidarityfridge",
+      "name": "Ujamaa Solidarity Fridge",
+      "verified": false,
+      "location": {
+        "street": "830 Columbus Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10025",
+        "geoLat": 40.796449550000006,
+        "geoLng": -73.96528990317628
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/ujamaafridge" }
+    },
+    {
+      "id": "sixthstreetcommunitycenterfridge",
+      "name": "Sixth Street Community Center Fridge",
+      "verified": false,
+      "location": {
+        "street": "638 East 6th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10009",
+        "geoLat": 40.7236719,
+        "geoLng": -73.98025568410296
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/sixthstreetcc" }
+    },
+    {
+      "id": "sugarhillcommunityfridges",
+      "name": "Sugar Hill Community Fridges",
+      "verified": false,
+      "location": {
+        "street": "3671 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10031",
+        "geoLat": 40.830788,
+        "geoLng": -73.947599,
+        "name": "Good Stuff Juice Company"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/sugarhillfridge",
+        "website": "http://linktr.ee/sugarhillfridge"
+      }
+    },
+    {
+      "id": "westendcommunityfridge",
+      "name": "West End Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "245 West 77th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10024",
+        "geoLat": 40.7830061,
+        "geoLng": -73.981814
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/westendfridge",
+        "website": "http://linktr.ee/westendfridge"
+      }
+    },
+    {
+      "id": "peoplespeoplesfridge",
+      "name": "People's People's Fridge",
+      "verified": false,
+      "location": {
+        "street": "908 Saint Nicholas Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10032",
+        "geoLat": 40.8311013,
+        "geoLng": -73.9410869
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thepeoplespeoplesfridge",
+        "website": "https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform"
+      }
+    },
+    {
+      "id": "smaccommunityfridge",
+      "name": "S'MAC Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "197 1st Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10003",
+        "geoLat": 40.730191,
+        "geoLng": -73.983639,
+        "name": "S'MAC East Village"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/eastvillageneighbors/",
+        "website": "https://linktr.ee/Eastvillageneighbors"
+      }
+    },
+    {
+      "id": "chelseacommunityfridgecupboard",
+      "name": "Chelsea Community Fridge & Cupboard",
+      "verified": false,
+      "location": {
+        "street": "55 West 15th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10011",
+        "geoLat": 40.7378597,
+        "geoLng": -73.99558230349778
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Thechelseafridge",
+        "website": "http://linktr.ee/thechelseafridge"
+      }
+    },
+    {
+      "id": "broomeboweryfridge",
+      "name": "Broome & Bowery Fridge",
+      "verified": false,
+      "location": {
+        "street": "329 Broome Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10002",
+        "geoLat": 40.719040449999994,
+        "geoLng": -73.99389033403406
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/broomeboweryfridge"
+      }
+    },
+    {
+      "id": "lanevera183",
+      "name": "La Nevera 183",
+      "verified": false,
+      "location": {
+        "street": "500 West 180th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10033",
+        "geoLat": 40.8474732,
+        "geoLng": -73.931775,
+        "name": "Washington Heights CORNER Project"
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/lanevera183" },
+      "notes": "On the 2nd Floor"
+    },
+    {
+      "id": "overthrowcommunityfridge",
+      "name": "Overthrow Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "9 Bleecker Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10012",
+        "geoLat": 40.72553285,
+        "geoLng": -73.992831965796,
+        "name": "Overthrow Boxing Club"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/overthrowcommunityfridge"
+      }
+    },
+    {
+      "name": "Barrio Fridge #2",
+      "id": "barriofridge2",
+      "verified": false,
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thebarriofridge",
+        "website": "https://thebarriofridge.com/",
+        "email": "volunteers@thebarriofridge.com"
+      },
+      "location": {
+        "street": "314 East 106th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10029",
+        "geoLat": 40.78999785,
+        "geoLng": -73.94161519709277
+      }
+    },
+    {
+      "id": "fridgeatthefort",
+      "name": "Fridge at the Fort",
+      "verified": false,
+      "location": {
+        "street": "770 West 181st Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10033",
+        "geoLat": 40.8507466,
+        "geoLng": -73.9381774,
+        "name": "Hudson View Restaurant"
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/fortfridge" }
+    },
+    {
+      "id": "communityfridgeatsaintjude",
+      "name": "Community Fridge at Saint Jude",
+      "verified": false,
+      "location": {
+        "street": "511 West 164th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10032",
+        "geoLat": 40.837692950000005,
+        "geoLng": -73.93940732299878,
+        "name": "Centro Altagracia"
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/altagraciafaith" }
+    },
+    {
+      "id": "astoriafridge",
+      "name": "Astoria Fridge",
+      "verified": false,
+      "location": {
+        "street": "8-01 Astoria Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11102",
+        "geoLat": 40.77280815,
+        "geoLng": -73.93241274910629
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/astoriafridge",
+        "website": "http://linktr.ee/Astoriafridge"
+      }
+    },
+    {
+      "id": "jacksonheightscommunityfridge",
+      "name": "Jackson Heights Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "80-02 Northern Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11372",
+        "geoLat": 40.7552278,
+        "geoLng": -73.8870637
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/jacksonheightscommunityfridge",
+        "website": "http://rb.gy/koufel"
+      }
+    },
+    {
+      "id": "fenixfridge",
+      "name": "FENIX Fridge",
+      "verified": false,
+      "location": {
+        "street": "586 Seneca Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11385",
+        "geoLat": 40.7041427,
+        "geoLng": -73.9103173780007
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fenixcommunityfridge"
+      }
+    },
+    {
+      "id": "elmhurstcommunityfridge2",
+      "name": "Elmhurst Community Fridge #2",
+      "verified": false,
+      "maintainer": {
+        "instagram": "https://www.instagram.com/elmhurstcommunityfridge2",
+        "website": "http://bit.ly/3j7YkBy",
+        "email": "elmhurstcommunityfridge2@gmail.com"
+      },
+      "location": {
+        "street": "77-02 Woodside Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11373",
+        "geoLat": 40.743449,
+        "geoLng": -73.887837
+      }
+    },
+    {
+      "id": "rockawaymutualaidalmedaavenue",
+      "name": "Rockaway Mutual Aid - Almeda Avenue",
+      "verified": false,
+      "location": {
+        "street": "69-62 Almeda Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11692",
+        "geoLat": 40.596882,
+        "geoLng": -73.8009287
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/rockawaymutualaid",
+        "website": "http://linktr.ee/rockawaymutualaid"
+      }
+    },
+    {
+      "id": "jamaicacommunityfridge1",
+      "name": "Jamaica Community Fridge #1",
+      "verified": false,
+      "location": {
+        "street": "107-58 Sutphin Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11435",
+        "geoLat": 40.6930826,
+        "geoLng": -73.799676
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/jamaicacommunityfridge",
+        "website": "http://forms.gle/jmF5HpgEKHD7ctFF8"
+      }
+    },
+    {
+      "id": "rockawaymutualaidbeach92ndstreet",
+      "name": "Rockaway Mutual Aid - Beach 92nd Street",
+      "verified": false,
+      "location": {
+        "street": "166 Beach 92nd Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11693",
+        "geoLat": 40.585683700000004,
+        "geoLng": -73.81458874999998
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/rockawaymutualaid",
+        "website": "http://linktr.ee/rockawaymutualaid"
+      }
+    },
+    {
+      "id": "justusfaraithefridge",
+      "name": "Justus Farai the Fridge",
+      "verified": false,
+      "location": {
+        "street": "231-34 Merrick Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11413",
+        "geoLat": 40.6752317,
+        "geoLng": -73.7383116
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/laureltoncommunityfridge"
+      }
+    },
+    {
+      "id": "rtucommunityfridge",
+      "name": "RTU Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "955 Seneca Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11385",
+        "geoLat": 40.7000279,
+        "geoLng": -73.9027766
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/ridgewoodtenantsunion",
+        "website": "https://www.ridgewoodtenantsunion.org/"
+      }
+    },
+    {
+      "id": "brotherswashdrycommunityfridge",
+      "name": "Brothers Wash & Dry Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "54-26 Nurge Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11378",
+        "geoLat": 40.715399,
+        "geoLng": -73.910843,
+        "name": "Brothers Wash & Dry"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/brotherswashndry",
+        "website": "http://sampsondahl.com"
+      }
+    },
+    {
+      "id": "coronacomunidadfridge",
+      "name": "Corona Comunidad Fridge",
+      "verified": false,
+      "location": {
+        "street": "104-05 47th Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11368",
+        "geoLat": 40.745935200000005,
+        "geoLng": -73.85931074670697,
+        "name": "Tortilleria Nixtamal"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/CoronaComunidadFridge",
+        "website": "https://linktr.ee/coronacomunidadfridge"
+      }
+    },
+    {
+      "id": "jamaicacommunityfridge2",
+      "name": "Jamaica Community Fridge #2",
+      "verified": false,
+      "location": {
+        "street": "92-15 149th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11435",
+        "geoLat": 40.7017391,
+        "geoLng": -73.8053557
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/jamaicacommunityfridge",
+        "website": "http://forms.gle/jmF5HpgEKHD7ctFF8"
+      }
+    },
+    {
+      "id": "queensvillagecommunityfridge",
+      "name": "Queens Village Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "190-03 Hollis Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11423",
+        "geoLat": 40.70957,
+        "geoLng": -73.767468
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/qvcommunityfridge",
+        "website": "http://linktr.ee/qvcommunityfridge"
+      }
+    },
+    {
+      "id": "ravenswoodcommunityfridge",
+      "name": "Ravenswood Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "12-14 36th Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11106",
+        "geoLat": 40.7605726,
+        "geoLng": -73.9388595
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/ravenswoodfridge"
+      }
+    },
+    {
+      "id": "ozoneparkcommunityfridge",
+      "name": "Ozone Park Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "132-02 Liberty Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11419",
+        "geoLat": 40.690548,
+        "geoLng": -73.813862
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/southsideactionpact"
+      }
+    },
+    {
+      "id": "ridgewoodcommunityfridge",
+      "name": "Ridgewood Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "612 Woodward Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11385",
+        "geoLat": 40.7057463,
+        "geoLng": -73.9074909
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/woodbine.nyc",
+        "website": "http://woodbine.nyc/mutualaid"
+      }
+    },
+    {
+      "id": "astoriahalalfridge",
+      "name": "Astoria Halal Fridge",
+      "verified": false,
+      "location": {
+        "street": "25-75 Steinway Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11103",
+        "geoLat": 40.7659946,
+        "geoLng": -73.91298101122449
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/astoriahalalfridge"
+      }
+    },
+    {
+      "id": "saintalbanscommunityfridge",
+      "name": "Saint Albans Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "172-17 Linden Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11433",
+        "geoLat": 40.6924179,
+        "geoLng": -73.77767680425106,
+        "name": "Saint Albans Congregational Church"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/stalbanscommunityfridge",
+        "website": "https://linktr.ee/st.albanscommunityfridge"
+      },
+      "notes": "In front of the Robert Ross Johnson Family Life Center"
+    },
+    {
+      "id": "nexusfridge",
+      "name": "Nexus Fridge",
+      "verified": false,
+      "location": {
+        "street": "39-31 29th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11101",
+        "geoLat": 40.7527012,
+        "geoLng": -73.9350775,
+        "name": "Flux Factory"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/nexusfridge",
+        "website": "https://linktr.ee/nexusfridge"
+      }
+    },
+    {
+      "id": "flushingcommunityfridge",
+      "name": "Flushing Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "136-23 Sanford Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11355",
+        "geoLat": 40.75713255,
+        "geoLng": -73.82817982051716
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/flushingcommunityfridge",
+        "website": "https://linktr.ee/flushingcommunityfridge"
+      }
+    },
+    {
+      "id": "woodsidecommunityfridge",
+      "name": "Woodside Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "50-27 31st Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11377",
+        "geoLat": 40.7572375,
+        "geoLng": -73.9080539
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/woodsidefridge",
+        "website": "https://swma.nyc/wcf"
+      }
+    },
+    {
+      "id": "beautystrike",
+      "name": "Beauty Strike",
+      "verified": false,
+      "location": {
+        "street": "73 Washington Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11205",
+        "geoLat": 40.696509,
+        "geoLng": -73.967347
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/beautystrikeny" }
+    },
+    {
+      "id": "crownheightscommunityfridge",
+      "name": "Crown Heights Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1144 Bergen Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11216",
+        "geoLat": 40.67575415,
+        "geoLng": -73.94781344792531
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/bergencommunityfridge"
+      }
+    },
+    {
+      "id": "downtownbrooklyncommunityfridge",
+      "name": "Downtown Brooklyn Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "136 Lawrence Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11201",
+        "geoLat": 40.6920518,
+        "geoLng": -73.9864185
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/dtbkfridge" }
+    },
+    {
+      "id": "friendlyfridgeflatbush",
+      "name": "Friendly Fridge - Flatbush",
+      "verified": false,
+      "location": {
+        "street": "1110 Nostrand Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11225",
+        "geoLat": 40.66059,
+        "geoLng": -73.950819
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/flatbushfriendlyfridge"
+      }
+    },
+    {
+      "id": "gowanusfridgenaturebased",
+      "name": "Gowanus Fridge - Nature Based",
+      "verified": false,
+      "location": {
+        "street": "123 3rd Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11231",
+        "geoLat": 40.67697,
+        "geoLng": -73.991601
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thegowanusfridge",
+        "website": "http://forms.gle/pLdjsrE1PVxPTFQHA"
+      }
+    },
+    {
+      "id": "gowanusfridgepostmarkcafe",
+      "name": "Gowanus Fridge - Postmark Cafe",
+      "verified": false,
+      "location": {
+        "street": "326 6th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11215",
+        "geoLat": 40.671071,
+        "geoLng": -73.985199
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thegowanusfridge",
+        "website": "http://forms.gle/pLdjsrE1PVxPTFQHA"
+      }
+    },
+    {
+      "id": "greenpointfridge",
+      "name": "Greenpoint Fridge",
+      "verified": false,
+      "location": {
+        "street": "17 Nassau Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11222",
+        "geoLat": 40.722877,
+        "geoLng": -73.954146,
+        "name": "The Lot Radio"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/greenpointfridge"
+      }
+    },
+    {
+      "id": "playgroundcoffeeshop",
+      "name": "Playground Coffee Shop",
+      "verified": false,
+      "location": {
+        "street": "1114 Bedford Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11216",
+        "geoLat": 40.6866024,
+        "geoLng": -73.95480865648646
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/playgroundcoffeeshop"
+      }
+    },
+    {
+      "id": "sincerelytommy",
+      "name": "Sincerely Tommy",
+      "verified": false,
+      "location": {
+        "street": "343 Tompkins Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.6860681,
+        "geoLng": -73.9443146
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/sincerelytommy_" }
+    },
+    {
+      "id": "livinggallery",
+      "name": "Living Gallery",
+      "verified": false,
+      "location": {
+        "street": "1094 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.694207,
+        "geoLng": -73.930599
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/the_living_gallery",
+        "website": "http://linktr.ee/Thelivinggallery"
+      }
+    },
+    {
+      "id": "universecityfridge",
+      "name": "Universe City Fridge",
+      "verified": false,
+      "location": {
+        "street": "234 Glenmore Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11207",
+        "geoLat": 40.67219753846154,
+        "geoLng": -73.9020948846154
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/universecitynyc" }
+    },
+    {
+      "id": "inourheartsvanburen",
+      "name": "In Our Hearts - Van Buren",
+      "verified": false,
+      "location": {
+        "street": "133 Van Buren Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.69053555,
+        "geoLng": -73.94067625466758
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/iohnyc" }
+    },
+    {
+      "id": "publicassistantscommunityfridge",
+      "name": "Public Assistants Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "711 Franklin Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11216",
+        "geoLat": 40.674284,
+        "geoLng": -73.956511
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/publicassistants",
+        "website": "http://www.publicassistants.org"
+      }
+    },
+    {
+      "id": "hashtaglunchbagbkxredhook",
+      "name": "HashtagLunchbag BK x Red Hook",
+      "verified": false,
+      "location": {
+        "street": "367 Columbia Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11231",
+        "geoLat": 40.679498,
+        "geoLng": -74.005209
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hashtaglunchbagbk",
+        "website": "https://linktr.ee/PerfectlyAnaika"
+      }
+    },
+    {
+      "id": "friendlyfridgeknickerbocker",
+      "name": "Friendly Fridge - Knickerbocker",
+      "verified": false,
+      "location": {
+        "street": "190 Knickerbocker Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11237",
+        "geoLat": 40.703637,
+        "geoLng": -73.9272235
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thefriendlyfridge"
+      }
+    },
+    {
+      "id": "hairmetal",
+      "name": "Hair Metal",
+      "verified": false,
+      "location": {
+        "street": "578 Driggs Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11211",
+        "geoLat": 40.7164659,
+        "geoLng": -73.9572052
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/hairmetalsalon" }
+    },
+    {
+      "id": "cooperparkfridge",
+      "name": "Cooper Park Fridge",
+      "verified": false,
+      "location": {
+        "street": "76 Kingsland Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11211",
+        "geoLat": 40.7183849,
+        "geoLng": -73.9402009
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/cooperparkfridge",
+        "website": "https://linktr.ee/northbrooklynmutualaid"
+      }
+    },
+    {
+      "id": "koinoniajuanbautistachurchcommunityfridge",
+      "name": "Koinonia Juan Bautista Church Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "98 Richards Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11231",
+        "geoLat": 40.6788566,
+        "geoLng": -74.0088169594481,
+        "name": "Visitation of the Blessed Virgin Mary Roman Catholic Church"
+      }
+    },
+    {
+      "id": "evergreenfreefridge",
+      "name": "Evergreen Free Fridge",
+      "verified": false,
+      "location": {
+        "street": "562 Evergreen Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.6905271,
+        "geoLng": -73.9161505
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/evergreenfreefridge"
+      }
+    },
+    {
+      "id": "solidarityfridge",
+      "name": "Solidarity Fridge",
+      "verified": false,
+      "location": {
+        "street": "315 East 16th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11226",
+        "geoLat": 40.6429095,
+        "geoLng": -73.96358101823799,
+        "name": "11226"
+      }
+    },
+    {
+      "id": "bakeshopfridge",
+      "name": "Bake Shop Fridge",
+      "verified": false,
+      "location": {
+        "street": "995 Flushing Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11206",
+        "geoLat": 40.7032349,
+        "geoLng": -73.9328618
+      },
+      "maintainer": { "phone": "(718) 381-3706" }
+    },
+    {
+      "id": "friendlyfridgeheights",
+      "name": "Friendly Fridge - Heights",
+      "verified": false,
+      "location": {
+        "street": "461 Lincoln Place",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11238",
+        "geoLat": 40.6723208,
+        "geoLng": -73.9608401,
+        "name": "461 Munchiez"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/theheightsfriendlyfridge"
+      }
+    },
+    {
+      "id": "fortgreenecommunityfridge",
+      "name": "Fort Greene Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "357 Myrtle Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11205",
+        "geoLat": 40.693319,
+        "geoLng": -73.971718
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fgcommunityfridge",
+        "website": "http://linktr.ee/fgcommunityfridge"
+      }
+    },
+    {
+      "id": "bushwickcommunityfridge",
+      "name": "Bushwick Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1643 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11207",
+        "geoLat": 40.684963,
+        "geoLng": -73.913824
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thebushwickfridge"
+      }
+    },
+    {
+      "id": "penniespantry",
+      "name": "Pennies Pantry",
+      "verified": false,
+      "location": {
+        "street": "535 Marcy Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11206",
+        "geoLat": 40.6969936,
+        "geoLng": -73.9493842
+      },
+      "maintainer": {
+        "email": "penniespantrybk@gmail.com",
+        "instagram": "https://www.instagram.com/penniespantrybk",
+        "website": "https://linktr.ee/penniespantrybk"
+      }
+    },
+    {
+      "id": "hashtaglunchbagbkxwyckofffarmhousemuseum",
+      "name": "HashtagLunchbag BK x Wyckoff Farmhouse Museum",
+      "verified": false,
+      "location": {
+        "street": "5816 Clarendon Road",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11203",
+        "geoLat": 40.6443616,
+        "geoLng": -73.9208761,
+        "name": "Wyckoff House Museum"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hashtaglunchbagbk",
+        "website": "https://linktr.ee/PerfectlyAnaika"
+      }
+    },
+    {
+      "id": "laneverademarcy",
+      "name": "La Nevera de Marcy",
+      "verified": false,
+      "location": {
+        "street": "280 Marcy Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11211",
+        "geoLat": 40.70501,
+        "geoLng": -73.95599750000001
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/neverademarcy" }
+    },
+    {
+      "id": "brooklyncommunityfridgesflatbush",
+      "name": "Brooklyn Community Fridges - Flatbush",
+      "verified": false,
+      "location": {
+        "street": "625 Rogers Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11225",
+        "geoLat": 40.656318850000005,
+        "geoLng": -73.95284655860519
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/bkfridges",
+        "website": "http://linktr.ee/bk4bl"
+      }
+    },
+    {
+      "id": "knowwastelandscommunityfridge",
+      "name": "Know Waste Lands Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1309 DeKalb Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.698164999999996,
+        "geoLng": -73.925404
+      },
+      "maintainer": {
+        "email": "kwlfridge@gmail.com",
+        "instagram": "https://www.instagram.com/kwlgarden",
+        "website": "http://knowwastelands.org"
+      },
+      "notes": "TEMPORARILY OFFLINE (cannot accept food due to no electricity)"
+    },
+    {
+      "id": "2fish5loavesfridge",
+      "name": "2 Fish 5 Loaves Fridge",
+      "verified": false,
+      "location": {
+        "street": "63 Whipple Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11206",
+        "geoLat": 40.701704250000006,
+        "geoLng": -73.94450872865644
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/2fish5loavesfridge"
+      }
+    },
+    {
+      "id": "paperboylovegallery",
+      "name": "Paperboy Love Gallery",
+      "verified": false,
+      "location": {
+        "street": "1254 Myrtle Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.697759,
+        "geoLng": -73.927282
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/paperboy.lovegallery"
+      }
+    },
+    {
+      "id": "classoncommunityfridge",
+      "name": "Classon Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "641 Classon Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11238",
+        "geoLat": 40.67855745,
+        "geoLng": -73.95853808690475
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Classon_Community_Fridge",
+        "website": "https://linktr.ee/Classon_Community_Fridge"
+      }
+    },
+    {
+      "id": "mixtecascommunityfridge",
+      "name": "Mixteca's Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "245 23rd Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11215",
+        "geoLat": 40.6601147,
+        "geoLng": -73.9941986
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/mixtecaorg",
+        "website": "https://www.mixteca.org"
+      }
+    },
+    {
+      "id": "copohalalcommunityfridge",
+      "name": "COPO Halal Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1077 Coney Island Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11230",
+        "geoLat": 40.6313315,
+        "geoLng": -73.96621703154759
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/copousa" }
+    },
+    {
+      "id": "onlunchbreakxgirlsonlynyfridge",
+      "name": "@onlunchbreak x @girlsonlyny Fridge",
+      "verified": false,
+      "location": {
+        "street": "2423 Mermaid Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11224",
+        "geoLat": 40.57602215,
+        "geoLng": -73.99194985
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/onlunchbreak" }
+    },
+    {
+      "id": "successgardencommunity",
+      "name": "Success Garden Community",
+      "verified": false,
+      "location": {
+        "street": "461 Williams Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11207",
+        "geoLat": 40.663794255319154,
+        "geoLng": -73.8975444680851
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/successgardencommunity"
+      }
+    },
+    {
+      "id": "onelovecommunityfridge",
+      "name": "One Love Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "432 Myrtle Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11205",
+        "geoLat": 40.693043,
+        "geoLng": -73.968396
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Onelovecommunityfridge",
+        "website": "http://www.onelovecommunityfridge.org"
+      }
+    },
+    {
+      "id": "fultonstreetfridge",
+      "name": "Fulton Street Fridge",
+      "verified": false,
+      "location": {
+        "street": "991 Fulton Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11238",
+        "geoLat": 40.68284,
+        "geoLng": -73.963217
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fultonstfridge",
+        "website": "https://linktr.ee/fultonstfridge/"
+      }
+    },
+    {
+      "id": "bedfordparkcommunityfridge",
+      "name": "Bedford Park Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1 Bedford Park Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10468",
+        "geoLat": 40.8734189,
+        "geoLng": -73.8891388
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/bedfordparkcommunityfridge"
+      }
+    },
+    {
+      "id": "sybcommunityfridge",
+      "name": "SYB Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "237 McClellan Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10456",
+        "geoLat": 40.832265899999996,
+        "geoLng": -73.91622935571675
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/1freedom4all" }
+    },
+    {
+      "id": "friendlyfridgebronx",
+      "name": "Friendly Fridge - Bronx",
+      "verified": false,
+      "location": {
+        "street": "5977 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10463",
+        "geoLat": 40.88975,
+        "geoLng": -73.898535
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thefriendlyfridgebx"
+      }
+    },
+    {
+      "id": "allertonalliescommunityfridge",
+      "name": "Allerton Allies Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "2527 Boston Road",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10467",
+        "geoLat": 40.86401,
+        "geoLng": -73.864721
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/allertonalliesfridge"
+      }
+    },
+    {
+      "id": "lovingthebronxfridge",
+      "name": "Loving the Bronx Fridge",
+      "verified": false,
+      "location": {
+        "street": "88 Hugh J. Grant Circle",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10472",
+        "geoLat": 40.83332398979592,
+        "geoLng": -73.86147191836734
+      },
+      "maintainer": {
+        "phone": "(347) 992-2860",
+        "instagram": "https://www.instagram.com/lovingthebronx"
+      },
+      "notes": "Do NOT place any items in the refrigerator.\nIf you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you"
+    },
+    {
+      "id": "motthavenfridge1",
+      "name": "Mott Haven Fridge #1",
+      "verified": false,
+      "location": {
+        "street": "297 Brook Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10454",
+        "geoLat": 40.8090972,
+        "geoLng": -73.9185003
+      },
+      "maintainer": {
+        "email": "info@motthavenfridge.com",
+        "instagram": "https://www.instagram.com/motthavenfridge/",
+        "website": "https://www.motthavenfridge.com/"
+      }
+    },
+    {
+      "id": "nuestranevera",
+      "name": "Nuestra Nevera",
+      "verified": false,
+      "location": {
+        "street": "737 East 156th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10456",
+        "geoLat": 40.8182998,
+        "geoLng": -73.906351
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/nuestraxnevera",
+        "website": "http://linktr.ee/bumdsa"
+      }
+    },
+    {
+      "id": "soundviewcommunityfridge",
+      "name": "Soundview Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "400 Soundview Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10473",
+        "geoLat": 40.8135149,
+        "geoLng": -73.85765
+      },
+      "maintainer": {
+        "name": "Desiree Joy Frias",
+        "instagram": "https://www.instagram.com/nuestraxnevera"
+      }
+    },
+    {
+      "id": "motthavenfridge2",
+      "name": "Mott Haven Fridge #2",
+      "verified": false,
+      "location": {
+        "street": "574 East 141st Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10454",
+        "geoLat": 40.808354800000004,
+        "geoLng": -73.91583282000796
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/motthavenfridge",
+        "website": "https://www.motthavenfridge.com/"
+      }
+    },
+    {
+      "id": "anchorfridge",
+      "name": "Anchor Fridge",
+      "verified": false,
+      "location": {
+        "street": "239 City Island Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10464",
+        "geoLat": 40.844986500000005,
+        "geoLng": -73.78592059779425
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/anchorfridge",
+        "website": "http://www.linktr.ee/southbronxmutualaid"
+      }
+    },
+    {
+      "id": "fjmfridge",
+      "name": "FJM Fridge",
+      "verified": false,
+      "location": {
+        "street": "260 West 231st Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10463",
+        "geoLat": 40.880019,
+        "geoLng": -73.907255
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/food_justice_ministry",
+        "website": "http://linktr.ee/foodjusticeministry"
+      }
+    },
+    {
+      "id": "yonkerscommunityfridge",
+      "name": "Yonkers Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "17 Riverdale Avenue",
+        "city": "Yonkers",
+        "state": "NY",
+        "zip": "10701",
+        "geoLat": 40.93300672015364,
+        "geoLng": -73.9002516758224
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/yonkerscommunityfridge"
+      }
+    },
+    {
+      "id": "neighborhoodfridge",
+      "name": "Neighborhood Fridge",
+      "verified": false,
+      "location": {
+        "street": "5540 Mosholu Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10471",
+        "geoLat": 40.90366705,
+        "geoLng": -73.90272705322482,
+        "name": "Riverdale Library"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/theneighborhoodfridge",
+        "website": "https://linktr.ee/theneighborhoodfridge"
+      }
+    },
+    {
+      "id": "forestavenuecomeunityfridge",
+      "name": "Forest Avenue ComeUnity Fridge",
+      "verified": false,
+      "location": {
+        "street": "2142 Forest Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10303",
+        "geoLat": 40.62648790909091,
+        "geoLng": -74.16090545454546
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/forestavecomeunityfridge",
+        "website": "https://www.facebook.com/forestavecomeunityfridge/"
+      }
+    },
+    {
+      "id": "kingstoncommunityfridgevanburen",
+      "name": "Kingston Community Fridge - Van Buren",
+      "verified": false,
+      "location": {
+        "street": "14 Van Buren Street",
+        "city": "Kingston",
+        "state": "NY",
+        "zip": "12401",
+        "geoLat": 41.930009299999995,
+        "geoLng": -74.00731654893085
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/kingstoncommunityfridge",
+        "website": "https://www.facebook.com/kingstoncommunityfridge/"
+      }
+    },
+    {
+      "id": "buffalocommunityfridge",
+      "name": "Buffalo Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "257 East Ferry Street",
+        "city": "Buffalo",
+        "state": "NY",
+        "zip": "14208",
+        "geoLat": 42.9149516,
+        "geoLng": -78.8547615
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/buffalocommunityfridge"
+      }
+    },
+    {
+      "id": "kingstoncommunityfridgeclintonavenue",
+      "name": "Kingston Community Fridge - Clinton Avenue",
+      "verified": false,
+      "location": {
+        "street": "122 Clinton Avenue",
+        "city": "Kingston",
+        "state": "NY",
+        "zip": "12401",
+        "geoLat": 41.929698450000004,
+        "geoLng": -74.01215210000001,
+        "name": "Clinton Avenue Methodist Church"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/kingstoncommunityfridge",
+        "website": "https://www.facebook.com/kingstoncommunityfridge/"
+      }
+    },
+    {
+      "id": "greenvillecommunityfridge",
+      "name": "Greenville Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "57 Rose Avenue",
+        "city": "Jersey City",
+        "state": "NJ",
+        "zip": "07305",
+        "geoLat": 40.700012,
+        "geoLng": -74.09015
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/GreenvilleCommunityFridge"
+      }
+    },
+    {
+      "id": "unioncitycommunityfridge",
+      "name": "Union City Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "709 15th Street",
+        "city": "Union City",
+        "state": "NJ",
+        "zip": "07087",
+        "geoLat": 40.76273637688739,
+        "geoLng": -74.03923744745303
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/ucfridge" }
+    },
+    {
+      "id": "westsidecommunityfridge",
+      "name": "West Side Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "224 Delaware Avenue",
+        "city": "Jersey City",
+        "state": "NJ",
+        "zip": "07306",
+        "geoLat": 40.72754376271187,
+        "geoLng": -74.07707477966102
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/westsidecommunityfridge",
+        "website": "http://linktr.ee/westsidecommunityfridge"
+      }
+    },
+    {
+      "id": "foodforus",
+      "name": "Food For Us",
+      "verified": false,
+      "location": {
+        "street": "6510 Palisade Avenue",
+        "city": "West New York",
+        "state": "NJ",
+        "zip": "07093",
+        "geoLat": 40.792199,
+        "geoLng": -74.010348
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/foodforusnj" }
+    },
+    {
+      "id": "jcheightscommunityfridge",
+      "name": "JC Heights Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "372 Webster Avenue",
+        "city": "Jersey City",
+        "state": "NJ",
+        "zip": "07307",
+        "geoLat": 40.751017,
+        "geoLng": -74.041621
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/jcheightscommunityfridge/",
+        "website": "https://linktr.ee/jcheightscommunityfridge"
+      }
+    },
+    {
+      "id": "collectivefocusresourcehub",
+      "name": "Collective Focus Resource Hub",
+      "verified": false,
+      "location": {
+        "street": "1046 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.695189,
+        "geoLng": -73.932345
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/collectivefocushub"
+      }
+    },
+    {
+      "id": "farmtopeoplecommunityfridge",
+      "name": "Farm to People Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "1100 Flushing Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11237",
+        "geoLat": 40.7051413,
+        "geoLng": -73.92706200131855
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/farmtopeople" }
+    },
+    {
+      "id": "uticacommunityfridge",
+      "name": "Utica Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "112 South Street",
+        "city": "Utica",
+        "state": "NY",
+        "zip": "13501",
+        "geoLat": 43.0962845,
+        "geoLng": -75.2346536
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/uticacommunityfridge"
+      }
+    },
+    {
+      "id": "brooklyncommunityfridgescrownheights",
+      "name": "Brooklyn Community Fridges - Crown Heights",
+      "verified": false,
+      "location": {
+        "street": "1148 Union Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11225",
+        "geoLat": 40.66900205,
+        "geoLng": -73.95365084817391
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/bkfridges",
+        "website": "http://linktr.ee/bk4bl"
+      }
+    },
+    {
+      "id": "fridgesfamily",
+      "name": "Fridges & Family",
+      "verified": false,
+      "location": {
+        "street": "1149 South 9th Street",
+        "city": "Philadelphia",
+        "state": "PA",
+        "zip": "19147",
+        "geoLat": 39.935031200000005,
+        "geoLng": -75.158604
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fridgesandfamily"
+      }
+    },
+    {
+      "id": "brooklynheightscommunityfridge",
+      "name": "Brooklyn Heights Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "124 Henry Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11201",
+        "geoLat": 40.696995,
+        "geoLng": -73.993431
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/brooklynheightscommunityfridge"
+      }
+    },
+    {
+      "id": "kwtcommunityfridge",
+      "name": "KWT Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "137 East 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10009",
+        "geoLat": 40.7230038,
+        "geoLng": -73.98635715974333
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/kwtfridge"
+      }
+    },
+    {
+      "id": "leonwrightlittlefreepantry",
+      "name": "Leon Wright Little Free Pantry",
+      "verified": false,
+      "location": {
+        "street": "144 Hull Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11233",
+        "geoLat": 40.679435350000006,
+        "geoLng": -73.91009056174387
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hullstreetblockassociation"
+      }
+    },
+    {
+      "id": "eileensfreebodega",
+      "name": "Eileens Free Bodega",
+      "verified": false,
+      "location": {
+        "street": "155 Third Street",
+        "city": "Keyport",
+        "state": "NJ",
+        "zip": "07735",
+        "geoLat": 40.437275,
+        "geoLng": -74.192853
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/eileensfreebodega_"
+      }
+    },
+    {
+      "id": "saintnickfridge",
+      "name": "Saint Nick Fridge",
+      "verified": false,
+      "location": {
+        "street": "176 Saint Nicholas Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11237",
+        "geoLat": 40.70406485,
+        "geoLng": -73.91621383866075,
+        "name": "Bushwick Abbey"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/stnickfridge"
+      }
+    },
+    {
+      "id": "motthavencommunityfridge",
+      "name": "Mott Haven Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "185 East 85th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10028",
+        "geoLat": 40.7785447,
+        "geoLng": -73.954845
+      }
+    },
+    {
+      "id": "inourheartswestfarms",
+      "name": "In Our Hearts - West Farms",
+      "verified": false,
+      "location": {
+        "street": "1939 West Farms Road",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10460",
+        "geoLat": 40.83904002040039,
+        "geoLng": -73.88085618225176
+      }
+    },
+    {
+      "id": "fridgeportjamesstreet",
+      "name": "Fridgeport - James Street",
+      "verified": false,
+      "location": {
+        "street": "219 James Street",
+        "city": "Bridgeport",
+        "state": "CT",
+        "zip": "06604",
+        "geoLat": 41.1821854,
+        "geoLng": -73.1987195
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fridgeport"
+      }
+    },
+    {
+      "id": "essexmarketplantbasedcommunityfridge",
+      "name": "Essex Market Plant-Based Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "220 Broome Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10002",
+        "geoLat": 40.71784438095238,
+        "geoLng": -73.9890200952381
+      }
+    },
+    {
+      "id": "fridgehaven",
+      "name": "Fridge Haven",
+      "verified": false,
+      "location": {
+        "street": "242 Dixwell Avenue",
+        "city": "New Haven",
+        "state": "CT",
+        "zip": "06511",
+        "geoLat": 41.3194993,
+        "geoLng": -72.9343647
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Fridgehaven"
+      }
+    },
+    {
+      "id": "wedoittoofridge",
+      "name": "We Do It Too Fridge",
+      "verified": false,
+      "location": {
+        "street": "2837 Frederick Douglass Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10039",
+        "geoLat": 40.8268962,
+        "geoLng": -73.939288436322
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Wefridgetoo"
+      }
+    },
+    {
+      "id": "eastelmhurstfridge",
+      "name": "East Elmhurst Fridge",
+      "verified": false,
+      "location": {
+        "street": "32-37 Junction Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11369",
+        "geoLat": 40.75764635,
+        "geoLng": -73.87386342776941
+      }
+    },
+    {
+      "id": "hashtaglunchbagbkxfortdefiance",
+      "name": "HashtagLunchbag BK x Fort Defiance",
+      "verified": false,
+      "location": {
+        "street": "347 Van Brunt Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11231",
+        "geoLat": 40.67710495,
+        "geoLng": -74.01282123900364
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hashtaglunchbagbk",
+        "website": "https://linktr.ee/PerfectlyAnaika"
+      }
+    },
+    {
+      "id": "nychadyckmanhouses",
+      "name": "NYCHA Dyckman Houses",
+      "verified": false,
+      "location": {
+        "street": "3758 10th Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10034",
+        "geoLat": 40.86098,
+        "geoLng": -73.9219493
+      }
+    },
+    {
+      "id": "transmitterparkfridge",
+      "name": "Transmitter Park Fridge",
+      "verified": false,
+      "location": {
+        "street": "38-04 Greenpoint Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11101",
+        "geoLat": 40.7382092,
+        "geoLng": -73.9278923
+      }
+    },
+    {
+      "id": "portchesterfriendlyfridge",
+      "name": "Port Chester Friendly Fridge",
+      "verified": false,
+      "location": {
+        "street": "400 Westchester Avenue",
+        "city": "Port Chester",
+        "state": "NY",
+        "zip": "10573",
+        "geoLat": 41.0045693,
+        "geoLng": -73.672907
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thepcfriendlyfridge/?hl=en"
+      }
+    },
+    {
+      "id": "vinnyspetstorecommunityfridge",
+      "name": "Vinny's Pet Store Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "451 Bay Ridge Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11220",
+        "geoLat": 40.63411595,
+        "geoLng": -74.02196570642596
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/Vinnyspetshop"
+      }
+    },
+    {
+      "id": "loisaidacommunityfridge",
+      "name": "Loisaida CommUnity Fridge",
+      "verified": false,
+      "location": {
+        "street": "602 East 9th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10009",
+        "geoLat": 40.7260202,
+        "geoLng": -73.98012276021979,
+        "name": "Trinity Lower East Side"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/loisaidafridge"
+      }
+    },
+    {
+      "id": "hellskitchencommunitycupboard",
+      "name": "Hell's Kitchen Community Cupboard",
+      "verified": false,
+      "location": {
+        "street": "645 10th Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "geoLat": 40.7620639,
+        "geoLng": -73.9939254
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hkfridge"
+      }
+    },
+    {
+      "id": "northbrooklynfridgesmusichall",
+      "name": "North Brooklyn Fridges - Music Hall",
+      "verified": false,
+      "location": {
+        "street": "66 North 6th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11249",
+        "geoLat": 40.719152300000005,
+        "geoLng": -73.96178357116047,
+        "name": "Music Hall of Williamsburg"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/nbkfridges",
+        "website": "https://linktr.ee/Nbkfridges"
+      }
+    },
+    {
+      "id": "viequessolidaritylibrary",
+      "name": "Vieques Solidarity Library",
+      "verified": false,
+      "location": {
+        "street": "791 East 158th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10456",
+        "geoLat": 40.81914285714286,
+        "geoLng": -73.90380071428571
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/nuestraxnevera"
+      }
+    },
+    {
+      "id": "flatbushcommunityfridge",
+      "name": "Flatbush Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "830 Rogers Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11226",
+        "geoLat": 40.6502762,
+        "geoLng": -73.9525846
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/flatbushcommunityfridge"
+      }
+    },
+    {
+      "id": "hectorrafaelperez",
+      "name": "Hector Rafael Perez",
+      "verified": false,
+      "location": {
+        "street": "839 Halsey Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11233",
+        "geoLat": 40.6855108,
+        "geoLng": -73.91903355364005
+      }
+    },
+    {
+      "id": "clementsmileycommunityfridge",
+      "name": "Clement Smiley Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "93-01 Astoria Boulevard",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11369",
+        "geoLat": 40.76334,
+        "geoLng": -73.876162
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/iotabro"
+      }
+    },
+    {
+      "id": "pincommunityfridge",
+      "name": "PIN Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "944 Newkirk Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11230",
+        "geoLat": 40.6335233,
+        "geoLng": -73.967415
+      }
+    },
+    {
+      "id": "chinatowncommunityfridgepantry",
+      "name": "Chinatown Community Fridge & Pantry",
+      "verified": false,
+      "location": {
+        "street": "96 Baxter Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10013",
+        "geoLat": 40.7172118,
+        "geoLng": -73.9996427
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/chinatown.communityfridge"
+      }
+    },
+    {
+      "id": "maspethfridge",
+      "name": "Maspeth Fridge",
+      "verified": false,
+      "location": {
+        "street": "54-20 Nurge Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11378",
+        "geoLat": 40.7145983,
+        "geoLng": -73.9117254
+      },
+      "maintainer": { "instagram": "https://www.instagram.com/iohnyc" }
+    },
+    {
+      "id": "fridgeetc",
+      "name": "Fridge Etc.",
+      "verified": false,
+      "location": {
+        "street": "2936 Colerain Avenue",
+        "city": "Cincinnati",
+        "state": "OH",
+        "zip": "45225",
+        "geoLat": 39.135825,
+        "geoLng": -84.536666
+      },
+      "maintainer": {
+        "website": "https://www.etcproduce.com/the-fridge-etc"
+      }
+    },
+    {
+      "id": "covunityfridge",
+      "name": "COVUNITY Fridge",
+      "verified": false,
+      "location": {
+        "street": "909 Scott Street",
+        "city": "Covington",
+        "state": "KY",
+        "zip": "41011",
+        "geoLat": 39.081137,
+        "geoLng": -84.508031
+      },
+      "maintainer": {
+        "website": "http://reddengardens.org/"
+      }
+    },
+    {
+      "id": "northbrooklynfridgesleonardlibrary",
+      "name": "North Brooklyn Fridges - Leonard Library",
+      "verified": false,
+      "location": {
+        "street": "81 Devoe Street",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11211",
+        "geoLat": 40.71358,
+        "geoLng": -73.94793,
+        "name": "Brooklyn Public Library - Leonard Branch"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/nbkfridges",
+        "website": "https://linktr.ee/Nbkfridges"
+      }
+    }
+  ],
+  "reports": [],
+  "contact": [],
+  "photo": []
+}
