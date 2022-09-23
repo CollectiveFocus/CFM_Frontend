@@ -1,8 +1,21 @@
+export const applyAlpha = (alpha, color) => color + alpha;
+
+export const pinColor = {
+  itemsFull: '#97ed7d',
+  itemsMany: '#ffe55c',
+  itemsFew: '#ffd4ff',
+  itemsEmpty: '#ffffff',
+  fridgeUnavailable: '#d3d3d3',
+  fridgeOperation: '#222',
+  fridgeGhost: '#e3f2fd',
+};
+
 export const designColor = {
   white: '#FFFFFF',
   black: '#000000',
   blue: {
     dark: '#1543D4',
+    darkShade: ['#040B25'],
     light: '#88B3FF',
   },
   grayscale: {
