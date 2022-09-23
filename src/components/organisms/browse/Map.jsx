@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Leaflet from 'leaflet';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import { MapPinIcon as PinIcon } from 'theme/icons';
+import { MapLegendPinLocationIcon as PinIcon } from 'theme/icons';
 import typesValidation from 'model/data/fridge/prop-types';
 
-import ToggleButton from './components/ToggleButton';
+import LegendDrawer from './components/LegendDrawer';
 import MapMarkerList from './components/MapMarkerList';
+import ToggleButton from './components/ToggleButton';
 
 const MapPinIcon = Leaflet.divIcon({
   className: 'custom-icon',
@@ -59,6 +60,7 @@ export default function Map({ geoLat, geoLng, fridges }) {
           })}
         />
       </MapContainer>
+      <LegendDrawer />
       <ToggleButton currentPage={ToggleButton.page.map} />
     </>
   );
