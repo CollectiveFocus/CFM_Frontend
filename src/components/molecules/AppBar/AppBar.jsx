@@ -1,11 +1,10 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+
 import {
   AppBar,
   Box,
   Drawer,
   IconButton,
-  InputBase,
   List,
   ListItem,
   ListItemIcon,
@@ -13,10 +12,10 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import theme from 'theme';
+
 import { NextLinkAnchor } from 'components/atoms';
 
-import { Menu as MenuIcon, Search as SearchIcon } from '@mui/icons-material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 
 import {
   AboutIcon,
@@ -54,55 +53,7 @@ const sxMobileIcon = {
   sx: { borderRadius: '50%', width: '40px', height: '40px' },
 };
 
-const sxSearch = {
-  position: 'relative',
-  borderRadius: 45,
-  backgroundColor: 'white',
-  marginRight: theme.spacing(2),
-  marginLeft: {
-    xs: theme.spacing(6),
-    sm: theme.spacing(6),
-  },
-  width: { xs: '100%', sm: 'auto' },
-};
-
-const sxSearchIconWrapper = {
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-};
-
-const sxInputBase = {
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 2, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(6)})`,
-    width: { md: '17ch', xs: '100%' },
-  },
-};
-
-function SearchBox({ currentPath }) {
-  return currentPath === '/browse' ? (
-    <Box sx={sxSearch}>
-      <Box sx={sxSearchIconWrapper}>
-        <SearchIcon />
-      </Box>
-      <InputBase
-        sx={sxInputBase}
-        placeholder="Search"
-        inputProps={{ 'aria-label': 'search' }}
-      />
-    </Box>
-  ) : null;
-}
-
 export default function ResponsiveAppBar() {
-  const router = useRouter();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleMobileMenuToggle = () => {
@@ -153,17 +104,10 @@ export default function ResponsiveAppBar() {
           aria-label="Go to Home page"
           component={NextLinkAnchor}
           to="/"
-          sx={{
-            display: 'block',
-            m: 0,
-            p: 0,
-            width: '122px',
-            height: '48px',
-          }}
+          sx={{ display: 'block', m: 0, p: 0, width: '122px', height: '48px' }}
         >
           <LogoAndTitleSvg sx={{ width: '122px', height: '48px' }} />
         </IconButton>
-        <SearchBox currentPath={router.pathname} />
         <Box
           id="desktop"
           aria-label="navigation menu"
@@ -180,7 +124,7 @@ export default function ResponsiveAppBar() {
           textAlign="right"
           sx={{
             display: { xs: 'block', md: 'none' },
-            width: '50%',
+            width: '100%',
           }}
         >
           <IconButton
