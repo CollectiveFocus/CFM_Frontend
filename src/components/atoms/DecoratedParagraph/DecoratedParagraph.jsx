@@ -12,25 +12,14 @@ export default function DecoratedParagraph({
   hasDivider = false,
   sx = {},
 }) {
-  const headingStyles = {
-    h1: {
-      mt: 12,
-      mb: 2,
-    },
-    h2: {
-      mt: 10,
-      mb: 2,
-    },
-  };
-
   const grey = designColor.grayscale.gradient[6];
 
   return (
     <Box sx={sx}>
       {hasDivider && <Divider sx={{ mt: 10, borderColor: grey }} />}
 
-      <Typography variant={variant} sx={{ ...headingStyles[variant] }}>
-        {title}
+      <Typography sx={{ ...headingStyles[variant], textAlign: 'center' }}>
+        {renderTitleSentences(title, variant)}
       </Typography>
 
       {img && (
@@ -59,3 +48,29 @@ DecoratedParagraph.propTypes = PropTypes.exact({
   hasDivider: PropTypes.bool,
   sx: PropTypes.object,
 }).isRequired;
+
+const headingStyles = {
+  h1: {
+    mt: 12,
+    mb: 2,
+  },
+  h2: {
+    mt: 10,
+    mb: 2,
+  },
+};
+
+const renderTitleSentences = (title, variant) =>
+  title
+    .split('.')
+    .filter((s) => s.length > 0)
+    .map((sentence, index) => (
+      <Typography
+        key={index}
+        variant={variant}
+        component="span"
+        sx={{ display: 'inline-block' }}
+      >
+        &nbsp;{sentence.trimStart()}.
+      </Typography>
+    ));
