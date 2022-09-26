@@ -30,7 +30,6 @@ async function main() {
   let recordCount = 0;
   for (const fridge of fridgeList) {
     recordCount++;
-    delete fridge.mainId;
     if (Object.keys(fridge.maintainer).length === 0) {
       delete fridge.maintainer;
     }
