@@ -182,3 +182,10 @@ jq '[.[] | .mainId as $id | {suburb, district} | {mainId:($id|tonumber), fridgeT
 jq -s '[ .[0] + .[1] | group_by(.mainId)[] | add ]' table/main.json temp/tag-location.json > temp/out.json
 mv -f temp/out.json table/main.json
 ```
+
+### create google sheet from API.json
+
+```bash
+mkdir temp
+jq -f main-api.jq output/api.json | sed 's/null/""/' | dasel -r json -w csv > temp/api.csv
+```
