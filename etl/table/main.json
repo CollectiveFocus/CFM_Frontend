@@ -1180,13 +1180,13 @@
     "maintainerEmail": "",
     "maintainerOrganization": "",
     "maintainerPhone": "",
+    "locationName": "",
     "locationStreet": "315 East 16th Street",
     "locationCity": "New York",
     "locationState": "NY",
     "locationZip": "11226",
     "locationGeoLat": 40.6429095,
     "locationGeoLng": -73.96358101823799,
-    "locationName": "11226",
     "searchLocation": ["Brooklyn", ""]
   },
   {
