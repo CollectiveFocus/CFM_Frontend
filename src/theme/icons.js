@@ -2,7 +2,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 
 export function AboutIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M10.912 13.542a4.524 4.524 0 0 1-6.398 0 4.524 4.524 0 1 1 6.398 0z"
         fill="#e3f2fd"
@@ -39,7 +39,7 @@ export function AboutIcon(props) {
 
 export function ContactUsIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <g stroke="#222" strokeWidth=".837">
         <path
           fill="#e3f2fd"
@@ -53,7 +53,7 @@ export function ContactUsIcon(props) {
 
 export function FridgeAddIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M7.726 8.843c0-.446.362-.808.809-.808h5.23c.446 0 .807.362.807.808v9.13a.808.808 0 0 1-.808.809h-5.23a.808.808 0 0 1-.808-.808z"
         fill="#e3f2fd"
@@ -72,7 +72,7 @@ export function FridgeAddIcon(props) {
 
 export function FridgeFindIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M7.726 8.843c0-.446.362-.808.809-.808h5.23c.446 0 .807.362.807.808v9.13a.808.808 0 0 1-.808.809h-5.23a.808.808 0 0 1-.808-.808z"
         fill="#e3f2fd"
@@ -99,7 +99,7 @@ export function FridgeFindIcon(props) {
 
 export function GetInvolvedIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <g stroke="#222">
         <path
           fill="#e3f2fd"
@@ -116,7 +116,7 @@ export function GetInvolvedIcon(props) {
 
 export function GuidelineIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <rect
         width="8.93"
         height="12.837"
@@ -138,7 +138,7 @@ export function GuidelineIcon(props) {
 
 export function HomeIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M6.698 9.99 12 5.303l5.302 4.689v7.367c0 .355-.124.696-.345.947a1.11 1.11 0 0 1-.833.393H7.875c-.312 0-.612-.142-.833-.393a1.438 1.438 0 0 1-.344-.947Z"
         stroke="#222"
@@ -187,6 +187,51 @@ export function LogoAndTitleSvg(props) {
   );
 }
 
+/**
+ * The Leaflet icons are template strings that will be URL encoded.
+ * The paths have been simplified from Emma's original designs.
+ */
+const LeafletDecorationBackground =
+  '<circle fill="#333" cx="17.75" cy="16.75" r="4.75"/>';
+export const LeafletDecorationDirty =
+  '<path fill="#fff" d="m 16.726,20.205 c -0.445536,0.01999 -0.635059,-0.411286 -0.653508,-0.784287 L 15.593,15.847 c -0.03583,-0.332417 0.316995,-0.373 0.559458,-0.353 H 19.592 c 0.25798,-0.0086 0.361448,0.260411 0.298855,0.467071 L 19.395,19.663 c -0.03858,0.444728 -0.493782,0.572699 -0.865458,0.542 z m 0,-0.628 h 2.048 l 0.456,-3.455 h -2.968 z m 0.916136,-1.57 c 0.556514,0.02571 1.112061,-0.507296 1.052864,-1.040783 0.04249,-0.265139 -0.107488,-0.633352 -0.435712,-0.508041 -0.30452,0.138934 -0.141069,0.481205 -0.215644,0.727586 -0.166338,0.388983 -0.70292,0.11127 -0.606644,-0.25214 0.008,-0.177292 0.0109,-0.401959 -0.194564,-0.475349 -0.345761,-0.131088 -0.474245,0.238595 -0.436436,0.503591 0.125304,0.889661 0.226551,0.799687 0.836136,1.045136 z m 0.249789,-3.955486 c 0,0.433141 -0.351131,0.784272 -0.784272,0.784272 -0.433142,0 -0.784273,-0.35113 -0.784273,-0.784272 0,-0.433142 0.351131,-0.784273 0.784273,-0.784273 0.433142,0 0.784272,0.351131 0.784272,0.784273 z m 1.33032,0.611228 c 0,0.274284 -0.222352,0.496635 -0.496636,0.496635 -0.274284,0 -0.496636,-0.222351 -0.496636,-0.496635 0,-0.274285 0.222351,-0.496636 0.496636,-0.496636 0.274285,0 0.496636,0.222351 0.496636,0.496636 z"/>';
+export const LeafletDecorationOutOfOrder =
+  '<path fill="#fff" d="m 18.25,15.569 c -0.105773,0.392242 0.27244,0.532645 0.478646,0.742172 0.4231,-0.163821 0.72135,-0.579562 1.059354,-0.917172 0.288593,0.608196 0.03416,1.411608 -0.563207,1.737549 -0.371966,0.2483 -0.862587,0.219894 -1.249401,0.07505 L 16.413,18.767997 c -0.500428,0.466175 -1.116756,-0.399541 -0.60358,-0.75847 l 1.49258,-1.49353 c -0.301665,-0.618599 -0.02806,-1.415912 0.564623,-1.74442 0.371482,-0.219103 0.848323,-0.240102 1.239377,-0.05958 -0.285334,0.285666 -0.570664,0.571336 -0.856,0.857 z"/>';
+
+export function svgUrlPinLocation(color, decoration) {
+  return (
+    'data:image/svg+xml,' +
+    encodeURIComponent(
+      `<svg fill="${color}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#222" stroke-width="1.263"  stroke-dasharray="5.05200005,2.52600002"  d="M21.156 9.88c0 7.195-9.211 13.36-9.211 13.36S2.733 17.075 2.733 9.88a9.268 9.268 0 0 1 2.698-6.54A9.192 9.192 0 0 1 11.945.631a9.19 9.19 0 0 1 6.513 2.71 9.269 9.269 0 0 1 2.698 6.54z" />
+        <path stroke="#222" stroke-width="1.263" d="M8.186 9.835c2.643 2.297 5.362 2.03 7.628 0" />
+        <circle cx="7.086" cy="9.294" r="1.625" fill="#f53636" />
+        <circle cx="16.904" cy="9.294" r="1.625" fill="#f53636" />
+        <circle cx="10.417" cy="8.953" r=".735" fill="#222" />
+        <circle cx="13.345" cy="8.953" r=".735" fill="#222" />
+        ${decoration ? LeafletDecorationBackground : ''}
+        ${decoration}
+      </svg>`
+    )
+  );
+}
+
+export function svgUrlPinUnavailable(color, decoration) {
+  return (
+    'data:image/svg+xml,' +
+    encodeURIComponent(
+      `<svg fill="#d3d3d3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.263" d="M21.263 9.933c0 7.234-9.263 13.435-9.263 13.435s-9.263-6.2-9.263-13.435c0-2.467.976-4.833 2.713-6.576A9.244 9.244 0 0 1 12 .632a9.246 9.246 0 0 1 6.55 2.724 9.321 9.321 0 0 1 2.713 6.577Z" />
+        <path stroke="#222" stroke-linecap="round" stroke-width="1.263" d="m9.053 7.79 5.894 5.894m0-5.895-5.894 5.895" />
+      </svg>`
+    )
+  );
+}
+
+/**
+ * The MapLegend icons have been formatted for compatibility with MUI.
+ * Their dimensions have been altered from Emma's original designs.
+ */
 export function MapLegendConditionDirtyIcon(props) {
   return (
     <SvgIcon viewBox="0 0 24 24" {...props}>
@@ -213,7 +258,7 @@ export function MapLegendConditionOutOfOrderIcon(props) {
 
 export function MapLegendPinLocationIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         stroke="#222"
         strokeLinecap="round"
@@ -234,7 +279,7 @@ export function MapLegendPinLocationIcon(props) {
 
 export function MapLegendPinUnavailableIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         stroke="#222"
         strokeLinecap="round"
@@ -247,7 +292,7 @@ export function MapLegendPinUnavailableIcon(props) {
 
 export function MapLegendPinGhostIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         stroke="#222"
         strokeLinecap="round"
@@ -264,7 +309,7 @@ export function MapLegendPinGhostIcon(props) {
 
 export function StatusIcon(props) {
   return (
-    <SvgIcon {...props}>
+    <SvgIcon viewBox="0 0 24 24" {...props}>
       <circle cx="12" cy="12" r="9.215" stroke="#222" strokeWidth="1.5" />
       <path
         fill="#222"
