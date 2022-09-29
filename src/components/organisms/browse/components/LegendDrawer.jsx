@@ -33,7 +33,7 @@ const legendItems = [
   { icon: location(pinColor.itemsMany), title: 'Many Items' },
   { icon: location(pinColor.itemsFew), title: 'Few Items' },
   { icon: location(pinColor.itemsEmpty), title: 'Empty' },
-  { icon: unavailable(pinColor.fridgeUnavailable), title: 'Not at location' },
+  { icon: unavailable(pinColor.fridgeNotAtLocation), title: 'Not at location' },
   { icon: dirty(pinColor.fridgeOperation), title: 'Needs cleaning' },
   { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs servicing' },
   { icon: ghost(pinColor.fridgeGhost), title: 'Ghost Fridge' },
