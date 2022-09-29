@@ -48,8 +48,8 @@ export const typesFormik = PropTypes.exact({
   validateField: PropTypes.func.isRequired,
 });
 
-const typesValidation = {
+const typesViewComponent = {
   Formik: typesFormik,
   NextImage: typesNextImage,
 };
-export default typesValidation;
+export default typesViewComponent;
