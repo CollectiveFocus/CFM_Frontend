@@ -13,13 +13,15 @@ import {
   MapLegendConditionOutOfOrderIcon,
   MapLegendPinGhostIcon,
   MapLegendPinLocationIcon,
-  MapLegendPinUnavailableIcon,
+  MapLegendPinNotAtLocationIcon,
 } from 'theme/icons';
 import { applyAlpha, designColor, pinColor } from 'theme/palette';
 
 const size = (color) => ({ color, width: '48px', height: '48px' });
 const location = (color) => <MapLegendPinLocationIcon sx={size(color)} />;
-const unavailable = (color) => <MapLegendPinUnavailableIcon sx={size(color)} />;
+const unavailable = (color) => (
+  <MapLegendPinNotAtLocationIcon sx={size(color)} />
+);
 const ghost = (color) => <MapLegendPinGhostIcon sx={size(color)} />;
 const dirty = (color) => <MapLegendConditionDirtyIcon sx={size(color)} />;
 const outOfOrder = (color) => (
