@@ -11,6 +11,10 @@ export async function getFridgeList() {
   return fridgeList;
 }
 
+export async function getGhostFridgeList() {
+  return fetch('data/ghostFridges.json').then((response) => response.json());
+}
+
 async function fetchAllData() {
   const fridgeUrl = `${process.env.NEXT_PUBLIC_CFM_API_URL}/v1/fridges/`;
   const reportsUrl = `${process.env.NEXT_PUBLIC_CFM_API_URL}/v1/reports/`;
