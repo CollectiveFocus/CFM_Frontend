@@ -1,10 +1,10 @@
 import { array, boolean, date, number, object, string } from 'yup';
 
 // fridge database records
-export const dataTag = string().max(140).trim().required();
-export const dataTags = array().of(dataTag).nullable();
+export const ValuesTag = string().max(140).trim().required();
+export const ValuesTags = array().of(ValuesTag).nullable();
 
-export const dataLocation = object({
+export const ValuesLocation = object({
   name: string().max(70).trim().optional(),
   street: string().max(55).trim().required(),
   city: string().max(35).trim().required(),
@@ -16,7 +16,7 @@ export const dataLocation = object({
   geoLng: number().required(),
 });
 
-export const dataMaintainer = object({
+export const ValuesMaintainer = object({
   name: string().max(70).trim().optional(),
   email: string().email().lowercase().optional(),
   organization: string().max(80).trim().optional(),
@@ -27,18 +27,18 @@ export const dataMaintainer = object({
   instagram: string().url().optional(),
 }).nullable();
 
-export const dataFridge = object({
+export const ValuesFridge = object({
   id: string().min(4).max(60).required(),
   name: string().min(4).max(60).trim().required(),
-  location: dataLocation.required(),
-  tags: dataTag.optional(),
-  maintainer: dataMaintainer.optional(),
+  location: ValuesLocation.required(),
+  tags: ValuesTag.optional(),
+  maintainer: ValuesMaintainer.optional(),
   photoUrl: string().url().optional(),
   notes: string().min(1).max(300).trim().optional(),
   verified: boolean().default(false),
 });
 
-export const dataReport = object({
+export const ValuesReport = object({
   timestamp: date().required(),
   condition: string()
     .oneOf(['good', 'dirty', 'out of order', 'not at location'])
@@ -49,19 +49,19 @@ export const dataReport = object({
 });
 
 // website contact form data
-export const dataContact = object({
+export const ValuesContact = object({
   name: string().max(70).trim().required(),
   email: string().email().required(),
   subject: string().max(70).trim().required(),
   message: string().max(2048).trim().required(),
 });
 
-const dataValidation = {
-  Contact: dataContact,
-  Fridge: dataFridge,
-  Location: dataLocation,
-  Report: dataReport,
-  Tag: dataTag,
-  Tags: dataTags,
+const valuesDataFridge = {
+  Contact: ValuesContact,
+  Fridge: ValuesFridge,
+  Location: ValuesLocation,
+  Report: ValuesReport,
+  Tag: ValuesTag,
+  Tags: ValuesTags,
 };
-export default dataValidation;
+export default valuesDataFridge;
