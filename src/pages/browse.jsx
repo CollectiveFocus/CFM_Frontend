@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { CircularProgress } from '@mui/material';
-import { fetchFridgesAndReports } from 'model/data';
+import { getFridgeList, getGhostFridgeList } from 'model/view';
 
 const DynamicMap = dynamic(
   () => {
@@ -12,11 +12,10 @@ const DynamicMap = dynamic(
   { ssr: false }
 );
 
-const defaultLocationBrooklynBridge = {
-  geoLat: 40.70580857568261,
-  geoLng: -73.99646699561376,
+const fridgePaperBoyLoveGallery = {
+  geoLat: 40.697759,
+  geoLng: -73.927282,
 };
-let pageData = null;
 
 const ProgressIndicator = (
   <div
@@ -32,11 +31,14 @@ const ProgressIndicator = (
 );
 const BrowseMap = (props) => <DynamicMap {...props} />;
 
+let fridgeList = null;
+let ghostList = null;
 export default function BrowseMapPage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
-      pageData = await fetchFridgesAndReports();
+      fridgeList = await getFridgeList();
+      ghostList = await getGhostFridgeList();
       setHasDataLoaded(true);
     };
     fetchData().catch(console.error);
@@ -48,7 +50,11 @@ export default function BrowseMapPage() {
         <title>CFM: Geographic Map</title>
       </Head>
       {hasDataLoaded
-        ? BrowseMap({ ...defaultLocationBrooklynBridge, ...pageData })
+        ? BrowseMap({
+            centerMap: fridgePaperBoyLoveGallery,
+            fridgeList,
+            ghostList,
+          })
         : ProgressIndicator}
     </>
   );
