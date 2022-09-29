@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ghost Fridge",
+    "verified": true,
+    "location": {
+      "street": "123 Street Name",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10003",
+      "geoLat": 40.716377803826866,
+      "geoLng": -74.01043181188723
+    },
+    "report": {
+      "condition": "ghost"
+    }
+  },
+  {
+    "name": "Ghost Fridge",
+    "verified": true,
+    "location": {
+      "street": "456 Street Name",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10011",
+      "geoLat": 40.722362612355155,
+      "geoLng": -74.00991682829944
+    },
+    "report": {
+      "condition": "ghost"
+    }
+  },
+  {
+    "name": "Ghost Fridge",
+    "verified": true,
+    "location": {
+      "street": "26 Washington Square North",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10011",
+      "geoLat": 40.7322657,
+      "geoLng": -73.99818634907788
+    },
+    "report": {
+      "condition": "ghost"
+    }
+  },
+  {
+    "name": "Ghost Fridge",
+    "verified": true,
+    "location": {
+      "street": "30 Washington Square North",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10012",
+      "geoLat": 40.7315148,
+      "geoLng": -73.9971819
+    },
+    "report": {
+      "condition": "ghost"
+    }
+  }
+]
