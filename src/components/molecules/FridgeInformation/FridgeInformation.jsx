@@ -24,7 +24,6 @@ import {
 } from '@mui/icons-material';
 import { StatusIcon } from 'theme/icons';
 
-<<<<<<< HEAD
 import PropTypes from 'prop-types';
 import typesValidation from 'model/data/fridge/prop-types';
 
@@ -46,9 +45,7 @@ const enumCondition = {
     color: 'warning',
   },
 };
-=======
 import { BackEdit } from 'components/atoms';
->>>>>>> wip: Squash 82 for rebase with dev
 
 function FridgeStatusIcon({ condition }) {
   const color = enumCondition[condition].color;

@@ -1,29 +1,47 @@
-import { Stack, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
+
+import { Link, Stack, Typography } from '@mui/material';
 import {
   ArrowBackRounded as BackIcon,
   EditOutlined as EditIcon,
 } from '@mui/icons-material';
-export default function BackEdit() {
+
+export default function BackEdit({ fridgeId }) {
   return (
     <Stack direction="row" justifyContent="space-between">
-      <Stack
-        direction="row"
-        spacing={3}
-        alignItems="center"
-        sx={{ color: 'text.secondary' }}
+      <Link
+        href="/browse"
+        underline="none"
+        aria-label="Click to return to the map"
       >
-        <BackIcon fontSize="medium" />
-        <Typography fontSize="medium">Back to Map</Typography>
-      </Stack>
-      <Stack
-        direction="row"
-        spacing={3}
-        alignItems="center"
-        sx={{ color: 'text.secondary' }}
+        <Stack
+          direction="row"
+          spacing={3}
+          alignItems="center"
+          sx={{ color: 'text.secondary' }}
+        >
+          <BackIcon fontSize="medium" />
+          <Typography fontSize="medium">Browse</Typography>
+        </Stack>
+      </Link>
+      <Link
+        href={`/fridge/${fridgeId}/edit`}
+        underline="none"
+        aria-label="Click to edit the fridge"
       >
-        <EditIcon fontSize="medium" />
-        <Typography fontSize="medium">Edit Fridge</Typography>
-      </Stack>
+        <Stack
+          direction="row"
+          spacing={3}
+          alignItems="center"
+          sx={{ color: 'text.secondary' }}
+        >
+          <EditIcon fontSize="medium" />
+          <Typography fontSize="medium">Edit Fridge</Typography>
+        </Stack>
+      </Link>
     </Stack>
   );
 }
+BackEdit.propTypes = PropTypes.exact({
+  id: PropTypes.string.isRequired,
+}).isRequired;
