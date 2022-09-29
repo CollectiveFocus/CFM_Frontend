@@ -5,9 +5,10 @@ export const pinColor = {
   itemsMany: '#ffe55c',
   itemsFew: '#ffd4ff',
   itemsEmpty: '#ffffff',
-  fridgeUnavailable: '#d3d3d3',
+  fridgeNotAtLocation: '#d3d3d3',
   fridgeOperation: '#222',
   fridgeGhost: '#e3f2fd',
+  reportUnavailable: '#d3d3d3',
 };
 
 export const designColor = {
