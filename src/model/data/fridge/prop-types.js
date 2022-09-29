@@ -22,7 +22,7 @@ export const typesMaintainer = PropTypes.exact({
   instagram: PropTypes.string,
 });
 
-export const typesFridge = PropTypes.exact({
+export const typesFridge = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   location: typesLocation.isRequired,
@@ -31,7 +31,7 @@ export const typesFridge = PropTypes.exact({
   photoUrl: PropTypes.string,
   notes: PropTypes.string,
   verified: PropTypes.bool,
-});
+};
 
 export const typesReportCondition = PropTypes.oneOf([
   'good',
@@ -39,21 +39,24 @@ export const typesReportCondition = PropTypes.oneOf([
   'out of order',
   'not at location',
 ]);
-export const typesReport = PropTypes.shape({
+export const typesReportFoodPercentage = PropTypes.oneOf([0, 33, 67, 100]);
+
+export const typesReport = PropTypes.exact({
   timestamp: PropTypes.string.isRequired,
   condition: typesReportCondition.isRequired,
-  foodPercentage: PropTypes.oneOf([0, 33, 67, 100]).isRequired,
+  foodPercentage: typesReportFoodPercentage.isRequired,
   photoUrl: PropTypes.string,
   notes: PropTypes.string,
 });
 
-const typesValidation = {
+const typesDataFridge = {
   Fridge: typesFridge,
   Location: typesLocation,
   Maintainer: typesMaintainer,
   Report: typesReport,
   ReportCondition: typesReportCondition,
+  ReportFoodPercentage: typesReportFoodPercentage,
   Tag: typesTag,
   Tags: typesTags,
 };
-export default typesValidation;
+export default typesDataFridge;
