@@ -14,6 +14,7 @@ import {
   MapLegendPinGhostIcon,
   MapLegendPinLocationIcon,
   MapLegendPinNotAtLocationIcon,
+  MapLegendPinNoReportIcon,
 } from 'theme/icons';
 import { applyAlpha, designColor, pinColor } from 'theme/palette';
 
@@ -27,17 +28,21 @@ const dirty = (color) => <MapLegendConditionDirtyIcon sx={size(color)} />;
 const outOfOrder = (color) => (
   <MapLegendConditionOutOfOrderIcon sx={size(color)} />
 );
+const noReport = (color) => <MapLegendPinNoReportIcon sx={size(color)} />;
 
 const legendItems = [
   { icon: location(pinColor.itemsFull), title: 'Full' },
   { icon: location(pinColor.itemsMany), title: 'Many Items' },
   { icon: location(pinColor.itemsFew), title: 'Few Items' },
   { icon: location(pinColor.itemsEmpty), title: 'Empty' },
+  { icon: noReport(pinColor.reportUnavailable), title: 'No status' },
   { icon: unavailable(pinColor.fridgeNotAtLocation), title: 'Not at location' },
   { icon: dirty(pinColor.fridgeOperation), title: 'Needs cleaning' },
   { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs servicing' },
   { icon: ghost(pinColor.fridgeGhost), title: 'Ghost Fridge' },
 ];
+
+const aboveFoldLegendItems = 6;
 
 const drawerBleeding = 22.5;
 
@@ -130,17 +135,19 @@ export default function LegendDrawer() {
             }}
           />
         </ListItem>
-        {legendItems.slice(0, seeMore ? legendItems.length : 5).map((item) => (
-          <ListItem key={item.title} sx={{ p: 0 }}>
-            <ListItemIcon sx={{ minWidth: 30 }}>{item.icon}</ListItemIcon>
-            <ListItemText
-              primary={item.title}
-              primaryTypographyProps={{
-                sx: { fontSize: { xs: '.85em', md: '.95em' } },
-              }}
-            />
-          </ListItem>
-        ))}
+        {legendItems
+          .slice(0, seeMore ? legendItems.length : aboveFoldLegendItems)
+          .map((item) => (
+            <ListItem key={item.title} sx={{ p: 0 }}>
+              <ListItemIcon sx={{ minWidth: 30 }}>{item.icon}</ListItemIcon>
+              <ListItemText
+                primary={item.title}
+                primaryTypographyProps={{
+                  sx: { fontSize: { xs: '.85em', md: '.95em' } },
+                }}
+              />
+            </ListItem>
+          ))}
         <ListItem sx={{ p: 0 }}>
           <ListItemButton
             onClick={(e) => {
