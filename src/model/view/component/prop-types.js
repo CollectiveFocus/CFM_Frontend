@@ -11,7 +11,11 @@ export const typesNextImage = PropTypes.exact({
   alt: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
-  layout: PropTypes.oneOf(['intrinsic ', 'fixed', 'responsive', 'fill']),
+  layout: PropTypes.oneOf(['intrinsic ', 'fixed', 'responsive']),
+});
+export const typesNextFillImage = PropTypes.exact({
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 });
 
 /**
@@ -51,5 +55,6 @@ export const typesFormik = PropTypes.exact({
 const typesViewComponent = {
   Formik: typesFormik,
   NextImage: typesNextImage,
+  NextFillImage: typesNextFillImage,
 };
 export default typesViewComponent;

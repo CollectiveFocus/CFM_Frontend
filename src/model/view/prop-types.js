@@ -11,10 +11,7 @@ export const typesReportCondition = PropTypes.oneOf([
   'ghost',
 ]);
 
-export const typesReport = PropTypes.shape({
-  ...typesDataFridge.Report,
-  condition: typesReportCondition,
-});
+export const typesReport = PropTypes.shape(typesDataFridge.Report);
 
 export const typesFridge = PropTypes.exact({
   ...typesDataFridge.Fridge,
