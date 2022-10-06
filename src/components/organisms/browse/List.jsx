@@ -1,3 +1,8 @@
+import PropTypes from 'prop-types';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { Button, List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
@@ -5,20 +10,15 @@ import {
   LocationOnOutlined as LocationOnOutlinedIcon,
 } from '@mui/icons-material';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
-import { formatDate } from 'lib/helperFunctions';
-import { getInstagramHandleFromUrl } from 'lib/helperFunctions';
-import typesValidation from 'model/data/fridge/prop-types';
-import { useMemo } from 'react';
+import typesView from 'model/view/prop-types';
 
-function indexReportsByFridgeId(reports) {
-  const ret = {};
-  for (const report of reports) {
-    ret[report.fridgeId] = report;
-  }
-  return ret;
+function formatDate(isoString) {
+  const msSinceEpoch = Date.parse(isoString);
+  return new Date(msSinceEpoch).toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: '2-digit',
+    year: '2-digit',
+  });
 }
 
 function Location({ location }) {
@@ -31,17 +31,17 @@ function Location({ location }) {
     </Stack>
   );
 }
-Location.propTypes = {
-  location: PropTypes.object.isRequired,
-};
+Location.propTypes = typesView.Location;
 
 function Instagram({ instagramUrl }) {
-  const handle = getInstagramHandleFromUrl(instagramUrl);
+  const instagramRegex =
+    /(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)/gim;
+  const handle = instagramRegex.exec(instagramUrl);
   return (
     <Stack direction="row" spacing={3} alignItems="center">
       <InstagramIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
-        @{handle}
+        @{handle[1]}
       </Typography>
     </Stack>
   );
@@ -64,9 +64,7 @@ LastUpdate.propTypes = {
   date: PropTypes.string.isRequired,
 };
 
-export default function FridgeList({ fridges, reports }) {
-  const reportDict = useMemo(() => indexReportsByFridgeId(reports), [reports]);
-
+export default function FridgeList({ fridges }) {
   return (
     <List>
       {fridges.map((fridge, fridgeIndex) => (
@@ -85,8 +83,8 @@ export default function FridgeList({ fridges, reports }) {
                 {fridge.maintainer?.instagram ? (
                   <Instagram instagramUrl={fridge.maintainer.instagram} />
                 ) : null}
-                {reportDict[fridge.id] ? (
-                  <LastUpdate date={reportDict[fridge.id].timestamp} />
+                {fridge.report ? (
+                  <LastUpdate date={fridge.report.timestamp} />
                 ) : null}
               </Stack>
               {fridge.photoUrl ? (
@@ -118,6 +116,5 @@ export default function FridgeList({ fridges, reports }) {
   );
 }
 FridgeList.propTypes = {
-  fridges: PropTypes.arrayOf(typesValidation.Fridge),
-  reports: PropTypes.arrayOf(typesValidation.Report),
+  fridges: PropTypes.arrayOf(typesView.Fridge),
 };
