@@ -1,3 +1,24 @@
+import { useState, useEffect } from 'react';
+
+export function useWindowHeight() {
+  const [availableHeight, setAvailableHeight] = useState(0);
+  const calculateAvailableHeight = () =>
+    window.innerHeight - document.getElementById('AppBar').offsetHeight;
+
+  useEffect(() => {
+    function handleResize() {
+      setAvailableHeight(calculateAvailableHeight());
+    }
+
+    setAvailableHeight(calculateAvailableHeight());
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return availableHeight;
+}
+
 export function geolocation() {
   return new Promise((resolve, reject) => {
     if (location.protocol === 'https:' && navigator.geolocation) {
