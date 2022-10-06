@@ -1,11 +1,29 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid, Typography } from '@mui/material';
-import { PageFooter, PageHero, ParagraphCard } from 'components/atoms';
+import {
+  DecoratedParagraph,
+  PageFooter,
+  PageHero,
+  ParagraphCard,
+} from 'components/atoms';
 
 export async function getStaticProps() {
   return {
     props: {
+      pageHero: {
+        img: {
+          src: '/hero/index.webp',
+          alt: 'Picture of a New York fridge map',
+        },
+        title: 'Find a Fridge',
+        link: '/browse',
+      },
+      decoratedParagraph: {
+        variant: 'h1',
+        title: 'Take what you need. Leave what you can.',
+        body: 'The Community Fridge Map can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+      },
       paragraphCard: {
         h2: {
           img: {
@@ -58,14 +76,23 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({ paragraphCard }) {
+export default function HomePage({
+  decoratedParagraph,
+  pageHero,
+  paragraphCard,
+}) {
   return (
     <>
       <Head>
         <title>Community Fridge Map</title>
       </Head>
 
-      <PageHero />
+      <PageHero {...pageHero} />
+      <DecoratedParagraph
+        sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
+        {...decoratedParagraph}
+      />
+
       <Grid
         container
         direction="row"
@@ -117,6 +144,8 @@ export default function HomePage({ paragraphCard }) {
   );
 }
 HomePage.propTypes = PropTypes.exact({
+  pageHero: PageHero.propTypes,
+  decoratedParagraph: DecoratedParagraph.propTypes,
   paragraphCard: {
     h2: ParagraphCard.propTypes,
     h3: PropTypes.arrayOf(ParagraphCard.propTypes),
