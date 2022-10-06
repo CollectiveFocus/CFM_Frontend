@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import typesDataFridge from 'model/data/fridge/prop-types';
 
+export const typesLocation = typesDataFridge.Location;
+
 export const typesReportCondition = PropTypes.oneOf([
   'good',
   'dirty',
@@ -9,10 +11,10 @@ export const typesReportCondition = PropTypes.oneOf([
   'ghost',
 ]);
 
-export const typesReport = {
+export const typesReport = PropTypes.shape({
   ...typesDataFridge.Report,
   condition: typesReportCondition,
-};
+});
 
 export const typesFridge = PropTypes.exact({
   ...typesDataFridge.Fridge,
@@ -26,6 +28,7 @@ export const typesGeolocation = PropTypes.exact({
 
 const typesView = {
   Fridge: typesFridge,
+  Location: typesLocation,
   Geolocation: typesGeolocation,
 };
 export default typesView;
