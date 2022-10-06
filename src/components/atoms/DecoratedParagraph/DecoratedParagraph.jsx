@@ -18,7 +18,10 @@ export default function DecoratedParagraph({
     <Box sx={sx}>
       {hasDivider && <Divider sx={{ mt: 10, borderColor: grey }} />}
 
-      <Typography sx={{ ...headingStyles[variant], textAlign: 'center' }}>
+      <Typography
+        variant={variant}
+        sx={{ ...headingStyles[variant], textAlign: 'center' }}
+      >
         {renderTitleSentences(title, variant)}
       </Typography>
 
@@ -51,12 +54,12 @@ DecoratedParagraph.propTypes = PropTypes.exact({
 
 const headingStyles = {
   h1: {
-    mt: 12,
-    mb: 2,
+    mt: 7,
+    mb: 7,
   },
   h2: {
-    mt: 10,
-    mb: 2,
+    mt: 5,
+    mb: 3,
   },
 };
 
