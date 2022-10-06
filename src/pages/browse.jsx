@@ -2,8 +2,19 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { CircularProgress } from '@mui/material';
+
+import {
+  CircularProgress,
+  Box,
+  Typography,
+  Divider,
+  useMediaQuery,
+} from '@mui/material';
+import BrowseList from 'components/organisms/browse/List';
+import { MapToggle } from 'components/atoms/';
+
 import { getFridgeList, getGhostFridgeList } from 'model/view';
+import { useWindowHeight } from 'lib/browser';
 
 const DynamicMap = dynamic(
   () => {
@@ -11,6 +22,7 @@ const DynamicMap = dynamic(
   },
   { ssr: false }
 );
+const BrowseMap = (props) => <DynamicMap {...props} />;
 
 const fridgePaperBoyLoveGallery = {
   geoLat: 40.697759,
@@ -29,12 +41,16 @@ const ProgressIndicator = (
     <CircularProgress color="secondary" />
   </div>
 );
-const BrowseMap = (props) => <DynamicMap {...props} />;
 
 let fridgeList = null;
 let ghostList = null;
-export default function BrowseMapPage() {
+export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
+  const [currentView, setCurrentView] = useState(MapToggle.view.map);
+
+  const availableHeight = useWindowHeight();
+  const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
+
   useEffect(() => {
     const fetchData = async () => {
       fridgeList = await getFridgeList();
@@ -44,19 +60,60 @@ export default function BrowseMapPage() {
     fetchData().catch(console.error);
   }, []);
 
+  const Map = hasDataLoaded
+    ? BrowseMap({
+        centerMap: fridgePaperBoyLoveGallery,
+        fridgeList,
+        ghostList,
+      })
+    : ProgressIndicator;
+
+  const List = hasDataLoaded ? (
+    <BrowseList fridges={fridgeList} />
+  ) : (
+    ProgressIndicator
+  );
+
+  function determineView() {
+    if (isWindowDesktop) {
+      return (
+        <>
+          <Box sx={{ flex: 1, overflow: 'scroll', px: 4 }}>
+            <Typography variant="h4" sx={{ padding: '1em .5em .5em 0' }}>
+              FRIDGES WITHIN THIS AREA
+            </Typography>
+            <Divider />
+            {List}
+          </Box>
+
+          <Box sx={{ flex: 2.5 }}>{Map}</Box>
+        </>
+      );
+    } else {
+      return (
+        <>
+          {currentView === MapToggle.view.list ? (
+            <Box sx={{ flex: 1, px: 4 }}>{List}</Box>
+          ) : (
+            <Box sx={{ flex: 1 }}>{Map}</Box>
+          )}
+
+          <MapToggle currentView={currentView} setView={setCurrentView} />
+        </>
+      );
+    }
+  }
+
   return (
     <>
       <Head>
         <title>CFM: Geographic Map</title>
       </Head>
-      {hasDataLoaded
-        ? BrowseMap({
-            centerMap: fridgePaperBoyLoveGallery,
-            fridgeList,
-            ghostList,
-          })
-        : ProgressIndicator}
+
+      <Box sx={{ display: 'flex', height: availableHeight }}>
+        {determineView()}
+      </Box>
     </>
   );
 }
-BrowseMapPage.propTypes = PropTypes.exact({}).isRequired;
+BrowsePage.propTypes = PropTypes.exact({}).isRequired;
