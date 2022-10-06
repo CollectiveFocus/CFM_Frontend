@@ -5,12 +5,12 @@ import {
   FormatListBulletedOutlined as ListIcon,
 } from '@mui/icons-material';
 
-export default function ToggleButton({ currentPage }) {
+export default function MapToggle({ currentView, setView }) {
   return (
     <Button
       fullWidth
       startIcon={
-        currentPage === ToggleButton.page.map ? <ListIcon /> : <MapIcon />
+        currentView === MapToggle.view.map ? <ListIcon /> : <MapIcon />
       }
       sx={{
         position: 'fixed',
@@ -29,16 +29,24 @@ export default function ToggleButton({ currentPage }) {
         textTransform: 'none',
         ':hover': { backgroundColor: '#fff' },
       }}
+      onClick={() =>
+        setView(
+          currentView === MapToggle.view.map
+            ? MapToggle.view.list
+            : MapToggle.view.map
+        )
+      }
     >
-      {currentPage === ToggleButton.page.map ? 'List View' : 'Map View'}
+      {currentView === MapToggle.view.map ? 'List View' : 'Map View'}
     </Button>
   );
 }
-ToggleButton.propTypes = PropTypes.exact({
+MapToggle.propTypes = PropTypes.exact({
   currentPage: PropTypes.symbol,
+  setViewToggle: PropTypes.func,
 }).isRequired;
 
-ToggleButton.page = Object.freeze({
+MapToggle.view = Object.freeze({
   map: Symbol(0),
   list: Symbol(1),
 });
