@@ -97,7 +97,7 @@ export default function ResponsiveAppBar() {
   );
 
   return (
-    <AppBar position="sticky">
+    <AppBar id="AppBar" position="sticky">
       <Toolbar sx={{ p: 0 }}>
         <IconButton
           disableRipple
