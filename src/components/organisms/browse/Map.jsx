@@ -4,14 +4,13 @@ import typesView from 'model/view/prop-types';
 
 import LegendDrawer from './components/LegendDrawer';
 import MapMarkerList from './components/MapMarkerList';
-import ToggleButton from './components/ToggleButton';
 import markersFrom from './model/markersFrom';
 
 export default function Map({ centerMap, fridgeList, ghostList }) {
   return (
     <>
       <MapContainer
-        style={{ height: '90vh' }}
+        style={{ height: '100%' }}
         center={[centerMap.geoLat, centerMap.geoLng]}
         zoom={13.2}
         scrollWheelZoom={true}
@@ -26,7 +25,6 @@ export default function Map({ centerMap, fridgeList, ghostList }) {
         <MapMarkerList markerDataList={markersFrom(ghostList)} />
       </MapContainer>
       <LegendDrawer />
-      <ToggleButton currentPage={ToggleButton.page.map} />
     </>
   );
 }
