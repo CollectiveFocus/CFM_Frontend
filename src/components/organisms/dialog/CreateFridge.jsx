@@ -3,7 +3,6 @@ import { Stack, Stepper, Step, Typography } from '@mui/material';
 
 import PanelFridge from './components/PanelFridge';
 import PanelMaintainer from './components/PanelMaintainer';
-import PanelPhoto from './components/PanelPhoto';
 import PanelConfirm from './components/PanelConfirm';
 
 export default function CreateFridge() {
@@ -22,16 +21,13 @@ export default function CreateFridge() {
       <Typography variant="h1">Add a fridge to the database</Typography>
       <Stepper activeStep={activeStep} orientation="vertical">
         <Step>
-          <PanelPhoto handleNext={handleNext} />
-        </Step>
-        <Step>
           <PanelFridge handleNext={handleNext} handleBack={handleBack} />
         </Step>
         <Step>
           <PanelMaintainer handleNext={handleNext} handleBack={handleBack} />
         </Step>
         <Step>
-          <PanelConfirm handleBack={handleBack} />
+          <PanelConfirm confirmBtnTxt="ADD FRIDGE" handleBack={handleBack} />
         </Step>
       </Stepper>
     </Stack>
