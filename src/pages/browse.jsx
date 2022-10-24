@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import SearchMap from 'components/organisms/browse/components/SearchMap';
 
 import {
   CircularProgress,
@@ -93,9 +94,15 @@ export default function BrowsePage() {
       return (
         <>
           {currentView === MapToggle.view.list ? (
-            <Box sx={{ flex: 1, px: 4 }}>{List}</Box>
+            <Box sx={{ flex: 1 }}>
+              <SearchMap />
+              <Box px={4}>{List}</Box>
+            </Box>
           ) : (
-            <Box sx={{ flex: 1 }}>{Map}</Box>
+            <Box sx={{ flex: 1 }}>
+              <SearchMap />
+              {Map}
+            </Box>
           )}
 
           <MapToggle currentView={currentView} setView={setCurrentView} />

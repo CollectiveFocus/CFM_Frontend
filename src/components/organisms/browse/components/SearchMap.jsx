@@ -8,7 +8,7 @@ import {
 
 import { applyAlpha, designColor } from 'theme/palette';
 
-export default function SearchMap({ setShowSearchMap }) {
+export default function SearchMap() {
   const [searchQuery, setSearchQuery] = useState('');
 
   function handleSearch(e) {
@@ -20,10 +20,8 @@ export default function SearchMap({ setShowSearchMap }) {
       sx={{
         width: '100%',
         height: '2.5em',
-        position: 'absolute',
-        bottom: '-2.5em',
-        left: 0,
         ...flexStyles,
+        pr: 3,
         background: applyAlpha('cc', designColor.grayscale.gradient[5]),
       }}
     >
@@ -43,6 +41,7 @@ export default function SearchMap({ setShowSearchMap }) {
           width: '100%',
           maxWidth: 600,
           height: '1.9em',
+          px: 4,
         }}
       >
         <SearchIcon sx={{ fontSize: 25 }} />
@@ -71,5 +70,4 @@ const flexStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  px: 3,
 };
