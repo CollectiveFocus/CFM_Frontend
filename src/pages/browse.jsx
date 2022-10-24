@@ -75,6 +75,8 @@ export default function BrowsePage() {
     ProgressIndicator
   );
 
+  const SearchMapBar = <SearchMap />;
+
   function determineView() {
     if (isWindowDesktop) {
       return (
@@ -87,7 +89,10 @@ export default function BrowsePage() {
             {List}
           </Box>
 
-          <Box sx={{ flex: 2.5 }}>{Map}</Box>
+          <Box sx={{ flex: 2.5 }}>
+            {SearchMapBar}
+            {Map}
+          </Box>
         </>
       );
     } else {
@@ -95,12 +100,12 @@ export default function BrowsePage() {
         <>
           {currentView === MapToggle.view.list ? (
             <Box sx={{ flex: 1 }}>
-              <SearchMap />
+              {SearchMapBar}
               <Box px={4}>{List}</Box>
             </Box>
           ) : (
             <Box sx={{ flex: 1 }}>
-              <SearchMap />
+              {SearchMapBar}
               {Map}
             </Box>
           )}
