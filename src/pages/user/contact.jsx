@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { useState } from 'react';
 import { useFormik } from 'formik';
@@ -18,6 +19,8 @@ const enumDisplay = Object.freeze({
 
 export default function ContactPage() {
   const [displayComponent, setDisplay] = useState(enumDisplay.EmailDialog);
+  const { query } = useRouter();
+
   const onSubmitFn = (values) => {
     fetch(fridgeUrl, {
       method: 'POST',
@@ -35,7 +38,7 @@ export default function ContactPage() {
     initialValues: {
       name: '',
       email: '',
-      subject: '',
+      subject: query['subject'] ?? '',
       message: '',
     },
     validationSchema: dialogContact,
@@ -134,7 +137,7 @@ function ContactForm({ formik }) {
               Cancel
             </ButtonLink>
             <Button
-              aria-label="Click to send an email to the site maintainers"
+              aria-label="Click to send an email to Collective Focus"
               variant="contained"
               type="submit"
             >
