@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Box, InputBase, IconButton } from '@mui/material';
+import { Box, InputBase, IconButton, Typography } from '@mui/material';
 import {
   Search as SearchIcon,
   Cancel as CancelIcon,
-  ArrowBackIosNew as ArrowBackIcon,
 } from '@mui/icons-material';
 
 import { applyAlpha, designColor } from 'theme/palette';
@@ -21,16 +20,11 @@ export default function SearchMap() {
         width: '100%',
         height: '2.5em',
         ...flexStyles,
-        pr: 3,
+        pl: 4,
+        pr: 2,
         background: applyAlpha('cc', designColor.grayscale.gradient[5]),
       }}
     >
-      <IconButton
-        aria-label="close-search"
-        onClick={() => setShowSearchMap(false)}
-      >
-        <ArrowBackIcon sx={{ color: 'white' }} />
-      </IconButton>
       <Box
         component="form"
         onSubmit={handleSearch}
@@ -62,6 +56,9 @@ export default function SearchMap() {
           </IconButton>
         )}
       </Box>
+      <IconButton>
+        <Typography sx={{ color: 'white' }}>List</Typography>
+      </IconButton>
     </Box>
   );
 }
