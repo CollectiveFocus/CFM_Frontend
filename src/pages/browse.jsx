@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import SearchMap from 'components/organisms/browse/components/SearchMap';
+import MapToggle from 'components/organisms/browse/components/MapToggle';
 
 import {
   CircularProgress,
@@ -12,7 +13,6 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import BrowseList from 'components/organisms/browse/List';
-import { MapToggle } from 'components/atoms/';
 
 import { getFridgeList, getGhostFridgeList } from 'model/view';
 import { useWindowHeight } from 'lib/browser';
@@ -75,7 +75,9 @@ export default function BrowsePage() {
     ProgressIndicator
   );
 
-  const SearchMapBar = <SearchMap />;
+  const SearchMapBar = (
+    <SearchMap currentView={currentView} setView={setCurrentView} />
+  );
 
   function determineView() {
     if (isWindowDesktop) {
@@ -109,8 +111,6 @@ export default function BrowsePage() {
               {Map}
             </Box>
           )}
-
-          <MapToggle currentView={currentView} setView={setCurrentView} />
         </>
       );
     }

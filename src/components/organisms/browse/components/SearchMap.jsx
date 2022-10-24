@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Box, InputBase, IconButton, Typography } from '@mui/material';
+import { Box, InputBase, IconButton } from '@mui/material';
 import {
   Search as SearchIcon,
   Cancel as CancelIcon,
 } from '@mui/icons-material';
+import MapToggle from './MapToggle';
 
 import { applyAlpha, designColor } from 'theme/palette';
 
-export default function SearchMap() {
+export default function SearchMap({ currentView, setView }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   function handleSearch(e) {
@@ -56,9 +57,7 @@ export default function SearchMap() {
           </IconButton>
         )}
       </Box>
-      <IconButton>
-        <Typography sx={{ color: 'white' }}>List</Typography>
-      </IconButton>
+      <MapToggle currentView={currentView} setView={setView} />
     </Box>
   );
 }
