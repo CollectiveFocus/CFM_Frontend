@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import {
   AppBar,
@@ -25,7 +26,6 @@ import {
   GetInvolvedIcon,
   GuidelineIcon,
   HomeIcon,
-  LogoAndTitleSvg,
 } from 'theme/icons';
 
 const menuItems = [
@@ -104,9 +104,18 @@ export default function ResponsiveAppBar() {
           aria-label="Go to Home page"
           component={NextLinkAnchor}
           to="/"
-          sx={{ display: 'block', m: 0, p: 0, width: '122px', height: '48px' }}
+          sx={{ display: 'block', m: 0, p: 0, width: '108px', height: '48px' }}
         >
-          <LogoAndTitleSvg sx={{ width: '122px', height: '48px' }} />
+          <Image
+            alt="Fridge Finder logo"
+            src="/brand/logo.webp"
+            width={108}
+            height={48}
+            style={{
+              width: 'auto',
+              maxHeight: '48px',
+            }}
+          />
         </IconButton>
         <Box
           id="desktop"
