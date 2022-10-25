@@ -1,4 +1,4 @@
-# Review: Community Fridge Map
+# Review: Fridge Finder
 
 1. UI Design
 

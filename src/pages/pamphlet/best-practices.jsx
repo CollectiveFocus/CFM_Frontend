@@ -76,7 +76,7 @@ export default function BestPracticesPage({ panelList }) {
   return (
     <>
       <Head>
-        <title>CFM: Best Practices</title>
+        <title>Fridge Finder: Best Practices</title>
       </Head>
       <Typography sx={{ ml: 4 }} variant="h1">
         Best Practices

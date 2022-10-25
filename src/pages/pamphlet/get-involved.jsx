@@ -76,7 +76,7 @@ export default function GetInvolvedPage({ titleCards, introParagraph }) {
   return (
     <>
       <Head>
-        <title>CFM: Get Involved!</title>
+        <title>Fridge Finder: Get Involved</title>
       </Head>
       <Box
         sx={{

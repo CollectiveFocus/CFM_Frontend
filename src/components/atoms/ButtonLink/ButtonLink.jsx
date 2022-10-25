@@ -22,7 +22,7 @@ ButtonLink.propTypes = {
 
   /**
    * Text describing the content of the link.
-   * eg: aria-label='Learn more about the community fridge map project.'
+   * eg: aria-label='Learn more about the Fridge Finder project.'
    */
   'aria-label': PropTypes.string.isRequired,
 

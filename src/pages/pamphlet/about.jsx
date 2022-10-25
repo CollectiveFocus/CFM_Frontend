@@ -77,7 +77,7 @@ export default function AboutPage({ content }) {
   return (
     <>
       <Head>
-        <title>CFM: About Us</title>
+        <title>Fridge Finder: About Us</title>
       </Head>
       <Box
         sx={{

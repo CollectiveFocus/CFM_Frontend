@@ -22,7 +22,7 @@ export async function getStaticProps() {
       decoratedParagraph: {
         variant: 'h1',
         title: 'Take what you need. Leave what you can.',
-        body: 'The Community Fridge Map can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        body: 'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
       },
       paragraphCard: {
         h2: {
@@ -84,7 +84,7 @@ export default function HomePage({
   return (
     <>
       <Head>
-        <title>Community Fridge Map</title>
+        <title>Fridge Finder</title>
       </Head>
 
       <PageHero {...pageHero} />

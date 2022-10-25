@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  description: Community Fridge Map API
+  description: Fridge Finder API
   version: 1.0.0
-  title: Community Fridge Map API
+  title: Fridge Finder API
   contact:
     email: info@collectivefocus.site
   license:

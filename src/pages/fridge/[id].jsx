@@ -6,7 +6,7 @@ export default function FridgePage(props) {
   return (
     <>
       <Head>
-        <title>{'CFM: ' + props.fridge.name}</title>
+        <title>{'Fridge Finder: ' + props.fridge.name}</title>
       </Head>
       <FridgeInformation {...props} />
     </>
