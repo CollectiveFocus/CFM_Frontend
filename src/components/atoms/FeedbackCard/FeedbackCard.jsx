@@ -36,7 +36,7 @@ const displayText = {
   EmailSuccess: 'Your email was sent.',
   EmailError: 'Your email was not sent.',
   ReportStatus: 'You have successfully submitted a status report!',
-  CreateFridge: 'You have successfully added a community fridge listing!',
+  CreateFridge: 'You have successfully added a fridge listing!',
 };
 
 const displayImg = {

@@ -66,7 +66,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>CFM: Contact Us!</title>
+        <title>Fridge Finder: Contact Us</title>
       </Head>
       {panel}
     </>

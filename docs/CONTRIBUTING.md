@@ -1,4 +1,4 @@
-# Contributing: Community Fridge Map
+# Contributing: Fridge Finder
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
@@ -120,7 +120,7 @@ HISTIGNORE="$HISTIGNORE:gaa:gca:gm:gpop;gpush:gs:gra:grc:gr-d:gof:clean"
 
 ## Configure development environment
 
-Running the CFM webapp requires [Node](https://nodejs.org/en/download/). The CFM webapp should be [setup by following the instructions in the readme](./README.md#system-setup).
+Running the Fridge Finder webapp requires [Node](https://nodejs.org/en/download/). The Fridge Finder webapp should be [setup by following the instructions in the readme](./README.md#system-setup).
 
 ## Select a task
 

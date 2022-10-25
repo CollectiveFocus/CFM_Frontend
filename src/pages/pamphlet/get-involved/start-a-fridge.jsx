@@ -82,7 +82,7 @@ export async function getStaticProps() {
         {
           title: '7. Ready to Add Your Fridge?',
           variant: 'h2',
-          body: 'Add your fridge to the Community Fridge Map by clicking the button below and completing a short form.',
+          body: 'Add your fridge to the Fridge Finder Map by clicking the button below and completing a short form.',
         },
       ],
     },
@@ -99,7 +99,7 @@ export default function StartAFridgePage({ content }) {
   return (
     <>
       <Head>
-        <title>CFM: Start a Fridge</title>
+        <title>Fridge Finder: Start a Fridge</title>
       </Head>
       <Box textAlign="center">
         <Image {...headerImg} alt={headerImg.alt} />

@@ -17,7 +17,7 @@ export default function DemoStylesPage({ text, listItems }) {
   return (
     <>
       <Head>
-        <title>CFM: Theme Styles Demo</title>
+        <title>Fridge Finder: Theme Styles Demo</title>
       </Head>
 
       <Stack gap={4} p={4}>

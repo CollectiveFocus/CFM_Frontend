@@ -107,7 +107,7 @@ export default function BrowsePage() {
   return (
     <>
       <Head>
-        <title>CFM: Geographic Map</title>
+        <title>Fridge Finder: Geographic Map</title>
       </Head>
 
       <Box sx={{ display: 'flex', height: availableHeight }}>
