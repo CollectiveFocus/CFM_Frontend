@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
 import { IconButton, Typography } from '@mui/material';
+import {
+  MapOutlined as MapIcon,
+  FormatListBulletedOutlined as ListIcon,
+} from '@mui/icons-material';
 
 export default function MapToggle({ currentView, setView }) {
   return (
@@ -13,6 +17,7 @@ export default function MapToggle({ currentView, setView }) {
       }
       sx={{ color: 'white' }}
     >
+      {currentView === MapToggle.view.map ? <ListIcon /> : <MapIcon />}
       <Typography sx={{ minWidth: '2.5rem' }}>
         {currentView === MapToggle.view.map ? 'List' : 'Map'}
       </Typography>

@@ -19,10 +19,9 @@ export default function SearchMap({ currentView, setView }) {
     <Box
       sx={{
         width: '100%',
-        height: '2.5em',
+        height: '2.55em',
         ...flexStyles,
-        pl: 4,
-        pr: 2,
+        pl: 2,
         background: applyAlpha('cc', designColor.grayscale.gradient[5]),
       }}
     >
@@ -34,7 +33,6 @@ export default function SearchMap({ currentView, setView }) {
           backgroundColor: 'background.default',
           borderRadius: 8,
           width: '100%',
-          maxWidth: 600,
           height: '1.9em',
           px: 4,
         }}
