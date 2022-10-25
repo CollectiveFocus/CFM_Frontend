@@ -34,7 +34,7 @@ export default function SearchMap({ currentView, setView }) {
           borderRadius: 8,
           width: '100%',
           height: '1.9em',
-          px: 4,
+          px: 2,
         }}
       >
         <SearchIcon sx={{ fontSize: 25 }} />
