@@ -63,17 +63,18 @@ const headingStyles = {
   },
 };
 
-const renderTitleSentences = (title, variant) =>
-  title
-    .split('.')
-    .filter((s) => s.length > 0)
-    .map((sentence, index) => (
-      <Typography
-        key={index}
-        variant={variant}
-        component="span"
-        sx={{ display: 'inline-block' }}
-      >
-        &nbsp;{sentence.trimStart()}.
-      </Typography>
-    ));
+const renderTitleSentences = (title, variant) => {
+  const result = title.match(/[^\.!\?]+[\.!\?]+/g);
+  const output = result ? result : [title];
+
+  return output.map((sentence, index) => (
+    <Typography
+      key={index}
+      variant={variant}
+      component="span"
+      sx={{ display: 'inline-block', my: 0, py: 0 }}
+    >
+      &nbsp;{sentence.trimStart()}
+    </Typography>
+  ));
+};
