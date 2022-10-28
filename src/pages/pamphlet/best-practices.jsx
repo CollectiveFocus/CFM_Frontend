@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { Box, Button, Tab, Tabs, Typography } from '@mui/material';
-import { FileDownloadOutlined as DownloadIcon } from '@mui/icons-material';
+import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { PageFooter } from 'components/atoms';
 
 export async function getStaticProps() {
@@ -10,29 +9,27 @@ export async function getStaticProps() {
     props: {
       panelList: [
         {
-          title: 'Providing Food',
+          title: 'Bringing Food to Fridges',
           content: [
-            'Aliquet laoreet at augue pretium consequat tortor volutpat. ',
-            'Sit lectus amet nunc cras. Condimentum feugiat urna auctor non nunc diam at. ',
-            'Purus ac id adipiscing vitae quam lacus, tellus eget mattis. ',
-            'Integer consectetur venenatis adipiscing morbi risus aenean. ',
-            'Molestie dui viverra eu id pellentesque commodo egestas. ',
-            'Tellus suscipit sodales sagittis ut. ',
-            'Sagittis quam mauris scelerisque eget tempus integer.',
-            'Purus ac id adipiscing vitae quam lacus, tellus eget mattis. ',
+            'Only bring good food to the community fridges. When considering what is good to donate, ask yourself if you would give the food item to your friends or family to eat? If so, your food donation is probably good for your neighbors, too.',
+            'Food must be fresh, stored at the proper temperature, and unexpired.',
+            'Portion donations into individual sized quantities that make it easy for people to take with them. Catering trays should not be stored in community fridges due to causing food contents to spill, and being inaccessible for the public to transport.',
+            'Food should be kept in clean, airtight containers to avoid food spills.',
+            'Label meals with ingredients and the date prepared.',
+            'If you notice a fridge needs to be cleaned, help clean it.',
+            'Do not bring anything else that is not food to a community fridge, unless told otherwise.',
+            'Take your trash with you, including cardboard boxes and food scraps.',
           ],
         },
         {
-          title: 'Receiving Food',
+          title: 'Taking Food from Fridges',
           content: [
-            'Volutpat tortor consequat pretium augue at laoreet aliquet.',
-            'At diam nunc non auctor urna feugiat condimentum cras nunc amet lectus sit.',
-            'Mattis eget tellus lacus quam vitae adipiscing id ac purus.',
-            'Aenean risus morbi adipiscing venenatis consectetur integer.',
-            'Egestas commodo pellentesque id eu viverra dui molestie.',
-            'Ut sagittis sodales suscipit tellus.',
-            'Mattis eget tellus lacus quam vitae adipiscing id ac integer.',
-            'Purus tempus eget scelerisque mauris quam saggitis.',
+            'Only take the amount of food that you need, and leave the rest for others. Many people depend on community fridges to get enough nutrition. Whenever possible, make sure there is enough food left for others to eat as well.',
+            'Only take good food from the fridges. If the food does not look good, throw it away using appropriate procedures and sanitation.',
+            'If you touch a food item, take it with you or throw it away.',
+            'Do not leave trash near community fridges.',
+            'If you notice a fridge needs to be cleaned, help clean it.',
+            'Be kind to others when interacting with community fridges.',
           ],
         },
       ],
@@ -41,29 +38,35 @@ export async function getStaticProps() {
 }
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, currentTab, index, ...other } = props;
 
   return (
-    <div
+    <Box
       role="tabpanel"
-      hidden={value !== index}
+      hidden={currentTab !== index}
       id={`tabpanel-${index}`}
       aria-labelledby={`tab-${index}`}
+      sx={{ mx: 4 }}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <ol>{children}</ol>
-        </Box>
-      )}
-    </div>
+      <Box
+        sx={{
+          '& ol': {
+            paddingLeft: 6,
+            paddingRight: 7,
+            marginBottom: 12,
+          },
+        }}
+      >
+        <ol>{children}</ol>
+      </Box>
+    </Box>
   );
 }
-
 TabPanel.propTypes = {
   children: PropTypes.node,
+  currentTab: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
 };
 
 export default function BestPracticesPage({ panelList }) {
@@ -85,7 +88,7 @@ export default function BestPracticesPage({ panelList }) {
         sx={{ mx: 4 }}
         value={ixCurrentPanel}
         onChange={handleChange}
-        aria-label="Tabs of Best Practices"
+        aria-label="Community Fridge Best Practices"
         variant="fullWidth"
         textColor="primary"
       >
@@ -93,38 +96,25 @@ export default function BestPracticesPage({ panelList }) {
           <Tab
             key={'tab-title-' + panel.title}
             label={panel.title}
-            sx={{ textTransform: 'none' }}
+            sx={{ textTransform: 'none', paddingTop: 0 }}
             id={'tab-' + index}
             aria-controls={'tab-panel-' + index}
           />
         ))}
       </Tabs>
-      {panelList.map((panel, index) => (
+      {panelList.map((panel, ixPanel) => (
         <TabPanel
-          key={`${panel.title}-${index}`}
-          value={ixCurrentPanel}
-          index={index}
+          key={`tab-panel-${ixPanel}`}
+          currentTab={ixCurrentPanel}
+          index={ixPanel}
         >
-          {panel.content.map((item, i) => (
-            <li key={`tab-content-${panel.title}-${i}`}>
+          {panel.content.map((item, ixContent) => (
+            <li key={`tab-content-${ixPanel}-${ixContent}`}>
               <Typography>{item}</Typography>
             </li>
           ))}
         </TabPanel>
       ))}
-      <Box textAlign="center" sx={{ px: 4 }}>
-        <Button
-          variant="contained"
-          sx={{
-            width: { xs: '100%', sm: 'inherit', md: 'inherit' },
-            px: 15,
-            mb: 5,
-          }}
-          startIcon={<DownloadIcon />}
-        >
-          Download PDF
-        </Button>
-      </Box>
       <PageFooter fixedAtBottom={true} />
     </>
   );
