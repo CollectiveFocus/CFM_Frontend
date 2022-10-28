@@ -9,7 +9,7 @@ const typography = {
     'Arial',
     'sans-serif',
   ].join(','),
-  h1: { fontSize: '36pt', fontWeight: 700 },
+  h1: { fontSize: '36pt', fontWeight: 700, margin: '12pt 0 12pt 0' },
   h2: { fontSize: '28pt', fontWeight: 700 },
   h3: { fontSize: '28pt', fontWeight: 400 },
   h4: { fontSize: '18pt', fontWeight: 700 },
