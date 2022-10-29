@@ -24,11 +24,6 @@ const DynamicMap = dynamic(
 );
 const BrowseMap = (props) => <DynamicMap {...props} />;
 
-const fridgePaperBoyLoveGallery = {
-  geoLat: 40.697759,
-  geoLng: -73.927282,
-};
-
 const ProgressIndicator = (
   <div
     style={{
@@ -62,7 +57,6 @@ export default function BrowsePage() {
 
   const Map = hasDataLoaded
     ? BrowseMap({
-        centerMap: fridgePaperBoyLoveGallery,
         fridgeList,
         ghostList,
       })
