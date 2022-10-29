@@ -10,7 +10,7 @@ export default function AddFridgePage() {
   return (
     <>
       <Head>
-        <title>CFM: Add a fridge to the database</title>
+        <title>Fridge Finder: Add a fridge to the database</title>
       </Head>
       <CreateFridge />
     </>
