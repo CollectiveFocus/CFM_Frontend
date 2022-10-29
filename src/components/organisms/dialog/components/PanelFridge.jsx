@@ -32,6 +32,7 @@ export default function PanelFridge({ handleBack, handleNext }) {
     },
     validationSchema: panelFridgeValidation,
     onSubmit: (values) => {
+      console.error({ values })
       alert(JSON.stringify(values, null, 2));
     },
   });
@@ -40,7 +41,7 @@ export default function PanelFridge({ handleBack, handleNext }) {
     <>
       <StepLabel>Fridge Location Information</StepLabel>
       <StepContent>
-        <form onSubmit={formik.handleSubmit}>
+        <form id="panelFridge" onSubmit={formik.handleSubmit}>
           <Stack direction="column" spacing={3} mx={4} mb={4}>
             <TextField
               id="name"
@@ -89,13 +90,6 @@ export default function PanelFridge({ handleBack, handleNext }) {
               error={formik.touched.notes && Boolean(formik.errors.notes)}
               helperText={formik.touched.notes && formik.errors.notes}
             />
-            <Button
-              aria-label="Click to send an email to Collective Focus"
-              variant="contained"
-              type="submit"
-            >
-              Send Email
-            </Button>
             <Stack
               direction={{ md: 'row-reverse', xs: 'column' }}
               justifyContent="space-between"
@@ -105,6 +99,9 @@ export default function PanelFridge({ handleBack, handleNext }) {
               <Button
                 aria-label="Click to continue to the next panel"
                 variant="contained"
+                type="submit"
+                value="submit"
+                form ="panelFridge"
                 sx={{ width: { md: '345px', xs: '100%' } }}
               >
                 Continue
