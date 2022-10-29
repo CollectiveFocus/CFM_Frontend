@@ -16,7 +16,14 @@ export default function PageHero({ img, title, link }) {
         position: 'relative',
       }}
     >
-      <Image priority layout="fill" objectFit="cover" alt="" {...img} />
+      <Image
+        priority
+        layout="fill"
+        objectFit="cover"
+        alt=""
+        {...img}
+        style={{ opacity: 0.8 }}
+      />
       <ButtonLink
         to={link}
         variant="contained"
