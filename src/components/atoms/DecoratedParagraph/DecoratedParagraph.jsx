@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { typesNextImage } from 'model/view/component/prop-types';
 import { Typography, Box, Divider } from '@mui/material';
-import { designColor } from 'theme/palette';
+import { applyAlpha, designColor } from 'theme/palette';
 
 export default function DecoratedParagraph({
   variant,
@@ -12,7 +12,7 @@ export default function DecoratedParagraph({
   hasDivider = false,
   sx = {},
 }) {
-  const grey = designColor.grayscale.gradient[6];
+  const grey = applyAlpha('66', designColor.neroGray);
 
   return (
     <Box sx={sx}>

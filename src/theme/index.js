@@ -1,6 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-import { designColor, default as palette } from './palette';
+import { applyAlpha, designColor, default as palette } from './palette';
 import typography from './typography';
 
 const theme = responsiveFontSizes(
@@ -27,12 +27,12 @@ const theme = responsiveFontSizes(
               borderColor: designColor.blue.dark,
             },
             '&.MuiButton-outlined': {
-              color: designColor.grayscale.gradient[5],
+              color: designColor.neroGray,
               borderColor: designColor.blue.dark,
             },
             '&.Mui-disabled': {
-              color: designColor.grayscale.gradient[0],
-              backgroundColor: designColor.grayscale.gradient[4],
+              color: designColor.white,
+              backgroundColor: applyAlpha('cc', designColor.neroGray),
             },
           },
         },

@@ -8,7 +8,7 @@ export default function PageFooter({
 }) {
   const sxFooter = {
     padding: 2,
-    backgroundColor: designColor.grayscale.gradient[3],
+    backgroundColor: designColor.magneticGray,
     width: '100%',
     display: 'flex',
     flexFlow: 'row wrap',
