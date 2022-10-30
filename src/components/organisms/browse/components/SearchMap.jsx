@@ -24,7 +24,7 @@ export default function SearchMap({ setShowSearchMap }) {
         bottom: '-2.5em',
         left: 0,
         ...flexStyles,
-        background: applyAlpha('cc', designColor.grayscale.gradient[5]),
+        background: applyAlpha('cc', designColor.neroGray),
       }}
     >
       <IconButton

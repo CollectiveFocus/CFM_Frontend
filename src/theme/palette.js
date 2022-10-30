@@ -12,24 +12,27 @@ export const pinColor = {
 };
 
 export const designColor = {
-  white: '#FFFFFF',
+  white: grayscale[0],
+  whiteSmoke: grayscale[1],
+  lightSilver: grayscale[2],
+  magneticGray: grayscale[3],
+  neroGray: grayscale[4],
   black: '#000000',
   blue: {
     dark: '#1543D4',
     darkShade: ['#040B25'],
     light: '#88B3FF',
   },
-  grayscale: {
-    gradient: [
-      '#FFFFFF', //0]
-      '#F6F6F6', //1]
-      '#D8D8D8', //2]
-      '#B4B4B4', //3]
-      'rgba(34,34,34,0.8)', //4] #222222 80%
-      '#222222', //5]
-      '#22222240', //6]
-    ],
-  },
+};
+
+const grayscale = {
+  gradient: [
+    '#FFFFFF', //0] white
+    '#F6F6F6', //1] whiteSmoke
+    '#D8D8D8', //2] lightSilver - veryLightGray
+    '#B4B4B4', //3] magneticGray
+    '#222222', //4] neroGray
+  ],
 };
 
 const palette = {
@@ -43,17 +46,17 @@ const palette = {
     main: designColor.blue.light,
   },
   background: {
-    default: designColor.grayscale.gradient[0],
-    paper: designColor.grayscale.gradient[1],
+    default: designColor.white,
+    paper: designColor.whiteSmoke,
   },
   text: {
-    primary: designColor.grayscale.gradient[5],
-    secondary: designColor.grayscale.gradient[4],
-    disabled: designColor.grayscale.gradient[3],
-    hint: designColor.grayscale.gradient[4],
+    primary: designColor.neroGray,
+    secondary: applyAlpha('cc', designColor.neroGray),
+    disabled: designColor.magneticGray,
+    hint: applyAlpha('cc', designColor.neroGray),
   },
-  icon: designColor.grayscale.gradient[4],
-  divider: designColor.grayscale.gradient[5],
+  icon: applyAlpha('cc', designColor.neroGray),
+  divider: designColor.neroGray,
 };
 
 export default palette;
