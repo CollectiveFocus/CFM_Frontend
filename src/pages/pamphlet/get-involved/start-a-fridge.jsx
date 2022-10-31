@@ -1,132 +1,107 @@
-import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Box } from '@mui/material';
-import { ButtonLink, DecoratedParagraph, PageFooter } from 'components/atoms';
+import { PageFooter, PamphletParagraph } from 'components/atoms';
 
-export async function getStaticProps() {
-  return {
-    props: {
-      content: [
-        {
-          title: 'Start a Fridge',
-          variant: 'h1',
-          body: 'Vitae, eu aliquam aenean magnis adipiscing quis mauris. A, dis nisi at suscipit gravida. Et sem r ut mauris sed. Mauris id odio in nec. Volutpat.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '1. Form Your Team',
-          variant: 'h2',
-          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus porttitor facilisis dolor viverra pellentesque mauris velit. Facilisis senectus id tincidunt feugiat tellus quis. At suspendisse pharetra, ut pellentesque vitae. Platea cursus venenatis scelerisque sit orci ullamcorper gravida condimentum. At tempus, dolor, metus enim tempor adipiscing convallis. Vitae odio feugiat vivamus mauris porttitor. Dictum in egestas mauris, nibh ipsum phasellus sit. Ultrices iaculis diam metus, mattis aliquet in amet pellentesque.\nInteger aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '2. Find a Location',
-          variant: 'h2',
-          body: 'Lorem ipsum dolor  sit amet, consectetur adipiscing elit. Lacus porttitor facilisis dolor viverra pellentesque mauris velit. Facilisis senectus id tincidunt feugiat tellus quis. At suspendisse pharetra, ut pellentesque vitae. Platea cursus venenatis scelerisque sit orci ullamcorper gravida condimentum. At tempus, dolor, metus enim tempor adipiscing convallis. Vitae odio feugiat vivamus mauris porttitor. Dictum in egestas mauris, nibh ipsum phasellus sit. Ultrices iaculis diam metus, mattis aliquet in amet pellentesque.\nInteger aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '3. Build a Shed',
-          variant: 'h2',
-          body: 'Integer aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '4. Budgeting Tips',
-          variant: 'h2',
-          body: 'Integer aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '5. Legal Concerns',
-          variant: 'h2',
-          body: 'Integer aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          img: {
-            src: '/img/hero.webp',
-            alt: 'stand in img',
-            width: 348,
-            height: 244,
-          },
-          title: '6. Spread the Word!',
-          variant: 'h2',
-          body: 'Integer aliquam aliquet odio volutpat. Massa eu aliquam leo eu in. Quis etiam dapibus venenatis scelerisque. Vulputate eu a enim nunc, massa nisl sed neque dignissim. Auctor orci imperdiet sit egestas egestas. Condimentum non cum nunc, morbi ullamcorper. Egestas tempus quam sapien vitae est. Nisl quis.',
-        },
-        {
-          title: '7. Ready to Add Your Fridge?',
-          variant: 'h2',
-          body: 'Add your fridge to the Fridge Finder Map by clicking the button below and completing a short form.',
-        },
-      ],
-    },
-  };
-} // getStaticProps()
-
-export default function StartAFridgePage({ content }) {
-  const headerImg = {
-    src: '/img/hero.webp',
-    alt: 'stand in hero img',
-    width: 375,
-    height: 390,
-  };
+export default function StartAFridgePage() {
   return (
     <>
       <Head>
         <title>Fridge Finder: Start a Fridge</title>
       </Head>
-      <Box textAlign="center">
-        <Image {...headerImg} alt={headerImg.alt} />
+      <Box mx={8} mb={6}>
+        <PamphletParagraph
+          title="Start a community fridge"
+          variant="h1"
+          body={[
+            'Anyone can start a community fridge. The keys to success are finding a great host location, organizing a daily maintenance team, and communicating about your goals both online and in your neighborhood. If you are interested in starting a community fridge, contact us for advice or feedback.',
+          ]}
+          hasDividerBottom={true}
+        />
+
+        <PamphletParagraph
+          title="1. Form a team"
+          variant="h2"
+          body={[
+            'To ensure the success and longevity of your community fridge, it is best to have some support from the beginning. Put together a group of people that will help you run the community fridge. We recommend including your friends, neighbors and family. Ensure everyone is excited and committed to running a community fridge.',
+          ]}
+          hasDividerBottom={true}
+        />
+
+        <PamphletParagraph
+          title="2. Select a location and a fridge"
+          variant="h2"
+          hasDividerBottom={true}
+          body={[
+            'Your team can scout for a location to host a community fridge. A location host would provide your fridge with electricity. Create an agreement on how everyone will dispose of trash at the location, including cardboard boxes that carry food donations. The best fridge hosts are supportive, helpful, and reliable. Examples include restaurants, cafes, bars, small businesses, and churches.',
+            'Once you have a location confirmed, you can find a refrigerator. Some people raise money to buy a new fridge, but it is possible to find a free second-use fridge online or by asking us.',
+          ]}
+          button={{
+            title: 'Request A Fridge',
+            to: {
+              pathname: '/user/contact',
+              query: { subject: 'Fridge Request' },
+            },
+            'aria-label': 'Request a fridge',
+            variant: 'contained',
+            size: 'wide',
+          }}
+        />
+
+        <PamphletParagraph
+          title="3. Build a fridge shelter"
+          variant="h2"
+          body={[
+            'To keep your fridge protected from outdoor elements like rain and snow, we strongly recommend building a weather resistant structure to protect your refrigerator. Fridge shelters are typically built from wood, which can be purchased or secured from donated materials. You can also do outreach to connect with volunteer carpenters.',
+          ]}
+          hasDividerBottom={true}
+          button={{
+            title: 'Get Construction Support',
+            to: {
+              pathname: '/user/contact',
+              query: { subject: 'Construction Support Request' },
+            },
+            'aria-label': 'Request construction support',
+            variant: 'contained',
+            size: 'wide',
+          }}
+        />
+
+        <PamphletParagraph
+          title="4. Budgeting tips"
+          variant="h2"
+          body={[
+            'Running a community fridge is not expensive, but there are some costs involved. The basic costs for running a fridge are electricity, cleaning supplies, and trash removal. We also encourage organizers to save money for potential repairs or if the appliance needs to be replaced in the future. With additional funding support, community fridges can also reimburse volunteer drivers for their gas expenses. ',
+          ]}
+          hasDividerBottom={true}
+        />
+
+        <PamphletParagraph
+          title="5. Announce the launch"
+          variant="h2"
+          body={[
+            'You can introduce a new community fridge to the public by creating online profiles on Fridge Finder and social media. With Fridge Finder, launching a community fridge is easier because our platform allows everyone to share information in an open forum.',
+            'To keep your communication organized, create an email account for the new fridge. From there, you can find press, media opportunities, and collaborations as your food justice efforts grow.',
+          ]}
+          hasDividerBottom={true}
+        />
+
+        <PamphletParagraph
+          title="Ready to add a fridge?"
+          variant="h2"
+          body={[
+            'Add a new fridge to Fridge Finder by clicking the button and completing a short form.',
+          ]}
+          button={{
+            title: 'Add a fridge',
+            to: '/user/fridge/add',
+            'aria-label': 'Add a fridge to Fridge Finder',
+            variant: 'contained',
+            size: 'wide',
+          }}
+        />
       </Box>
-      <Box mx={3} mt={12}>
-        {content.map((para, index) => (
-          <DecoratedParagraph
-            {...para}
-            key={para.title}
-            hasDivider={index > 0}
-          />
-        ))}
-      </Box>
-      <Box textAlign="center">
-        <ButtonLink
-          variant="contained"
-          sx={{ my: 7, minWidth: 345 }}
-          to="/fridge/add"
-          aria-label="Add a fridge location to the map"
-        >
-          ADD A FRIDGE
-        </ButtonLink>
-      </Box>
-      <PageFooter />
+
+      <PageFooter fixedAtBottom={false} />
     </>
   );
 }
-StartAFridgePage.propTypes = PropTypes.exact({
-  content: PropTypes.arrayOf(DecoratedParagraph.propTypes),
-}).isRequired;
