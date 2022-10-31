@@ -43,14 +43,14 @@ export default function DecoratedParagraph({
     </Box>
   );
 }
-DecoratedParagraph.propTypes = PropTypes.exact({
+DecoratedParagraph.propTypes = {
   variant: PropTypes.oneOf(['h1', 'h2']).isRequired,
   img: typesNextImage,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   hasDivider: PropTypes.bool,
   sx: PropTypes.object,
-}).isRequired;
+};
 
 const headingStyles = {
   h1: {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Box, InputBase, IconButton } from '@mui/material';
 import {
@@ -7,6 +8,13 @@ import {
 } from '@mui/icons-material';
 
 import { applyAlpha, designColor } from 'theme/palette';
+
+const flexStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  px: 3,
+};
 
 export default function SearchMap({ setShowSearchMap }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -66,10 +74,6 @@ export default function SearchMap({ setShowSearchMap }) {
     </Box>
   );
 }
-
-const flexStyles = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  px: 3,
+SearchMap.propTypes = {
+  setShowSearchMap: PropTypes.func,
 };

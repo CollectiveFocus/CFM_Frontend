@@ -40,8 +40,8 @@ export default function PageHero({ img, title, link }) {
     </Box>
   );
 }
-PageHero.propTypes = PropTypes.exact({
+PageHero.propTypes = {
   img: typesNextFillImage.isRequired,
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-}).isRequired;
+};

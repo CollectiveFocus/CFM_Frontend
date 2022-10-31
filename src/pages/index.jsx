@@ -26,6 +26,7 @@ export async function getStaticProps() {
       },
       paragraphCard: {
         h2: {
+          variant: 'h2',
           img: {
             src: '/card/paragraph/pearTomatoAndFridge.svg',
             alt: 'Picture of pear dancing with tomatoes stacked on top of each other',
@@ -38,6 +39,7 @@ export async function getStaticProps() {
         },
         h3: [
           {
+            variant: 'h3',
             img: {
               src: '/card/paragraph/apple.svg',
               alt: 'Picture of smiling apple holding a list',
@@ -49,6 +51,7 @@ export async function getStaticProps() {
             link: '/pamphlet/best-practices',
           },
           {
+            variant: 'h3',
             img: {
               src: '/card/paragraph/jumpingBlueberries.svg',
               alt: 'Picture of blueberries jumping and waving',
@@ -60,6 +63,7 @@ export async function getStaticProps() {
             link: '/pamphlet/get-involved',
           },
           {
+            variant: 'h3',
             img: {
               src: '/card/paragraph/plumAndFridge.svg',
               alt: 'Picture of smiling plum and smiling fridge',
@@ -113,11 +117,7 @@ export default function HomePage({
           <ParagraphCard {...paragraphCard.h2} variant="h2" />
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
-          <Typography
-            variant="h2"
-            textAlign="center"
-            sx={{ mb: { xs: 1, lg: 3 } }}
-          >
+          <Typography textAlign="center" sx={{ mb: { xs: 1, lg: 3 } }}>
             Get involved with community fridges!
           </Typography>
         </Grid>
@@ -130,11 +130,7 @@ export default function HomePage({
         >
           {paragraphCard.h3.map((card, index) => (
             <Grid item key={'Grid' + index} xs={12} sm={8} md={4} lg={3}>
-              <ParagraphCard
-                key={'ParagraphCard' + index}
-                {...card}
-                variant="h3"
-              />
+              <ParagraphCard key={'ParagraphCard' + index} {...card} />
             </Grid>
           ))}
         </Grid>
@@ -143,11 +139,11 @@ export default function HomePage({
     </>
   );
 }
-HomePage.propTypes = PropTypes.exact({
-  pageHero: PageHero.propTypes,
-  decoratedParagraph: DecoratedParagraph.propTypes,
-  paragraphCard: {
-    h2: ParagraphCard.propTypes,
+HomePage.propTypes = {
+  pageHero: PropTypes.exact(PageHero.propTypes),
+  decoratedParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
+  paragraphCard: PropTypes.shape({
+    h2: PropTypes.exact(ParagraphCard.propTypes),
     h3: PropTypes.arrayOf(ParagraphCard.propTypes),
-  },
-}).isRequired;
+  }),
+};

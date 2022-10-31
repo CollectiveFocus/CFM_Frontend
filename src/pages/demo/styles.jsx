@@ -80,7 +80,7 @@ export default function DemoStylesPage({ text, listItems }) {
     </>
   );
 }
-DemoStylesPage.propTypes = PropTypes.exact({
+DemoStylesPage.propTypes = {
   text: PropTypes.string.isRequired,
   listItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-}).isRequired;
+};

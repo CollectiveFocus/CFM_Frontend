@@ -113,8 +113,6 @@ export default function AboutPage({ content }) {
     </>
   );
 }
-AboutPage.propTypes = PropTypes.exact({
-  props: {
-    content: PropTypes.arrayOf(DecoratedParagraph.propTypes),
-  },
-}).isRequired;
+AboutPage.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.exact(DecoratedParagraph.propTypes)),
+};

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -110,4 +109,3 @@ export default function BrowsePage() {
     </>
   );
 }
-BrowsePage.propTypes = PropTypes.exact({}).isRequired;
