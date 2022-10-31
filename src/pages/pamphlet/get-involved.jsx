@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Grid, Box } from '@mui/material';
+import { Grid } from '@mui/material';
 import { DecoratedParagraph, PageFooter, TitleCard } from 'components/atoms';
 
 export async function getStaticProps() {
@@ -18,7 +17,7 @@ export async function getStaticProps() {
         },
         {
           title: 'Become A Driver',
-          link: '/',
+          link: '/pamphlet/get-involved/become-a-driver',
           img: {
             src: '/card/title/becomeDriver.svg',
             alt: 'A car with a smiling face',
@@ -26,7 +25,7 @@ export async function getStaticProps() {
         },
         {
           title: 'Donate To A Fridge',
-          link: '/',
+          link: '/pamphlet/get-involved/donate-to-a-fridge',
           img: {
             src: '/card/title/donate.svg',
             alt: 'A smiling piggy bank with a coin being inserted',
@@ -34,7 +33,7 @@ export async function getStaticProps() {
         },
         {
           title: 'Source Food',
-          link: '/',
+          link: '/pamphlet/get-involved/source-food',
           img: {
             src: '/card/title/sourceFood.svg',
             alt: 'A smiling bell pepper, tomato, and broccoli',
@@ -42,7 +41,7 @@ export async function getStaticProps() {
         },
         {
           title: 'Service Fridges',
-          link: '/',
+          link: '/pamphlet/get-involved/service-fridges',
           img: {
             src: '/card/title/serviceFridge.svg',
             alt: 'A smiling wrench and screwdriver',
@@ -50,7 +49,7 @@ export async function getStaticProps() {
         },
         {
           title: 'Join A Community Group',
-          link: '/',
+          link: '/pamphlet/get-involved/join-a-community-group',
           img: {
             src: '/card/title/joinCommunity.svg',
             alt: 'Four hands coming together with a smiling heart in the center',
@@ -59,36 +58,28 @@ export async function getStaticProps() {
       ],
       introParagraph: {
         title: 'Get Involved!',
-        body: 'There are many ways to support the future of the fridges. Viverra sed lorem pellentesque etiam bibendum faucibus.',
+        body: 'There are many ways to support the future of the fridges.',
         variant: 'h1',
+        img: {
+          src: '/hero/get-involved.webp',
+          alt: 'Volunteers in front of a community fridge',
+          width: 749,
+          height: 319,
+          layout: 'intrinsic',
+        },
       },
     },
   };
 }
 
-export default function GetInvolvedPage({ titleCards, introParagraph }) {
-  const headerImg = {
-    src: '/img/hero.webp',
-    alt: 'fill in image',
-    width: 360,
-    height: 130,
-  };
+export default function GetInvolvedPage({ introParagraph, titleCards }) {
   return (
     <>
       <Head>
         <title>Fridge Finder: Get Involved</title>
       </Head>
-      <Box
-        sx={{
-          width: '100%',
-          maxWidth: 550,
-          mx: 'auto',
-        }}
-      >
-        <Image alt="" {...headerImg} layout="responsive" />
-      </Box>
       <DecoratedParagraph
-        sx={{ mx: { xs: 4, sm: 4, md: 2 } }}
+        sx={{ mx: { xs: 4, sm: 4, md: 2 }, textAlign: 'center' }}
         {...introParagraph}
       />
       <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} my={{ xs: 4, md: 6 }}>
@@ -109,9 +100,7 @@ export default function GetInvolvedPage({ titleCards, introParagraph }) {
     </>
   );
 }
-GetInvolvedPage.propTypes = PropTypes.exact({
-  props: {
-    introParagraph: DecoratedParagraph.propTypes,
-    titleCards: PropTypes.arrayOf(TitleCard.propTypes),
-  },
-}).isRequired;
+GetInvolvedPage.propTypes = {
+  introParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
+  titleCards: PropTypes.arrayOf(PropTypes.exact(TitleCard.propTypes)),
+};
