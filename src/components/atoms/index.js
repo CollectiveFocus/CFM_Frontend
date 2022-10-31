@@ -5,5 +5,6 @@ export { default as MapToggle } from './MapToggle';
 export { default as NextLinkAnchor } from './NextLinkAnchor';
 export { default as PageFooter } from './PageFooter';
 export { default as PageHero } from './PageHero';
+export { default as PamphletParagraph } from './PamphletParagraph';
 export { default as ParagraphCard } from './ParagraphCard';
 export { default as TitleCard } from './TitleCard';
