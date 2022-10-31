@@ -36,6 +36,12 @@ const theme = responsiveFontSizes(
             },
           },
         },
+        variants: [
+          {
+            props: { size: 'wide' },
+            style: { minWidth: 300 },
+          },
+        ],
       },
     },
   })
