@@ -22,7 +22,7 @@ export const typesMaintainer = PropTypes.exact({
   instagram: PropTypes.string,
 });
 
-export const typesFridge = {
+export const typesFridge = PropTypes.exact({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   location: typesLocation.isRequired,
@@ -31,7 +31,7 @@ export const typesFridge = {
   photoUrl: PropTypes.string,
   notes: PropTypes.string,
   verified: PropTypes.bool,
-};
+});
 
 export const typesReportCondition = PropTypes.oneOf([
   'good',

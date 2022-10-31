@@ -151,7 +151,7 @@ export default function FeedbackCard({ type, action = null }) {
     </Box>
   );
 }
-FeedbackCard.propTypes = PropTypes.exact({
+FeedbackCard.propTypes = {
   type: PropTypes.oneOf([
     'ReportStatus',
     'CreateFridge',
@@ -159,4 +159,4 @@ FeedbackCard.propTypes = PropTypes.exact({
     'EmailError',
   ]),
   action: PropTypes.func,
-}).isRequired;
+};

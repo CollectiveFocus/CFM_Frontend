@@ -123,6 +123,6 @@ const panelShape = PropTypes.exact({
   title: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
-BestPracticesPage.propTypes = PropTypes.exact({
+BestPracticesPage.propTypes = {
   panelList: PropTypes.arrayOf(panelShape).isRequired,
-}).isRequired;
+};

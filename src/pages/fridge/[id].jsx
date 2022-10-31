@@ -61,6 +61,6 @@ async function getFridgeRecord({ id }) {
   const report = reports.length > 0 ? reports[0] : null;
   return { fridge, report };
 }
-getFridgeRecord.propTypes = PropTypes.exact({
+getFridgeRecord.propTypes = {
   id: PropTypes.string.isRequired,
-}).isRequired;
+};

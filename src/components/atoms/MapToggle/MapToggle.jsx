@@ -41,10 +41,10 @@ export default function MapToggle({ currentView, setView }) {
     </Button>
   );
 }
-MapToggle.propTypes = PropTypes.exact({
-  currentPage: PropTypes.symbol,
-  setViewToggle: PropTypes.func,
-}).isRequired;
+MapToggle.propTypes = {
+  currentView: PropTypes.symbol,
+  setView: PropTypes.func,
+};
 
 MapToggle.view = Object.freeze({
   map: Symbol(0),

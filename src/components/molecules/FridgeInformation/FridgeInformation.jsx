@@ -102,7 +102,7 @@ function ImageContainer({ src = null, alt }) {
 }
 ImageContainer.propTypes = {
   src: PropTypes.string,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 };
 
 function TagsContainer({ tags }) {

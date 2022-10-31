@@ -34,10 +34,10 @@ export default function PageFooter({
     </Box>
   );
 }
-PageFooter.propTypes = PropTypes.exact({
+PageFooter.propTypes = {
   scrollButton: PropTypes.bool,
   fixedAtBottom: PropTypes.bool,
-}).isRequired;
+};
 PageFooter.defaultProps = {
   scrollButton: true,
   fixedAtBottom: false,

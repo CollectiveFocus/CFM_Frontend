@@ -86,11 +86,10 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
     );
   }
 }
-// img: typesImage.isRequired,
-ParagraphCard.propTypes = PropTypes.exact({
+ParagraphCard.propTypes = {
   variant: PropTypes.oneOf(['h2', 'h3']).isRequired,
   img: typesNextImage.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-}).isRequired;
+};

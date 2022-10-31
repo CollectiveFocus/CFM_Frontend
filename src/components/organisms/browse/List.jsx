@@ -31,7 +31,9 @@ function Location({ location }) {
     </Stack>
   );
 }
-Location.propTypes = typesView.Location;
+Location.propTypes = {
+  location: typesView.Location,
+};
 
 function Instagram({ instagramUrl }) {
   const instagramRegex =
