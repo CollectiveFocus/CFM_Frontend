@@ -102,7 +102,8 @@ export default function AboutPage({ content }) {
       <Box textAlign="center">
         <ButtonLink
           variant="contained"
-          sx={{ my: 7, minWidth: 345 }}
+          size="wide"
+          sx={{ my: 7 }}
           to="/pamphlet/get-involved"
           aria-label="Get involved with the community fridge movement"
         >

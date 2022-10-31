@@ -72,7 +72,8 @@ const displayButton = {
       to="/"
       aria-label="Go to Home page"
       variant="contained"
-      sx={{ mt: 8, mb: 2, minWidth: 345 }}
+      size="wide"
+      sx={{ mt: 8, mb: 2 }}
     >
       BACK TO HOME
     </ButtonLink>
@@ -83,7 +84,8 @@ const displayButton = {
       to="#"
       aria-label="View Fridge details"
       variant="contained"
-      sx={{ mt: 8, mb: 2, minWidth: 345 }}
+      size="wide"
+      sx={{ mt: 8, mb: 2 }}
     >
       GO TO FRIDGE
     </ButtonLink>
@@ -94,7 +96,8 @@ const displayButton = {
         to="#"
         aria-label="View Fridge details"
         variant="contained"
-        sx={{ mt: 8, mb: 2, minWidth: 345 }}
+        size="wide"
+        sx={{ mt: 8, mb: 2 }}
       >
         GO TO FRIDGE
       </ButtonLink>
@@ -102,7 +105,8 @@ const displayButton = {
         to="#"
         aria-label="Edit Fridge details"
         variant="outlined"
-        sx={{ mb: 2, mt: 6, minWidth: 345 }}
+        size="wide"
+        sx={{ mb: 2, mt: 6 }}
       >
         EDIT FRIDGE
       </ButtonLink>
@@ -121,7 +125,8 @@ export default function FeedbackCard({ type, action = null }) {
           onClick={action}
           aria-label="Click to resend message"
           variant="contained"
-          sx={{ mt: 8, mb: 2, minWidth: 345 }}
+          size="wide"
+          sx={{ mt: 8, mb: 2 }}
         >
           TRY AGAIN
         </Button>
