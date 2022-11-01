@@ -117,7 +117,11 @@ export default function HomePage({
           <ParagraphCard {...paragraphCard.h2} variant="h2" />
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
-          <Typography textAlign="center" sx={{ mb: { xs: 1, lg: 3 } }}>
+          <Typography
+            variant="h2"
+            textAlign="center"
+            sx={{ mb: { xs: 1, lg: 3 } }}
+          >
             Get involved with community fridges!
           </Typography>
         </Grid>
@@ -144,6 +148,6 @@ HomePage.propTypes = {
   decoratedParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
   paragraphCard: PropTypes.shape({
     h2: PropTypes.exact(ParagraphCard.propTypes),
-    h3: PropTypes.arrayOf(ParagraphCard.propTypes),
+    h3: PropTypes.arrayOf(PropTypes.exact(ParagraphCard.propTypes)),
   }),
 };
