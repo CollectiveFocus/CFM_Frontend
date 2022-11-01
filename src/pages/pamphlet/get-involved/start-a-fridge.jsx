@@ -100,8 +100,17 @@ export default function StartAFridgePage() {
           }}
         />
       </Box>
-
-      <PageFooter fixedAtBottom={false} />
+      <Box textAlign="center">
+        <ButtonLink
+          variant="contained"
+          sx={{ my: 7, minWidth: 345 }}
+          to="/user/add-fridge"
+          aria-label="Add a fridge location to the map"
+        >
+          ADD A FRIDGE
+        </ButtonLink>
+      </Box>
+      <PageFooter />
     </>
   );
 }
