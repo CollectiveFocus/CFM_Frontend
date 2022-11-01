@@ -111,10 +111,6 @@ export default function ResponsiveAppBar() {
             src="/brand/logo.webp"
             width={108}
             height={48}
-            style={{
-              width: 'auto',
-              maxHeight: '48px',
-            }}
           />
         </IconButton>
         <Box

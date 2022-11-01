@@ -1,13 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: `${process.env.AWS_API_URL}:path*`,
-      },
-    ];
-  },
+
   images: {
     domains: ['127.0.0.1', 'placekitten.com'],
   },

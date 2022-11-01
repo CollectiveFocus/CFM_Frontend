@@ -15,10 +15,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/img/hero.webp',
+            src: '/hero/get-involved.webp',
             alt: 'stand in img',
-            width: 348,
-            height: 244,
+            width: 749,
+            height: 319,
           },
           title: 'Independence for Each Fridge',
           variant: 'h2',
@@ -26,10 +26,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/img/hero.webp',
+            src: '/hero/get-involved.webp',
             alt: 'stand in img',
-            width: 348,
-            height: 244,
+            width: 749,
+            height: 319,
           },
           title: 'A Public Art Installation on Our Sidewalks',
           variant: 'h2',
@@ -37,10 +37,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/img/hero.webp',
+            src: '/hero/get-involved.webp',
             alt: 'stand in img',
-            width: 348,
-            height: 244,
+            width: 749,
+            height: 319,
           },
           title: 'Technology Empowers Us',
           variant: 'h2',
@@ -48,10 +48,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/img/hero.webp',
+            src: '/hero/get-involved.webp',
             alt: 'stand in img',
-            width: 348,
-            height: 244,
+            width: 749,
+            height: 319,
           },
           title: 'Collective Focus',
           variant: 'h2',
@@ -69,7 +69,7 @@ export async function getStaticProps() {
 
 export default function AboutPage({ content }) {
   const headerImg = {
-    src: '/img/hero.webp',
+    src: '/hero/get-involved.webp',
     alt: 'fill in image',
     width: 360,
     height: 130,

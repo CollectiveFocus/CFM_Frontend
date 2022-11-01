@@ -11,20 +11,6 @@ export const pinColor = {
   reportUnavailable: '#d3d3d3',
 };
 
-export const designColor = {
-  white: grayscale[0],
-  whiteSmoke: grayscale[1],
-  lightSilver: grayscale[2],
-  magneticGray: grayscale[3],
-  neroGray: grayscale[4],
-  black: '#000000',
-  blue: {
-    dark: '#1543D4',
-    darkShade: ['#040B25'],
-    light: '#88B3FF',
-  },
-};
-
 const grayscale = {
   gradient: [
     '#FFFFFF', //0] white
@@ -33,6 +19,20 @@ const grayscale = {
     '#B4B4B4', //3] magneticGray
     '#222222', //4] neroGray
   ],
+};
+
+export const designColor = {
+  white: grayscale.gradient[0],
+  whiteSmoke: grayscale.gradient[1],
+  lightSilver: grayscale.gradient[2],
+  magneticGray: grayscale.gradient[3],
+  neroGray: grayscale.gradient[4],
+  black: '#000000',
+  blue: {
+    dark: '#1543D4',
+    darkShade: ['#040B25'],
+    light: '#88B3FF',
+  },
 };
 
 const palette = {

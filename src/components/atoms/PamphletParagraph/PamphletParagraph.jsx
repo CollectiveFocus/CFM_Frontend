@@ -4,9 +4,7 @@ import { ButtonLink } from 'components/atoms';
 import { applyAlpha, designColor } from 'theme/palette';
 
 const DividerGrey = () => (
-  <Divider
-    sx={{ borderColor: applyAlpha('40', designColor.neroGray) }}
-  />
+  <Divider sx={{ borderColor: applyAlpha('40', designColor.neroGray) }} />
 );
 
 export default function PamphletParagraph({
