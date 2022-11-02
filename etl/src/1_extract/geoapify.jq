@@ -1,7 +1,7 @@
 [
 .[] |
 {
-  mainId: .id | tonumber,
+  id: .id | tonumber,
   locationName: .name,
   locationStreet: (.housenumber + " " + .street),
   locationCity: .city,

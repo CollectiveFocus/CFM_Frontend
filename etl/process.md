@@ -89,7 +89,7 @@ mv -f temp/out.json table/main.json
 rm -rf temp/
 ```
 
-## cfm data
+### cfm data
 
 ```bash
 cd etl; mkdir temp output
@@ -188,4 +188,48 @@ mv -f temp/out.json table/main.json
 ```bash
 mkdir temp
 jq -f main-api.jq output/api.json | sed 's/null/""/' | dasel -r json -w csv > temp/api.csv
+```
+
+### merge random table into main.json using address as key
+
+- convert to json and create id
+
+```bash
+mkdir temp; rm temp/*
+
+mv 'file.csv' temp/excel.csv
+dasel -r csv -w json -f temp/excel.csv > temp/excel.json
+jq -sf excel/table-contactSheet.jq temp/excel.json > table/excel.json
+jq -sf excel/table-masterlist.jq temp/excel.json > table/excel.json
+```
+
+- create location key
+
+```bash
+jq '[.[] | {id,address}]' table/excel.json | dasel -r json -w csv | tee temp/address.csv | cin
+start https://www.geoapify.com/tools/address-validation # create temp/geoapify.csv
+mv 'geocoded_by_geoapify.csv' temp/geoapify.csv
+dasel -f temp/geoapify.csv -r csv -w json | sed 's/original_//' | jq -s '.' > table/geoapify.json
+jq -f geoapify.jq table/geoapify.json | gema -f geoapify-location-invalid.pat > temp/location.json
+```
+
+- merge location data into excel table
+
+```bash
+jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]' {table/excel,temp/location}.json > temp/merged.json
+mv -f temp/merged.json table/excel.json
+```
+
+- align the excel table with the table/main.json
+
+```bash
+node align-key.mjs  &> ~/scratch.txt
+jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]'  temp/out.json table/excelMain.json > temp/merged.json
+<temp/merged.json tr -d '\r' > table/excelMain.json
+```
+
+- create the CSV file for Google import
+
+```bash
+dasel -r json -w csv -f table/excelMain.json > output/excel.csv
 ```

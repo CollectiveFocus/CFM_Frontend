@@ -34,7 +34,7 @@ export const ValuesFridge = object({
   tags: ValuesTag.optional(),
   maintainer: ValuesMaintainer.optional(),
   photoUrl: string().url().optional(),
-  notes: string().min(1).max(300).trim().optional(),
+  notes: string().min(1).max(700).trim().optional(),
   verified: boolean().default(false),
 });
 
