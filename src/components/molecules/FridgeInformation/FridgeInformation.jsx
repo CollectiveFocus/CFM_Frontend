@@ -1,23 +1,15 @@
 import Image from 'next/legacy/image';
-import {
-  Button,
-  Chip,
-  Divider,
-  Link,
-  Stack,
-  Typography,
-  Box,
-} from '@mui/material';
+import { Button, Chip, Divider, Link, Stack, Typography } from '@mui/material';
 
 // Icons
 import {
   CalendarMonth as CalendarMonthIcon,
   ChatBubbleOutlineOutlined as ChatBubbleOutlineOutlinedIcon,
   DirectionsOutlined as DirectionsOutlinedIcon,
-  EditOutlined as EditOutlinedIcon,
+  // EditOutlined as EditOutlinedIcon,
   InfoOutlined as InfoOutlinedIcon,
   Instagram as InstagramIcon,
-  Kitchen as KitchenIcon,
+  KitchenOutlined as KitchenIcon,
   Language as LanguageIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
   MobileScreenShareOutlined as MobileScreenShareOutlinedIcon,
@@ -44,6 +36,25 @@ const enumCondition = {
     text: 'No fridge at this address',
     color: 'warning',
   },
+  ghost: {
+    text: 'Fridge is permanently unavailable',
+    color: 'error',
+  },
+};
+
+const renderWrappingText = (text) => {
+  const result = text.match(/[^\.!,\?]+[\.!,\?\w]+/g);
+  const output = result ? result : [text];
+
+  return output.map((sentence, index) => (
+    <Typography
+      key={index}
+      component="span"
+      sx={{ display: 'inline-block', whiteSpace: 'pre-wrap' }}
+    >
+      {sentence}
+    </Typography>
+  ));
 };
 
 function FridgeStatusIcon({ condition }) {
@@ -63,18 +74,27 @@ function InformationLine({ icon, text, caption = null }) {
   const IconComponent = icon;
   const CaptionComponent = (caption) =>
     caption ? (
-      <Box component="span" sx={{ fontWeight: 600, mr: 2 }}>
+      <Typography
+        component="span"
+        sx={{ display: 'inline-block', fontWeight: 600, mr: 2 }}
+      >
         {caption}:
-      </Box>
+      </Typography>
     ) : null;
   return (
-    <Typography variant="body1">
+    <Stack direction="row" alignItems="center">
       <IconComponent
-        sx={{ mr: 2, fontSize: '22pt', verticalAlign: 'text-bottom' }}
+        sx={{
+          mr: 2,
+          fontSize: '22pt',
+          verticalAlign: 'text-bottom',
+        }}
       />
-      {CaptionComponent(caption)}
-      {text}
-    </Typography>
+      <Typography variant="body1">
+        {CaptionComponent(caption)}
+        {text && renderWrappingText(text)}
+      </Typography>
+    </Stack>
   );
 }
 InformationLine.propTypes = {
@@ -90,15 +110,13 @@ function ImageContainer({ src = null, alt }) {
         <Image
           src={src}
           alt={alt}
-          width="100%"
-          height="100%"
-          layout="responsive"
+          width="300"
+          height="345"
           objectFit="contain"
         />
       </Stack>
     );
-  }
-  return null;
+  } else return null;
 }
 ImageContainer.propTypes = {
   src: PropTypes.string,
@@ -129,20 +147,20 @@ function LinkLine({ icon, obj, url }) {
         /(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)/gim;
       const insta = instagramRegex.exec(obj.instagram);
       return (
-        <Stack direction="row" spacing={5} alignItems="center">
-          <IconComponent />
-          <Link href={obj.instagram}>
-            <Typography variant="body1">{`@${insta[1]}`}</Typography>
+        <Stack direction="row" alignItems="center">
+          <IconComponent sx={{ fontSize: '22pt', mr: 2 }} />
+          <Link href={obj.instagram} variant="body1">
+            {`@${insta[1]}`}
           </Link>
         </Stack>
       );
     }
     if (url === 'website' && obj.website) {
       return (
-        <Stack direction="row" spacing={5} alignItems="center">
-          <IconComponent />
-          <Link href={obj.website}>
-            <Typography variant="body1">{obj.website}</Typography>
+        <Stack direction="row" alignItems="center">
+          <IconComponent sx={{ fontSize: '22pt', mr: 2 }} />
+          <Link href={obj.website} variant="body1">
+            {obj.website}
           </Link>
         </Stack>
       );
@@ -159,19 +177,20 @@ function NotesLine({ icon, text, link = null }) {
   if (link) {
     const IconComponent = icon;
     return (
-      <Stack direction="row">
+      <Stack direction="row" alignItems="center">
         <IconComponent
           sx={{ mr: 3, fontSize: '20pt', verticalAlign: 'text-bottom' }}
         />
-        <Stack direction="column">
-          <Typography variant="body1">
-            <Box component="span" sx={{ fontWeight: 600 }}>
-              {text}
-            </Box>
-            :
+        <Typography>
+          <Typography
+            component="span"
+            variant="body1"
+            sx={{ display: 'inline-block', fontWeight: 600 }}
+          >
+            {text}:
           </Typography>
-          <Typography variant="body1">{link}</Typography>
-        </Stack>
+          {renderWrappingText(link)}
+        </Typography>
       </Stack>
     );
   } else return null;
@@ -263,13 +282,19 @@ function ReportContainer({ report }) {
       notes = null,
     } = report;
 
-    const reportDate = new Date(timestamp).toLocaleDateString();
+    const reportDate = new Date(timestamp).toLocaleTimeString([], {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
     const foodAvailable = {
       0: 'Empty',
-      33: 'Few items',
-      66: 'Many Items',
-      100: 'Full',
+      1: 'Few items',
+      2: 'Many Items',
+      3: 'Full',
     }[foodPercentage];
 
     return (
@@ -312,16 +337,16 @@ ReportContainer.propTypes = {
 
 export default function FridgeInformation({ fridge, report }) {
   return (
-    <Stack direction="column" spacing={7} mx={4} mb={4}>
+    <Stack direction="column" spacing={5} mx={4} mb={4}>
       {/* Navigation  */}
-      <Stack direction="row" justifyContent="space-between">
+      <Stack direction="row" justifyContent="space-between" sx={{ pt: 4 }}>
         {/* <Backtrack /> */}
-        <Link href="/demo/CreateFridgeDialog">
+        {/* <Link href="/demo/CreateFridgeDialog">
           <Stack direction="row" spacing={2}>
             <EditOutlinedIcon />
             <Typography variant="body1">Edit Fridge</Typography>
           </Stack>
-        </Link>
+        </Link> */}
       </Stack>
 
       {FridgeContainer({ fridge })}
@@ -331,8 +356,10 @@ export default function FridgeInformation({ fridge, report }) {
         aria-label="Click to report the status of the fridge"
         variant="contained"
         sx={{ py: 3 }}
+        href={`/user/fridge/report/${fridge.id}`}
+        LinkComponent={Link}
       >
-        Report Status
+        Update Status
       </Button>
     </Stack>
   );
