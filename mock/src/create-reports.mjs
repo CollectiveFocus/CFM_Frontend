@@ -3,7 +3,7 @@ import http from 'http';
 const { randomInt } = await import('crypto');
 
 const apiHost = '127.0.0.1';
-const apiPort = 3000;
+const apiPort = 3050;
 
 const httpGetOptions = {
   hostname: apiHost,

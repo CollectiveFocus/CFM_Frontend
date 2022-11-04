@@ -15,7 +15,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/les_communityfridge",
         "website": "https://linktr.ee/lescommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "barriofridge1",
@@ -33,7 +34,8 @@
         "zip": "10029",
         "geoLat": 40.7911604,
         "geoLng": -73.9393979
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "harlemcommunityfridge",
@@ -50,7 +52,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/theharlemcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "uptownfridge",
@@ -64,7 +67,10 @@
         "geoLat": 40.863154,
         "geoLng": -73.929629
       },
-      "maintainer": { "instagram": "https://www.instagram.com/theuptownfridge" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/theuptownfridge"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "madisonsquareboysandgirlsclub",
@@ -80,7 +86,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/the155streetfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "westharlemcommunityfridge",
@@ -95,7 +102,10 @@
         "geoLng": -73.9562415,
         "name": "Saint Mary's Church of Manhattanville"
       },
-      "maintainer": { "instagram": "https://www.instagram.com/FridgeOnW126th" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/FridgeOnW126th"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "communityfridgewest120thstreet",
@@ -111,7 +121,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/Communityfridge120"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "peoplesfridgewordup",
@@ -129,7 +140,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/peoplesfridgewordup",
         "website": "https://linktr.ee/wordupfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "ujamaasolidarityfridge",
@@ -143,7 +155,10 @@
         "geoLat": 40.796449550000006,
         "geoLng": -73.96528990317628
       },
-      "maintainer": { "instagram": "https://www.instagram.com/ujamaafridge" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/ujamaafridge"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "sixthstreetcommunitycenterfridge",
@@ -157,7 +172,10 @@
         "geoLat": 40.7236719,
         "geoLng": -73.98025568410296
       },
-      "maintainer": { "instagram": "https://www.instagram.com/sixthstreetcc" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/sixthstreetcc"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "sugarhillcommunityfridges",
@@ -175,7 +193,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/sugarhillfridge",
         "website": "http://linktr.ee/sugarhillfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "westendcommunityfridge",
@@ -192,7 +211,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/westendfridge",
         "website": "http://linktr.ee/westendfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "peoplespeoplesfridge",
@@ -209,7 +229,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/thepeoplespeoplesfridge",
         "website": "https://docs.google.com/forms/d/e/1FAIpQLSf8xu_ohAJuMvc-pQIbEBseSmHpB_xrlGM3Sa0P5kq2f13VqA/viewform"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "smaccommunityfridge",
@@ -227,7 +248,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/eastvillageneighbors/",
         "website": "https://linktr.ee/Eastvillageneighbors"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "chelseacommunityfridgecupboard",
@@ -244,7 +266,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/Thechelseafridge",
         "website": "http://linktr.ee/thechelseafridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "broomeboweryfridge",
@@ -260,7 +283,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/broomeboweryfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "lanevera183",
@@ -275,8 +299,11 @@
         "geoLng": -73.931775,
         "name": "Washington Heights CORNER Project"
       },
-      "maintainer": { "instagram": "https://www.instagram.com/lanevera183" },
-      "notes": "On the 2nd Floor"
+      "maintainer": {
+        "instagram": "https://www.instagram.com/lanevera183"
+      },
+      "notes": "On the 2nd Floor",
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "overthrowcommunityfridge",
@@ -293,7 +320,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/overthrowcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "name": "Barrio Fridge #2",
@@ -311,7 +339,8 @@
         "zip": "10029",
         "geoLat": 40.78999785,
         "geoLng": -73.94161519709277
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fridgeatthefort",
@@ -326,7 +355,10 @@
         "geoLng": -73.9381774,
         "name": "Hudson View Restaurant"
       },
-      "maintainer": { "instagram": "https://www.instagram.com/fortfridge" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/fortfridge"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "communityfridgeatsaintjude",
@@ -341,7 +373,10 @@
         "geoLng": -73.93940732299878,
         "name": "Centro Altagracia"
       },
-      "maintainer": { "instagram": "https://www.instagram.com/altagraciafaith" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/altagraciafaith"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "astoriafridge",
@@ -358,7 +393,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/astoriafridge",
         "website": "http://linktr.ee/Astoriafridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "jacksonheightscommunityfridge",
@@ -375,7 +411,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/jacksonheightscommunityfridge",
         "website": "http://rb.gy/koufel"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fenixfridge",
@@ -391,7 +428,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/fenixcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "elmhurstcommunityfridge2",
@@ -409,7 +447,8 @@
         "zip": "11373",
         "geoLat": 40.743449,
         "geoLng": -73.887837
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "rockawaymutualaidalmedaavenue",
@@ -426,7 +465,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/rockawaymutualaid",
         "website": "http://linktr.ee/rockawaymutualaid"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "jamaicacommunityfridge1",
@@ -443,7 +483,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/jamaicacommunityfridge",
         "website": "http://forms.gle/jmF5HpgEKHD7ctFF8"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "rockawaymutualaidbeach92ndstreet",
@@ -460,7 +501,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/rockawaymutualaid",
         "website": "http://linktr.ee/rockawaymutualaid"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "justusfaraithefridge",
@@ -476,7 +518,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/laureltoncommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "rtucommunityfridge",
@@ -493,7 +536,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/ridgewoodtenantsunion",
         "website": "https://www.ridgewoodtenantsunion.org/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "brotherswashdrycommunityfridge",
@@ -511,7 +555,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/brotherswashndry",
         "website": "http://sampsondahl.com"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "coronacomunidadfridge",
@@ -529,7 +574,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/CoronaComunidadFridge",
         "website": "https://linktr.ee/coronacomunidadfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "jamaicacommunityfridge2",
@@ -546,7 +592,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/jamaicacommunityfridge",
         "website": "http://forms.gle/jmF5HpgEKHD7ctFF8"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "queensvillagecommunityfridge",
@@ -563,7 +610,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/qvcommunityfridge",
         "website": "http://linktr.ee/qvcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "ravenswoodcommunityfridge",
@@ -579,7 +627,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/ravenswoodfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "ozoneparkcommunityfridge",
@@ -595,7 +644,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/southsideactionpact"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "ridgewoodcommunityfridge",
@@ -612,7 +662,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/woodbine.nyc",
         "website": "http://woodbine.nyc/mutualaid"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "astoriahalalfridge",
@@ -628,7 +679,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/astoriahalalfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "saintalbanscommunityfridge",
@@ -647,7 +699,8 @@
         "instagram": "https://www.instagram.com/stalbanscommunityfridge",
         "website": "https://linktr.ee/st.albanscommunityfridge"
       },
-      "notes": "In front of the Robert Ross Johnson Family Life Center"
+      "notes": "In front of the Robert Ross Johnson Family Life Center",
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "nexusfridge",
@@ -665,7 +718,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/nexusfridge",
         "website": "https://linktr.ee/nexusfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "flushingcommunityfridge",
@@ -682,7 +736,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/flushingcommunityfridge",
         "website": "https://linktr.ee/flushingcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "woodsidecommunityfridge",
@@ -699,7 +754,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/woodsidefridge",
         "website": "https://swma.nyc/wcf"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "beautystrike",
@@ -713,7 +769,10 @@
         "geoLat": 40.696509,
         "geoLng": -73.967347
       },
-      "maintainer": { "instagram": "https://www.instagram.com/beautystrikeny" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/beautystrikeny"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "crownheightscommunityfridge",
@@ -729,7 +788,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/bergencommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "downtownbrooklyncommunityfridge",
@@ -743,7 +803,10 @@
         "geoLat": 40.6920518,
         "geoLng": -73.9864185
       },
-      "maintainer": { "instagram": "https://www.instagram.com/dtbkfridge" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/dtbkfridge"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "friendlyfridgeflatbush",
@@ -759,7 +822,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/flatbushfriendlyfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "gowanusfridgenaturebased",
@@ -776,7 +840,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/thegowanusfridge",
         "website": "http://forms.gle/pLdjsrE1PVxPTFQHA"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "gowanusfridgepostmarkcafe",
@@ -793,7 +858,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/thegowanusfridge",
         "website": "http://forms.gle/pLdjsrE1PVxPTFQHA"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "greenpointfridge",
@@ -810,7 +876,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/greenpointfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "playgroundcoffeeshop",
@@ -826,7 +893,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/playgroundcoffeeshop"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "sincerelytommy",
@@ -840,7 +908,10 @@
         "geoLat": 40.6860681,
         "geoLng": -73.9443146
       },
-      "maintainer": { "instagram": "https://www.instagram.com/sincerelytommy_" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/sincerelytommy_"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "livinggallery",
@@ -857,7 +928,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/the_living_gallery",
         "website": "http://linktr.ee/Thelivinggallery"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "universecityfridge",
@@ -871,7 +943,10 @@
         "geoLat": 40.67219753846154,
         "geoLng": -73.9020948846154
       },
-      "maintainer": { "instagram": "https://www.instagram.com/universecitynyc" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/universecitynyc"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "inourheartsvanburen",
@@ -885,7 +960,10 @@
         "geoLat": 40.69053555,
         "geoLng": -73.94067625466758
       },
-      "maintainer": { "instagram": "https://www.instagram.com/iohnyc" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/iohnyc"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "publicassistantscommunityfridge",
@@ -902,7 +980,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/publicassistants",
         "website": "http://www.publicassistants.org"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hashtaglunchbagbkxredhook",
@@ -919,7 +998,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/hashtaglunchbagbk",
         "website": "https://linktr.ee/PerfectlyAnaika"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "friendlyfridgeknickerbocker",
@@ -935,7 +1015,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/thefriendlyfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hairmetal",
@@ -949,7 +1030,10 @@
         "geoLat": 40.7164659,
         "geoLng": -73.9572052
       },
-      "maintainer": { "instagram": "https://www.instagram.com/hairmetalsalon" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hairmetalsalon"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "cooperparkfridge",
@@ -966,7 +1050,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/cooperparkfridge",
         "website": "https://linktr.ee/northbrooklynmutualaid"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "koinoniajuanbautistachurchcommunityfridge",
@@ -980,7 +1065,8 @@
         "geoLat": 40.6788566,
         "geoLng": -74.0088169594481,
         "name": "Visitation of the Blessed Virgin Mary Roman Catholic Church"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "evergreenfreefridge",
@@ -996,7 +1082,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/evergreenfreefridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "solidarityfridge",
@@ -1010,7 +1097,8 @@
         "geoLat": 40.6429095,
         "geoLng": -73.96358101823799,
         "name": "11226"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "bakeshopfridge",
@@ -1024,7 +1112,10 @@
         "geoLat": 40.7032349,
         "geoLng": -73.9328618
       },
-      "maintainer": { "phone": "(718) 381-3706" }
+      "maintainer": {
+        "phone": "(718) 381-3706"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "friendlyfridgeheights",
@@ -1041,7 +1132,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/theheightsfriendlyfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fortgreenecommunityfridge",
@@ -1058,7 +1150,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/fgcommunityfridge",
         "website": "http://linktr.ee/fgcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "bushwickcommunityfridge",
@@ -1074,7 +1167,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/thebushwickfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "penniespantry",
@@ -1092,7 +1186,8 @@
         "email": "penniespantrybk@gmail.com",
         "instagram": "https://www.instagram.com/penniespantrybk",
         "website": "https://linktr.ee/penniespantrybk"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hashtaglunchbagbkxwyckofffarmhousemuseum",
@@ -1110,7 +1205,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/hashtaglunchbagbk",
         "website": "https://linktr.ee/PerfectlyAnaika"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "laneverademarcy",
@@ -1124,7 +1220,10 @@
         "geoLat": 40.70501,
         "geoLng": -73.95599750000001
       },
-      "maintainer": { "instagram": "https://www.instagram.com/neverademarcy" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/neverademarcy"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "brooklyncommunityfridgesflatbush",
@@ -1141,7 +1240,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/bkfridges",
         "website": "http://linktr.ee/bk4bl"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "knowwastelandscommunityfridge",
@@ -1160,7 +1260,8 @@
         "instagram": "https://www.instagram.com/kwlgarden",
         "website": "http://knowwastelands.org"
       },
-      "notes": "TEMPORARILY OFFLINE (cannot accept food due to no electricity)"
+      "notes": "TEMPORARILY OFFLINE (cannot accept food due to no electricity)",
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "2fish5loavesfridge",
@@ -1176,7 +1277,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/2fish5loavesfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "paperboylovegallery",
@@ -1192,7 +1294,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/paperboy.lovegallery"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "classoncommunityfridge",
@@ -1209,7 +1312,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/Classon_Community_Fridge",
         "website": "https://linktr.ee/Classon_Community_Fridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "mixtecascommunityfridge",
@@ -1226,7 +1330,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/mixtecaorg",
         "website": "https://www.mixteca.org"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "copohalalcommunityfridge",
@@ -1240,7 +1345,10 @@
         "geoLat": 40.6313315,
         "geoLng": -73.96621703154759
       },
-      "maintainer": { "instagram": "https://www.instagram.com/copousa" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/copousa"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "onlunchbreakxgirlsonlynyfridge",
@@ -1254,7 +1362,10 @@
         "geoLat": 40.57602215,
         "geoLng": -73.99194985
       },
-      "maintainer": { "instagram": "https://www.instagram.com/onlunchbreak" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/onlunchbreak"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "successgardencommunity",
@@ -1270,7 +1381,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/successgardencommunity"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "onelovecommunityfridge",
@@ -1287,7 +1399,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/Onelovecommunityfridge",
         "website": "http://www.onelovecommunityfridge.org"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fultonstreetfridge",
@@ -1304,7 +1417,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/fultonstfridge",
         "website": "https://linktr.ee/fultonstfridge/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "bedfordparkcommunityfridge",
@@ -1320,7 +1434,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/bedfordparkcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "sybcommunityfridge",
@@ -1334,7 +1449,10 @@
         "geoLat": 40.832265899999996,
         "geoLng": -73.91622935571675
       },
-      "maintainer": { "instagram": "https://www.instagram.com/1freedom4all" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/1freedom4all"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "friendlyfridgebronx",
@@ -1350,7 +1468,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/thefriendlyfridgebx"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "allertonalliescommunityfridge",
@@ -1366,7 +1485,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/allertonalliesfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "lovingthebronxfridge",
@@ -1384,7 +1504,8 @@
         "phone": "(347) 992-2860",
         "instagram": "https://www.instagram.com/lovingthebronx"
       },
-      "notes": "Do NOT place any items in the refrigerator.\nIf you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you"
+      "notes": "Do NOT place any items in the refrigerator.\nIf you would like to donate food, send us a direct message, or text us at 347 992 2860. We will arrange to meet you",
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "motthavenfridge1",
@@ -1402,7 +1523,8 @@
         "email": "info@motthavenfridge.com",
         "instagram": "https://www.instagram.com/motthavenfridge/",
         "website": "https://www.motthavenfridge.com/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "nuestranevera",
@@ -1419,7 +1541,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/nuestraxnevera",
         "website": "http://linktr.ee/bumdsa"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "soundviewcommunityfridge",
@@ -1436,7 +1559,8 @@
       "maintainer": {
         "name": "Desiree Joy Frias",
         "instagram": "https://www.instagram.com/nuestraxnevera"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "motthavenfridge2",
@@ -1453,7 +1577,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/motthavenfridge",
         "website": "https://www.motthavenfridge.com/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "anchorfridge",
@@ -1470,7 +1595,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/anchorfridge",
         "website": "http://www.linktr.ee/southbronxmutualaid"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fjmfridge",
@@ -1487,7 +1613,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/food_justice_ministry",
         "website": "http://linktr.ee/foodjusticeministry"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "yonkerscommunityfridge",
@@ -1503,7 +1630,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/yonkerscommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "neighborhoodfridge",
@@ -1521,7 +1649,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/theneighborhoodfridge",
         "website": "https://linktr.ee/theneighborhoodfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "forestavenuecomeunityfridge",
@@ -1538,7 +1667,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/forestavecomeunityfridge",
         "website": "https://www.facebook.com/forestavecomeunityfridge/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "kingstoncommunityfridgevanburen",
@@ -1555,7 +1685,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/kingstoncommunityfridge",
         "website": "https://www.facebook.com/kingstoncommunityfridge/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "buffalocommunityfridge",
@@ -1571,7 +1702,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/buffalocommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "kingstoncommunityfridgeclintonavenue",
@@ -1589,7 +1721,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/kingstoncommunityfridge",
         "website": "https://www.facebook.com/kingstoncommunityfridge/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "greenvillecommunityfridge",
@@ -1605,7 +1738,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/GreenvilleCommunityFridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "unioncitycommunityfridge",
@@ -1619,7 +1753,10 @@
         "geoLat": 40.76273637688739,
         "geoLng": -74.03923744745303
       },
-      "maintainer": { "instagram": "https://www.instagram.com/ucfridge" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/ucfridge"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "westsidecommunityfridge",
@@ -1636,7 +1773,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/westsidecommunityfridge",
         "website": "http://linktr.ee/westsidecommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "foodforus",
@@ -1650,7 +1788,10 @@
         "geoLat": 40.792199,
         "geoLng": -74.010348
       },
-      "maintainer": { "instagram": "https://www.instagram.com/foodforusnj" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/foodforusnj"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "jcheightscommunityfridge",
@@ -1667,7 +1808,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/jcheightscommunityfridge/",
         "website": "https://linktr.ee/jcheightscommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "collectivefocusresourcehub",
@@ -1683,7 +1825,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/collectivefocushub"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "farmtopeoplecommunityfridge",
@@ -1697,7 +1840,10 @@
         "geoLat": 40.7051413,
         "geoLng": -73.92706200131855
       },
-      "maintainer": { "instagram": "https://www.instagram.com/farmtopeople" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/farmtopeople"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "uticacommunityfridge",
@@ -1713,7 +1859,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/uticacommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "brooklyncommunityfridgescrownheights",
@@ -1730,7 +1877,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/bkfridges",
         "website": "http://linktr.ee/bk4bl"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fridgesfamily",
@@ -1746,7 +1894,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/fridgesandfamily"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "brooklynheightscommunityfridge",
@@ -1762,7 +1911,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/brooklynheightscommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "kwtcommunityfridge",
@@ -1778,7 +1928,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/kwtfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "leonwrightlittlefreepantry",
@@ -1794,7 +1945,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/hullstreetblockassociation"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "eileensfreebodega",
@@ -1810,7 +1962,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/eileensfreebodega_"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "saintnickfridge",
@@ -1827,7 +1980,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/stnickfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "motthavencommunityfridge",
@@ -1840,7 +1994,8 @@
         "zip": "10028",
         "geoLat": 40.7785447,
         "geoLng": -73.954845
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "inourheartswestfarms",
@@ -1853,7 +2008,8 @@
         "zip": "10460",
         "geoLat": 40.83904002040039,
         "geoLng": -73.88085618225176
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fridgeportjamesstreet",
@@ -1869,7 +2025,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/fridgeport"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "essexmarketplantbasedcommunityfridge",
@@ -1882,7 +2039,8 @@
         "zip": "10002",
         "geoLat": 40.71784438095238,
         "geoLng": -73.9890200952381
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fridgehaven",
@@ -1898,7 +2056,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/Fridgehaven"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "wedoittoofridge",
@@ -1914,7 +2073,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/Wefridgetoo"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "eastelmhurstfridge",
@@ -1927,7 +2087,8 @@
         "zip": "11369",
         "geoLat": 40.75764635,
         "geoLng": -73.87386342776941
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hashtaglunchbagbkxfortdefiance",
@@ -1944,7 +2105,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/hashtaglunchbagbk",
         "website": "https://linktr.ee/PerfectlyAnaika"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "nychadyckmanhouses",
@@ -1957,7 +2119,8 @@
         "zip": "10034",
         "geoLat": 40.86098,
         "geoLng": -73.9219493
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "transmitterparkfridge",
@@ -1970,7 +2133,8 @@
         "zip": "11101",
         "geoLat": 40.7382092,
         "geoLng": -73.9278923
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "portchesterfriendlyfridge",
@@ -1986,7 +2150,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/thepcfriendlyfridge/?hl=en"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "vinnyspetstorecommunityfridge",
@@ -2002,7 +2167,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/Vinnyspetshop"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "loisaidacommunityfridge",
@@ -2019,7 +2185,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/loisaidafridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hellskitchencommunitycupboard",
@@ -2035,7 +2202,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/hkfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "northbrooklynfridgesmusichall",
@@ -2053,7 +2221,8 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/nbkfridges",
         "website": "https://linktr.ee/Nbkfridges"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "viequessolidaritylibrary",
@@ -2069,7 +2238,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/nuestraxnevera"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "flatbushcommunityfridge",
@@ -2085,7 +2255,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/flatbushcommunityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "hectorrafaelperez",
@@ -2098,7 +2269,8 @@
         "zip": "11233",
         "geoLat": 40.6855108,
         "geoLng": -73.91903355364005
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "clementsmileycommunityfridge",
@@ -2114,7 +2286,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/iotabro"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "pincommunityfridge",
@@ -2127,7 +2300,8 @@
         "zip": "11230",
         "geoLat": 40.6335233,
         "geoLng": -73.967415
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "chinatowncommunityfridgepantry",
@@ -2143,7 +2317,8 @@
       },
       "maintainer": {
         "instagram": "https://www.instagram.com/chinatown.communityfridge"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "maspethfridge",
@@ -2157,7 +2332,10 @@
         "geoLat": 40.7145983,
         "geoLng": -73.9117254
       },
-      "maintainer": { "instagram": "https://www.instagram.com/iohnyc" }
+      "maintainer": {
+        "instagram": "https://www.instagram.com/iohnyc"
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "fridgeetc",
@@ -2173,7 +2351,8 @@
       },
       "maintainer": {
         "website": "https://www.etcproduce.com/the-fridge-etc"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "covunityfridge",
@@ -2189,7 +2368,8 @@
       },
       "maintainer": {
         "website": "http://reddengardens.org/"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     },
     {
       "id": "northbrooklynfridgesleonardlibrary",
@@ -2207,10 +2387,2190 @@
       "maintainer": {
         "instagram": "https://www.instagram.com/nbkfridges",
         "website": "https://linktr.ee/Nbkfridges"
-      }
+      },
+      "photoUrl": "http://placekitten.com/300/345"
     }
   ],
-  "reports": [],
+  "reports": [
+    {
+      "timestamp": "2022-11-01T22:56:58.519Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Molestias amet quaerat ratione omnis architecto et nisi adipisci quia.",
+      "fridgeId": "lescommunityfridge",
+      "id": 1
+    },
+    {
+      "timestamp": "2022-11-01T06:48:22.858Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "A ut est quia hic eius earum nihil amet.",
+      "fridgeId": "barriofridge1",
+      "id": 2
+    },
+    {
+      "timestamp": "2022-11-01T17:33:38.454Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Repudiandae voluptates in itaque dolor.",
+      "fridgeId": "harlemcommunityfridge",
+      "id": 3
+    },
+    {
+      "timestamp": "2022-11-02T00:33:25.961Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eos enim eligendi sit.",
+      "fridgeId": "uptownfridge",
+      "id": 4
+    },
+    {
+      "timestamp": "2022-11-01T20:05:54.523Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptates voluptatem sit ipsa earum earum.",
+      "fridgeId": "madisonsquareboysandgirlsclub",
+      "id": 5
+    },
+    {
+      "timestamp": "2022-11-01T04:45:31.595Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aperiam sint dolorem ducimus tenetur aspernatur unde.",
+      "fridgeId": "communityfridgewest120thstreet",
+      "id": 6
+    },
+    {
+      "timestamp": "2022-11-02T02:48:30.549Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Illum nihil id culpa quo qui sed.",
+      "fridgeId": "peoplesfridgewordup",
+      "id": 7
+    },
+    {
+      "timestamp": "2022-11-01T03:34:23.925Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eaque illum dolorem provident qui.",
+      "fridgeId": "ujamaasolidarityfridge",
+      "id": 8
+    },
+    {
+      "timestamp": "2022-11-01T06:41:58.760Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolorem amet tempore commodi non quia cumque blanditiis.",
+      "fridgeId": "sixthstreetcommunitycenterfridge",
+      "id": 9
+    },
+    {
+      "timestamp": "2022-11-01T16:43:33.674Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et nihil facilis quos neque nostrum.",
+      "fridgeId": "sugarhillcommunityfridges",
+      "id": 10
+    },
+    {
+      "timestamp": "2022-11-01T18:50:56.113Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Corrupti dolores quidem.",
+      "fridgeId": "westendcommunityfridge",
+      "id": 11
+    },
+    {
+      "timestamp": "2022-11-01T04:31:39.189Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quaerat eum recusandae unde provident inventore molestiae omnis ducimus.",
+      "fridgeId": "peoplespeoplesfridge",
+      "id": 12
+    },
+    {
+      "timestamp": "2022-11-01T21:57:13.071Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Molestias et libero et laboriosam aliquam tempore.",
+      "fridgeId": "smaccommunityfridge",
+      "id": 13
+    },
+    {
+      "timestamp": "2022-11-01T13:07:27.221Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quis eos quam occaecati.",
+      "fridgeId": "chelseacommunityfridgecupboard",
+      "id": 14
+    },
+    {
+      "timestamp": "2022-11-01T14:05:45.580Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Asperiores distinctio itaque cum sint quis aspernatur molestiae.",
+      "fridgeId": "broomeboweryfridge",
+      "id": 15
+    },
+    {
+      "timestamp": "2022-11-01T13:49:45.637Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nihil nobis aliquam ullam fuga quasi a dolore.",
+      "fridgeId": "overthrowcommunityfridge",
+      "id": 16
+    },
+    {
+      "timestamp": "2022-11-01T23:08:01.091Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Architecto est omnis autem.",
+      "fridgeId": "barriofridge2",
+      "id": 17
+    },
+    {
+      "timestamp": "2022-11-01T04:27:30.390Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Earum eum error commodi dolores id at aliquid reprehenderit.",
+      "fridgeId": "communityfridgeatsaintjude",
+      "id": 18
+    },
+    {
+      "timestamp": "2022-11-01T04:38:48.016Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Modi magni sunt quibusdam voluptatem illo.",
+      "fridgeId": "astoriafridge",
+      "id": 19
+    },
+    {
+      "timestamp": "2022-11-01T21:37:28.272Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Fugiat necessitatibus quo et laboriosam sint aliquam ab.",
+      "fridgeId": "jacksonheightscommunityfridge",
+      "id": 20
+    },
+    {
+      "timestamp": "2022-11-01T17:24:42.645Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Suscipit non molestias sapiente voluptatibus ut aspernatur non.",
+      "fridgeId": "elmhurstcommunityfridge2",
+      "id": 21
+    },
+    {
+      "timestamp": "2022-11-01T07:10:00.500Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolorem ab eum est ex ut molestiae doloremque.",
+      "fridgeId": "rockawaymutualaidalmedaavenue",
+      "id": 22
+    },
+    {
+      "timestamp": "2022-11-01T23:40:22.979Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Sunt quod molestias pariatur ea aspernatur ut.",
+      "fridgeId": "jamaicacommunityfridge1",
+      "id": 23
+    },
+    {
+      "timestamp": "2022-11-01T13:18:58.564Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Similique est quis voluptatem.",
+      "fridgeId": "rockawaymutualaidbeach92ndstreet",
+      "id": 24
+    },
+    {
+      "timestamp": "2022-11-01T08:32:30.527Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quidem consectetur nulla hic cum earum.",
+      "fridgeId": "justusfaraithefridge",
+      "id": 25
+    },
+    {
+      "timestamp": "2022-11-01T12:10:49.617Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Magni omnis neque velit voluptatem incidunt.",
+      "fridgeId": "rtucommunityfridge",
+      "id": 26
+    },
+    {
+      "timestamp": "2022-11-01T14:04:18.743Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Maiores dolores laudantium.",
+      "fridgeId": "brotherswashdrycommunityfridge",
+      "id": 27
+    },
+    {
+      "timestamp": "2022-11-01T23:40:32.178Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quasi sequi reiciendis dolorum aperiam nemo nulla.",
+      "fridgeId": "coronacomunidadfridge",
+      "id": 28
+    },
+    {
+      "timestamp": "2022-11-02T01:22:46.210Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quia libero pariatur aut et repudiandae sint odio reprehenderit.",
+      "fridgeId": "jamaicacommunityfridge2",
+      "id": 29
+    },
+    {
+      "timestamp": "2022-11-01T08:20:55.459Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Odit culpa modi qui ut eius pariatur cum.",
+      "fridgeId": "queensvillagecommunityfridge",
+      "id": 30
+    },
+    {
+      "timestamp": "2022-11-01T13:20:40.955Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Repellat eius deserunt aliquid reprehenderit impedit illo eum harum quidem.",
+      "fridgeId": "ravenswoodcommunityfridge",
+      "id": 31
+    },
+    {
+      "timestamp": "2022-11-01T20:41:52.263Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Animi illo autem non et neque nihil tenetur.",
+      "fridgeId": "ozoneparkcommunityfridge",
+      "id": 32
+    },
+    {
+      "timestamp": "2022-11-01T15:36:10.419Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ullam vel officiis dicta quaerat delectus at.",
+      "fridgeId": "ridgewoodcommunityfridge",
+      "id": 33
+    },
+    {
+      "timestamp": "2022-11-02T00:52:09.841Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et id aperiam nam perspiciatis quod non.",
+      "fridgeId": "astoriahalalfridge",
+      "id": 34
+    },
+    {
+      "timestamp": "2022-11-02T00:14:25.333Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui vel sit.",
+      "fridgeId": "saintalbanscommunityfridge",
+      "id": 35
+    },
+    {
+      "timestamp": "2022-11-01T23:00:39.229Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptas harum dolorum.",
+      "fridgeId": "nexusfridge",
+      "id": 36
+    },
+    {
+      "timestamp": "2022-11-01T19:13:41.432Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptatem temporibus voluptate odio.",
+      "fridgeId": "flushingcommunityfridge",
+      "id": 37
+    },
+    {
+      "timestamp": "2022-11-01T22:34:35.925Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aspernatur magni est sapiente totam in.",
+      "fridgeId": "woodsidecommunityfridge",
+      "id": 38
+    },
+    {
+      "timestamp": "2022-11-01T12:11:19.368Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut culpa eum rerum quia excepturi sint quod.",
+      "fridgeId": "beautystrike",
+      "id": 39
+    },
+    {
+      "timestamp": "2022-11-01T06:52:34.466Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Autem ut vel pariatur.",
+      "fridgeId": "crownheightscommunityfridge",
+      "id": 40
+    },
+    {
+      "timestamp": "2022-11-01T20:29:18.897Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Itaque quis et quia itaque esse unde dolore sit.",
+      "fridgeId": "downtownbrooklyncommunityfridge",
+      "id": 41
+    },
+    {
+      "timestamp": "2022-11-01T18:38:59.784Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui mollitia exercitationem.",
+      "fridgeId": "friendlyfridgeflatbush",
+      "id": 42
+    },
+    {
+      "timestamp": "2022-11-01T12:34:32.161Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Esse aliquam neque a est.",
+      "fridgeId": "gowanusfridgenaturebased",
+      "id": 43
+    },
+    {
+      "timestamp": "2022-11-01T20:35:30.781Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Temporibus est reiciendis dolores quae nihil eos consequatur ea.",
+      "fridgeId": "gowanusfridgepostmarkcafe",
+      "id": 44
+    },
+    {
+      "timestamp": "2022-11-01T12:22:10.185Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Non et delectus.",
+      "fridgeId": "greenpointfridge",
+      "id": 45
+    },
+    {
+      "timestamp": "2022-11-02T02:06:33.396Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptatibus repellat veniam commodi blanditiis tempora.",
+      "fridgeId": "playgroundcoffeeshop",
+      "id": 46
+    },
+    {
+      "timestamp": "2022-11-01T20:03:00.811Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aliquam nihil molestiae.",
+      "fridgeId": "sincerelytommy",
+      "id": 47
+    },
+    {
+      "timestamp": "2022-11-01T19:52:55.243Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptatem dolores ut eum ut cum.",
+      "fridgeId": "livinggallery",
+      "id": 48
+    },
+    {
+      "timestamp": "2022-11-01T04:22:40.442Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Neque autem in.",
+      "fridgeId": "universecityfridge",
+      "id": 49
+    },
+    {
+      "timestamp": "2022-11-01T11:36:09.809Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut nihil doloribus dolore nostrum.",
+      "fridgeId": "publicassistantscommunityfridge",
+      "id": 50
+    },
+    {
+      "timestamp": "2022-11-02T00:45:55.029Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Non placeat earum nobis ex.",
+      "fridgeId": "hashtaglunchbagbkxredhook",
+      "id": 51
+    },
+    {
+      "timestamp": "2022-11-01T23:56:10.941Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Vero non perferendis accusamus ipsum aut nobis facilis ipsa est.",
+      "fridgeId": "friendlyfridgeknickerbocker",
+      "id": 52
+    },
+    {
+      "timestamp": "2022-11-01T09:37:20.559Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est dolorum officiis minus quod.",
+      "fridgeId": "cooperparkfridge",
+      "id": 53
+    },
+    {
+      "timestamp": "2022-11-01T20:30:57.242Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nostrum asperiores ullam est.",
+      "fridgeId": "solidarityfridge",
+      "id": 54
+    },
+    {
+      "timestamp": "2022-11-01T21:19:39.611Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quos omnis asperiores ea.",
+      "fridgeId": "bakeshopfridge",
+      "id": 55
+    },
+    {
+      "timestamp": "2022-11-01T03:42:19.989Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ratione necessitatibus autem cum veniam voluptatem ipsam et.",
+      "fridgeId": "friendlyfridgeheights",
+      "id": 56
+    },
+    {
+      "timestamp": "2022-11-01T09:09:56.094Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Animi quibusdam explicabo debitis quia deleniti dolore.",
+      "fridgeId": "fortgreenecommunityfridge",
+      "id": 57
+    },
+    {
+      "timestamp": "2022-11-01T18:18:42.558Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "In incidunt qui.",
+      "fridgeId": "bushwickcommunityfridge",
+      "id": 58
+    },
+    {
+      "timestamp": "2022-11-01T19:04:33.994Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Impedit soluta voluptatum perferendis ad non est vitae.",
+      "fridgeId": "penniespantry",
+      "id": 59
+    },
+    {
+      "timestamp": "2022-11-01T13:48:34.241Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptas culpa non delectus laborum voluptatum amet nemo omnis id.",
+      "fridgeId": "hashtaglunchbagbkxwyckofffarmhousemuseum",
+      "id": 60
+    },
+    {
+      "timestamp": "2022-11-01T08:32:51.248Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Expedita eligendi ut quae animi alias eum et.",
+      "fridgeId": "laneverademarcy",
+      "id": 61
+    },
+    {
+      "timestamp": "2022-11-01T10:33:40.886Z",
+      "condition": "out of order",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Tempore iste et.",
+      "fridgeId": "knowwastelandscommunityfridge",
+      "id": 62
+    },
+    {
+      "timestamp": "2022-11-01T07:27:37.173Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aperiam laudantium quisquam.",
+      "fridgeId": "2fish5loavesfridge",
+      "id": 63
+    },
+    {
+      "timestamp": "2022-11-01T15:24:31.404Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ad repudiandae est eius recusandae vero modi id.",
+      "fridgeId": "paperboylovegallery",
+      "id": 64
+    },
+    {
+      "timestamp": "2022-11-01T09:53:59.485Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aspernatur quos totam.",
+      "fridgeId": "classoncommunityfridge",
+      "id": 65
+    },
+    {
+      "timestamp": "2022-11-01T10:48:33.909Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Illo id et reiciendis.",
+      "fridgeId": "mixtecascommunityfridge",
+      "id": 66
+    },
+    {
+      "timestamp": "2022-11-02T01:39:13.325Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dicta labore mollitia praesentium necessitatibus iusto enim sit.",
+      "fridgeId": "copohalalcommunityfridge",
+      "id": 67
+    },
+    {
+      "timestamp": "2022-11-01T22:10:08.883Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Occaecati quis alias earum enim.",
+      "fridgeId": "onlunchbreakxgirlsonlynyfridge",
+      "id": 68
+    },
+    {
+      "timestamp": "2022-11-01T21:23:57.905Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Accusamus delectus voluptatum ipsum.",
+      "fridgeId": "successgardencommunity",
+      "id": 69
+    },
+    {
+      "timestamp": "2022-11-01T14:57:12.889Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Assumenda id voluptatem alias.",
+      "fridgeId": "onelovecommunityfridge",
+      "id": 70
+    },
+    {
+      "timestamp": "2022-11-01T12:05:17.613Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quasi doloremque laboriosam.",
+      "fridgeId": "fultonstreetfridge",
+      "id": 71
+    },
+    {
+      "timestamp": "2022-11-01T19:05:21.355Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "At provident quaerat porro cum dolor facilis est dolores.",
+      "fridgeId": "sybcommunityfridge",
+      "id": 72
+    },
+    {
+      "timestamp": "2022-11-01T18:21:29.564Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Sequi nisi ut in neque molestiae.",
+      "fridgeId": "friendlyfridgebronx",
+      "id": 73
+    },
+    {
+      "timestamp": "2022-11-01T17:55:53.850Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Esse illum alias laborum et consequatur dolore.",
+      "fridgeId": "allertonalliescommunityfridge",
+      "id": 74
+    },
+    {
+      "timestamp": "2022-11-01T09:31:21.222Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Alias aut nihil quo sequi nostrum.",
+      "fridgeId": "lovingthebronxfridge",
+      "id": 75
+    },
+    {
+      "timestamp": "2022-11-01T12:52:50.723Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Culpa quia deserunt impedit nemo.",
+      "fridgeId": "motthavenfridge1",
+      "id": 76
+    },
+    {
+      "timestamp": "2022-11-02T01:38:05.868Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Id quod est repudiandae qui.",
+      "fridgeId": "nuestranevera",
+      "id": 77
+    },
+    {
+      "timestamp": "2022-11-01T06:44:48.876Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Non eos odio et sapiente autem ut animi.",
+      "fridgeId": "motthavenfridge2",
+      "id": 78
+    },
+    {
+      "timestamp": "2022-11-01T14:21:37.516Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Temporibus est ullam voluptatem necessitatibus voluptatum maxime rerum ipsa impedit.",
+      "fridgeId": "anchorfridge",
+      "id": 79
+    },
+    {
+      "timestamp": "2022-11-01T20:05:43.140Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolore consequuntur ea aspernatur.",
+      "fridgeId": "fjmfridge",
+      "id": 80
+    },
+    {
+      "timestamp": "2022-11-01T04:24:23.422Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut similique ex aut dignissimos.",
+      "fridgeId": "yonkerscommunityfridge",
+      "id": 81
+    },
+    {
+      "timestamp": "2022-11-01T04:15:08.204Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "At nesciunt dolorem ipsa est vero.",
+      "fridgeId": "neighborhoodfridge",
+      "id": 82
+    },
+    {
+      "timestamp": "2022-11-02T01:45:03.582Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "In porro quae eius qui.",
+      "fridgeId": "forestavenuecomeunityfridge",
+      "id": 83
+    },
+    {
+      "timestamp": "2022-11-01T05:07:17.446Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quibusdam ut sapiente quasi dolor est enim quod.",
+      "fridgeId": "kingstoncommunityfridgevanburen",
+      "id": 84
+    },
+    {
+      "timestamp": "2022-11-01T06:07:35.135Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quod voluptatibus fuga totam ex molestiae iste.",
+      "fridgeId": "buffalocommunityfridge",
+      "id": 85
+    },
+    {
+      "timestamp": "2022-11-01T14:52:24.156Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Rem quaerat qui et aut iusto.",
+      "fridgeId": "kingstoncommunityfridgeclintonavenue",
+      "id": 86
+    },
+    {
+      "timestamp": "2022-11-01T15:04:50.034Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut doloremque facere autem aut fuga.",
+      "fridgeId": "greenvillecommunityfridge",
+      "id": 87
+    },
+    {
+      "timestamp": "2022-11-02T01:14:46.940Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est voluptas et.",
+      "fridgeId": "unioncitycommunityfridge",
+      "id": 88
+    },
+    {
+      "timestamp": "2022-11-01T17:49:57.734Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Unde velit laboriosam odit nihil occaecati.",
+      "fridgeId": "westsidecommunityfridge",
+      "id": 89
+    },
+    {
+      "timestamp": "2022-11-01T07:35:57.752Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Cum est et mollitia nam illo error magni dicta quos.",
+      "fridgeId": "foodforus",
+      "id": 90
+    },
+    {
+      "timestamp": "2022-11-01T07:13:02.400Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et ullam deleniti illo.",
+      "fridgeId": "jcheightscommunityfridge",
+      "id": 91
+    },
+    {
+      "timestamp": "2022-11-01T07:57:38.016Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Necessitatibus et placeat temporibus.",
+      "fridgeId": "collectivefocusresourcehub",
+      "id": 92
+    },
+    {
+      "timestamp": "2022-11-01T16:09:37.083Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Placeat totam facere fugit natus error.",
+      "fridgeId": "farmtopeoplecommunityfridge",
+      "id": 93
+    },
+    {
+      "timestamp": "2022-11-01T11:03:04.194Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quidem id error.",
+      "fridgeId": "uticacommunityfridge",
+      "id": 94
+    },
+    {
+      "timestamp": "2022-11-01T20:25:20.504Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nemo autem doloremque.",
+      "fridgeId": "brooklyncommunityfridgescrownheights",
+      "id": 95
+    },
+    {
+      "timestamp": "2022-11-01T18:13:20.914Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Velit ipsam pariatur ut ut aliquid dicta dolorum.",
+      "fridgeId": "fridgesfamily",
+      "id": 96
+    },
+    {
+      "timestamp": "2022-11-01T19:00:57.555Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quidem ut exercitationem et suscipit eaque recusandae eos delectus.",
+      "fridgeId": "brooklynheightscommunityfridge",
+      "id": 97
+    },
+    {
+      "timestamp": "2022-11-01T20:32:25.601Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ipsam porro voluptas voluptas ullam nihil perferendis non et.",
+      "fridgeId": "kwtcommunityfridge",
+      "id": 98
+    },
+    {
+      "timestamp": "2022-11-01T15:53:51.951Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptas ab nihil iure et et dignissimos ipsum omnis.",
+      "fridgeId": "leonwrightlittlefreepantry",
+      "id": 99
+    },
+    {
+      "timestamp": "2022-11-01T11:20:48.545Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nemo ipsum consequatur quod sunt voluptatem et.",
+      "fridgeId": "eileensfreebodega",
+      "id": 100
+    },
+    {
+      "timestamp": "2022-11-01T16:40:39.945Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Velit et itaque sapiente.",
+      "fridgeId": "saintnickfridge",
+      "id": 101
+    },
+    {
+      "timestamp": "2022-11-01T12:30:17.888Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolor voluptatibus id id aut quibusdam voluptatem et est molestiae.",
+      "fridgeId": "motthavencommunityfridge",
+      "id": 102
+    },
+    {
+      "timestamp": "2022-11-01T10:04:06.646Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptatem temporibus voluptas odit magnam laborum sapiente ullam.",
+      "fridgeId": "inourheartswestfarms",
+      "id": 103
+    },
+    {
+      "timestamp": "2022-11-01T07:29:57.484Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Rerum repudiandae excepturi reprehenderit ut.",
+      "fridgeId": "fridgeportjamesstreet",
+      "id": 104
+    },
+    {
+      "timestamp": "2022-11-01T12:15:29.761Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolore praesentium et soluta.",
+      "fridgeId": "fridgehaven",
+      "id": 105
+    },
+    {
+      "timestamp": "2022-11-01T13:00:11.782Z",
+      "condition": "dirty",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et rerum illum ipsam.",
+      "fridgeId": "wedoittoofridge",
+      "id": 106
+    },
+    {
+      "timestamp": "2022-11-01T06:48:40.963Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Reprehenderit dolore adipisci.",
+      "fridgeId": "eastelmhurstfridge",
+      "id": 107
+    },
+    {
+      "timestamp": "2022-11-01T03:57:57.305Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Veniam ut maiores sed excepturi quia et.",
+      "fridgeId": "hashtaglunchbagbkxfortdefiance",
+      "id": 108
+    },
+    {
+      "timestamp": "2022-11-01T16:47:26.920Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Recusandae vero excepturi cumque sit odit quibusdam fugiat sunt quaerat.",
+      "fridgeId": "transmitterparkfridge",
+      "id": 109
+    },
+    {
+      "timestamp": "2022-11-01T17:30:03.846Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Tenetur vel explicabo tenetur.",
+      "fridgeId": "portchesterfriendlyfridge",
+      "id": 110
+    },
+    {
+      "timestamp": "2022-11-01T12:20:45.848Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quam adipisci temporibus omnis aliquam et et consequuntur nulla.",
+      "fridgeId": "vinnyspetstorecommunityfridge",
+      "id": 111
+    },
+    {
+      "timestamp": "2022-11-01T05:06:30.365Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Earum adipisci neque est amet atque.",
+      "fridgeId": "loisaidacommunityfridge",
+      "id": 112
+    },
+    {
+      "timestamp": "2022-11-01T08:09:13.989Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ipsam vel molestiae dignissimos sequi illo consequatur.",
+      "fridgeId": "hellskitchencommunitycupboard",
+      "id": 113
+    },
+    {
+      "timestamp": "2022-11-02T00:33:11.962Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Earum qui eveniet et.",
+      "fridgeId": "northbrooklynfridgesmusichall",
+      "id": 114
+    },
+    {
+      "timestamp": "2022-11-02T01:11:07.264Z",
+      "condition": "out of order",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut non dolores modi nulla dolorum minus eligendi et ut.",
+      "fridgeId": "viequessolidaritylibrary",
+      "id": 115
+    },
+    {
+      "timestamp": "2022-11-01T10:30:26.430Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Optio ut aspernatur ducimus fugiat ut provident.",
+      "fridgeId": "flatbushcommunityfridge",
+      "id": 116
+    },
+    {
+      "timestamp": "2022-11-01T17:51:43.138Z",
+      "condition": "good",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Rerum veniam modi eligendi.",
+      "fridgeId": "hectorrafaelperez",
+      "id": 117
+    },
+    {
+      "timestamp": "2022-11-01T19:50:00.929Z",
+      "condition": "dirty",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quia dolores et non est beatae.",
+      "fridgeId": "clementsmileycommunityfridge",
+      "id": 118
+    },
+    {
+      "timestamp": "2022-11-01T06:43:58.495Z",
+      "condition": "good",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Deleniti vitae aliquam exercitationem nulla.",
+      "fridgeId": "pincommunityfridge",
+      "id": 119
+    },
+    {
+      "timestamp": "2022-11-01T03:50:07.944Z",
+      "condition": "out of order",
+      "foodPercentage": 33,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Modi minus dolore voluptates enim itaque ad.",
+      "fridgeId": "chinatowncommunityfridgepantry",
+      "id": 120
+    },
+    {
+      "timestamp": "2022-11-01T15:55:48.074Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolorum eaque reprehenderit corporis quos corrupti voluptatem.",
+      "fridgeId": "maspethfridge",
+      "id": 121
+    },
+    {
+      "timestamp": "2022-11-01T08:50:09.638Z",
+      "condition": "dirty",
+      "foodPercentage": 67,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Soluta inventore aut odit itaque temporibus ea.",
+      "fridgeId": "fridgeetc",
+      "id": 122
+    },
+    {
+      "timestamp": "2022-11-01T18:21:00.986Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Omnis possimus eos et est necessitatibus.",
+      "fridgeId": "covunityfridge",
+      "id": 123
+    },
+    {
+      "timestamp": "2022-11-01T12:35:26.293Z",
+      "condition": "good",
+      "foodPercentage": 100,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nihil quam et quod amet est nisi.",
+      "fridgeId": "northbrooklynfridgesleonardlibrary",
+      "id": 124
+    },
+    {
+      "timestamp": "2022-11-10T18:48:34.669Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Sequi itaque qui quia nesciunt labore qui itaque autem.",
+      "fridgeId": "lescommunityfridge",
+      "id": 125
+    },
+    {
+      "timestamp": "2022-11-10T07:52:21.405Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Velit qui accusantium eos sapiente repellat quo commodi.",
+      "fridgeId": "barriofridge1",
+      "id": 126
+    },
+    {
+      "timestamp": "2022-11-10T20:26:52.747Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Tempore blanditiis facilis sed maxime necessitatibus veniam reprehenderit.",
+      "fridgeId": "harlemcommunityfridge",
+      "id": 127
+    },
+    {
+      "timestamp": "2022-11-10T17:42:19.852Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Enim alias et dolorem quidem.",
+      "fridgeId": "uptownfridge",
+      "id": 128
+    },
+    {
+      "timestamp": "2022-11-10T05:42:20.928Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "At voluptate sed exercitationem aut voluptatem.",
+      "fridgeId": "madisonsquareboysandgirlsclub",
+      "id": 129
+    },
+    {
+      "timestamp": "2022-11-10T15:05:12.240Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et iure voluptatem fugiat et aut earum reprehenderit et deleniti.",
+      "fridgeId": "westharlemcommunityfridge",
+      "id": 130
+    },
+    {
+      "timestamp": "2022-11-10T21:31:37.911Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aut rerum aut deserunt aliquid in consectetur.",
+      "fridgeId": "communityfridgewest120thstreet",
+      "id": 131
+    },
+    {
+      "timestamp": "2022-11-11T00:55:55.242Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Harum debitis et eos molestias vel.",
+      "fridgeId": "peoplesfridgewordup",
+      "id": 132
+    },
+    {
+      "timestamp": "2022-11-11T01:51:06.924Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui deserunt rem placeat qui vitae quas nostrum voluptatibus mollitia.",
+      "fridgeId": "ujamaasolidarityfridge",
+      "id": 133
+    },
+    {
+      "timestamp": "2022-11-10T23:26:08.375Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Rerum dolorem id velit eos qui omnis velit repudiandae.",
+      "fridgeId": "sixthstreetcommunitycenterfridge",
+      "id": 134
+    },
+    {
+      "timestamp": "2022-11-10T15:25:56.334Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Explicabo aut distinctio dolor debitis ipsum voluptas provident in.",
+      "fridgeId": "sugarhillcommunityfridges",
+      "id": 135
+    },
+    {
+      "timestamp": "2022-11-10T11:22:39.387Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Repudiandae est nihil voluptatem velit itaque veniam.",
+      "fridgeId": "westendcommunityfridge",
+      "id": 136
+    },
+    {
+      "timestamp": "2022-11-10T06:55:43.512Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Incidunt reprehenderit reprehenderit et soluta odio et nemo.",
+      "fridgeId": "peoplespeoplesfridge",
+      "id": 137
+    },
+    {
+      "timestamp": "2022-11-10T07:42:11.872Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Sunt minima ex.",
+      "fridgeId": "smaccommunityfridge",
+      "id": 138
+    },
+    {
+      "timestamp": "2022-11-10T20:05:22.173Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eum labore itaque vel dolorem commodi in commodi et.",
+      "fridgeId": "broomeboweryfridge",
+      "id": 139
+    },
+    {
+      "timestamp": "2022-11-10T21:20:04.858Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Tempora aut eveniet blanditiis iusto hic.",
+      "fridgeId": "lanevera183",
+      "id": 140
+    },
+    {
+      "timestamp": "2022-11-10T16:16:19.076Z",
+      "condition": "out of order",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quis earum inventore.",
+      "fridgeId": "overthrowcommunityfridge",
+      "id": 141
+    },
+    {
+      "timestamp": "2022-11-10T06:33:19.585Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Reiciendis aliquid cumque hic voluptates.",
+      "fridgeId": "barriofridge2",
+      "id": 142
+    },
+    {
+      "timestamp": "2022-11-10T23:10:46.216Z",
+      "condition": "good",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et autem fugiat.",
+      "fridgeId": "fridgeatthefort",
+      "id": 143
+    },
+    {
+      "timestamp": "2022-11-10T08:05:38.893Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui sint eveniet saepe ipsa molestiae et et.",
+      "fridgeId": "astoriafridge",
+      "id": 144
+    },
+    {
+      "timestamp": "2022-11-10T06:18:18.678Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Optio ab adipisci veniam.",
+      "fridgeId": "fenixfridge",
+      "id": 145
+    },
+    {
+      "timestamp": "2022-11-10T07:22:19.580Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut omnis consequatur itaque dolores.",
+      "fridgeId": "elmhurstcommunityfridge2",
+      "id": 146
+    },
+    {
+      "timestamp": "2022-11-11T02:47:32.114Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Deserunt dolores numquam quia quis facilis incidunt commodi.",
+      "fridgeId": "rockawaymutualaidalmedaavenue",
+      "id": 147
+    },
+    {
+      "timestamp": "2022-11-11T01:49:42.650Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Asperiores unde labore accusantium rem.",
+      "fridgeId": "jamaicacommunityfridge1",
+      "id": 148
+    },
+    {
+      "timestamp": "2022-11-10T07:01:59.264Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Illum deleniti quos vero iste consequuntur doloribus illum aut.",
+      "fridgeId": "rockawaymutualaidbeach92ndstreet",
+      "id": 149
+    },
+    {
+      "timestamp": "2022-11-10T17:35:10.865Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quod saepe mollitia rerum doloremque eveniet aut itaque.",
+      "fridgeId": "justusfaraithefridge",
+      "id": 150
+    },
+    {
+      "timestamp": "2022-11-10T19:41:03.354Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aut laborum animi.",
+      "fridgeId": "rtucommunityfridge",
+      "id": 151
+    },
+    {
+      "timestamp": "2022-11-11T04:22:09.243Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et tempora aperiam ea voluptas.",
+      "fridgeId": "brotherswashdrycommunityfridge",
+      "id": 152
+    },
+    {
+      "timestamp": "2022-11-10T07:10:03.603Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est ad molestias occaecati molestiae omnis animi quisquam aspernatur maxime.",
+      "fridgeId": "coronacomunidadfridge",
+      "id": 153
+    },
+    {
+      "timestamp": "2022-11-10T12:07:06.695Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Earum adipisci quisquam et earum.",
+      "fridgeId": "jamaicacommunityfridge2",
+      "id": 154
+    },
+    {
+      "timestamp": "2022-11-10T05:38:19.315Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ipsa dignissimos est tempora sit.",
+      "fridgeId": "queensvillagecommunityfridge",
+      "id": 155
+    },
+    {
+      "timestamp": "2022-11-11T03:16:11.492Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Iure similique sunt aliquid quia iusto rem.",
+      "fridgeId": "ravenswoodcommunityfridge",
+      "id": 156
+    },
+    {
+      "timestamp": "2022-11-10T06:13:35.280Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui ipsam nobis magnam doloremque hic cum ut.",
+      "fridgeId": "astoriahalalfridge",
+      "id": 157
+    },
+    {
+      "timestamp": "2022-11-11T02:30:34.770Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Consequatur cumque perspiciatis esse numquam itaque consequuntur sint.",
+      "fridgeId": "nexusfridge",
+      "id": 158
+    },
+    {
+      "timestamp": "2022-11-10T10:35:19.651Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolorem ut dolor est tempore nihil quasi.",
+      "fridgeId": "flushingcommunityfridge",
+      "id": 159
+    },
+    {
+      "timestamp": "2022-11-10T16:21:51.391Z",
+      "condition": "out of order",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Facilis aut qui impedit animi sit aspernatur.",
+      "fridgeId": "woodsidecommunityfridge",
+      "id": 160
+    },
+    {
+      "timestamp": "2022-11-11T01:56:04.247Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Deserunt qui deleniti consequuntur ipsum modi itaque.",
+      "fridgeId": "beautystrike",
+      "id": 161
+    },
+    {
+      "timestamp": "2022-11-10T08:56:46.239Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Maiores esse illum est.",
+      "fridgeId": "crownheightscommunityfridge",
+      "id": 162
+    },
+    {
+      "timestamp": "2022-11-10T16:50:05.429Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ab ullam qui.",
+      "fridgeId": "downtownbrooklyncommunityfridge",
+      "id": 163
+    },
+    {
+      "timestamp": "2022-11-10T16:13:30.860Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Non corrupti eos.",
+      "fridgeId": "friendlyfridgeflatbush",
+      "id": 164
+    },
+    {
+      "timestamp": "2022-11-11T00:18:28.561Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut deserunt ducimus nihil fuga sint ad.",
+      "fridgeId": "gowanusfridgepostmarkcafe",
+      "id": 165
+    },
+    {
+      "timestamp": "2022-11-10T13:51:31.763Z",
+      "condition": "out of order",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Tenetur et eligendi id illo.",
+      "fridgeId": "greenpointfridge",
+      "id": 166
+    },
+    {
+      "timestamp": "2022-11-10T12:26:54.681Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Deleniti et quo minima voluptas culpa.",
+      "fridgeId": "playgroundcoffeeshop",
+      "id": 167
+    },
+    {
+      "timestamp": "2022-11-11T00:56:02.843Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Veniam qui reiciendis est sint odit et amet quidem voluptate.",
+      "fridgeId": "sincerelytommy",
+      "id": 168
+    },
+    {
+      "timestamp": "2022-11-10T11:14:10.711Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Magnam dolor ad tempora praesentium aliquam in sit magnam odio.",
+      "fridgeId": "livinggallery",
+      "id": 169
+    },
+    {
+      "timestamp": "2022-11-11T03:56:19.453Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Excepturi explicabo saepe.",
+      "fridgeId": "universecityfridge",
+      "id": 170
+    },
+    {
+      "timestamp": "2022-11-10T21:59:38.233Z",
+      "condition": "good",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Mollitia voluptatum velit mollitia vitae reiciendis.",
+      "fridgeId": "inourheartsvanburen",
+      "id": 171
+    },
+    {
+      "timestamp": "2022-11-10T08:54:25.404Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Exercitationem placeat et perferendis quia.",
+      "fridgeId": "publicassistantscommunityfridge",
+      "id": 172
+    },
+    {
+      "timestamp": "2022-11-10T20:55:24.627Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptate vel eum nulla corporis.",
+      "fridgeId": "hashtaglunchbagbkxredhook",
+      "id": 173
+    },
+    {
+      "timestamp": "2022-11-10T09:20:05.638Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Amet est et nemo qui recusandae alias inventore.",
+      "fridgeId": "friendlyfridgeknickerbocker",
+      "id": 174
+    },
+    {
+      "timestamp": "2022-11-10T07:21:56.306Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Beatae qui blanditiis itaque sit.",
+      "fridgeId": "cooperparkfridge",
+      "id": 175
+    },
+    {
+      "timestamp": "2022-11-10T22:41:45.052Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Autem in reiciendis consectetur nesciunt dolores facere temporibus.",
+      "fridgeId": "koinoniajuanbautistachurchcommunityfridge",
+      "id": 176
+    },
+    {
+      "timestamp": "2022-11-10T15:32:51.838Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolores consequatur aut nam mollitia molestiae et a.",
+      "fridgeId": "solidarityfridge",
+      "id": 177
+    },
+    {
+      "timestamp": "2022-11-10T15:50:29.935Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Maiores alias dolores tempora nulla tempore.",
+      "fridgeId": "bakeshopfridge",
+      "id": 178
+    },
+    {
+      "timestamp": "2022-11-11T04:32:53.692Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Natus sunt laudantium distinctio sint harum repellat placeat.",
+      "fridgeId": "friendlyfridgeheights",
+      "id": 179
+    },
+    {
+      "timestamp": "2022-11-11T02:27:35.926Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nesciunt nulla quas dolore voluptas vel minus voluptates doloribus.",
+      "fridgeId": "fortgreenecommunityfridge",
+      "id": 180
+    },
+    {
+      "timestamp": "2022-11-10T06:57:08.055Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Id ea hic at.",
+      "fridgeId": "bushwickcommunityfridge",
+      "id": 181
+    },
+    {
+      "timestamp": "2022-11-10T05:59:30.869Z",
+      "condition": "out of order",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nisi excepturi adipisci.",
+      "fridgeId": "penniespantry",
+      "id": 182
+    },
+    {
+      "timestamp": "2022-11-10T06:15:31.872Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Exercitationem natus harum est.",
+      "fridgeId": "laneverademarcy",
+      "id": 183
+    },
+    {
+      "timestamp": "2022-11-11T04:36:54.264Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Perferendis magnam nam.",
+      "fridgeId": "brooklyncommunityfridgesflatbush",
+      "id": 184
+    },
+    {
+      "timestamp": "2022-11-11T03:24:50.756Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Omnis velit et quae nisi dolorem quos temporibus qui debitis.",
+      "fridgeId": "knowwastelandscommunityfridge",
+      "id": 185
+    },
+    {
+      "timestamp": "2022-11-10T07:43:43.626Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Enim recusandae corporis non molestias.",
+      "fridgeId": "2fish5loavesfridge",
+      "id": 186
+    },
+    {
+      "timestamp": "2022-11-10T08:55:45.443Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eveniet voluptas impedit eum cupiditate labore ex sit nihil.",
+      "fridgeId": "paperboylovegallery",
+      "id": 187
+    },
+    {
+      "timestamp": "2022-11-10T08:47:45.986Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Neque reiciendis iure incidunt magni.",
+      "fridgeId": "mixtecascommunityfridge",
+      "id": 188
+    },
+    {
+      "timestamp": "2022-11-10T09:12:32.862Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eaque nobis voluptatem.",
+      "fridgeId": "copohalalcommunityfridge",
+      "id": 189
+    },
+    {
+      "timestamp": "2022-11-10T10:36:34.892Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dolores dolorem aperiam quasi ullam impedit minima non ratione animi.",
+      "fridgeId": "onlunchbreakxgirlsonlynyfridge",
+      "id": 190
+    },
+    {
+      "timestamp": "2022-11-10T13:49:51.610Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Non impedit odit magnam libero.",
+      "fridgeId": "successgardencommunity",
+      "id": 191
+    },
+    {
+      "timestamp": "2022-11-10T19:22:13.790Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eum quasi autem quae qui alias.",
+      "fridgeId": "fultonstreetfridge",
+      "id": 192
+    },
+    {
+      "timestamp": "2022-11-10T09:41:00.349Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "A sunt illum consequatur illo reprehenderit eum qui.",
+      "fridgeId": "bedfordparkcommunityfridge",
+      "id": 193
+    },
+    {
+      "timestamp": "2022-11-11T02:34:35.802Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quaerat aspernatur natus laudantium nostrum nisi est animi.",
+      "fridgeId": "sybcommunityfridge",
+      "id": 194
+    },
+    {
+      "timestamp": "2022-11-10T20:26:11.652Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ut esse qui perferendis harum ratione quam et.",
+      "fridgeId": "allertonalliescommunityfridge",
+      "id": 195
+    },
+    {
+      "timestamp": "2022-11-10T22:25:14.637Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quo architecto libero dolores dolores qui eos vero quod.",
+      "fridgeId": "lovingthebronxfridge",
+      "id": 196
+    },
+    {
+      "timestamp": "2022-11-11T04:14:23.156Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Occaecati quos recusandae officia a dolore.",
+      "fridgeId": "motthavenfridge1",
+      "id": 197
+    },
+    {
+      "timestamp": "2022-11-11T04:26:53.505Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nihil et tempore sint sint atque autem odit sequi veritatis.",
+      "fridgeId": "nuestranevera",
+      "id": 198
+    },
+    {
+      "timestamp": "2022-11-10T15:20:23.621Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Rerum facilis enim temporibus.",
+      "fridgeId": "soundviewcommunityfridge",
+      "id": 199
+    },
+    {
+      "timestamp": "2022-11-10T16:00:56.520Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Optio occaecati et consequatur aliquam autem.",
+      "fridgeId": "motthavenfridge2",
+      "id": 200
+    },
+    {
+      "timestamp": "2022-11-10T11:03:50.119Z",
+      "condition": "good",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aut nemo sed aspernatur assumenda ut tempore ea ex.",
+      "fridgeId": "anchorfridge",
+      "id": 201
+    },
+    {
+      "timestamp": "2022-11-10T17:29:35.902Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Cumque itaque et consectetur qui quasi maxime quos.",
+      "fridgeId": "fjmfridge",
+      "id": 202
+    },
+    {
+      "timestamp": "2022-11-10T07:10:59.735Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et a non accusamus maxime libero.",
+      "fridgeId": "yonkerscommunityfridge",
+      "id": 203
+    },
+    {
+      "timestamp": "2022-11-10T11:20:52.508Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Ipsa saepe odit voluptatem nisi est vel.",
+      "fridgeId": "neighborhoodfridge",
+      "id": 204
+    },
+    {
+      "timestamp": "2022-11-10T20:02:51.354Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nisi praesentium omnis nihil dolorum.",
+      "fridgeId": "forestavenuecomeunityfridge",
+      "id": 205
+    },
+    {
+      "timestamp": "2022-11-10T12:06:50.104Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Et quis et rerum.",
+      "fridgeId": "kingstoncommunityfridgevanburen",
+      "id": 206
+    },
+    {
+      "timestamp": "2022-11-10T22:37:20.888Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Magni non nobis soluta sed aut.",
+      "fridgeId": "buffalocommunityfridge",
+      "id": 207
+    },
+    {
+      "timestamp": "2022-11-10T14:29:56.290Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Blanditiis non mollitia non aspernatur.",
+      "fridgeId": "greenvillecommunityfridge",
+      "id": 208
+    },
+    {
+      "timestamp": "2022-11-10T11:09:21.999Z",
+      "condition": "dirty",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Qui reprehenderit quaerat similique ut in.",
+      "fridgeId": "unioncitycommunityfridge",
+      "id": 209
+    },
+    {
+      "timestamp": "2022-11-11T00:56:07.022Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Autem laudantium omnis odit.",
+      "fridgeId": "westsidecommunityfridge",
+      "id": 210
+    },
+    {
+      "timestamp": "2022-11-10T17:02:43.644Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Deserunt libero voluptas qui quas.",
+      "fridgeId": "foodforus",
+      "id": 211
+    },
+    {
+      "timestamp": "2022-11-10T22:21:18.074Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Exercitationem et itaque voluptatem unde quia ea suscipit.",
+      "fridgeId": "jcheightscommunityfridge",
+      "id": 212
+    },
+    {
+      "timestamp": "2022-11-10T21:31:26.856Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est eum et quia corporis et veniam inventore consequuntur.",
+      "fridgeId": "farmtopeoplecommunityfridge",
+      "id": 213
+    },
+    {
+      "timestamp": "2022-11-10T20:58:25.437Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Dicta nostrum qui laudantium reprehenderit non.",
+      "fridgeId": "uticacommunityfridge",
+      "id": 214
+    },
+    {
+      "timestamp": "2022-11-11T03:53:30.652Z",
+      "condition": "not at location",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Similique voluptate occaecati eius totam nam facere.",
+      "fridgeId": "fridgesfamily",
+      "id": 215
+    },
+    {
+      "timestamp": "2022-11-10T19:43:37.306Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nulla accusamus sed.",
+      "fridgeId": "brooklynheightscommunityfridge",
+      "id": 216
+    },
+    {
+      "timestamp": "2022-11-10T09:31:43.518Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quia possimus autem.",
+      "fridgeId": "kwtcommunityfridge",
+      "id": 217
+    },
+    {
+      "timestamp": "2022-11-11T03:42:40.536Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Commodi in placeat atque numquam non aperiam aut harum quae.",
+      "fridgeId": "leonwrightlittlefreepantry",
+      "id": 218
+    },
+    {
+      "timestamp": "2022-11-10T06:44:37.449Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Cumque debitis perspiciatis id commodi est nam.",
+      "fridgeId": "eileensfreebodega",
+      "id": 219
+    },
+    {
+      "timestamp": "2022-11-10T10:43:10.899Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Porro quo dolorem mollitia sequi et cum quia doloribus.",
+      "fridgeId": "saintnickfridge",
+      "id": 220
+    },
+    {
+      "timestamp": "2022-11-10T20:35:29.722Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Hic animi quia ex ut quaerat.",
+      "fridgeId": "motthavencommunityfridge",
+      "id": 221
+    },
+    {
+      "timestamp": "2022-11-10T20:17:47.667Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Necessitatibus ipsam quia quo eum omnis.",
+      "fridgeId": "inourheartswestfarms",
+      "id": 222
+    },
+    {
+      "timestamp": "2022-11-10T23:13:58.845Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Voluptatem voluptas dolorum quam et nobis voluptatem temporibus.",
+      "fridgeId": "fridgeportjamesstreet",
+      "id": 223
+    },
+    {
+      "timestamp": "2022-11-10T10:18:14.378Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Sint ut aliquid ab dolorum est.",
+      "fridgeId": "essexmarketplantbasedcommunityfridge",
+      "id": 224
+    },
+    {
+      "timestamp": "2022-11-10T07:57:06.236Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quis in facilis corrupti dolor corporis quia quas.",
+      "fridgeId": "eastelmhurstfridge",
+      "id": 225
+    },
+    {
+      "timestamp": "2022-11-10T08:38:55.719Z",
+      "condition": "dirty",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Officiis sit eaque sunt cupiditate.",
+      "fridgeId": "hashtaglunchbagbkxfortdefiance",
+      "id": 226
+    },
+    {
+      "timestamp": "2022-11-10T23:22:29.192Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Iusto quod tempora rerum aliquam.",
+      "fridgeId": "nychadyckmanhouses",
+      "id": 227
+    },
+    {
+      "timestamp": "2022-11-11T04:29:27.638Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nemo qui velit corporis eveniet magni.",
+      "fridgeId": "transmitterparkfridge",
+      "id": 228
+    },
+    {
+      "timestamp": "2022-11-10T06:49:21.049Z",
+      "condition": "out of order",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Enim ut qui quia rerum non eligendi.",
+      "fridgeId": "portchesterfriendlyfridge",
+      "id": 229
+    },
+    {
+      "timestamp": "2022-11-10T06:59:10.382Z",
+      "condition": "ghost",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quia inventore rerum rerum in sit magnam est possimus.",
+      "fridgeId": "vinnyspetstorecommunityfridge",
+      "id": 230
+    },
+    {
+      "timestamp": "2022-11-10T15:01:28.072Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Nulla et in voluptatibus vel.",
+      "fridgeId": "loisaidacommunityfridge",
+      "id": 231
+    },
+    {
+      "timestamp": "2022-11-10T17:17:25.287Z",
+      "condition": "good",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Minima dolores voluptatum sunt minus est.",
+      "fridgeId": "hellskitchencommunitycupboard",
+      "id": 232
+    },
+    {
+      "timestamp": "2022-11-10T06:31:04.064Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est cupiditate eum.",
+      "fridgeId": "northbrooklynfridgesmusichall",
+      "id": 233
+    },
+    {
+      "timestamp": "2022-11-10T22:27:10.040Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Modi asperiores odio dolores numquam ea ex nam eveniet neque.",
+      "fridgeId": "viequessolidaritylibrary",
+      "id": 234
+    },
+    {
+      "timestamp": "2022-11-10T09:12:17.919Z",
+      "condition": "good",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Aut provident commodi suscipit dolore nihil.",
+      "fridgeId": "flatbushcommunityfridge",
+      "id": 235
+    },
+    {
+      "timestamp": "2022-11-10T07:21:30.285Z",
+      "condition": "ghost",
+      "foodPercentage": 3,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Eaque voluptatem earum amet quod recusandae nam quos eius qui.",
+      "fridgeId": "hectorrafaelperez",
+      "id": 236
+    },
+    {
+      "timestamp": "2022-11-11T02:18:08.757Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quaerat exercitationem velit officiis laboriosam repudiandae et.",
+      "fridgeId": "clementsmileycommunityfridge",
+      "id": 237
+    },
+    {
+      "timestamp": "2022-11-11T02:34:33.082Z",
+      "condition": "good",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Facere reiciendis rerum voluptatem alias quia qui est est.",
+      "fridgeId": "pincommunityfridge",
+      "id": 238
+    },
+    {
+      "timestamp": "2022-11-10T10:51:45.152Z",
+      "condition": "out of order",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "In reiciendis consequatur esse repellendus.",
+      "fridgeId": "chinatowncommunityfridgepantry",
+      "id": 239
+    },
+    {
+      "timestamp": "2022-11-10T12:01:42.996Z",
+      "condition": "ghost",
+      "foodPercentage": 0,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Quia rerum dolores quidem enim ipsa omnis neque voluptatibus.",
+      "fridgeId": "maspethfridge",
+      "id": 240
+    },
+    {
+      "timestamp": "2022-11-10T10:52:36.178Z",
+      "condition": "ghost",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Laudantium atque recusandae.",
+      "fridgeId": "fridgeetc",
+      "id": 241
+    },
+    {
+      "timestamp": "2022-11-10T23:19:38.670Z",
+      "condition": "good",
+      "foodPercentage": 1,
+      "photoUrl": "http://placekitten.com/150/100",
+      "notes": "Est totam ipsum ratione debitis tempora beatae.",
+      "fridgeId": "covunityfridge",
+      "id": 242
+    }
+  ],
   "contact": [],
   "photo": []
 }
