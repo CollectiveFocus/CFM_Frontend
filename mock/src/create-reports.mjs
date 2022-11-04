@@ -54,7 +54,7 @@ function createReportFor({ id }) {
     condition: oneIn(50)
       ? 'not at location'
       : faker.helpers.arrayElement(['good', 'dirty', 'out of order']),
-    foodPercentage: faker.helpers.arrayElement([0, 33, 67, 100]),
+    foodPercentage: faker.helpers.arrayElement([0, 1, 2, 3]),
     photoUrl: 'http://placekitten.com/200/300',
     notes: faker.lorem.lines(1),
   });

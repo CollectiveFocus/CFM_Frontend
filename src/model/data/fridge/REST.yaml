@@ -462,7 +462,7 @@ components:
         foodPercentage:
           description: The percentage of food in the fridge.
           type: integer
-          enum: [0, 33, 67, 100]
+          enum: [0, 1, 2, 3]
 
         photoUrl:
           description: Fully qualified URL path to a picture of the food.

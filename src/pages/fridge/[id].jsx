@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { FridgeInformation } from 'components/molecules';
+import Link from 'next/link';
 
 export default function FridgePage(props) {
   return (

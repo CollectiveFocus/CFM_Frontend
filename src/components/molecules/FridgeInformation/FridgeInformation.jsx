@@ -192,6 +192,9 @@ function FridgeContainer({ fridge }) {
       photoUrl = null,
       notes = null,
     } = fridge;
+    // if (fridge['photoUrl'] == null) {
+    //   fridge['photoUrl'] = '/hero/logo.png'
+    // }
 
     const shareResponse = () => {
       if (navigator.share) {
@@ -316,12 +319,12 @@ export default function FridgeInformation({ fridge, report }) {
       {/* Navigation  */}
       <Stack direction="row" justifyContent="space-between">
         {/* <Backtrack /> */}
-        <Link href="/demo/CreateFridgeDialog">
+        {/* <Link href="/demo/CreateFridgeDialog">
           <Stack direction="row" spacing={2}>
             <EditOutlinedIcon />
             <Typography variant="body1">Edit Fridge</Typography>
           </Stack>
-        </Link>
+        </Link> */}
       </Stack>
 
       {FridgeContainer({ fridge })}
@@ -331,6 +334,8 @@ export default function FridgeInformation({ fridge, report }) {
         aria-label="Click to report the status of the fridge"
         variant="contained"
         sx={{ py: 3 }}
+        href={`/user/fridge/report/${fridge.id}`}
+        LinkComponent={Link}
       >
         Report Status
       </Button>
