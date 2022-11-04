@@ -17,14 +17,14 @@ export async function getGhostFridgeList() {
 
 async function fetchAllData() {
   const fridgeUrl = `https://api-prod.communityfridgefinder.com/v1/fridges/`;
-  // const reportsUrl = `https://api-prod.communityfridgefinder.com/v1/reports/`;
+  const reportsUrl = `https://api-prod.communityfridgefinder.com/v1/reports/`;
   const responses = await Promise.all([
     fetch(fridgeUrl, {
       headers: { Accept: 'application/json' },
     }),
-    // fetch(reportsUrl, {
-    //   headers: { Accept: 'application/json' },
-    // }),
+    fetch(reportsUrl, {
+      headers: { Accept: 'application/json' },
+    }),
   ]);
   for (const response of responses) {
     if (!response.ok) {
@@ -33,14 +33,14 @@ async function fetchAllData() {
       );
     }
   }
-  const [fridges] = await Promise.all(
+  const [fridges, reports] = await Promise.all(
     responses.map((response) => response.json())
   );
-  cacheAllData({ fridges });
+  cacheAllData({ fridges, reports });
 }
 
 const castOptions = { stripUnknown: true };
-function cacheAllData({ fridges }) {
+function cacheAllData({ fridges, reports }) {
   for (const fridge of fridges) {
     const id = fridge.id;
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
