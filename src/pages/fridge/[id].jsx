@@ -45,9 +45,9 @@ async function getAllFridgeIds() {
 async function getFridgeRecord({ id }) {
   const responses = await Promise.all([
     fetch(baseUrl + id, { headers: { Accept: 'application/json' } }),
-    fetch(baseUrl + id + '/reports', {
-      headers: { Accept: 'application/json' },
-    }),
+    // fetch(baseUrl + id + '/reports', {
+    //   headers: { Accept: 'application/json' },
+    // }),
   ]);
   for (const response of responses) {
     if (!response.ok) {
@@ -57,8 +57,8 @@ async function getFridgeRecord({ id }) {
       return {};
     }
   }
-  const [fridge, reports] = await Promise.all(responses.map((r) => r.json()));
-  const report = reports.length > 0 ? reports[0] : null;
+  const [fridge] = await Promise.all(responses.map((r) => r.json()));
+  const report = null;
   return { fridge, report };
 }
 getFridgeRecord.propTypes = {
