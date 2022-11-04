@@ -48,10 +48,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/hero/get-involved.webp',
+            src: '/hero/about_5.webp',
             alt: 'stand in img',
-            width: 749,
-            height: 319,
+            width: 500,
+            height: 275,
           },
           title: 'Collective Focus',
           variant: 'h2',

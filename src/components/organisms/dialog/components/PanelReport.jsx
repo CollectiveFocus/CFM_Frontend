@@ -119,7 +119,12 @@ export default function PanelReport({
                   <FormControlLabel
                     control={<Radio />}
                     value="not at location"
-                    label="Fridge is no longer at location"
+                    label="Fridge is temporarily unavailable"
+                  />
+                  <FormControlLabel
+                    control={<Radio />}
+                    value="ghost"
+                    label="Fridge is permanently unavailable"
                   />
                 </RadioGroup>
               </FormGroup>
