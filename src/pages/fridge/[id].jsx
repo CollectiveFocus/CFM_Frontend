@@ -14,7 +14,7 @@ export default function FridgePage(props) {
 }
 FridgePage.propTypes = FridgeInformation.propTypes.isRequired;
 
-const baseUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/';
+const baseUrl = 'https://api-prod.communityfridgefinder.com' + '/v1/fridges/';
 
 export async function getStaticPaths() {
   return {

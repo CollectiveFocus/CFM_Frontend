@@ -10,15 +10,16 @@ import {
 import typesValidation from './prop-types';
 import dialogValidation from 'model/view/dialog/yup';
 
-const panelFridgeValidation = dialogValidation.Fridge.pick(['name', 'notes']).concat(
-  dialogValidation.Location.pick(['street', 'city', 'state', 'zip'])
-);
+const panelFridgeValidation = dialogValidation.Fridge.pick([
+  'name',
+  'notes',
+]).concat(dialogValidation.Location.pick(['street', 'city', 'state', 'zip']));
 
-const fridgeUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/contact/';
+const fridgeUrl = 'https://api-prod.communityfridgefinder.com' + '/v1/contact/';
 
 export default function PanelFridge({ handleBack, handleNext }) {
   const onSubmitFn = (values) => {
-    console.error({ values })
+    console.error({ values });
   };
 
   const formik = useFormik({
@@ -32,7 +33,7 @@ export default function PanelFridge({ handleBack, handleNext }) {
     },
     validationSchema: panelFridgeValidation,
     onSubmit: (values) => {
-      console.error({ values })
+      console.error({ values });
       alert(JSON.stringify(values, null, 2));
     },
   });
@@ -101,7 +102,7 @@ export default function PanelFridge({ handleBack, handleNext }) {
                 variant="contained"
                 type="submit"
                 value="submit"
-                form ="panelFridge"
+                form="panelFridge"
                 sx={{ width: { md: '345px', xs: '100%' } }}
               >
                 Continue
@@ -121,4 +122,4 @@ export default function PanelFridge({ handleBack, handleNext }) {
     </>
   );
 }
-PanelFridge.propTypes = typesValidation.Panel
+PanelFridge.propTypes = typesValidation.Panel;

@@ -16,8 +16,8 @@ export async function getGhostFridgeList() {
 }
 
 async function fetchAllData() {
-  const fridgeUrl = `${process.env.NEXT_PUBLIC_CFM_API_URL}/v1/fridges/`;
-  const reportsUrl = `${process.env.NEXT_PUBLIC_CFM_API_URL}/v1/reports/`;
+  const fridgeUrl = `https://api-prod.communityfridgefinder.com/v1/fridges/`;
+  const reportsUrl = `https://api-prod.communityfridgefinder.com/v1/reports/`;
   const responses = await Promise.all([
     fetch(fridgeUrl, {
       headers: { Accept: 'application/json' },
