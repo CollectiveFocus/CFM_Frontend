@@ -26,7 +26,7 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/hero/get-involved.webp',
+            src: '/pages/phamplet',
             alt: 'stand in img',
             width: 749,
             height: 319,

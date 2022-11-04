@@ -22,9 +22,9 @@ async function fetchAllData() {
     fetch(fridgeUrl, {
       headers: { Accept: 'application/json' },
     }),
-    fetch(reportsUrl, {
-      headers: { Accept: 'application/json' },
-    }),
+    // fetch(reportsUrl, {
+    //   headers: { Accept: 'application/json' },
+    // }),
   ]);
   for (const response of responses) {
     if (!response.ok) {
@@ -33,10 +33,10 @@ async function fetchAllData() {
       );
     }
   }
-  const [fridges, reports] = await Promise.all(
+  const [fridges] = await Promise.all(
     responses.map((response) => response.json())
   );
-  cacheAllData({ fridges, reports });
+  cacheAllData({ fridges, reports: [] });
 }
 
 const castOptions = { stripUnknown: true };
