@@ -12,7 +12,7 @@ import {
 import BrowseList from 'components/organisms/browse/List';
 import { MapToggle } from 'components/atoms/';
 
-import { getFridgeList, getGhostFridgeList } from 'model/view';
+import { getFridgeList } from 'model/view';
 import { useWindowHeight } from 'lib/browser';
 
 const DynamicMap = dynamic(
@@ -37,7 +37,6 @@ const ProgressIndicator = (
 );
 
 let fridgeList = null;
-let ghostList = null;
 export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
@@ -48,7 +47,6 @@ export default function BrowsePage() {
   useEffect(() => {
     const fetchData = async () => {
       fridgeList = await getFridgeList();
-      ghostList = await getGhostFridgeList();
       setHasDataLoaded(true);
     };
     fetchData().catch(console.error);
@@ -56,8 +54,7 @@ export default function BrowsePage() {
 
   const Map = hasDataLoaded
     ? BrowseMap({
-        fridgeList,
-        ghostList,
+        fridgeList
       })
     : ProgressIndicator;
 

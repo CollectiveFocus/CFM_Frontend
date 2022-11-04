@@ -11,10 +11,6 @@ export async function getFridgeList() {
   return fridgeList;
 }
 
-export async function getGhostFridgeList() {
-  return fetch('data/ghostFridges.json').then((response) => response.json());
-}
-
 async function fetchAllData() {
   const fridgeUrl = `https://api-prod.communityfridgefinder.com/v1/fridges/`;
   const reportsUrl = `https://api-prod.communityfridgefinder.com/v1/reports/`;
@@ -46,7 +42,7 @@ function cacheAllData({ fridges }) {
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
     fridgeCache[id]['report'] = null;
     if ('latestFridgeReport' in fridge) {
-      let latestFridgeReport = [fridgeCache['latestFridgeReport']];
+      let latestFridgeReport = [fridge['latestFridgeReport']];
       fridgeCache[id].report = ValuesReport.cast(
         latestFridgeReport,
         castOptions

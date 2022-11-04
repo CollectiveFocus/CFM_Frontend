@@ -15,10 +15,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/hero/get-involved.webp',
+            src: '/hero/about_2.webp',
             alt: 'stand in img',
-            width: 749,
-            height: 319,
+            width: 550,
+            height: 300,
           },
           title: 'Independence for Each Fridge',
           variant: 'h2',
