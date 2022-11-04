@@ -37,9 +37,10 @@ const colorFrom = Object.freeze({
   100: pinColor.itemsFull,
 });
 const decorationFrom = Object.freeze({
-  good: '',
-  dirty: svgDecorationDirty,
+  'good': '',
+  'dirty': svgDecorationDirty,
   'out of order': svgDecorationOutOfOrder,
+  'ghost': svgUrlPinGhost
 });
 
 const iconCache = {};

@@ -44,6 +44,11 @@ const enumCondition = {
     text: 'No fridge at this address',
     color: 'warning',
   },
+  'ghost': {
+    text: 'Fridge is permanently unavailable',
+    color: 'error',
+  },
+  
 };
 
 function FridgeStatusIcon({ condition }) {

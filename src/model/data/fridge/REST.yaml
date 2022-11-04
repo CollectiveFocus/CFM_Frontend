@@ -457,7 +457,7 @@ components:
         condition:
           description: The condition of the fridge. Fridge is ...
           type: string
-          enum: [good, dirty, out of order, not at location]
+          enum: [good, dirty, out of order, not at location, ghost]
 
         foodPercentage:
           description: The percentage of food in the fridge.

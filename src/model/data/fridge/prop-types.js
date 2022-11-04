@@ -38,6 +38,7 @@ export const typesReportCondition = PropTypes.oneOf([
   'dirty',
   'out of order',
   'not at location',
+  'ghost'
 ]);
 export const typesReportFoodPercentage = PropTypes.oneOf([0, 1, 2, 3]);
 
