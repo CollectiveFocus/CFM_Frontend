@@ -13,7 +13,7 @@ export default function MapMarkerList({ markerDataList }) {
     return (
       <Marker {...marker} key={index}>
         <Popup>
-          <Typography variant="caption">{fridgeName}</Typography>
+          <Typography variant="caption">{MoreInfo(id, fridgeName)}</Typography>
           <br />
           <Typography
             variant="body2"
@@ -23,7 +23,8 @@ export default function MapMarkerList({ markerDataList }) {
             {street}
             <br />
             {city}, {state} {zip}&nbsp;
-            {MoreInfo(id)}
+            <br />
+            {MoreInfo(id, "More Info")}
           </Typography>
         </Popup>
       </Marker>
@@ -31,5 +32,5 @@ export default function MapMarkerList({ markerDataList }) {
   });
 }
 
-const MoreInfo = (id) =>
-  id ? <Link href={`/fridge/${id}`}>.&nbsp;.&nbsp;.</Link> : null;
+const MoreInfo = (id, words) =>
+  id ? <Link href={`/fridge/${id}`}>{words}</Link> : null;
