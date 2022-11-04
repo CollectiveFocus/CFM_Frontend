@@ -57,8 +57,8 @@ git config --global push.default current
 git config --global pull.default matching
 git config --global pull.ff only
 
-git config --global pretty.all "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(55,trunc)%s %C(yellow)%<(30,trunc)%S %C(auto)%d"
-git config --global pretty.summary "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(55,trunc)%s %C(auto)%d"
+git config --global pretty.all "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(75,trunc)%s %C(yellow)%<(30,trunc)%S %C(auto)%d"
+git config --global pretty.summary "format:%C(auto)%h %C(green)%<(15,trunc)%aN %C(reset)%<(75,trunc)%s %C(auto)%d"
 
 git config --global diff.guitool vscode
 git config --global merge.guitool vscode
@@ -174,7 +174,7 @@ The commit message header must be in the format: `<type>: <subject>`
 
 - subject must start with a capital letter
 - subject must not end with a period
-- subject must not exceed 50 characters
+- subject must not exceed 70 characters
 
 commit header examples:
 

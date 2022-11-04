@@ -71,6 +71,6 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
    in a different terminal window
 
    ```bash
-   start "Google Chrome" http://localhost:4000/   # Windows
-   open -a "Google Chrome" http://localhost:4000/ # MacOS
+   start   "Google Chrome" http://localhost:3000/ # Windows
+   open -a "Google Chrome" http://localhost:3000/ # MacOS
    ```

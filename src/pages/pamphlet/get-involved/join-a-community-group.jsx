@@ -10,14 +10,17 @@ export async function getStaticProps() {
   return {
     props: {
       organizations: [
-        { name: 'Collective Focus Resource Hub' },
-        { name: 'One Love Community Fridge' },
-        { name: 'Black Chef Movement' },
-        { name: 'Stuff4Good' },
         { name: 'Artists.Athletes.Activists' },
+        { name: 'Black Chef Movement' },
+        { name: 'Black Voices Matter' },
+        { name: 'Bushwick Ayuda Mutua ' },
+        { name: 'Collective Focus Resource Hub' },
+        { name: 'Freedge' },
+        { name: 'Nuestra Mesa Brooklyn' },
+        { name: 'One Love Community Fridge' },
+        { name: 'Stuff4Good' },
         { name: 'Universe City' },
         { name: 'Woodbine Mutual Aid' },
-        { name: 'Nuestra Mesa Brooklyn' },
       ],
     },
   };
@@ -43,13 +46,13 @@ export default function JoinACommunityGroupPage({ organizations }) {
               pathname: '/user/contact',
               query: { subject: 'Volunteer Interest' },
             },
-            'aria-label': 'Volunteer with Collective Focus',
+            'aria-label': 'Volunteer',
             variant: 'contained',
             size: 'wide',
           }}
         />
 
-        <Typography sx={{ mb: 7 }} variant="body1">
+        {/* <Typography sx={{ mb: 7 }} variant="body1">
           There are groups across New York City that source donations and
           maintenance support for fridges. This is essential to keeping fridges
           active.
@@ -63,10 +66,10 @@ export default function JoinACommunityGroupPage({ organizations }) {
           ]}
         />
 
-        {renderOrganizations(organizations)}
+        {renderOrganizations(organizations)} */}
       </Box>
 
-      <PageFooter fixedAtBottom={false} />
+      <PageFooter fixedAtBottom={true} />
     </>
   );
 }

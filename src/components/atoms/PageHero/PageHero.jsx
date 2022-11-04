@@ -4,7 +4,7 @@ import { typesNextFillImage } from 'model/view/component/prop-types';
 import { Box } from '@mui/material';
 import { ButtonLink } from 'components/atoms';
 
-export default function PageHero({ img, title, link }) {
+export default function PageHero({ img, button }) {
   return (
     <Box
       sx={{
@@ -16,32 +16,26 @@ export default function PageHero({ img, title, link }) {
         position: 'relative',
       }}
     >
-      <Image
-        priority
-        layout="fill"
-        objectFit="cover"
-        alt=""
-        {...img}
-        style={{ opacity: 0.5 }}
-      />
-      <ButtonLink
-        to={link}
-        variant="contained"
-        aria-label={title}
-        sx={{
-          minWidth: { xs: '90vw', md: '75vw', lg: '500px' },
-          fontVariant: 'small-caps',
-          fontColor: 'white',
-          boxShadow: 8,
-        }}
-      >
-        {title}
-      </ButtonLink>
+      <Image priority layout="fill" objectFit="cover" alt="" {...img} />
+      {button && (
+        <ButtonLink
+          variant="contained"
+          to={button.to}
+          aria-label={button['aria-label']}
+          sx={{
+            minWidth: { xs: '90vw', md: '75vw', lg: '500px' },
+            fontVariant: 'small-caps',
+            fontColor: 'white',
+            boxShadow: 8,
+          }}
+        >
+          {button.title}
+        </ButtonLink>
+      )}
     </Box>
   );
 }
 PageHero.propTypes = {
   img: typesNextFillImage.isRequired,
-  title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  button: PropTypes.shape(ButtonLink.propTypes),
 };

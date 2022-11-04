@@ -10,7 +10,7 @@ This convention is adapted from:
 - commit message header format: `<type>(<scope>): <subject>`
 - `subject` must start with a capital letter
 - `subject` must not end with a period
-- `subject` must not exceed 50 characters
+- `subject` must not exceed 70 characters
 
 commit header examples:
 
@@ -72,7 +72,7 @@ The scope could be anything specifying the place of the commit change. For examp
 #### subject
 
 1. Separate subject from body with a blank line
-1. Limit the subject line to 50 characters
+1. Limit the subject line to 70 characters
 1. Capitalize the subject line
 1. Do not end the subject line with a period
 1. Use the imperative mood in the subject line

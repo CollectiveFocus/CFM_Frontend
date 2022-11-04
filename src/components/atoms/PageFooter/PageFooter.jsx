@@ -21,17 +21,24 @@ export default function PageFooter({
     scrollButton = false;
   }
 
+  const paddingSpace = fixedAtBottom ? (
+    <div style={{ margin: '2em 0' }}>&nbsp;</div>
+  ) : null;
+
   return (
-    <Box component="footer" sx={sxFooter}>
-      {PageScroll(scrollButton)}
-      <Typography variant="footer">
-        &copy; 2022, Collective Focus. All rights reserved.&nbsp;
-      </Typography>
-      <Typography variant="footer">
-        We may use cookies for storing information to help provide you with a
-        better, faster, and safer experience and for SEO purposes.
-      </Typography>
-    </Box>
+    <>
+      {paddingSpace}
+      <Box component="footer" sx={sxFooter}>
+        {PageScroll(scrollButton)}
+        <Typography variant="footer">
+          &copy; 2022, Collective Focus. All rights reserved.&nbsp;
+        </Typography>
+        <Typography variant="footer">
+          We may use cookies for storing information to help provide you with a
+          better, faster, and safer experience and for SEO purposes.
+        </Typography>
+      </Box>
+    </>
   );
 }
 PageFooter.propTypes = {

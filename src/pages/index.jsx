@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid, Typography } from '@mui/material';
 import {
-  DecoratedParagraph,
+  PamphletParagraph,
   PageFooter,
   PageHero,
   ParagraphCard,
@@ -16,13 +16,19 @@ export async function getStaticProps() {
           src: '/hero/index.webp',
           alt: 'Picture of a New York fridge map',
         },
-        title: 'Find a Fridge',
-        link: '/browse',
+        button: {
+          title: 'Find a Fridge',
+          to: '/browse',
+          'aria-label': 'Browse the fridge map',
+          variant: 'contained',
+        },
       },
-      decoratedParagraph: {
+      introParagraph: {
         variant: 'h1',
         title: 'Take what you need. Leave what you can.',
-        body: 'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        body: [
+          'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        ],
       },
       paragraphCard: {
         h2: {
@@ -59,7 +65,7 @@ export async function getStaticProps() {
               height: 95,
             },
             title: 'Get Involved',
-            text: 'There are many ways to get involved with community fridges: from driving; donating food; or hosting a fridge.',
+            text: 'There are many ways to get involved with community fridges: from driving; donating food; or starting your own community fridge.',
             link: '/pamphlet/get-involved',
           },
           {
@@ -70,9 +76,9 @@ export async function getStaticProps() {
               width: 125,
               height: 95,
             },
-            title: 'Host A Fridge',
-            text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
-            link: '/pamphlet/get-involved/host-a-fridge',
+            title: 'Start a Fridge',
+            text: 'Anyone can start a community fridge. Read our guidelines and discover the valuable lessons we learned from hosting two fridges in central New Jersey.',
+            link: '/pamphlet/get-involved/start-a-fridge',
           },
         ],
       },
@@ -80,11 +86,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({
-  decoratedParagraph,
-  pageHero,
-  paragraphCard,
-}) {
+export default function HomePage({ pageHero, introParagraph, paragraphCard }) {
   return (
     <>
       <Head>
@@ -92,10 +94,7 @@ export default function HomePage({
       </Head>
 
       <PageHero {...pageHero} />
-      <DecoratedParagraph
-        sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
-        {...decoratedParagraph}
-      />
+      <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
 
       <Grid
         container
@@ -145,7 +144,7 @@ export default function HomePage({
 }
 HomePage.propTypes = {
   pageHero: PropTypes.exact(PageHero.propTypes),
-  decoratedParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
+  introParagraph: PropTypes.exact(PamphletParagraph.propTypes),
   paragraphCard: PropTypes.shape({
     h2: PropTypes.exact(ParagraphCard.propTypes),
     h3: PropTypes.arrayOf(PropTypes.exact(ParagraphCard.propTypes)),
