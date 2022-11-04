@@ -22,9 +22,9 @@ async function fetchAllData() {
     fetch(fridgeUrl, {
       headers: { Accept: 'application/json' },
     }),
-    fetch(reportsUrl, {
-      headers: { Accept: 'application/json' },
-    }),
+    // fetch(reportsUrl, {
+    //   headers: { Accept: 'application/json' },
+    // }),
   ]);
   for (const response of responses) {
     if (!response.ok) {
@@ -33,23 +33,28 @@ async function fetchAllData() {
       );
     }
   }
-  const [fridges, reports] = await Promise.all(
+  const [fridges] = await Promise.all(
     responses.map((response) => response.json())
   );
-  cacheAllData({ fridges, reports });
+  cacheAllData({ fridges });
 }
 
 const castOptions = { stripUnknown: true };
-function cacheAllData({ fridges, reports }) {
+function cacheAllData({ fridges }) {
   for (const fridge of fridges) {
     const id = fridge.id;
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
     fridgeCache[id]['report'] = null;
+    latestFridgeReport = [];
+    if ('latestFridgeReport' in fridge) {
+      latestFridgeReport = [fridgeCache['latestFridgeReport']];
+    }
+    fridgeCache[id].report = ValuesReport.cast(latestFridgeReport, castOptions);
   }
-  for (const report of reports) {
-    fridgeCache[report.fridgeId].report = ValuesReport.cast(
-      report,
-      castOptions
-    );
-  }
+  // for (const report of [reports]) {
+  //   fridgeCache[report.fridgeId].report = ValuesReport.cast(
+  //     report,
+  //     castOptions
+  //   );
+  // }
 }
