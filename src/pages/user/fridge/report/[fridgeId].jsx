@@ -35,7 +35,7 @@ export default function FridgeReportPage() {
   const pid = router.query;
   const fridgeId = pid['fridgeId'];
   const fridgeUrl =
-  "https://api-prod.communityfridgefinder.com/v1/fridges" + `/v1/fridges/${fridgeId}/reports`;
+  "https://api-prod.communityfridgefinder.com" + `/v1/fridges/${fridgeId}/reports`;
   // const [reportSubmitted, setReportSubmitted] = useState(false);
   const [displayComponent, setDisplay] = useState(enumDisplay.EmailDialog);
   // const { query } = useRouter();
