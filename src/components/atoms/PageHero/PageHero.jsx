@@ -22,7 +22,7 @@ export default function PageHero({ img, title, link }) {
         objectFit="cover"
         alt=""
         {...img}
-        style={{ opacity: 0.8 }}
+        style={{ opacity: 0.5 }}
       />
       <ButtonLink
         to={link}
