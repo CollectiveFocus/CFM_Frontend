@@ -26,10 +26,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/hero/get-involved.webp',
+            src: '/hero/about_3.webp',
             alt: 'stand in img',
-            width: 749,
-            height: 319,
+            width: 550,
+            height: 300,
           },
           title: 'A Public Art Installation on Our Sidewalks',
           variant: 'h2',
@@ -37,10 +37,10 @@ export async function getStaticProps() {
         },
         {
           img: {
-            src: '/hero/get-involved.webp',
+            src: '/hero/about_4.webp',
             alt: 'stand in img',
-            width: 749,
-            height: 319,
+            width: 325,
+            height: 205,
           },
           title: 'Technology Empowers Us',
           variant: 'h2',

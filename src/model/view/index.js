@@ -42,7 +42,7 @@ function cacheAllData({ fridges }) {
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
     fridgeCache[id]['report'] = null;
     if ('latestFridgeReport' in fridge) {
-      let latestFridgeReport = [fridge['latestFridgeReport']];
+      let latestFridgeReport = fridge['latestFridgeReport'];
       fridgeCache[id].report = ValuesReport.cast(
         latestFridgeReport,
         castOptions
