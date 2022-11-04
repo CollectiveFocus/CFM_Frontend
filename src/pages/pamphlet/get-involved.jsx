@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid } from '@mui/material';
-import { DecoratedParagraph, PageFooter, TitleCard } from 'components/atoms';
+import { PamphletParagraph, PageFooter, TitleCard } from 'components/atoms';
 
 export async function getStaticProps() {
   return {
@@ -57,9 +57,9 @@ export async function getStaticProps() {
         },
       ],
       introParagraph: {
-        title: 'Get Involved!',
-        body: 'There are many ways to support the future of the fridges.',
         variant: 'h1',
+        title: 'Get Involved!',
+        body: ['There are many ways to support the future of the fridges.'],
         img: {
           src: '/hero/get-involved.webp',
           alt: 'Volunteers in front of a community fridge',
@@ -78,10 +78,7 @@ export default function GetInvolvedPage({ introParagraph, titleCards }) {
       <Head>
         <title>Fridge Finder: Get Involved</title>
       </Head>
-      <DecoratedParagraph
-        sx={{ mx: { xs: 4, sm: 4, md: 2 }, textAlign: 'center' }}
-        {...introParagraph}
-      />
+      <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
       <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} my={{ xs: 4, md: 6 }}>
         {titleCards.map((card, index) => (
           <Grid
@@ -101,6 +98,6 @@ export default function GetInvolvedPage({ introParagraph, titleCards }) {
   );
 }
 GetInvolvedPage.propTypes = {
-  introParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
+  introParagraph: PropTypes.exact(PamphletParagraph.propTypes),
   titleCards: PropTypes.arrayOf(PropTypes.exact(TitleCard.propTypes)),
 };
