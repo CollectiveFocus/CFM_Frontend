@@ -16,8 +16,12 @@ export async function getStaticProps() {
           src: '/hero/index.webp',
           alt: 'Picture of a New York fridge map',
         },
-        title: 'Find a Fridge',
-        link: '/browse',
+        button: {
+          title: 'Find a Fridge',
+          to: '/browse',
+          'aria-label': 'Browse the fridge map',
+          variant: 'contained',
+        },
       },
       decoratedParagraph: {
         variant: 'h1',
