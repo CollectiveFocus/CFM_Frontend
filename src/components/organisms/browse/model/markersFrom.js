@@ -32,9 +32,9 @@ export default function markersFrom(fridgeList) {
 
 const colorFrom = Object.freeze({
   0: pinColor.itemsEmpty,
-  33: pinColor.itemsFew,
-  67: pinColor.itemsMany,
-  100: pinColor.itemsFull,
+  1: pinColor.itemsFew,
+  2: pinColor.itemsMany,
+  3: pinColor.itemsFull,
 });
 const decorationFrom = Object.freeze({
   'good': '',

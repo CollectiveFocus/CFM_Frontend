@@ -275,9 +275,9 @@ function ReportContainer({ report }) {
 
     const foodAvailable = {
       0: 'Empty',
-      33: 'Few items',
-      66: 'Many Items',
-      100: 'Full',
+      1: 'Few items',
+      2: 'Many Items',
+      3: 'Full',
     }[foodPercentage];
 
     return (
