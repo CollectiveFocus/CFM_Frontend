@@ -67,6 +67,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-leaflet": "^4.0.1",
+    "sharp": "^0.31.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {
