@@ -2,7 +2,10 @@ module.exports = {
   reactStrictMode: true,
 
   images: {
-    domains: ['127.0.0.1', 'placekitten.com'],
+    domains: [
+      'placekitten.com',
+      'community-fridge-map-images-prod.s3.amazonaws.com',
+    ],
   },
 
   // --- Next.js@12.2.2
