@@ -42,9 +42,8 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
           <ButtonLink
             to={link}
             variant="outlined"
-            size="wide"
             aria-label={title}
-            sx={{ width: '100%', mt: 4 }}
+            sx={{ width: '100%', maxWidth: '345px', mt: 4 }}
           >
             LEARN MORE
           </ButtonLink>
@@ -73,10 +72,10 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
           <ButtonLink
             to={link}
             variant="outlined"
-            size="wide"
             aria-label={title}
             sx={{
               width: '100%',
+              maxWidth: '345px',
               mx: 'auto',
             }}
           >
