@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid, Typography } from '@mui/material';
 import {
-  DecoratedParagraph,
+  PamphletParagraph,
   PageFooter,
   PageHero,
   ParagraphCard,
@@ -23,10 +23,12 @@ export async function getStaticProps() {
           variant: 'contained',
         },
       },
-      decoratedParagraph: {
+      introParagraph: {
         variant: 'h1',
         title: 'Take what you need. Leave what you can.',
-        body: 'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        body: [
+          'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        ],
       },
       paragraphCard: {
         h2: {
@@ -84,11 +86,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({
-  decoratedParagraph,
-  pageHero,
-  paragraphCard,
-}) {
+export default function HomePage({ pageHero, introParagraph, paragraphCard }) {
   return (
     <>
       <Head>
@@ -96,10 +94,7 @@ export default function HomePage({
       </Head>
 
       <PageHero {...pageHero} />
-      <DecoratedParagraph
-        sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
-        {...decoratedParagraph}
-      />
+      <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
 
       <Grid
         container
@@ -149,7 +144,7 @@ export default function HomePage({
 }
 HomePage.propTypes = {
   pageHero: PropTypes.exact(PageHero.propTypes),
-  decoratedParagraph: PropTypes.exact(DecoratedParagraph.propTypes),
+  introParagraph: PropTypes.exact(PamphletParagraph.propTypes),
   paragraphCard: PropTypes.shape({
     h2: PropTypes.exact(ParagraphCard.propTypes),
     h3: PropTypes.arrayOf(PropTypes.exact(ParagraphCard.propTypes)),

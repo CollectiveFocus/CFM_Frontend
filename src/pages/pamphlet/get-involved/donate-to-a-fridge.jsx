@@ -13,7 +13,7 @@ export default function DonateAFridge() {
           variant="h1"
           title="Spread the Word"
           body={['Give your time, food, or funds to make a big impact!']}
-          hasDividerBottom={true}
+          hasDivider={true}
         />
 
         <PamphletParagraph
@@ -23,7 +23,7 @@ export default function DonateAFridge() {
             'Most fridges are accessible 24/7, and these locations can use your support. Every community fridge has their own volunteer process, which can be found by contacting that fridge individually. As a general principle, we encourage everyone investing time into this project to treat others with kindness and respect.',
             'To volunteer with our specific group, Collective Focus, contact us.',
           ]}
-          hasDividerBottom={true}
+          hasDivider={true}
           button={{
             title: 'Volunteer with Collective Focus',
             to: {
@@ -42,7 +42,7 @@ export default function DonateAFridge() {
           body={[
             'Food should be great quality, fresh, and sealed in airtight containers. Label donated meals with ingredients and date. Do not leave items outside of the fridges. Before donating, read our best practices.',
           ]}
-          hasDividerBottom={true}
+          hasDivider={true}
           button={{
             title: 'Best Practices',
             to: '/pamphlet/best-practices',
