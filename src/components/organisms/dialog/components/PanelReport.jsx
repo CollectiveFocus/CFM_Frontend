@@ -33,15 +33,15 @@ export default function PanelReport({
       label: 'Empty',
     },
     {
-      value: 33,
+      value: 1,
       label: 'A Few Items',
     },
     {
-      value: 67,
+      value: 2,
       label: 'Many Items',
     },
     {
-      value: 100,
+      value: 3,
       label: 'Full',
     },
   ];
@@ -91,8 +91,8 @@ export default function PanelReport({
                 value={formik.values.foodPercentage}
                 onChange={formik.handleChange}
                 min={0}
-                max={100}
-                step={33.3}
+                max={3}
+                step={1}
                 marks={sliderMarks}
                 sx={fridgeSliderStyles}
               />

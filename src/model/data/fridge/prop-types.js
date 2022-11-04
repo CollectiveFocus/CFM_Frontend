@@ -39,7 +39,7 @@ export const typesReportCondition = PropTypes.oneOf([
   'out of order',
   'not at location',
 ]);
-export const typesReportFoodPercentage = PropTypes.oneOf([0, 33, 67, 100]);
+export const typesReportFoodPercentage = PropTypes.oneOf([0, 1, 2, 3]);
 
 export const typesReport = PropTypes.exact({
   timestamp: PropTypes.string.isRequired,

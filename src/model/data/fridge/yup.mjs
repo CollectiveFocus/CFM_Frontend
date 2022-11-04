@@ -43,7 +43,7 @@ export const ValuesReport = object({
   condition: string()
     .oneOf(['good', 'dirty', 'out of order', 'not at location'])
     .required(),
-  foodPercentage: number().integer().oneOf([0, 33, 67, 100]).required(),
+  foodPercentage: number().integer().oneOf([0, 1, 2, 3]).required(),
   photoUrl: string().url().optional(),
   notes: string().min(0).max(300).trim().optional(),
 });

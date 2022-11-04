@@ -81,13 +81,13 @@ const displayButton = {
   EmailError: null,
   ReportStatus: (
     <ButtonLink
-      to="#"
+      to="/browse"
       aria-label="View Fridge details"
       variant="contained"
       size="wide"
       sx={{ mt: 8, mb: 2 }}
     >
-      GO TO FRIDGE
+      GO TO FRIDGES
     </ButtonLink>
   ),
   CreateFridge: (
@@ -99,9 +99,9 @@ const displayButton = {
         size="wide"
         sx={{ mt: 8, mb: 2 }}
       >
-        GO TO FRIDGE
+        GO TO FRIDGES
       </ButtonLink>
-      <ButtonLink
+      {/* <ButtonLink
         to="#"
         aria-label="Edit Fridge details"
         variant="outlined"
@@ -109,7 +109,7 @@ const displayButton = {
         sx={{ mb: 2, mt: 6 }}
       >
         EDIT FRIDGE
-      </ButtonLink>
+      </ButtonLink> */}
     </>
   ),
 };
