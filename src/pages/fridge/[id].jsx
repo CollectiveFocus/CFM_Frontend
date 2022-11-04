@@ -17,17 +17,17 @@ FridgePage.propTypes = FridgeInformation.propTypes.isRequired;
 
 const baseUrl = 'https://api-prod.communityfridgefinder.com' + '/v1/fridges/';
 
-export async function getStaticPaths() {
-  return {
-    paths: await getAllFridgeIds().then((idList) =>
-      idList.map((id) => ({ params: { id } }))
-    ),
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: await getAllFridgeIds().then((idList) =>
+//       idList.map((id) => ({ params: { id } }))
+//     ),
+//     fallback: false,
+//   };
+// }
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   return {
     props: await getFridgeRecord({ id: context.params.id }),
   };
