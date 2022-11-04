@@ -69,10 +69,10 @@ export async function getStaticProps() {
 
 export default function AboutPage({ content }) {
   const headerImg = {
-    src: '/hero/get-involved.webp',
+    src: '/hero/about_1.webp',
     alt: 'fill in image',
-    width: 360,
-    height: 130,
+    width: 500,
+    height: 120,
   };
   return (
     <>
