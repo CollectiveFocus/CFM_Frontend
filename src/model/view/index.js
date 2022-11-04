@@ -8,6 +8,7 @@ export async function getFridgeList() {
     await fetchAllData();
     fridgeList = Object.values(fridgeCache);
   }
+  fridgeList = fridgeList.sort((a, b) => (a.id > b.id) ? 1 : -1)
   return fridgeList;
 }
 
