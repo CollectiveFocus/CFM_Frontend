@@ -45,11 +45,13 @@ function cacheAllData({ fridges }) {
     const id = fridge.id;
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
     fridgeCache[id]['report'] = null;
-    let latestFridgeReport = [];
     if ('latestFridgeReport' in fridge) {
       latestFridgeReport = [fridgeCache['latestFridgeReport']];
+      fridgeCache[id].report = ValuesReport.cast(
+        latestFridgeReport,
+        castOptions
+      );
     }
-    fridgeCache[id].report = ValuesReport.cast(latestFridgeReport, castOptions);
   }
   // for (const report of [reports]) {
   //   fridgeCache[report.fridgeId].report = ValuesReport.cast(
