@@ -4,8 +4,8 @@ import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
 const pageContent = {
   pageHero: {
     img: {
-      src: '/hero/get-involved.webp',
-      alt: 'Volunteers in front of a community fridge',
+      src: '/hero/about.webp',
+      alt: 'The group at Community Focus',
     },
   },
   content: [
