@@ -37,7 +37,7 @@ export default function PamphletParagraph({
           sx={{
             textAlign: 'center',
             mb: 7,
-            mx: { xs: 5, sm: 5, ld: 5, lg: 15, xl: 20 },
+            mx: { xs: 10, lg: 15, xl: 20 },
           }}
         >
           <Image alt="" {...img} style={{ borderRadius: '5px' }} />
@@ -47,7 +47,7 @@ export default function PamphletParagraph({
       {body &&
         body.map((val, index) => (
           <Typography
-            sx={{ mb: 7, mx: { xs: 5, sm: 5, ld: 5, lg: 15, xl: 20 } }}
+            sx={{ mb: 7, mx: { xs: 10, lg: 15, xl: 20 } }}
             variant="body1"
             key={index + '_PamphletParagraph'}
           >
@@ -60,7 +60,7 @@ export default function PamphletParagraph({
           sx={{
             textAlign: 'center',
             mb: 7,
-            mx: { xs: 5, sm: 5, ld: 5, lg: 15, xl: 20 },
+            mx: { xs: 10, lg: 15, xl: 20 },
           }}
         >
           <ButtonLink
@@ -68,7 +68,6 @@ export default function PamphletParagraph({
             size="wide"
             to={button.to}
             aria-label={button['aria-label']}
-            style={{ a: { margin: 0, color: 'red' } }}
           >
             {button.title}
           </ButtonLink>

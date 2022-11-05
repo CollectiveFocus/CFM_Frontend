@@ -6,7 +6,7 @@ import { PageFooter } from 'components/atoms';
 
 const panelList = [
   {
-    title: 'Bringing Food to Fridges',
+    title: 'Dropping off',
     content: [
       'Only bring good food to the community fridges. When considering what is good to donate, ask yourself if you would give the food item to your friends or family to eat? If so, your food donation is probably good for your neighbors, too.',
       'Food must be fresh, stored at the proper temperature, and unexpired.',
@@ -19,7 +19,7 @@ const panelList = [
     ],
   },
   {
-    title: 'Taking Food from Fridges',
+    title: 'Picking up',
     content: [
       'Only take the amount of food that you need, and leave the rest for others. Many people depend on community fridges to get enough nutrition. Whenever possible, make sure there is enough food left for others to eat as well.',
       'Only take good food from the fridges. If the food does not look good, throw it away using appropriate procedures and sanitation.',

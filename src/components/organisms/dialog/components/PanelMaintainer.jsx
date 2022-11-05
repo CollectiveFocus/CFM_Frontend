@@ -24,7 +24,7 @@ export default function PanelMaintainer(props) {
   });
   return (
     <>
-      <StepLabel>Maintainer Contact Information</StepLabel>
+      <StepLabel>Organizer Contact Information</StepLabel>
       <StepContent>
         <Stack direction="column" spacing={3} mx={4} mb={4}>
           <TextField
