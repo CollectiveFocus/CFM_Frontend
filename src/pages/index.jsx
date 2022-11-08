@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Grid, Typography } from '@mui/material';
 import {
@@ -8,85 +7,82 @@ import {
   ParagraphCard,
 } from 'components/atoms';
 
-export async function getStaticProps() {
-  return {
-    props: {
-      pageHero: {
-        img: {
-          src: '/hero/index.webp',
-          alt: 'Picture of a New York fridge map',
-        },
-        button: {
-          title: 'Find a Fridge',
-          to: '/browse',
-          'aria-label': 'Browse the fridge map',
-          variant: 'contained',
-        },
-      },
-      introParagraph: {
-        variant: 'h1',
-        title: 'Take what you need. Leave what you can.',
-        body: [
-          'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
-        ],
-      },
-      paragraphCard: {
-        h2: {
-          variant: 'h2',
-          img: {
-            src: '/card/paragraph/pearTomatoAndFridge.svg',
-            alt: 'Picture of pear dancing with tomatoes stacked on top of each other',
-            width: 125,
-            height: 95,
-          },
-          title: 'About Community Fridges',
-          text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
-          link: '/pamphlet/about',
-        },
-        h3: [
-          {
-            variant: 'h3',
-            img: {
-              src: '/card/paragraph/apple.svg',
-              alt: 'Picture of smiling apple holding a list',
-              width: 125,
-              height: 95,
-            },
-            title: 'Read Best Practices',
-            text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
-            link: '/pamphlet/best-practices',
-          },
-          {
-            variant: 'h3',
-            img: {
-              src: '/card/paragraph/jumpingBlueberries.svg',
-              alt: 'Picture of blueberries jumping and waving',
-              width: 125,
-              height: 95,
-            },
-            title: 'Get Involved',
-            text: 'There are many ways to get involved with community fridges: from driving; donating food; or hosting a fridge.',
-            link: '/pamphlet/get-involved',
-          },
-          {
-            variant: 'h3',
-            img: {
-              src: '/card/paragraph/plumAndFridge.svg',
-              alt: 'Picture of smiling plum and smiling fridge',
-              width: 125,
-              height: 95,
-            },
-            title: 'Host A Fridge',
-            text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
-            link: '/pamphlet/get-involved/host-a-fridge',
-          },
-        ],
-      },
+const pageContent = {
+  pageHero: {
+    img: {
+      src: '/hero/index.webp',
+      alt: 'Picture of a New York fridge map',
     },
-  };
-}
+    button: {
+      title: 'Find a Fridge',
+      to: '/browse',
+      'aria-label': 'Browse the fridge map',
+      variant: 'contained',
+    },
+  },
+  introParagraph: {
+    variant: 'h1',
+    title: 'Take what you need. Leave what you can.',
+    body: [
+      'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+    ],
+  },
+  paragraphCard: {
+    h2: {
+      variant: 'h2',
+      img: {
+        src: '/card/paragraph/pearTomatoAndFridge.svg',
+        alt: 'Picture of pear dancing with tomatoes stacked on top of each other',
+        width: 125,
+        height: 95,
+      },
+      title: 'About Community Fridges',
+      text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
+      link: '/pamphlet/about',
+    },
+    h3: [
+      {
+        variant: 'h3',
+        img: {
+          src: '/card/paragraph/apple.svg',
+          alt: 'Picture of smiling apple holding a list',
+          width: 125,
+          height: 95,
+        },
+        title: 'Read Best Practices',
+        text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
+        link: '/pamphlet/best-practices',
+      },
+      {
+        variant: 'h3',
+        img: {
+          src: '/card/paragraph/jumpingBlueberries.svg',
+          alt: 'Picture of blueberries jumping and waving',
+          width: 125,
+          height: 95,
+        },
+        title: 'Get Involved',
+        text: 'There are many ways to get involved with community fridges: from driving; donating food; or starting your own community fridge.',
+        link: '/pamphlet/get-involved',
+      },
+      {
+        variant: 'h3',
+        img: {
+          src: '/card/paragraph/plumAndFridge.svg',
+          alt: 'Picture of smiling plum and smiling fridge',
+          width: 125,
+          height: 95,
+        },
+        title: 'Start a Fridge',
+        text: 'Anyone can start a community fridge. Read our guidelines and discover the valuable lessons we learned from hosting two fridges in central New Jersey.',
+        link: '/pamphlet/get-involved/start-a-fridge',
+      },
+    ],
+  },
+};
 
-export default function HomePage({ pageHero, introParagraph, paragraphCard }) {
+export default function HomePage() {
+  const { pageHero, introParagraph, paragraphCard } = pageContent;
   return (
     <>
       <Head>
@@ -142,11 +138,3 @@ export default function HomePage({ pageHero, introParagraph, paragraphCard }) {
     </>
   );
 }
-HomePage.propTypes = {
-  pageHero: PropTypes.exact(PageHero.propTypes),
-  introParagraph: PropTypes.exact(PamphletParagraph.propTypes),
-  paragraphCard: PropTypes.shape({
-    h2: PropTypes.exact(ParagraphCard.propTypes),
-    h3: PropTypes.arrayOf(PropTypes.exact(ParagraphCard.propTypes)),
-  }),
-};
