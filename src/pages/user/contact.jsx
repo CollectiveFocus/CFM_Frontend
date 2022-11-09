@@ -10,7 +10,7 @@ import { ButtonLink, FeedbackCard } from 'components/atoms';
 import { typesFormik } from 'model/view/component/prop-types';
 import { dialogContact } from 'model/view/dialog/yup';
 
-const fridgeUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/contact/';
+const fridgeUrl = process.env.NEXT_PUBLIC_FF_API_URL + '/v1/contact/';
 const enumDisplay = Object.freeze({
   EmailDialog: 0,
   EmailSuccess: 1,

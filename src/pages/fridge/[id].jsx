@@ -2,6 +2,12 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { FridgeInformation } from 'components/molecules';
 
+export async function getServerSideProps(context) {
+  return {
+    props: await getFridgeRecord({ id: context.params.id }),
+  };
+}
+
 export default function FridgePage(props) {
   return (
     <>
@@ -12,25 +18,13 @@ export default function FridgePage(props) {
     </>
   );
 }
-FridgePage.propTypes = FridgeInformation.propTypes.isRequired;
+FridgePage.propTypes = FridgeInformation.propTypes
 
-const baseUrl = process.env.NEXT_PUBLIC_CFM_API_URL + '/v1/fridges/';
 
-export async function getStaticPaths() {
-  return {
-    paths: await getAllFridgeIds().then((idList) =>
-      idList.map((id) => ({ params: { id } }))
-    ),
-    fallback: false,
-  };
-}
 
-// `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps(context) {
-  return {
-    props: await getFridgeRecord({ id: context.params.id }),
-  };
-}
+const baseUrl = process.env.NEXT_PUBLIC_FF_API_URL + '/v1/fridges/';
+
+
 
 async function getAllFridgeIds() {
   return fetch(baseUrl, { headers: { Accept: 'application/json' } })
