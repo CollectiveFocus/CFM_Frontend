@@ -108,7 +108,7 @@ alias ghn='  git --no-pager show --name-status'
 alias gri='  git rebase --interactive'
 alias gra='  git rebase --abort'
 alias grc='  git rebase --continue'
-alias gr-d=' git fetch --prune && git rebase origin/dev'
+alias gr-d=' git fetch --prune && git rebase --interactive origin/dev'
 alias gop='  git push origin -u'
 alias gol='  git pull --ff-only'
 alias gof='  f() { git fetch --prune $@; git gc --auto; };f'
@@ -284,6 +284,21 @@ Post a review request in the [#frontend](https://discord.com/channels/9558849006
 
 - [Architecture](https://docs.google.com/document/d/1yZVGAxVn4CEZyyce_Zuha3oYOOU8ey7ArBvLbm7l4bw)
 - [REST API Contract](../src/model/data/fridge/REST.yaml)
+
+#### UI Design
+
+- [Aspect Ratio Guide](https://www.cronyxdigital.com/blog/the-ultimate-website-image-guide)
+
+**image aspect ratio (width:height)**
+
+hero image
+: aspect ratio is 16:9, preferred size 1366x768
+
+paragraph image
+: aspect ratio for mobile is 3:2, preferred size 414x276
+
+fridge photo
+: aspect ratio is 1:1.15, exact size 300x345
 
 ### Library
 
