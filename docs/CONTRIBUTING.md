@@ -283,7 +283,7 @@ Post a review request in the [#frontend](https://discord.com/channels/9558849006
 ### Architecture
 
 - [Architecture](https://docs.google.com/document/d/1yZVGAxVn4CEZyyce_Zuha3oYOOU8ey7ArBvLbm7l4bw)
-- [API Contract](../src/schema/api/cfm.yaml)
+- [REST API Contract](../src/model/data/fridge/REST.yaml)
 
 ### Library
 
