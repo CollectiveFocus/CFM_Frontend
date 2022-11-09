@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Marker, Popup } from 'react-leaflet';
 import { Typography } from '@mui/material';
 
+const LinkToFridge = (id, str) => <Link href={`/fridge/${id}`}>{str}</Link>;
+
 export default function MapMarkerList({ markerDataList }) {
   return markerDataList.map(({ marker, popup }, index) => {
     const {
@@ -13,7 +15,9 @@ export default function MapMarkerList({ markerDataList }) {
     return (
       <Marker {...marker} key={index}>
         <Popup>
-          <Typography variant="caption">{fridgeName}</Typography>
+          <Typography variant="caption">
+            {LinkToFridge(id, fridgeName)}
+          </Typography>
           <br />
           <Typography
             variant="body2"
@@ -22,14 +26,12 @@ export default function MapMarkerList({ markerDataList }) {
           >
             {street}
             <br />
-            {city}, {state} {zip}&nbsp;
-            {MoreInfo(id)}
+            {city}, {state} {zip}
+            <br />
+            {LinkToFridge(id, 'more info...')}
           </Typography>
         </Popup>
       </Marker>
     );
   });
 }
-
-const MoreInfo = (id) =>
-  id ? <Link href={`/fridge/${id}`}>.&nbsp;.&nbsp;.</Link> : null;
