@@ -44,11 +44,10 @@ const enumCondition = {
     text: 'No fridge at this address',
     color: 'warning',
   },
-  'ghost': {
+  ghost: {
     text: 'Fridge is permanently unavailable',
     color: 'error',
   },
-  
 };
 
 function FridgeStatusIcon({ condition }) {
@@ -271,7 +270,13 @@ function ReportContainer({ report }) {
       notes = null,
     } = report;
 
-    const reportDate = new Date(timestamp).toLocaleDateString();
+    const reportDate = new Date(timestamp).toLocaleTimeString([], {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
     const foodAvailable = {
       0: 'Empty',
@@ -342,7 +347,7 @@ export default function FridgeInformation({ fridge, report }) {
         href={`/user/fridge/report/${fridge.id}`}
         LinkComponent={Link}
       >
-        Report Status
+        Update Status
       </Button>
     </Stack>
   );

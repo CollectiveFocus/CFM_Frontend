@@ -8,13 +8,15 @@ import {
 } from '@mui/icons-material';
 import { ButtonLink } from 'components/atoms';
 import typesView from 'model/view/prop-types';
-
+import { Button, Link as MuiLink } from '@mui/material';
 function formatDate(isoString) {
   const msSinceEpoch = Date.parse(isoString);
-  return new Date(msSinceEpoch).toLocaleDateString('en-US', {
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit',
+  return new Date(msSinceEpoch).toLocaleDateString([], {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   });
 }
 
@@ -87,14 +89,24 @@ export default function FridgeList({ fridges }) {
                 ) : null}
               </Stack>
             </Stack>
-            <ButtonLink
-              variant="contained"
-              to={`/fridge/${fridge.id}`}
-              aria-label={'Details on ' + fridge.name}
-              sx={{ fontSize: ['1rem'] }}
-            >
-              More Info
-            </ButtonLink>
+            <Stack direction="row" width="100" spacing={3}>
+              <ButtonLink
+                variant="contained"
+                to={`/fridge/${fridge.id}`}
+                aria-label={'Details on ' + fridge.name}
+                sx={{ fontSize: ['1rem'] }}
+              >
+                More Info
+              </ButtonLink>
+              <ButtonLink
+                variant="contained"
+                to={`/user/fridge/report/${fridge.id}`}
+                aria-label={'Details on ' + fridge.name}
+                sx={{ fontSize: ['1rem'] }}
+              >
+                Update Status
+              </ButtonLink>
+            </Stack>
           </Stack>
         </ListItem>
       ))}
