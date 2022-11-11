@@ -12,15 +12,6 @@ import {
 
 import typesView from 'model/view/prop-types';
 
-function formatDate(isoString) {
-  const msSinceEpoch = Date.parse(isoString);
-  return new Date(msSinceEpoch).toLocaleDateString('en-US', {
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit',
-  });
-}
-
 function Location({ location }) {
   return (
     <Stack direction="row" spacing={3} alignItems="center">
@@ -57,13 +48,13 @@ function LastUpdate({ date }) {
     <Stack direction="row" spacing={3} alignItems="center">
       <CalendarIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
-        Last Update: {formatDate(date)}
+        Last Update: {date.toLocaleDateString()}
       </Typography>
     </Stack>
   );
 }
 LastUpdate.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
 };
 
 export default function FridgeList({ fridges }) {

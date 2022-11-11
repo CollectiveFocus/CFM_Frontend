@@ -1,21 +1,15 @@
 import PropTypes from 'prop-types';
-import typesDataFridge from 'model/data/fridge/prop-types';
+import {
+  fieldsFridge,
+  fieldsLocation,
+  fieldsReport,
+} from 'model/data/fridge/prop-types';
 
-export const typesLocation = typesDataFridge.Location;
-
-export const typesReportCondition = PropTypes.oneOf([
-  'good',
-  'dirty',
-  'out of order',
-  'not at location',
-  'ghost',
-]);
-
-export const typesReport = PropTypes.shape(typesDataFridge.Report);
+export const typesLocation = PropTypes.exact(fieldsLocation);
 
 export const typesFridge = PropTypes.exact({
-  ...typesDataFridge.Fridge,
-  report: typesReport,
+  ...fieldsFridge,
+  report: PropTypes.exact(fieldsReport),
 });
 
 export const typesGeolocation = PropTypes.exact({
