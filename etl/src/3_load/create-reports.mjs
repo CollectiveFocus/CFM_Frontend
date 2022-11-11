@@ -46,6 +46,7 @@ function createReportFor({ id }) {
   }
 
   const data = {
+    fridgeId: id,
     timestamp: faker.date.recent(),
     condition: oneIn(50)
       ? 'not at location'
