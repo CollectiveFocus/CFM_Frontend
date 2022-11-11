@@ -59,7 +59,7 @@ function UpdateCenter({ fridgeList }) {
   });
 }
 
-export default function Map({ fridgeList, ghostList }) {
+export default function Map({ fridgeList }) {
   return (
     <>
       <MapContainer
@@ -77,7 +77,6 @@ export default function Map({ fridgeList, ghostList }) {
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />
         <MapMarkerList markerDataList={markersFrom(fridgeList)} />
-        <MapMarkerList markerDataList={markersFrom(ghostList)} />
       </MapContainer>
       <LegendDrawer />
     </>
@@ -85,5 +84,4 @@ export default function Map({ fridgeList, ghostList }) {
 }
 Map.propTypes = {
   fridgeList: PropTypes.arrayOf(typesView.Fridge).isRequired,
-  ghostList: PropTypes.arrayOf(typesView.Fridge).isRequired,
 };
