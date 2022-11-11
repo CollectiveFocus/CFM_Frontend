@@ -50,12 +50,12 @@ function createReportFor({ id }) {
     condition: oneIn(50)
       ? 'not at location'
       : faker.helpers.arrayElement(['good', 'dirty', 'out of order', 'ghost']),
-    foodPercentage: faker.helpers.arrayElement([0, 33, 67, 100]),
+    foodPercentage: faker.helpers.arrayElement([0, 1, 2, 3]),
     photoUrl: 'http://placekitten.com/150/100',
     notes: faker.lorem.lines(1),
   };
 
-  httpRequest('POST', `/v1/fridges/${id}/reports`, data)
+  httpRequest('POST', `/v1/fridges/${id}/reports`, data);
 }
 
 function updatePhotoFor(fridge) {
@@ -80,7 +80,7 @@ function httpRequest(method, path, dataJson) {
   };
 
   const request = http.request(options, (res) => {
-    const statusBad = res.statusCode < 200 || res.statusCode > 299
+    const statusBad = res.statusCode < 200 || res.statusCode > 299;
     if (statusBad) {
       console.log(`statusCode: ${res.statusCode}`, res.req.path);
     }

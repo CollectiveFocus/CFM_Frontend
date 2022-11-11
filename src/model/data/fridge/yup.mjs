@@ -41,9 +41,9 @@ export const ValuesFridge = object({
 export const ValuesReport = object({
   timestamp: date().required(),
   condition: string()
-    .oneOf(['good', 'dirty', 'out of order', 'not at location'])
+    .oneOf(['good', 'dirty', 'out of order', 'not at location', 'ghost'])
     .required(),
-  foodPercentage: number().integer().oneOf([0, 33, 67, 100]).required(),
+  foodPercentage: number().integer().oneOf([0, 1, 2, 3]).required(),
   photoUrl: string().url().optional(),
   notes: string().min(0).max(300).trim().optional(),
 });
