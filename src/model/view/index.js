@@ -3,12 +3,12 @@ import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup.mjs';
 const fridgeCache = {};
 
 export async function getFridgeList() {
-  let fridgeList = Object.values(fridgeCache);
+  let fridgeList = [];
   if (fridgeList.length == 0) {
     await fetchAllData();
     fridgeList = Object.values(fridgeCache);
   }
-  fridgeList = fridgeList.sort((a, b) => (a.id > b.id) ? 1 : -1)
+  fridgeList = fridgeList.sort((a, b) => (a.id > b.id ? 1 : -1));
   return fridgeList;
 }
 
