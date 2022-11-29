@@ -53,7 +53,8 @@ const pageContent = {
       button: {
         title: 'Donate!',
         to: {
-          pathname: '/user/contact',
+          pathname:
+            'https://www.gofundme.com/f/collective-focus-holiday-fundraiser-2022',
           query: { subject: 'Donation Inquiry' },
         },
         'aria-label': 'Donate funds to Fridge Finder!',
