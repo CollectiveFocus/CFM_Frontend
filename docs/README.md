@@ -2,7 +2,7 @@
   <a href="https://www.fridgemap.com/">
     <img src="https://raw.githubusercontent.com/CollectiveFocus/CFM_Frontend/dev/public/feedback/happyFridge.svg" height="128">
   </a>
-    <h1 align="center">Fridge Finder</h1>
+  <h1 align="center">Fridge Finder</h1>
 </p>
 
 <p align="center">
@@ -22,9 +22,17 @@
   </a>
 </p>
 
-A community fridge is a decentralized resource where businesses and individuals can [donate perishable food](https://www.thrillist.com/lifestyle/new-york/nyc-community-fridges-how-to-support). There are dozens of fridges hosted by volunteers across the country.
+A community fridge is a decentralized resource where businesses and individuals can [donate perishable food](https://www.thrillist.com/lifestyle/new-york/nyc-community-fridges-how-to-support). There are dozens of fridges hosted by volunteers across the country. The Fridge Finder website is available at [fridgefinder.app](https://fridgefinder.app/)
 
 Fridge Finder is a project sponsored by [Collective Focus](https://collectivefocus.site/), a community organization in Brooklyn, New York. Our goal is to make it easy for people to find fridge locations and get involved with food donation programs in their community. We are building a responsive, mobile first, multi-lingual web application with administrative controls for fridge maintainers. To join the project read our [contributing guidelines](./CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md).
+
+<h2>Made possible by contributions from these lovely people &hellip;</h2>
+<p align="center">
+  <a href = "https://github.com/CollectiveFocus/CFM_Frontend/graphs/contributors">
+    <img src = "https://contrib.rocks/image?repo=CollectiveFocus/CFM_Frontend"/>
+  </a>
+</p>
+<h3 align="right">❤ Thank you for all your hard work</h3>
 
 ## System Requirements
 
