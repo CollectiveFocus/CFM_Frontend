@@ -104,12 +104,12 @@ export default function ResponsiveAppBar() {
           aria-label="Go to Home page"
           component={NextLinkAnchor}
           to="/"
-          sx={{ display: 'block', m: 0, p: 0, width: '108px', height: '48px' }}
+          sx={{ display: 'block', m: 0, p: 0, width: '98px', height: '48px' }}
         >
           <Image
             alt="Fridge Finder logo"
             src="/brand/logo.webp"
-            width={108}
+            width={98}
             height={48}
           />
         </IconButton>
