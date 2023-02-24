@@ -21,9 +21,9 @@ The following are mostly guidelines, not rules. Use your best judgment, and feel
 
 You need permissions to the following accounts to contribute to the project.
 
-- [Trello for project management](https://trello.com/b/UhEoUpnD/community-fridge-map-dev)
-- [Figma for design blueprints](https://www.figma.com/file/LL2Ny1FZ4YLSMB2yKwDVY7/NYC-Fridge-2)
+- [Trello for project management](https://trello.com/b/UhEoUpnD/community-fridge-map-dev). Click this [Trello invite link](https://trello.com/invite/b/UhEoUpnD/75290c9c5fda3402fc3c0ac97a2bdd99/community-fridge-map-dev) to join.
 - [Discord for developer communication](https://discord.com/channels/955884900655972463/955884900655972468)
+- [Figma for design blueprints](https://www.figma.com/file/LL2Ny1FZ4YLSMB2yKwDVY7/NYC-Fridge-2)
 - [GitHub for the frontend repository](https://github.com/CollectiveFocus/CFM_Frontend)
 - [GitHub for the backend repository](https://github.com/CollectiveFocus/CFM_Backend)
 
@@ -46,7 +46,7 @@ These settings are not requirements of the project. They are provided as a servi
 This configuration sets up VS Code 1.70 and above as your git editor, diff and merge tool. These commands can be run in any shell terminal.
 
 ```bash
-git config --global user.name "<name you use on your resume>"
+git config --global user.name "full name. the name on your resume"
 git config --global user.email "myemail@example.com"
 
 git config --global core.autocrlf false
@@ -105,7 +105,7 @@ alias gs='   git status --short; echo; git --no-pager log --pretty=summary -n 3'
 alias gsls=' git status --porcelain | /usr/bin/cut -c4-'
 alias gh='   git show'
 alias ghn='  git --no-pager show --name-status'
-alias gri='  git rebase --interactive'
+alias gri='  git rebase --interactive --autosquash'
 alias gra='  git rebase --abort'
 alias grc='  git rebase --continue'
 alias gr-d=' git fetch --prune && git rebase --interactive origin/dev'
@@ -132,16 +132,7 @@ We use [Trello](https://trello.com/b/UhEoUpnD/community-fridge-map-dev) to keep 
 - Code Review : Tasks waiting for review
 - Done : Completed tasks
 
-You can pick any task from the `Todo` column that does not already have members. Tasks are grouped by color:
-
-- Yellow : Frontend
-- Red : Backend
-- Blue : Administrative
-- Purple : UI/UX
-- Black : Blocked
-- Teal : Duplicate
-
-Once you begin working on a task, add yourself as a member, and move it to `In Progress`.
+You can pick any task from the `Todo` column that does not already have members. Once you begin working on a task, add yourself as a member, and move it to `In Progress`.
 
 ## Create a feature branch
 
@@ -278,7 +269,12 @@ While it is very useful to create multiple commits during development; for effec
 
 Post a review request in the [#frontend](https://discord.com/channels/955884900655972463/955886184159125534) channel on Discord. If this is your first contribution, include your time zone and availability in the request.
 
+Once your feature branch has been merged into dev, it will automatically be deployed to the [development webhost](https://dev.d1zqbru9k8x5eq.amplifyapp.com)
+
 ## Programmer Reference
+
+- Production (from main): https://fridgefinder.app/
+- Staging (from dev): https://dev.d1zqbru9k8x5eq.amplifyapp.com/
 
 ### Architecture
 
@@ -324,8 +320,6 @@ fridge photo
   - [Leaflet quick start tutorial](https://leafletjs.com/examples/quick-start/)
   - [Leaflet mobile tutorial](https://leafletjs.com/examples/mobile/)
   - [Leaflet custom markers tutorial](https://leafletjs.com/examples/)
-
-- Internationalization: [i18next](https://www.i18next.com/)
 
 - REST API: [OpenAPI 3.0](https://swagger.io/docs/specification/about/)
 
