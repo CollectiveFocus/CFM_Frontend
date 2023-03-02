@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-
-import { Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { Box, Button, List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
@@ -33,7 +32,13 @@ function Instagram({ instagramUrl }) {
   return (
     <Stack direction="row" spacing={3} alignItems="center">
       <InstagramIcon />
-      <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
+      <Typography
+        style={{
+          fontSize: '0.9375rem',
+          color: 'text.primary',
+          lineBreak: 'anywhere',
+        }}
+      >
         @{handle[1]}
       </Typography>
     </Stack>
@@ -66,42 +71,62 @@ export default function FridgeList({ fridges }) {
           divider={fridgeIndex !== fridges.length - 1}
           sx={{ paddingY: 5.5, paddingX: 0 }}
         >
-          <Stack direction="column" spacing={3} width="100%">
-            <Stack direction="row" spacing={3}>
-              <Stack direction="column" spacing={3} flex={1}>
-                <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
-                  {fridge.name}
-                </Typography>
-                <Location location={fridge.location} />
-                {fridge.maintainer?.instagram ? (
-                  <Instagram instagramUrl={fridge.maintainer.instagram} />
-                ) : null}
-                {fridge.report ? (
-                  <LastUpdate date={fridge.report.timestamp} />
-                ) : null}
+          <Stack
+            direction="column"
+            spacing={3}
+            width="100%"
+            alignItems="center"
+          >
+            <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
+              {fridge.name}
+            </Typography>
+            <Stack direction="row" justifyContent="space-evenly">
+              <Stack
+                direction="column"
+                maxWidth="62%"
+                minHeight="180px"
+                justifyContent="space-around"
+              >
+                <Stack direction="column" spacing={3}>
+                  <Location location={fridge.location} />
+                  {fridge.maintainer?.instagram && (
+                    <Instagram instagramUrl={fridge.maintainer.instagram} />
+                  )}
+                  {fridge.report && (
+                    <LastUpdate date={fridge.report.timestamp} />
+                  )}
+                </Stack>
+                <Button
+                  href={`/fridge/${fridge.id}`}
+                  component="a"
+                  LinkComponent={Link}
+                  variant="contained"
+                  sx={{ fontSize: ['1rem'] }}
+                  style={{ margin: '9px auto 0px', alignSelf: 'end' }}
+                >
+                  More Info
+                </Button>
               </Stack>
-              {fridge.photoUrl ? (
-                <Stack flex={1}>
+
+              {fridge.photoUrl && (
+                <Box
+                  position="relative"
+                  width="120px"
+                  height="165px"
+                  boxShadow="#00000044 0px 2px 16px 2px"
+                  borderRadius="7px"
+                  marginLeft="0.8rem"
+                >
                   <Image
                     src={fridge.photoUrl}
                     alt="Picture of the fridge"
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                    objectFit="contain"
+                    layout="fill"
+                    objectFit="cover"
+                    style={{ borderRadius: '7px' }}
                   />
-                </Stack>
-              ) : null}
+                </Box>
+              )}
             </Stack>
-            <Button
-              href={`/fridge/${fridge.id}`}
-              component="a"
-              LinkComponent={Link}
-              variant="contained"
-              sx={{ fontSize: ['1rem'] }}
-            >
-              More Info
-            </Button>
           </Stack>
         </ListItem>
       ))}
