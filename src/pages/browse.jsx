@@ -9,8 +9,9 @@ import {
   Divider,
   useMediaQuery,
 } from '@mui/material';
+
 import BrowseList from 'components/organisms/browse/List';
-import { MapToggle } from 'components/atoms/';
+import { MapToggle, SearchInfoPopup } from 'components/atoms/';
 
 import { getFridgeList } from 'model/view';
 import { useWindowHeight } from 'lib/browser';
@@ -85,7 +86,12 @@ export default function BrowsePage() {
           {currentView === MapToggle.view.list ? (
             <Box sx={{ flex: 1, px: 4 }}>{List}</Box>
           ) : (
-            <Box sx={{ flex: 1 }}>{Map}</Box>
+            <Box sx={{ flex: 1 }}>
+              <>
+                {Map}
+                <SearchInfoPopup />
+              </>
+            </Box>
           )}
 
           <MapToggle currentView={currentView} setView={setCurrentView} />
