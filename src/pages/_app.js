@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { appWithTranslation } from 'next-i18next';
 
 import AppBar from 'components/molecules/AppBar';
 
@@ -11,7 +12,7 @@ import theme from 'theme';
 
 const clientSideEmotionCache = createEmotionCache();
 
-export default function MyApp({
+function MyApp({
   Component,
   emotionCache = clientSideEmotionCache,
   pageProps,
@@ -36,3 +37,5 @@ MyApp.propTypes = {
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };
+
+export default appWithTranslation(MyApp);

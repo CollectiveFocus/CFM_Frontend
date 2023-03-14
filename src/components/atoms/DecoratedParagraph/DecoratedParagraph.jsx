@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { typesNextImage } from 'model/view/component/prop-types';
 import { Typography, Box, Divider } from '@mui/material';
 import { applyAlpha, designColor } from 'theme/palette';
+import { useTranslation } from 'react-i18next';
 
 export default function DecoratedParagraph({
   variant,
@@ -12,7 +13,9 @@ export default function DecoratedParagraph({
   hasDivider = false,
   sx = {},
 }) {
+  const { t } = useTranslation('home');
   const grey = applyAlpha('66', designColor.neroGray);
+  console.log('translated to', t('decoratedParagraphHeading'));
 
   return (
     <Box sx={sx}>
@@ -22,7 +25,7 @@ export default function DecoratedParagraph({
         variant={variant}
         sx={{ ...headingStyles[variant], textAlign: 'center' }}
       >
-        {renderTitleSentences(title, variant)}
+        {renderTitleSentences(t('decoratedParagraphHeading'), variant)}
       </Typography>
 
       {img && (

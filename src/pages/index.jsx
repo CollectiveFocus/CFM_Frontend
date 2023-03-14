@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Grid, Typography } from '@mui/material';
 import {
   DecoratedParagraph,
@@ -7,10 +8,12 @@ import {
   PageHero,
   ParagraphCard,
 } from 'components/atoms';
+import { useTranslation } from 'react-i18next';
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['home'])),
       pageHero: {
         img: {
           src: '/hero/index.webp',
@@ -85,6 +88,9 @@ export default function HomePage({
   pageHero,
   paragraphCard,
 }) {
+  const { t } = useTranslation('home');
+  console.log('index.js translated to', t('decoratedParagraphHeading'));
+
   return (
     <>
       <Head>
@@ -92,6 +98,7 @@ export default function HomePage({
       </Head>
 
       <PageHero {...pageHero} />
+      <h1>{t('greeting')}</h1>
       <DecoratedParagraph
         sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
         {...decoratedParagraph}

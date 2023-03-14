@@ -1,11 +1,10 @@
+const { i18n } = require('./next-i18next.config');
+
 module.exports = {
   reactStrictMode: true,
-
   images: {
     domains: ['127.0.0.1', 'placekitten.com'],
   },
-
-  // --- Next.js@12.2.2
   swcMinify: true,
   compiler: {
     emotion: true,
@@ -29,9 +28,8 @@ module.exports = {
       },
     },
   },
-  // ---
-
   eslint: {
     dirs: ['src/', 'ci/'],
   },
+  i18n,
 };
