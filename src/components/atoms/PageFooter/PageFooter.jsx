@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import { designColor } from 'theme/palette';
 import { Box, Typography } from '@mui/material';
+import { useTranslation } from 'next-i18next';
 
 export default function PageFooter({
   scrollButton = true,
   fixedAtBottom = false,
 }) {
+  const { t } = useTranslation('home');
   const sxFooter = {
     padding: 2,
     backgroundColor: designColor.magneticGray,
@@ -25,12 +27,9 @@ export default function PageFooter({
     <Box component="footer" sx={sxFooter}>
       {PageScroll(scrollButton)}
       <Typography variant="footer">
-        &copy; 2022, Collective Focus. All rights reserved.&nbsp;
+        &copy; {t('right.reserved')} &nbsp;
       </Typography>
-      <Typography variant="footer">
-        We may use cookies for storing information to help provide you with a
-        better, faster, and safer experience and for SEO purposes.
-      </Typography>
+      <Typography variant="footer">{t('cookies')}</Typography>
     </Box>
   );
 }

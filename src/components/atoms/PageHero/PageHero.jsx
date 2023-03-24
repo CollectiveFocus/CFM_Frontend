@@ -3,8 +3,11 @@ import Image from 'next/image';
 import { typesNextFillImage } from 'model/view/component/prop-types';
 import { Box } from '@mui/material';
 import { ButtonLink } from 'components/atoms';
+import { useTranslation } from 'next-i18next';
 
 export default function PageHero({ img, title, link }) {
+  const { t } = useTranslation('home');
+
   return (
     <Box
       sx={{
@@ -35,7 +38,7 @@ export default function PageHero({ img, title, link }) {
           boxShadow: 8,
         }}
       >
-        {title}
+        {t('index.title')}
       </ButtonLink>
     </Box>
   );

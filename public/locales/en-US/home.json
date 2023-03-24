@@ -1,9 +1,17 @@
 {
-  "greeting": "Hello World!",
+  "index.title": "Find a Fridge",
   "decoratedParagraphHeading": "Take what you need. Leave what you can.",
   "decoratedParagraphBody": "Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.",
   "h2ParagraphCardHeading": "About Community Fridges",
   "h2ParagraphCardBody": "A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.'",
+  "learn.more": "Learn More",
   "h3FirstParagraphCardHeading": "Read Best Practices",
-  "h3FirstParagraphCardBody": "Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.'"
+  "h3FirstParagraphCardBody": "Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.'",
+  "h3ParagraphCardHeadingTwo": "Read Best Practices",
+  "h3ParagraphCardBodyTwo": "Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.'",
+  "h3ParagraphCardHeadingThree": "Host A Fridge",
+  "h3ParagraphCardBodyThree": "Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.",
+  "get.involved": "Get involved with community fridges!",
+  "right.reserved": "2022, Collective Focus. All rights reserved.",
+  "cookies": "We may use cookies for storing information to help provide you with a better, faster, and safer experience and for SEO purposes."
 }

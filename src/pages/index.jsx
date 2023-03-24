@@ -8,7 +8,7 @@ import {
   PageHero,
   ParagraphCard,
 } from 'components/atoms';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -24,8 +24,8 @@ export async function getStaticProps({ locale }) {
       },
       decoratedParagraph: {
         variant: 'h1',
-        title: 'Take what you need. Leave what you can.',
-        body: 'Fridge Finder can help you find community fridges containing free food near you. Click the Find A Fridge button for the full map and list of fridges.',
+        title: 'decoratedParagraphHeading',
+        body: 'decoratedParagraphBody',
       },
       paragraphCard: {
         h2: {
@@ -49,8 +49,8 @@ export async function getStaticProps({ locale }) {
               width: 125,
               height: 95,
             },
-            title: 'Read Best Practices',
-            text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
+            title: 'h3FirstParagraphCardHeading',
+            text: 'h3FirstParagraphCardBody',
             link: '/pamphlet/best-practices',
           },
           {
@@ -61,8 +61,8 @@ export async function getStaticProps({ locale }) {
               width: 125,
               height: 95,
             },
-            title: 'Get Involved',
-            text: 'There are many ways to get involved with community fridges: from driving; donating food; or hosting a fridge.',
+            title: 'h3ParagraphCardHeadingTwo',
+            text: 'h3ParagraphCardBodyTwo',
             link: '/pamphlet/get-involved',
           },
           {
@@ -73,8 +73,8 @@ export async function getStaticProps({ locale }) {
               width: 125,
               height: 95,
             },
-            title: 'Host A Fridge',
-            text: 'Please look over the guidelines for food donation best practices to keep our fridges safe and accessible to all.',
+            title: 'h3ParagraphCardHeadingThree',
+            text: 'h3ParagraphCardBodyThree',
             link: '/pamphlet/get-involved/host-a-fridge',
           },
         ],
@@ -89,7 +89,6 @@ export default function HomePage({
   paragraphCard,
 }) {
   const { t } = useTranslation('home');
-  console.log('index.js translated to', t('decoratedParagraphHeading'));
 
   return (
     <>
@@ -98,7 +97,6 @@ export default function HomePage({
       </Head>
 
       <PageHero {...pageHero} />
-      <h1>{t('greeting')}</h1>
       <DecoratedParagraph
         sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
         {...decoratedParagraph}
@@ -129,7 +127,7 @@ export default function HomePage({
             textAlign="center"
             sx={{ mb: { xs: 1, lg: 3 } }}
           >
-            Get involved with community fridges!
+            {t('get.involved')}
           </Typography>
         </Grid>
         <Grid
