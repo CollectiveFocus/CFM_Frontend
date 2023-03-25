@@ -36,8 +36,8 @@ export async function getStaticProps({ locale }) {
             width: 125,
             height: 95,
           },
-          title: 'About Community Fridges',
-          text: 'A community fridge is a decentralized food resource. There are dozens of fridges hosted by volunteers across the New York City area. This website was made to make it easy for people to find fridges and get involved with the community fridge project.',
+          title: 'h2ParagraphCardHeading',
+          text: 'h2ParagraphCardBody',
           link: '/pamphlet/about',
         },
         h3: [
@@ -99,7 +99,9 @@ export default function HomePage({
       <PageHero {...pageHero} />
       <DecoratedParagraph
         sx={{ mx: { xs: 4, sm: 4, md: 2 }, mb: 10, textAlign: 'center' }}
-        {...decoratedParagraph}
+        variant={decoratedParagraph.variant}
+        title={t(decoratedParagraph.title)}
+        body={t(decoratedParagraph.body)}
       />
 
       <Grid
@@ -119,7 +121,14 @@ export default function HomePage({
           sm={10}
           lg={8}
         >
-          <ParagraphCard {...paragraphCard.h2} variant="h2" />
+          <ParagraphCard
+            variant={paragraphCard.h2.variant}
+            img={paragraphCard.h2.img}
+            title={t(paragraphCard.h2.title)}
+            text={t(paragraphCard.h2.text)}
+            link={paragraphCard.h2.link}
+            learn_more={t('learn.more')}
+          />
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
           <Typography
@@ -139,7 +148,15 @@ export default function HomePage({
         >
           {paragraphCard.h3.map((card, index) => (
             <Grid item key={'Grid' + index} xs={12} sm={8} md={4} lg={3}>
-              <ParagraphCard key={'ParagraphCard' + index} {...card} />
+              <ParagraphCard
+                key={'ParagraphCard' + index}
+                variant={card.variant}
+                img={card.img}
+                title={t(card.title)}
+                text={t(card.text)}
+                link={card.link}
+                learn_more={t('learn.more')}
+              />
             </Grid>
           ))}
         </Grid>

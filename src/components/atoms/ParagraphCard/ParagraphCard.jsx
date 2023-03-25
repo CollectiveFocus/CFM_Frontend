@@ -3,11 +3,15 @@ import Image from 'next/image';
 import { typesNextImage } from 'model/view/component/prop-types';
 import { Box, Typography, Card, CardContent, CardActions } from '@mui/material';
 import { ButtonLink } from 'components/atoms';
-import { useTranslation } from 'next-i18next';
 
-export default function ParagraphCard({ variant, img, title, text, link }) {
-  const { t } = useTranslation('home');
-
+export default function ParagraphCard({
+  variant,
+  img,
+  title,
+  text,
+  link,
+  learn_more,
+}) {
   if (variant === 'h2') {
     return (
       <Card
@@ -21,7 +25,7 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
         }}
       >
         <CardContent sx={{ display: { xs: 'block', md: 'none' }, p: 0 }}>
-          <Typography variant="h2">{t('h2ParagraphCardHeading')}</Typography>
+          <Typography variant="h2">{title}</Typography>
         </CardContent>
 
         <Box sx={{ width: 'clamp(300px, 100%, 400px)' }}>
@@ -39,9 +43,9 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
             variant="h2"
             sx={{ display: { xs: 'none', md: 'block' }, pb: 1 }}
           >
-            {t('h2ParagraphCardHeading')}
+            {title}
           </Typography>
-          <Typography variant="body1">{t('h2ParagraphCardBody')}</Typography>
+          <Typography variant="body1">{text}</Typography>
           <ButtonLink
             to={link}
             variant="outlined"
@@ -49,7 +53,7 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
             aria-label={title}
             sx={{ width: '100%', mt: 4 }}
           >
-            {t('learn.more')}
+            {learn_more}
           </ButtonLink>
         </CardContent>
       </Card>
@@ -67,9 +71,9 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
 
         <CardContent sx={{ py: { xs: 2, md: 4 } }}>
           <Typography variant="h3" pb={1}>
-            {t(title)}
+            {title}
           </Typography>
-          <Typography variant="body1">{t(text)}</Typography>
+          <Typography variant="body1">{text}</Typography>
         </CardContent>
 
         <CardActions>
@@ -83,7 +87,7 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
               mx: 'auto',
             }}
           >
-            {t('learn.more')}
+            {learn_more}
           </ButtonLink>
         </CardActions>
       </Card>
