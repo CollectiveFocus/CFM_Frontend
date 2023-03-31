@@ -37,13 +37,15 @@ const ProgressIndicator = (
 );
 
 let fridgeList = null;
+const fridgePaperBoyLoveGallery = [40.697759, -73.927282];
+let prevFocusedMarker = null;
 export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
+  const [currentMarker, setCurrentMarker] = useState(fridgePaperBoyLoveGallery);
 
   const availableHeight = useWindowHeight();
   const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
-
   useEffect(() => {
     const fetchData = async () => {
       fridgeList = await getFridgeList();
@@ -51,15 +53,26 @@ export default function BrowsePage() {
     };
     fetchData().catch(console.error);
   }, []);
+  // This useEffect is for closing the list view to focus the marker
+  useEffect(() => {
+    if (!isWindowDesktop && currentMarker !== prevFocusedMarker) {
+      prevFocusedMarker = currentMarker;
+      setCurrentView(MapToggle.view.map);
+    }
+    if (isWindowDesktop) {
+      prevFocusedMarker = currentMarker;
+    }
+  }, [currentMarker]);
 
   const Map = hasDataLoaded
     ? BrowseMap({
         fridgeList,
+        currentMarker,
       })
     : ProgressIndicator;
 
   const List = hasDataLoaded ? (
-    <BrowseList fridges={fridgeList} />
+    <BrowseList fridges={fridgeList} setCurrentMarker={setCurrentMarker} />
   ) : (
     ProgressIndicator
   );

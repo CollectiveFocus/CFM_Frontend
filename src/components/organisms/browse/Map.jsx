@@ -7,6 +7,7 @@ import { deltaInMeters } from 'lib/geo.js';
 import LegendDrawer from './components/LegendDrawer';
 import MapMarkerList from './components/MapMarkerList';
 import markersFrom from './model/markersFrom';
+import { useEffect } from 'react';
 
 const fridgePaperBoyLoveGallery = [40.697759, -73.927282];
 const defaultZoom = 13.2;
@@ -59,7 +60,14 @@ function UpdateCenter({ fridgeList }) {
   });
 }
 
-export default function Map({ fridgeList }) {
+function FocusMarkerOnMap({ marker }) {
+  const map = useMap();
+  useEffect(() => {
+    map.flyTo(marker);
+  }, [marker]);
+}
+
+export default function Map({ fridgeList, currentMarker }) {
   return (
     <>
       <MapContainer
@@ -77,6 +85,7 @@ export default function Map({ fridgeList }) {
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />
         <MapMarkerList markerDataList={markersFrom(fridgeList)} />
+        <FocusMarkerOnMap marker={currentMarker} />
       </MapContainer>
       <LegendDrawer />
     </>
