@@ -57,12 +57,16 @@ LastUpdate.propTypes = {
   date: PropTypes.object.isRequired,
 };
 
-export default function FridgeList({ fridges }) {
+export default function FridgeList({ fridges, setCurrentMarker }) {
+  const updateMarker = (location) => {
+    setCurrentMarker([location.geoLat, location.geoLng]);
+  };
   return (
     <List>
       {fridges.map((fridge, fridgeIndex) => (
         <ListItem
           key={fridge.id}
+          onClick={() => updateMarker(fridge.location)}
           divider={fridgeIndex !== fridges.length - 1}
           sx={{ paddingY: 5.5, paddingX: 0 }}
         >
