@@ -281,7 +281,7 @@ Once your feature branch has been merged into dev, it will automatically be depl
 - [Architecture](https://docs.google.com/document/d/1yZVGAxVn4CEZyyce_Zuha3oYOOU8ey7ArBvLbm7l4bw)
 - [REST API Contract](../src/model/data/fridge/REST.yaml)
 
-#### UI Design
+### UI Design
 
 - [Aspect Ratio Guide](https://www.cronyxdigital.com/blog/the-ultimate-website-image-guide)
 
@@ -295,6 +295,13 @@ paragraph image
 
 fridge photo
 : aspect ratio is 1:1.15, exact size 300x345
+
+### Tools
+
+- [Encode SVG as URL](https://yoksel.github.io/url-encoder/)
+- [URL encoder/decoder](https://meyerweb.com/eric/tools/dencoder/)
+- [Color Hex to RGBA converter](https://bl.ocks.org/njvack/02ad8efcb0d552b0230d)
+- [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna)
 
 ### Library
 
