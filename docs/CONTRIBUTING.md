@@ -269,12 +269,12 @@ While it is very useful to create multiple commits during development; for effec
 
 Post a review request in the [#frontend](https://discord.com/channels/955884900655972463/955886184159125534) channel on Discord. If this is your first contribution, include your time zone and availability in the request.
 
-Once your feature branch has been merged into dev, it will automatically be deployed to the [development webhost](https://dev.d1zqbru9k8x5eq.amplifyapp.com)
+Once your feature branch has been merged into dev, it will automatically be deployed to the [staging website](https://dev.d1zqbru9k8x5eq.amplifyapp.com)
 
 ## Programmer Reference
 
-- Production (from main): https://fridgefinder.app/
-- Staging (from dev): https://dev.d1zqbru9k8x5eq.amplifyapp.com/
+- Production (deployed from main branch): https://fridgefinder.app/
+- Staging (deployed from dev branch): https://dev.fridgefinder.app/ or https://dev.d1zqbru9k8x5eq.amplifyapp.com/
 
 ### Architecture
 
