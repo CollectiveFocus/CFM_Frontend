@@ -63,6 +63,12 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
    yarn install
    ```
 
+1. Run the unit tests
+
+   ```bash
+   yarn test
+   ```
+
 1. Run the application locally
 
    ```bash
