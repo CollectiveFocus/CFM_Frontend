@@ -36,7 +36,7 @@
     "doc": "./docs"
   },
   "scripts": {
-    "preinstall": "npm i -g prettier svgo only-allow lint-staged concurrently json-server && only-allow yarn",
+    "preinstall": "only-allow yarn",
     "postinstall": "npx simple-git-hooks",
     "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"json-server --watch etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"npm exec --offline -- next\"",
     "web": "next",

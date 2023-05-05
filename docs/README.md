@@ -50,7 +50,7 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
 1. Install global dependencies
 
    ```bash
-   npm install --global only-allow yarn
+   npm install --global only-allow yarn prettier svgo lint-staged concurrently json-server
    corepack enable # for yarn
    ```
 
