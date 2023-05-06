@@ -7,6 +7,7 @@ import {
   svgUrlPinLocation,
   svgUrlPinNoReport,
   svgUrlPinNotAtLocation,
+  MapLegendPinLocationIcon,
 } from 'theme/icons';
 
 export default function markersFrom(fridgeList) {
@@ -30,7 +31,7 @@ export default function markersFrom(fridgeList) {
   });
 }
 
-const colorFrom = Object.freeze({
+export const colorFrom = Object.freeze({
   0: pinColor.itemsEmpty,
   1: pinColor.itemsFew,
   2: pinColor.itemsMany,

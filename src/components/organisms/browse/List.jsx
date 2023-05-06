@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { Button, Chip, List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
@@ -11,6 +11,66 @@ import {
 } from '@mui/icons-material';
 
 import typesView from 'model/view/prop-types';
+
+import {
+  MapLegendConditionDirtyIcon,
+  MapLegendConditionOutOfOrderIcon,
+  MapLegendPinLocationIcon,
+  MapLegendPinNotAtLocationIcon,
+  MapLegendPinNoReportIcon,
+  MapLegendPinGhostIcon,
+  svgUrlPinLocation,
+  svgDecorationDirty,
+} from 'theme/icons';
+import { pinColor } from 'theme/palette';
+
+function FridgeStatusChip({ fridgeReport }) {
+  const getColor = () => {
+    if (fridgeReport.condition === 'ghost') return pinColor.fridgeGhost;
+    if (fridgeReport.foodPercentage === 0) return pinColor.itemsEmpty;
+    if (fridgeReport.foodPercentage === 1) return pinColor.itemsFew;
+    if (fridgeReport.foodPercentage === 2) return pinColor.itemsMany;
+    if (fridgeReport.foodPercentage === 3) return pinColor.itemsFull;
+  };
+
+  const getFoodPercentage = () => {
+    if (fridgeReport.condition === 'ghost') return 'ghost';
+    if (fridgeReport.foodPercentage === 0) return 'Empty';
+    if (fridgeReport.foodPercentage === 1) return 'Few Items';
+    if (fridgeReport.foodPercentage === 2) return 'Many Items';
+    if (fridgeReport.foodPercentage === 3) return 'Full';
+  };
+
+  const getIcon = () => {
+    if (fridgeReport.condition === 'ghost') {
+      return <MapLegendPinGhostIcon />;
+    }
+    if (fridgeReport.condition === 'not at location') {
+      return <MapLegendPinNotAtLocationIcon />;
+    }
+    if (fridgeReport.condition === 'no report') {
+      return <MapLegendPinNoReportIcon />;
+    }
+    return <MapLegendPinLocationIcon />;
+  };
+
+  return (
+    <Chip
+      label={getFoodPercentage() + ' & ' + fridgeReport.condition}
+      icon={getIcon()}
+      sx={{
+        display: 'flex',
+        justifyContent: 'start',
+        background: 'transparent',
+        fontSize: '15px',
+        '& .MuiChip-icon': {
+          color: getColor(),
+          fontSize: '29.5px',
+        },
+      }}
+    />
+  );
+}
 
 function Location({ location }) {
   return (
@@ -78,6 +138,9 @@ export default function FridgeList({ fridges }) {
                 ) : null}
                 {fridge.report ? (
                   <LastUpdate date={fridge.report.timestamp} />
+                ) : null}
+                {fridge.report ? (
+                  <FridgeStatusChip fridgeReport={fridge.report} />
                 ) : null}
               </Stack>
               {fridge.photoUrl ? (
