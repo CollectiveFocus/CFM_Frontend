@@ -9,14 +9,11 @@
   <a aria-label="Collective Focus logo" href="https://collectivefocus.site/">
     <img src="https://img.shields.io/badge/sponsor-Collective%20Focus-yellow?style=flat-square&labelColor=F6F6F6">
   </a>
-  <a aria-label="License" href="https://github.com/CollectiveFocus/CFM_Frontend/blob/dev/docs/LICENSE">
-    <img alt="" src="https://img.shields.io/github/license/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
-  </a>
   <a aria-label="GitHub Repo stars" href="https://github.com/CollectiveFocus/CFM_Frontend/">
     <img alt="" src="https://img.shields.io/github/stars/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
   </a>
   <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
-  <img aria-label="GitHub commit activity (dev)" alt="GitHub commit activity (dev)" src="https://img.shields.io/github/commit-activity/m/CollectiveFocus/CFM_Frontend/dev?style=flat-square&labelColor=F6F6F6">
+  <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/CollectiveFocus/CFM_Frontend/dev.yml?style=flat-square&labelColor=F6F6F6">
   <a aria-label="Join the community on Discord" href="https://discord.com/channels/955884900655972463/955886184159125534">
     <img alt="" src="https://img.shields.io/badge/Join%20the%20community-yellow.svg?style=flat-square&logo=Discord&labelColor=F6F6F6">
   </a>
@@ -50,7 +47,7 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
 1. Install global dependencies
 
    ```bash
-   npm install --global only-allow yarn prettier svgo lint-staged concurrently json-server
+   npm install --global yarn prettier svgo lint-staged concurrently json-server
    corepack enable # for yarn
    ```
 
