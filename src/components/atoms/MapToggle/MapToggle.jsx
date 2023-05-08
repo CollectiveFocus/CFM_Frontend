@@ -10,7 +10,7 @@ export default function MapToggle({ currentView, setView }) {
     <Button
       fullWidth
       startIcon={
-        currentView === MapToggle.view.map ? <ListIcon /> : <MapIcon />
+        currentView === MapToggle.view.map ? <MapIcon /> : <ListIcon />
       }
       sx={{
         position: 'fixed',
@@ -37,7 +37,7 @@ export default function MapToggle({ currentView, setView }) {
         )
       }
     >
-      {currentView === MapToggle.view.map ? 'List View' : 'Map View'}
+      {currentView === MapToggle.view.map ? 'Map View' : 'List View'}
     </Button>
   );
 }
