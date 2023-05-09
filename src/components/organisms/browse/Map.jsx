@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { Circle, MapContainer, TileLayer, useMap } from 'react-leaflet';
 import typesView from 'model/view/prop-types';
 
 import { deltaInMeters } from 'lib/geo.mjs';
@@ -7,6 +7,8 @@ import { deltaInMeters } from 'lib/geo.mjs';
 import LegendDrawer from './components/LegendDrawer';
 import MapMarkerList from './components/MapMarkerList';
 import markersFrom from './model/markersFrom';
+import useFridgesInRadius from 'lib/useFridgesInRadius.mjs';
+import { useState } from 'react';
 
 const fridgePaperBoyLoveGallery = [40.697759, -73.927282];
 const defaultZoom = 13.2;
@@ -28,38 +30,44 @@ const lookupNearestFridge = (userLocation, fridgeList) => {
   return fridgeList[0];
 };
 
-function UpdateCenter({ fridgeList }) {
+function UpdateCenter({ fridgeList, userPosition, setUserPosition }) {
   const pixelRadius = 1000;
 
   const maxUserToDefaultCenterMeters = 200000;
   const map = useMap();
-  map.locate().on('locationfound', (e) => {
-    const userPosition = e.latlng;
+
+  const onLocationFound = (_userPosition) => {
+    setUserPosition(_userPosition);
     const userToDefaultCenterMeters = deltaInMeters(defaultMapCenter, [
-      userPosition.lat,
-      userPosition.lng,
+      _userPosition.lat,
+      _userPosition.lng,
     ]);
 
     if (userToDefaultCenterMeters <= maxUserToDefaultCenterMeters) {
       // Zoom level adjusted by 1/2 a level for each 50 KM
       const zoomAdjustment =
         Math.ceil(userToDefaultCenterMeters / 1000 / 50) * 0.5;
-      map.flyTo(userPosition, defaultZoom - zoomAdjustment);
+      map.flyTo(_userPosition, defaultZoom - zoomAdjustment);
     } else {
-      const nearestFridge = lookupNearestFridge(userPosition, fridgeList);
+      const nearestFridge = lookupNearestFridge(_userPosition, fridgeList);
       const { geoLat, geoLng } = nearestFridge.location;
       const fridgeLatLng = {
         lat: geoLat,
         lng: geoLng,
       };
-      const userFridgeBBox = L.latLngBounds(userPosition, fridgeLatLng);
+      const userFridgeBBox = L.latLngBounds(_userPosition, fridgeLatLng);
       map.flyToBounds(userFridgeBBox);
     }
-    L.circleMarker(userPosition, pixelRadius).addTo(map);
-  });
+    L.circleMarker(_userPosition, pixelRadius).addTo(map);
+  };
+  if (!userPosition)
+    map.locate().on('locationfound', (e) => onLocationFound(e.latlng));
 }
 
 export default function Map({ fridgeList }) {
+  const [userPosition, setUserPosition] = useState(null);
+  const [fridgesInRadius] = useFridgesInRadius(fridgeList, userPosition);
+
   return (
     <>
       <MapContainer
@@ -69,14 +77,24 @@ export default function Map({ fridgeList }) {
         minZoom={1} //Limit display to whole globe
         scrollWheelZoom={true}
       >
-        <UpdateCenter fridgeList={fridgeList} />
+        <UpdateCenter
+          fridgeList={fridgeList}
+          {...{ userPosition, setUserPosition }}
+        />
         <TileLayer
           attribution='&copy; <a href="https://collectivefocus.site/">Collective Focus</a>'
           url="https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
           maxZoom={19}
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />
-        <MapMarkerList markerDataList={markersFrom(fridgeList)} />
+        {/* this circle is just for debugging */}
+        <Circle
+          center={userPosition || fridgePaperBoyLoveGallery}
+          radius={5 * 1609.34}
+          color="red"
+          fillOpacity={0}
+        />
+        <MapMarkerList markerDataList={markersFrom(fridgesInRadius)} />
       </MapContainer>
       <LegendDrawer />
     </>

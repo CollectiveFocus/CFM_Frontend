@@ -44,6 +44,11 @@ export function deltaInMeters(origin, destination) {
   return c * EARTH_RADIUS * 1000;
 }
 
+export function deltaInMiles(origin, destination) {
+  const delta = deltaInMeters(origin, destination);
+  return delta / 1609;
+}
+
 function toRadian(degree) {
   return (degree * Math.PI) / 180;
 }
