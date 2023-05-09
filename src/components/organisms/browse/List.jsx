@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { Box, Button, List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
@@ -11,6 +11,7 @@ import {
 } from '@mui/icons-material';
 
 import typesView from 'model/view/prop-types';
+import { useSortedFridgesInRadius } from 'lib/useFridgesInRadius.mjs';
 
 function Location({ location }) {
   return (
@@ -57,10 +58,24 @@ LastUpdate.propTypes = {
   date: PropTypes.object.isRequired,
 };
 
-export default function FridgeList({ fridges }) {
+export default function FridgeList({
+  fridges,
+  userPosition,
+  radius,
+  setRadius,
+}) {
+  const [fridgesInRadius] = useSortedFridgesInRadius(
+    fridges,
+    userPosition,
+    radius
+  );
   return (
     <List>
-      {fridges.map((fridge, fridgeIndex) => (
+      <Box>
+        <button onClick={() => setRadius((i) => i + 1)}>more</button>
+        <button onClick={() => setRadius((i) => i - 1)}>less</button>
+      </Box>
+      {fridgesInRadius.map((fridge, fridgeIndex) => (
         <ListItem
           key={fridge.id}
           divider={fridgeIndex !== fridges.length - 1}

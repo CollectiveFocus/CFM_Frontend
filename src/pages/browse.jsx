@@ -41,6 +41,9 @@ export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
 
+  const [userPosition, setUserPosition] = useState(null);
+  const [radius, setRadius] = useState(1);
+
   const availableHeight = useWindowHeight();
   const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
@@ -55,11 +58,17 @@ export default function BrowsePage() {
   const Map = hasDataLoaded
     ? BrowseMap({
         fridgeList,
+        userPosition,
+        setUserPosition,
+        radius,
       })
     : ProgressIndicator;
 
   const List = hasDataLoaded ? (
-    <BrowseList fridges={fridgeList} />
+    <BrowseList
+      fridges={fridgeList}
+      {...{ userPosition, setUserPosition, radius, setRadius }}
+    />
   ) : (
     ProgressIndicator
   );

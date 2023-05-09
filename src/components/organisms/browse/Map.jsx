@@ -64,9 +64,17 @@ function UpdateCenter({ fridgeList, userPosition, setUserPosition }) {
     map.locate().on('locationfound', (e) => onLocationFound(e.latlng));
 }
 
-export default function Map({ fridgeList }) {
-  const [userPosition, setUserPosition] = useState(null);
-  const [fridgesInRadius] = useFridgesInRadius(fridgeList, userPosition);
+export default function Map({
+  fridgeList,
+  userPosition,
+  setUserPosition,
+  radius,
+}) {
+  const [fridgesInRadius] = useFridgesInRadius(
+    fridgeList,
+    userPosition,
+    radius
+  );
 
   return (
     <>
@@ -90,7 +98,7 @@ export default function Map({ fridgeList }) {
         {/* this circle is just for debugging */}
         <Circle
           center={userPosition || fridgePaperBoyLoveGallery}
-          radius={5 * 1609.34}
+          radius={radius * 1609.34}
           color="red"
           fillOpacity={0}
         />
