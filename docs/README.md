@@ -40,8 +40,7 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
 1. Verify your system meets the requirements
 
    ```bash
-   node --version  # must be greater than 12.22.0
-   # v17.8.0
+   node --version  # must be greater than 14.6.0
    ```
 
 1. Install global dependencies
