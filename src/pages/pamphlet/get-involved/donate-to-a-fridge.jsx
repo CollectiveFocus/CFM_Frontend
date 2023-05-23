@@ -52,10 +52,7 @@ const pageContent = {
       ],
       button: {
         title: 'Donate!',
-        to: {
-          pathname: '/user/contact',
-          query: { subject: 'Donation Inquiry' },
-        },
+        to: 'https://www.gofundme.com/f/hub-holiday2',
         'aria-label': 'Donate funds to Fridge Finder!',
         variant: 'contained',
       },
