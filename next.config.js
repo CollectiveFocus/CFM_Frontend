@@ -13,25 +13,24 @@ module.exports = {
   compiler: {
     emotion: true,
   },
-  experimental: {
-    modularizeImports: {
-      '@mui/material': {
-        transform: '@mui/material/{{member}}',
-      },
-      '@mui/icons-material': {
-        transform: '@mui/icons-material/{{member}}',
-      },
-      'components/atoms': {
-        transform: 'components/atoms/{{member}}',
-      },
-      'components/molecules': {
-        transform: 'components/molecules/{{member}}',
-      },
-      'components/organisms': {
-        transform: 'components/organisms/{{member}}',
-      },
+  modularizeImports: {
+    '@mui/material': {
+      transform: '@mui/material/{{member}}',
+    },
+    '@mui/icons-material': {
+      transform: '@mui/icons-material/{{member}}',
+    },
+    'components/atoms': {
+      transform: 'components/atoms/{{member}}',
+    },
+    'components/molecules': {
+      transform: 'components/molecules/{{member}}',
+    },
+    'components/organisms': {
+      transform: 'components/organisms/{{member}}',
     },
   },
+
   // ---
 
   eslint: {
