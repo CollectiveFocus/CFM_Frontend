@@ -40,6 +40,7 @@ const decorationFrom = Object.freeze({
   good: '',
   dirty: svgDecorationDirty,
   'out of order': svgDecorationOutOfOrder,
+  ghost: svgUrlPinGhost,
 });
 
 const iconCache = {};

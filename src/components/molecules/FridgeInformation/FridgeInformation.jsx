@@ -25,7 +25,7 @@ import {
 import { StatusIcon } from 'theme/icons';
 
 import PropTypes from 'prop-types';
-import typesValidation from 'model/view/prop-types';
+import typesValidation from 'model/data/fridge/prop-types';
 
 const enumCondition = {
   good: {
@@ -43,6 +43,10 @@ const enumCondition = {
   'not at location': {
     text: 'No fridge at this address',
     color: 'warning',
+  },
+  ghost: {
+    text: 'Fridge is permanently unavailable',
+    color: 'error',
   },
 };
 
@@ -90,8 +94,8 @@ function ImageContainer({ src = null, alt }) {
         <Image
           src={src}
           alt={alt}
-          width="100%"
-          height="100%"
+          width="300"
+          height="345"
           layout="responsive"
           objectFit="contain"
         />
@@ -192,6 +196,9 @@ function FridgeContainer({ fridge }) {
       photoUrl = null,
       notes = null,
     } = fridge;
+    // if (fridge['photoUrl'] == null) {
+    //   fridge['photoUrl'] = '/hero/logo.png'
+    // }
 
     const shareResponse = () => {
       if (navigator.share) {
@@ -263,13 +270,19 @@ function ReportContainer({ report }) {
       notes = null,
     } = report;
 
-    const reportDate = new Date(timestamp).toLocaleDateString();
+    const reportDate = new Date(timestamp).toLocaleTimeString([], {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
     const foodAvailable = {
       0: 'Empty',
-      33: 'Few items',
-      66: 'Many Items',
-      100: 'Full',
+      1: 'Few items',
+      2: 'Many Items',
+      3: 'Full',
     }[foodPercentage];
 
     return (
@@ -316,12 +329,12 @@ export default function FridgeInformation({ fridge, report }) {
       {/* Navigation  */}
       <Stack direction="row" justifyContent="space-between">
         {/* <Backtrack /> */}
-        <Link href="/demo/CreateFridgeDialog">
+        {/* <Link href="/demo/CreateFridgeDialog">
           <Stack direction="row" spacing={2}>
             <EditOutlinedIcon />
             <Typography variant="body1">Edit Fridge</Typography>
           </Stack>
-        </Link>
+        </Link> */}
       </Stack>
 
       {FridgeContainer({ fridge })}
@@ -331,8 +344,10 @@ export default function FridgeInformation({ fridge, report }) {
         aria-label="Click to report the status of the fridge"
         variant="contained"
         sx={{ py: 3 }}
+        href={`/user/fridge/report/${fridge.id}`}
+        LinkComponent={Link}
       >
-        Report Status
+        Update Status
       </Button>
     </Stack>
   );

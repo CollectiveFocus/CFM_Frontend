@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
-
-import Image from 'next/legacy/image';
-import Link from 'next/link';
-
-import { Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
 } from '@mui/icons-material';
-
+import { ButtonLink } from 'components/atoms';
 import typesView from 'model/view/prop-types';
 
 function Location({ location }) {
@@ -17,7 +13,7 @@ function Location({ location }) {
     <Stack direction="row" spacing={3} alignItems="center">
       <LocationOnOutlinedIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
-        {`${location.street} ${location.city}, ${location.state} ${location.zip}`}
+        {location.street}
       </Typography>
     </Stack>
   );
@@ -80,28 +76,15 @@ export default function FridgeList({ fridges }) {
                   <LastUpdate date={fridge.report.timestamp} />
                 ) : null}
               </Stack>
-              {fridge.photoUrl ? (
-                <Stack flex={1}>
-                  <Image
-                    src={fridge.photoUrl}
-                    alt="Picture of the fridge"
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                    objectFit="contain"
-                  />
-                </Stack>
-              ) : null}
             </Stack>
-            <Button
-              href={`/fridge/${fridge.id}`}
-              component="a"
-              LinkComponent={Link}
+            <ButtonLink
               variant="contained"
+              to={`/fridge/${fridge.id}`}
+              aria-label={'Details on ' + fridge.name}
               sx={{ fontSize: ['1rem'] }}
             >
               More Info
-            </Button>
+            </ButtonLink>
           </Stack>
         </ListItem>
       ))}

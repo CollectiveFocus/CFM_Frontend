@@ -78,7 +78,10 @@ function fetchAllServerData() {
       return response.json();
     })
     .then((fridges) => loadIntoCache({ fridges }, viewFridgeFromRemote))
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
 }
 
 async function fetchAllLocalData() {
