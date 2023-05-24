@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 /**
  * This component allows Next/Link to function correctly when it is passed into another react component using props.
@@ -11,7 +11,7 @@ import NextLink from 'next/link';
  * @param {Object} props
  * @param {Element} ref
  */
-const NextLinkAnchor = React.forwardRef(function (props, ref) {
+const NextLink = React.forwardRef(function (props, ref) {
   const {
     to,
     linkAs,
@@ -24,7 +24,7 @@ const NextLinkAnchor = React.forwardRef(function (props, ref) {
   } = props;
 
   return (
-    <NextLink
+    <Link
       href={to}
       prefetch={prefetch}
       as={linkAs}
@@ -33,20 +33,20 @@ const NextLinkAnchor = React.forwardRef(function (props, ref) {
       shallow={shallow}
       passHref
       locale={locale}
-    >
-      <a ref={ref} {...attributes} />
-    </NextLink>
+      ref={ref}
+      {...attributes}
+    />
   );
 });
 
-NextLinkAnchor.displayName = 'NextLinkAnchor';
+NextLink.displayName = 'NextLink';
 
 const toPathname = PropTypes.shape({
   pathname: PropTypes.string.isRequired,
   query: PropTypes.object.isRequired,
 });
 
-NextLinkAnchor.propTypes = {
+NextLink.propTypes = {
   /**
    * The URL or pathname object to navigate to.
    *
@@ -91,4 +91,4 @@ NextLinkAnchor.propTypes = {
   shallow: PropTypes.bool,
 };
 
-export default NextLinkAnchor;
+export default NextLink;

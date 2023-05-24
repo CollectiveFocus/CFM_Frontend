@@ -6,7 +6,7 @@ import {
   CardActionArea,
   Typography,
 } from '@mui/material';
-import NextLinkAnchor from 'components/atoms/NextLinkAnchor';
+import { NextLink } from 'components/atoms';
 
 export default function TitleCard({ img, title, link }) {
   return (
@@ -18,7 +18,7 @@ export default function TitleCard({ img, title, link }) {
       }}
     >
       <CardActionArea
-        component={NextLinkAnchor}
+        component={NextLink}
         to={link}
         aria-label={title}
         sx={{
