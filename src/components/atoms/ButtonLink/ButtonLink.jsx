@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
-import { NextLinkAnchor } from 'components/atoms';
+import { NextLink } from 'components/atoms';
 
 export default function ButtonLink(props) {
-  return <Button component={NextLinkAnchor} {...props} />;
+  return <Button component={NextLink} {...props} />;
 }
 
 const toPathname = PropTypes.shape({

@@ -14,7 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { NextLinkAnchor } from 'components/atoms';
+import { NextLink } from 'components/atoms';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
 
@@ -65,7 +65,7 @@ export default function ResponsiveAppBar() {
       <Tooltip title={item.title} key={item.title}>
         <IconButton
           aria-label={item.title}
-          component={NextLinkAnchor}
+          component={NextLink}
           to={item.link}
           sx={{
             mx: 1,
@@ -85,7 +85,7 @@ export default function ResponsiveAppBar() {
           <ListItemIcon>{item.icon(sxMobileIcon)}</ListItemIcon>
           <Typography
             aria-label={item.title}
-            component={NextLinkAnchor}
+            component={NextLink}
             to={item.link}
             sx={{ color: 'inherit', textDecoration: 'none' }}
           >
@@ -102,7 +102,7 @@ export default function ResponsiveAppBar() {
         <IconButton
           disableRipple
           aria-label="Go to Home page"
-          component={NextLinkAnchor}
+          component={NextLink}
           to="/"
           sx={{ display: 'block', m: 0, p: 0, width: '98px', height: '48px' }}
         >
