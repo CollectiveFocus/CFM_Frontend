@@ -1,7 +1,7 @@
 export { default as ButtonLink } from './ButtonLink';
 export { default as FeedbackCard } from './FeedbackCard';
 export { default as MapToggle } from './MapToggle';
-export { default as NextLinkAnchor } from './NextLinkAnchor';
+export { default as NextLink } from './NextLink';
 export { default as PageFooter } from './PageFooter';
 export { default as PageHero } from './PageHero';
 export { default as PamphletParagraph } from './PamphletParagraph';
