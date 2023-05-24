@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { typesNextImage } from 'model/view/component/prop-types';
 import { Box, Typography, Card, CardContent, CardActions } from '@mui/material';
 import { ButtonLink } from 'components/atoms';
