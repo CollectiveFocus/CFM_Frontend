@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 /**
- * next/image props
+ * next/legacy/image props
  *
- * From https://nextjs.org/docs/api-reference/next/image
+ * From https://nextjs.org/docs/pages/api-reference/components/image-legacy
  * By https://github.com/bernardm
  */
 export const typesNextImage = PropTypes.exact({
