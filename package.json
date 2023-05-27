@@ -44,7 +44,7 @@
     "start": "next start",
     "lint": "next lint --fix",
     "style": "prettier --write --ignore-unknown . && svgo -qrf public/",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "browserslist": [
     ">0.3%",

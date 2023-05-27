@@ -347,6 +347,8 @@ fridge photo
 
 - REST Mock Server: [json-server](https://github.com/typicode/json-server)
 
+- Testing: [Jest](https://jestjs.io/docs/api), [React Testing Library](https://testing-library.com/docs/)
+
 ### Design philosophy
 
 - [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)
