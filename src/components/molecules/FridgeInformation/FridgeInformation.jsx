@@ -1,13 +1,5 @@
 import Image from 'next/legacy/image';
-import {
-  Button,
-  Chip,
-  Divider,
-  Link,
-  Stack,
-  Typography,
-  Box,
-} from '@mui/material';
+import { Button, Chip, Divider, Link, Stack, Typography } from '@mui/material';
 
 // Icons
 import {
