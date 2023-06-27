@@ -20,6 +20,20 @@ export default function MyApp({
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-85BD8F5WGD"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)}
+              gtag('js', new Date());
+              gtag('config', 'G-85BD8F5WGD');
+            `,
+          }}
+        ></script>
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
