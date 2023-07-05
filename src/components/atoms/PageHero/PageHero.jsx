@@ -37,5 +37,5 @@ export default function PageHero({ img, button }) {
 }
 PageHero.propTypes = {
   img: typesNextFillImage.isRequired,
-  button: PropTypes.shape(ButtonLink.propTypes),
+  button: PropTypes.shape(ButtonLink.propTypes), // This uses ButtonLink proptypes which doesn't enforce button.title to exist, and it could be "undefined"
 };
