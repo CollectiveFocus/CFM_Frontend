@@ -29,8 +29,8 @@ PageFooter.propTypes = {
   scrollButton: PropTypes.bool,
 };
 
-function PageScroll(display) {
-  return display === true ? (
+function PageScroll({ display }) {
+  return display ? (
     <a
       href="#"
       title="Top of page"
