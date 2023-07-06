@@ -1,4 +1,4 @@
-import { getByRole, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import PamphletParagraph from './PamphletParagraph';
 
 const mockTitle = 'Mock Title';
@@ -54,7 +54,6 @@ describe('PamphletParagraph', () => {
 
     // the title is rendered with the correct text and variant
     expect(getByText('Mock Title')).toBeInTheDocument();
-    // expect(getByText('Mock Title')).toHaveAttribute('variant', 'h2');
 
     // the image is not rendered
     expect(queryByAltText('Mock image')).toBeNull();
