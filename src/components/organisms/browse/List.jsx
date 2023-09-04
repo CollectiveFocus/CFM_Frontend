@@ -12,9 +12,22 @@ import {
 
 import typesView from 'model/view/prop-types';
 
-function Location({ location }) {
+function Location({ location, updateMarker = () => {} }) {
   return (
-    <Stack direction="row" spacing={3} alignItems="center">
+    <Stack
+      direction="row"
+      spacing={3}
+      alignItems="center"
+      sx={{
+        backgroundColor: '#8484841c',
+        padding: '0.5rem',
+        borderStyle: 'none',
+        boxShadow: '0px 0px 9px 3px #8484841c',
+        borderRadius: '7px',
+        cursor: 'pointer',
+      }}
+      onClick={() => updateMarker(location)}
+    >
       <LocationOnOutlinedIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
         {`${location.street} ${location.city}, ${location.state} ${location.zip}`}
@@ -24,6 +37,7 @@ function Location({ location }) {
 }
 Location.propTypes = {
   location: typesView.Location,
+  updateMarker: PropTypes.func,
 };
 
 function Instagram({ instagramUrl }) {
@@ -57,7 +71,10 @@ LastUpdate.propTypes = {
   date: PropTypes.object.isRequired,
 };
 
-export default function FridgeList({ fridges }) {
+export default function FridgeList({ fridges, setCurrentMarker }) {
+  const updateMarker = (location) => {
+    setCurrentMarker([location.geoLat, location.geoLng]);
+  };
   return (
     <List>
       {fridges.map((fridge, fridgeIndex) => (
@@ -72,7 +89,10 @@ export default function FridgeList({ fridges }) {
                 <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
                   {fridge.name}
                 </Typography>
-                <Location location={fridge.location} />
+                <Location
+                  location={fridge.location}
+                  updateMarker={updateMarker}
+                />
                 {fridge.maintainer?.instagram ? (
                   <Instagram instagramUrl={fridge.maintainer.instagram} />
                 ) : null}
