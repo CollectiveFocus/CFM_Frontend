@@ -39,7 +39,7 @@ const pageContent = {
       variant: 'h2',
       title: 'A Public Art Installation on Our Sidewalks',
       body: [
-        'Artists popularized the community fridges by painting colorful designs on the doors and sides to attract interest and curiosity. This creative element effectively transforms an everyday object into a cultural artifact that carries a powerful message about circular economics and mutual aid. As public art installations, the fridges receive widespread support from the press and social media, giving visibility to this project’s social impact.',
+        'Artists popularized the community fridges by painting TEST APRIL 1 colorful designs on the doors and sides to attract interest and curiosity. This creative element effectively transforms an everyday object into a cultural artifact that carries a powerful message about circular economics and mutual aid. As public art installations, the fridges receive widespread support from the press and social media, giving visibility to this project’s social impact.',
       ],
     },
     {
