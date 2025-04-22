@@ -4,7 +4,7 @@ Like the technical community as a whole, the Fridge Map team is made up of a mix
 
 This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit in which it's intended - a guide to make it easier to enrich all of us and the technical communities in which we participate. This code of conduct applies to all spaces managed by the Fridge Map project. This includes the Discord Server, the Trello Board, and any other forums created by the project team which the community uses for communication. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
 
-If you believe someone is violating the code of conduct, we ask that you report it by emailing <info@collectivefocus.site>.
+If you believe someone is violating the code of conduct, we ask that you report it by emailing <fridgefinderapp@gmail.com>.
 
 - **Be friendly and patient.**
 
