@@ -25,7 +25,7 @@ You need permissions to the following accounts to contribute to the project.
 - [Discord for developer communication](https://discord.com/channels/955884900655972463/955884900655972468)
 - [Figma for design blueprints](https://www.figma.com/file/LL2Ny1FZ4YLSMB2yKwDVY7/NYC-Fridge-2)
 - [GitHub for the frontend repository](https://github.com/CollectiveFocus/CFM_Frontend)
-- [GitHub for the backend repository](https://github.com/CollectiveFocus/CFM_Backend)
+- [GitHub for the backend repository](https://github.com/FridgeFinder/CFM_Backend)
 
 Email <info@collectivefocus.site> regarding account invites. In that email please include:
 
