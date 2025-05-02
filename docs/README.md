@@ -9,7 +9,7 @@
   <a aria-label="Collective Focus logo" href="https://collectivefocus.site/">
     <img src="https://img.shields.io/badge/sponsor-Collective%20Focus-yellow?style=flat-square&labelColor=F6F6F6">
   </a>
-  <a aria-label="GitHub Repo stars" href="https://github.com/CollectiveFocus/CFM_Frontend/">
+  <a aria-label="GitHub Repo stars" href="https://github.com/FridgeFinder/CFM_Frontend/">
     <img alt="" src="https://img.shields.io/github/stars/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
   </a>
   <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
@@ -25,7 +25,7 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
 
 <h2>Made possible by contributions from these lovely people &hellip;</h2>
 <p align="center">
-  <a href = "https://github.com/CollectiveFocus/CFM_Frontend/graphs/contributors">
+  <a href = "https://github.com/FridgeFinder/CFM_Frontend/graphs/contributors">
     <img src = "https://contrib.rocks/image?repo=CollectiveFocus/CFM_Frontend"/>
   </a>
 </p>
@@ -53,7 +53,7 @@ Fridge Finder is a project sponsored by [Collective Focus](https://collectivefoc
 1. Setup the frontend environment
 
    ```bash
-   git clone https://github.com/CollectiveFocus/CFM_Frontend frontend
+   git clone https://github.com/FridgeFinder/CFM_Frontend frontend
    cd frontend
    git checkout dev
    yarn install
