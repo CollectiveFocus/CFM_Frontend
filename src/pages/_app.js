@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { SearchMapProvider } from 'context/SearchMapContext';
 
 import AppBar from 'components/molecules/AppBar';
 
@@ -55,9 +56,11 @@ export default function MyApp({
       </Script>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <AppBar />
-          <Component {...pageProps} />
+          <SearchMapProvider>
+            <CssBaseline />
+            <AppBar />
+            <Component {...pageProps} />
+          </SearchMapProvider>
         </ThemeProvider>
       </CacheProvider>
     </>

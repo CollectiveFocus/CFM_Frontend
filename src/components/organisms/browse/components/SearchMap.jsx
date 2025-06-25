@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Box, InputBase, IconButton } from '@mui/material';
 import {
   Search as SearchIcon,
@@ -8,16 +8,18 @@ import {
 } from '@mui/icons-material';
 
 import { applyAlpha, designColor } from 'theme/palette';
+import { SearchMapContext } from 'context/SearchMapContext';
 
 const flexStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  px: 3,
+  px: 2,
 };
 
-export default function SearchMap({ setShowSearchMap }) {
+export default function SearchMap() {
   const [searchQuery, setSearchQuery] = useState('');
+  const { setShowSearchMap } = useContext(SearchMapContext);
 
   function handleSearch(e) {
     e.preventDefault();
@@ -28,9 +30,6 @@ export default function SearchMap({ setShowSearchMap }) {
       sx={{
         width: '100%',
         height: '2.5em',
-        position: 'absolute',
-        bottom: '-2.5em',
-        left: 0,
         ...flexStyles,
         background: applyAlpha('cc', designColor.neroGray),
       }}
