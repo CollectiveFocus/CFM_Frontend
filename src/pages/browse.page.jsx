@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -14,6 +14,8 @@ import { MapToggle } from 'components/atoms/';
 
 import { getFridgeList } from 'model/view';
 import { useWindowHeight } from 'lib/browser';
+import SearchMap from 'components/organisms/browse/components/SearchMap';
+import { SearchMapContext } from 'context/SearchMapContext';
 
 const DynamicMap = dynamic(
   () => {
@@ -40,6 +42,7 @@ let fridgeList = null;
 export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
+  const { showSearchMap, setShowSearchMap } = useContext(SearchMapContext);
 
   const availableHeight = useWindowHeight();
   const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
@@ -100,6 +103,7 @@ export default function BrowsePage() {
         <title>Fridge Finder: Geographic Map</title>
       </Head>
 
+      {showSearchMap && <SearchMap setShowSearchMap={setShowSearchMap} />}
       <Box sx={{ display: 'flex', height: availableHeight }}>
         {determineView()}
       </Box>

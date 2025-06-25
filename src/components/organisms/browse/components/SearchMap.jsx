@@ -13,7 +13,7 @@ const flexStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  px: 3,
+  px: 2,
 };
 
 export default function SearchMap({ setShowSearchMap }) {
@@ -28,9 +28,6 @@ export default function SearchMap({ setShowSearchMap }) {
       sx={{
         width: '100%',
         height: '2.5em',
-        position: 'absolute',
-        bottom: '-2.5em',
-        left: 0,
         ...flexStyles,
         background: applyAlpha('cc', designColor.neroGray),
       }}
@@ -55,6 +52,7 @@ export default function SearchMap({ setShowSearchMap }) {
       >
         <SearchIcon sx={{ fontSize: 25 }} />
         <InputBase
+          id="search-input-box"
           placeholder="Fridge names, locations, etc."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

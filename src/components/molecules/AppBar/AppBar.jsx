@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/legacy/image';
+import { Search as SearchIcon } from '@mui/icons-material';
+import Avatar from '@mui/material/Avatar';
+import { useRouter } from 'next/router';
 
 import {
   AppBar,
@@ -25,6 +28,7 @@ import {
   GuidelineIcon,
   HomeIcon,
 } from 'theme/icons';
+import { SearchMapContext } from 'context/SearchMapContext';
 
 const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
@@ -52,6 +56,8 @@ const sxMobileIcon = {
 
 export default function ResponsiveAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { setShowSearchMap, showSearchMap } = useContext(SearchMapContext);
+  const router = useRouter();
 
   const handleMobileMenuToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -127,10 +133,31 @@ export default function ResponsiveAppBar() {
           aria-label="navigation menu"
           textAlign="right"
           sx={{
-            display: { xs: 'block', md: 'none' },
+            display: {
+              xs: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+              md: 'none',
+            },
             width: '100%',
           }}
         >
+          {router.pathname === '/browse' && !showSearchMap && (
+            <Avatar
+              aria-label="open search"
+              sx={{
+                width: '32px',
+                height: '32px',
+                backgroundColor: 'primary.contrastText',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onClick={setShowSearchMap}
+            >
+              <SearchIcon sx={{ color: 'black' }} />
+            </Avatar>
+          )}
           <IconButton
             size="large"
             aria-label="navigation menu"
