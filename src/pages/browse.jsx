@@ -42,7 +42,7 @@ let fridgeList = null;
 export default function BrowsePage() {
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
-  const { showSearchMap } = useContext(SearchMapContext);
+  const { showSearchMap, setShowSearchMap } = useContext(SearchMapContext);
 
   const availableHeight = useWindowHeight();
   const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
@@ -103,7 +103,7 @@ export default function BrowsePage() {
         <title>Fridge Finder: Geographic Map</title>
       </Head>
 
-      {showSearchMap && <SearchMap />}
+      {showSearchMap && <SearchMap setShowSearchMap={setShowSearchMap} />}
       <Box sx={{ display: 'flex', height: availableHeight }}>
         {determineView()}
       </Box>
