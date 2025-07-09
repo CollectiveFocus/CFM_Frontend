@@ -24,10 +24,10 @@ You need permissions to the following accounts to contribute to the project.
 - [Trello for project management](https://trello.com/b/UhEoUpnD/community-fridge-map-dev). Click this [Trello invite link](https://trello.com/invite/b/UhEoUpnD/75290c9c5fda3402fc3c0ac97a2bdd99/community-fridge-map-dev) to join.
 - [Discord for developer communication](https://discord.com/channels/955884900655972463/955884900655972468)
 - [Figma for design blueprints](https://www.figma.com/file/LL2Ny1FZ4YLSMB2yKwDVY7/NYC-Fridge-2)
-- [GitHub for the frontend repository](https://github.com/CollectiveFocus/CFM_Frontend)
-- [GitHub for the backend repository](https://github.com/CollectiveFocus/CFM_Backend)
+- [GitHub for the frontend repository](https://github.com/FridgeFinder/CFM_Frontend)
+- [GitHub for the backend repository](https://github.com/FridgeFinder/CFM_Backend)
 
-Email <info@collectivefocus.site> regarding account invites. In that email please include:
+Email <fridgefinderapp@gmail.com> regarding account invites. In that email please include:
 
 - your discord account name
 - your github account name

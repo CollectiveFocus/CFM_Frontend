@@ -1,17 +1,17 @@
 <p align="center">
-  <a href="https://www.fridgemap.com/">
-    <img src="https://raw.githubusercontent.com/CollectiveFocus/CFM_Frontend/dev/public/feedback/happyFridge.svg" height="128">
+  <a href="https://fridgefinder.app/">
+    <img src="https://raw.githubusercontent.com/FridgeFinder/CFM_Frontend/dev/public/feedback/happyFridge.svg" height="128">
   </a>
   <h1 align="center">Fridge Finder</h1>
 </p>
 
 <p align="center">
-  <a aria-label="GitHub Repo stars" href="https://github.com/CollectiveFocus/CFM_Frontend/">
-    <img alt="" src="https://img.shields.io/github/stars/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
+  <a aria-label="GitHub Repo stars" href="https://github.com/FridgeFinder/CFM_Frontend/">
+    <img alt="" src="https://img.shields.io/github/stars/FridgeFinder/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
   </a>
-  <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/CollectiveFocus/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
-  <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/CollectiveFocus/CFM_Frontend/dev.yml?style=flat-square&labelColor=F6F6F6">
-  <a aria-label="Join the community on Discord" href="https://discord.com/channels/955884900655972463/955886184159125534">
+  <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/FridgeFinder/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
+  <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/FridgeFinder/CFM_Frontend/dev.yml?style=flat-square&labelColor=F6F6F6">
+  <a aria-label="Frontend channel on Discord" href="https://discord.com/channels/955884900655972463/955886184159125534">
     <img alt="" src="https://img.shields.io/badge/Join%20the%20community-yellow.svg?style=flat-square&logo=Discord&labelColor=F6F6F6">
   </a>
 </p>
@@ -22,8 +22,8 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
 
 <h2>Made possible by contributions from these lovely people &hellip;</h2>
 <p align="center">
-  <a href = "https://github.com/CollectiveFocus/CFM_Frontend/graphs/contributors">
-    <img src = "https://contrib.rocks/image?repo=CollectiveFocus/CFM_Frontend"/>
+  <a href = "https://github.com/FridgeFinder/CFM_Frontend/graphs/contributors">
+    <img src = "https://contrib.rocks/image?repo=FridgeFinder/CFM_Frontend"/>
   </a>
 </p>
 <h3 align="right">❤ Thank you for all your hard work</h3>
@@ -50,7 +50,7 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
 1. Setup the frontend environment
 
    ```bash
-   git clone https://github.com/CollectiveFocus/CFM_Frontend frontend
+   git clone https://github.com/FridgeFinder/CFM_Frontend frontend
    cd frontend
    git checkout dev
    yarn install

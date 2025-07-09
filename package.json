@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "community-fridge-map",
+  "name": "fridge-finder",
   "description": "A mobile friendly website that displays an interactive map of all the community fridges in and around New York City.",
   "keywords": [
     "nyc",
@@ -8,8 +8,8 @@
     "community fridge",
     "map"
   ],
-  "homepage": "https://github.com/CollectiveFocus/CFM_Frontend#readme",
-  "author": "Collective Focus <info@collectivefocus.site> (https://collectivefocus.site/)",
+  "homepage": "https://github.com/FridgeFinder/CFM_Frontend#readme",
+  "author": "Fridge Finder <fridgefinderapp@gmail.com>",
   "contributors": [
     "Andrew R",
     "Bernard Martis (https://bernardm.github.io/)",
@@ -27,10 +27,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CollectiveFocus/CFM_Frontend.git"
+    "url": "git+https://github.com/FridgeFinder/CFM_Frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/CollectiveFocus/CFM_Frontend/issues"
+    "url": "https://github.com/FridgeFinder/CFM_Frontend/issues"
   },
   "directories": {
     "doc": "./docs"
