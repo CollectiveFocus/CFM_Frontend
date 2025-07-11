@@ -21,17 +21,19 @@ The following are mostly guidelines, not rules. Use your best judgment, and feel
 
 You need permissions to the following accounts to contribute to the project.
 
-- [Trello for project management](https://trello.com/b/UhEoUpnD/community-fridge-map-dev). Click this [Trello invite link](https://trello.com/invite/b/UhEoUpnD/75290c9c5fda3402fc3c0ac97a2bdd99/community-fridge-map-dev) to join.
-- [Discord for developer communication](https://discord.com/channels/955884900655972463/955884900655972468)
+- [Trello for project management](https://trello.com/b/UhEoUpnD/community-fridge-map-dev). Click this [Trello invite link](https://trello.com/invite/b/626c105b18779d262dc896d2/75290c9c5fda3402fc3c0ac97a2bdd99/community-fridge-map-dev) to join.
+- [Discord for developer communication](https://discord.com/channels/955884900655972463/955884900655972468). Click this [Discord invite link](https://discord.gg/uMthFat5) to join.
 - [Figma for design blueprints](https://www.figma.com/file/LL2Ny1FZ4YLSMB2yKwDVY7/NYC-Fridge-2)
 - [GitHub for the frontend repository](https://github.com/FridgeFinder/CFM_Frontend)
 - [GitHub for the backend repository](https://github.com/FridgeFinder/CFM_Backend)
 
-Email <fridgefinderapp@gmail.com> regarding account invites. In that email please include:
+1. Email <fridgefinderapp@gmail.com> regarding account invites. In that email please include:
 
 - your discord account name
 - your github account name
 - whether you will be contributing to the frontend, backend, or both.
+
+2. Complete the [Volunteer Intake Form](https://forms.gle/S6W6suHpSUJWULzw8)
 
 Communicating with project maintainers requires Discord and Figma. Both have webapp versions. We recommend installing the desktop version of [Discord](https://discord.com/download) and [Figma](https://www.figma.com/downloads/) because they offer significant performance and UI enhancements.
 
@@ -180,7 +182,6 @@ While it is very useful to create multiple commits during development; for effec
 
 1. Ensure that all work complies with the [review criteria](./review-criteria.md)
 1. Ensure that all work is committed and the branch is clean
-
    - display changed files
 
    ```bash
@@ -225,7 +226,6 @@ While it is very useful to create multiple commits during development; for effec
    ```
 
 1. Resolve all merge conflicts.
-
    - to view every conflicting file
 
    ```bash
@@ -246,7 +246,6 @@ While it is very useful to create multiple commits during development; for effec
    ```
 
 1. Create and commit the demo page
-
    - add the demo page
 
    ```bash
@@ -318,30 +317,25 @@ fridge photo
 ### Library
 
 - Application Framework: [Next.js](https://nextjs.org/docs/)
-
   - [Next.js tutorial](https://nextjs.org/learn)
   - [Next.js repository](https://github.com/vercel/next.js/)
 
 - Type Checking: [prop-types](https://github.com/facebook/prop-types)
-
   - [prop-types tutorial](https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/)
 
 - UI Components: [MUI](https://mui.com/material-ui/)
 
 - UI Dialogs: [Formik](https://formik.org/docs/overview)
-
   - [Formik tutorial](https://formik.org/docs/tutorial)
 
 - UI Dialog Validation: [Yup](https://github.com/jquense/yup)
 
 - Geographical Maps: [Leaflet](https://leafletjs.com/), [React Leaflet](https://react-leaflet.js.org/)
-
   - [Leaflet quick start tutorial](https://leafletjs.com/examples/quick-start/)
   - [Leaflet mobile tutorial](https://leafletjs.com/examples/mobile/)
   - [Leaflet custom markers tutorial](https://leafletjs.com/examples/)
 
 - REST API: [OpenAPI 3.0](https://swagger.io/docs/specification/about/)
-
   - [API Primer](https://restfulapi.net/)
   - [API Design Best Practices](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
 
