@@ -11,7 +11,7 @@
   </a>
   <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/FridgeFinder/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
   <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/FridgeFinder/CFM_Frontend/dev.yml?style=flat-square&labelColor=F6F6F6">
-  <a aria-label="Join the community on Discord" href="https://discord.com/channels/955884900655972463/955886184159125534">
+  <a aria-label="Join the community on Discord" href="https://discord.gg/uMthFat5">
     <img alt="" src="https://img.shields.io/badge/Join%20the%20community-yellow.svg?style=flat-square&logo=Discord&labelColor=F6F6F6">
   </a>
 </p>
