@@ -137,7 +137,7 @@ function ContactForm({ formik }) {
               Cancel
             </ButtonLink>
             <Button
-              aria-label="Click to send an email to Collective Focus"
+              aria-label="Click to send an email to Fridge Finder"
               variant="contained"
               type="submit"
             >

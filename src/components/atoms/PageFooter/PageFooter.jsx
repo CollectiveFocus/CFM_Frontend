@@ -25,7 +25,7 @@ export default function PageFooter({
     <Box component="footer" sx={sxFooter}>
       {PageScroll(scrollButton)}
       <Typography variant="footer">
-        &copy; 2022, Collective Focus. All rights reserved.&nbsp;
+        &copy; 2022-2025 Fridge Finder. All rights reserved.
       </Typography>
       <Typography variant="footer">
         We may use cookies for storing information to help provide you with a

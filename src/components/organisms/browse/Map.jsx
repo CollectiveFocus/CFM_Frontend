@@ -71,7 +71,7 @@ export default function Map({ fridgeList }) {
       >
         <UpdateCenter fridgeList={fridgeList} />
         <TileLayer
-          attribution='&copy; <a href="https://collectivefocus.site/">Collective Focus</a>'
+          attribution='&copy; Fridge Finder'
           url="https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
           maxZoom={19}
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
