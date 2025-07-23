@@ -19,7 +19,6 @@ const pageContent = {
       title: 'When donating time',
       body: [
         'Most fridges are accessible 24/7, and these locations can use your support. Every community fridge has their own volunteer process, which can be found by contacting that fridge individually. As a general principle, we encourage everyone investing time into this project to treat others with kindness and respect.',
-        'To volunteer with our specific group, Collective Focus, contact us.',
       ],
       button: {
         title: 'Volunteer',
