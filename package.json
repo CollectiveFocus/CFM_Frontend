@@ -84,11 +84,13 @@
     "eslint-config-prettier": "^8.5.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "picocolors": "^1.0.0",
     "simple-git-hooks": "^2.7.0"
   },
   "optionalDependencies": {
+    "@types/react": "18.0.0",
     "entities": "^4.3.1",
+    "picocolors": "^1.0.0",
+    "typescript": "^5.8.3",
     "url-exist": "^3.0.1"
   }
 }
