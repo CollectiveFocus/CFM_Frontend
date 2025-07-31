@@ -43,7 +43,7 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
 1. Install global dependencies
 
    ```bash
-   npm install --global yarn prettier svgo lint-staged concurrently json-server
+   npm install --global yarn prettier svgo lint-staged concurrently
    corepack enable # for yarn
    ```
 
