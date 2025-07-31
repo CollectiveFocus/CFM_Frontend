@@ -37,9 +37,9 @@
   },
   "scripts": {
     "postinstall": "npx simple-git-hooks",
-    "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"json-server --watch etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"npm exec --offline -- next\"",
+    "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"npx json-server etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"npm exec --offline -- next\"",
     "web": "next",
-    "data": "json-server --watch etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050",
+    "data": "npx json-server etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
@@ -82,7 +82,7 @@
     "eslint-config-prettier": "^8.5.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "picocolors": "^1.0.0",
+    "json-server": "0.17.4",
     "simple-git-hooks": "^2.7.0"
   },
   "optionalDependencies": {
