@@ -36,6 +36,7 @@
     "doc": "./docs"
   },
   "scripts": {
+    "preinstall": "npx only-allow yarn",
     "postinstall": "npx simple-git-hooks",
     "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"json-server --watch etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"npm exec --offline -- next\"",
     "web": "next",
@@ -84,11 +85,13 @@
     "eslint-config-prettier": "^8.5.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "picocolors": "^1.0.0",
     "simple-git-hooks": "^2.7.0"
   },
   "optionalDependencies": {
+    "@types/react": "18.0.0",
     "entities": "^4.3.1",
+    "picocolors": "^1.0.0",
+    "typescript": "^5.8.3",
     "url-exist": "^3.0.1"
   }
 }
