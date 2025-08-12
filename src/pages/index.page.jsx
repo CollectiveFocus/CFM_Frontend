@@ -140,7 +140,7 @@ export default function HomePage() {
           ))}
         </Grid>
       </Grid>
-      <PageFooter />
+      <PageFooter scrollButton={false} />
     </>
   );
 }
