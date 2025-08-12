@@ -46,7 +46,7 @@ export default function ServiceFridgesPage() {
         />
       ))}
 
-      <PageFooter fixedAtBottom={true} />
+      <PageFooter scrollButton={false} />
     </>
   );
 }

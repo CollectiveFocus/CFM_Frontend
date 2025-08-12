@@ -47,7 +47,7 @@ export default function SourceFoodPage() {
         />
       ))}
 
-      <PageFooter fixedAtBottom={true} />
+      <PageFooter scrollButton={false} />
     </>
   );
 }
