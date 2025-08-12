@@ -120,7 +120,7 @@ export default function BestPracticesPage() {
         </TabPanel>
       ))}
 
-      <PageFooter fixedAtBottom={true} />
+      <PageFooter />
     </>
   );
 }

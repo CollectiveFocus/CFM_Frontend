@@ -45,7 +45,7 @@ export default function BecomeADriverPage() {
         />
       ))}
 
-      <PageFooter fixedAtBottom={true} />
+      <PageFooter scrollButton={false} />
     </>
   );
 }
