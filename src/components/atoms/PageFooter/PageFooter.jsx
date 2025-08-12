@@ -2,10 +2,7 @@ import PropTypes from 'prop-types';
 import { designColor } from 'theme/palette';
 import { Box, Typography } from '@mui/material';
 
-export default function PageFooter({
-  scrollButton = true,
-  fixedAtBottom = false,
-}) {
+export default function PageFooter({ scrollButton = true }) {
   const sxFooter = {
     padding: 2,
     backgroundColor: designColor.magneticGray,
@@ -15,15 +12,9 @@ export default function PageFooter({
     rowGap: '0.2em',
   };
 
-  if (fixedAtBottom) {
-    sxFooter['position'] = 'fixed';
-    sxFooter['bottom'] = 0;
-    scrollButton = false;
-  }
-
   return (
     <Box component="footer" sx={sxFooter}>
-      {PageScroll(scrollButton)}
+      <PageScroll display={scrollButton} />
       <Typography variant="footer">
         &copy; 2022-2025 Fridge Finder. All rights reserved.
       </Typography>
@@ -36,15 +27,10 @@ export default function PageFooter({
 }
 PageFooter.propTypes = {
   scrollButton: PropTypes.bool,
-  fixedAtBottom: PropTypes.bool,
-};
-PageFooter.defaultProps = {
-  scrollButton: true,
-  fixedAtBottom: false,
 };
 
 function PageScroll(display) {
-  return display ? (
+  return display === true ? (
     <a
       href="#"
       title="Top of page"
@@ -63,3 +49,6 @@ function PageScroll(display) {
     />
   ) : null;
 }
+PageScroll.propTypes = {
+  display: PropTypes.bool,
+};

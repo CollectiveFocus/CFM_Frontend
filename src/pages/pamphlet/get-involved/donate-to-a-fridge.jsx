@@ -77,7 +77,7 @@ export default function DonateToAFridgePage() {
         />
       ))}
 
-      <PageFooter fixedAtBottom={false} />
+      <PageFooter />
     </>
   );
 }

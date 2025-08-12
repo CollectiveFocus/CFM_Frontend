@@ -88,7 +88,7 @@ export default function JoinACommunityGroupPage() {
         ))}
       </ul>
 
-      <PageFooter fixedAtBottom={true} />
+      <PageFooter />
     </>
   );
 }
