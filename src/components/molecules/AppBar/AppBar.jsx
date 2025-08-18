@@ -17,11 +17,9 @@ import {
 import { NextLink } from 'components/atoms';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
-
 import {
   AboutIcon,
   ContactUsIcon,
-  FridgeAddIcon,
   FridgeFindIcon,
   GetInvolvedIcon,
   GuidelineIcon,
@@ -31,7 +29,6 @@ import {
 const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
   { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse' },
-  { icon: FridgeAddIcon, title: 'Add a Fridge', link: '/user/fridge/add' },
   { icon: AboutIcon, title: 'About', link: '/pamphlet/about' },
   {
     icon: GuidelineIcon,
@@ -126,6 +123,7 @@ export default function ResponsiveAppBar() {
         </Box>
         <Box
           id="mobile"
+          aria-label="navigation menu"
           textAlign="right"
           sx={{
             display: { xs: 'block', md: 'none' },
