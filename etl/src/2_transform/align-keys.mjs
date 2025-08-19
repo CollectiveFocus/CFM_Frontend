@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { deltaInMeters } from '../../../src/lib/geo.js';
+import { deltaInMeters } from '../../../src/lib/geo.mjs';
 
 const tableMainFileName = 'table/main.json';
 const tableInputFileName = 'table/excel.json';

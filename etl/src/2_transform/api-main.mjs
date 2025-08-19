@@ -48,7 +48,7 @@ async function main() {
   console.log(`successfully wrote ${recordCount} records to ${outputFileName}`);
   return 0;
 }
-main();
+process.exit(await main());
 
 let ErrorCount = 0;
 function LogError(error) {
@@ -107,7 +107,6 @@ async function FridgeSyntacticValidator(fridgeList) {
   });
 
   // test website, instagram links are alive
-  return 3;
   const urlDataList = [];
   const urlTestQueue = [];
   const QueueUrlTest = ({ mainId, url }) => {
@@ -146,7 +145,7 @@ async function FridgeSyntacticValidator(fridgeList) {
 function fridgeFromRecord(record) {
   const {
     mainId,
-    fridgeName,
+    fridgeName = '',
     fridgeVerified: verified,
     fridgeNotes,
     maintainerName,
