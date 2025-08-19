@@ -8,6 +8,7 @@
 
 - [multiple address to geo coordinate](https://www.geoapify.com/tools/address-validation)
 - [single address to geo coordinate](https://www.latlong.net/convert-address-to-lat-long.html)
+- [Global address standardization](https://www.smarty.com/products/single-address)
 
 ## data source
 
@@ -53,6 +54,67 @@
 
 ## process
 
+```mermaid
+
+flowchart LR
+%% Data Sources
+subgraph "Data Sources"
+A[NYC Fridge JSON]
+B[CFM KML]
+C[External CSVs]
+end
+
+%% Standardization
+subgraph "Standardize Formats"
+A --> A1[Parse & normalize JSON → array]
+B --> B1[Convert KML → JSON → collect all Placemarks]
+C --> C1[Convert CSV → JSON]
+end
+
+%% Extraction
+subgraph "Extract Core Records"
+A1 --> D1[Extract id, name, raw address, social links]
+B1 --> D1
+C1 --> D1
+end
+
+%% Geocoding & Validation
+subgraph "Validate & Geocode"
+D1 --> E1[Pull id & address → CSV → Geoapify/API]
+E1 --> E2[Clean geocode results → JSON]
+E2 --> E3[Flag missing house numbers → error.json]
+end
+
+%% Split into Fridge vs Location
+subgraph "Split & Clean"
+E2 --> F1[Extract location fields via geoapify.jq]
+D1 --> F2[Extract fridge fields via fridge-*.jq]
+end
+
+%% Merge into main table
+subgraph "Merge Records"
+F1 & F2 --> G1[Group by id → merge fridge + location]
+G1 --> G2[Append to table/main.json & re-index]
+end
+
+%% Post-processing
+subgraph "Post-Processing"
+G2 --> H1[Identify common words in names/streets]
+H1 --> H2[Remove from search index]
+G2 --> H3[Re-index main.json keys]
+H3 --> H4[Run address-update geocoding]
+H4 --> H5[Extract suburb/district → tags]
+H5 --> I1[Final table/main.json]
+end
+
+%% Outputs
+subgraph "Final Outputs"
+I1 --> J1[API CSV → output/api.csv]
+I1 --> J2[Google Sheets CSV]
+I1 --> J3[Excel & contact-sheet merge → output/excel.csv]
+end
+```
+
 ### nyc fridge data
 
 ```bash
@@ -69,14 +131,14 @@ mv 'geocoded_by_geoapify.csv' temp/geoapify.csv
 dasel -f temp/geoapify.csv -r csv -w json | sed 's/original_id/id/' | jq -s '.' > table/geoapify.json
 
 # address missing house number
-jq -c '.[] | {id,validation,housenumber}' table/geoapify.json | grep '"housenumber":""' > temp/error.json
+jq --compact-output '.[] | .[] | {id,validation,housenumber}' table/geoapify.json | grep '"housenumber":""' > temp/error.json
 # ---
 
 # location
-jq -f geoapify.jq table/geoapify.json | gema -f geoapify-location-invalid.pat > temp/location.json
+jq -f src/1_extract/geoapify.jq table/geoapify.json | gema -f src/1_extract/geoapify-location-invalid.pat > temp/location.json
 
 # fridge
-jq -f fridge-nyc.jq table/nyc.json > temp/fridge.json
+jq -f src/1_extract/nyc/fridge-nyc.jq table/nyc.json > temp/fridge.json
 
 # merge fridge, location
 jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]' temp/{fridge,location}.json > temp/merged.json
@@ -89,7 +151,7 @@ mv -f temp/out.json table/main.json
 rm -rf temp/
 ```
 
-## cfm data
+### cfm data
 
 ```bash
 cd etl; mkdir temp output
@@ -114,14 +176,14 @@ mv 'geocoded_by_geoapify.csv' temp/geoapify.csv
 dasel -f temp/geoapify.csv -r csv -w json | sed 's/original_id/id/' | jq -s '.' > table/geoapify.json
 
 # address missing house number
-jq -c '.[] | {id,validation,housenumber}' table/geoapify.json | grep '"housenumber":""' > data/error.json
+jq --compact-output '.[] | .[] | {id,validation,housenumber}' table/geoapify.json | grep '"housenumber":""' > temp/error.json
 # ---
 
 # location
-jq -f geoapify.jq table/geoapify.json | gema -f geoapify-location-invalid.pat > temp/location.json
+jq -f src/1_extract/geoapify.jq table/geoapify.json | gema -f src/1_extract/geoapify-location-invalid.pat > temp/location.json
 
 # fridge
-jq -f fridge-cfm.jq table/cfm.json > temp/fridge.json
+jq -f src/1_extract/cfm/fridge-cfm.jq table/cfm.json > temp/fridge.json
 
 # merge fridge, location
 jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]' temp/{fridge,location}.json > temp/out.json
@@ -144,7 +206,8 @@ rm temp/*
 ### identify common words to exclude fom search
 
 ```bash
-node api-main.mjs
+node src/2_transform/api-main.mjs
+
 
 jq '.fridges | .[].name' output/cfm.json | sort > temp/fridgeNames.txt
 <temp/fridgeNames.txt tr -cs '[:alpha:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort > temp/fridgeNamesCount.txt
@@ -163,13 +226,13 @@ mv -f out.json table/main.json
 ### update address from table/main
 
 ```bash
-jq -f address-main.jq table/main.json | dasel -r json -w csv | tee temp/address.csv | cin
+jq -f src/1_extract/address-main.jq table/main.json | dasel -r json -w csv | tee temp/address.csv | cin
 start  https://www.geoapify.com/tools/address-validation # create temp/geoapify.csv
 mv 'geocoded_by_geoapify.csv' temp/geoapify.csv
 dasel -f temp/geoapify.csv -r csv -w json | sed 's/original_id/mainId/' | jq -s '.' > table/geoapify.json
 
 #  location
-jq -f geoapify.jq table/geoapify.json | gema -f geoapify-location-invalid.pat > temp/location.json
+jq -f src/1_extract/geoapify.jq table/geoapify.json | gema -f src/1_extract/geoapify-location-invalid.pat > temp/location.json
 
 jq -s '[ .[0] + .[1] | group_by(.mainId)[] | add ]'  table/main.json temp/location.json > temp/out.json
 cdiff temp/out.json table/main.json
@@ -187,5 +250,49 @@ mv -f temp/out.json table/main.json
 
 ```bash
 mkdir temp
-jq -f main-api.jq output/api.json | sed 's/null/""/' | dasel -r json -w csv > temp/api.csv
+jq -f src/2_transform/main-api.jq output/api.json | sed 's/null/""/' | dasel -r json -w csv > temp/api.csv
+```
+
+### merge random table into main.json using address as key
+
+- convert to json and create id
+
+```bash
+mkdir temp; rm temp/*
+
+mv 'file.csv' temp/excel.csv
+dasel -r csv -w json -f temp/excel.csv > temp/excel.json
+jq -sf src/1_extract/excel/table-contactSheet.jq temp/excel.json > table/excel.json
+jq -sf src/1_extract/excel/table-masterlist.jq temp/excel.json > table/excel.json
+```
+
+- create location key
+
+```bash
+jq '[.[] | {id,address}]' table/excel.json | dasel -r json -w csv | tee temp/address.csv | cin
+start https://www.geoapify.com/tools/address-validation # create temp/geoapify.csv
+mv 'geocoded_by_geoapify.csv' temp/geoapify.csv
+dasel -f temp/geoapify.csv -r csv -w json | sed 's/original_//' | jq -s '.' > table/geoapify.json
+jq -f src/1_extract/geoapify.jq table/geoapify.json | gema -f src/1_extract/geoapify-location-invalid.pat > temp/location.json
+```
+
+- merge location data into excel table
+
+```bash
+jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]' {table/excel,temp/location}.json > temp/merged.json
+mv -f temp/merged.json table/excel.json
+```
+
+- align the excel table with the table/main.json
+
+```bash
+node src/2_transform/align-keys.mjs &> ~/scratch.txt
+jq -s '[ .[0] + .[1] | group_by(.id)[] | add ]'  temp/out.json table/excelMain.json > temp/merged.json
+<temp/merged.json tr -d '\r' > table/excelMain.json
+```
+
+- create the CSV file for Google import
+
+```bash
+dasel -r json -w csv -f table/excelMain.json > output/excel.csv
 ```

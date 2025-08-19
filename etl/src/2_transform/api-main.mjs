@@ -1,9 +1,9 @@
 import { readFileSync, writeFile } from 'node:fs';
-import schema from '../src/model/data/fridge/yup.mjs';
+import schema from '../../../src/model/data/fridge/yup.mjs';
 
 import urlExist from 'url-exist';
 import * as entities from 'entities';
-import { groupWithinBound } from '../src/lib/geo.mjs';
+import { groupWithinBound } from '../../../src/lib/geo.mjs';
 
 const inputFileName = 'table/main.json';
 const outputFileName = 'output/api.json';
@@ -48,7 +48,7 @@ async function main() {
   console.log(`successfully wrote ${recordCount} records to ${outputFileName}`);
   return 0;
 }
-main();
+process.exit(await main());
 
 let ErrorCount = 0;
 function LogError(error) {
@@ -146,7 +146,7 @@ async function FridgeSyntacticValidator(fridgeList) {
 function fridgeFromRecord(record) {
   const {
     mainId,
-    fridgeName,
+    fridgeName = '',
     fridgeVerified: verified,
     fridgeNotes,
     maintainerName,
