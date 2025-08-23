@@ -7,3 +7,4 @@ export { default as PageHero } from './PageHero';
 export { default as PamphletParagraph } from './PamphletParagraph';
 export { default as ParagraphCard } from './ParagraphCard';
 export { default as TitleCard } from './TitleCard';
+export { default as PillFilterButtons } from './PillFilterButtons';
