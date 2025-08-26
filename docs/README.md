@@ -18,7 +18,7 @@
 
 A community fridge is a decentralized resource where businesses and individuals can [donate perishable food](https://www.thrillist.com/lifestyle/new-york/nyc-community-fridges-how-to-support). There are dozens of fridges hosted by volunteers across the country. The Fridge Finder website is available at [fridgefinder.app](https://fridgefinder.app/)
 
-Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy for people to find fridge locations and get involved with food donation programs in their community. We are building a responsive, mobile first, web application with administrative tools for fridge maintainers. To join the project read our [contributing guidelines](./CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md).
+Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy for people to find fridge locations and get involved with food donation programs in their community. We are building a responsive, mobile first, web application with administrative tools for fridge maintainers. To join the project read our [contributing guidelines](./CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md). The software architecture is documented in the [programmer reference](./architecture-reference.md) document.
 
 <h2>Made possible by contributions from these lovely people &hellip;</h2>
 <p align="center">
@@ -65,13 +65,13 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
 1. Run the application locally
 
    ```bash
-   # to run both development database and Next.js web server
+   # to run both development database and the web server
    yarn dev
 
-   # to run only the web server
+   # to run only the web server on port 3000
    yarn web
 
-   # to run only the development database
+   # to run only the database server on port 3050
    yarn data
    ```
 
