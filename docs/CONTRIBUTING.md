@@ -15,7 +15,6 @@ The following are mostly guidelines, not rules. Use your best judgment, and feel
 1. [Create a commit](#create-a-commit)
 1. [Update the feature branch for code review](#update-the-feature-branch-for-code-review)
 1. [Request a code review](#request-a-code-review)
-1. [Programmer Reference](#programmer-reference)
 
 ## Join the communication channels
 
@@ -182,6 +181,7 @@ While it is very useful to create multiple commits during development; for effec
 
 1. Ensure that all work complies with the [review criteria](./review-criteria.md)
 1. Ensure that all work is committed and the branch is clean
+
    - display changed files
 
    ```bash
@@ -226,6 +226,7 @@ While it is very useful to create multiple commits during development; for effec
    ```
 
 1. Resolve all merge conflicts.
+
    - to view every conflicting file
 
    ```bash
@@ -246,6 +247,7 @@ While it is very useful to create multiple commits during development; for effec
    ```
 
 1. Create and commit the demo page
+
    - add the demo page
 
    ```bash
@@ -268,81 +270,4 @@ While it is very useful to create multiple commits during development; for effec
 
 Post a review request in the [#frontend](https://discord.com/channels/955884900655972463/955886184159125534) channel on Discord. If this is your first contribution, include your time zone and availability in the request.
 
-Once your feature branch has been merged into dev, it will automatically be deployed to the [staging website](https://dev.d1zqbru9k8x5eq.amplifyapp.com)
-
-## Programmer Reference
-
-- Production (deployed from main branch): https://fridgefinder.app/
-- Staging (deployed from dev branch): https://dev.fridgefinder.app/ or https://dev.d1zqbru9k8x5eq.amplifyapp.com/
-
-### Architecture
-
-- [Architecture](https://docs.google.com/document/d/1yZVGAxVn4CEZyyce_Zuha3oYOOU8ey7ArBvLbm7l4bw)
-- [REST API Contract](../src/model/data/fridge/REST.yaml)
-
-### UI Design
-
-- [Aspect Ratio Guide](https://www.cronyxdigital.com/blog/the-ultimate-website-image-guide)
-
-**image aspect ratio (width:height)**
-
-hero image
-: aspect ratio is 16:9, preferred size 1366x768
-
-paragraph image
-: aspect ratio for mobile is 3:2, preferred size 414x276
-
-fridge photo
-: aspect ratio is 1:1.15, exact size 300x345
-
-### Tools
-
-#### HTML Color
-
-- [Color Hex to RGBA converter](https://bl.ocks.org/njvack/02ad8efcb0d552b0230d)
-
-#### REST API
-
-- [API Editor](https://editor-next.swagger.io/)
-
-#### URL Encode
-
-- [Encode SVG as URL](https://yoksel.github.io/url-encoder/)
-- [URL encoder/decoder](https://meyerweb.com/eric/tools/dencoder/)
-
-#### Web Analytics
-
-- [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna)
-
-### Library
-
-- Application Framework: [Next.js](https://nextjs.org/docs/)
-  - [Next.js tutorial](https://nextjs.org/learn)
-  - [Next.js repository](https://github.com/vercel/next.js/)
-
-- Type Checking: [prop-types](https://github.com/facebook/prop-types)
-  - [prop-types tutorial](https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/)
-
-- UI Components: [MUI](https://mui.com/material-ui/)
-
-- UI Dialogs: [Formik](https://formik.org/docs/overview)
-  - [Formik tutorial](https://formik.org/docs/tutorial)
-
-- UI Dialog Validation: [Yup](https://github.com/jquense/yup)
-
-- Geographical Maps: [Leaflet](https://leafletjs.com/), [React Leaflet](https://react-leaflet.js.org/)
-  - [Leaflet quick start tutorial](https://leafletjs.com/examples/quick-start/)
-  - [Leaflet mobile tutorial](https://leafletjs.com/examples/mobile/)
-  - [Leaflet custom markers tutorial](https://leafletjs.com/examples/)
-
-- REST API: [OpenAPI 3.0](https://swagger.io/docs/specification/about/)
-  - [API Primer](https://restfulapi.net/)
-  - [API Design Best Practices](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-
-- REST Mock Server: [json-server](https://github.com/typicode/json-server)
-
-- Testing: [Jest](https://jestjs.io/docs/api), [React Testing Library](https://testing-library.com/docs/)
-
-### Design philosophy
-
-- [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)
+Once your feature branch has been merged into dev, it will automatically be deployed to the [staging website](https://dev.fridgefinder.app/)
