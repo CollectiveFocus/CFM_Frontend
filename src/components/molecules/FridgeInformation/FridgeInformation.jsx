@@ -70,17 +70,24 @@ FridgeStatusIcon.propTypes = {
   condition: typesValidation.ReportCondition,
 };
 
+function CaptionComponent({ caption }) {
+  return caption ? (
+    <Typography
+      variant="body1"
+      component="span"
+      sx={{ display: 'inline-block', fontWeight: 600, mr: 2 }}
+    >
+      {caption}:
+    </Typography>
+  ) : null;
+}
+CaptionComponent.propTypes = {
+  caption: PropTypes.string,
+};
+
 function InformationLine({ icon, text, caption = null }) {
   const IconComponent = icon;
-  const CaptionComponent = (caption) =>
-    caption ? (
-      <Typography
-        component="span"
-        sx={{ display: 'inline-block', fontWeight: 600, mr: 2 }}
-      >
-        {caption}:
-      </Typography>
-    ) : null;
+
   return (
     <Stack direction="row" alignItems="center">
       <IconComponent
@@ -91,7 +98,7 @@ function InformationLine({ icon, text, caption = null }) {
         }}
       />
       <Typography variant="body1">
-        {CaptionComponent(caption)}
+        <CaptionComponent caption={caption} />
         {text && renderWrappingText(text)}
       </Typography>
     </Stack>
@@ -173,32 +180,26 @@ LinkLine.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
-function NotesLine({ icon, text, link = null }) {
-  if (link) {
+function NotesLine({ icon, caption, text = null }) {
+  if (text) {
     const IconComponent = icon;
     return (
-      <Stack direction="row" alignItems="center">
-        <IconComponent
-          sx={{ mr: 3, fontSize: '20pt', verticalAlign: 'text-bottom' }}
-        />
-        <Typography>
-          <Typography
-            component="span"
-            variant="body1"
-            sx={{ display: 'inline-block', fontWeight: 600 }}
-          >
-            {text}:
+      <Stack direction="row">
+        <IconComponent sx={{ fontSize: '22pt', mr: 2 }} />
+        <Stack direction="column">
+          <CaptionComponent caption={caption} />
+          <Typography variant="body1" component="p" sx={{ display: 'block' }}>
+            {text}
           </Typography>
-          {renderWrappingText(link)}
-        </Typography>
+        </Stack>
       </Stack>
     );
   } else return null;
 }
 NotesLine.propTypes = {
   icon: PropTypes.elementType.isRequired,
-  text: PropTypes.string.isRequired,
-  link: PropTypes.string,
+  caption: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 function FridgeContainer({ fridge }) {
@@ -261,7 +262,7 @@ function FridgeContainer({ fridge }) {
         </Stack>
 
         <InformationLine icon={LocationOnOutlinedIcon} text={address} />
-        <NotesLine icon={InfoOutlinedIcon} text="Info" link={notes} />
+        <NotesLine icon={InfoOutlinedIcon} caption="Info" text={notes} />
         <LinkLine icon={InstagramIcon} obj={maintainer} url="instagram" />
         <LinkLine icon={LanguageIcon} obj={maintainer} url="website" />
       </>
@@ -324,8 +325,8 @@ function ReportContainer({ report }) {
 
         <NotesLine
           icon={ChatBubbleOutlineOutlinedIcon}
-          text="Notes"
-          link={notes}
+          caption="Notes"
+          text={notes}
         />
       </>
     );
