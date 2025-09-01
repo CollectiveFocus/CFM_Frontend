@@ -26,12 +26,14 @@ const sortByNameAsc = (a, b) => {
 const castOptions = Object.freeze({ stripUnknown: true }); // yup configuration
 
 function viewFridgeFromLocal(apiFridge) {
+  console.log('index.js:29 - apiFridge:', apiFridge);
   const viewFridge = ValuesFridge.cast(apiFridge, castOptions);
   viewFridge['report'] = null;
   return viewFridge;
 }
 
 function viewFridgeFromRemote(apiFridge) {
+  console.log('index.js:36 - apiFridge:', apiFridge);
   const report = apiFridge.latestFridgeReport ?? null;
   const viewFridge = ValuesFridge.cast(apiFridge, castOptions);
   viewFridge['report'] = ValuesReport.cast(report, castOptions);

@@ -1,25 +1,27 @@
 import PropTypes from 'prop-types';
 import {
-  fieldsFridge,
+  fieldsFridge as fieldsFridge_dm,
   fieldsLocation,
   fieldsReport,
 } from 'model/data/fridge/prop-types';
 
-export const typesLocation = PropTypes.exact(fieldsLocation);
+const typesLocation = PropTypes.exact(fieldsLocation);
+const typesReport = PropTypes.exact(fieldsReport);
 
-export const typesFridge = PropTypes.exact({
-  ...fieldsFridge,
-  report: PropTypes.exact(fieldsReport),
-});
-
-export const typesGeolocation = PropTypes.exact({
-  geoLat: PropTypes.number.isRequired,
-  geoLng: PropTypes.number.isRequired,
-});
-
-const typesView = {
-  Fridge: typesFridge,
-  Location: typesLocation,
-  Geolocation: typesGeolocation,
+const fieldsFridge = {
+  ...fieldsFridge_dm,
+  report: typesReport,
 };
-export default typesView;
+const typesFridge = PropTypes.exact(fieldsFridge);
+
+const viewValidator = {
+  fields: {
+    fridge: fieldsFridge,
+    report: fieldsReport,
+  },
+  Fridge: typesFridge,
+  Report: typesReport,
+  Location: typesLocation,
+};
+
+export default viewValidator;
