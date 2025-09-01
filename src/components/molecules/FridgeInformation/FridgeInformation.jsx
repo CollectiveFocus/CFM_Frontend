@@ -17,7 +17,7 @@ import {
 import { StatusIcon } from 'theme/icons';
 
 import PropTypes from 'prop-types';
-import typesValidation from 'model/view/prop-types';
+import typesView from 'model/view/prop-types';
 
 const enumCondition = {
   good: {
@@ -67,7 +67,7 @@ function FridgeStatusIcon({ condition }) {
   );
 }
 FridgeStatusIcon.propTypes = {
-  condition: typesValidation.ReportCondition,
+  condition: typesView.fields.report.condition,
 };
 
 function CaptionComponent({ caption }) {
@@ -142,7 +142,7 @@ function TagsContainer({ tags }) {
   } else return null;
 }
 TagsContainer.propTypes = {
-  tags: typesValidation.Tags,
+  tags: typesView.fields.fridge.tags,
 };
 
 function LinkLine({ icon, obj, url }) {
@@ -176,7 +176,7 @@ function LinkLine({ icon, obj, url }) {
 }
 LinkLine.propTypes = {
   icon: PropTypes.elementType.isRequired,
-  obj: typesValidation.Maintainer,
+  obj: typesView.fields.fridge.maintainer,
   url: PropTypes.string.isRequired,
 };
 
@@ -270,7 +270,7 @@ function FridgeContainer({ fridge }) {
   } else return null;
 }
 FridgeContainer.propTypes = {
-  fridge: typesValidation.Fridge,
+  fridge: typesView.Fridge,
 };
 
 function ReportContainer({ report }) {
@@ -333,7 +333,7 @@ function ReportContainer({ report }) {
   } else return null;
 }
 ReportContainer.propTypes = {
-  report: typesValidation.Report,
+  report: typesView.Report,
 };
 
 export default function FridgeInformation({ fridge, report }) {
@@ -366,6 +366,6 @@ export default function FridgeInformation({ fridge, report }) {
   );
 }
 FridgeInformation.propTypes = {
-  fridge: typesValidation.Fridge,
-  report: typesValidation.Report,
+  fridge: typesView.Fridge,
+  report: typesView.Report,
 };
