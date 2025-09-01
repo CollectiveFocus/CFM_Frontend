@@ -51,6 +51,10 @@ async function getFridgeRecord({ id }) {
   }
   const [fridge, reports] = await Promise.all(responses.map((r) => r.json()));
   const report = reports.length > 0 ? reports[0] : null;
+  if (report) {
+    delete report.id;
+    delete report.fridgeId;
+  }
   return { fridge, report };
 }
 getFridgeRecord.propTypes = {

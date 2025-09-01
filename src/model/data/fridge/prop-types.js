@@ -42,7 +42,7 @@ export const typeCondition = PropTypes.oneOf([
 export const typeFoodPercentage = PropTypes.oneOf([0, 1, 2, 3]);
 
 export const fieldsReport = {
-  timestamp: PropTypes.object.isRequired,
+  timestamp: PropTypes.string.isRequired,
   condition: typeCondition.isRequired,
   foodPercentage: typeFoodPercentage.isRequired,
   photoUrl: PropTypes.string,
