@@ -1,5 +1,6 @@
 import Image from 'next/legacy/image';
 import { Button, Chip, Divider, Link, Stack, Typography } from '@mui/material';
+import { SoftWrap } from 'components/atoms';
 
 // Icons
 import {
@@ -40,21 +41,6 @@ const enumCondition = {
     text: 'Fridge is permanently unavailable',
     color: 'error',
   },
-};
-
-const renderWrappingText = (text) => {
-  const result = text.match(/[^\.!,\?]+[\.!,\?\w]+/g);
-  const output = result ? result : [text];
-
-  return output.map((sentence, index) => (
-    <Typography
-      key={index}
-      component="span"
-      sx={{ display: 'inline-block', whiteSpace: 'pre-wrap' }}
-    >
-      {sentence}
-    </Typography>
-  ));
 };
 
 function FridgeStatusIcon({ condition }) {
@@ -99,7 +85,7 @@ function InformationLine({ icon, text, caption = null }) {
       />
       <Typography variant="body1">
         <CaptionComponent caption={caption} />
-        {text && renderWrappingText(text)}
+        <SoftWrap text={text} />
       </Typography>
     </Stack>
   );
