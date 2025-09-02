@@ -1,5 +1,13 @@
 import Image from 'next/legacy/image';
-import { Button, Chip, Divider, Link, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Chip,
+  Divider,
+  Link,
+  Stack,
+  Typography,
+  Box,
+} from '@mui/material';
 import { SoftWrap } from 'components/atoms';
 
 // Icons
@@ -96,24 +104,52 @@ InformationLine.propTypes = {
   caption: PropTypes.string,
 };
 
-function ImageContainer({ src = null, alt }) {
+function ImageContainer({ src = null, alt, isAboveFold = false }) {
   if (src) {
     return (
-      <Stack>
-        <Image
-          src={src}
-          alt={alt}
-          width="300"
-          height="345"
-          objectFit="contain"
-        />
-      </Stack>
+      <>
+        <Box
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            width: '100%',
+          }}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+            priority={isAboveFold}
+          />
+        </Box>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          sx={{
+            display: { xs: 'none', sm: 'inherit' },
+            width: '100%',
+          }}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width="300px"
+            height="345px"
+            layout="fixed"
+            objectFit="contain"
+            priority={isAboveFold}
+          />
+        </Stack>
+      </>
     );
   } else return null;
 }
 ImageContainer.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
+  isAboveFold: PropTypes.bool,
 };
 
 function TagsContainer({ tags }) {
@@ -195,7 +231,7 @@ function FridgeContainer({ fridge }) {
       location,
       tags = null,
       maintainer = null,
-      photoUrl = null,
+      photoUrl = '/feedback/happyFridge.svg',
       notes = null,
     } = fridge;
 
@@ -214,7 +250,11 @@ function FridgeContainer({ fridge }) {
     return (
       <>
         {/* Fridge Picture + Name + Location  */}
-        <ImageContainer src={photoUrl} alt="Picture of the fridge" />
+        <ImageContainer
+          src={photoUrl}
+          alt="Picture of the fridge"
+          isAboveFold={true}
+        />
 
         <Stack spacing={3}>
           <Stack direction="column" spacing={1}>
