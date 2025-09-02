@@ -1,20 +1,17 @@
 import PropTypes from 'prop-types';
 
-/**
- * Text and HTML formatting.
- * @module lib/format
- */
-
 const isOdd = (x) => x % 2 === 1;
+const regxSentence = /(\p{Terminal_Punctuation})/gu;
+const shortSentenceLength = 5;
 
 /**
  * Soft wrap every sentence so it wraps at the period and not in the middle.
- * @param paragraph Sentences seperated by punctuation such as ".!?:;" and others used by foreign languages
+ * @param paragraph Sentences separated by punctuation such as ".!?:;" and others used by foreign languages
  */
-const regxSentence = /(\p{Terminal_Punctuation})/gu;
-const shortSentenceLength = 5;
-export function SoftWrap(paragraph) {
-  const chunks = paragraph.split(regxSentence);
+export default function SoftWrap({ text }) {
+  if (!text) return null;
+
+  const chunks = text.split(regxSentence);
 
   if (isOdd(chunks.length)) {
     chunks.push('');
@@ -43,10 +40,10 @@ export function SoftWrap(paragraph) {
           style={{ display: 'inline-block', margin: 0, padding: 0 }}
           data-testid="span"
         >
-          {line}
+          {line}&nbsp;
         </span>
       ));
 }
 SoftWrap.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };

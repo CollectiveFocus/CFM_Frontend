@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/legacy/image';
 import { Box, Divider, Typography } from '@mui/material';
-import { ButtonLink } from 'components/atoms';
+import { ButtonLink, SoftWrap } from 'components/atoms';
 import { applyAlpha, designColor } from 'theme/palette';
-import { SoftWrap } from 'lib/format';
 import { typesNextImage } from 'model/view/component/prop-types';
 
 const DividerGrey = () => (
@@ -26,7 +25,7 @@ export default function PamphletParagraph({
       {hasDivider && <DividerGrey />}
 
       <Typography textAlign="center" sx={sxTitleMargin} variant={variant}>
-        {SoftWrap(title)}
+        <SoftWrap text={title} />
       </Typography>
 
       {img && (
