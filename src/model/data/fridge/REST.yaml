@@ -71,7 +71,7 @@ paths:
                     type: string
                     pattern: '^[a-z0-9]{2,}$'
                     description: ID of the Fridge object (fridgeId).
-                    example: greenpointfridge
+                    example: livinggallery
         '400':
           description: Request could not be understood due to incorrect syntax.
         '401':
@@ -92,7 +92,7 @@ paths:
           pattern: '^[a-z0-9]{2,}$'
         required: true
         description: ID of the Fridge object (fridgeId).
-        example: greenpointfridge
+        example: livinggallery
 
     get:
       summary: Read a Fridge object.
@@ -139,7 +139,7 @@ paths:
                     type: string
                     pattern: '^[a-z0-9]{2,}$'
                     description: ID of the Fridge object (fridgeId).
-                    example: greenpointfridge
+                    example: livinggallery
         '400':
           description: Invalid Fridge ID.
         '401':
@@ -174,7 +174,7 @@ paths:
           pattern: '^[a-z0-9]{2,}$'
         required: true
         description: ID of the Fridge object (fridgeId).
-        example: greenpointfridge
+        example: livinggallery
 
     get:
       summary: Read all Report objects for the specified fridge.
@@ -223,7 +223,7 @@ paths:
                   fridgeId:
                     type: string
                     pattern: '^[a-z0-9]{2,}$'
-                    example: greenpointfridge
+                    example: livinggallery
         '400':
           description: Invalid Fridge ID.
         '401':
@@ -305,7 +305,7 @@ components:
           maxLength: 60
           readOnly: true
           nullable: false
-          example: greenpointfridge
+          example: livinggallery
 
         name:
           description: A descriptive title for this fridge location.
@@ -442,7 +442,7 @@ components:
           type: string
           format: uri
           nullable: true
-          example: https://www.instagram.com/greenpointfridge/?hl=en
+          example: https://www.instagram.com/livinggallery/?hl=en
 
     Report:
       type: object
