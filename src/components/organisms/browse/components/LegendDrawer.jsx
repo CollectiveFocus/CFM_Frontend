@@ -38,7 +38,7 @@ const legendItems = [
   { icon: noReport(pinColor.reportUnavailable), title: 'No status' },
   { icon: unavailable(pinColor.fridgeNotAtLocation), title: 'Not at location' },
   { icon: dirty(pinColor.fridgeOperation), title: 'Needs cleaning' },
-  { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs servicing' },
+  { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs repairs' },
   { icon: ghost(pinColor.fridgeGhost), title: 'Ghost Fridge' },
 ];
 

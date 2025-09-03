@@ -109,7 +109,7 @@ export default function PanelReport({
                   <FormControlLabel
                     control={<Radio />}
                     value="out of order"
-                    label="Fridge needs servicing"
+                    label="Fridge needs repairs"
                   />
                   <FormControlLabel
                     control={<Radio />}

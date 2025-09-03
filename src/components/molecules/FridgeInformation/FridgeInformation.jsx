@@ -38,11 +38,11 @@ const enumCondition = {
     color: 'info',
   },
   'out of order': {
-    text: 'Fridge is not working properly',
+    text: 'Fridge needs repairs',
     color: 'error',
   },
   'not at location': {
-    text: 'No fridge at this address',
+    text: 'Fridge is no longer at location',
     color: 'warning',
   },
   ghost: {
