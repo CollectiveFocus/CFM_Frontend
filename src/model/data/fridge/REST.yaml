@@ -165,6 +165,29 @@ paths:
         '500':
           description: Unexpected error prevented server from fulfilling request.
 
+  /reports/last:
+    get:
+      summary: An array of the latest fridge reports.
+      tags:
+        - report
+      responses:
+        '200':
+          description: Array of Report objects as JSON
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Report'
+        '400':
+          description: Request could not be understood due to incorrect syntax.
+        '401':
+          description: Request requires user authentication.
+        '404':
+          description: Report table not found in database.
+        '500':
+          description: Unexpected error prevented server from fulfilling request.
+
   /v1/fridges/{id}/reports:
     parameters:
       - in: path
@@ -216,7 +239,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  timestamp:
+                  editTimestamp:
                     type: string
                     format: date-time
                     example: '2022-03-29T18:10:38.547Z'
@@ -307,6 +330,13 @@ components:
           nullable: false
           example: livinggallery
 
+        editTimestamp:
+          description: The ISO formatted date/time this record was edited.
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2022-03-29T18:10:38.547Z'
+
         name:
           description: A descriptive title for this fridge location.
           type: string
@@ -360,6 +390,7 @@ components:
         - city
         - state
         - zip
+        - country
         - geoLat
         - geoLng
 
@@ -385,6 +416,13 @@ components:
           minLength: 2
           maxLength: 2
           example: NY
+
+        country:
+          type: string
+          pattern: '^[A-Z]{2}$'
+          minLength: 2
+          maxLength: 2
+          example: US
 
         zip:
           type: string
@@ -448,12 +486,22 @@ components:
       type: object
 
       required:
-        - timestamp
+        - editTimestamp
         - condition
-        - foodPercentage
+        - foodAmount
 
       properties:
-        timestamp:
+        fridgeId:
+          description: The id of the fridge record this report belongs to.
+          type: string
+          pattern: '^[a-z0-9]{4,60}$'
+          minLength: 4
+          maxLength: 60
+          readOnly: true
+          nullable: false
+          example: livinggallery
+
+        editTimestamp:
           description: The ISO formatted date/time of this report.
           type: string
           format: date-time
@@ -465,8 +513,8 @@ components:
           type: string
           enum: [good, dirty, out of order, not at location, ghost]
 
-        foodPercentage:
-          description: The percentage of food in the fridge.
+        foodAmount:
+          description: An enum indicating the amount of food in the fridge.
           type: integer
           enum: [0, 1, 2, 3]
 
