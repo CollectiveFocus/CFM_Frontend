@@ -7,6 +7,7 @@ module.exports = {
       'community-fridge-map-images-prod.s3.amazonaws.com',
     ],
   },
+  pageExtensions: ['page.jsx', 'page.js'],
 
   // --- Next.js@12.2.2
   swcMinify: true,
