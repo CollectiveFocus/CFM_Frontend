@@ -28,10 +28,4 @@ export default {
       transform: 'components/organisms/{{member}}',
     },
   },
-
-  // ---
-
-  eslint: {
-    dirs: ['src/', 'ci/'],
-  },
 };
