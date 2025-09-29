@@ -1,9 +1,9 @@
 import { readFileSync, writeFile } from 'node:fs';
-import schema from '../src/model/data/fridge/yup.mjs';
+import schema from '../../../src/model/data/fridge/yup.js';
 
 import urlExist from 'url-exist';
 import * as entities from 'entities';
-import { groupWithinBound } from '../src/lib/geo.mjs';
+import { groupWithinBound } from '../../../src/lib/geo.js';
 
 const inputFileName = 'table/main.json';
 const outputFileName = 'output/api.json';

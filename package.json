@@ -35,6 +35,7 @@
   "directories": {
     "doc": "./docs"
   },
+  "type": "module",
   "scripts": {
     "postinstall": "npx simple-git-hooks",
     "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"npx json-server etl/output/api.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"npx next --turbopack\"",

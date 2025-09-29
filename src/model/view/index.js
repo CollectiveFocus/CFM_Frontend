@@ -1,4 +1,4 @@
-import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup.mjs';
+import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup.js';
 
 // in memory cache
 const cacheViewFridgeList = [];

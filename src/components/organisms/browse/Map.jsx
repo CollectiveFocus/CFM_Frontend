@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import typesView from 'model/view/prop-types';
 
-import { deltaInMeters } from 'lib/geo.mjs';
+import { deltaInMeters } from 'lib/geo.js';
 
 import LegendDrawer from './components/LegendDrawer';
 import MapMarkerList from './components/MapMarkerList';
