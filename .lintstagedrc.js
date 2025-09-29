@@ -1,6 +1,6 @@
 console.log('Running "yarn style" on commit files. Please wait...');
 
-module.exports = {
+export default {
   '*': ['prettier --write --ignore-unknown'],
   '*.svg': ['svgo --quiet'],
 };
