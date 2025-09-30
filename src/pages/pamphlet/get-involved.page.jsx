@@ -84,11 +84,12 @@ export default function GetInvolvedPage() {
         {titleCards.map((card, index) => (
           <Grid
             key={index}
-            item
             container
             justifyContent="center"
-            xs={6}
-            sm={4}
+            size={{
+              xs: 6,
+              sm: 4,
+            }}
           >
             <TitleCard key={'TitleCard' + index} {...card} />
           </Grid>
