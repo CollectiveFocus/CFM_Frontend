@@ -88,10 +88,8 @@ export default function HomePage() {
       <Head>
         <title>Fridge Finder</title>
       </Head>
-
       <PageHero {...pageHero} />
       <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
-
       <Grid
         container
         direction="row"
@@ -101,17 +99,18 @@ export default function HomePage() {
         px={4}
       >
         <Grid
-          item
           container
           direction="row"
           justifyContent="center"
-          xs={12}
-          sm={10}
-          lg={8}
+          size={{
+            xs: 12,
+            sm: 10,
+            lg: 8,
+          }}
         >
           <ParagraphCard {...paragraphCard.h2} variant="h2" />
         </Grid>
-        <Grid item xs={12} md={12} lg={12}>
+        <Grid size={12}>
           <Typography
             variant="h2"
             textAlign="center"
@@ -121,14 +120,21 @@ export default function HomePage() {
           </Typography>
         </Grid>
         <Grid
-          item
           container
           direction="row"
           justifyContent="space-evenly"
           spacing={4}
         >
           {paragraphCard.h3.map((card, index) => (
-            <Grid item key={'Grid' + index} xs={12} sm={8} md={4} lg={3}>
+            <Grid
+              key={'Grid' + index}
+              size={{
+                xs: 12,
+                sm: 8,
+                md: 4,
+                lg: 3,
+              }}
+            >
               <ParagraphCard key={'ParagraphCard' + index} {...card} />
             </Grid>
           ))}
