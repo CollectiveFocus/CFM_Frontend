@@ -10,7 +10,7 @@
     <img alt="" src="https://img.shields.io/github/stars/FridgeFinder/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
   </a>
   <img aria-label="GitHub contributors" alt="GitHub contributors" src="https://img.shields.io/github/contributors/FridgeFinder/CFM_Frontend?style=flat-square&labelColor=F6F6F6">
-  <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/FridgeFinder/CFM_Frontend/dev.yml?style=flat-square&labelColor=F6F6F6">
+  <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/FridgeFinder/CFM_Frontend/dev.yaml?style=flat-square&labelColor=F6F6F6">
   <a aria-label="Frontend channel on Discord" href="https://discord.com/channels/955884900655972463/955886184159125534">
     <img alt="" src="https://img.shields.io/badge/Join%20the%20community-yellow.svg?style=flat-square&logo=Discord&labelColor=F6F6F6">
   </a>
@@ -37,7 +37,7 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
 1. Verify your system meets the requirements
 
    ```bash
-   node --version  # must be greater than 14.6.0
+   node --version  # must be >= 22.20.0
    ```
 
 1. Install global dependencies
