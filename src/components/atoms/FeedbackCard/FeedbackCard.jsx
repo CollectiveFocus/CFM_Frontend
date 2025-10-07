@@ -9,20 +9,21 @@ import { ButtonLink } from 'components/atoms';
 
 const sxSuccessIcon = { fontSize: '1.1em', verticalAlign: 'top' };
 const sxErrorIcon = { fontSize: '1.3em', verticalAlign: 'text-bottom' };
-const displayHeading = {
+
+const displayHeading = Object.freeze({
   EmailSuccess: (
     <>
       Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
     </>
   ),
-  EmailError: (
-    <>
-      Error! <ErrorIcon color="error" sx={sxErrorIcon} />
-    </>
-  ),
-  ReportStatus: (
+  FridgeStatusSuccess: (
     <>
       Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
+    </>
+  ),
+  Error: (
+    <>
+      Error! <ErrorIcon color="error" sx={sxErrorIcon} />
     </>
   ),
   CreateFridge: (
@@ -30,33 +31,33 @@ const displayHeading = {
       Success! <SuccessIcon color="success" sx={sxSuccessIcon} />
     </>
   ),
-};
+});
 
-const displayText = {
+const displayText = Object.freeze({
   EmailSuccess: 'Your email was sent.',
-  EmailError: 'Your email was not sent.',
-  ReportStatus: 'You have successfully submitted a status report!',
+  FridgeStatusSuccess: 'You have successfully submitted a status report!',
+  Error: 'Action required. Error processing request.',
   CreateFridge: 'You have successfully added a fridge listing!',
-};
+});
 
-const displayImg = {
+const displayImg = Object.freeze({
   EmailSuccess: {
     src: '/feedback/emailSuccess.svg',
     width: 313,
     height: 280,
     alt: 'Email success image',
   },
-  EmailError: {
-    src: '/feedback/emailError.svg',
-    width: 163,
-    height: 245,
-    alt: 'Email error image',
-  },
-  ReportStatus: {
+  FridgeStatusSuccess: {
     src: '/feedback/happyFridge.svg',
     width: 163,
     height: 245,
     alt: 'Happy fridge image',
+  },
+  Error: {
+    src: '/feedback/emailError.svg',
+    width: 163,
+    height: 245,
+    alt: 'Email error image',
   },
   CreateFridge: {
     src: '/feedback/happyFridge.svg',
@@ -64,77 +65,74 @@ const displayImg = {
     height: 245,
     alt: 'Happy fridge image',
   },
-};
+});
 
-const displayButton = {
-  EmailSuccess: (
-    <ButtonLink
-      to="/"
-      aria-label="Go to Home page"
-      variant="contained"
-      size="wide"
-      sx={{ mt: 8, mb: 2 }}
-    >
-      BACK TO HOME
-    </ButtonLink>
-  ),
-  EmailError: null,
-  ReportStatus: (
-    <ButtonLink
-      to="#"
-      aria-label="View Fridge details"
-      variant="contained"
-      size="wide"
-      sx={{ mt: 8, mb: 2 }}
-    >
-      GO TO FRIDGE
-    </ButtonLink>
-  ),
-  CreateFridge: (
-    <>
+/**
+ * Generates a feedback card based on the specified form.
+ *
+ * @param {string} props.form - The type of feedback to display (e.g., "FridgeStatusSuccess", "EmailSuccess").
+ * @param {any} props.slug - Optional data used by the specified form.
+ *
+ * @returns {JSX.Element} The rendered FeedbackCard component.
+ */
+export default function FeedbackCard({ form, slug = null }) {
+  const displayButton = {
+    EmailSuccess: (
       <ButtonLink
-        to="#"
-        aria-label="View Fridge details"
+        to="/"
+        aria-label="Go to Home page"
+        variant="contained"
+        size="wide"
+        sx={{ mt: 8, mb: 2 }}
+      >
+        BACK TO HOME
+      </ButtonLink>
+    ),
+    FridgeStatusSuccess: (
+      <ButtonLink
+        to={slug}
+        aria-label="View Fridge status"
         variant="contained"
         size="wide"
         sx={{ mt: 8, mb: 2 }}
       >
         GO TO FRIDGE
       </ButtonLink>
-      <ButtonLink
-        to="#"
-        aria-label="Edit Fridge details"
-        variant="outlined"
+    ),
+    Error: (
+      <Button
+        onClick={slug}
+        aria-label="Return to the form and try again"
+        variant="contained"
         size="wide"
-        sx={{ mb: 2, mt: 6 }}
+        sx={{ mt: 8, mb: 2 }}
       >
-        EDIT FRIDGE
-      </ButtonLink>
-    </>
-  ),
-};
-
-export default function FeedbackCard({ type, action = null }) {
-  /**
-   * TODO This is a temporary bypass until I figure out how the other dialogs handle failure. There is no point in implementing a Button factory until then -- Bernard
-   */
-  if (type === 'EmailError') {
-    if (action) {
-      displayButton[type] = (
-        <Button
-          onClick={action}
-          aria-label="Click to resend message"
+        TRY AGAIN
+      </Button>
+    ),
+    CreateFridge: (
+      <>
+        <ButtonLink
+          to="#"
+          aria-label="View Fridge status"
           variant="contained"
           size="wide"
           sx={{ mt: 8, mb: 2 }}
         >
-          TRY AGAIN
-        </Button>
-      );
-    } else {
-      throw 'Missing EmailError callback function';
-    }
-  }
+          GO TO FRIDGE
+        </ButtonLink>
+        <ButtonLink
+          to="#"
+          aria-label="Edit Fridge details"
+          variant="outlined"
+          size="wide"
+          sx={{ mb: 2, mt: 6 }}
+        >
+          EDIT FRIDGE
+        </ButtonLink>
+      </>
+    ),
+  };
 
   return (
     <Box
@@ -146,22 +144,22 @@ export default function FeedbackCard({ type, action = null }) {
       }}
     >
       <Typography textAlign="center" variant="h1" sx={{ marginTop: 4 }}>
-        {displayHeading[type]}
+        {displayHeading[form]}
       </Typography>
       <Typography textAlign="center" variant="body1" sx={{ mb: 4 }}>
-        {displayText[type]}
+        {displayText[form]}
       </Typography>
-      <Image alt="" {...displayImg[type]} />
-      {displayButton[type]}
+      <Image alt="" {...displayImg[form]} />
+      {displayButton[form]}
     </Box>
   );
 }
 FeedbackCard.propTypes = {
-  type: PropTypes.oneOf([
-    'ReportStatus',
-    'CreateFridge',
+  form: PropTypes.oneOf([
     'EmailSuccess',
-    'EmailError',
-  ]),
-  action: PropTypes.func,
+    'FridgeStatusSuccess',
+    'Error',
+    'CreateFridge',
+  ]).isRequired,
+  slug: PropTypes.any,
 };
