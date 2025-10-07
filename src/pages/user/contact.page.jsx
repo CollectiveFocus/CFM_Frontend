@@ -51,13 +51,13 @@ export default function ContactPage() {
       panel = ContactForm({ formik });
       break;
     case enumDisplay.EmailSuccess:
-      panel = <FeedbackCard type="EmailSuccess" />;
+      panel = <FeedbackCard form="EmailSuccess" />;
       break;
     case enumDisplay.EmailError:
       panel = (
         <FeedbackCard
-          type="EmailError"
-          action={() => setDisplay(enumDisplay.EmailDialog)}
+          form="Error"
+          slug={() => setDisplay(enumDisplay.EmailDialog)}
         />
       );
       break;
