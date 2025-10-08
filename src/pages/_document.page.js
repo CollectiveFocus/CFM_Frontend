@@ -2,12 +2,33 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from 'lib/createEmotionCache';
+import googleAnalytics from 'lib/analytics';
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
+          {googleAnalytics.TRACKING_ID && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalytics.TRACKING_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${googleAnalytics.TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                  `,
+                }}
+              />
+            </>
+          )}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap"
@@ -26,12 +47,10 @@ export default class MyDocument extends Document {
   }
 }
 
-// We are using the same emotion cache for all the SSR requests to speed up performance.
-// This can have global side effects, so disable this if there are rendering issues.
+// Reuse a single Emotion cache across SSR to speed up performance.
+// Disable if you run into rendering issues.
 const ssrEmotionCache = createEmotionCache();
 
-// `getInitialProps` belongs to `_document` (instead of `_app`),
-// it's compatible with static-site generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //

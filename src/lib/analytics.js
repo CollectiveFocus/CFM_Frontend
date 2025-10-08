@@ -1,5 +1,5 @@
 /**
- * Analytics tracking.
+ * Google Analytics module.
  * @module lib/analytics
  *
  * From https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics
@@ -8,9 +8,9 @@
 /**
  * @constant {string} TRACKING_ID - Analytics tracking id.
  *
- * Local, Staging, and Production each have their own id. Therefore the id is set in the envirnoment configurion.
+ * Local, Staging, and Production each have their own id. Therefore the id is set in the environment configuration.
  */
-const TRACKING_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+const TRACKING_ID = process.env?.NEXT_PUBLIC_ANALYTICS_ID ?? '';
 
 /**
  * Track a view for the specified URL.
@@ -29,6 +29,4 @@ const event = (type, parameters) => {
   window.gtag('event', type, parameters);
 };
 
-const GoogleAnalytics = { TRACKING_ID, view, event };
-
-export default GoogleAnalytics;
+export default Object.freeze({ TRACKING_ID, view, event });
