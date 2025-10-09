@@ -18,13 +18,9 @@ export default function FridgePage(props) {
     </>
   );
 }
-FridgePage.propTypes = FridgeInformation.propTypes
-
-
+FridgePage.propTypes = FridgeInformation.propTypes;
 
 const baseUrl = process.env.NEXT_PUBLIC_FF_API_URL + '/v1/fridges/';
-
-
 
 async function getAllFridgeIds() {
   return fetch(baseUrl, { headers: { Accept: 'application/json' } })
