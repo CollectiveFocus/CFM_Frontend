@@ -1,23 +1,33 @@
 import PropTypes from 'prop-types';
 
-import Image from 'next/legacy/image';
-import Link from 'next/link';
-
-import { Button, List, ListItem, Stack, Typography } from '@mui/material';
+import { List, ListItem, Stack, Typography } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
 } from '@mui/icons-material';
-
+import { ButtonLink } from 'components/atoms';
 import typesView from 'model/view/prop-types';
+function formatDate(isoString) {
+  const msSinceEpoch = Date.parse(isoString);
+  return new Date(msSinceEpoch).toLocaleDateString([], {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
 
 function Location({ location }) {
   return (
     <Stack direction="row" spacing={3} alignItems="center">
       <LocationOnOutlinedIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
-        {`${location.street} ${location.city}, ${location.state} ${location.zip}`}
+        {location.street}
+        <br />
+        {location.city}, {location.state}
+        {location.zip}
       </Typography>
     </Stack>
   );
@@ -48,7 +58,7 @@ function LastUpdate({ date }) {
     <Stack direction="row" spacing={3} alignItems="center">
       <CalendarIcon />
       <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
-        Last Update: {date.toLocaleDateString()}
+        Last Update: {formatDate(date)}
       </Typography>
     </Stack>
   );
@@ -80,28 +90,25 @@ export default function FridgeList({ fridges }) {
                   <LastUpdate date={fridge.report.timestamp} />
                 ) : null}
               </Stack>
-              {fridge.photoUrl ? (
-                <Stack flex={1}>
-                  <Image
-                    src={fridge.photoUrl}
-                    alt="Picture of the fridge"
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                    objectFit="contain"
-                  />
-                </Stack>
-              ) : null}
             </Stack>
-            <Button
-              href={`/fridge/${fridge.id}`}
-              component="a"
-              LinkComponent={Link}
-              variant="contained"
-              sx={{ fontSize: ['1rem'] }}
-            >
-              More Info
-            </Button>
+            <Stack direction="row" width="100" spacing={3}>
+              <ButtonLink
+                variant="contained"
+                to={`/fridge/${fridge.id}`}
+                aria-label={'Details on ' + fridge.name}
+                sx={{ fontSize: ['1rem'] }}
+              >
+                More Info
+              </ButtonLink>
+              <ButtonLink
+                variant="contained"
+                to={`/user/fridge/report/${fridge.id}`}
+                aria-label={'Details on ' + fridge.name}
+                sx={{ fontSize: ['1rem'] }}
+              >
+                Update Status
+              </ButtonLink>
+            </Stack>
           </Stack>
         </ListItem>
       ))}
