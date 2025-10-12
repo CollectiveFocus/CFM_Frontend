@@ -198,9 +198,8 @@ function ReportForm({ formik, fridgeId }) {
               aria-label="Return to map page"
               variant="outlined"
               to="/browse"
-            >
-              Cancel
-            </ButtonLink>
+              title="Cancel"
+            />
             <Button
               aria-label="Submit status update"
               variant="contained"

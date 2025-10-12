@@ -9,7 +9,7 @@ jest.mock('next/router', () => ({
 
 jest.mock('components/atoms/ButtonLink', () => ({
   __esModule: true,
-  default: ({ to, children, ...props }) => (
+  default: ({ to, ...props }) => (
     <a
       href={to}
       {...props}
@@ -18,7 +18,7 @@ jest.mock('components/atoms/ButtonLink', () => ({
         pushMock(to); // trigger spy
       }}
     >
-      {children}
+      {props.title}
     </a>
   ),
 }));

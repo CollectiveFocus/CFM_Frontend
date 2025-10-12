@@ -133,9 +133,8 @@ function ContactForm({ formik }) {
               aria-label="Click to return to home page"
               variant="outlined"
               to="/"
-            >
-              Cancel
-            </ButtonLink>
+              title="Cancel"
+            />
             <Button
               aria-label="Click to send an email to Fridge Finder"
               variant="contained"

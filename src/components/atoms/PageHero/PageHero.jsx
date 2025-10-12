@@ -28,9 +28,8 @@ export default function PageHero({ img, button }) {
             fontColor: 'white',
             boxShadow: 8,
           }}
-        >
-          {button.title}
-        </ButtonLink>
+          title={button.title}
+        />
       )}
     </Box>
   );

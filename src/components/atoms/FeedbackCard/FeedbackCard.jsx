@@ -84,9 +84,8 @@ export default function FeedbackCard({ form, slug = null }) {
         variant="contained"
         size="wide"
         sx={{ mt: 8, mb: 2 }}
-      >
-        BACK TO HOME
-      </ButtonLink>
+        title="BACK TO HOME"
+      />
     ),
     FridgeStatusSuccess: (
       <ButtonLink
@@ -95,9 +94,8 @@ export default function FeedbackCard({ form, slug = null }) {
         variant="contained"
         size="wide"
         sx={{ mt: 8, mb: 2 }}
-      >
-        GO TO FRIDGE
-      </ButtonLink>
+        title="GO TO FRIDGE"
+      />
     ),
     Error: (
       <Button
@@ -118,18 +116,16 @@ export default function FeedbackCard({ form, slug = null }) {
           variant="contained"
           size="wide"
           sx={{ mt: 8, mb: 2 }}
-        >
-          GO TO FRIDGE
-        </ButtonLink>
+          title="GO TO FRIDGE"
+        />
         <ButtonLink
           to="#"
           aria-label="Edit Fridge details"
           variant="outlined"
           size="wide"
           sx={{ mb: 2, mt: 6 }}
-        >
-          EDIT FRIDGE
-        </ButtonLink>
+          title="EDIT FRIDGE"
+        />
       </>
     ),
   };

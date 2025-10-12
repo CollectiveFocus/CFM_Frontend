@@ -31,18 +31,16 @@ export default function MapMarkerList({ markerDataList }) {
               aria-label={'Details on ' + fridgeName}
               sx={{ fontSize: ['small'] }}
               style={{ color: 'white' }}
-            >
-              More Info
-            </ButtonLink>
+              title={'More Info'}
+            />
             <ButtonLink
               variant="contained"
               to={`/user/fridge/report/${id}`}
               aria-label={'Details on ' + fridgeName}
               sx={{ fontSize: ['small'] }}
               style={{ color: 'white' }}
-            >
-              Update Status
-            </ButtonLink>
+              title={'Update Status'}
+            />
           </Stack>
         </Popup>
       </Marker>
