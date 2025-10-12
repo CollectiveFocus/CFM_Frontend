@@ -3,15 +3,27 @@ import { Button } from '@mui/material';
 import { NextLink } from 'components/atoms';
 
 export default function ButtonLink(props) {
-  return <Button component={NextLink} {...props} />;
+  const { title, ...buttonProps } = props;
+  return (
+    <Button component={NextLink} {...buttonProps}>
+      {title}
+    </Button>
+  );
 }
 
-const toPathname = PropTypes.shape({
+const toPathname = PropTypes.exact({
   pathname: PropTypes.string.isRequired,
   query: PropTypes.object.isRequired,
 });
 
 ButtonLink.propTypes = {
+  /**
+   * The title of the button.
+   *
+   * title='GO TO FRIDGE'
+   */
+  title: PropTypes.string.isRequired,
+
   /**
    * The URL or pathname object to navigate to.
    *

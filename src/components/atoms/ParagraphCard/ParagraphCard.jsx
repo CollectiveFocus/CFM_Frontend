@@ -44,9 +44,8 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
             variant="outlined"
             aria-label={title}
             sx={{ width: '100%', maxWidth: '345px', mt: 4 }}
-          >
-            LEARN MORE
-          </ButtonLink>
+            title={'LEARN MORE'}
+          />
         </CardContent>
       </Card>
     );
@@ -78,9 +77,8 @@ export default function ParagraphCard({ variant, img, title, text, link }) {
               maxWidth: '345px',
               mx: 'auto',
             }}
-          >
-            LEARN MORE
-          </ButtonLink>
+            title={'LEARN MORE'}
+          />
         </CardActions>
       </Card>
     );

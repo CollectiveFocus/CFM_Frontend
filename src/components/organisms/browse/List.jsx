@@ -97,17 +97,15 @@ export default function FridgeList({ fridges }) {
                 to={`/fridge/${fridge.id}`}
                 aria-label={'Details on ' + fridge.name}
                 sx={{ fontSize: ['1rem'] }}
-              >
-                More Info
-              </ButtonLink>
+                title={'More Info'}
+              />
               <ButtonLink
                 variant="contained"
                 to={`/user/fridge/report/${fridge.id}`}
                 aria-label={'Details on ' + fridge.name}
                 sx={{ fontSize: ['1rem'] }}
-              >
-                Update Status
-              </ButtonLink>
+                title={'Update Status'}
+              />
             </Stack>
           </Stack>
         </ListItem>

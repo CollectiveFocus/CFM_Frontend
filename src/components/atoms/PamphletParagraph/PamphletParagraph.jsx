@@ -52,9 +52,8 @@ export default function PamphletParagraph({
             size="wide"
             to={button.to}
             aria-label={button['aria-label']}
-          >
-            {button.title}
-          </ButtonLink>
+            title={button.title}
+          />
         </Box>
       )}
     </Box>
