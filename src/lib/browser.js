@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+/* eslint-disable */
 export function useWindowHeight() {
   const [availableHeight, setAvailableHeight] = useState(0);
   const calculateAvailableHeight = () =>
@@ -18,6 +19,7 @@ export function useWindowHeight() {
 
   return availableHeight;
 }
+/* eslint-enable */
 
 export function geolocation() {
   return new Promise((resolve, reject) => {

@@ -1,4 +1,4 @@
-const rxPunctuationAndDigits = /[.,\/#!$%\^&\*;:{}=\-_`~()\'\d]/g;
+const rxPunctuationAndDigits = /[.,/#!$%^&*;:{}=\-_`~()'\d]/g;
 
 export function wordRank(sentences, excludedWords) {
   const words = sentences

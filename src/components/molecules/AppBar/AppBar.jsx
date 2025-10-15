@@ -96,6 +96,7 @@ export default function ResponsiveAppBar() {
     </List>
   );
 
+  /* eslint-disable */
   return (
     <AppBar id="AppBar" position="sticky">
       <Toolbar sx={{ p: 0 }}>

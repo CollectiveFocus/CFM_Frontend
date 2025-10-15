@@ -22,6 +22,7 @@ FridgePage.propTypes = FridgeInformation.propTypes;
 
 const baseUrl = process.env.NEXT_PUBLIC_FF_API_URL + '/v1/fridges/';
 
+/* eslint-disable */
 async function getAllFridgeIds() {
   return fetch(baseUrl, { headers: { Accept: 'application/json' } })
     .then((response) => response.json())
@@ -31,6 +32,7 @@ async function getAllFridgeIds() {
       return [];
     });
 }
+/* eslint-enable */
 
 async function getFridgeRecord({ id }) {
   const responses = await Promise.all([

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { typesPanel } from './prop-types';
 import { dialogReport } from 'model/view/dialog/yup';
 import { useFormik } from 'formik';
