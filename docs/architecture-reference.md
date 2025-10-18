@@ -82,6 +82,8 @@ fridge photo
 
 - Testing: [Jest](https://jestjs.io/docs/api), [React Testing Library](https://testing-library.com/docs/)
 
+- State Management: [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
+
 ## Design philosophy
 
 - [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)

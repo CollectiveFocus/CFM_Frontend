@@ -75,7 +75,8 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-leaflet": "^5.0.0",
-    "yup": "^1.7.1"
+    "yup": "^1.7.1",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
