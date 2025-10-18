@@ -84,6 +84,8 @@ fridge photo
 
 - State Management: [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
 
+- Fuzzy Search: [fuze.js](https://www.fusejs.io/)
+
 ## Design philosophy
 
 - [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)
