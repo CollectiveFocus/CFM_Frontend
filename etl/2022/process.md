@@ -17,7 +17,7 @@
 
 ## data acceptance criteria
 
-- address
+- address (searchable)
   - contains: house number, street, city, state, zip
   - maps to a specific geographic point
   - has geoLat, geoLng
@@ -37,7 +37,7 @@
 - fridgeTags
 - fridgePhotoUrl
 - fridgeNotes
-- fridgeVerified
+- fridgeStatus: ['good', 'dirty', 'out of order', 'not at location', 'ghost']
 - locationName
 - locationStreet
 - locationCity
