@@ -41,7 +41,7 @@ const legendItems = [
   { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs servicing' },
   {
     icon: ghost(pinColor.fridgeGhost),
-    title: 'Ghost Fridge - icon disabled momentarily',
+    title: 'Ghost Fridge - Icon disabled momentarily',
   },
 ];
 
