@@ -39,6 +39,11 @@ async function fetchAllData() {
 const castOptions = { stripUnknown: true };
 function cacheAllData({ fridges }) {
   for (const fridge of fridges) {
+    // Filter out fridges with ghost condition
+    if (fridge.latestFridgeReport?.condition === 'ghost') {
+      continue;
+    }
+
     const id = fridge.id;
     fridgeCache[id] = ValuesFridge.cast(fridge, castOptions);
     fridgeCache[id]['report'] = null;

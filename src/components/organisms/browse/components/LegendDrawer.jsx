@@ -39,7 +39,10 @@ const legendItems = [
   { icon: unavailable(pinColor.fridgeNotAtLocation), title: 'Not at location' },
   { icon: dirty(pinColor.fridgeOperation), title: 'Needs cleaning' },
   { icon: outOfOrder(pinColor.fridgeOperation), title: 'Needs servicing' },
-  { icon: ghost(pinColor.fridgeGhost), title: 'Ghost Fridge' },
+  {
+    icon: ghost(pinColor.fridgeGhost),
+    title: 'Ghost Fridge - icon disabled momentarily',
+  },
 ];
 
 const aboveFoldLegendItems = 6;
