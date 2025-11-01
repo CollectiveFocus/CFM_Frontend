@@ -1,0 +1,30 @@
+flowchart TD
+    subgraph Extract
+        Freedge[CSV File: customer_data.csv]
+        A2[API: /users endpoint]
+        Freedge --> B1[Extract: Name, Email, DOB]
+        A2 --> B2[Extract: ID, SignupDate, Country]
+        A3 --> B2
+    end
+
+    subgraph Transform
+        B1 --> C1[Clean Name → Trim + Capitalize]
+        B1 --> C2[Validate Email → Regex]
+        B1 --> C3[Parse DOB → YYYY-MM-DD]
+        B2 --> C4[Map ID → CustomerID]
+        B2 --> C5[Format SignupDate → ISO 8601]
+        B2 --> C6[Normalize Country → ISO Alpha-2]
+    end
+
+    subgraph Load
+        C1 --> D1[Load → Data Warehouse]
+        C2 --> D1
+        C3 --> D1
+        C4 --> D1
+        C5 --> D1
+        C6 --> D1
+    end
+
+    style Extract fill:#f9f,stroke:#333,stroke-width:1px
+    style Transform fill:#bbf,stroke:#333,stroke-width:1px
+    style Load fill:#bfb,stroke:#333,stroke-width:1px
