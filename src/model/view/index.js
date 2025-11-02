@@ -31,10 +31,15 @@ function viewFridgeFromLocal(apiFridge) {
   return viewFridge;
 }
 
-function viewFridgeFromRemote(apiFridge) {
-  const report = apiFridge.latestFridgeReport ?? null;
+export function viewFridgeFromRemote(apiFridge) {
   const viewFridge = ValuesFridge.cast(apiFridge, castOptions);
-  viewFridge['report'] = ValuesReport.cast(report, castOptions);
+  if (apiFridge.latestFridgeReport) {
+    viewFridge['report'] = Object.freeze(
+      ValuesReport.cast(apiFridge.latestFridgeReport, castOptions)
+    );
+  } else {
+    viewFridge['report'] = null;
+  }
   return viewFridge;
 }
 
