@@ -1,0 +1,262 @@
+{
+  "fridges": [
+    {
+      "id": "barriofridge1",
+      "name": "Barrio Fridge #1",
+      "verified": false,
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thebarriofridge",
+        "website": "https://thebarriofridge.com/",
+        "email": "volunteers@thebarriofridge.com"
+      },
+      "location": {
+        "street": "339 East 108th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10029",
+        "geoLat": 40.7911604,
+        "geoLng": -73.9393979
+      },
+      "photoUrl": "/feedback/happyFridge.svg"
+    },
+    {
+      "name": "Barrio Fridge #2",
+      "id": "barriofridge2",
+      "verified": false,
+      "maintainer": {
+        "instagram": "https://www.instagram.com/thebarriofridge",
+        "website": "https://thebarriofridge.com/",
+        "email": "volunteers@thebarriofridge.com"
+      },
+      "location": {
+        "street": "314 East 106th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10029",
+        "geoLat": 40.78999785,
+        "geoLng": -73.94161519709277
+      },
+      "photoUrl": "/feedback/happyFridge.svg"
+    },
+    {
+      "id": "harlemcommunityfridge",
+      "name": "Harlem Community Fridge",
+      "verified": false,
+      "location": {
+        "street": "352 West 116th Street",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10026",
+        "geoLat": 40.8049571,
+        "geoLng": -73.9570766,
+        "name": "Ralph & Nash Deli"
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/theharlemcommunityfridge"
+      },
+      "photoUrl": "/feedback/happyFridge.svg"
+    },
+    {
+      "id": "livinggallery",
+      "name": "Living Gallery",
+      "location": {
+        "street": "1094 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.694207,
+        "geoLng": -73.930599
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/the_living_gallery",
+        "website": "http://linktr.ee/Thelivinggallery"
+      },
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/96c3a513-17b3-4760-983b-3ae7525d5deb.webp",
+      "last_edited": "1667513900",
+      "verified": false,
+      "latestFridgeReport": {
+        "fridgeId": "livinggallery",
+        "epochTimestamp": "1761978261",
+        "timestamp": "2025-11-01T06:24:21Z",
+        "condition": "ghost",
+        "foodPercentage": 1
+      }
+    },
+    {
+      "id": "B1hnEb",
+      "name": "Saticoy Community Fridge",
+      "location": {
+        "street": "1297 Los Angeles Ave",
+        "city": "Ventura",
+        "state": "CA",
+        "zip": "93004",
+        "geoLat": 34.28325936261995,
+        "geoLng": -119.14829879997373
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/saticoycommunityfridge",
+        "website": "https://linktr.ee/saticoyfarmersmarket"
+      },
+      "notes": "HOURS: Tuesday - Thursday 1:00-6:00 pm",
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/9892402a-bf19-44b8-8c66-1753b66327ef.webp",
+      "last_edited": "1761935232",
+      "verified": true
+    },
+    {
+      "id": "collectivefocusresourcehub",
+      "name": "Collective Focus Resource Hub",
+      "location": {
+        "street": "1046 Broadway",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11221",
+        "geoLat": 40.695189,
+        "geoLng": -73.932345
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/collectivefocushub"
+      },
+      "last_edited": "1667513829",
+      "verified": false,
+      "latestFridgeReport": {
+        "fridgeId": "collectivefocusresourcehub",
+        "epochTimestamp": "1761978283",
+        "timestamp": "2025-11-01T06:24:43Z",
+        "condition": "dirty",
+        "foodPercentage": 3
+      },
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/collective_focus_reg.webp"
+    },
+    {
+      "id": "GBLYop",
+      "name": "In Our Own Voices Fridge",
+      "location": {
+        "street": "245 Lark Street",
+        "city": "Albany",
+        "state": "NY",
+        "zip": "12210",
+        "geoLat": 42.65453292702118,
+        "geoLng": -73.76578349271105
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/ioov245",
+        "website": "https://ioov.org/"
+      },
+      "notes": "Strengthening and empowering LGBTQIA+ BIPOC communities",
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/bc9f7e57-caec-4174-96ba-8b955892e81c.webp",
+      "last_edited": "1761969993",
+      "verified": true
+    },
+    {
+      "id": "copohalalcommunityfridge",
+      "name": "COPO Halal Community Fridge",
+      "location": {
+        "street": "1077 Coney Island Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "11230",
+        "geoLat": 40.6313315,
+        "geoLng": -73.96621703154759
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/copousa"
+      },
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/e2cf8333-7a02-458e-94b8-c4bae89bf691.webp",
+      "last_edited": "1667513821",
+      "verified": false
+    },
+    {
+      "id": "gDhkUw",
+      "name": "1Pulaski - Bed-Stuy",
+      "location": {
+        "street": "1 Pulaski St",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11206",
+        "geoLat": 40.69234036135249,
+        "geoLng": -73.95144788611046
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/1pulaski/"
+      },
+      "notes": "Community fridge, library, and wifi!",
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/3d58a177-9cf7-4159-a134-ab00aa5ac48a.webp",
+      "last_edited": "1761927647",
+      "verified": true
+    },
+    {
+      "id": "cKErB1",
+      "name": "KWT Fridge",
+      "location": {
+        "street": "327 E 5th St",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11218",
+        "geoLat": 40.64436084638691,
+        "geoLng": -73.97530234598224
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/kwtfridge/",
+        "website": "https://www.kwtmutualaid.com/get-involved/fridge"
+      },
+      "notes": "🍏 Fridge: Church Ave btwn Ocean Parkway & East 5th",
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/149d1240-69a3-4963-9d12-efc64bbcb46e.webp",
+      "last_edited": "1761958757",
+      "verified": true
+    },
+    {
+      "id": "Vt4Ilq",
+      "name": "Hope Community Fridge - East Ridge",
+      "location": {
+        "street": "720 S Germantown Rd",
+        "city": "East Ridge",
+        "state": "TN",
+        "zip": "37412",
+        "geoLat": 35.00992892392512,
+        "geoLng": -85.25336184285138
+      },
+      "maintainer": {
+        "instagram": "https://www.instagram.com/hopecommunityfridge",
+        "website": "https://linktr.ee/hopecommunityfridge"
+      },
+      "notes": "💪🥫Fighting food insecurity & waste🥬✨. We are a 🌈 Mutual Aid.",
+      "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/9604c861-2bca-494b-8a8c-ba782052e38a.webp",
+      "last_edited": "1761931949",
+      "verified": true
+    }
+  ],
+  "reports": [
+    {
+      "fridgeId": "barriofridge1",
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "condition": "dirty",
+      "foodPercentage": 1,
+      "photoUrl": "/card/paragraph/pearTomatoAndFridge.svg",
+      "notes": "Voluptatibus aut quaerat."
+    },
+    {
+      "fridgeId": "barriofridge2",
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "condition": "out of order",
+      "foodPercentage": 2,
+      "photoUrl": "/card/paragraph/pearTomatoAndFridge.svg",
+      "notes": "Voluptatibus aut quaerat."
+    },
+    {
+      "condition": "good",
+      "notes": "",
+      "foodPercentage": 3,
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "fridgeId": "collectivefocusresourcehub"
+    },
+    {
+      "condition": "good",
+      "notes": "",
+      "foodPercentage": 2,
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "fridgeId": "harlemcommunityfridge"
+    }
+  ],
+  "contact": [],
+  "photo": []
+}
