@@ -1,7 +1,17 @@
 import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup/index.js';
 
-// in memory cache
+/**
+ * An in-memory cache array that stores the list of fridge records.
+ * This array is used to maintain a cached collection of fridge data to avoid unnecessary API calls.
+ * The array elements are sorted by fridge name in ascending order.
+ * @private
+ */
 const cacheViewFridgeList = [];
+
+/**
+ * Lookup dictionary mapping fridge id to the cached fridge record stored in cacheViewFridgeList
+ * @private
+ */
 const viewFridgeFor = {};
 
 export async function getFridgeList() {
@@ -31,7 +41,7 @@ function viewFridgeFromLocal(apiFridge) {
   return viewFridge;
 }
 
-export function viewFridgeFromRemote(apiFridge) {
+function viewFridgeFromRemote(apiFridge) {
   const viewFridge = ValuesFridge.cast(apiFridge, castOptions);
   if (apiFridge.latestFridgeReport) {
     viewFridge['report'] = Object.freeze(
@@ -43,21 +53,23 @@ export function viewFridgeFromRemote(apiFridge) {
   return viewFridge;
 }
 
-function loadIntoCache({ fridges }, fnConverter) {
+function loadIntoCache(fridges, fnConverter) {
   cacheViewFridgeList.length = fridges.length;
 
   for (let n = 0; n < fridges.length; n++) {
-    const apiFridge = fridges[n];
-    viewFridgeFor[apiFridge.id] = cacheViewFridgeList[n] =
-      fnConverter(apiFridge);
+    const currentFridge = fridges[n];
+
+    viewFridgeFor[currentFridge.id] = cacheViewFridgeList[n] =
+      fnConverter(currentFridge);
   }
+
   cacheViewFridgeList.sort(sortByNameAsc);
 }
 
-function mergeIntoCache({ reports }) {
-  for (const apiReport of reports) {
-    viewFridgeFor[apiReport.fridgeId].report = Object.freeze(
-      ValuesReport.cast(apiReport, castOptions)
+function mergeIntoCache(reports) {
+  for (const currentReport of reports) {
+    viewFridgeFor[currentReport.fridgeId].report = Object.freeze(
+      ValuesReport.cast(currentReport, castOptions)
     );
   }
 }
@@ -74,37 +86,32 @@ async function fetchAllData() {
   }
 }
 
-function fetchAllServerData() {
-  return fetch(apiFridges, apiHeader)
-    .then((response) => {
-      if (!response.ok) {
-        throw `ERROR ${response.url} ${response.status}: ${response.statusText}`;
-      }
-      return response.json();
-    })
-    .then((fridges) => loadIntoCache({ fridges }, viewFridgeFromRemote))
-    .catch((error) => console.error(error));
+async function fetchAllServerData() {
+  try {
+    const response = await fetch(apiFridges, apiHeader);
+    const fridges = await response.json();
+    return loadIntoCache(fridges, viewFridgeFromRemote);
+  } catch (error) {
+    return console.error(error);
+  }
 }
 
 async function fetchAllLocalData() {
-  const responses = await Promise.all([
-    fetch(apiFridges, apiHeader),
-    fetch(apiReports, apiHeader),
-  ]);
-  let fetchOK = true;
-  for (const response of responses) {
-    if (!response.ok) {
-      fetchOK = false;
-      console.error(
-        `ERROR ${response.url} ${response.status}: ${response.statusText}`
-      );
-    }
+  try {
+    const fridgesResponse = await fetch(apiFridges, apiHeader);
+    const fridges = await fridgesResponse.json();
+    loadIntoCache(fridges, viewFridgeFromLocal);
+  } catch (error) {
+    console.error('Failed to fetch fridges:', error);
+    return;
   }
-  if (fetchOK) {
-    const [fridges, reports] = await Promise.all(
-      responses.map((response) => response.json())
-    );
-    loadIntoCache({ fridges }, viewFridgeFromLocal);
-    mergeIntoCache({ reports });
+
+  try {
+    const reportsResponse = await fetch(apiReports, apiHeader);
+    const reports = await reportsResponse.json();
+    mergeIntoCache(reports);
+  } catch (error) {
+    console.error('Failed to fetch reports:', error);
+    return;
   }
 }
