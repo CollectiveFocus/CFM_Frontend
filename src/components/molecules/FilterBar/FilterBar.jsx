@@ -1,73 +1,14 @@
 import PropTypes from 'prop-types';
 import { Chip, Stack } from '@mui/material';
-import { useState } from 'react';
-import {
-  MapLegendConditionDirtyIcon,
-  MapLegendConditionOutOfOrderIcon,
-  MapLegendPinLocationIcon,
-  MapLegendPinNotAtLocationIcon,
-  MapLegendPinNoReportIcon,
-  MapLegendPinGhostIcon,
-} from 'theme/icons';
-import { pinColor } from 'theme/palette';
+import palette from 'theme/palette';
+import { useFilterStore } from 'model/view/filterStore';
+import { filterButtonConfig } from './filterButtonConfig';
 
-// These buttons appear on mobile at the top of the screen when the user is viewing the map. They add or remove map pins based on their categories.
+/**
+ * FilterBar component - Mobile filter buttons for map pins
+ * Appears at the top of the screen and allows users to toggle pin categories
+ */
 export default function FilterBar() {
-  const buttons = [
-    {
-      text: 'Full',
-      iconColor: pinColor.itemsFull,
-      icon: <MapLegendPinLocationIcon />,
-    },
-    {
-      text: 'Many Items',
-      iconColor: pinColor.itemsMany,
-      icon: <MapLegendPinLocationIcon />,
-    },
-    {
-      text: 'Few Items',
-      iconColor: pinColor.itemsFew,
-      icon: <MapLegendPinLocationIcon />,
-    },
-    {
-      text: 'Empty ',
-      iconColor: pinColor.itemsEmpty,
-      icon: <MapLegendPinLocationIcon />,
-    },
-    {
-      text: 'No Data Yet',
-      iconColor: pinColor.fridgeNotAtLocation,
-      icon: <MapLegendPinNoReportIcon />,
-    },
-    {
-      text: 'Unavailable',
-      iconColor: pinColor.reportUnavailable,
-      icon: <MapLegendPinNotAtLocationIcon />,
-    },
-    {
-      text: 'Needs Cleaning',
-      iconColor: pinColor.fridgeOperation,
-      icon: <MapLegendConditionDirtyIcon />,
-    },
-    {
-      text: 'Needs Servicing',
-      iconColor: pinColor.fridgeOperation,
-      icon: <MapLegendConditionOutOfOrderIcon />,
-    },
-    {
-      text: 'Ghost Fridge',
-      iconColor: pinColor.fridgeGhost,
-      icon: <MapLegendPinGhostIcon />,
-    },
-  ];
-
-  const setDefaultSelections = (button) => {
-    if (button.text === 'Ghost Fridge' || button.text === 'Unavailable') {
-      return false;
-    }
-    return true;
-  };
-
   return (
     <Stack
       direction="row"
@@ -83,38 +24,39 @@ export default function FilterBar() {
         zIndex: 410,
       }}
     >
-      {buttons.map((button, index) => (
+      {filterButtonConfig.map((config) => (
         <FilterPillButton
-          key={button.text + index}
-          icon={button.icon}
-          iconColor={button.iconColor}
-          text={button.text}
-          defaultIsSelected={setDefaultSelections(button)}
+          key={config.filterType}
+          filterType={config.filterType}
+          icon={config.icon}
+          text={config.text}
         />
       ))}
     </Stack>
   );
 }
 
-function FilterPillButton({ icon, text, iconColor, defaultIsSelected }) {
-  const [isSelected, setIsSelected] = useState(defaultIsSelected);
-
-  const getBackgroundColor = () => {
-    if (isSelected === true) {
-      return '#fff';
-    }
-    return '#D8D8D8';
-  };
+/**
+ * FilterPillButton - Individual filter button with Zustand state management
+ */
+function FilterPillButton({ filterType, text, icon: IconComponent }) {
+  const toggleFilter = useFilterStore((state) => state.toggleFilter);
+  const isPillEnabled = useFilterStore((state) =>
+    state.isFilterEnabled(filterType)
+  );
 
   const handleClick = () => {
-    setIsSelected((currentState) => !currentState);
-    // TODO Add filter map function call here -- Sean
+    toggleFilter(filterType);
   };
+
+  const backgroundColor = isPillEnabled
+    ? palette.pill.enabled
+    : palette.pill.disabled;
 
   return (
     <Chip
       onClick={handleClick}
-      icon={icon}
+      icon={<IconComponent />}
       label={text}
       sx={{
         display: 'flex',
@@ -122,33 +64,33 @@ function FilterPillButton({ icon, text, iconColor, defaultIsSelected }) {
         alignItems: 'center',
         flex: '1 0 auto',
         padding: '18px 0px',
-        background: `${getBackgroundColor()}`,
-        border: '1px solid #F3F3F3',
-        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.4);',
+        background: backgroundColor,
+        border: '1px solid ' + palette.pill.border,
+        boxShadow: '0px 4px 4px ' + palette.pill.shadow,
         borderRadius: '40px',
         whiteSpace: 'nowrap',
         '& .MuiChip-icon': {
-          color: iconColor,
           margin: 0,
           fontSize: '38px',
         },
         '& .MuiChip-label': {
-          margin: 0,
-          padding: '0 10.5px 0 0',
+          padding: 0,
+          paddingRight: '10.5px',
           fontSize: '14px',
-          textTransform: 'Capitalize',
+          textTransform: 'capitalize',
         },
         '&:hover': {
-          background: `${getBackgroundColor()}`,
-          border: '1px solid #F3F3F3',
+          background: backgroundColor,
+          border: '1px solid ' + palette.pill.border,
         },
       }}
     />
   );
 }
+
 FilterPillButton.propTypes = {
-  icon: PropTypes.element.isRequired,
+  filterType: PropTypes.number.isRequired,
+  icon: PropTypes.elementType.isRequired,
   text: PropTypes.string.isRequired,
   iconColor: PropTypes.string.isRequired,
-  defaultIsSelected: PropTypes.bool.isRequired,
 };

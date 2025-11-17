@@ -55,6 +55,13 @@ const palette = {
     disabled: designColor.magneticGray,
     hint: applyAlpha('cc', designColor.neroGray),
   },
+  // todo: `pill` is not part of MUI style and needs to be refactored out
+  pill: {
+    enabled: designColor.white,
+    disabled: designColor.lightSilver,
+    border: '#F3F3F3',
+    shadow: applyAlpha('66', designColor.black),
+  },
   icon: applyAlpha('cc', designColor.neroGray),
   divider: designColor.neroGray,
 };
