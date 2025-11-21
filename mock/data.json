@@ -230,7 +230,7 @@
       "fridgeId": "barriofridge1",
       "timestamp": "2022-11-10T08:35:17.902Z",
       "condition": "dirty",
-      "foodPercentage": 1,
+      "foodPercentage": 3,
       "photoUrl": "/card/paragraph/pearTomatoAndFridge.svg",
       "notes": "Voluptatibus aut quaerat."
     },
@@ -243,18 +243,31 @@
       "notes": "Voluptatibus aut quaerat."
     },
     {
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 3,
+      "fridgeId": "collectivefocusresourcehub",
       "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "collectivefocusresourcehub"
+      "foodPercentage": 1,
+      "condition": "good"
     },
     {
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 2,
+      "fridgeId": "harlemcommunityfridge",
       "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "harlemcommunityfridge"
+      "foodPercentage": 0,
+      "condition": "good",
+      "notes": ""
+    },
+    {
+      "fridgeId": "gDhkUw",
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "foodPercentage": 0,
+      "condition": "not at location",
+      "notes": ""
+    },
+    {
+      "fridgeId": "livinggallery",
+      "timestamp": "2022-11-10T08:35:17.902Z",
+      "foodPercentage": 0,
+      "condition": "ghost",
+      "notes": ""
     }
   ],
   "contact": [],

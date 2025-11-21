@@ -60,6 +60,10 @@ function UpdateCenter({ fridgeList }) {
 }
 
 export default function Map({ fridgeList }) {
+  console.log('dbg>> Map.jsx:63 - fridgeList:', fridgeList);
+  if ( !fridgeList ) {
+    return null
+  }
   return (
     <>
       <MapContainer

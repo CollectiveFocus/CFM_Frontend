@@ -14,6 +14,8 @@ import { MapToggle } from 'components/atoms/';
 import { FilterBar } from 'components/molecules/';
 
 import { getFridgeList } from 'model/view';
+import { useFilterStore } from 'model/view/filterStore';
+
 import { useWindowHeight } from 'lib/browser';
 
 const DynamicMap = dynamic(
@@ -22,7 +24,10 @@ const DynamicMap = dynamic(
   },
   { ssr: false }
 );
-const BrowseMap = (props) => <DynamicMap {...props} />;
+const BrowseMap = (props) => {
+  console.log('dbg>> browse.page.jsx:28 - props:', props);
+  return <DynamicMap {...props} />;
+};
 
 const ProgressIndicator = (
   <div
@@ -37,13 +42,15 @@ const ProgressIndicator = (
   </div>
 );
 
-let fridgeList = null;
 export default function BrowsePage() {
+  let fridgeList = null;
   const [hasDataLoaded, setHasDataLoaded] = useState(false);
   const [currentView, setCurrentView] = useState(MapToggle.view.map);
 
   const availableHeight = useWindowHeight();
   const isWindowDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
+
+  const filters = useFilterStore((state) => state.filters);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +58,7 @@ export default function BrowsePage() {
       setHasDataLoaded(true);
     };
     fetchData().catch(console.error);
-  }, []);
+  }, [filters]);
 
   const Map = hasDataLoaded
     ? BrowseMap({

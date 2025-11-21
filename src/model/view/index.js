@@ -1,4 +1,6 @@
-import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup/index.js';
+import { ValuesFridge, ValuesReport } from 'model/data/fridge/yup';
+
+import { filterByReport } from './reportFilter';
 
 /**
  * An in-memory cache array that stores the list of fridge records.
@@ -18,7 +20,12 @@ export async function getFridgeList() {
   if (cacheViewFridgeList.length === 0) {
     await fetchAllData();
   }
-  return cacheViewFridgeList;
+  const filteredList = cacheViewFridgeList.filter((fridge) =>
+    filterByReport(fridge)
+  );
+
+  console.log('dbg>> index.js:21 - filteredList:', filteredList);
+  return filteredList;
 }
 
 const sortByNameAsc = (a, b) => {

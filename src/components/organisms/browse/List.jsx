@@ -68,50 +68,54 @@ LastUpdate.propTypes = {
 };
 
 export default function FridgeList({ fridges }) {
-  return (
-    <List>
-      {fridges.map((fridge, fridgeIndex) => (
-        <ListItem
-          key={fridge.id}
-          divider={fridgeIndex !== fridges.length - 1}
-          sx={{ paddingY: 5.5, paddingX: 0 }}
-        >
-          <Stack direction="column" spacing={3} width="100%">
-            <Stack direction="row" spacing={3}>
-              <Stack direction="column" spacing={3} flex={1}>
-                <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
-                  {fridge.name}
-                </Typography>
-                <Location location={fridge.location} />
-                {fridge.maintainer?.instagram ? (
-                  <Instagram instagramUrl={fridge.maintainer.instagram} />
-                ) : null}
-                {fridge.report ? (
-                  <LastUpdate date={fridge.report.timestamp} />
-                ) : null}
+  if (!fridges) {
+    return null;
+  } else {
+    return (
+      <List>
+        {fridges.map((fridge, fridgeIndex) => (
+          <ListItem
+            key={fridge.id}
+            divider={fridgeIndex !== fridges.length - 1}
+            sx={{ paddingY: 5.5, paddingX: 0 }}
+          >
+            <Stack direction="column" spacing={3} width="100%">
+              <Stack direction="row" spacing={3}>
+                <Stack direction="column" spacing={3} flex={1}>
+                  <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
+                    {fridge.name}
+                  </Typography>
+                  <Location location={fridge.location} />
+                  {fridge.maintainer?.instagram ? (
+                    <Instagram instagramUrl={fridge.maintainer.instagram} />
+                  ) : null}
+                  {fridge.report ? (
+                    <LastUpdate date={fridge.report.timestamp} />
+                  ) : null}
+                </Stack>
+              </Stack>
+              <Stack direction="row" width="100" spacing={3}>
+                <ButtonLink
+                  variant="contained"
+                  to={`/fridge/${fridge.id}`}
+                  aria-label={'Details on ' + fridge.name}
+                  sx={{ fontSize: ['1rem'] }}
+                  title={'More Info'}
+                />
+                <ButtonLink
+                  variant="contained"
+                  to={`/user/fridge/report/${fridge.id}`}
+                  aria-label={'Details on ' + fridge.name}
+                  sx={{ fontSize: ['1rem'] }}
+                  title={'Update Status'}
+                />
               </Stack>
             </Stack>
-            <Stack direction="row" width="100" spacing={3}>
-              <ButtonLink
-                variant="contained"
-                to={`/fridge/${fridge.id}`}
-                aria-label={'Details on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
-                title={'More Info'}
-              />
-              <ButtonLink
-                variant="contained"
-                to={`/user/fridge/report/${fridge.id}`}
-                aria-label={'Details on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
-                title={'Update Status'}
-              />
-            </Stack>
-          </Stack>
-        </ListItem>
-      ))}
-    </List>
-  );
+          </ListItem>
+        ))}
+      </List>
+    );
+  }
 }
 FridgeList.propTypes = {
   fridges: PropTypes.arrayOf(typesView.Fridge),
