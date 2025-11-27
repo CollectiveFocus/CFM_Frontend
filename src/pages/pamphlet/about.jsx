@@ -20,8 +20,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/independence_for_each_fridge.webp',
         alt: 'Mr. Moda painting Classon Community Fridge, 2025',
-        height: 500,
-        width: 600,
+        height: 250,
+        width: 300,
       },
       variant: 'h2',
       title: 'Independence for Each Fridge',
@@ -41,8 +41,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/technology_empowers_us.webp',
         alt: 'FridgeFinder table display, 2025',
-        height: 500,
-        width: 600,
+        height: 250,
+        width: 300,
       },
       variant: 'h2',
       title: 'Technology Empowers Us',
@@ -68,8 +68,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/support_the_fridges.webp',
         alt: 'Food donation pick up, 2025',
-        height: 500,
-        width: 600,
+        height: 250,
+        width: 300,
       },
       variant: 'h2',
       title: 'Support the Fridges',
