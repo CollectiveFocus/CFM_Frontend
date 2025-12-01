@@ -1,13 +1,7 @@
 import Head from 'next/head';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PamphletParagraph, PageFooter } from 'components/atoms';
 
 const pageContent = {
-  pageHero: {
-    img: {
-      src: '/hero/about.webp',
-      alt: 'The group at Community Focus',
-    },
-  },
   content: [
     {
       variant: 'h1',
@@ -20,8 +14,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/independence_for_each_fridge.webp',
         alt: 'Mr. Moda painting Classon Community Fridge, 2025',
-        height: 250,
-        width: 300,
+        height: 500,
+        width: 600,
       },
       variant: 'h2',
       title: 'Independence for Each Fridge',
@@ -41,8 +35,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/technology_empowers_us.webp',
         alt: 'FridgeFinder table display, 2025',
-        height: 250,
-        width: 300,
+        height: 500,
+        width: 600,
       },
       variant: 'h2',
       title: 'Technology Empowers Us',
@@ -68,8 +62,8 @@ const pageContent = {
       img: {
         src: '/paragraph/pamphlet/about/support_the_fridges.webp',
         alt: 'Food donation pick up, 2025',
-        height: 250,
-        width: 300,
+        height: 500,
+        width: 600,
       },
       variant: 'h2',
       title: 'Support the Fridges',
@@ -81,14 +75,12 @@ const pageContent = {
 };
 
 export default function AboutPage() {
-  const { pageHero, content } = pageContent;
+  const { content } = pageContent;
   return (
     <>
       <Head>
         <title>Fridge Finder: About Us</title>
       </Head>
-      <PageHero {...pageHero} />
-
       {content.map((paragraph, index) => (
         <PamphletParagraph
           {...paragraph}
