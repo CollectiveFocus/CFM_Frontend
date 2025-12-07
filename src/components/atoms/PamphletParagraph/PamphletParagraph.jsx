@@ -1,15 +1,58 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Box, Divider, Typography } from '@mui/material';
-import { ButtonLink } from 'components/atoms';
+import { ButtonLink, SoftWrap } from 'components/atoms';
 import { applyAlpha, designColor } from 'theme/palette';
-import { typesNextImage } from 'model/view/component/prop-types';
 
 const DividerGrey = () => (
-  <Divider
-    sx={{ borderColor: applyAlpha('66', designColor.neroGray), mx: { lg: 15 } }}
-  />
+  <Divider sx={{ borderColor: applyAlpha('66', designColor.neroGray) }} />
 );
+
+function ResponsiveImage({ src, alt = '', attribution = null }) {
+  if (!src) {
+    return null;
+  }
+  return (
+    <Box sx={{ mt: 7, mb: 7 }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '3 / 2',
+          height: { xs: 200, sm: 500 },
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          style={{ objectFit: 'cover', borderRadius: '8px' }}
+          sizes="100vw"
+        />
+      </Box>
+      {attribution && (
+        <Typography
+          variant="body1"
+          sx={{
+            fontStyle: 'italic',
+            textAlign: 'right',
+            color: 'text.secondary',
+            mt: 1,
+            fontSize: '1rem !important',
+          }}
+        >
+          {'Photo: ' + attribution}
+        </Typography>
+      )}
+    </Box>
+  );
+}
+const typesResponsiveImage = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  attribution: PropTypes.string,
+};
+ResponsiveImage.propTypes = typesResponsiveImage;
 
 export default function PamphletParagraph({
   title,
@@ -21,56 +64,31 @@ export default function PamphletParagraph({
   sx = {},
 }) {
   return (
-    <Box sx={sx}>
+    <Box sx={{ ...sxParagraphMargin, ...sx }}>
       {hasDivider && <DividerGrey />}
 
-      <Typography
-        variant={variant}
-        textAlign="center"
-        sx={sxTitleMargin[variant]}
-      >
-        {PrettyWrapSentence(title)}
-      </Typography>
+      {img && ResponsiveImage(img)}
 
-      {img && (
-        <Box
-          sx={{
-            textAlign: 'center',
-            mb: 7,
-            mx: { xs: 10, lg: 15, xl: 20 },
-          }}
-        >
-          <Image alt="" {...img} style={{ borderRadius: '5px' }} />
-        </Box>
-      )}
+      <Typography textAlign="left" sx={{ mt: 7, mb: 7 }} variant={variant}>
+        <SoftWrap text={title} />
+      </Typography>
 
       {body &&
         body.map((val, index) => (
-          <Typography
-            sx={{ mb: 7, mx: { xs: 10, lg: 15, xl: 20 } }}
-            variant="body1"
-            key={index + '_PamphletParagraph'}
-          >
+          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
             {val}
           </Typography>
         ))}
 
       {button && (
-        <Box
-          sx={{
-            textAlign: 'center',
-            mb: 7,
-            mx: { xs: 10, lg: 15, xl: 20 },
-          }}
-        >
+        <Box textAlign="center">
           <ButtonLink
             variant={button.variant}
             size="wide"
             to={button.to}
             aria-label={button['aria-label']}
-          >
-            {button.title}
-          </ButtonLink>
+            title={button.title}
+          />
         </Box>
       )}
     </Box>
@@ -79,37 +97,14 @@ export default function PamphletParagraph({
 PamphletParagraph.propTypes = {
   title: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['h1', 'h2', 'h3']).isRequired,
-  img: typesNextImage,
+  img: PropTypes.exact(typesResponsiveImage),
   body: PropTypes.arrayOf(PropTypes.string),
   button: PropTypes.shape(ButtonLink.propTypes),
   hasDivider: PropTypes.bool,
   sx: PropTypes.object,
 };
 
-const sxTitleMargin = {
-  h1: {
-    mt: 7,
-    mb: 7,
-  },
-  h2: {
-    mt: 7,
-    mb: 7,
-  },
-};
-
-function PrettyWrapSentence(paragraph) {
-  const result = paragraph.match(/[^\.!\?]+[\.!\?]+/g);
-  const sentences = result ? result : [paragraph];
-
-  return sentences.map((sentence, index) => (
-    <span
-      key={index + '_PrettyWrapSentence'}
-      style={{ display: 'inline-block', margin: 0, padding: 0 }}
-    >
-      &nbsp;{sentence.trimStart()}
-    </span>
-  ));
-}
-PrettyWrapSentence.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+const sxParagraphMargin = {
+  mb: 7,
+  mx: { xs: 10, lg: 15, xl: 20 },
 };
