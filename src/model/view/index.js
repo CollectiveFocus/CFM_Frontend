@@ -18,7 +18,12 @@ export async function getFridgeList() {
   if (cacheViewFridgeList.length === 0) {
     await fetchAllData();
   }
-  return cacheViewFridgeList;
+
+  const activeFridges = cacheViewFridgeList.filter(
+    (fridge) => fridge.report?.condition !== 'ghost'
+  );
+
+  return activeFridges;
 }
 
 const sortByNameAsc = (a, b) => {
