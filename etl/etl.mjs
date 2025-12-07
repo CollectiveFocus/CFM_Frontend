@@ -1,6 +1,10 @@
 import fs from 'fs';
 import csv from 'csv-parser';
-import { Transform } from 'stream';
+import { Transform, Writable } from 'stream';
+
+// --- Bad address sink ---
+const badAddressStream = fs.createWriteStream('db_bad_address.csv');
+badAddressStream.write('street,city,state,zip,country\n');
 
 // --- Extract Stage ---
 const extractStream = fs
@@ -17,8 +21,19 @@ const extractStream = fs
           zip: row['Zip Code'],
           country: row['Country'],
         };
-        callback(null, { etlAddress, original: row });
-        // callback(null, etlAddress);
+
+        if (etlAddress.street === '') {
+          // Save directly to bad address CSV
+          badAddressStream.write(
+            `${etlAddress.street},${etlAddress.city},${etlAddress.state},${etlAddress.zip},${etlAddress.country}\n`
+          );
+          // Do not push downstream
+          callback();
+        } else {
+          // Pass good addresses downstream
+          callback(null, { etlAddress, original: row });
+          // callback(null, etlAddress);
+        }
       },
     })
   )
@@ -108,7 +123,7 @@ extractStream
 // --- Pipeline Assembly ---
 // extractStream
 //   .pipe(batchTransform)
-//   //   .pipe(loadStream)
+//   .pipe(loadStream)
 //   .on('finish', () => {
 //     console.log('ETL process completed ✅');
 //   });
