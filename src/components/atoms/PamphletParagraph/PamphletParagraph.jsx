@@ -1,15 +1,58 @@
 import PropTypes from 'prop-types';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { Box, Divider, Typography } from '@mui/material';
 import { ButtonLink, SoftWrap } from 'components/atoms';
 import { applyAlpha, designColor } from 'theme/palette';
-import { typesNextImage } from 'model/view/component/prop-types';
 
 const DividerGrey = () => (
-  <Divider
-    sx={{ borderColor: applyAlpha('66', designColor.neroGray), mx: { lg: 15 } }}
-  />
+  <Divider sx={{ borderColor: applyAlpha('66', designColor.neroGray) }} />
 );
+
+function ResponsiveImage({ src, alt = '', attribution = null }) {
+  if (!src) {
+    return null;
+  }
+  return (
+    <Box sx={{ mt: 7, mb: 7 }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '3 / 2',
+          height: { xs: 200, sm: 500 },
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          style={{ objectFit: 'cover', borderRadius: '8px' }}
+          sizes="100vw"
+        />
+      </Box>
+      {attribution && (
+        <Typography
+          variant="body1"
+          sx={{
+            fontStyle: 'italic',
+            textAlign: 'right',
+            color: 'text.secondary',
+            mt: 1,
+            fontSize: '1rem !important',
+          }}
+        >
+          {'Photo: ' + attribution}
+        </Typography>
+      )}
+    </Box>
+  );
+}
+const typesResponsiveImage = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  attribution: PropTypes.string,
+};
+ResponsiveImage.propTypes = typesResponsiveImage;
 
 export default function PamphletParagraph({
   title,
@@ -21,32 +64,24 @@ export default function PamphletParagraph({
   sx = {},
 }) {
   return (
-    <Box sx={sx}>
+    <Box sx={{ ...sxParagraphMargin, ...sx }}>
       {hasDivider && <DividerGrey />}
 
-      <Typography textAlign="center" sx={sxTitleMargin} variant={variant}>
+      {img && ResponsiveImage(img)}
+
+      <Typography textAlign="left" sx={{ mt: 7, mb: 7 }} variant={variant}>
         <SoftWrap text={title} />
       </Typography>
 
-      {img && (
-        <Box textAlign="center" sx={sxParagraphMargin}>
-          <Image alt="" {...img} style={{ borderRadius: '5px' }} />
-        </Box>
-      )}
-
       {body &&
         body.map((val, index) => (
-          <Typography
-            variant="body1"
-            sx={sxParagraphMargin}
-            key={`${index}_PamphletParagraph`}
-          >
+          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
             {val}
           </Typography>
         ))}
 
       {button && (
-        <Box textAlign="center" sx={sxParagraphMargin}>
+        <Box textAlign="center" sx={{ mt: 7 }}>
           <ButtonLink
             variant={button.variant}
             size="wide"
@@ -62,7 +97,7 @@ export default function PamphletParagraph({
 PamphletParagraph.propTypes = {
   title: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['h1', 'h2', 'h3']).isRequired,
-  img: typesNextImage,
+  img: PropTypes.exact(typesResponsiveImage),
   body: PropTypes.arrayOf(PropTypes.string),
   button: PropTypes.shape(ButtonLink.propTypes),
   hasDivider: PropTypes.bool,
@@ -70,11 +105,6 @@ PamphletParagraph.propTypes = {
 };
 
 const sxParagraphMargin = {
-  mb: 7,
-  mx: { xs: 10, lg: 15, xl: 20 },
-};
-const sxTitleMargin = {
-  mt: 7,
   mb: 7,
   mx: { xs: 10, lg: 15, xl: 20 },
 };
