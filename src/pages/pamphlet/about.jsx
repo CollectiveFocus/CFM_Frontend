@@ -13,9 +13,8 @@ const pageContent = {
     {
       img: {
         src: '/paragraph/pamphlet/about/independence_for_each_fridge.webp',
-        alt: 'Mr. Moda painting Classon Community Fridge, 2025',
-        height: 500,
-        width: 600,
+        alt: 'A man in working clothes stands in the hot sun painting the doors of a fridge blue. The a sign with the words "Free Food" hangs on the lintel of the fridge shed.',
+        attribution: 'Mr. Moda painting Classon Community Fridge, 2025',
       },
       variant: 'h2',
       title: 'Independence for Each Fridge',
@@ -34,9 +33,8 @@ const pageContent = {
     {
       img: {
         src: '/paragraph/pamphlet/about/technology_empowers_us.webp',
-        alt: 'FridgeFinder table display, 2025',
-        height: 500,
-        width: 600,
+        alt: 'A table  on top of which stands a cardboard cutout of the Fridge Finder mascots. On top of the table are printed booklets, a welcome poster, and an iPad on a display stand.',
+        attribution: 'FridgeFinder table display, 2025',
       },
       variant: 'h2',
       title: 'Technology Empowers Us',
@@ -61,9 +59,8 @@ const pageContent = {
     {
       img: {
         src: '/paragraph/pamphlet/about/support_the_fridges.webp',
-        alt: 'Food donation pick up, 2025',
-        height: 500,
-        width: 600,
+        alt: 'Volunteers loading plastic bags containing groceries into the trunk of a SUV.',
+        attribution: 'Food donation pick up, 2025',
       },
       variant: 'h2',
       title: 'Support the Fridges',
