@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 import {
   AppBar,
@@ -106,7 +106,7 @@ export default function ResponsiveAppBar() {
         >
           <Image
             alt="Fridge Finder logo"
-            src="/brand/logo.webp"
+            src="/brand/logo.svg"
             width={98}
             height={48}
           />
