@@ -7,6 +7,7 @@ const badAddressStream = fs.createWriteStream('db_bad_address.csv');
 badAddressStream.write('street,city,state,zip,country\n');
 
 // --- Extract Stage ---
+let counter = 1;
 const extractStream = fs
   .createReadStream('test.csv')
   .pipe(csv())
@@ -29,7 +30,10 @@ const extractStream = fs
           );
           callback();
         } else {
-          // TODO: add the etlID to the etlAddress json
+          // Add the etlID to the etlAddress JSON
+          // etlAddress.etlID = randomUUID();
+          etlAddress.etlID = counter++;
+
           // Pass good addresses downstream
           callback(null, etlAddress);
         }
@@ -90,14 +94,35 @@ const batchTransformToCSV = new Transform({
 let csvFileCount = 0;
 extractStream
   .pipe(batchTransformToCSV)
+  // .pipe(
+  //   new Transform({
+  //     objectMode: true,
+  //     transform(row, _, callback) {
+  //       console.log(row);
+
+  //       callback(null, addressString + '\n');
+  //     },
+  //   })
+  // )
   .pipe(
-    // TODO: create a write stream and save each incoming string to a new file with the header string: 'street,city,state,zip,country\n'
     new Transform({
       objectMode: true,
       transform(row, _, callback) {
-        console.log(row);
+        // Create a new file for each incoming row
+        const filename = `output_${csvFileCount++}.csv`;
+        const fileStream = fs.createWriteStream(filename);
 
-        callback(null, addressString + '\n');
+        // Write header first
+        fileStream.write('street,city,state,zip,country\n');
+
+        // Then write the row itself
+        fileStream.write(row + '\n');
+
+        // Close the file stream
+        fileStream.end();
+
+        console.log(`Saved row to ${filename}`);
+        callback();
       },
     })
   )
