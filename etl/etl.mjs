@@ -27,43 +27,45 @@ const extractStream = fs
           badAddressStream.write(
             `${etlAddress.street},${etlAddress.city},${etlAddress.state},${etlAddress.zip},${etlAddress.country}\n`
           );
-          // Do not push downstream
           callback();
         } else {
+          // TODO: add the etlID to the etlAddress json
           // Pass good addresses downstream
-          // callback(null, { etlAddress, original: row });
           callback(null, etlAddress);
         }
       },
     })
   )
-  .pipe(
-    new Transform({
-      objectMode: true,
-      transform(row, _, callback) {
-        console.log(row);
-        callback(null, row);
-      },
-    })
-  )
+  // .pipe(
+  //   new Transform({
+  //     objectMode: true,
+  //     transform(row, _, callback) {
+  //       console.log(row);
+  //       callback(null, row);
+  //     },
+  //   })
+  // )
   .on('finish', () => {
     console.log('Finished reading CSV ✅');
   });
 
 // --- Transform Stage (batch into arrays of 50) ---
-let batchNumber = 1;
-const batchTransform = new Transform({
+const batchTransformToCSV = new Transform({
   objectMode: true,
   transform(record, _, callback) {
     this.buffer = this.buffer || [];
     this.buffer.push(record);
 
     if (this.buffer.length === 2) {
-      // const bufferStream = fs.createWriteStream('bufferStream' + batchNumber + '.csv');
-      // batchNumber += 1;
-
-      // bufferStream.write(this.buffer);
-      callback(null, this.buffer);
+      callback(
+        null,
+        this.buffer
+          .map(
+            (json) =>
+              `${json.street}, ${json.city}, ${json.state}, ${json.zip}, ${json.country}`
+          )
+          .join('\n')
+      );
       this.buffer = [];
     } else {
       callback();
@@ -71,43 +73,38 @@ const batchTransform = new Transform({
   },
   flush(callback) {
     if (this.buffer && this.buffer.length > 0) {
-      this.push(this.buffer);
+      this.push(
+        this.buffer
+          .map(
+            (json) =>
+              `${json.street}, ${json.city}, ${json.state}, ${json.zip}, ${json.country}`
+          )
+          .join('\n')
+      );
     }
     callback();
   },
 });
 
-const output = fs.createWriteStream('output.csv'); // new file
-
+// --- Load Stage ---
+let csvFileCount = 0;
 extractStream
-  .pipe(batchTransform)
+  .pipe(batchTransformToCSV)
   .pipe(
+    // TODO: create a write stream and save each incoming string to a new file with the header string: 'street,city,state,zip,country\n'
     new Transform({
       objectMode: true,
       transform(row, _, callback) {
         console.log(row);
-        // callback(null, row);
-        // Convert row (Array/Object) into a string before passing downstream
-        let addressString = "";
 
-        for (let i = 0; i < row.length; i++) {
-          const r = row[i];
-          // Concatenate the fields into one string
-          addressString += `${r.street}, ${r.city}, ${r.zip}, ${r.country}`;
-        }
-        
         callback(null, addressString + '\n');
       },
     })
-  )
-  .pipe(
-    output
   )
   .on('finish', () => {
     console.log('Finished transforming data ✅');
   });
 
-// // --- Load Stage ---
 // function fakeGeoAPI(batch) {
 //   return batch.map((item, idx) => ({
 //     etlID: idx,
