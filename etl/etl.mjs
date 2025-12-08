@@ -31,8 +31,8 @@ const extractStream = fs
           callback();
         } else {
           // Pass good addresses downstream
-          callback(null, { etlAddress, original: row });
-          // callback(null, etlAddress);
+          // callback(null, { etlAddress, original: row });
+          callback(null, etlAddress);
         }
       },
     })
@@ -51,6 +51,7 @@ const extractStream = fs
   });
 
 // --- Transform Stage (batch into arrays of 50) ---
+let batchNumber = 1;
 const batchTransform = new Transform({
   objectMode: true,
   transform(record, _, callback) {
@@ -58,6 +59,10 @@ const batchTransform = new Transform({
     this.buffer.push(record);
 
     if (this.buffer.length === 2) {
+      // const bufferStream = fs.createWriteStream('bufferStream' + batchNumber + '.csv');
+      // batchNumber += 1;
+
+      // bufferStream.write(this.buffer);
       callback(null, this.buffer);
       this.buffer = [];
     } else {
@@ -72,6 +77,8 @@ const batchTransform = new Transform({
   },
 });
 
+const output = fs.createWriteStream('output.csv'); // new file
+
 extractStream
   .pipe(batchTransform)
   .pipe(
@@ -79,9 +86,22 @@ extractStream
       objectMode: true,
       transform(row, _, callback) {
         console.log(row);
-        callback(null, row);
+        // callback(null, row);
+        // Convert row (Array/Object) into a string before passing downstream
+        let addressString = "";
+
+        for (let i = 0; i < row.length; i++) {
+          const r = row[i];
+          // Concatenate the fields into one string
+          addressString += `${r.street}, ${r.city}, ${r.zip}, ${r.country}`;
+        }
+        
+        callback(null, addressString + '\n');
       },
     })
+  )
+  .pipe(
+    output
   )
   .on('finish', () => {
     console.log('Finished transforming data ✅');
