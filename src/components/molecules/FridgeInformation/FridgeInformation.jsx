@@ -1,4 +1,5 @@
 import Image from 'next/legacy/image';
+import AnchorLink from 'next/link';
 import {
   Button,
   Chip,
@@ -8,14 +9,16 @@ import {
   Typography,
   Box,
 } from '@mui/material';
-import { SoftWrap } from 'components/atoms';
+import { ButtonLink, SoftWrap } from 'components/atoms';
+
+import { applyAlpha, designColor } from 'theme/palette';
 
 // Icons
 import {
+  ArrowBack as ArrowBackIcon,
   CalendarMonth as CalendarMonthIcon,
   ChatBubbleOutlineOutlined as ChatBubbleOutlineOutlinedIcon,
   DirectionsOutlined as DirectionsOutlinedIcon,
-  // EditOutlined as EditOutlinedIcon,
   InfoOutlined as InfoOutlinedIcon,
   Instagram as InstagramIcon,
   KitchenOutlined as KitchenIcon,
@@ -50,6 +53,28 @@ const enumCondition = {
     color: 'error',
   },
 };
+
+function BackToMapHeader() {
+  return (
+    <Box sx={{ width: '100%', position: 'relative', pt: 4 }}>
+      <AnchorLink
+        href="/browse"
+        aria-label="Clicking returns to map view"
+        style={{
+          display: 'flex',
+          alignItems: 'center', // ensures vertical centering
+          textDecoration: 'none',
+          color: applyAlpha('cc', designColor.neroGray),
+          width: '100%',
+          cursor: 'pointer',
+        }}
+      >
+        <ArrowBackIcon sx={{ mr: 1 }} />
+        <Typography sx={{ fontWeight: 500 }}>Back to map</Typography>
+      </AnchorLink>
+    </Box>
+  );
+}
 
 function FridgeStatusIcon({ condition }) {
   const color = enumCondition[condition].color;
@@ -249,6 +274,8 @@ function FridgeContainer({ fridge }) {
 
     return (
       <>
+        <BackToMapHeader />
+
         {/* Fridge Picture + Name + Location  */}
         <ImageContainer
           src={photoUrl}
@@ -365,29 +392,15 @@ ReportContainer.propTypes = {
 export default function FridgeInformation({ fridge, report }) {
   return (
     <Stack direction="column" spacing={5} mx={4} mb={4}>
-      {/* Navigation  */}
-      <Stack direction="row" justifyContent="space-between" sx={{ pt: 4 }}>
-        {/* <Backtrack /> */}
-        {/* <Link href="/demo/CreateFridgeDialog">
-          <Stack direction="row" spacing={2}>
-            <EditOutlinedIcon />
-            <Typography variant="body1">Edit Fridge</Typography>
-          </Stack>
-        </Link> */}
-      </Stack>
-
       {FridgeContainer({ fridge })}
       {ReportContainer({ report })}
 
-      <Button
+      <ButtonLink
         aria-label="Click to report the status of the fridge"
         variant="contained"
-        sx={{ py: 3 }}
-        href={`/user/fridge/report/${fridge.id}`}
-        LinkComponent={Link}
-      >
-        Update Status
-      </Button>
+        to={`/user/fridge/report/${fridge.id}`}
+        title="Update Status"
+      />
     </Stack>
   );
 }
