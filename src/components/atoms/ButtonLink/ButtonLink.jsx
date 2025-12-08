@@ -3,9 +3,13 @@ import { Button } from '@mui/material';
 import { NextLink } from 'components/atoms';
 
 export default function ButtonLink(props) {
-  const { title, ...buttonProps } = props;
+  const { title, sx = {}, ...buttonProps } = props;
   return (
-    <Button component={NextLink} {...buttonProps}>
+    <Button
+      component={NextLink}
+      sx={{ flexShrink: 0, whiteSpace: 'nowrap', ...sx }}
+      {...buttonProps}
+    >
       {title}
     </Button>
   );
@@ -42,4 +46,9 @@ ButtonLink.propTypes = {
    * Style of button from theme
    */
   variant: PropTypes.oneOf(['outlined', 'contained']).isRequired,
+
+  /***
+   * MUI sx object containing css styles
+   */
+  sx: PropTypes.object,
 };
