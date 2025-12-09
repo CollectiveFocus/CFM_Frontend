@@ -15,23 +15,22 @@ const extractStream = fs
     new Transform({
       objectMode: true,
       transform(row, _, callback) {
-        const etlAddress = {
-          street: row['Street address'],
-          city: row['City'],
-          state: row['State'],
-          zip: row['Zip Code'],
-          country: row['Country'],
-        };
+        let {etlID, address} = createEtlAddress({
+        street: row['Street address'],
+        city: row['City'],
+        state: row['State'],
+        zip: row['Zip Code'],
+        country: row['Country'],
+      });
 
-        if (etlAddress.street === '') {
+        if (row['Street address'] === '') {
           // Save directly to bad address CSV
-          badAddressStream.write(
-            `${etlAddress.street},${etlAddress.city},${etlAddress.state},${etlAddress.zip},${etlAddress.country}\n`
-          );
+          badAddressStream.write(address + '\n');
           callback();
         } else {
           // Pass good addresses downstream
-          etlAddress.etlID = counter++;
+          etlID = counter++;
+          const etlAddress = {etlID, address};
           callback(null, etlAddress);
         }
       },
@@ -50,16 +49,16 @@ const extractStream = fs
     console.log('Finished reading CSV ✅');
   });
 
-// TODO : since address is created in 2 places, create a function that does the work
-/**
- * The output of the test run is as follows
- *     street,city,state,zip,country
- *     19 Rue Houdon, Paris, undefined, 75018, France
- *
- * The address fields should not be undefined, so there is a way of ensuring that does not happen. This should be fixed when the json is created. Undefined vars should be set to empty string.
- *
- */
-function whatShouldYouNameTisFunctionSoItDocumentsThePurpose(record) {
+function createEtlAddress(record) {
+  const etlAddress = {
+    street: record.street || '',
+    city: record.city || '',
+    state: record.state || '',
+    zip: record.zip || '',
+    country: record.country || ''
+  };
+  let etlID = 0;
+  const address = `${etlAddress.street}, ${etlAddress.city}, ${etlAddress.state} ${etlAddress.zip} ${etlAddress.country}`.trim();
   return { etlID, address };
 }
 
@@ -71,15 +70,9 @@ const batchTransformToCSV = new Transform({
     this.buffer.push(record);
 
     if (this.buffer.length === 2) {
-      // TODO: this should create an address using the US format "123 street name, City, ST zip Country"
       callback(
         null,
         this.buffer
-          .map(
-            (json) =>
-              `${json.street}, ${json.city}, ${json.state}, ${json.zip}, ${json.country}`
-          )
-          .join('\n')
       );
       this.buffer = [];
     } else {
@@ -89,13 +82,7 @@ const batchTransformToCSV = new Transform({
   flush(callback) {
     if (this.buffer && this.buffer.length > 0) {
       this.push(
-        // TODO: this should create an address using the US format "123 street name, City, ST zip Country"
         this.buffer
-          .map(
-            (json) =>
-              `${json.street}, ${json.city}, ${json.state}, ${json.zip}, ${json.country}`
-          )
-          .join('\n')
       );
     }
     callback();
@@ -109,28 +96,25 @@ extractStream
   .pipe(
     new Transform({
       objectMode: true,
-      // TODO: change this to a write stream. The pipe must terminate at a terminal stream. Writable is a terminal stream
       transform(chunk, encoding, done) {
-        // TODO: Use writefile. It's more efficient for single chunks of data since it does not have to create all the stream buffers in memory
-
-        fs.writeFile('output.txt', content, encoding, (err) => {
-          if (err) {
-            console.error('Error writing file:', err);
-            return;
-          }
-          console.log('File written successfully');
-        });
 
         // Create a new file for each incoming row
         const filename = `geoAPI_input_${csvFileCount++}.csv`;
-        const fileStream = fs.createWriteStream(filename);
+         // Build CSV content
+        let csvContent = 'etlID,address\n';
+        csvContent += chunk
+          .map((json) => `${json.etlID},"${json.address}"`)
+          .join('\n');
 
-        fileStream.write('etlID, address\n');
-        fileStream.write(chunk + '\n');
-        fileStream.end();
-
-        console.log(`Saved chunk to ${filename}`);
-        done();
+        // Write file in one shot
+        fs.writeFile(filename, csvContent, (err) => {
+          if (err) {
+            console.error('Error writing file:', err);
+          } else {
+            console.log(`Saved chunk to ${filename}`);
+          }
+          done();
+        });
       },
     })
   )
