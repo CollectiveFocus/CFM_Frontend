@@ -30,11 +30,8 @@ const extractStream = fs
           );
           callback();
         } else {
-          // Add the etlID to the etlAddress JSON
-          // etlAddress.etlID = randomUUID();
-          etlAddress.etlID = counter++;
-
           // Pass good addresses downstream
+          etlAddress.etlID = counter++;
           callback(null, etlAddress);
         }
       },
@@ -53,6 +50,19 @@ const extractStream = fs
     console.log('Finished reading CSV ✅');
   });
 
+// TODO : since address is created in 2 places, create a function that does the work
+/**
+ * The output of the test run is as follows
+ *     street,city,state,zip,country
+ *     19 Rue Houdon, Paris, undefined, 75018, France
+ *
+ * The address fields should not be undefined, so there is a way of ensuring that does not happen. This should be fixed when the json is created. Undefined vars should be set to empty string.
+ *
+ */
+function whatShouldYouNameTisFunctionSoItDocumentsThePurpose(record) {
+  return { etlID, address };
+}
+
 // --- Transform Stage (batch into arrays of 50) ---
 const batchTransformToCSV = new Transform({
   objectMode: true,
@@ -61,6 +71,7 @@ const batchTransformToCSV = new Transform({
     this.buffer.push(record);
 
     if (this.buffer.length === 2) {
+      // TODO: this should create an address using the US format "123 street name, City, ST zip Country"
       callback(
         null,
         this.buffer
@@ -78,6 +89,7 @@ const batchTransformToCSV = new Transform({
   flush(callback) {
     if (this.buffer && this.buffer.length > 0) {
       this.push(
+        // TODO: this should create an address using the US format "123 street name, City, ST zip Country"
         this.buffer
           .map(
             (json) =>
@@ -94,35 +106,31 @@ const batchTransformToCSV = new Transform({
 let csvFileCount = 0;
 extractStream
   .pipe(batchTransformToCSV)
-  // .pipe(
-  //   new Transform({
-  //     objectMode: true,
-  //     transform(row, _, callback) {
-  //       console.log(row);
-
-  //       callback(null, addressString + '\n');
-  //     },
-  //   })
-  // )
   .pipe(
     new Transform({
       objectMode: true,
-      transform(row, _, callback) {
+      // TODO: change this to a write stream. The pipe must terminate at a terminal stream. Writable is a terminal stream
+      transform(chunk, encoding, done) {
+        // TODO: Use writefile. It's more efficient for single chunks of data since it does not have to create all the stream buffers in memory
+
+        fs.writeFile('output.txt', content, encoding, (err) => {
+          if (err) {
+            console.error('Error writing file:', err);
+            return;
+          }
+          console.log('File written successfully');
+        });
+
         // Create a new file for each incoming row
-        const filename = `output_${csvFileCount++}.csv`;
+        const filename = `geoAPI_input_${csvFileCount++}.csv`;
         const fileStream = fs.createWriteStream(filename);
 
-        // Write header first
-        fileStream.write('street,city,state,zip,country\n');
-
-        // Then write the row itself
-        fileStream.write(row + '\n');
-
-        // Close the file stream
+        fileStream.write('etlID, address\n');
+        fileStream.write(chunk + '\n');
         fileStream.end();
 
-        console.log(`Saved row to ${filename}`);
-        callback();
+        console.log(`Saved chunk to ${filename}`);
+        done();
       },
     })
   )
