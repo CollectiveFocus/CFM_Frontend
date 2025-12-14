@@ -11,7 +11,7 @@ import Link from 'next/link';
  * @param {Object} props
  * @param {Element} ref
  */
-const NextLink = React.forwardRef(function (props, ref) {
+function NextLinkFn(props, ref) {
   const {
     to,
     linkAs,
@@ -37,16 +37,15 @@ const NextLink = React.forwardRef(function (props, ref) {
       {...attributes}
     />
   );
-});
-
-NextLink.displayName = 'NextLink';
+}
+NextLinkFn.displayName = 'NextLink';
 
 const toPathname = PropTypes.shape({
   pathname: PropTypes.string.isRequired,
   query: PropTypes.object.isRequired,
 });
 
-NextLink.propTypes = {
+NextLinkFn.propTypes = {
   /**
    * The URL or pathname object to navigate to.
    *
@@ -91,4 +90,4 @@ NextLink.propTypes = {
   shallow: PropTypes.bool,
 };
 
-export default NextLink;
+export default React.forwardRef(NextLinkFn);
