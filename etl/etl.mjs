@@ -6,8 +6,20 @@ import { Transform, Writable } from 'stream';
 const badAddressStream = fs.createWriteStream('db_bad_address.csv');
 badAddressStream.write('street,city,state,zip,country\n');
 
+// utils
+
+const validAddress = (record) => {
+	if (record.street && record.zip) {
+  	return true
+  } else if (record.street && record.city && record.state) {
+  	return true
+  } else {
+	  return false
+  }
+}
+
+
 // --- Extract Stage ---
-let counter = 1;
 const extractStream = fs
   .createReadStream('test.csv')
   .pipe(csv())
@@ -15,7 +27,7 @@ const extractStream = fs
     new Transform({
       objectMode: true,
       transform(row, _, callback) {
-        let {etlID, address} = createEtlAddress({
+        const record = createEtlAddress({
         street: row['Street address'],
         city: row['City'],
         state: row['State'],
@@ -23,15 +35,13 @@ const extractStream = fs
         country: row['Country'],
       });
 
-        if (row['Street address'] === '') {
+        if (!validAddress(record)) {
           // Save directly to bad address CSV
-          badAddressStream.write(address + '\n');
+          badAddressStream.write(row + '\n');
           callback();
         } else {
           // Pass good addresses downstream
-          etlID = counter++;
-          const etlAddress = {etlID, address};
-          callback(null, etlAddress);
+          callback(null, record);
         }
       },
     })
@@ -49,20 +59,22 @@ const extractStream = fs
     console.log('Finished reading CSV ✅');
   });
 
+let etlIdCounter = 0;
 function createEtlAddress(record) {
-  const etlAddress = {
+  return ({
+  	etlId: etlIdCounter++,
     street: record.street || '',
     city: record.city || '',
     state: record.state || '',
     zip: record.zip || '',
     country: record.country || ''
-  };
-  let etlID = 0;
-  const address = `${etlAddress.street}, ${etlAddress.city}, ${etlAddress.state} ${etlAddress.zip} ${etlAddress.country}`.trim();
-  return { etlID, address };
+  })
 }
 
 // --- Transform Stage (batch into arrays of 50) ---
+  // const address = `${etlAddress.street}, ${etlAddress.city}, ${etlAddress.state} ${etlAddress.zip} ${etlAddress.country}`.trim();
+
+
 const batchTransformToCSV = new Transform({
   objectMode: true,
   transform(record, _, callback) {
@@ -103,9 +115,9 @@ extractStream
          // Build CSV content
         let csvContent = 'etlID,address\n';
         csvContent += chunk
-          .map((json) => `${json.etlID},"${json.address}"`)
+          .map((json) => `${json.etlId},"${json.street}, ${json.city}, ${json.state}, ${json.zip}, ${json.country}"`)
           .join('\n');
-
+          
         // Write file in one shot
         fs.writeFile(filename, csvContent, (err) => {
           if (err) {
