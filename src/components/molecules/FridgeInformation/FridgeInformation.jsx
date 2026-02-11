@@ -132,42 +132,27 @@ InformationLine.propTypes = {
 function ImageContainer({ src = null, alt, isAboveFold = false }) {
   if (src) {
     return (
-      <>
-        <Box
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
-            priority={isAboveFold}
-          />
-        </Box>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          sx={{
-            display: { xs: 'none', sm: 'inherit' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width="300px"
-            height="345px"
-            layout="fixed"
-            objectFit="contain"
-            priority={isAboveFold}
-          />
-        </Stack>
-      </>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          maxHeight: { xs: 300, md: 345 },
+          aspectRatio: '1 / 1.15',
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: '#F5F5F5',
+          borderRadius: 3,
+          overflow: 'hidden',
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          layout="fill"
+          objectFit="contain"
+          priority={isAboveFold}
+        />
+      </Box>
     );
   } else return null;
 }
@@ -391,17 +376,27 @@ ReportContainer.propTypes = {
 
 export default function FridgeInformation({ fridge, report }) {
   return (
-    <Stack direction="column" spacing={5} mx={4} mb={4}>
-      {FridgeContainer({ fridge })}
-      {ReportContainer({ report })}
+    <Box
+      sx={{
+        width: '100%',
+        maxWidth: { md: 900 },
+        mx: 'auto',
+        px: { xs: 4, sm: 6 },
+        mb: 4,
+      }}
+    >
+      <Stack direction="column" spacing={5}>
+        {FridgeContainer({ fridge })}
+        {ReportContainer({ report })}
 
-      <ButtonLink
-        aria-label="Click to report the status of the fridge"
-        variant="contained"
-        to={`/user/fridge/report/${fridge.id}`}
-        title="Update Status"
-      />
-    </Stack>
+        <ButtonLink
+          aria-label="Click to report the status of the fridge"
+          variant="contained"
+          to={`/user/fridge/report/${fridge.id}`}
+          title="Update Status"
+        />
+      </Stack>
+    </Box>
   );
 }
 FridgeInformation.propTypes = {
