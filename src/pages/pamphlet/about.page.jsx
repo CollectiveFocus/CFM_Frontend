@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Box } from '@mui/material';
 import { PamphletParagraph, PageFooter } from 'components/atoms';
 
 const pageContent = {
@@ -78,13 +79,22 @@ export default function AboutPage() {
       <Head>
         <title>Fridge Finder: About Us</title>
       </Head>
-      {content.map((paragraph, index) => (
-        <PamphletParagraph
-          {...paragraph}
-          key={index + '_AboutPage'}
-          hasDivider={index > 0}
-        />
-      ))}
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: { md: 900, lg: 1100 },
+          mx: 'auto',
+          px: { sm: 6 },
+        }}
+      >
+        {content.map((paragraph, index) => (
+          <PamphletParagraph
+            {...paragraph}
+            key={index + '_AboutPage'}
+            hasDivider={index > 0}
+          />
+        ))}
+      </Box>
 
       <PageFooter />
     </>
