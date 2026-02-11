@@ -19,7 +19,7 @@ function ResponsiveImage({ src, alt = '', attribution = null }) {
           position: 'relative',
           width: '100%',
           aspectRatio: '3 / 2',
-          height: { xs: 200, sm: 500, lg: 1200 },
+          height: { xs: 200, sm: 400, lg: 500 },
         }}
       >
         <Image
