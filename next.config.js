@@ -1,31 +1,20 @@
-export default {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-
   images: {
     remotePatterns: [
-      new URL('https://community-fridge-map-images-prod.s3.amazonaws.com/**'),
+      {
+        protocol: 'https',
+        hostname: 'community-fridge-map-images-prod.s3.amazonaws.com',
+        pathname: '/**',
+      },
     ],
   },
-  pageExtensions: ['page.jsx', 'page.js'],
-
+  // App Router is enabled by default in Next.js 15+
+  // We keep the emotion compiler for MUI
   compiler: {
     emotion: true,
   },
-  modularizeImports: {
-    '@mui/material': {
-      transform: '@mui/material/{{member}}',
-    },
-    '@mui/icons-material': {
-      transform: '@mui/icons-material/{{member}}',
-    },
-    'components/atoms': {
-      transform: 'components/atoms/{{member}}',
-    },
-    'components/molecules': {
-      transform: 'components/molecules/{{member}}',
-    },
-    'components/organisms': {
-      transform: 'components/organisms/{{member}}',
-    },
-  },
 };
+
+export default nextConfig;

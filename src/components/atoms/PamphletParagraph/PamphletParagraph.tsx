@@ -1,0 +1,124 @@
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import { Box, Divider, Typography, SxProps, Theme } from '@mui/material';
+import { ButtonLink } from '../ButtonLink/ButtonLink';
+import { SoftWrap } from '../SoftWrap/SoftWrap';
+import { applyAlpha, designColor } from 'theme/palette';
+
+interface ResponsiveImageProps {
+  src: string;
+  alt?: string;
+  attribution?: string | null;
+}
+
+function ResponsiveImage({
+  src,
+  alt = '',
+  attribution = null,
+}: ResponsiveImageProps): React.ReactElement | null {
+  if (!src) {
+    return null;
+  }
+  return (
+    <Box sx={{ mt: 7, mb: 7 }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '3 / 2',
+          height: { xs: 200, sm: 500, lg: 1200 },
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          style={{ objectFit: 'cover', borderRadius: '8px' }}
+          sizes="100vw"
+        />
+      </Box>
+      {attribution && (
+        <Typography
+          variant="body1"
+          sx={{
+            fontStyle: 'italic',
+            textAlign: 'right',
+            color: 'text.secondary',
+            mt: 1,
+            fontSize: '1rem !important',
+          }}
+        >
+          {'Photo: ' + attribution}
+        </Typography>
+      )}
+    </Box>
+  );
+}
+
+interface PamphletParagraphProps {
+  title: string;
+  variant: 'h1' | 'h2' | 'h3';
+  img?: ResponsiveImageProps;
+  body?: string[];
+  button?: {
+    to: string | object;
+    'aria-label': string;
+    title: string;
+    variant: 'outlined' | 'contained';
+  };
+  hasDivider?: boolean;
+  sx?: SxProps<Theme>;
+}
+
+const sxParagraphMargin = {
+  mb: 7,
+  mx: { xs: 10, lg: 15, xl: 20 },
+};
+
+function DividerGrey(): React.ReactElement {
+  return (
+    <Divider sx={{ borderColor: applyAlpha('66', designColor.neroGray) }} />
+  );
+}
+
+export function PamphletParagraph({
+  title,
+  variant,
+  img,
+  body,
+  button,
+  hasDivider = false,
+  sx = {},
+}: PamphletParagraphProps): React.ReactElement {
+  return (
+    <Box sx={{ ...sxParagraphMargin, ...sx }}>
+      {hasDivider && <DividerGrey />}
+
+      {img && <ResponsiveImage {...img} />}
+
+      <Typography sx={{ mt: 7, mb: 7 }} variant={variant}>
+        <SoftWrap text={title} />
+      </Typography>
+
+      {body &&
+        body.map((val, index) => (
+          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
+            {val}
+          </Typography>
+        ))}
+
+      {button && (
+        <Box textAlign="center" sx={{ mt: 7 }}>
+          <ButtonLink
+            variant={button.variant}
+            to={button.to}
+            aria-label={button['aria-label']}
+            title={button.title}
+          />
+        </Box>
+      )}
+    </Box>
+  );
+}

@@ -1,0 +1,61 @@
+import { PaletteOptions } from '@mui/material/styles';
+
+export const applyAlpha = (alpha: string, color: string): string =>
+  color + alpha;
+
+export const pinColor = {
+  itemsFull: '#97ed7d',
+  itemsMany: '#ffe55c',
+  itemsFew: '#ffd4ff',
+  itemsEmpty: '#ffffff',
+  fridgeNotAtLocation: '#d3d3d3',
+  fridgeOperation: '#222',
+  fridgeGhost: '#e3f2fd',
+  reportUnavailable: '#d3d3d3',
+};
+
+const grayscale = {
+  gradient: [
+    '#FFFFFF', //0] white
+    '#F6F6F6', //1] whiteSmoke
+    '#D8D8D8', //2] lightSilver - veryLightGray
+    '#B4B4B4', //3] magneticGray
+    '#222222', //4] neroGray
+  ],
+};
+
+export const designColor = {
+  white: grayscale.gradient[0],
+  whiteSmoke: grayscale.gradient[1],
+  lightSilver: grayscale.gradient[2],
+  magneticGray: grayscale.gradient[3],
+  neroGray: grayscale.gradient[4],
+  black: '#000000',
+  blue: {
+    dark: '#1543D4',
+    darkShade: ['#040B25'],
+    light: '#88B3FF',
+  },
+};
+
+const palette: PaletteOptions = {
+  mode: 'light',
+  primary: {
+    main: designColor.blue.dark,
+  },
+  secondary: {
+    main: designColor.blue.light,
+  },
+  background: {
+    default: designColor.white,
+    paper: designColor.whiteSmoke,
+  },
+  text: {
+    primary: designColor.neroGray,
+    secondary: applyAlpha('cc', designColor.neroGray),
+    disabled: designColor.magneticGray,
+  },
+  divider: designColor.neroGray,
+};
+
+export default palette;
