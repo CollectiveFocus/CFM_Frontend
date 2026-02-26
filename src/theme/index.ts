@@ -1,5 +1,4 @@
 import { createTheme, responsiveFontSizes, Theme } from '@mui/material/styles';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 import palette, { applyAlpha, designColor } from './palette';
 import typography from './typography';
@@ -7,7 +6,7 @@ import typography from './typography';
 let theme: Theme = createTheme({
   palette,
   typography: {
-    ...(typography as TypographyOptions),
+    ...typography,
     fontFamily: 'var(--font-inter), Inter, sans-serif',
   },
   spacing: 4,

@@ -1,4 +1,15 @@
-const typography = {
+import type { TypographyVariantsOptions } from '@mui/material/styles';
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    footer: React.CSSProperties;
+  }
+  interface TypographyVariantsOptions {
+    footer?: React.CSSProperties;
+  }
+}
+
+const typography: TypographyVariantsOptions = {
   fontFamily: [
     'Inter',
     'system-ui',
