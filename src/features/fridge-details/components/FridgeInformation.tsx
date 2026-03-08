@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import AnchorLink from 'next/link';
@@ -22,10 +20,10 @@ import {
   KitchenOutlined as KitchenIcon,
   Language as LanguageIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
-  MobileScreenShareOutlined as MobileScreenShareOutlinedIcon,
 } from '@mui/icons-material';
 
 import { ButtonLink, SoftWrap } from 'components/atoms';
+import { ShareButton } from './ShareButton';
 import { applyAlpha, designColor } from 'theme/palette';
 import { StatusIcon } from 'theme/icons';
 import { Fridge, FridgeReport, Maintainer } from 'types/domain';
@@ -39,7 +37,7 @@ const enumCondition: Record<
     color: 'success',
   },
   dirty: {
-    text: 'Fridge is dirty',
+    text: 'Fridge needs cleaning',
     color: 'info',
   },
   'out of order': {
@@ -149,42 +147,27 @@ function ImageContainer({
 }: ImageContainerProps): React.ReactElement | null {
   if (src) {
     return (
-      <>
-        <Box
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={100}
-            height={100}
-            layout="responsive"
-            style={{ objectFit: 'contain' }}
-            priority={isAboveFold}
-          />
-        </Box>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          sx={{
-            display: { xs: 'none', sm: 'inherit' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={300}
-            height={345}
-            layout="fixed"
-            style={{ objectFit: 'contain' }}
-            priority={isAboveFold}
-          />
-        </Stack>
-      </>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          maxHeight: { xs: 300, md: 345 },
+          aspectRatio: '1 / 1.15',
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: '#F5F5F5',
+          borderRadius: 3,
+          overflow: 'hidden',
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          layout="fill"
+          objectFit="contain"
+          priority={isAboveFold}
+        />
+      </Box>
     );
   } else return null;
 }
@@ -287,16 +270,6 @@ function FridgeContainer({
       notes = null,
     } = fridge;
 
-    const shareResponse = () => {
-      if (typeof window !== 'undefined' && navigator.share) {
-        navigator
-          .share({
-            title: `${name}`,
-            url: window.location.href,
-          })
-          .catch(console.error);
-      }
-    };
     const address = `${location.street}, ${location.city}, ${location.state} ${location.zip}`;
 
     return (
@@ -330,15 +303,7 @@ function FridgeContainer({
             <DirectionsOutlinedIcon sx={{ pr: 1 }} />
             Directions
           </Button>
-          <Button
-            aria-label="Click to share this page"
-            variant="outlined"
-            sx={{ width: '47%' }}
-            onClick={shareResponse}
-          >
-            <MobileScreenShareOutlinedIcon sx={{ pr: 1 }} />
-            Share
-          </Button>
+          <ShareButton fridgeName={name} />
         </Stack>
 
         <InformationLine icon={LocationOnOutlinedIcon} text={address} />

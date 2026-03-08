@@ -30,7 +30,9 @@ export const useFridgeStore = create<FridgeState>((set, get) => ({
     set({ status: 'loading', error: null });
     try {
       const apiFridges = await apiClient.getFridges();
-      const fridges = apiFridges.map(transformFridge);
+      const fridges = apiFridges
+        .map(transformFridge)
+        .sort((a, b) => a.name.localeCompare(b.name));
 
       set({
         fridges,

@@ -44,7 +44,6 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
           aria-label={button['aria-label']}
           sx={{
             minWidth: { xs: '90vw', md: '75vw', lg: '500px' },
-            fontVariant: 'small-caps',
             boxShadow: 8,
           }}
           title={button.title}

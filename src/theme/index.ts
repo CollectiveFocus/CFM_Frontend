@@ -1,4 +1,5 @@
 import { createTheme, responsiveFontSizes, Theme } from '@mui/material/styles';
+import type { TypographyVariantsOptions } from '@mui/material/styles';
 
 import palette, { applyAlpha, designColor } from './palette';
 import typography from './typography';
@@ -6,7 +7,7 @@ import typography from './typography';
 let theme: Theme = createTheme({
   palette,
   typography: {
-    ...typography,
+    ...(typography as TypographyVariantsOptions),
     fontFamily: 'var(--font-inter), Inter, sans-serif',
   },
   spacing: 4,
@@ -29,7 +30,6 @@ let theme: Theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 45,
-          textTransform: 'none',
           '&:hover': {
             borderColor: designColor.blue.dark,
           },
