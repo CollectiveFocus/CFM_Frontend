@@ -163,8 +163,8 @@ function ImageContainer({
         <Image
           src={src}
           alt={alt}
-          layout="fill"
-          objectFit="contain"
+          fill
+          style={{ objectFit: 'contain' }}
           priority={isAboveFold}
         />
       </Box>

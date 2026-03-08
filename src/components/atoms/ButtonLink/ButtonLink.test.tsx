@@ -32,17 +32,16 @@ describe('ButtonLink', () => {
     expect(link).toHaveClass('MuiButton-outlined');
   });
 
-  it('renders with an object href (Next.js URL object)', () => {
+  it('renders with href including query parameters', () => {
     render(
       <ButtonLink
         title="Search"
-        to={{ pathname: '/browse', query: { q: 'test' } } as any}
+        to="/browse?q=test"
         variant="contained"
         aria-label="Search fridges"
       />
     );
-    expect(
-      screen.getByRole('link', { name: 'Search fridges' })
-    ).toBeInTheDocument();
+    const link = screen.getByRole('link', { name: 'Search fridges' });
+    expect(link).toHaveAttribute('href', '/browse?q=test');
   });
 });

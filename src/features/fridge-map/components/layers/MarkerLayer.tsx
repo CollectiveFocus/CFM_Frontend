@@ -103,7 +103,7 @@ export function MarkerLayer({
                 <br />
                 {location.city}, {location.state} {location.zip}
               </Typography>
-              <Stack direction="row" width="100" spacing={3} sx={{ mt: 3 }}>
+              <Stack direction="row" spacing={3} sx={{ mt: 3 }}>
                 {/* style prop needed: Leaflet's popup CSS targets <a> elements and overrides MUI button text color */}
                 <ButtonLink
                   variant="contained"
