@@ -16,11 +16,11 @@ async function getFridgeRecord(
     const responses = await Promise.all([
       fetch(`${baseUrl}${id}`, {
         headers: { Accept: 'application/json' },
-        next: { revalidate: 60 },
+        next: { revalidate: 60 }, //Could probably be much higher, but keeping at 60 for now
       }),
       fetch(`${baseUrl}${id}/reports`, {
         headers: { Accept: 'application/json' },
-        next: { revalidate: 60 },
+        cache: 'no-store', //when a user makes a status update, we want to fetch the latest report. So no cache
       }),
     ]);
 

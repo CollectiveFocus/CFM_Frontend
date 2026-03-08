@@ -78,7 +78,7 @@
         "fridgeId": "livinggallery",
         "epochTimestamp": "1761978261",
         "timestamp": "2025-11-01T06:24:21Z",
-        "condition": "ghost",
+        "condition": "not at location",
         "foodPercentage": 1
       }
     },
@@ -229,11 +229,10 @@
     {
       "id": 1,
       "fridgeId": "barriofridge1",
-      "timestamp": "2022-11-10T08:35:17.902Z",
-      "condition": "dirty",
-      "foodPercentage": 1,
-      "photoUrl": "/card/paragraph/pearTomatoAndFridge.svg",
-      "notes": "Voluptatibus aut quaerat."
+      "timestamp": "2026-03-08T04:32:14.123Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "notes": ""
     },
     {
       "id": 2,
@@ -246,67 +245,27 @@
     },
     {
       "id": 3,
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 3,
+      "fridgeId": "harlemcommunityfridge",
       "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "collectivefocusresourcehub"
+      "condition": "good",
+      "foodPercentage": 2,
+      "notes": ""
     },
     {
       "id": 4,
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 2,
-      "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "harlemcommunityfridge"
-    },
-    {
-      "condition": "dirty",
-      "foodPercentage": 3,
-      "notes": "lets try one more time",
       "fridgeId": "livinggallery",
-      "timestamp": "2026-03-06T07:35:35.650Z",
-      "id": 5
+      "timestamp": "2025-11-01T06:24:21Z",
+      "condition": "not at location",
+      "foodPercentage": 1,
+      "notes": ""
     },
     {
-      "condition": "good",
-      "foodPercentage": 3,
-      "notes": "fridge is great all good",
-      "fridgeId": "livinggallery",
-      "timestamp": "2026-03-06T07:36:27.740Z",
-      "id": 6
-    },
-    {
-      "condition": "dirty",
-      "foodPercentage": 3,
-      "notes": "testing",
+      "id": 5,
       "fridgeId": "collectivefocusresourcehub",
-      "timestamp": "2026-03-07T10:21:27.132Z",
-      "id": 7
-    },
-    {
-      "condition": "good",
-      "foodPercentage": 3,
-      "notes": "",
-      "fridgeId": "collectivefocusresourcehub",
-      "timestamp": "2026-03-07T10:21:39.320Z",
-      "id": 8
-    },
-    {
+      "timestamp": "2025-11-01T06:24:43Z",
       "condition": "dirty",
-      "foodPercentage": 2,
-      "notes": "",
-      "fridgeId": "livinggallery",
-      "timestamp": "2026-03-07T10:21:59.528Z",
-      "id": 9
-    },
-    {
-      "condition": "good",
-      "foodPercentage": 2,
-      "notes": "",
-      "fridgeId": "barriofridge1",
-      "timestamp": "2026-03-08T04:32:14.123Z",
-      "id": 10
+      "foodPercentage": 3,
+      "notes": ""
     }
   ],
   "contact": [
