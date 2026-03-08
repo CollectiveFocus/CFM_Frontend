@@ -28,7 +28,7 @@ const typography: TypographyVariantsOptions = {
     'sans-serif',
   ].join(','),
   h1: {
-    fontSize: '2.25rem', // ~30pt
+    fontSize: '2.25rem', // 27pt
     fontWeight: 700,
     margin: '1.5rem 0',
     lineHeight: 1.2,
@@ -44,12 +44,12 @@ const typography: TypographyVariantsOptions = {
     lineHeight: 1.3,
   },
   h4: {
-    fontSize: '1.2rem', // 18pt
+    fontSize: '1.2rem', // ~14.4pt
     fontWeight: 700,
     lineHeight: 1.4,
   },
   h5: {
-    fontSize: '1.2rem', // 15pt
+    fontSize: '1.2rem', // ~14.4pt
     fontWeight: 600,
     lineHeight: 1.4,
   },

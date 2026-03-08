@@ -54,15 +54,6 @@ export default function BrowsePage(): React.ReactElement {
 
   const List = (
     <>
-      {isWindowDesktop && (
-        <Box sx={{ mb: 2 }}>
-          <SearchMap
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            onClose={() => {}} // Desktop search stays open
-          />
-        </Box>
-      )}
       <FridgeList fridges={filteredFridges} />
     </>
   );
