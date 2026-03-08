@@ -32,6 +32,7 @@ export const useFridgeStore = create<FridgeState>((set, get) => ({
       const apiFridges = await apiClient.getFridges();
       const fridges = apiFridges
         .map(transformFridge)
+        .filter((f) => f.report?.condition !== 'ghost')
         .sort((a, b) => a.name.localeCompare(b.name));
 
       set({
