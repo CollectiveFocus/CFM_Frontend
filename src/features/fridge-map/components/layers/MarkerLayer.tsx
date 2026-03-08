@@ -133,7 +133,7 @@ export function MarkerLayer({
       chunkedLoading
       spiderfyOnMaxZoom={true}
       showCoverageOnHover={false}
-      maxClusterRadius={10}
+      maxClusterRadius={15}
       disableClusteringAtZoom={16}
     >
       {markers}
