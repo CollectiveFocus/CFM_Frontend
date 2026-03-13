@@ -134,7 +134,7 @@ export function MarkerLayer({
       spiderfyOnMaxZoom={true}
       showCoverageOnHover={false}
       maxClusterRadius={15}
-      disableClusteringAtZoom={16}
+      disableClusteringAtZoom={15}
     >
       {markers}
     </MarkerClusterGroup>
