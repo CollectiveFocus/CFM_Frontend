@@ -78,7 +78,7 @@
         "fridgeId": "livinggallery",
         "epochTimestamp": "1761978261",
         "timestamp": "2025-11-01T06:24:21Z",
-        "condition": "ghost",
+        "condition": "not at location",
         "foodPercentage": 1
       }
     },
@@ -227,14 +227,15 @@
   ],
   "reports": [
     {
+      "id": 1,
       "fridgeId": "barriofridge1",
-      "timestamp": "2022-11-10T08:35:17.902Z",
-      "condition": "dirty",
-      "foodPercentage": 1,
-      "photoUrl": "/card/paragraph/pearTomatoAndFridge.svg",
-      "notes": "Voluptatibus aut quaerat."
+      "timestamp": "2026-03-08T04:32:14.123Z",
+      "condition": "good",
+      "foodPercentage": 2,
+      "notes": ""
     },
     {
+      "id": 2,
       "fridgeId": "barriofridge2",
       "timestamp": "2022-11-10T08:35:17.902Z",
       "condition": "out of order",
@@ -243,20 +244,37 @@
       "notes": "Voluptatibus aut quaerat."
     },
     {
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 3,
+      "id": 3,
+      "fridgeId": "harlemcommunityfridge",
       "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "collectivefocusresourcehub"
+      "condition": "good",
+      "foodPercentage": 2,
+      "notes": ""
     },
     {
-      "condition": "good",
-      "notes": "",
-      "foodPercentage": 2,
-      "timestamp": "2022-11-10T08:35:17.902Z",
-      "fridgeId": "harlemcommunityfridge"
+      "id": 4,
+      "fridgeId": "livinggallery",
+      "timestamp": "2025-11-01T06:24:21Z",
+      "condition": "not at location",
+      "foodPercentage": 1,
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "fridgeId": "collectivefocusresourcehub",
+      "timestamp": "2025-11-01T06:24:43Z",
+      "condition": "dirty",
+      "foodPercentage": 3,
+      "notes": ""
     }
   ],
-  "contact": [],
+  "contact": [
+    {
+      "subject": "test",
+      "message": "hello",
+      "email": "test@example.com",
+      "id": 1
+    }
+  ],
   "photo": []
 }

@@ -16,7 +16,7 @@ function ContactPageContent(): React.ReactElement {
     DisplayStatus.Form
   );
   const searchParams = useSearchParams();
-  const subject = searchParams.get('subject') || '';
+  const subject = searchParams?.get('subject') ?? '';
 
   const fridgeUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/contact/`;
 

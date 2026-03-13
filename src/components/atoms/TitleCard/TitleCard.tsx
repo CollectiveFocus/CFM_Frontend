@@ -27,8 +27,8 @@ export function TitleCard({
   return (
     <Card
       sx={{
-        width: { xs: '9em', sm: '10em' },
-        height: '10em',
+        width: { xs: '10em', sm: '12em' },
+        height: { xs: '11em', sm: '13em' },
         backgroundColor: 'secondary.main',
       }}
     >
@@ -53,7 +53,7 @@ export function TitleCard({
           }}
         />
         <CardContent sx={{ p: 0 }}>
-          <Typography variant="h5" textAlign="center" pt={2}>
+          <Typography variant="h6" textAlign="center" pt={2}>
             {title}
           </Typography>
         </CardContent>

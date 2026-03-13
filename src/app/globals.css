@@ -1,5 +1,7 @@
-:root {
-  --font-inter: 'Inter', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
@@ -37,24 +39,24 @@ body {
 
 /* Sizes & Colors */
 .marker-cluster-small {
-  background-color: rgba(181, 226, 140, 0.6);
+  background-color: rgba(255, 212, 255, 0.5);
 }
 .marker-cluster-small div {
-  background-color: rgba(110, 204, 57, 0.8);
+  background-color: rgba(255, 212, 255, 0.85);
 }
 
 .marker-cluster-medium {
-  background-color: rgba(241, 211, 87, 0.6);
+  background-color: rgba(255, 229, 92, 0.5);
 }
 .marker-cluster-medium div {
-  background-color: rgba(240, 194, 12, 0.8);
+  background-color: rgba(255, 229, 92, 0.85);
 }
 
 .marker-cluster-large {
-  background-color: rgba(253, 156, 115, 0.6);
+  background-color: rgba(255, 229, 92, 0.5);
 }
 .marker-cluster-large div {
-  background-color: rgba(241, 128, 23, 0.8);
+  background-color: rgba(255, 229, 92, 0.85);
 }
 
 /* Ensure Leaflet popups use our font */

@@ -45,15 +45,16 @@ export function PageFooter({
     display: 'flex',
     flexFlow: 'row wrap',
     rowGap: '0.2em',
+    color: '#222222',
   };
 
   return (
     <Box component="footer" sx={sxFooter}>
       <PageScroll display={scrollButton} />
-      <Typography variant="caption">
-        &copy; 2022-2025 Fridge Finder. All rights reserved.
+      <Typography variant="footer">
+        &copy; 2022-2026 Fridge Finder. All rights reserved.
       </Typography>
-      <Typography variant="caption">
+      <Typography variant="footer">
         We may use cookies for storing information to help provide you with a
         better, faster, and safer experience and for SEO purposes.
       </Typography>

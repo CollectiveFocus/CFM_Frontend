@@ -95,13 +95,15 @@ export function ReportForm({
                   <FormControlLabel
                     control={<Radio />}
                     value="not at location"
-                    label="Fridge is temporarily unavailable"
+                    label="Fridge is not at location"
                   />
-                  <FormControlLabel
+                  {/* We will be migrating all ghost fridges to "not at location"
+                  disabling for now */}
+                  {/* <FormControlLabel
                     control={<Radio />}
                     value="ghost"
                     label="Fridge is permanently unavailable"
-                  />
+                  /> */}
                 </RadioGroup>
               )}
             />

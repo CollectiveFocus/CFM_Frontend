@@ -80,7 +80,7 @@ export default function BestPracticesPage(): React.ReactElement {
   );
 
   return (
-    <Box sx={{ py: 4 }}>
+    <Box sx={{ py: 1 }}>
       <Typography sx={{ ml: 4 }} variant="h1">
         Best Practices
       </Typography>

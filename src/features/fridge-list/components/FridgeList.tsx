@@ -105,15 +105,15 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}`}
-                aria-label={'Details on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
+                aria-label={`Details of ${fridge.name}`}
+                sx={{ fontSize: ['0.85rem'] }}
                 title={'More Info'}
               />
               <ButtonLink
                 variant="contained"
                 to={`/user/fridge/report/${fridge.id}`}
-                aria-label={'Update Status on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
+                aria-label={`Update Status of ${fridge.name}`}
+                sx={{ fontSize: ['0.85rem'] }}
                 title={'Update Status'}
               />
             </Stack>

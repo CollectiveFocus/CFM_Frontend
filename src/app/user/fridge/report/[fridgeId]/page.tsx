@@ -16,9 +16,9 @@ export default function FridgeReportPage(): React.ReactElement {
     DisplayStatus.Form
   );
   const params = useParams();
-  const fridgeId = params.fridgeId as string;
+  const fridgeId = (params?.fridgeId ?? '') as string;
 
-  const postReportUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/reports`;
+  const postReportUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/${fridgeId}/reports`;
 
   async function handleSubmit(values: ReportFormData) {
     try {

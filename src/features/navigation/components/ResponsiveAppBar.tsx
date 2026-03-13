@@ -175,7 +175,7 @@ export function ResponsiveAppBar(): React.ReactElement {
             open={mobileOpen}
             onClose={handleMobileMenuToggle}
             sx={{
-              '& .MuiDrawer-paper': { width: 240 },
+              '& .MuiDrawer-paper': { width: 210 },
             }}
           >
             <MenuMobile onItemClick={handleMobileItemClick} />

@@ -4,8 +4,10 @@ import React from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import Leaflet from 'leaflet';
+import { Stack, Typography } from '@mui/material';
 import { Fridge } from 'types/domain';
 import { pinColor } from 'theme/palette';
+import { ButtonLink } from 'components/atoms';
 import {
   svgDecorationDirty,
   svgDecorationOutOfOrder,
@@ -90,9 +92,36 @@ export function MarkerLayer({
             }}
           >
             <Popup>
-              <strong>{name}</strong>
+              <Typography variant="caption">{name}</Typography>
               <br />
-              {location.street}
+              <Typography
+                variant="body2"
+                component="span"
+                sx={{ fontSize: '1rem', margin: 0 }}
+              >
+                {location.street}
+                <br />
+                {location.city}, {location.state} {location.zip}
+              </Typography>
+              <Stack direction="row" spacing={3} sx={{ mt: 3 }}>
+                {/* style prop needed: Leaflet's popup CSS targets <a> elements and overrides MUI button text color */}
+                <ButtonLink
+                  variant="contained"
+                  to={`/fridge/${id}`}
+                  aria-label={`Details of ${name}`}
+                  sx={{ fontSize: ['0.85rem'] }}
+                  style={{ color: 'white' }}
+                  title="More Info"
+                />
+                <ButtonLink
+                  variant="contained"
+                  to={`/user/fridge/report/${id}`}
+                  aria-label={`Update status of ${name}`}
+                  sx={{ fontSize: ['0.85rem'] }}
+                  style={{ color: 'white' }}
+                  title="Update Status"
+                />
+              </Stack>
             </Popup>
           </Marker>
         );
@@ -104,8 +133,8 @@ export function MarkerLayer({
       chunkedLoading
       spiderfyOnMaxZoom={true}
       showCoverageOnHover={false}
-      maxClusterRadius={20}
-      disableClusteringAtZoom={16}
+      maxClusterRadius={15}
+      disableClusteringAtZoom={15}
     >
       {markers}
     </MarkerClusterGroup>

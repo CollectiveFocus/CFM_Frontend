@@ -2,15 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import {
-  Box,
-  Typography,
-  Divider,
-  useMediaQuery,
-  Theme,
-  IconButton,
-} from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { Box, Typography, Divider, useMediaQuery, Theme } from '@mui/material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
 import { MapToggle, MapView } from 'components/atoms';
@@ -50,22 +42,6 @@ export default function BrowsePage(): React.ReactElement {
         selectedFridgeId={selectedFridgeId}
         onMarkerClick={setSelectedFridgeId}
       />
-      {!isWindowDesktop && !showSearchMap && (
-        <IconButton
-          onClick={() => setShowSearchMap(true)}
-          sx={{
-            position: 'absolute',
-            bottom: 16,
-            right: 16,
-            backgroundColor: 'secondary.main',
-            color: 'white',
-            '&:hover': { backgroundColor: 'secondary.dark' },
-            zIndex: 1000,
-          }}
-        >
-          <SearchIcon />
-        </IconButton>
-      )}
       {showSearchMap && (
         <SearchMap
           searchQuery={searchQuery}
@@ -78,15 +54,6 @@ export default function BrowsePage(): React.ReactElement {
 
   const List = (
     <>
-      {isWindowDesktop && (
-        <Box sx={{ mb: 2 }}>
-          <SearchMap
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            onClose={() => {}} // Desktop search stays open
-          />
-        </Box>
-      )}
       <FridgeList fridges={filteredFridges} />
     </>
   );
