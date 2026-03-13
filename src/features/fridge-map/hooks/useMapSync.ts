@@ -17,7 +17,7 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
     if (selectedFridgeId) {
       const fridge = fridges.find((f) => f.id === selectedFridgeId);
       if (fridge) {
-        map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 15);
+        map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 14);
       }
     }
   }, [selectedFridgeId, fridges, map]);
