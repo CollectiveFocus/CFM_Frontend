@@ -27,24 +27,21 @@ export function ParagraphCard({
 }: ParagraphCardProps): React.ReactElement {
   if (variant === 'h2') {
     return (
-      <Card
+      <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
           textAlign: { xs: 'center', md: 'left' },
-          backgroundColor: 'white',
-          p: { xs: 3, md: 5 },
-          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-          '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0px 12px 28px rgba(0, 0, 0, 0.1)',
-          },
+          backgroundColor: 'transparent',
+          p: { xs: 0, md: 5 },
         }}
       >
-        <CardContent sx={{ display: { xs: 'block', md: 'none' }, p: 0, pb: 2 }}>
+        <Box
+          sx={{ display: { xs: 'block', md: 'none' }, width: '100%', mb: 2 }}
+        >
           <Typography variant="h2">{title}</Typography>
-        </CardContent>
+        </Box>
 
         <Box sx={{ width: '100%', maxWidth: 400, mx: 'auto' }}>
           <Image
@@ -56,7 +53,7 @@ export function ParagraphCard({
           />
         </Box>
 
-        <CardContent
+        <Box
           sx={{
             flex: { md: 1.5 },
             ml: { xs: 0, md: 6 },
@@ -78,24 +75,19 @@ export function ParagraphCard({
             sx={{ width: '100%', maxWidth: '345px', mt: 4 }}
             title={'LEARN MORE'}
           />
-        </CardContent>
-      </Card>
+        </Box>
+      </Box>
     );
   } else {
     return (
-      <Card
+      <Box
         sx={{
           textAlign: { xs: 'center', md: 'left' },
-          backgroundColor: 'white',
+          backgroundColor: 'transparent',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          p: { xs: 3, md: 4 },
-          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-          '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0px 12px 28px rgba(0, 0, 0, 0.1)',
-          },
+          p: { xs: 0, md: 2 },
         }}
       >
         <Box sx={{ flexShrink: 0, textAlign: 'center', mb: 2 }}>
@@ -106,23 +98,23 @@ export function ParagraphCard({
             height={img.height}
             style={{
               width: '100%',
-              maxWidth: '200px',
+              maxWidth: '160px',
               height: 'auto',
               objectFit: 'contain',
             }}
           />
         </Box>
 
-        <CardContent sx={{ py: 2, px: 0, flexGrow: 1 }}>
+        <Box sx={{ py: 2, px: 0, flexGrow: 1 }}>
           <Typography variant="h3" pb={2} fontWeight={700}>
             {title}
           </Typography>
           <Typography variant="body1" color="text.secondary">
             {text}
           </Typography>
-        </CardContent>
+        </Box>
 
-        <CardActions sx={{ p: 0, mt: 2 }}>
+        <Box sx={{ mt: 2 }}>
           <ButtonLink
             to={link}
             variant="outlined"
@@ -133,8 +125,8 @@ export function ParagraphCard({
             }}
             title={'LEARN MORE'}
           />
-        </CardActions>
-      </Card>
+        </Box>
+      </Box>
     );
   }
 }

@@ -146,15 +146,13 @@ export function FeedbackCard({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         textAlign: 'center',
+        minHeight: 'calc(100vh - 120px)',
         maxWidth: 600,
         mx: 'auto',
         p: { xs: 4, md: 6 },
-        backgroundColor: 'background.paper',
-        borderRadius: 4,
-        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-        border: '1px solid rgba(0,0,0,0.05)',
-        mt: 8,
+        backgroundColor: 'transparent',
       }}
     >
       <Typography textAlign="center" variant="h1" sx={{ mt: 2, mb: 1 }}>

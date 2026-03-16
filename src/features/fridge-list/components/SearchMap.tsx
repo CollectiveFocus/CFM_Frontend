@@ -58,21 +58,19 @@ export function SearchMap({
         onSubmit={handleSearch}
         sx={{
           ...flexStyles,
-          backgroundColor: 'background.paper',
-          border: '1px solid rgba(0,0,0,0.1)',
-          borderRadius: 12,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+          backgroundColor: 'rgba(0,0,0,0.04)',
+          borderRadius: 2,
           width: '100%',
           maxWidth: 600,
-          height: '2.8em',
+          height: '2.5em',
         }}
       >
-        <SearchIcon sx={{ fontSize: 22, color: 'text.secondary' }} />
+        <SearchIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
         <InputBase
           placeholder="Fridge names, locations, etc."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          sx={{ mx: 1 }}
+          sx={{ mx: 1, fontSize: '0.95rem' }}
           fullWidth
         />
         {searchQuery.length > 0 && (

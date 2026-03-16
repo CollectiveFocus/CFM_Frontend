@@ -44,11 +44,10 @@ let theme: Theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 45,
-          textTransform: 'none',
-          boxShadow: 'none',
+          textTransform: 'uppercase',
           padding: '8px 24px',
+          fontWeight: 700,
           '&:hover': {
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             borderColor: designColor.blue.dark,
           },
           '&.MuiButton-outlined': {
@@ -68,37 +67,6 @@ let theme: Theme = createTheme({
           style: { minWidth: 300 },
         },
       ],
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 16,
-          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
-          border: '1px solid rgba(0,0,0,0.05)',
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundImage: 'none',
-        },
-        rounded: {
-          borderRadius: 16,
-          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
-          border: '1px solid rgba(0,0,0,0.05)',
-        },
-      },
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          '& .MuiOutlinedInput-root': {
-            borderRadius: 12,
-            backgroundColor: designColor.white,
-          },
-        },
-      },
     },
   },
 });

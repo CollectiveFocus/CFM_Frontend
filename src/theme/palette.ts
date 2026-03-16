@@ -47,7 +47,7 @@ const palette: PaletteOptions = {
     main: designColor.blue.light,
   },
   background: {
-    default: designColor.whiteSmoke,
+    default: designColor.white,
     paper: designColor.white,
   },
   text: {

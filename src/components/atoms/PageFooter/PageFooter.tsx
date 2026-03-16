@@ -39,25 +39,26 @@ export function PageFooter({
   scrollButton = true,
 }: PageFooterProps): React.ReactElement {
   const sxFooter = {
-    padding: { xs: 3, md: 4 },
-    backgroundColor: '#1E232B',
-    color: '#9ba1a6',
+    py: 2,
+    px: { xs: 2, md: 4 },
+    backgroundColor: 'transparent',
+    color: 'text.secondary',
     width: '100%',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: { xs: 'column', md: 'row' },
+    justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'center',
-    gap: 1,
-    borderTop: '1px solid rgba(255,255,255,0.1)',
+    gap: { xs: 1, md: 3 },
+    borderTop: '1px solid rgba(0,0,0,0.08)',
   };
 
   return (
     <Box component="footer" sx={sxFooter}>
       <PageScroll display={scrollButton} />
-      <Typography variant="body2" sx={{ fontWeight: 500, color: '#e8eaed' }}>
+      <Typography variant="body2" sx={{ fontWeight: 500 }}>
         &copy; 2022-2025 Fridge Finder. All rights reserved.
       </Typography>
-      <Typography variant="caption" sx={{ maxWidth: 600 }}>
+      <Typography variant="caption" sx={{ maxWidth: { xs: '100%', md: 600 } }}>
         We may use cookies for storing information to help provide you with a
         better, faster, and safer experience and for SEO purposes.
       </Typography>

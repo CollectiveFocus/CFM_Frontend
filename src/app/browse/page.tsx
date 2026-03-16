@@ -58,12 +58,18 @@ export default function BrowsePage(): React.ReactElement {
       >
         <Box sx={{ display: { xs: 'none', md: 'block' }, pt: 2, pb: 1 }}>
           <Typography
-            variant="h4"
-            sx={{ paddingBottom: '.5em', fontWeight: 600 }}
+            variant="overline"
+            sx={{
+              display: 'block',
+              fontSize: '0.85rem',
+              letterSpacing: 1.5,
+              fontWeight: 600,
+              color: 'text.secondary',
+              mb: 1,
+            }}
           >
             FRIDGES WITHIN THIS AREA
           </Typography>
-          <Divider sx={{ mb: 2 }} />
           <SearchMap
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
@@ -76,6 +82,7 @@ export default function BrowsePage(): React.ReactElement {
               pb: 3,
             }}
           />
+          <Divider sx={{ mb: 2 }} />
         </Box>
         <StateBoundary
           status={status}
