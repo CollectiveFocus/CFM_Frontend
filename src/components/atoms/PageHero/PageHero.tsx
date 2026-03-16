@@ -25,9 +25,10 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '70vh',
+        height: { xs: '50vh', md: '450px' },
         width: '100%',
         position: 'relative',
+        overflow: 'hidden',
       }}
     >
       <Image
@@ -43,7 +44,7 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
           to={button.to}
           aria-label={button['aria-label']}
           sx={{
-            minWidth: { xs: '90vw', md: '75vw', lg: '500px' },
+            minWidth: { xs: '90vw', md: '500px' },
             fontVariant: 'small-caps',
             boxShadow: 8,
             position: 'relative',

@@ -73,7 +73,9 @@ interface PamphletParagraphProps {
 
 const sxParagraphMargin = {
   mb: 7,
-  mx: { xs: 4, sm: 8, md: 10, lg: 15, xl: 20 },
+  mx: 'auto',
+  px: { xs: 2, sm: 4, md: 6 },
+  maxWidth: 900,
 };
 
 function DividerGrey(): React.ReactElement {

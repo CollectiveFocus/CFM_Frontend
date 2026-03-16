@@ -55,10 +55,14 @@ function TabPanel({
       {currentTab === index && (
         <Box
           sx={{
+            px: { xs: 0, sm: 6, md: 10 },
             '& ol': {
-              paddingLeft: 6,
-              paddingRight: 7,
+              paddingLeft: { xs: 3, sm: 6 },
+              paddingRight: { xs: 3, sm: 7 },
               marginBottom: 12,
+            },
+            '& li': {
+              marginBottom: 2,
             },
           }}
         >

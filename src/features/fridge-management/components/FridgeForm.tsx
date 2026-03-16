@@ -45,7 +45,13 @@ export function FridgeForm({
       <StepLabel>Fridge Location Information</StepLabel>
       <StepContent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Stack direction="column" spacing={3} mx={4} mb={4}>
+          <Stack
+            direction="column"
+            spacing={3}
+            mx={{ xs: 0, sm: 4 }}
+            mt={2}
+            mb={4}
+          >
             <TextField
               label="Name of Fridge"
               variant="outlined"

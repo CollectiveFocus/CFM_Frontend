@@ -32,12 +32,18 @@ export function ContactForm({
   });
 
   return (
-    <Stack spacing={4} mx={4} mt={15} mb={4}>
+    <Stack
+      spacing={4}
+      mx={{ xs: 2, sm: 4, md: 'auto' }}
+      maxWidth={600}
+      mt={{ xs: 8, md: 15 }}
+      mb={4}
+    >
       <Typography variant="h1" sx={{ textAlign: 'center' }}>
         Contact Us!
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Stack direction="column" spacing={5} mx={4} mb={4}>
+        <Stack direction="column" spacing={5} mx={{ xs: 1, sm: 4 }} mb={4}>
           <TextField
             label="Full Name"
             variant="outlined"
@@ -69,7 +75,7 @@ export function ContactForm({
             helperText={errors.message?.message}
           />
           <Stack
-            direction="row"
+            direction={{ xs: 'column-reverse', sm: 'row' }}
             justifyContent="space-between"
             spacing={4}
             pt={4}
@@ -79,11 +85,13 @@ export function ContactForm({
               variant="outlined"
               to="/"
               title="Cancel"
+              sx={{ flex: 1 }}
             />
             <Button
               aria-label="Click to send an email to Fridge Finder"
               variant="contained"
               type="submit"
+              sx={{ flex: 1 }}
             >
               Send Email
             </Button>

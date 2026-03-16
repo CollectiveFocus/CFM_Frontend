@@ -88,13 +88,13 @@ export default function HomePage(): React.ReactElement {
       <PageHero {...pageHero} />
       <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
 
-      <Box sx={{ px: 4, mb: 4 }}>
+      <Box sx={{ px: { xs: 2, sm: 4 }, mb: 8, mx: 'auto', maxWidth: 1200 }}>
         <Grid container direction="row" justifyContent="center" spacing={4}>
           <Grid
             size={{
               xs: 12,
-              sm: 10,
-              lg: 8,
+              md: 10,
+              lg: 10,
             }}
           >
             <ParagraphCard {...paragraphCard.h2} variant="h2" />
@@ -104,7 +104,7 @@ export default function HomePage(): React.ReactElement {
             <Typography
               variant="h2"
               textAlign="center"
-              sx={{ mb: { xs: 1, lg: 3 } }}
+              sx={{ mt: 6, mb: { xs: 2, lg: 4 } }}
             >
               Get involved with community fridges!
             </Typography>
@@ -113,7 +113,7 @@ export default function HomePage(): React.ReactElement {
           <Grid
             container
             direction="row"
-            justifyContent="space-evenly"
+            justifyContent="center"
             spacing={4}
             size={12}
           >
@@ -124,7 +124,6 @@ export default function HomePage(): React.ReactElement {
                   xs: 12,
                   sm: 8,
                   md: 4,
-                  lg: 3,
                 }}
               >
                 <ParagraphCard key={'ParagraphCard' + index} {...card} />

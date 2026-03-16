@@ -147,45 +147,30 @@ function ImageContainer({
   alt,
   isAboveFold = false,
 }: ImageContainerProps): React.ReactElement | null {
-  if (src) {
-    return (
-      <>
-        <Box
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-            priority={isAboveFold}
-          />
-        </Box>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            width: '100%',
-          }}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={300}
-            height={345}
-            style={{ objectFit: 'contain' }}
-            priority={isAboveFold}
-          />
-        </Stack>
-      </>
-    );
-  } else return null;
+  if (!src) return null;
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: 400,
+        aspectRatio: '4 / 3',
+        mx: 'auto',
+        overflow: 'hidden',
+        borderRadius: 2,
+      }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 400px) 100vw, 400px"
+        style={{ objectFit: 'contain' }}
+        priority={isAboveFold}
+      />
+    </Box>
+  );
 }
 
 function TagsContainer({
@@ -425,7 +410,14 @@ export function FridgeInformation({
   report,
 }: FridgeInformationProps): React.ReactElement {
   return (
-    <Stack direction="column" spacing={5} mx={4} mb={4}>
+    <Stack
+      direction="column"
+      spacing={5}
+      mx={{ xs: 2, sm: 4, md: 'auto' }}
+      maxWidth={800}
+      mt={4}
+      mb={4}
+    >
       <FridgeContainer fridge={fridge} />
       <ReportContainer report={report} />
 

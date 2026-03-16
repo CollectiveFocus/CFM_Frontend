@@ -41,13 +41,13 @@ export function ParagraphCard({
           <Typography variant="h2">{title}</Typography>
         </CardContent>
 
-        <Box sx={{ width: 'clamp(300px, 100%, 400px)' }}>
+        <Box sx={{ width: '100%', maxWidth: 400, mx: 'auto' }}>
           <Image
             src={img.src}
             alt={img.alt}
             width={img.width}
             height={img.height}
-            style={{ width: '100%', height: 'auto' }}
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
           />
         </Box>
 
@@ -55,6 +55,7 @@ export function ParagraphCard({
           sx={{
             flex: { md: 1.5 },
             ml: { xs: 0, md: 6 },
+            mt: { xs: 3, md: 0 },
             p: 0,
           }}
         >

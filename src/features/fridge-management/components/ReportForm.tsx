@@ -64,12 +64,22 @@ export function ReportForm({
   });
 
   return (
-    <Stack direction="column" spacing={1} mx={4}>
-      <Typography variant="h1">Fridge Status Report</Typography>
-      <Typography variant="h5">{fridgeId}</Typography>
+    <Stack
+      direction="column"
+      spacing={1}
+      mx={{ xs: 2, sm: 4, md: 'auto' }}
+      maxWidth={600}
+      mt={{ xs: 4, md: 8 }}
+    >
+      <Typography variant="h1" textAlign="center">
+        Fridge Status Report
+      </Typography>
+      <Typography variant="h5" textAlign="center" color="textSecondary" mb={2}>
+        {fridgeId}
+      </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Divider orientation="horizontal" flexItem />
-        <Stack direction="column" spacing={3} mt={2}>
+        <Stack direction="column" spacing={3} mt={4} mb={4}>
           <FormLabel>Select if applicable:</FormLabel>
           <FormControl component="fieldset">
             <Controller
