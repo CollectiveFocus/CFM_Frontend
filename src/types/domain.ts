@@ -32,6 +32,7 @@ export interface Fridge {
   maintainer: Maintainer;
   photoUrl?: string;
   notes?: string;
+  tags?: string[];
   last_edited?: string;
   report: FridgeReport | null;
 }

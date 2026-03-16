@@ -313,7 +313,7 @@ function FridgeContainer({
             <Typography variant="h2">{name}</Typography>
           </Stack>
           {/* Tags are not in domain model yet, adding as placeholder */}
-          <TagsContainer tags={(fridge as any).tags} />
+          <TagsContainer tags={fridge.tags} />
         </Stack>
 
         <Divider />

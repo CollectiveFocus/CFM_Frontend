@@ -82,12 +82,14 @@ const displayImg: Record<
 
 interface FeedbackCardProps {
   form: FeedbackFormType;
-  slug?: any;
+  slug?: string;
+  onClickRetry?: () => void;
 }
 
 export function FeedbackCard({
   form,
-  slug = null,
+  slug = '',
+  onClickRetry,
 }: FeedbackCardProps): React.ReactElement {
   const displayButton = {
     EmailSuccess: (
@@ -110,7 +112,7 @@ export function FeedbackCard({
     ),
     Error: (
       <Button
-        onClick={slug}
+        onClick={onClickRetry}
         aria-label="Return to the form and try again"
         variant="contained"
         sx={{ mt: 8, mb: 2, minWidth: 300 }}

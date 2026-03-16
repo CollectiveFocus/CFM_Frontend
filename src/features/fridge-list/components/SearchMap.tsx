@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, InputBase, IconButton } from '@mui/material';
+import { Box, InputBase, IconButton, Theme, SxProps } from '@mui/material';
 import {
   Search as SearchIcon,
   Cancel as CancelIcon,
@@ -20,6 +20,7 @@ interface SearchMapProps {
   onSearchChange: (query: string) => void;
   onClose: () => void;
   hideCloseIcon?: boolean;
+  sx?: SxProps<Theme>;
 }
 
 export function SearchMap({
@@ -28,12 +29,10 @@ export function SearchMap({
   onClose,
   hideCloseIcon = false,
   sx = {},
-}: SearchMapProps & {
-  sx?: import('@mui/material').SxProps<import('@mui/material').Theme>;
-}): React.ReactElement {
-  function handleSearch(e: React.FormEvent) {
+}: SearchMapProps): React.ReactElement {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <Box

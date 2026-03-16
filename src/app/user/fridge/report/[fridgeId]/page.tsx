@@ -60,7 +60,7 @@ export default function FridgeReportPage(): React.ReactElement {
         return (
           <FeedbackCard
             form="Error"
-            slug={() => setDisplayStatus(DisplayStatus.Form)}
+            onClickRetry={() => setDisplayStatus(DisplayStatus.Form)}
           />
         );
       default:

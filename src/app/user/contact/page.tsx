@@ -51,7 +51,7 @@ function ContactPageContent(): React.ReactElement {
         return (
           <FeedbackCard
             form="Error"
-            slug={() => setDisplayStatus(DisplayStatus.Form)}
+            onClickRetry={() => setDisplayStatus(DisplayStatus.Form)}
           />
         );
       default:
