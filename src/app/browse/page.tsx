@@ -2,12 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import {
-  Box,
-  Typography,
-  Divider,
-  IconButton,
-} from '@mui/material';
+import { Box, Typography, Divider, IconButton } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
@@ -40,7 +35,11 @@ export default function BrowsePage(): React.ReactElement {
 
   return (
     <Box
-      sx={{ display: 'flex', flexDirection: 'row', height: availableHeight || 'calc(100vh - 64px)' }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        height: availableHeight || 'calc(100vh - 64px)',
+      }}
     >
       {/* List Area */}
       <Box
@@ -57,8 +56,11 @@ export default function BrowsePage(): React.ReactElement {
           height: '100%',
         }}
       >
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-          <Typography variant="h4" sx={{ paddingBottom: '.5em' }}>
+        <Box sx={{ display: { xs: 'none', md: 'block' }, pt: 2, pb: 1 }}>
+          <Typography
+            variant="h4"
+            sx={{ paddingBottom: '.5em', fontWeight: 600 }}
+          >
             FRIDGES WITHIN THIS AREA
           </Typography>
           <Divider sx={{ mb: 2 }} />

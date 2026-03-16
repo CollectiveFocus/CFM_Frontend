@@ -147,16 +147,43 @@ export function FeedbackCard({
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        maxWidth: 600,
+        mx: 'auto',
+        p: { xs: 4, md: 6 },
+        backgroundColor: 'background.paper',
+        borderRadius: 4,
+        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+        border: '1px solid rgba(0,0,0,0.05)',
+        mt: 8,
       }}
     >
-      <Typography textAlign="center" variant="h1" sx={{ marginTop: 4 }}>
+      <Typography textAlign="center" variant="h1" sx={{ mt: 2, mb: 1 }}>
         {displayHeading[form]}
       </Typography>
-      <Typography textAlign="center" variant="body1" sx={{ mb: 4 }}>
+      <Typography
+        textAlign="center"
+        variant="body1"
+        sx={{ mb: 6, color: 'text.secondary' }}
+      >
         {displayText[form]}
       </Typography>
-      <Image {...displayImg[form]} />
-      {displayButton[form]}
+      <Box sx={{ my: 2 }}>
+        <Image
+          {...displayImg[form]}
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      </Box>
+      <Box
+        sx={{
+          mt: 2,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        {displayButton[form]}
+      </Box>
     </Box>
   );
 }

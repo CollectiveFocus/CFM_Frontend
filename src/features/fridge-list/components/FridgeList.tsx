@@ -84,7 +84,15 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
         <ListItem
           key={fridge.id}
           divider={fridgeIndex !== fridges.length - 1}
-          sx={{ paddingY: 5.5, paddingX: 0 }}
+          sx={{
+            paddingY: 4,
+            paddingX: 3,
+            transition: 'background-color 0.2s',
+            borderRadius: 2,
+            '&:hover': {
+              backgroundColor: 'rgba(0,0,0,0.02)',
+            },
+          }}
         >
           <Stack direction="column" spacing={3} width="100%">
             <Stack direction="row" spacing={3}>

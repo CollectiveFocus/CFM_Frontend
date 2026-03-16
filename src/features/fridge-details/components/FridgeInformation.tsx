@@ -11,6 +11,7 @@ import {
   Stack,
   Typography,
   Box,
+  Paper,
 } from '@mui/material';
 import {
   ArrowBack as ArrowBackIcon,
@@ -410,23 +411,29 @@ export function FridgeInformation({
   report,
 }: FridgeInformationProps): React.ReactElement {
   return (
-    <Stack
-      direction="column"
-      spacing={5}
-      mx={{ xs: 2, sm: 4, md: 'auto' }}
-      maxWidth={800}
-      mt={4}
-      mb={4}
-    >
-      <FridgeContainer fridge={fridge} />
-      <ReportContainer report={report} />
+    <Box sx={{ width: '100%', py: { xs: 2, md: 6 }, px: { xs: 2, sm: 4 } }}>
+      <Paper
+        elevation={0}
+        sx={{
+          mx: 'auto',
+          maxWidth: 800,
+          p: { xs: 3, md: 6 },
+          backgroundColor: 'background.paper',
+        }}
+      >
+        <Stack direction="column" spacing={5}>
+          <FridgeContainer fridge={fridge} />
+          <ReportContainer report={report} />
 
-      <ButtonLink
-        aria-label="Click to report the status of the fridge"
-        variant="contained"
-        to={`/user/fridge/report/${fridge.id}`}
-        title="Update Status"
-      />
-    </Stack>
+          <ButtonLink
+            aria-label="Click to report the status of the fridge"
+            variant="contained"
+            to={`/user/fridge/report/${fridge.id}`}
+            title="Update Status"
+            sx={{ mt: 4 }}
+          />
+        </Stack>
+      </Paper>
+    </Box>
   );
 }

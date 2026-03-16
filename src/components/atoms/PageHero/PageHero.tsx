@@ -38,6 +38,18 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
         alt={img.alt}
         src={img.src}
       />
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background:
+            'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6))',
+          zIndex: 0,
+        }}
+      />
       {button && (
         <ButtonLink
           variant={button.variant || 'contained'}

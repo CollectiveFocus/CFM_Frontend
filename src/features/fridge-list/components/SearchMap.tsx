@@ -58,14 +58,16 @@ export function SearchMap({
         onSubmit={handleSearch}
         sx={{
           ...flexStyles,
-          backgroundColor: 'background.default',
-          borderRadius: 8,
+          backgroundColor: 'background.paper',
+          border: '1px solid rgba(0,0,0,0.1)',
+          borderRadius: 12,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
           width: '100%',
           maxWidth: 600,
-          height: '1.9em',
+          height: '2.8em',
         }}
       >
-        <SearchIcon sx={{ fontSize: 25 }} />
+        <SearchIcon sx={{ fontSize: 22, color: 'text.secondary' }} />
         <InputBase
           placeholder="Fridge names, locations, etc."
           value={searchQuery}

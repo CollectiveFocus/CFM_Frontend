@@ -121,8 +121,18 @@ export function ResponsiveAppBar(): React.ReactElement {
   }, []);
 
   return (
-    <AppBar id="AppBar" position="sticky">
-      <Toolbar sx={{ p: 0 }}>
+    <AppBar
+      id="AppBar"
+      position="sticky"
+      elevation={0}
+      sx={{
+        backgroundColor: 'background.paper',
+        borderBottom: '1px solid',
+        borderColor: 'rgba(0,0,0,0.05)',
+        px: { xs: 2, md: 4 },
+      }}
+    >
+      <Toolbar sx={{ p: 0, justifyContent: 'space-between' }}>
         <IconButton
           disableRipple
           aria-label="Go to Home page"
@@ -163,7 +173,7 @@ export function ResponsiveAppBar(): React.ReactElement {
             aria-controls="mobile-menu"
             aria-haspopup="true"
             onClick={handleMobileMenuToggle}
-            color="inherit"
+            sx={{ color: 'text.primary' }}
           >
             <MenuIcon />
           </IconButton>
