@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import { FeedbackCard } from 'components/atoms';
+import { FeedbackCard, PageFooter } from 'components/atoms';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
 
 enum DisplayStatus {
@@ -68,5 +68,10 @@ export default function FridgeReportPage(): React.ReactElement {
     }
   }
 
-  return <>{fridgeId && renderContent()}</>;
+  return (
+    <>
+      {fridgeId && renderContent()}
+      <PageFooter />
+    </>
+  );
 }

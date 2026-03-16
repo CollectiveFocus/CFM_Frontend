@@ -75,12 +75,7 @@ export default function BrowsePage(): React.ReactElement {
             onSearchChange={setSearchQuery}
             onClose={() => {}} // Desktop search stays open
             hideCloseIcon
-            sx={{
-              position: 'relative',
-              bottom: 0,
-              background: 'none',
-              pb: 3,
-            }}
+            sx={{ mb: 3 }}
           />
           <Divider sx={{ mb: 2 }} />
         </Box>

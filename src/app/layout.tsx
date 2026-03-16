@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { Box } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ResponsiveAppBar } from 'features/navigation';
 import { Providers } from 'components/shared/Providers';
@@ -34,11 +35,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
+      <body
+        className={inter.className}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          margin: 0,
+        }}
+      >
         <AppRouterCacheProvider>
           <Providers>
             <ResponsiveAppBar />
-            {children}
+            <Box
+              component="main"
+              sx={{
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                '& > *': {
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                },
+              }}
+            >
+              {children}
+            </Box>
           </Providers>
         </AppRouterCacheProvider>
       </body>

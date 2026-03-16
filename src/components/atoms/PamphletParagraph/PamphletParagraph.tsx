@@ -72,10 +72,10 @@ interface PamphletParagraphProps {
 }
 
 const sxParagraphMargin = {
-  mb: 7,
+  my: { xs: 6, md: 8 },
   mx: 'auto',
   px: { xs: 2, sm: 4, md: 6 },
-  maxWidth: 900,
+  maxWidth: 800,
 };
 
 function DividerGrey(): React.ReactElement {
@@ -99,19 +99,23 @@ export function PamphletParagraph({
 
       {img && <ResponsiveImage {...img} />}
 
-      <Typography sx={{ mt: 7, mb: 7 }} variant={variant}>
+      <Typography sx={{ mb: 4 }} variant={variant} color="primary.main">
         <SoftWrap text={title} />
       </Typography>
 
       {body &&
         body.map((val, index) => (
-          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
+          <Typography
+            variant="body1"
+            sx={{ mb: 2, lineHeight: 1.7 }}
+            key={`${index}_PamphletParagraph`}
+          >
             {val}
           </Typography>
         ))}
 
       {button && (
-        <Box textAlign="center" sx={{ mt: 7 }}>
+        <Box textAlign="center" sx={{ mt: 6 }}>
           <ButtonLink
             variant={button.variant}
             to={button.to}

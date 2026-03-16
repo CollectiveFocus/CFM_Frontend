@@ -2,65 +2,41 @@
 
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { designColor } from 'theme/palette';
-
-interface PageScrollProps {
-  display: boolean;
-}
-
-function PageScroll({ display }: PageScrollProps): React.ReactElement | null {
-  if (!display) return null;
-
-  return (
-    <a
-      href="#"
-      title="Top of page"
-      style={{
-        position: 'fixed',
-        right: '1rem',
-        bottom: '3rem',
-        width: '2.8rem',
-        height: '2.8rem',
-        borderRadius: '50%',
-        background:
-          '#88B3FF url(\'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="3rem"  width="3rem" viewBox="0 0 24 24" fill="%23222"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.29 8.71L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.38-.39-1.02-.39-1.41 0z"/></svg>\') center no-repeat',
-        boxShadow: '0 0.25rem 0.5rem 0 #222',
-        opacity: 0.6,
-      }}
-    />
-  );
-}
 
 interface PageFooterProps {
   scrollButton?: boolean;
 }
 
 export function PageFooter({
-  scrollButton = true,
+  scrollButton = false,
 }: PageFooterProps): React.ReactElement {
   const sxFooter = {
-    py: 2,
-    px: { xs: 2, md: 4 },
+    py: 1.5,
+    px: 2,
     backgroundColor: 'transparent',
     color: 'text.secondary',
     width: '100%',
     display: 'flex',
-    flexDirection: { xs: 'column', md: 'row' },
     justifyContent: 'center',
     alignItems: 'center',
-    gap: { xs: 1, md: 3 },
-    borderTop: '1px solid rgba(0,0,0,0.08)',
+    borderTop: '1px solid rgba(0,0,0,0.06)',
+    mt: 'auto',
   };
 
   return (
     <Box component="footer" sx={sxFooter}>
-      <PageScroll display={scrollButton} />
-      <Typography variant="body2" sx={{ fontWeight: 500 }}>
-        &copy; 2022-2025 Fridge Finder. All rights reserved.
-      </Typography>
-      <Typography variant="caption" sx={{ maxWidth: { xs: '100%', md: 600 } }}>
-        We may use cookies for storing information to help provide you with a
-        better, faster, and safer experience and for SEO purposes.
+      <Typography
+        sx={{
+          fontSize: '0.7rem',
+          opacity: 0.8,
+          textAlign: 'center',
+          lineHeight: 1.4,
+          maxWidth: 800,
+        }}
+      >
+        &copy; 2022-2025 Fridge Finder. All rights reserved. We may use cookies
+        for storing information to help provide you with a better, faster, and
+        safer experience and for SEO purposes.
       </Typography>
     </Box>
   );

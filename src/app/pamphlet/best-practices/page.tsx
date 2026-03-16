@@ -1,10 +1,10 @@
-'use client';
-
-import React, { useState, useCallback } from 'react';
-import { Box, Tab, Tabs, Typography } from '@mui/material';
+import React from 'react';
+import { Metadata } from 'next';
+import { Box, Typography, Paper } from '@mui/material';
 import { PageFooter } from 'components/atoms';
+import { CheckCircleOutline as CheckIcon } from '@mui/icons-material';
 
-const panelList = [
+const practices = [
   {
     title: 'Dropping off',
     content: [
@@ -31,96 +31,81 @@ const panelList = [
   },
 ];
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  currentTab: number;
-  index: number;
-}
-
-function TabPanel({
-  children,
-  currentTab,
-  index,
-  ...other
-}: TabPanelProps): React.ReactElement {
-  return (
-    <Box
-      role="tabpanel"
-      hidden={currentTab !== index}
-      id={`tabpanel-${index}`}
-      aria-labelledby={`tab-${index}`}
-      sx={{ mx: 4 }}
-      {...other}
-    >
-      {currentTab === index && (
-        <Box
-          sx={{
-            px: { xs: 0, sm: 6, md: 10 },
-            '& ol': {
-              paddingLeft: { xs: 3, sm: 6 },
-              paddingRight: { xs: 3, sm: 7 },
-              marginBottom: 12,
-            },
-            '& li': {
-              marginBottom: 2,
-            },
-          }}
-        >
-          <ol>{children}</ol>
-        </Box>
-      )}
-    </Box>
-  );
-}
+export const metadata: Metadata = {
+  title: 'Fridge Finder: Best Practices',
+};
 
 export default function BestPracticesPage(): React.ReactElement {
-  const [ixCurrentPanel, setCurrentPanelIndex] = useState(0);
-
-  const handleChange = useCallback(
-    (event: React.SyntheticEvent, newValue: number) => {
-      setCurrentPanelIndex(newValue);
-    },
-    []
-  );
-
   return (
-    <Box sx={{ py: 4 }}>
-      <Typography sx={{ ml: 4 }} variant="h1">
-        Best Practices
-      </Typography>
-      <Tabs
-        sx={{ mx: 4 }}
-        value={ixCurrentPanel}
-        onChange={handleChange}
-        aria-label="Community Fridge Best Practices"
-        variant="fullWidth"
-        textColor="primary"
+    <>
+      <Box
+        sx={{
+          maxWidth: 900,
+          mx: 'auto',
+          px: { xs: 2, sm: 4, md: 6 },
+          py: { xs: 6, md: 10 },
+          width: '100%',
+        }}
       >
-        {panelList.map((panel, index) => (
-          <Tab
-            key={'tab-title-' + panel.title}
-            label={panel.title}
-            sx={{ textTransform: 'none', paddingTop: 0 }}
-            id={'tab-' + index}
-            aria-controls={'tab-panel-' + index}
-          />
-        ))}
-      </Tabs>
-      {panelList.map((panel, ixPanel) => (
-        <TabPanel
-          key={`tab-panel-${ixPanel}`}
-          currentTab={ixCurrentPanel}
-          index={ixPanel}
+        <Typography variant="h1" sx={{ textAlign: 'center', mb: 2 }}>
+          Best Practices
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            textAlign: 'center',
+            color: 'text.secondary',
+            mb: 8,
+            maxWidth: 600,
+            mx: 'auto',
+          }}
         >
-          {panel.content.map((item, ixContent) => (
-            <li key={`tab-content-${ixPanel}-${ixContent}`}>
-              <Typography>{item}</Typography>
-            </li>
-          ))}
-        </TabPanel>
-      ))}
+          Please follow these guidelines when interacting with community fridges
+          to keep them safe, clean, and accessible to everyone in the
+          neighborhood.
+        </Typography>
 
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          {practices.map((section, index) => (
+            <Paper
+              key={index}
+              elevation={0}
+              sx={{
+                p: { xs: 4, md: 6 },
+                borderRadius: 4,
+                border: '1px solid rgba(0,0,0,0.05)',
+                backgroundColor: 'background.paper',
+              }}
+            >
+              <Typography variant="h2" sx={{ mb: 4, color: 'primary.main' }}>
+                {section.title}
+              </Typography>
+              <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+                {section.content.map((item, i) => (
+                  <Box
+                    component="li"
+                    key={i}
+                    sx={{ display: 'flex', alignItems: 'flex-start', mb: 3 }}
+                  >
+                    <CheckIcon
+                      sx={{
+                        color: 'primary.main',
+                        mr: 2,
+                        mt: 0.5,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
+                      {item}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Paper>
+          ))}
+        </Box>
+      </Box>
       <PageFooter />
-    </Box>
+    </>
   );
 }
