@@ -41,7 +41,7 @@
   "type": "module",
   "scripts": {
     "postinstall": "npx simple-git-hooks",
-    "dev": "concurrently --names \"MOCK,NEXT\" --prefix-colors \"yellow,green\" --kill-others \"npx json-server mock/data.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050\" \"next dev --turbopack\"",
+    "dev": "node scripts/start-dev.mjs",
     "web": "next dev",
     "data": "npx json-server mock/data.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050",
     "build": "next build",
@@ -59,7 +59,7 @@
   ],
   "packageManager": "yarn@1.22.22",
   "simple-git-hooks": {
-    "pre-commit": "lint-staged --quiet --no-stash --concurrent true",
+    "pre-commit": "npx lint-staged --quiet --no-stash --concurrent true",
     "commit-msg": "node ci/commit-msg.mjs $1"
   },
   "dependencies": {

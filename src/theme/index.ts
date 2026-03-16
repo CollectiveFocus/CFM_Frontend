@@ -1,5 +1,9 @@
-import { createTheme, responsiveFontSizes, Theme } from '@mui/material/styles';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
+import {
+  createTheme,
+  responsiveFontSizes,
+  Theme,
+  TypographyVariantsOptions,
+} from '@mui/material/styles';
 
 import palette, { applyAlpha, designColor } from './palette';
 import typography from './typography';
@@ -7,8 +11,18 @@ import typography from './typography';
 let theme: Theme = createTheme({
   palette,
   typography: {
-    ...(typography as TypographyOptions),
-    fontFamily: 'var(--font-inter), Inter, sans-serif',
+    ...(typography as TypographyVariantsOptions),
+    fontFamily: [
+      'var(--font-inter)',
+      'Inter',
+      '"Helvetica Neue"',
+      'HelveticaNeue',
+      'Helvetica',
+      '"TeX Gyre"',
+      'TeXGyre',
+      'Arial',
+      'sans-serif',
+    ].join(','),
   },
   spacing: 4,
   components: {
@@ -30,7 +44,6 @@ let theme: Theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 45,
-          textTransform: 'none',
           '&:hover': {
             borderColor: designColor.blue.dark,
           },
