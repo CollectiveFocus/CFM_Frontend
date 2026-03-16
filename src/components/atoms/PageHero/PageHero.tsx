@@ -46,6 +46,8 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
             minWidth: { xs: '90vw', md: '75vw', lg: '500px' },
             fontVariant: 'small-caps',
             boxShadow: 8,
+            position: 'relative',
+            zIndex: 1,
           }}
           title={button.title}
         />

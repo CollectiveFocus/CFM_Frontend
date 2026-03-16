@@ -101,19 +101,24 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 ) : null}
               </Stack>
             </Stack>
-            <Stack direction="row" width="100%" spacing={3}>
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              width="100%"
+              spacing={3}
+              sx={{ mt: 2 }}
+            >
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}`}
                 aria-label={'Details on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
+                sx={{ fontSize: ['1rem'], flex: 1 }}
                 title={'More Info'}
               />
               <ButtonLink
                 variant="contained"
                 to={`/user/fridge/report/${fridge.id}`}
                 aria-label={'Update Status on ' + fridge.name}
-                sx={{ fontSize: ['1rem'] }}
+                sx={{ fontSize: ['1rem'], flex: 1 }}
                 title={'Update Status'}
               />
             </Stack>

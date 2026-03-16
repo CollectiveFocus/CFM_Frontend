@@ -159,10 +159,10 @@ function ImageContainer({
           <Image
             src={src}
             alt={alt}
-            width={100}
-            height={100}
-            layout="responsive"
-            style={{ objectFit: 'contain' }}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             priority={isAboveFold}
           />
         </Box>
@@ -170,7 +170,7 @@ function ImageContainer({
           direction="row"
           justifyContent="center"
           sx={{
-            display: { xs: 'none', sm: 'inherit' },
+            display: { xs: 'none', sm: 'flex' },
             width: '100%',
           }}
         >
@@ -179,7 +179,6 @@ function ImageContainer({
             alt={alt}
             width={300}
             height={345}
-            layout="fixed"
             style={{ objectFit: 'contain' }}
             priority={isAboveFold}
           />

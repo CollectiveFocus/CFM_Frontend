@@ -6,8 +6,6 @@ import {
   Box,
   Typography,
   Divider,
-  useMediaQuery,
-  Theme,
   IconButton,
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
@@ -35,113 +33,108 @@ export default function BrowsePage(): React.ReactElement {
     useFridgeSearch(fridges);
 
   const availableHeight = useWindowHeight();
-  const isWindowDesktop = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.up('md')
-  );
 
   useEffect(() => {
     fetchFridges();
   }, [fetchFridges]);
 
-  const Map = (
-    <Box sx={{ position: 'relative', height: '100%' }}>
-      <DynamicMap
-        fridges={filteredFridges}
-        selectedFridgeId={selectedFridgeId}
-        onMarkerClick={setSelectedFridgeId}
-      />
-      {!isWindowDesktop && !showSearchMap && (
-        <IconButton
-          onClick={() => setShowSearchMap(true)}
-          sx={{
-            position: 'absolute',
-            bottom: 16,
-            right: 16,
-            backgroundColor: 'secondary.main',
-            color: 'white',
-            '&:hover': { backgroundColor: 'secondary.dark' },
-            zIndex: 1000,
-          }}
-        >
-          <SearchIcon />
-        </IconButton>
-      )}
-      {showSearchMap && (
-        <SearchMap
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          onClose={() => setShowSearchMap(false)}
-        />
-      )}
-    </Box>
-  );
-
-  const List = (
-    <>
-      {isWindowDesktop && (
-        <Box sx={{ mb: 2 }}>
+  return (
+    <Box
+      sx={{ display: 'flex', flexDirection: 'row', height: availableHeight || 'calc(100vh - 64px)' }}
+    >
+      {/* List Area */}
+      <Box
+        sx={{
+          flex: 1,
+          display: {
+            xs: currentView === 'list' ? 'flex' : 'none',
+            md: 'flex',
+          },
+          flexDirection: 'column',
+          px: { xs: 2, md: 4 },
+          py: 2,
+          overflowY: 'hidden',
+          height: '100%',
+        }}
+      >
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Typography variant="h4" sx={{ paddingBottom: '.5em' }}>
+            FRIDGES WITHIN THIS AREA
+          </Typography>
+          <Divider sx={{ mb: 2 }} />
           <SearchMap
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
             onClose={() => {}} // Desktop search stays open
+            hideCloseIcon
+            sx={{
+              position: 'relative',
+              bottom: 0,
+              background: 'none',
+              pb: 3,
+            }}
           />
         </Box>
-      )}
-      <FridgeList fridges={filteredFridges} />
-    </>
-  );
-
-  function renderView(): React.ReactNode {
-    if (isWindowDesktop) {
-      return (
-        <>
-          <Box sx={{ flex: 1, overflow: 'scroll', px: 4 }}>
-            <Typography variant="h4" sx={{ padding: '1em .5em .5em 0' }}>
-              FRIDGES WITHIN THIS AREA
-            </Typography>
-            <Divider />
-            <StateBoundary
-              status={status}
-              error={error}
-              onRetry={fetchFridges}
-              loadingView={<FridgeListSkeleton />}
-            >
-              {List}
-            </StateBoundary>
+        <StateBoundary
+          status={status}
+          error={error}
+          onRetry={fetchFridges}
+          loadingView={<FridgeListSkeleton />}
+        >
+          <Box sx={{ flex: 1, overflowY: 'auto' }}>
+            <FridgeList fridges={filteredFridges} />
           </Box>
+        </StateBoundary>
+      </Box>
 
-          <Box sx={{ flex: 2.5 }}>{Map}</Box>
-        </>
-      );
-    } else {
-      return (
-        <>
-          {currentView === 'list' ? (
-            <Box sx={{ flex: 1, px: 4 }}>
-              <StateBoundary
-                status={status}
-                error={error}
-                onRetry={fetchFridges}
-                loadingView={<FridgeListSkeleton />}
-              >
-                {List}
-              </StateBoundary>
-            </Box>
-          ) : (
-            <Box sx={{ flex: 1 }}>{Map}</Box>
+      {/* Map Area */}
+      <Box
+        sx={{
+          flex: { xs: 1, md: 2.5 },
+          display: {
+            xs: currentView === 'map' ? 'block' : 'none',
+            md: 'block',
+          },
+          position: 'relative',
+          height: '100%',
+        }}
+      >
+        <DynamicMap
+          fridges={filteredFridges}
+          selectedFridgeId={selectedFridgeId}
+          onMarkerClick={setSelectedFridgeId}
+        />
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          {!showSearchMap && (
+            <IconButton
+              onClick={() => setShowSearchMap(true)}
+              sx={{
+                position: 'absolute',
+                bottom: { xs: 80, md: 16 }, // avoid overlap with MapToggle
+                right: 16,
+                backgroundColor: 'secondary.main',
+                color: 'white',
+                '&:hover': { backgroundColor: 'secondary.dark' },
+                zIndex: 1000,
+              }}
+            >
+              <SearchIcon />
+            </IconButton>
           )}
+          {showSearchMap && (
+            <SearchMap
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              onClose={() => setShowSearchMap(false)}
+            />
+          )}
+        </Box>
+      </Box>
 
-          <MapToggle currentView={currentView} setView={setCurrentView} />
-        </>
-      );
-    }
-  }
-
-  return (
-    <Box
-      sx={{ display: 'flex', height: availableHeight || 'calc(100vh - 64px)' }}
-    >
-      {renderView()}
+      {/* Map Toggle (Mobile Only) */}
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+        <MapToggle currentView={currentView} setView={setCurrentView} />
+      </Box>
     </Box>
   );
 }

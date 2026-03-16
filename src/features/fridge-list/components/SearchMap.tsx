@@ -19,13 +19,18 @@ interface SearchMapProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onClose: () => void;
+  hideCloseIcon?: boolean;
 }
 
 export function SearchMap({
   searchQuery,
   onSearchChange,
   onClose,
-}: SearchMapProps): React.ReactElement {
+  hideCloseIcon = false,
+  sx = {},
+}: SearchMapProps & {
+  sx?: import('@mui/material').SxProps<import('@mui/material').Theme>;
+}): React.ReactElement {
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
   }
@@ -41,11 +46,14 @@ export function SearchMap({
         ...flexStyles,
         background: applyAlpha('cc', designColor.neroGray),
         zIndex: 1000, // Ensure it's above the map
+        ...sx,
       }}
     >
-      <IconButton aria-label="close-search" onClick={onClose}>
-        <ArrowBackIcon sx={{ color: 'white' }} />
-      </IconButton>
+      {!hideCloseIcon && (
+        <IconButton aria-label="close-search" onClick={onClose}>
+          <ArrowBackIcon sx={{ color: 'white' }} />
+        </IconButton>
+      )}
       <Box
         component="form"
         onSubmit={handleSearch}

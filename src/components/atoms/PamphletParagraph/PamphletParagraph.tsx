@@ -28,7 +28,6 @@ function ResponsiveImage({
           position: 'relative',
           width: '100%',
           aspectRatio: '3 / 2',
-          height: { xs: 200, sm: 500, lg: 1200 },
         }}
       >
         <Image
@@ -36,7 +35,7 @@ function ResponsiveImage({
           alt={alt}
           fill
           style={{ objectFit: 'cover', borderRadius: '8px' }}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
         />
       </Box>
       {attribution && (
@@ -74,7 +73,7 @@ interface PamphletParagraphProps {
 
 const sxParagraphMargin = {
   mb: 7,
-  mx: { xs: 10, lg: 15, xl: 20 },
+  mx: { xs: 4, sm: 8, md: 10, lg: 15, xl: 20 },
 };
 
 function DividerGrey(): React.ReactElement {
