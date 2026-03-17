@@ -252,6 +252,10 @@ export default function BrowsePage(): React.ReactElement {
             pt: { xs: 2, md: 3 },
             px: { xs: 2, md: 0 },
             pb: 1,
+            position: 'sticky',
+            top: 0,
+            backgroundColor: 'background.paper',
+            zIndex: 10,
           }}
         >
           <Typography
