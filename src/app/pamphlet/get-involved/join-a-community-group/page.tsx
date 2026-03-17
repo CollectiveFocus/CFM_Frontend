@@ -1,40 +1,12 @@
 import React from 'react';
 import { Metadata } from 'next';
+import { Typography, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
 import { PamphletParagraph } from 'features/marketing';
-import { Box } from '@mui/material';
+import { ButtonLink } from 'components/ui';
 
-const pageContent = {
-  pageHero: {
-    img: {
-      src: '/hero/join_a_community_group.webp',
-      alt: 'Volunteers resting',
-    },
-  },
-  content: [
-    {
-      title: 'Join a community group',
-      variant: 'h1' as const,
-      body: [
-        'The fridges near you most likely needs help cleaning and sourcing food. Anyone can participate in running community fridges. You are welcome to organize your own initiatives because operations for community fridges are decentralized and autonomous.',
-        'On Fridge Finder, you can find a fridge near you, connect with the location, and share status updates. To collaborate with us behind the scenes, join our engineering or outreach teams.',
-      ],
-      button: {
-        title: 'Volunteer',
-        to: '/contact?subject=Volunteer%20Interest',
-        'aria-label': 'Volunteer',
-        variant: 'contained' as const,
-      },
-    },
-    {
-      variant: 'h2' as const,
-      title: 'Community groups we recommend',
-      body: [
-        'There are groups across New York City that source donations and maintenance support for fridges. This is essential to keeping fridges active.',
-        'The following organizations have initiatives to support community fridges. To participate, contact the groups that interest you.',
-      ],
-    },
-  ],
+export const metadata: Metadata = {
+  title: 'Fridge Finder: Join a community group',
 };
 
 const organizations = [
@@ -63,33 +35,69 @@ const organizations = [
   { name: 'Woodbine Mutual Aid', url: 'https://www.woodbine.nyc/mutualaid/' },
 ];
 
-export const metadata: Metadata = {
-  title: 'Fridge Finder: Join a community group',
-};
-
 export default function JoinACommunityGroupPage(): React.ReactElement {
-  const { pageHero, content } = pageContent;
   return (
     <>
-      <PageHero {...pageHero} />
+      <PageHero
+        title="Join a community group"
+        img={{
+          src: '/hero/join_a_community_group.webp',
+          alt: 'Volunteers resting',
+        }}
+      />
 
-      {content.map((paragraph, index) => (
-        <PamphletParagraph
-          {...paragraph}
-          key={index + '_JoinACommunityGroupPage'}
-          hasDivider={index > 0}
-        />
-      ))}
+      <PamphletParagraph>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.7, mb: 2 }}>
+          The fridges near you most likely needs help cleaning and sourcing
+          food. Anyone can participate in running community fridges. You are
+          welcome to organize your own initiatives because operations for
+          community fridges are decentralized and autonomous.
+        </Typography>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.7, mb: 2 }}>
+          On Fridge Finder, you can find a fridge near you, connect with the
+          location, and share status updates. To collaborate with us behind the
+          scenes, join our engineering or outreach teams.
+        </Typography>
 
-      <Box sx={{ mx: { xs: 10, lg: 15, xl: 20 }, mb: 7 }}>
-        <ul style={{ paddingLeft: '1.5em' }}>
+        <Box textAlign="center" sx={{ mt: 6 }}>
+          <ButtonLink
+            title="Volunteer"
+            to="/contact?subject=Volunteer%20Interest"
+            aria-label="Volunteer"
+            variant="contained"
+          />
+        </Box>
+      </PamphletParagraph>
+
+      <PamphletParagraph title="Community groups we recommend" hasDivider>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.7, mb: 2 }}>
+          There are groups across New York City that source donations and
+          maintenance support for fridges. This is essential to keeping fridges
+          active.
+        </Typography>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.7, mb: 2 }}>
+          The following organizations have initiatives to support community
+          fridges. To participate, contact the groups that interest you.
+        </Typography>
+      </PamphletParagraph>
+
+      <Box
+        sx={{ mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, maxWidth: 800, mb: 10 }}
+      >
+        <ul
+          style={{
+            paddingLeft: '1.5em',
+            fontSize: '1.125rem',
+            lineHeight: 1.8,
+          }}
+        >
           {organizations.map(({ name, url }, index) => (
-            <li key={index + '_org'}>
+            <li key={index + '_org'} style={{ marginBottom: '8px' }}>
               <a
                 href={url}
                 target="_blank"
                 rel="noreferrer"
-                style={{ color: 'inherit' }}
+                style={{ color: '#1543D4', textDecoration: 'none' }}
               >
                 {name}
               </a>
@@ -97,8 +105,6 @@ export default function JoinACommunityGroupPage(): React.ReactElement {
           ))}
         </ul>
       </Box>
-
-      
     </>
   );
 }

@@ -2,19 +2,16 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Grid, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
-import { PamphletParagraph, TitleCard } from 'features/marketing';
+import { TitleCard } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
+    title: 'Get Involved!',
+    subtitle: 'There are many ways to support the future of the fridges.',
     img: {
       src: '/hero/get-involved.webp',
       alt: 'Volunteers in front of a community fridge',
     },
-  },
-  introParagraph: {
-    title: 'Get Involved!',
-    body: ['There are many ways to support the future of the fridges.'],
-    variant: 'h1' as const,
   },
   titleCards: [
     {
@@ -73,23 +70,30 @@ export const metadata: Metadata = {
 };
 
 export default function GetInvolvedPage(): React.ReactElement {
-  const { pageHero, introParagraph, titleCards } = pageContent;
+  const { pageHero, titleCards } = pageContent;
   return (
     <>
       <PageHero {...pageHero} />
-      <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph} />
-      <Box sx={{ px: 4, my: { xs: 4, md: 6 } }}>
+      <Box
+        sx={{
+          px: { xs: 2, sm: 4, md: 6 },
+          py: { xs: 8, md: 10 },
+          mx: 'auto',
+          maxWidth: 1200,
+        }}
+      >
         <Grid
           container
-          spacing={{ xs: 2, sm: 4, md: 6 }}
+          spacing={{ xs: 4, sm: 6, md: 8 }}
           justifyContent="center"
         >
           {titleCards.map((card, index) => (
             <Grid
               key={index}
               size={{
-                xs: 6,
-                sm: 4,
+                xs: 12,
+                sm: 6,
+                md: 4,
               }}
               display="flex"
               justifyContent="center"

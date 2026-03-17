@@ -1,13 +1,8 @@
 'use client';
 
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  CardActionArea,
-  Typography,
-} from '@mui/material';
+import Image from 'next/image';
+import { Box, Typography } from '@mui/material';
 import { NextLink } from 'components/ui';
 
 interface TitleCardProps {
@@ -25,39 +20,68 @@ export function TitleCard({
   link,
 }: TitleCardProps): React.ReactElement {
   return (
-    <Card
+    <Box
+      component={NextLink}
+      href={link}
+      aria-label={title}
       sx={{
-        width: { xs: '9em', sm: '10em' },
-        height: '10em',
-        backgroundColor: 'secondary.main',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textDecoration: 'none',
+        width: '100%',
+        maxWidth: 240,
+        transition: 'transform 0.2s ease',
+        '&:hover': {
+          transform: 'translateY(-6px)',
+          '& .icon-container': {
+            boxShadow: '0 12px 24px rgba(0,0,0,0.1)',
+            borderColor: 'primary.main',
+          },
+          '& .title-text': {
+            color: 'primary.main',
+          },
+        },
       }}
     >
-      <CardActionArea
-        component={NextLink}
-        href={link}
-        aria-label={title}
+      <Box
+        className="icon-container"
         sx={{
-          width: 'inherit',
-          height: 'inherit',
+          width: { xs: 120, md: 150 },
+          height: { xs: 120, md: 150 },
+          borderRadius: '50%',
+          backgroundColor: 'rgba(0,0,0,0.02)',
+          border: '1px solid rgba(0,0,0,0.05)',
           display: 'flex',
-          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mb: 3,
+          transition: 'all 0.2s ease',
+          p: 3,
         }}
       >
-        <CardMedia
-          component="img"
-          image={img.src}
+        <Image
+          src={img.src}
           alt={img.alt}
-          sx={{
-            width: 'auto',
-            height: 'auto',
-          }}
+          width={80}
+          height={80}
+          style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
         />
-        <CardContent sx={{ p: 0 }}>
-          <Typography variant="h5" textAlign="center" pt={2}>
-            {title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+      </Box>
+      <Typography
+        className="title-text"
+        variant="h4"
+        sx={{
+          textAlign: 'center',
+          fontWeight: 700,
+          color: 'text.primary',
+          letterSpacing: '-0.01em',
+          transition: 'color 0.2s ease',
+          lineHeight: 1.3,
+        }}
+      >
+        {title}
+      </Typography>
+    </Box>
   );
 }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Box } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import { ButtonLink } from 'components/ui';
 
 interface PageHeroProps {
@@ -10,6 +10,8 @@ interface PageHeroProps {
     src: string;
     alt: string;
   };
+  title?: string;
+  subtitle?: string;
   button?: {
     to: string | object;
     'aria-label': string;
@@ -18,7 +20,12 @@ interface PageHeroProps {
   };
 }
 
-export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
+export function PageHero({
+  img,
+  title,
+  subtitle,
+  button,
+}: PageHeroProps): React.ReactElement {
   return (
     <Box
       sx={{
@@ -29,12 +36,13 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
+        bgcolor: '#000',
       }}
     >
       <Image
         priority
         fill
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'cover', opacity: title || subtitle ? 0.7 : 1 }}
         alt={img.alt}
         src={img.src}
       />
@@ -46,25 +54,70 @@ export function PageHero({ img, button }: PageHeroProps): React.ReactElement {
           right: 0,
           bottom: 0,
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6))',
+            title || subtitle
+              ? 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)'
+              : 'linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4))',
           zIndex: 0,
         }}
       />
-      {button && (
-        <ButtonLink
-          variant={button.variant || 'contained'}
-          to={button.to}
-          aria-label={button['aria-label']}
-          sx={{
-            minWidth: { xs: '90vw', md: '500px' },
-            fontVariant: 'small-caps',
-            boxShadow: 8,
-            position: 'relative',
-            zIndex: 1,
-          }}
-          title={button.title}
-        />
-      )}
+
+      <Container
+        maxWidth="lg"
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          textAlign: 'center',
+          px: 3,
+          pt: 8,
+        }}
+      >
+        {title && (
+          <Typography
+            variant="h1"
+            sx={{
+              color: 'white',
+              fontWeight: 800,
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+              letterSpacing: '-0.02em',
+              textShadow: '0 4px 12px rgba(0,0,0,0.4)',
+              mb: subtitle ? 2 : button ? 4 : 0,
+            }}
+          >
+            {title}
+          </Typography>
+        )}
+
+        {subtitle && (
+          <Typography
+            variant="h4"
+            sx={{
+              color: 'rgba(255,255,255,0.95)',
+              fontWeight: 500,
+              maxWidth: 800,
+              mx: 'auto',
+              mb: button ? 4 : 0,
+              textShadow: '0 2px 8px rgba(0,0,0,0.4)',
+              lineHeight: 1.5,
+            }}
+          >
+            {subtitle}
+          </Typography>
+        )}
+
+        {button && (
+          <ButtonLink
+            variant={button.variant || 'contained'}
+            to={button.to}
+            aria-label={button['aria-label']}
+            sx={{
+              minWidth: { xs: '100%', sm: '300px' },
+              mt: title || subtitle ? 2 : 0,
+              boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+            }}
+            title={button.title}
+          />
+        )}
+      </Container>
     </Box>
   );
 }

@@ -57,18 +57,19 @@ function ResponsiveImage({
 }
 
 interface PamphletParagraphProps {
-  title: string;
-  variant: 'h1' | 'h2' | 'h3';
+  title?: string;
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   img?: ResponsiveImageProps;
-  body?: string[];
+  body?: string[]; // Kept for backwards compatibility if needed elsewhere
   button?: {
     to: string | object;
     'aria-label': string;
     title: string;
-    variant: 'outlined' | 'contained';
+    variant?: 'outlined' | 'contained';
   };
   hasDivider?: boolean;
   sx?: SxProps<Theme>;
+  children?: React.ReactNode;
 }
 
 const sxParagraphMargin = {
@@ -80,18 +81,19 @@ const sxParagraphMargin = {
 
 function DividerGrey(): React.ReactElement {
   return (
-    <Divider sx={{ borderColor: applyAlpha('66', designColor.neroGray) }} />
+    <Divider sx={{ borderColor: applyAlpha('22', designColor.neroGray) }} />
   );
 }
 
 export function PamphletParagraph({
   title,
-  variant,
+  variant = 'h2',
   img,
   body,
   button,
   hasDivider = false,
   sx = {},
+  children,
 }: PamphletParagraphProps): React.ReactElement {
   return (
     <Box sx={{ ...sxParagraphMargin, ...sx }}>
@@ -99,13 +101,17 @@ export function PamphletParagraph({
 
       {img && <ResponsiveImage {...img} />}
 
-      <Typography
-        sx={{ mb: 4, fontWeight: 800, letterSpacing: '-0.02em' }}
-        variant={variant}
-        color="text.primary"
-      >
-        <SoftWrap text={title} />
-      </Typography>
+      {title && (
+        <Typography
+          sx={{ mb: 4, fontWeight: 800, letterSpacing: '-0.02em' }}
+          variant={variant}
+          color="text.primary"
+        >
+          <SoftWrap text={title} />
+        </Typography>
+      )}
+
+      {children}
 
       {body &&
         body.map((val, index) => (
@@ -121,7 +127,7 @@ export function PamphletParagraph({
       {button && (
         <Box textAlign="center" sx={{ mt: 6 }}>
           <ButtonLink
-            variant={button.variant}
+            variant={button.variant || 'contained'}
             to={button.to}
             aria-label={button['aria-label']}
             title={button.title}
