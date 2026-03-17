@@ -16,10 +16,11 @@ import {
   TextField,
   Typography,
   Box,
-  Paper,
 } from '@mui/material';
+
 import { ButtonLink } from 'components/ui';
 import { reportSchema, ReportFormData } from '../schemas/fridge.schema';
+import Image from 'next/image';
 
 interface ReportFormProps {
   fridgeId: string;
@@ -66,41 +67,80 @@ export function ReportForm({
   });
 
   return (
-    <Box sx={{ width: '100%', py: { xs: 4, md: 10 }, px: { xs: 2, sm: 4 } }}>
-      <Paper
-        elevation={0}
+    <Box
+      sx={{
+        width: '100%',
+        py: { xs: 4, md: 10 },
+        px: { xs: 2, sm: 4 },
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
+      <Box
         sx={{
           mx: 'auto',
           maxWidth: 650,
-          p: { xs: 3, sm: 5, md: 6 },
+          width: '100%',
         }}
       >
-        <Stack direction="column" spacing={1}>
-          <Typography variant="h1" textAlign="center">
-            Fridge Status Report
-          </Typography>
-          <Typography
-            variant="h5"
-            textAlign="center"
-            color="textSecondary"
-            mb={2}
-          >
-            {fridgeId}
-          </Typography>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Divider orientation="horizontal" flexItem />
-            <Stack direction="column" spacing={4} mt={4}>
+        <Stack spacing={4}>
+          <Box sx={{ textAlign: 'center', mb: 2 }}>
+            <Typography
+              variant="overline"
+              sx={{
+                display: 'block',
+                mb: 1,
+                color: 'primary.main',
+                fontWeight: 700,
+                letterSpacing: 1.5,
+              }}
+            >
+              COMMUNITY UPDATE
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                mb: 2,
+                fontWeight: 800,
+                letterSpacing: '-0.02em',
+                color: 'text.primary',
+                fontSize: { xs: '2.5rem', md: '3.5rem' },
+              }}
+            >
+              Report Status
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                mb: 4,
+                color: 'text.secondary',
+                fontWeight: 600,
+              }}
+            >
+              {fridgeId}
+            </Typography>
+          </Box>
+
+          <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
+            <Stack direction="column" spacing={5}>
               <FormControl component="fieldset">
                 <FormLabel
-                  sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}
+                  sx={{
+                    mb: 3,
+                    fontWeight: 700,
+                    color: 'text.primary',
+                    fontSize: '1.1rem',
+                  }}
                 >
-                  Select if applicable:
+                  Condition
                 </FormLabel>
                 <Controller
                   name="condition"
                   control={control}
                   render={({ field }) => (
-                    <RadioGroup {...field}>
+                    <RadioGroup {...field} sx={{ gap: 1 }}>
                       <FormControlLabel
                         control={<Radio />}
                         value="good"
@@ -108,13 +148,13 @@ export function ReportForm({
                       />
                       <FormControlLabel
                         control={<Radio />}
-                        value="out of order"
-                        label="Fridge needs repairs"
+                        value="dirty"
+                        label="Fridge needs cleaning"
                       />
                       <FormControlLabel
                         control={<Radio />}
-                        value="dirty"
-                        label="Fridge needs cleaning"
+                        value="out of order"
+                        label="Fridge needs repairs"
                       />
                       <FormControlLabel
                         control={<Radio />}
@@ -130,9 +170,15 @@ export function ReportForm({
                   )}
                 />
               </FormControl>
-              <FormControl>
+
+              <FormControl sx={{ pt: 2, pb: 4 }}>
                 <FormLabel
-                  sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}
+                  sx={{
+                    mb: 4,
+                    fontWeight: 700,
+                    color: 'text.primary',
+                    fontSize: '1.1rem',
+                  }}
                 >
                   How full is the fridge?
                 </FormLabel>
@@ -153,42 +199,56 @@ export function ReportForm({
                   )}
                 />
               </FormControl>
+
               <TextField
                 label="Notes"
                 multiline
                 rows={5}
                 fullWidth
+                variant="outlined"
                 placeholder="Got an update or request? Leave your notes here!"
                 {...register('notes')}
                 error={!!errors.notes}
                 helperText={errors.notes?.message}
+                sx={{ backgroundColor: 'background.paper' }}
               />
+
               <Stack
                 direction={{ xs: 'column-reverse', sm: 'row' }}
-                justifyContent="space-between"
-                spacing={4}
-                pt={4}
+                justifyContent="flex-end"
+                alignItems="center"
+                spacing={3}
+                pt={2}
               >
                 <ButtonLink
                   aria-label="Return to map page"
                   variant="outlined"
                   to="/browse"
                   title="Cancel"
-                  sx={{ flex: 1 }}
+                  sx={{
+                    width: { xs: '100%', sm: 'auto' },
+                    minWidth: 140,
+                    px: 4,
+                  }}
                 />
                 <Button
                   aria-label="Submit status update"
                   variant="contained"
                   type="submit"
-                  sx={{ flex: 1 }}
+                  size="large"
+                  sx={{
+                    width: { xs: '100%', sm: 'auto' },
+                    minWidth: 180,
+                    px: 4,
+                  }}
                 >
-                  Confirm
+                  Confirm Update
                 </Button>
               </Stack>
             </Stack>
-          </form>
+          </Box>
         </Stack>
-      </Paper>
+      </Box>
     </Box>
   );
 }
