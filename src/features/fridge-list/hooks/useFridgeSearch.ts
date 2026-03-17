@@ -1,4 +1,4 @@
-import { useState, useMemo, useDeferredValue } from 'react';
+import { useState, useMemo, useDeferredValue, useRef } from 'react';
 import Fuse from 'fuse.js';
 import { Fridge } from 'types/domain';
 import { useMapStore } from 'store/useMapStore';
@@ -15,6 +15,28 @@ export function useFridgeSearch(fridges: Fridge[]) {
   const isSearching = searchQuery !== deferredQuery;
 
   const center = useMapStore((state) => state.center);
+
+  // We don't want the fridge list to aggressively reshuffle and re-render every time
+  // the map is panned even 1 pixel. This establishes a "sticky" center that only updates
+  // when the user moves the map by more than 1 kilometer, keeping the UI rock solid.
+  const lastSortCenter = useRef<[number, number] | null>(center);
+
+  const sortCenter = useMemo(() => {
+    if (!center) return null;
+    if (!lastSortCenter.current) {
+      lastSortCenter.current = center;
+      return center;
+    }
+
+    const dist = deltaInMeters(center, lastSortCenter.current);
+    if (dist > 1000) {
+      // 1 km threshold to trigger a list re-sort
+      lastSortCenter.current = center;
+      return center;
+    }
+
+    return lastSortCenter.current;
+  }, [center]);
 
   const fuse = useMemo(() => {
     return new Fuse(fridges, {
@@ -36,13 +58,13 @@ export function useFridgeSearch(fridges: Fridge[]) {
     // 1. Spatial Sort (Distance from map center)
     // We sort the results dynamically based on whatever the user is looking at.
     // Done BEFORE text filter to ensure when user clears search, closest are at top.
-    if (center && center.length === 2) {
+    if (sortCenter && sortCenter.length === 2) {
       resultList = [...resultList].sort((a, b) => {
-        const distA = deltaInMeters(center, [
+        const distA = deltaInMeters(sortCenter, [
           a.location.geoLat,
           a.location.geoLng,
         ]);
-        const distB = deltaInMeters(center, [
+        const distB = deltaInMeters(sortCenter, [
           b.location.geoLat,
           b.location.geoLng,
         ]);
@@ -56,7 +78,7 @@ export function useFridgeSearch(fridges: Fridge[]) {
     }
 
     return resultList;
-  }, [deferredQuery, fuse, fridges, center]);
+  }, [deferredQuery, fuse, fridges, sortCenter]);
 
   return {
     searchQuery,
