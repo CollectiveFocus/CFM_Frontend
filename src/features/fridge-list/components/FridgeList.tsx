@@ -34,9 +34,19 @@ interface LocationInfoProps {
 
 function LocationInfo({ location }: LocationInfoProps): React.ReactElement {
   const addressString = `${location.street}, ${location.city}, ${location.state} ${location.zip}`;
-  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-    addressString
-  )}`;
+
+  const [mapsUrl, setMapsUrl] = React.useState(
+    `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addressString)}`
+  );
+
+  React.useEffect(() => {
+    const isApple = /(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent);
+    if (isApple) {
+      setMapsUrl(
+        `http://maps.apple.com/?daddr=${encodeURIComponent(addressString)}`
+      );
+    }
+  }, [addressString]);
 
   return (
     <Stack direction="row" spacing={2} alignItems="center">
