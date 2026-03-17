@@ -62,14 +62,14 @@ export function SearchMap({
           backgroundColor: 'background.paper',
           border: '1px solid',
           borderColor: 'rgba(0,0,0,0.1)',
+          borderBottom: 'none',
           borderRadius: 8,
           boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
           width: '100%',
           maxWidth: 600,
           height: { xs: 52, md: 48 }, // Larger tap target on mobile
-          transition: 'border-color 0.2s, box-shadow 0.2s',
+          transition: 'box-shadow 0.2s',
           '&:focus-within': {
-            borderColor: 'primary.main',
             boxShadow: '0 4px 16px rgba(21,67,212,0.15)',
           },
         }}

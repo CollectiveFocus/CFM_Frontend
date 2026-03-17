@@ -341,28 +341,32 @@ export const FridgeList = React.memo(function FridgeList({
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
                 sx={{
-                  fontSize: '0.8rem',
-                  px: 2,
-                  py: 0.5,
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  px: 4,
+                  py: 0.75,
                   flex: 'none',
-                  borderRadius: 20,
+                  borderRadius: 24,
                   minWidth: 'auto',
                 }}
-                title={'More Info'}
+                title="More info"
               />
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}/report`}
                 aria-label={`Update Status on ${fridge.name}`}
                 sx={{
-                  fontSize: '0.8rem',
-                  px: 2,
-                  py: 0.5,
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  px: 4,
+                  py: 0.75,
                   flex: 'none',
-                  borderRadius: 20,
+                  borderRadius: 24,
                   minWidth: 'auto',
                 }}
-                title={'Update Status'}
+                title="Update status"
               />
             </Stack>
           </Stack>

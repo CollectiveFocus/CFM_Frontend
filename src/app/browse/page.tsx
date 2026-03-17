@@ -249,23 +249,24 @@ export default function BrowsePage(): React.ReactElement {
         <Box
           sx={{
             display: 'block',
-            pt: { xs: 2, md: 2 },
+            pt: { xs: 2, md: 3 },
             px: { xs: 2, md: 0 },
             pb: 1,
           }}
         >
           <Typography
-            variant="overline"
+            component="h1"
             sx={{
               display: { xs: 'none', md: 'block' },
-              fontSize: '0.85rem',
-              letterSpacing: 1.5,
-              fontWeight: 600,
+              fontSize: '1rem',
+              fontWeight: 700,
               color: 'text.secondary',
-              mb: 1,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              mb: 2,
             }}
           >
-            FRIDGES WITHIN THIS AREA
+            Fridges in this area
           </Typography>
           <SearchMap
             searchQuery={searchQuery}
@@ -273,7 +274,6 @@ export default function BrowsePage(): React.ReactElement {
             hideCloseIcon
             sx={{ mb: { xs: 2, md: 3 } }}
           />
-          <Divider sx={{ mb: 2, display: { xs: 'none', md: 'block' } }} />
         </Box>
         <StateBoundary
           status={status}
