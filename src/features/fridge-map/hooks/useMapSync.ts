@@ -3,42 +3,74 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { Fridge } from 'types/domain';
 import { deltaInMeters } from 'utils/geo';
+import { useMapStore } from 'store/useMapStore';
 
 interface UseMapSyncProps {
   fridges: Fridge[];
   selectedFridgeId: string | null;
 }
 
+function createUserIcon(heading: number | null): L.DivIcon {
+  // If heading exists, we render a little directional cone/arrow, otherwise just the blue dot.
+  const transform =
+    heading !== null && !isNaN(heading)
+      ? `rotate(${heading}deg)`
+      : 'rotate(0deg)';
+  const arrowHtml =
+    heading !== null && !isNaN(heading)
+      ? `<div style="position: absolute; top: -10px; left: 50%; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 12px solid rgba(21, 67, 212, 0.85); transform: translateX(-50%);"></div>`
+      : '';
+
+  return L.divIcon({
+    className: 'user-location-marker',
+    html: `
+      <div style="position: relative; width: 24px; height: 24px; transform: ${transform}; transform-origin: center center; transition: transform 0.2s linear;">
+        ${arrowHtml}
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; background-color: #1543D4; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 6px rgba(0,0,0,0.4); z-index: 2;"></div>
+      </div>
+    `,
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+  });
+}
+
 export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
   const map = useMap();
-  const userMarkerRef = useRef<L.CircleMarker | null>(null);
+  const userMarkerRef = useRef<L.Marker | null>(null);
   const userAccuracyRef = useRef<L.Circle | null>(null);
   const isFirstLocationFound = useRef(true);
+  const setUserLocation = useMapStore((state) => state.setUserLocation);
+  const userLocation = useMapStore((state) => state.userLocation);
+
+  const fridgesRef = useRef(fridges);
+
+  useEffect(() => {
+    fridgesRef.current = fridges;
+  }, [fridges]);
 
   useEffect(() => {
     if (selectedFridgeId) {
-      const fridge = fridges.find((f) => f.id === selectedFridgeId);
+      const fridge = fridgesRef.current.find((f) => f.id === selectedFridgeId);
       if (fridge) {
         map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 15);
       }
     }
-  }, [selectedFridgeId, fridges, map]);
+  }, [selectedFridgeId, map]);
 
   const onLocationFound = useCallback(
     (e: L.LocationEvent) => {
       const userPosition = e.latlng;
       const radius = e.accuracy / 2;
+      const heading = e.heading; // degrees (0 to 360) if device supports it, otherwise null
 
       // Update marker and accuracy circle
       if (userMarkerRef.current) {
         userMarkerRef.current.setLatLng(userPosition);
+        userMarkerRef.current.setIcon(createUserIcon(heading || null));
       } else {
-        userMarkerRef.current = L.circleMarker(userPosition, {
-          radius: 8,
-          color: '#ffffff',
-          fillColor: '#1543D4',
-          fillOpacity: 1,
-          weight: 3,
+        userMarkerRef.current = L.marker(userPosition, {
+          icon: createUserIcon(heading || null),
+          zIndexOffset: 1000, // Make sure user dot is above other markers
         }).addTo(map);
       }
 
@@ -53,6 +85,8 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
           weight: 1,
         }).addTo(map);
       }
+
+      setUserLocation([userPosition.lat, userPosition.lng]);
 
       // Only fly automatically on the very first location found
       if (isFirstLocationFound.current) {
@@ -73,7 +107,7 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
           let nearest: Fridge | null = null;
           let minDist = Infinity;
 
-          fridges.forEach((f) => {
+          fridgesRef.current.forEach((f) => {
             const d = deltaInMeters(
               [userPosition.lat, userPosition.lng],
               [f.location.geoLat, f.location.geoLng]
@@ -90,11 +124,14 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
               (nearest as Fridge).location.geoLng,
             ]);
             map.fitBounds(bounds, { padding: [50, 50] });
+          } else {
+            // If no nearest fridge found (empty list?), just fly to user
+            map.flyTo(userPosition, 14, { animate: false });
           }
         }
       }
     },
-    [fridges, map]
+    [map]
   );
 
   useEffect(() => {

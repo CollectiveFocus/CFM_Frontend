@@ -81,6 +81,7 @@
     "react-hook-form": "^7.71.2",
     "react-leaflet": "^5.0.0",
     "react-leaflet-cluster": "^4.0.0",
+    "react-window": "^2.2.7",
     "svgo": "^4.0.0",
     "zod": "^4.3.6",
     "zustand": "^5.0.8"
@@ -95,6 +96,7 @@
     "@types/node": "^25.3.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@types/react-window": "^1.8.8",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
     "eslint": "^9.38.0",

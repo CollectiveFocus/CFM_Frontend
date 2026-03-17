@@ -150,12 +150,13 @@ export default function BrowsePage(): React.ReactElement {
               <Box
                 sx={{
                   mt: 1,
-                  maxHeight: '40vh',
+                  maxHeight: '50vh',
                   overflowY: 'auto',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(12px)',
-                  borderRadius: 3,
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                  backdropFilter: 'blur(20px)',
+                  borderRadius: 4,
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  boxShadow: '0 12px 48px rgba(0,0,0,0.15)',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
@@ -171,11 +172,11 @@ export default function BrowsePage(): React.ReactElement {
                             setIsDropdownOpen(false); // Just hide dropdown, keep query
                           }}
                           sx={{
-                            py: 1.5,
+                            py: 2,
                             px: 2,
                             display: 'flex',
                             alignItems: 'center',
-                            gap: 2,
+                            gap: 2.5,
                           }}
                         >
                           <Box sx={{ flexShrink: 0 }}>
@@ -188,12 +189,15 @@ export default function BrowsePage(): React.ReactElement {
                               fontWeight: 800,
                               color: 'text.primary',
                               letterSpacing: '-0.02em',
+                              fontSize: '1.1rem',
                             }}
                             secondary={`${fridge.location.street}, ${fridge.location.city}`}
                             secondaryTypographyProps={{
                               variant: 'body2',
                               color: 'text.secondary',
                               noWrap: true,
+                              fontSize: '0.95rem',
+                              mt: 0.5,
                             }}
                           />
                         </ListItemButton>
@@ -201,9 +205,17 @@ export default function BrowsePage(): React.ReactElement {
                     ))}
                   </List>
                 ) : (
-                  <Box sx={{ p: 3, textAlign: 'center' }}>
+                  <Box sx={{ p: 4, textAlign: 'center' }}>
+                    <Typography
+                      variant="body1"
+                      fontWeight={600}
+                      color="text.primary"
+                      gutterBottom
+                    >
+                      No fridges found
+                    </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      No fridges found.
+                      Try searching for a different name or street
                     </Typography>
                   </Box>
                 )}

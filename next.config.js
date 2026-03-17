@@ -10,10 +10,19 @@ const nextConfig = {
       },
     ],
   },
-  // App Router is enabled by default in Next.js 15+
-  // We keep the emotion compiler for MUI
   compiler: {
     emotion: true,
+  },
+  async rewrites() {
+    // Determine the API URL from the environment or default to local json-server
+    const apiUrl =
+      process.env.NEXT_PUBLIC_FF_API_URL || 'http://127.0.0.1:3050';
+    return [
+      {
+        source: '/v1/:path*',
+        destination: `${apiUrl}/v1/:path*`, // Proxy to Backend API or local mock server
+      },
+    ];
   },
 };
 

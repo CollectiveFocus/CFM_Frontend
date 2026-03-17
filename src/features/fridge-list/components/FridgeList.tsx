@@ -247,40 +247,48 @@ interface FridgeListProps {
 
 export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
   return (
-    <List>
+    <List disablePadding>
       {fridges.map((fridge, fridgeIndex) => (
         <ListItem
           key={fridge.id}
           divider={fridgeIndex !== fridges.length - 1}
           sx={{
             paddingY: 4,
-            paddingX: 0,
-            borderColor: 'rgba(0,0,0,0.04)',
+            paddingX: { xs: 2, md: 0 },
+            borderColor: 'rgba(0,0,0,0.06)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'stretch',
           }}
         >
-          <Stack direction="column" spacing={3} width="100%">
-            <Stack direction="row" spacing={3}>
-              <Stack direction="column" spacing={2} flex={1}>
-                <Typography
-                  sx={{
-                    fontSize: ['1.125rem'],
-                    fontWeight: 800,
-                    color: 'text.primary',
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  {fridge.name}
-                </Typography>
-                <FridgeStatus report={fridge.report} />
-                <LocationInfo location={fridge.location} />
-                {fridge.maintainer?.instagram ? (
+          <Stack direction="column" spacing={2} width="100%">
+            <Typography
+              sx={{
+                fontSize: { xs: '1.25rem', md: '1.125rem' },
+                fontWeight: 800,
+                color: 'text.primary',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.2,
+              }}
+            >
+              {fridge.name}
+            </Typography>
+            <FridgeStatus report={fridge.report} />
+
+            <Box sx={{ mt: 1 }}>
+              <LocationInfo location={fridge.location} />
+              {fridge.maintainer?.instagram ? (
+                <Box sx={{ mt: 1 }}>
                   <InstagramInfo instagramUrl={fridge.maintainer.instagram} />
-                ) : null}
-                {fridge.report ? (
+                </Box>
+              ) : null}
+              {fridge.report ? (
+                <Box sx={{ mt: 1 }}>
                   <LastUpdateInfo date={fridge.report.timestamp} />
-                ) : null}
-              </Stack>
-            </Stack>
+                </Box>
+              ) : null}
+            </Box>
+
             <Stack
               direction="row"
               width="100%"
@@ -293,11 +301,12 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
                 sx={{
-                  fontSize: ['0.85rem'],
-                  px: { xs: 2, sm: 3 },
-                  py: 0.5,
+                  fontSize: '0.85rem',
+                  px: 3,
+                  py: 0.75,
                   flex: 'none',
                   borderRadius: 20,
+                  minWidth: 'auto',
                 }}
                 title={'More Info'}
               />
@@ -306,11 +315,12 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 to={`/fridge/${fridge.id}/report`}
                 aria-label={`Update Status on ${fridge.name}`}
                 sx={{
-                  fontSize: ['0.85rem'],
-                  px: { xs: 2, sm: 3 },
-                  py: 0.5,
+                  fontSize: '0.85rem',
+                  px: 3,
+                  py: 0.75,
                   flex: 'none',
                   borderRadius: 20,
+                  minWidth: 'auto',
                 }}
                 title={'Update Status'}
               />

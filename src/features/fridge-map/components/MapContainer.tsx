@@ -13,6 +13,7 @@ import { Fridge } from 'types/domain';
 import { MarkerLayer } from './layers/MarkerLayer';
 import { LegendDrawer } from './LegendDrawer';
 import { useMapSync } from '../hooks/useMapSync';
+import { useMapStore } from 'store/useMapStore';
 
 interface MapProps {
   fridges: Fridge[];
@@ -71,10 +72,25 @@ function MapController({
   setPanToUserAction,
 }: MapControllerProps): null {
   const { locateUser, panToUser } = useMapSync({ fridges, selectedFridgeId });
+  const setCenter = useMapStore((state) => state.setCenter);
+  const setZoom = useMapStore((state) => state.setZoom);
+  const map = useMap();
 
   React.useEffect(() => {
     locateUser();
     setPanToUserAction(() => panToUser);
+
+    const handleMoveEnd = () => {
+      const newCenter = map.getCenter();
+      setCenter([newCenter.lat, newCenter.lng]);
+      setZoom(map.getZoom());
+    };
+
+    map.on('moveend', handleMoveEnd);
+
+    return () => {
+      map.off('moveend', handleMoveEnd);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -87,13 +103,24 @@ export function MapContainer({
   onMarkerClick,
 }: MapProps): React.ReactElement {
   const [panToUser, setPanToUser] = React.useState<(() => void) | null>(null);
+  const [lng, setLng] = React.useState('en');
+  const initialCenter = useMapStore((state) => state.center);
+  const initialZoom = useMapStore((state) => state.zoom);
+
+  React.useEffect(() => {
+    // Only runs on the client. Extracts the ?lng= param from the URL if present.
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      setLng(params.get('lng') || 'en');
+    }
+  }, []);
 
   return (
     <Box sx={{ height: '100%', width: '100%', position: 'relative' }}>
       <LeafletMapContainer
         style={{ height: '100%' }}
-        center={defaultMapCenter}
-        zoom={defaultZoom}
+        center={initialCenter || defaultMapCenter}
+        zoom={initialZoom || defaultZoom}
         minZoom={1}
         scrollWheelZoom={true}
         zoomControl={false}
@@ -107,7 +134,7 @@ export function MapContainer({
         />
         <TileLayer
           attribution="&copy; Fridge Finder"
-          url="https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          url={`https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=${lng}`}
           maxZoom={19}
           subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
         />

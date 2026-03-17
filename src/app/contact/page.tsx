@@ -18,7 +18,7 @@ function ContactPageContent(): React.ReactElement {
   const searchParams = useSearchParams();
   const subject = searchParams.get('subject') || '';
 
-  const fridgeUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/contact/`;
+  const fridgeUrl = `/v1/contact/`;
 
   async function handleSubmit(values: ContactFormData) {
     try {
@@ -59,12 +59,7 @@ function ContactPageContent(): React.ReactElement {
     }
   }
 
-  return (
-    <>
-      {renderContent()}
-      
-    </>
-  );
+  return <>{renderContent()}</>;
 }
 
 export default function ContactPage(): React.ReactElement {

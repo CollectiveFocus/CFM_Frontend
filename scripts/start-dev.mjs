@@ -34,7 +34,7 @@ async function main() {
     NEXT_PUBLIC_FF_API_URL: mockUrl,
   };
 
-  const command = `npx concurrently --names "MOCK,NEXT" --prefix-colors "yellow,green" --kill-others "npx json-server mock/data.json --routes mock/server-routes.json --host 127.0.0.1 --port ${mockPort}" "npx next dev --turbopack -p ${nextPort}"`;
+  const command = `npx concurrently --names "MOCK,NEXT" --prefix-colors "yellow,green" --kill-others "npx json-server mock/data.json --routes mock/server-routes.json --host 0.0.0.0 --port ${mockPort}" "npx next dev --turbopack --experimental-https -p ${nextPort}"`;
 
   const child = spawn(command, {
     env,

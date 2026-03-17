@@ -1,16 +1,8 @@
 import { ApiFridge, FridgeReport } from 'types/domain';
 
-let BASE_URL = process.env.NEXT_PUBLIC_FF_API_URL || 'http://127.0.0.1:3050';
-
-if (typeof window !== 'undefined') {
-  const isLocalhost =
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1';
-  // If the user is testing on a local network IP (like 192.168.x.x) but the env points to localhost
-  if (!isLocalhost && BASE_URL.includes('127.0.0.1')) {
-    BASE_URL = `http://${window.location.hostname}:3050`;
-  }
-}
+// Use an empty base URL by default so fetches are relative to the origin.
+// Next.js config will automatically proxy /v1 to the NEXT_PUBLIC_FF_API_URL or json-server.
+const BASE_URL = '';
 
 class ApiError extends Error {
   constructor(
