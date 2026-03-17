@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Stack, Typography } from '@mui/material';
+import { List, ListItem, Stack, Typography, Chip, Box } from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
@@ -25,9 +25,13 @@ interface LocationInfoProps {
 
 function LocationInfo({ location }: LocationInfoProps): React.ReactElement {
   return (
-    <Stack direction="row" spacing={3} alignItems="center">
-      <LocationOnOutlinedIcon />
-      <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
+    <Stack direction="row" spacing={2} alignItems="center">
+      <LocationOnOutlinedIcon
+        sx={{ color: 'text.secondary', fontSize: '1.25rem' }}
+      />
+      <Typography
+        sx={{ fontSize: ['0.95rem'], color: 'text.secondary', lineHeight: 1.4 }}
+      >
         {location.street}
         <br />
         {location.city}, {location.state} {location.zip}
@@ -49,9 +53,9 @@ function InstagramInfo({
   const handle = match ? match[1] : instagramUrl;
 
   return (
-    <Stack direction="row" spacing={3} alignItems="center">
-      <InstagramIcon />
-      <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
+    <Stack direction="row" spacing={2} alignItems="center">
+      <InstagramIcon sx={{ color: 'text.secondary', fontSize: '1.25rem' }} />
+      <Typography sx={{ fontSize: ['0.95rem'], color: 'text.secondary' }}>
         @{handle}
       </Typography>
     </Stack>
@@ -64,12 +68,51 @@ interface LastUpdateInfoProps {
 
 function LastUpdateInfo({ date }: LastUpdateInfoProps): React.ReactElement {
   return (
-    <Stack direction="row" spacing={3} alignItems="center">
-      <CalendarIcon />
-      <Typography sx={{ fontSize: ['0.9375rem'], color: 'text.primary' }}>
+    <Stack direction="row" spacing={2} alignItems="center">
+      <CalendarIcon sx={{ color: 'text.secondary', fontSize: '1.25rem' }} />
+      <Typography sx={{ fontSize: ['0.95rem'], color: 'text.secondary' }}>
         Last Update: {formatDate(date)}
       </Typography>
     </Stack>
+  );
+}
+
+function FridgeStatus({
+  report,
+}: {
+  report: Fridge['report'];
+}): React.ReactElement | null {
+  if (!report) return null;
+  const foodLevels = ['Empty', 'Few Items', 'Many Items', 'Full'];
+  const foodText = foodLevels[report.foodPercentage] || 'Unknown';
+  const condition = report.condition === 'good' ? null : report.condition;
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
+      <Chip
+        label={foodText}
+        size="small"
+        sx={{
+          fontWeight: 600,
+          backgroundColor: 'rgba(0, 0, 0, 0.05)',
+          color: 'text.primary',
+          borderRadius: 2,
+        }}
+      />
+      {condition && (
+        <Chip
+          label={condition}
+          size="small"
+          color="error"
+          variant="outlined"
+          sx={{
+            fontWeight: 600,
+            textTransform: 'capitalize',
+            borderRadius: 2,
+          }}
+        />
+      )}
+    </Box>
   );
 }
 
@@ -87,14 +130,23 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
           sx={{
             paddingY: 4,
             paddingX: 0,
+            borderColor: 'rgba(0,0,0,0.04)',
           }}
         >
           <Stack direction="column" spacing={3} width="100%">
             <Stack direction="row" spacing={3}>
-              <Stack direction="column" spacing={3} flex={1}>
-                <Typography sx={{ fontSize: ['1rem'], fontWeight: 700 }}>
+              <Stack direction="column" spacing={2} flex={1}>
+                <Typography
+                  sx={{
+                    fontSize: ['1.125rem'],
+                    fontWeight: 800,
+                    color: 'text.primary',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
                   {fridge.name}
                 </Typography>
+                <FridgeStatus report={fridge.report} />
                 <LocationInfo location={fridge.location} />
                 {fridge.maintainer?.instagram ? (
                   <InstagramInfo instagramUrl={fridge.maintainer.instagram} />
@@ -107,21 +159,21 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
               width="100%"
-              spacing={3}
-              sx={{ mt: 2 }}
+              spacing={2}
+              sx={{ mt: 1 }}
             >
               <ButtonLink
-                variant="contained"
+                variant="outlined"
                 to={`/fridge/${fridge.id}`}
-                aria-label={'Details on ' + fridge.name}
-                sx={{ fontSize: ['1rem'], flex: 1 }}
+                aria-label={`Details on ${fridge.name}`}
+                sx={{ fontSize: ['0.95rem'], flex: 1 }}
                 title={'More Info'}
               />
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}/report`}
-                aria-label={'Update Status on ' + fridge.name}
-                sx={{ fontSize: ['1rem'], flex: 1 }}
+                aria-label={`Update Status on ${fridge.name}`}
+                sx={{ fontSize: ['0.95rem'], flex: 1 }}
                 title={'Update Status'}
               />
             </Stack>

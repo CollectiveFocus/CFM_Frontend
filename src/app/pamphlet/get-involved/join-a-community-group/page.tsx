@@ -82,53 +82,35 @@ export default function JoinACommunityGroupPage(): React.ReactElement {
       </PamphletParagraph>
 
       <Box
-        sx={{ mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, maxWidth: 1000, mb: 12 }}
+        sx={{ mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, maxWidth: 800, mb: 10 }}
       >
         <Box
+          component="ul"
           sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              sm: '1fr 1fr',
-              md: '1fr 1fr 1fr',
+            paddingLeft: '1.5em',
+            fontSize: '1.125rem',
+            lineHeight: 1.8,
+            color: 'inherit',
+            '& li': {
+              marginBottom: '8px',
             },
-            gap: 3,
+            '& a': {
+              color: 'primary.main',
+              textDecoration: 'none',
+              fontWeight: 500,
+              transition: 'color 0.2s',
+              '&:hover': {
+                color: 'primary.dark',
+              },
+            },
           }}
         >
           {organizations.map(({ name, url }, index) => (
-            <Box
-              component="a"
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              key={index + '_org'}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                p: 3,
-                borderRadius: 3,
-                border: '1px solid',
-                borderColor: 'rgba(0,0,0,0.08)',
-                textDecoration: 'none',
-                color: 'text.primary',
-                backgroundColor: 'background.paper',
-                transition: 'all 0.2s ease',
-                minHeight: 80,
-                '&:hover': {
-                  borderColor: 'primary.main',
-                  backgroundColor: 'rgba(21, 67, 212, 0.03)',
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
-                  color: 'primary.main',
-                },
-              }}
-            >
-              <Typography variant="body1" fontWeight={700}>
+            <li key={index + '_org'}>
+              <a href={url} target="_blank" rel="noreferrer">
                 {name}
-              </Typography>
-            </Box>
+              </a>
+            </li>
           ))}
         </Box>
       </Box>

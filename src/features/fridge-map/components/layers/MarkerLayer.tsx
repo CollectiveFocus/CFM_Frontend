@@ -89,10 +89,38 @@ export function MarkerLayer({
               click: () => onMarkerClick?.(id),
             }}
           >
-            <Popup>
-              <strong>{name}</strong>
-              <br />
-              {location.street}
+            <Popup className="custom-popup">
+              <div style={{ fontFamily: 'inherit', padding: '4px' }}>
+                <strong style={{ fontSize: '1rem', color: '#222' }}>
+                  {name}
+                </strong>
+                <p
+                  style={{
+                    margin: '4px 0 12px 0',
+                    color: '#666',
+                    fontSize: '0.85rem',
+                  }}
+                >
+                  {location.street}
+                </p>
+                <a
+                  href={`/fridge/${id}`}
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    backgroundColor: '#1543D4',
+                    color: '#fff',
+                    textDecoration: 'none',
+                    padding: '6px 12px',
+                    borderRadius: '24px',
+                    fontWeight: 'bold',
+                    fontSize: '0.85rem',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  View Details
+                </a>
+              </div>
             </Popup>
           </Marker>
         );

@@ -1,7 +1,11 @@
 'use client';
 
 import React from 'react';
-import { MapContainer as LeafletMapContainer, TileLayer } from 'react-leaflet';
+import {
+  MapContainer as LeafletMapContainer,
+  TileLayer,
+  ZoomControl,
+} from 'react-leaflet';
 import { Box } from '@mui/material';
 import { Fridge } from 'types/domain';
 import { MarkerLayer } from './layers/MarkerLayer';
@@ -49,7 +53,9 @@ export function MapContainer({
         zoom={defaultZoom}
         minZoom={1}
         scrollWheelZoom={true}
+        zoomControl={false}
       >
+        <ZoomControl position="bottomright" />
         <MapController fridges={fridges} selectedFridgeId={selectedFridgeId} />
         <TileLayer
           attribution="&copy; Fridge Finder"

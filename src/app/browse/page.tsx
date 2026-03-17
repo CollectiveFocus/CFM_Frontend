@@ -6,12 +6,16 @@ import { Box, Typography, Divider, IconButton } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
-import { MapToggle, MapView } from 'features/fridge-map/components/MapToggle/MapToggle';
+import {
+  MapToggle,
+  MapView,
+} from 'features/fridge-map/components/MapToggle/MapToggle';
 import { useWindowHeight } from 'hooks/useWindowHeight';
 import { useFridgeStore } from 'store/useFridgeStore';
 import { useMapStore } from 'store/useMapStore';
 import { StateBoundary } from 'components/shared/StateBoundary';
 import { FridgeListSkeleton } from 'components/shared/skeletons/FridgeSkeletons';
+import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 
 const DynamicMap = dynamic(
   () => import('features/fridge-map').then((mod) => mod.MapContainer),
@@ -38,9 +42,86 @@ export default function BrowsePage(): React.ReactElement {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        height: availableHeight || 'calc(100vh - 64px)',
+        height: availableHeight || '100dvh', // Use 100dvh for better mobile Safari handling
+        marginTop: '-64px', // Offset the appbar since this needs to be truly full screen
+        paddingTop: '64px',
+        position: 'relative',
+        backgroundColor: 'background.paper',
       }}
     >
+      {/* Mobile Floating Search Bar (Map View Only) */}
+      {currentView === 'map' && (
+        <Box
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            position: 'absolute',
+            top: 80, // Sit below the AppBar
+            left: 16,
+            right: 16,
+            zIndex: 1000,
+          }}
+        >
+          <SearchMap
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            hideCloseIcon
+          />
+          {searchQuery.length > 0 && (
+            <Box
+              sx={{
+                mt: 1,
+                maxHeight: '40vh',
+                overflowY: 'auto',
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: 3,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {filteredFridges.length > 0 ? (
+                <List disablePadding>
+                  {filteredFridges.map((fridge, i) => (
+                    <ListItem disablePadding key={fridge.id}>
+                      <ListItemButton
+                        divider={i !== filteredFridges.length - 1}
+                        onClick={() => {
+                          setSelectedFridgeId(fridge.id);
+                          setSearchQuery(''); // Clear search on select to see the map
+                        }}
+                        sx={{ py: 1.5, px: 2 }}
+                      >
+                        <ListItemText
+                          primary={fridge.name}
+                          primaryTypographyProps={{
+                            variant: 'body1',
+                            fontWeight: 700,
+                            color: 'text.primary',
+                          }}
+                          secondary={`${fridge.location.street}, ${fridge.location.city}`}
+                          secondaryTypographyProps={{
+                            variant: 'body2',
+                            color: 'text.secondary',
+                            noWrap: true,
+                          }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <Box sx={{ p: 3, textAlign: 'center' }}>
+                  <Typography variant="body2" color="text.secondary">
+                    No fridges found.
+                  </Typography>
+                </Box>
+              )}
+            </Box>
+          )}
+        </Box>
+      )}
+
       {/* List Area */}
       <Box
         sx={{
@@ -50,17 +131,25 @@ export default function BrowsePage(): React.ReactElement {
             md: 'flex',
           },
           flexDirection: 'column',
-          px: { xs: 2, md: 4 },
-          py: 2,
+          px: { xs: 0, md: 4 }, // No padding on mobile, flush to edges
+          pt: { xs: 0, md: 2 },
+          pb: 2,
           overflowY: 'hidden',
           height: '100%',
         }}
       >
-        <Box sx={{ display: { xs: 'none', md: 'block' }, pt: 2, pb: 1 }}>
+        <Box
+          sx={{
+            display: 'block',
+            pt: { xs: 2, md: 2 },
+            px: { xs: 2, md: 0 },
+            pb: 1,
+          }}
+        >
           <Typography
             variant="overline"
             sx={{
-              display: 'block',
+              display: { xs: 'none', md: 'block' },
               fontSize: '0.85rem',
               letterSpacing: 1.5,
               fontWeight: 600,
@@ -73,11 +162,10 @@ export default function BrowsePage(): React.ReactElement {
           <SearchMap
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
-            onClose={() => {}} // Desktop search stays open
             hideCloseIcon
-            sx={{ mb: 3 }}
+            sx={{ mb: { xs: 2, md: 3 } }}
           />
-          <Divider sx={{ mb: 2 }} />
+          <Divider sx={{ mb: 2, display: { xs: 'none', md: 'block' } }} />
         </Box>
         <StateBoundary
           status={status}
@@ -85,7 +173,7 @@ export default function BrowsePage(): React.ReactElement {
           onRetry={fetchFridges}
           loadingView={<FridgeListSkeleton />}
         >
-          <Box sx={{ flex: 1, overflowY: 'auto' }}>
+          <Box sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, md: 0 } }}>
             <FridgeList fridges={filteredFridges} />
           </Box>
         </StateBoundary>
@@ -108,31 +196,6 @@ export default function BrowsePage(): React.ReactElement {
           selectedFridgeId={selectedFridgeId}
           onMarkerClick={setSelectedFridgeId}
         />
-        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-          {!showSearchMap && (
-            <IconButton
-              onClick={() => setShowSearchMap(true)}
-              sx={{
-                position: 'absolute',
-                bottom: { xs: 80, md: 16 }, // avoid overlap with MapToggle
-                right: 16,
-                backgroundColor: 'secondary.main',
-                color: 'white',
-                '&:hover': { backgroundColor: 'secondary.dark' },
-                zIndex: 1000,
-              }}
-            >
-              <SearchIcon />
-            </IconButton>
-          )}
-          {showSearchMap && (
-            <SearchMap
-              searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
-              onClose={() => setShowSearchMap(false)}
-            />
-          )}
-        </Box>
       </Box>
 
       {/* Map Toggle (Mobile Only) */}
