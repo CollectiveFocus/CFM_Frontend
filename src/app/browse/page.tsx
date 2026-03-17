@@ -16,6 +16,27 @@ import {
 } from 'theme/icons';
 import { pinColor } from 'theme/palette';
 import { Fridge } from 'types/domain';
+import {
+  MapToggle,
+  MapView,
+} from 'features/fridge-map/components/MapToggle/MapToggle';
+import { useWindowHeight } from 'hooks/useWindowHeight';
+import { useFridgeStore } from 'store/useFridgeStore';
+import { useMapStore } from 'store/useMapStore';
+import { StateBoundary } from 'components/shared/StateBoundary';
+import { FridgeListSkeleton } from 'components/shared/skeletons/FridgeSkeletons';
+import {
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  ClickAwayListener,
+} from '@mui/material';
+
+const DynamicMap = dynamic(
+  () => import('features/fridge-map').then((mod) => mod.MapContainer),
+  { ssr: false }
+);
 
 function FridgeMobileStatus({
   report,
@@ -25,7 +46,7 @@ function FridgeMobileStatus({
   if (!report) {
     return (
       <MapLegendPinNoReportIcon
-        sx={{ width: 16, height: 16, color: pinColor.reportUnavailable }}
+        sx={{ width: 24, height: 24, color: pinColor.reportUnavailable }}
       />
     );
   }
@@ -35,7 +56,7 @@ function FridgeMobileStatus({
   if (condition === 'not at location') {
     return (
       <MapLegendPinNotAtLocationIcon
-        sx={{ width: 16, height: 16, color: pinColor.fridgeNotAtLocation }}
+        sx={{ width: 24, height: 24, color: pinColor.fridgeNotAtLocation }}
       />
     );
   }
@@ -43,7 +64,7 @@ function FridgeMobileStatus({
   if (condition === 'ghost') {
     return (
       <MapLegendPinGhostIcon
-        sx={{ width: 16, height: 16, color: pinColor.fridgeGhost }}
+        sx={{ width: 24, height: 24, color: pinColor.fridgeGhost }}
       />
     );
   }
@@ -60,42 +81,27 @@ function FridgeMobileStatus({
   return (
     <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
       <MapLegendPinLocationIcon
-        sx={{ width: 16, height: 16, color: foodColor }}
+        sx={{ width: 24, height: 24, color: foodColor }}
       />
       {condition === 'dirty' && (
         <MapLegendConditionDirtyIcon
-          sx={{ width: 16, height: 16, color: pinColor.fridgeOperation }}
+          sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
         />
       )}
       {condition === 'out of order' && (
         <MapLegendConditionOutOfOrderIcon
-          sx={{ width: 16, height: 16, color: pinColor.fridgeOperation }}
+          sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
         />
       )}
     </Box>
   );
 }
-import {
-  MapToggle,
-  MapView,
-} from 'features/fridge-map/components/MapToggle/MapToggle';
-import { useWindowHeight } from 'hooks/useWindowHeight';
-import { useFridgeStore } from 'store/useFridgeStore';
-import { useMapStore } from 'store/useMapStore';
-import { StateBoundary } from 'components/shared/StateBoundary';
-import { FridgeListSkeleton } from 'components/shared/skeletons/FridgeSkeletons';
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-
-const DynamicMap = dynamic(
-  () => import('features/fridge-map').then((mod) => mod.MapContainer),
-  { ssr: false }
-);
 
 export default function BrowsePage(): React.ReactElement {
   const { fridges, status, error, fetchFridges } = useFridgeStore();
   const { selectedFridgeId, setSelectedFridgeId } = useMapStore();
   const [currentView, setCurrentView] = useState<MapView>('map');
-  const [showSearchMap, setShowSearchMap] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { searchQuery, setSearchQuery, filteredFridges } =
     useFridgeSearch(fridges);
@@ -120,84 +126,91 @@ export default function BrowsePage(): React.ReactElement {
     >
       {/* Mobile Floating Search Bar (Map View Only) */}
       {currentView === 'map' && (
-        <Box
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            position: 'absolute',
-            top: 80, // Sit below the AppBar
-            left: 16,
-            right: 16,
-            zIndex: 1000,
-          }}
-        >
-          <SearchMap
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            hideCloseIcon
-          />
-          {searchQuery.length > 0 && (
-            <Box
-              sx={{
-                mt: 1,
-                maxHeight: '40vh',
-                overflowY: 'auto',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: 3,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
-                display: 'flex',
-                flexDirection: 'column',
+        <ClickAwayListener onClickAway={() => setIsDropdownOpen(false)}>
+          <Box
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              position: 'absolute',
+              top: 80, // Sit below the AppBar
+              left: 16,
+              right: 16,
+              zIndex: 1000,
+            }}
+          >
+            <SearchMap
+              searchQuery={searchQuery}
+              onSearchChange={(val) => {
+                setSearchQuery(val);
+                setIsDropdownOpen(true);
               }}
-            >
-              {filteredFridges.length > 0 ? (
-                <List disablePadding>
-                  {filteredFridges.map((fridge, i) => (
-                    <ListItem disablePadding key={fridge.id}>
-                      <ListItemButton
-                        divider={i !== filteredFridges.length - 1}
-                        onClick={() => {
-                          setSelectedFridgeId(fridge.id);
-                          setSearchQuery(''); // Clear search on select to see the map
-                        }}
-                        sx={{
-                          py: 1.5,
-                          px: 2,
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 2,
-                        }}
-                      >
-                        <Box sx={{ flexShrink: 0 }}>
-                          <FridgeMobileStatus report={fridge.report} />
-                        </Box>
-                        <ListItemText
-                          primary={fridge.name}
-                          primaryTypographyProps={{
-                            variant: 'body1',
-                            fontWeight: 700,
-                            color: 'text.primary',
+              onFocus={() => setIsDropdownOpen(true)}
+              hideCloseIcon
+            />
+            {searchQuery.length > 0 && isDropdownOpen && (
+              <Box
+                sx={{
+                  mt: 1,
+                  maxHeight: '40vh',
+                  overflowY: 'auto',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  backdropFilter: 'blur(12px)',
+                  borderRadius: 3,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {filteredFridges.length > 0 ? (
+                  <List disablePadding>
+                    {filteredFridges.map((fridge, i) => (
+                      <ListItem disablePadding key={fridge.id}>
+                        <ListItemButton
+                          divider={i !== filteredFridges.length - 1}
+                          onClick={() => {
+                            setSelectedFridgeId(fridge.id);
+                            setIsDropdownOpen(false); // Just hide dropdown, keep query
                           }}
-                          secondary={`${fridge.location.street}, ${fridge.location.city}`}
-                          secondaryTypographyProps={{
-                            variant: 'body2',
-                            color: 'text.secondary',
-                            noWrap: true,
+                          sx={{
+                            py: 1.5,
+                            px: 2,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 2,
                           }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-              ) : (
-                <Box sx={{ p: 3, textAlign: 'center' }}>
-                  <Typography variant="body2" color="text.secondary">
-                    No fridges found.
-                  </Typography>
-                </Box>
-              )}
-            </Box>
-          )}
-        </Box>
+                        >
+                          <Box sx={{ flexShrink: 0 }}>
+                            <FridgeMobileStatus report={fridge.report} />
+                          </Box>
+                          <ListItemText
+                            primary={fridge.name}
+                            primaryTypographyProps={{
+                              variant: 'body1',
+                              fontWeight: 800,
+                              color: 'text.primary',
+                              letterSpacing: '-0.02em',
+                            }}
+                            secondary={`${fridge.location.street}, ${fridge.location.city}`}
+                            secondaryTypographyProps={{
+                              variant: 'body2',
+                              color: 'text.secondary',
+                              noWrap: true,
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <Box sx={{ p: 3, textAlign: 'center' }}>
+                    <Typography variant="body2" color="text.secondary">
+                      No fridges found.
+                    </Typography>
+                  </Box>
+                )}
+              </Box>
+            )}
+          </Box>
+        </ClickAwayListener>
       )}
 
       {/* List Area */}

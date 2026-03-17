@@ -9,6 +9,7 @@ interface SearchMapProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onClose?: () => void;
+  onFocus?: () => void;
   hideCloseIcon?: boolean; // Kept for backwards compatibility if used elsewhere
   sx?: SxProps<Theme>;
 }
@@ -16,6 +17,7 @@ interface SearchMapProps {
 export function SearchMap({
   searchQuery,
   onSearchChange,
+  onFocus,
   sx = {},
 }: SearchMapProps): React.ReactElement {
   const handleSearch = (e: React.FormEvent) => {
@@ -61,6 +63,7 @@ export function SearchMap({
           placeholder="Search by name, street, or zip code..."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
+          onFocus={onFocus}
           sx={{
             flex: 1,
             fontSize: { xs: '1.05rem', md: '1rem' },

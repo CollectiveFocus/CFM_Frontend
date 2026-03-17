@@ -33,18 +33,37 @@ interface LocationInfoProps {
 }
 
 function LocationInfo({ location }: LocationInfoProps): React.ReactElement {
+  const addressString = `${location.street}, ${location.city}, ${location.state} ${location.zip}`;
+  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+    addressString
+  )}`;
+
   return (
-    <Stack direction="row" spacing={2} alignItems="flex-start">
+    <Stack direction="row" spacing={2} alignItems="center">
       <LocationOnOutlinedIcon
-        sx={{ color: 'text.secondary', fontSize: '1.5rem', mt: '2px' }}
+        sx={{ color: 'text.secondary', fontSize: '1.5rem' }}
       />
-      <Typography
-        sx={{ fontSize: ['1rem'], color: 'text.primary', lineHeight: 1.5 }}
-      >
-        {location.street}
-        <br />
-        {location.city}, {location.state} {location.zip}
-      </Typography>
+      <Box component="address" sx={{ fontStyle: 'normal', m: 0 }}>
+        <Typography
+          component="a"
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            fontSize: ['1rem'],
+            color: 'text.primary',
+            lineHeight: 1.4,
+            textDecoration: 'none',
+            display: 'block',
+            '&:hover': {
+              color: 'primary.main',
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          {addressString}
+        </Typography>
+      </Box>
     </Stack>
   );
 }
@@ -64,7 +83,21 @@ function InstagramInfo({
   return (
     <Stack direction="row" spacing={2} alignItems="center">
       <InstagramIcon sx={{ color: 'text.secondary', fontSize: '1.5rem' }} />
-      <Typography sx={{ fontSize: ['1rem'], color: 'text.primary' }}>
+      <Typography
+        component="a"
+        href={`https://instagram.com/${handle}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          fontSize: ['1rem'],
+          color: 'text.primary',
+          textDecoration: 'none',
+          '&:hover': {
+            color: 'primary.main',
+            textDecoration: 'underline',
+          },
+        }}
+      >
         @{handle}
       </Typography>
     </Stack>
@@ -93,12 +126,12 @@ function FridgeStatus({
 }): React.ReactElement | null {
   if (!report) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
         <MapLegendPinNoReportIcon
-          sx={{ width: 24, height: 24, color: pinColor.reportUnavailable }}
+          sx={{ width: 28, height: 28, color: pinColor.reportUnavailable }}
         />
         <Typography
-          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
         >
           No status
         </Typography>
@@ -110,12 +143,12 @@ function FridgeStatus({
 
   if (condition === 'not at location') {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
         <MapLegendPinNotAtLocationIcon
-          sx={{ width: 24, height: 24, color: pinColor.fridgeNotAtLocation }}
+          sx={{ width: 28, height: 28, color: pinColor.fridgeNotAtLocation }}
         />
         <Typography
-          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
         >
           Not at location
         </Typography>
@@ -125,12 +158,12 @@ function FridgeStatus({
 
   if (condition === 'ghost') {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
         <MapLegendPinGhostIcon
-          sx={{ width: 24, height: 24, color: pinColor.fridgeGhost }}
+          sx={{ width: 28, height: 28, color: pinColor.fridgeGhost }}
         />
         <Typography
-          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
         >
           Ghost Fridge
         </Typography>
@@ -154,41 +187,41 @@ function FridgeStatus({
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 2,
+        gap: 3,
         mt: 0.5,
         alignItems: 'center',
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <MapLegendPinLocationIcon
-          sx={{ width: 24, height: 24, color: foodColor }}
+          sx={{ width: 28, height: 28, color: foodColor }}
         />
         <Typography
-          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
         >
           {foodText}
         </Typography>
       </Box>
 
       {condition === 'dirty' && (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <MapLegendConditionDirtyIcon
-            sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
+            sx={{ width: 28, height: 28, color: pinColor.fridgeOperation }}
           />
           <Typography
-            sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'error.main' }}
+            sx={{ fontSize: '1rem', fontWeight: 600, color: 'error.main' }}
           >
             Needs cleaning
           </Typography>
         </Box>
       )}
       {condition === 'out of order' && (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <MapLegendConditionOutOfOrderIcon
-            sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
+            sx={{ width: 28, height: 28, color: pinColor.fridgeOperation }}
           />
           <Typography
-            sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'error.main' }}
+            sx={{ fontSize: '1rem', fontWeight: 600, color: 'error.main' }}
           >
             Needs repairs
           </Typography>
@@ -238,19 +271,37 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 ) : null}
               </Stack>
             </Stack>
-            <Stack direction="row" width="100%" spacing={2} sx={{ mt: 1 }}>
+            <Stack
+              direction="row"
+              width="100%"
+              justifyContent="flex-end"
+              spacing={2}
+              sx={{ mt: 2 }}
+            >
               <ButtonLink
                 variant="outlined"
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
-                sx={{ fontSize: ['0.85rem'], flex: 1, py: 0.5 }}
+                sx={{
+                  fontSize: ['0.85rem'],
+                  px: { xs: 2, sm: 3 },
+                  py: 0.5,
+                  flex: 'none',
+                  borderRadius: 20,
+                }}
                 title={'More Info'}
               />
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}/report`}
                 aria-label={`Update Status on ${fridge.name}`}
-                sx={{ fontSize: ['0.85rem'], flex: 1, py: 0.5 }}
+                sx={{
+                  fontSize: ['0.85rem'],
+                  px: { xs: 2, sm: 3 },
+                  py: 0.5,
+                  flex: 'none',
+                  borderRadius: 20,
+                }}
                 title={'Update Status'}
               />
             </Stack>
