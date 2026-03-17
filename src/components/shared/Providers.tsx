@@ -10,7 +10,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AnalyticsProvider />
+      <React.Suspense fallback={null}>
+        <AnalyticsProvider />
+      </React.Suspense>
       {children}
     </ThemeProvider>
   );
