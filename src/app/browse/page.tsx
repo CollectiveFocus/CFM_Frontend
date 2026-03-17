@@ -107,7 +107,7 @@ export default function BrowsePage(): React.ReactElement {
   const [currentView, setCurrentView] = useState<MapView>('map');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const { searchQuery, setSearchQuery, filteredFridges } =
+  const { searchQuery, setSearchQuery, filteredFridges, isSearching } =
     useFridgeSearch(fridges);
 
   const availableHeight = useWindowHeight();
@@ -165,7 +165,9 @@ export default function BrowsePage(): React.ReactElement {
                   flexDirection: 'column',
                 }}
               >
-                {filteredFridges.length > 0 ? (
+                {isSearching ? (
+                  <FridgeListSkeleton />
+                ) : filteredFridges.length > 0 ? (
                   <List disablePadding>
                     {filteredFridges.map((fridge, i) => (
                       <ListItem disablePadding key={fridge.id}>
@@ -281,7 +283,11 @@ export default function BrowsePage(): React.ReactElement {
           loadingView={<FridgeListSkeleton />}
         >
           <Box sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, md: 0 } }}>
-            <FridgeList fridges={filteredFridges} />
+            {isSearching ? (
+              <FridgeListSkeleton />
+            ) : (
+              <FridgeList fridges={filteredFridges} />
+            )}
           </Box>
         </StateBoundary>
       </Box>

@@ -245,7 +245,9 @@ interface FridgeListProps {
   fridges: Fridge[];
 }
 
-export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
+export const FridgeList = React.memo(function FridgeList({
+  fridges,
+}: FridgeListProps): React.ReactElement {
   return (
     <List disablePadding>
       {fridges.map((fridge, fridgeIndex) => (
@@ -301,9 +303,9 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
                 sx={{
-                  fontSize: '0.85rem',
-                  px: 3,
-                  py: 0.75,
+                  fontSize: '0.8rem',
+                  px: 2,
+                  py: 0.5,
                   flex: 'none',
                   borderRadius: 20,
                   minWidth: 'auto',
@@ -315,9 +317,9 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 to={`/fridge/${fridge.id}/report`}
                 aria-label={`Update Status on ${fridge.name}`}
                 sx={{
-                  fontSize: '0.85rem',
-                  px: 3,
-                  py: 0.75,
+                  fontSize: '0.8rem',
+                  px: 2,
+                  py: 0.5,
                   flex: 'none',
                   borderRadius: 20,
                   minWidth: 'auto',
@@ -330,4 +332,4 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
       ))}
     </List>
   );
-}
+});

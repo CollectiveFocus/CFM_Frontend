@@ -20,6 +20,24 @@ export function SearchMap({
   onFocus,
   sx = {},
 }: SearchMapProps): React.ReactElement {
+  const [localQuery, setLocalQuery] = React.useState(searchQuery);
+
+  // Sync external resets
+  React.useEffect(() => {
+    setLocalQuery(searchQuery);
+  }, [searchQuery]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setLocalQuery(val);
+    onSearchChange(val);
+  };
+
+  const handleClear = () => {
+    setLocalQuery('');
+    onSearchChange('');
+  };
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
   };
@@ -61,8 +79,8 @@ export function SearchMap({
         />
         <InputBase
           placeholder="Search by name, street, or zip code..."
-          value={searchQuery}
-          onChange={(e) => onSearchChange(e.target.value)}
+          value={localQuery}
+          onChange={handleChange}
           onFocus={onFocus}
           sx={{
             flex: 1,
@@ -74,10 +92,10 @@ export function SearchMap({
           }}
           fullWidth
         />
-        {searchQuery.length > 0 && (
+        {localQuery.length > 0 && (
           <IconButton
             aria-label="Clear search"
-            onClick={() => onSearchChange('')}
+            onClick={handleClear}
             size="small"
             sx={{ color: 'text.secondary', p: { xs: 1, md: 0.5 } }}
           >
@@ -86,7 +104,7 @@ export function SearchMap({
         )}
       </Box>
       <Box aria-live="polite" sx={{ display: 'none' }}>
-        {searchQuery.length > 0 ? `Searching for ${searchQuery}` : ''}
+        {localQuery.length > 0 ? `Searching for ${localQuery}` : ''}
       </Box>
     </Box>
   );
