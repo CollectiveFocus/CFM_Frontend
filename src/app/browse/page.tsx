@@ -258,12 +258,12 @@ export default function BrowsePage(): React.ReactElement {
             component="h1"
             sx={{
               display: { xs: 'none', md: 'block' },
-              fontSize: '1rem',
-              fontWeight: 700,
-              color: 'text.secondary',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              mb: 2,
+              fontSize: '1.2rem',
+              fontWeight: 800,
+              color: 'text.primary',
+              letterSpacing: '-0.02em',
+              textAlign: 'center',
+              mb: 3,
             }}
           >
             Fridges in this area
