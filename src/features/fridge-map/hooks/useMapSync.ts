@@ -165,11 +165,12 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       }
 
       // Fallback: stop watching if we get a timeout, permission denied, or too many mysterious failures
-      if (e.code === 1 || e.code === 3 || errorCount > 3) {
+      if (e.code === 1 || e.code === 3 || e.code === 2 || errorCount > 3) {
         map.stopLocate();
 
         // If live tracking completely fails and we never established a position,
         // we leave the map alone so the user can just browse normally where they scrolled.
+        // Or if this is the first load, map store persists user's last known location.
       }
     };
 
@@ -201,7 +202,6 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       // Stop any existing watch before starting a new one
       map.stopLocate();
       // Start watching user location continuously.
-      // Use low accuracy default to ensure we get a fast lock, upgrading internally if possible
       map.locate({
         watch: true,
         enableHighAccuracy: false, // Prevents endless timeouts on poor connections / emulators
