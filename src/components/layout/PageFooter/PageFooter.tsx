@@ -9,7 +9,7 @@ import {
   Typography,
   Link as MuiLink,
 } from '@mui/material';
-import { NextLink } from '../NextLink/NextLink';
+import { NextLink } from 'components/ui';
 
 interface PageFooterProps {
   scrollButton?: boolean;
@@ -89,7 +89,7 @@ export function PageFooter({
             </MuiLink>
             <MuiLink
               component={NextLink}
-              href="/user/contact"
+              href="/contact"
               color="text.secondary"
               underline="none"
               sx={{ '&:hover': { color: 'primary.main' } }}

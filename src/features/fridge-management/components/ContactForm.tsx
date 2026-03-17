@@ -11,7 +11,7 @@ import {
   Paper,
   Box,
 } from '@mui/material';
-import { ButtonLink } from 'components/atoms';
+import { ButtonLink } from 'components/ui';
 import { contactSchema, ContactFormData } from '../schemas/fridge.schema';
 
 interface ContactFormProps {

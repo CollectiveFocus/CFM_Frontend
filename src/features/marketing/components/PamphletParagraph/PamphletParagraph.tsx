@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box, Divider, Typography, SxProps, Theme } from '@mui/material';
-import { ButtonLink } from '../ButtonLink/ButtonLink';
-import { SoftWrap } from '../SoftWrap/SoftWrap';
+import { ButtonLink } from 'components/ui';
+import { SoftWrap } from 'components/ui';
 import { applyAlpha, designColor } from 'theme/palette';
 
 interface ResponsiveImageProps {

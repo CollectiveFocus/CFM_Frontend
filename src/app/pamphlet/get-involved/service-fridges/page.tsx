@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -18,7 +19,7 @@ const pageContent = {
       ],
       button: {
         title: 'Service Fridges',
-        to: '/user/contact?subject=Fridge%20Service%20Interest',
+        to: '/contact?subject=Fridge%20Service%20Interest',
         'aria-label': 'Interested in fixing and maintaining a fridge',
         variant: 'contained' as const,
       },
@@ -44,7 +45,7 @@ export default function ServiceFridgesPage(): React.ReactElement {
         />
       ))}
 
-      <PageFooter scrollButton={false} />
+      
     </>
   );
 }

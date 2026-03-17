@@ -7,7 +7,7 @@ import {
   WarningAmberRounded as ErrorIcon,
   TaskAltRounded as SuccessIcon,
 } from '@mui/icons-material';
-import { ButtonLink } from '../ButtonLink/ButtonLink';
+import { ButtonLink } from 'components/ui';
 
 const sxSuccessIcon = { fontSize: '1.1em', verticalAlign: 'top' };
 const sxErrorIcon = { fontSize: '1.3em', verticalAlign: 'text-bottom' };

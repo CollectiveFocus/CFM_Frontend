@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box, Typography, Card, CardContent, CardActions } from '@mui/material';
-import { ButtonLink } from '../ButtonLink/ButtonLink';
+import { ButtonLink } from 'components/ui';
 
 interface ParagraphCardProps {
   variant: 'h2' | 'h3';

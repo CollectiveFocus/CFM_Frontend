@@ -6,7 +6,7 @@ import { Box, Typography, Divider, IconButton } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
-import { MapToggle, MapView } from 'components/atoms';
+import { MapToggle, MapView } from 'features/fridge-map/components/MapToggle/MapToggle';
 import { useWindowHeight } from 'hooks/useWindowHeight';
 import { useFridgeStore } from 'store/useFridgeStore';
 import { useMapStore } from 'store/useMapStore';

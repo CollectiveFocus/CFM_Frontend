@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -18,7 +19,7 @@ const pageContent = {
       ],
       button: {
         title: 'Source Food',
-        to: '/user/contact?subject=Sourcing%20Food%20Inquiry',
+        to: '/contact?subject=Sourcing%20Food%20Inquiry',
         'aria-label': 'Sourcing Food Inquiry',
         variant: 'contained' as const,
       },
@@ -44,7 +45,7 @@ export default function SourceFoodPage(): React.ReactElement {
         />
       ))}
 
-      <PageFooter scrollButton={false} />
+      
     </>
   );
 }

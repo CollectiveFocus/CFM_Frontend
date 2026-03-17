@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { Box, Typography, Paper } from '@mui/material';
-import { PageFooter } from 'components/atoms';
+
 import { CheckCircleOutline as CheckIcon } from '@mui/icons-material';
 
 const practices = [
@@ -105,7 +105,7 @@ export default function BestPracticesPage(): React.ReactElement {
           ))}
         </Box>
       </Box>
-      <PageFooter />
+      
     </>
   );
 }

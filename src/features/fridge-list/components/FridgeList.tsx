@@ -5,7 +5,7 @@ import {
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
 } from '@mui/icons-material';
-import { ButtonLink } from 'components/atoms';
+import { ButtonLink } from 'components/ui';
 import { Fridge, Location as LocationType } from 'types/domain';
 
 function formatDate(isoString: string): string {
@@ -119,7 +119,7 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
               />
               <ButtonLink
                 variant="contained"
-                to={`/user/fridge/report/${fridge.id}`}
+                to={`/fridge/${fridge.id}/report`}
                 aria-label={'Update Status on ' + fridge.name}
                 sx={{ fontSize: ['1rem'], flex: 1 }}
                 title={'Update Status'}

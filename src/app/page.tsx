@@ -1,11 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import {
-  PamphletParagraph,
-  PageFooter,
-  PageHero,
-  ParagraphCard,
-} from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph, ParagraphCard } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -132,8 +128,6 @@ export default function HomePage(): React.ReactElement {
           </Grid>
         </Grid>
       </Box>
-
-      <PageFooter scrollButton={false} />
     </>
   );
 }

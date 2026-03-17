@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -33,7 +34,7 @@ const pageContent = {
       ],
       button: {
         title: 'Request A Fridge',
-        to: '/user/contact?subject=Fridge%20Request',
+        to: '/contact?subject=Fridge%20Request',
         'aria-label': 'Request a fridge',
         variant: 'contained' as const,
       },
@@ -46,7 +47,7 @@ const pageContent = {
       ],
       button: {
         title: 'Get Construction Support',
-        to: '/user/contact?subject=Construction%20Support%20Request',
+        to: '/contact?subject=Construction%20Support%20Request',
         'aria-label': 'Request construction support',
         variant: 'contained' as const,
       },
@@ -72,7 +73,7 @@ const pageContent = {
       body: ['Contact us for more information on sourcing a fridge.'],
       button: {
         title: 'Request A Fridge',
-        to: '/user/contact?subject=Fridge%20Request',
+        to: '/contact?subject=Fridge%20Request',
         'aria-label': 'Request a fridge',
         variant: 'contained' as const,
       },
@@ -98,7 +99,7 @@ export default function StartAFridgePage(): React.ReactElement {
         />
       ))}
 
-      <PageFooter />
+      
     </>
   );
 }

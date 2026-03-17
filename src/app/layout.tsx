@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ResponsiveAppBar } from 'features/navigation';
 import { Providers } from 'components/shared/Providers';
+import { FooterWrapper } from 'components/layout';
 
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
@@ -62,6 +63,7 @@ export default function RootLayout({
             >
               {children}
             </Box>
+            <FooterWrapper />
           </Providers>
         </AppRouterCacheProvider>
       </body>

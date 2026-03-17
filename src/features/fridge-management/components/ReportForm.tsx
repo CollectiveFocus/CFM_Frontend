@@ -18,7 +18,7 @@ import {
   Box,
   Paper,
 } from '@mui/material';
-import { ButtonLink } from 'components/atoms';
+import { ButtonLink } from 'components/ui';
 import { reportSchema, ReportFormData } from '../schemas/fridge.schema';
 
 interface ReportFormProps {

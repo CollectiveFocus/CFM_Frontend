@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import { FeedbackCard, PageFooter } from 'components/atoms';
+import { FeedbackCard } from 'components/ui';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
 
 enum DisplayStatus {
@@ -16,7 +16,7 @@ export default function FridgeReportPage(): React.ReactElement {
     DisplayStatus.Form
   );
   const params = useParams();
-  const fridgeId = params.fridgeId as string;
+  const fridgeId = params.id as string;
 
   const postReportUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/reports`;
 
@@ -68,10 +68,5 @@ export default function FridgeReportPage(): React.ReactElement {
     }
   }
 
-  return (
-    <>
-      {fridgeId && renderContent()}
-      <PageFooter />
-    </>
-  );
+  return <>{fridgeId && renderContent()}</>;
 }

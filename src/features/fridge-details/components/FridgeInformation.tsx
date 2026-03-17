@@ -26,7 +26,7 @@ import {
   MobileScreenShareOutlined as MobileScreenShareOutlinedIcon,
 } from '@mui/icons-material';
 
-import { ButtonLink, SoftWrap } from 'components/atoms';
+import { ButtonLink, SoftWrap } from 'components/ui';
 import { applyAlpha, designColor } from 'theme/palette';
 import { StatusIcon } from 'theme/icons';
 import { Fridge, FridgeReport, Maintainer } from 'types/domain';
@@ -428,7 +428,7 @@ export function FridgeInformation({
           <ButtonLink
             aria-label="Click to report the status of the fridge"
             variant="contained"
-            to={`/user/fridge/report/${fridge.id}`}
+            to={`/fridge/${fridge.id}/report`}
             title="Update Status"
             sx={{ mt: 4 }}
           />

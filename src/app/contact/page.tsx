@@ -2,7 +2,7 @@
 
 import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { FeedbackCard, PageFooter } from 'components/atoms';
+import { FeedbackCard } from 'components/ui';
 import { ContactForm, ContactFormData } from 'features/fridge-management';
 
 enum DisplayStatus {
@@ -62,7 +62,7 @@ function ContactPageContent(): React.ReactElement {
   return (
     <>
       {renderContent()}
-      <PageFooter />
+      
     </>
   );
 }

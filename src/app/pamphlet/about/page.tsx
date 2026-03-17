@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PamphletParagraph, PageFooter } from 'components/atoms';
+import { PamphletParagraph } from 'features/marketing';
 
 const pageContent = {
   content: [
@@ -88,7 +88,7 @@ export default function AboutPage(): React.ReactElement {
         />
       ))}
 
-      <PageFooter />
+      
     </>
   );
 }

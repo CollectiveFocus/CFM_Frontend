@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -18,7 +19,7 @@ const pageContent = {
       ],
       button: {
         title: 'Become a Driver',
-        to: '/user/contact?subject=Transport%20Food',
+        to: '/contact?subject=Transport%20Food',
         'aria-label': 'Become a Driver',
         variant: 'contained' as const,
       },
@@ -44,7 +45,7 @@ export default function BecomeADriverPage(): React.ReactElement {
         />
       ))}
 
-      <PageFooter scrollButton={false} />
+      
     </>
   );
 }

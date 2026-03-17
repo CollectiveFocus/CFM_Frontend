@@ -1,12 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { Grid, Box } from '@mui/material';
-import {
-  PageFooter,
-  PageHero,
-  PamphletParagraph,
-  TitleCard,
-} from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph, TitleCard } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
@@ -103,7 +99,6 @@ export default function GetInvolvedPage(): React.ReactElement {
           ))}
         </Grid>
       </Box>
-      <PageFooter scrollButton={false} />
     </>
   );
 }

@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 
-import { NextLink } from 'components/atoms/NextLink/NextLink';
+import { NextLink } from 'components/ui';
 import {
   AboutIcon,
   ContactUsIcon,
@@ -40,7 +40,7 @@ const menuItems = [
     title: 'Get Involved',
     link: '/pamphlet/get-involved',
   },
-  { icon: ContactUsIcon, title: 'Contact Us', link: '/user/contact' },
+  { icon: ContactUsIcon, title: 'Contact Us', link: '/contact' },
 ];
 
 const menuDesktopFirstItem = 1;

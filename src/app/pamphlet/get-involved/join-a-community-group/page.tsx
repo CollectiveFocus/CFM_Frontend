@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { PageHero, PamphletParagraph, PageFooter } from 'components/atoms';
+import { PageHero } from 'components/layout';
+import { PamphletParagraph } from 'features/marketing';
 import { Box } from '@mui/material';
 
 const pageContent = {
@@ -20,7 +21,7 @@ const pageContent = {
       ],
       button: {
         title: 'Volunteer',
-        to: '/user/contact?subject=Volunteer%20Interest',
+        to: '/contact?subject=Volunteer%20Interest',
         'aria-label': 'Volunteer',
         variant: 'contained' as const,
       },
@@ -97,7 +98,7 @@ export default function JoinACommunityGroupPage(): React.ReactElement {
         </ul>
       </Box>
 
-      <PageFooter />
+      
     </>
   );
 }

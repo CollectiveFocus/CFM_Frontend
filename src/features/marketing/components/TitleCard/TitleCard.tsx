@@ -8,7 +8,7 @@ import {
   CardActionArea,
   Typography,
 } from '@mui/material';
-import { NextLink } from '../NextLink/NextLink';
+import { NextLink } from 'components/ui';
 
 interface TitleCardProps {
   img: {
