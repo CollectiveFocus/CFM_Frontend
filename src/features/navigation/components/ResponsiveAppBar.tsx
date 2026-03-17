@@ -46,11 +46,11 @@ const menuItems = [
 const menuDesktopFirstItem = 1;
 
 const sxDesktopIcon = {
-  sx: { borderRadius: '50%', width: '48px', height: '48px' },
+  sx: { borderRadius: '50%', width: '40px', height: '40px' }, // Made desktop icons slightly smaller
 };
 
 const sxMobileIcon = {
-  sx: { borderRadius: '50%', width: '40px', height: '40px' },
+  sx: { borderRadius: '50%', width: '36px', height: '36px' }, // Made mobile icons slightly smaller
 };
 
 function MenuDesktop(): React.ReactElement {
@@ -63,11 +63,11 @@ function MenuDesktop(): React.ReactElement {
             component={NextLink}
             href={item.link}
             sx={{
-              mx: 1,
+              mx: 0.5,
               backgroundColor: 'primary.contrastText',
               p: 0,
-              width: '48px',
-              height: '48px',
+              width: '40px', // Match the new smaller icon size
+              height: '40px',
               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               '&:hover': {
                 backgroundColor: 'primary.contrastText',
@@ -129,22 +129,35 @@ export function ResponsiveAppBar(): React.ReactElement {
   }, []);
 
   return (
-    <AppBar id="AppBar" position="sticky">
-      <Toolbar sx={{ p: 0 }}>
+    <AppBar id="AppBar" position="sticky" elevation={2}>
+      {/* 
+        Overriding MUI's default min-height (usually 64px) 
+        and applying tighter padding to achieve a thinner bar 
+      */}
+      <Toolbar
+        sx={{
+          minHeight: { xs: 52, sm: 56 },
+          px: { xs: 2, sm: 4, md: 6 },
+          py: 0.5,
+        }}
+        disableGutters
+      >
         <IconButton
           disableRipple
           aria-label="Go to Home page"
           component={NextLink}
           href="/"
-          sx={{ display: 'block', m: 0, p: 0, width: '98px', height: '48px' }}
+          sx={{ display: 'block', m: 0, p: 0, width: '84px', height: '40px' }} // Slightly smaller logo container
         >
           <Image
             alt="Fridge Finder logo"
             src="/brand/logo.svg"
-            width={98}
-            height={48}
+            width={84} // Reduced from 98
+            height={40} // Reduced from 48
+            style={{ objectFit: 'contain' }}
           />
         </IconButton>
+
         <Box
           id="desktop"
           aria-label="navigation menu"
@@ -156,6 +169,7 @@ export function ResponsiveAppBar(): React.ReactElement {
         >
           <MenuDesktop />
         </Box>
+
         <Box
           id="mobile"
           aria-label="navigation menu"
@@ -166,15 +180,17 @@ export function ResponsiveAppBar(): React.ReactElement {
           }}
         >
           <IconButton
-            size="large"
+            size="medium" // Changed from large
             aria-label="navigation menu"
             aria-controls="mobile-menu"
             aria-haspopup="true"
             onClick={handleMobileMenuToggle}
             color="inherit"
+            sx={{ mr: -1 }} // Tighter right alignment
           >
             <MenuIcon />
           </IconButton>
+
           <Drawer
             id="mobile-menu"
             variant="temporary"

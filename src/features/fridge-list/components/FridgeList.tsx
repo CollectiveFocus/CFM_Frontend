@@ -372,6 +372,11 @@ export const FridgeList = React.memo(function FridgeList({
           </Stack>
         </ListItem>
       ))}
+
+      {/* Hidden empty items to allow scrolling beyond the last fridge item */}
+      <ListItem aria-hidden="true" sx={{ height: 40, border: 'none' }} />
+      <ListItem aria-hidden="true" sx={{ height: 40, border: 'none' }} />
+      <ListItem aria-hidden="true" sx={{ height: 40, border: 'none' }} />
     </List>
   );
 });
