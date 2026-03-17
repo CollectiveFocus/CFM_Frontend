@@ -11,8 +11,7 @@ export function PageFooter({
   scrollButton = false,
 }: PageFooterProps): React.ReactElement {
   const sxFooter = {
-    py: 1.5,
-    px: 2,
+    padding: '4px 16px',
     backgroundColor: 'transparent',
     color: 'text.secondary',
     width: '100%',
@@ -27,11 +26,12 @@ export function PageFooter({
     <Box component="footer" sx={sxFooter}>
       <Typography
         sx={{
-          fontSize: '0.7rem',
+          fontSize: '0.65rem',
           opacity: 0.8,
           textAlign: 'center',
-          lineHeight: 1.4,
+          lineHeight: 1.2,
           maxWidth: 800,
+          m: 0,
         }}
       >
         &copy; 2022-2025 Fridge Finder. All rights reserved. We may use cookies
