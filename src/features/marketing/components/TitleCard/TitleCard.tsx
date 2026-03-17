@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { NextLink } from 'components/ui';
 
 interface TitleCardProps {
@@ -28,60 +29,77 @@ export function TitleCard({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         textDecoration: 'none',
         width: '100%',
-        maxWidth: 240,
-        transition: 'transform 0.2s ease',
+        maxWidth: 280,
+        p: { xs: 3, md: 4 },
+        borderRadius: 4,
+        backgroundColor: 'transparent',
+        transition: 'background-color 0.2s ease',
         '&:hover': {
-          transform: 'translateY(-6px)',
-          '& .icon-container': {
-            boxShadow: '0 12px 24px rgba(0,0,0,0.1)',
-            borderColor: 'primary.main',
-          },
+          backgroundColor: 'rgba(0,0,0,0.02)',
           '& .title-text': {
             color: 'primary.main',
+          },
+          '& .arrow-icon': {
+            color: 'primary.main',
+            transform: 'translateX(6px)',
           },
         },
       }}
     >
       <Box
-        className="icon-container"
         sx={{
-          width: { xs: 120, md: 150 },
-          height: { xs: 120, md: 150 },
-          borderRadius: '50%',
-          backgroundColor: 'rgba(0,0,0,0.02)',
-          border: '1px solid rgba(0,0,0,0.05)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          height: { xs: 100, md: 120 },
           mb: 3,
-          transition: 'all 0.2s ease',
-          p: 3,
         }}
       >
         <Image
           src={img.src}
           alt={img.alt}
-          width={80}
-          height={80}
-          style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+          width={120}
+          height={120}
+          style={{ width: 'auto', height: '100%', objectFit: 'contain' }}
         />
       </Box>
-      <Typography
-        className="title-text"
-        variant="h4"
+      <Box
         sx={{
-          textAlign: 'center',
-          fontWeight: 700,
-          color: 'text.primary',
-          letterSpacing: '-0.01em',
-          transition: 'color 0.2s ease',
-          lineHeight: 1.3,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 1.5,
         }}
       >
-        {title}
-      </Typography>
+        <Typography
+          className="title-text"
+          variant="h4"
+          sx={{
+            textAlign: 'center',
+            fontWeight: 800,
+            color: 'text.primary',
+            letterSpacing: '-0.02em',
+            transition: 'color 0.2s ease',
+            lineHeight: 1.3,
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          {title}
+        </Typography>
+        <ArrowForwardIcon
+          className="arrow-icon"
+          sx={{
+            color: 'text.secondary',
+            transition: 'all 0.2s ease',
+            fontSize: '1.6rem',
+            strokeWidth: 2,
+          }}
+        />
+      </Box>
     </Box>
   );
 }
