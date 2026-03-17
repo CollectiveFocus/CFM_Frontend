@@ -86,10 +86,16 @@ export function MarkerLayer({
             position={[location.geoLat, location.geoLng]}
             icon={iconFrom(condition, foodPercentage)}
             eventHandlers={{
-              click: () => onMarkerClick?.(id),
+              click: () => {
+                // Update Zustand store so MapSync can pan the camera naturally
+                // without forcing Leaflet to aggressively hijack the Viewport
+                if (onMarkerClick) {
+                  onMarkerClick(id);
+                }
+              },
             }}
           >
-            <Popup className="custom-popup" minWidth={220}>
+            <Popup className="custom-popup" minWidth={220} autoPan={false}>
               <div style={{ fontFamily: 'inherit', padding: '8px 4px' }}>
                 <strong
                   style={{

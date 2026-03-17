@@ -80,16 +80,22 @@ function MapController({
     locateUser();
     setPanToUserAction(() => panToUser);
 
+    let moveTimeout: NodeJS.Timeout;
     const handleMoveEnd = () => {
-      const newCenter = map.getCenter();
-      setCenter([newCenter.lat, newCenter.lng]);
-      setZoom(map.getZoom());
+      // Debounce writing map coordinates to Zustand so the map doesn't get flooded with state updates
+      clearTimeout(moveTimeout);
+      moveTimeout = setTimeout(() => {
+        const newCenter = map.getCenter();
+        setCenter([newCenter.lat, newCenter.lng]);
+        setZoom(map.getZoom());
+      }, 500);
     };
 
     map.on('moveend', handleMoveEnd);
 
     return () => {
       map.off('moveend', handleMoveEnd);
+      clearTimeout(moveTimeout);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -101,19 +107,25 @@ export function MapContainer({
   fridges,
   selectedFridgeId,
   onMarkerClick,
-}: MapProps): React.ReactElement {
+}: MapProps): React.ReactElement | null {
   const [panToUser, setPanToUser] = React.useState<(() => void) | null>(null);
   const [lng, setLng] = React.useState('en');
+  const [isClient, setIsClient] = React.useState(false);
   const initialCenter = useMapStore((state) => state.center);
   const initialZoom = useMapStore((state) => state.zoom);
 
   React.useEffect(() => {
+    setIsClient(true);
     // Only runs on the client. Extracts the ?lng= param from the URL if present.
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       setLng(params.get('lng') || 'en');
     }
   }, []);
+
+  if (!isClient) {
+    return null; // Wait for hydration to ensure Zustand store loads persisted state correctly
+  }
 
   return (
     <Box sx={{ height: '100%', width: '100%', position: 'relative' }}>

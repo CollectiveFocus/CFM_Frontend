@@ -35,7 +35,7 @@ import {
 
 const DynamicMap = dynamic(
   () => import('features/fridge-map').then((mod) => mod.MapContainer),
-  { ssr: false }
+  { ssr: false, loading: () => <FridgeListSkeleton /> }
 );
 
 function FridgeMobileStatus({
@@ -96,6 +96,10 @@ function FridgeMobileStatus({
     </Box>
   );
 }
+
+// Force DynamicMap to wrap in React.memo so it DOES NOT re-render
+// every single time the user typing in the search box changes BrowsePage state.
+const MemoizedMap = React.memo(DynamicMap);
 
 export default function BrowsePage(): React.ReactElement {
   const { fridges, status, error, fetchFridges } = useFridgeStore();
@@ -294,7 +298,7 @@ export default function BrowsePage(): React.ReactElement {
           height: '100%',
         }}
       >
-        <DynamicMap
+        <MemoizedMap
           fridges={filteredFridges}
           selectedFridgeId={selectedFridgeId}
           onMarkerClick={setSelectedFridgeId}

@@ -48,12 +48,24 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
     fridgesRef.current = fridges;
   }, [fridges]);
 
+  const lastFlyToId = useRef<string | null>(null);
+
   useEffect(() => {
-    if (selectedFridgeId) {
+    // Only fly to a fridge IF the user manually requested it and we haven't already flown to it
+    if (selectedFridgeId && selectedFridgeId !== lastFlyToId.current) {
       const fridge = fridgesRef.current.find((f) => f.id === selectedFridgeId);
       if (fridge) {
-        map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 15);
+        lastFlyToId.current = selectedFridgeId;
+        // Small delay to ensure popup renders smoothly before panning
+        setTimeout(() => {
+          map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 15, {
+            animate: true,
+            duration: 0.5,
+          });
+        }, 100);
       }
+    } else if (!selectedFridgeId) {
+      lastFlyToId.current = null;
     }
   }, [selectedFridgeId, map]);
 
@@ -92,6 +104,9 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       if (isFirstLocationFound.current) {
         isFirstLocationFound.current = false;
 
+        // If they already have a selected fridge, let that logic handle the pan
+        if (selectedFridgeId) return;
+
         const defaultCenter: [number, number] = [40.697759, -73.927282];
         const maxDistMeters = 200000;
 
@@ -123,7 +138,11 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
               (nearest as Fridge).location.geoLat,
               (nearest as Fridge).location.geoLng,
             ]);
-            map.fitBounds(bounds, { padding: [50, 50] });
+            map.fitBounds(bounds, {
+              padding: [50, 50],
+              maxZoom: 14,
+              animate: false,
+            });
           } else {
             // If no nearest fridge found (empty list?), just fly to user
             map.flyTo(userPosition, 14, { animate: false });
@@ -131,15 +150,26 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
         }
       }
     },
-    [map]
+    [map, selectedFridgeId, setUserLocation]
   );
 
   useEffect(() => {
+    let errorCount = 0;
+
     const onLocationError = (e: L.ErrorEvent) => {
-      console.warn('Geolocation failed or blocked by browser:', e.message);
-      // Only alert if the user explicitly clicked the button, not on auto-watch failure.
-      if (e.message && e.message.includes('User denied Geolocation')) {
-        // Silent block
+      errorCount++;
+
+      // Only log the first few errors to prevent terminal/console spam
+      if (errorCount <= 2) {
+        console.warn('Geolocation failed or blocked by browser:', e.message);
+      }
+
+      // Fallback: stop watching if we get a timeout, permission denied, or too many mysterious failures
+      if (e.code === 1 || e.code === 3 || errorCount > 3) {
+        map.stopLocate();
+
+        // If live tracking completely fails and we never established a position,
+        // we leave the map alone so the user can just browse normally where they scrolled.
       }
     };
 
@@ -149,6 +179,7 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
     return () => {
       map.off('locationfound', onLocationFound);
       map.off('locationerror', onLocationError);
+      map.stopLocate(); // Ensure we clean up any active watches when component unmounts
       if (userMarkerRef.current) {
         userMarkerRef.current.remove();
         userMarkerRef.current = null;
@@ -161,8 +192,28 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
   }, [map, onLocationFound]);
 
   const locateUser = useCallback(() => {
-    // Start watching user location continuously in the background
-    map.locate({ watch: true, enableHighAccuracy: true, setView: false });
+    const isSecureContext =
+      window.location.protocol === 'https:' ||
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1';
+
+    if (isSecureContext) {
+      // Stop any existing watch before starting a new one
+      map.stopLocate();
+      // Start watching user location continuously.
+      // Use low accuracy default to ensure we get a fast lock, upgrading internally if possible
+      map.locate({
+        watch: true,
+        enableHighAccuracy: false, // Prevents endless timeouts on poor connections / emulators
+        timeout: 10000,
+        maximumAge: 30000,
+        setView: false,
+      });
+    } else {
+      console.warn(
+        'Geolocation is disabled on insecure contexts (HTTP). User location dot will not render.'
+      );
+    }
   }, [map]);
 
   const panToUser = useCallback(() => {
@@ -170,17 +221,20 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       map.flyTo(userMarkerRef.current.getLatLng(), 15, { animate: true });
     } else {
       // If we are on an insecure context (HTTP local network), browser blocks geolocation completely without asking.
-      if (
-        window.location.protocol === 'http:' &&
-        window.location.hostname !== 'localhost' &&
-        window.location.hostname !== '127.0.0.1'
-      ) {
+      const isSecureContext =
+        window.location.protocol === 'https:' ||
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
+
+      if (!isSecureContext) {
         alert(
-          'Location access is blocked by your browser. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
+          'Location access is blocked by your browser on insecure networks. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
         );
-      } else {
-        map.locate({ setView: true, maxZoom: 15 });
+        return;
       }
+
+      // Fallback single locate if watch failed or hasn't fired yet
+      map.locate({ setView: true, maxZoom: 15, enableHighAccuracy: true });
     }
   }, [map]);
 
