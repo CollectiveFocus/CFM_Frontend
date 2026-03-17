@@ -98,9 +98,20 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
   );
 
   useEffect(() => {
+    const onLocationError = (e: L.ErrorEvent) => {
+      console.warn('Geolocation failed or blocked by browser:', e.message);
+      // Only alert if the user explicitly clicked the button, not on auto-watch failure.
+      if (e.message && e.message.includes('User denied Geolocation')) {
+        // Silent block
+      }
+    };
+
     map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
+
     return () => {
       map.off('locationfound', onLocationFound);
+      map.off('locationerror', onLocationError);
       if (userMarkerRef.current) {
         userMarkerRef.current.remove();
         userMarkerRef.current = null;
@@ -121,7 +132,18 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
     if (userMarkerRef.current) {
       map.flyTo(userMarkerRef.current.getLatLng(), 15, { animate: true });
     } else {
-      map.locate({ setView: true, maxZoom: 15 });
+      // If we are on an insecure context (HTTP local network), browser blocks geolocation completely without asking.
+      if (
+        window.location.protocol === 'http:' &&
+        window.location.hostname !== 'localhost' &&
+        window.location.hostname !== '127.0.0.1'
+      ) {
+        alert(
+          'Location access is blocked by your browser. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
+        );
+      } else {
+        map.locate({ setView: true, maxZoom: 15 });
+      }
     }
   }, [map]);
 
