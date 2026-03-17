@@ -286,7 +286,13 @@ export default function BrowsePage(): React.ReactElement {
             {isSearching ? (
               <FridgeListSkeleton />
             ) : (
-              <FridgeList fridges={filteredFridges} />
+              <FridgeList
+                fridges={filteredFridges}
+                onFridgeSelect={(id) => {
+                  setSelectedFridgeId(id);
+                  setCurrentView('map');
+                }}
+              />
             )}
           </Box>
         </StateBoundary>

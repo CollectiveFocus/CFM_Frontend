@@ -4,6 +4,7 @@ import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
+  RoomOutlined as RoomIcon,
 } from '@mui/icons-material';
 import {
   MapLegendPinLocationIcon,
@@ -243,10 +244,12 @@ function FridgeStatus({
 
 interface FridgeListProps {
   fridges: Fridge[];
+  onFridgeSelect?: (id: string) => void;
 }
 
 export const FridgeList = React.memo(function FridgeList({
   fridges,
+  onFridgeSelect,
 }: FridgeListProps): React.ReactElement {
   return (
     <List disablePadding>
@@ -264,17 +267,52 @@ export const FridgeList = React.memo(function FridgeList({
           }}
         >
           <Stack direction="column" spacing={2} width="100%">
-            <Typography
+            <Box
+              onClick={() => onFridgeSelect?.(fridge.id)}
+              role="button"
+              tabIndex={0}
               sx={{
-                fontSize: { xs: '1.25rem', md: '1.125rem' },
-                fontWeight: 800,
-                color: 'text.primary',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1,
+                cursor: 'pointer',
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary.main',
+                  '& .action-icon': {
+                    color: 'primary.main',
+                    transform: 'translateY(-2px)',
+                  },
+                },
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onFridgeSelect?.(fridge.id);
+                }
               }}
             >
-              {fridge.name}
-            </Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: '1.25rem', md: '1.125rem' },
+                  fontWeight: 800,
+                  color: 'inherit',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.2,
+                }}
+              >
+                {fridge.name}
+              </Typography>
+              <RoomIcon
+                className="action-icon"
+                sx={{
+                  fontSize: '1.3rem',
+                  color: 'text.secondary',
+                  transition: 'all 0.2s ease',
+                }}
+              />
+            </Box>
+
             <FridgeStatus report={fridge.report} />
 
             <Box sx={{ mt: 1 }}>
