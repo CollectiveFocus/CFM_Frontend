@@ -82,28 +82,55 @@ export default function JoinACommunityGroupPage(): React.ReactElement {
       </PamphletParagraph>
 
       <Box
-        sx={{ mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, maxWidth: 800, mb: 10 }}
+        sx={{ mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, maxWidth: 1000, mb: 12 }}
       >
-        <ul
-          style={{
-            paddingLeft: '1.5em',
-            fontSize: '1.125rem',
-            lineHeight: 1.8,
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: '1fr 1fr',
+              md: '1fr 1fr 1fr',
+            },
+            gap: 3,
           }}
         >
           {organizations.map(({ name, url }, index) => (
-            <li key={index + '_org'} style={{ marginBottom: '8px' }}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#1543D4', textDecoration: 'none' }}
-              >
+            <Box
+              component="a"
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              key={index + '_org'}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                p: 3,
+                borderRadius: 3,
+                border: '1px solid',
+                borderColor: 'rgba(0,0,0,0.08)',
+                textDecoration: 'none',
+                color: 'text.primary',
+                backgroundColor: 'background.paper',
+                transition: 'all 0.2s ease',
+                minHeight: 80,
+                '&:hover': {
+                  borderColor: 'primary.main',
+                  backgroundColor: 'rgba(21, 67, 212, 0.03)',
+                  transform: 'translateY(-4px)',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.05)',
+                  color: 'primary.main',
+                },
+              }}
+            >
+              <Typography variant="body1" fontWeight={700}>
                 {name}
-              </a>
-            </li>
+              </Typography>
+            </Box>
           ))}
-        </ul>
+        </Box>
       </Box>
     </>
   );
