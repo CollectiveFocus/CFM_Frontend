@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { FridgeInformation } from 'features/fridge-details';
 import { Fridge, FridgeReport } from 'types/domain';
 
@@ -9,9 +10,11 @@ interface FridgePageProps {
 
 const baseUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/`;
 
-async function getFridgeRecord(
-  id: string
-): Promise<{ fridge: Fridge | null; report: FridgeReport | null }> {
+async function getFridgeRecord(id: string): Promise<{
+  fridge: Fridge | null;
+  report: FridgeReport | null;
+  allReports: FridgeReport[];
+}> {
   try {
     const responses = await Promise.all([
       fetch(`${baseUrl}${id}`, {
@@ -26,7 +29,7 @@ async function getFridgeRecord(
 
     for (const response of responses) {
       if (!response.ok) {
-        return { fridge: null, report: null };
+        return { fridge: null, report: null, allReports: [] };
       }
     }
 
@@ -40,10 +43,10 @@ async function getFridgeRecord(
       report: apiFridge.latestFridgeReport || null,
     };
 
-    return { fridge, report };
+    return { fridge, report, allReports: reports };
   } catch (error) {
     console.error(`Failed to fetch fridge ${id}:`, error);
-    return { fridge: null, report: null };
+    return { fridge: null, report: null, allReports: [] };
   }
 }
 
@@ -62,11 +65,17 @@ export default async function FridgePage({
   params,
 }: FridgePageProps): Promise<React.ReactElement> {
   const { id } = await params;
-  const { fridge, report } = await getFridgeRecord(id);
+  const { fridge, report, allReports } = await getFridgeRecord(id);
 
   if (!fridge) {
-    return <div>Fridge not found</div>;
+    notFound();
   }
 
-  return <FridgeInformation fridge={fridge} report={report} />;
+  return (
+    <FridgeInformation
+      fridge={fridge}
+      report={report}
+      allReports={allReports}
+    />
+  );
 }
