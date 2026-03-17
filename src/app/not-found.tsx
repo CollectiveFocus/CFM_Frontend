@@ -29,7 +29,7 @@ export default function NotFound() {
       </Box>
       <Typography
         variant="h1"
-        color="primary.main"
+        color="text.primary"
         sx={{ mb: 2, fontSize: { xs: '3rem', md: '4rem' } }}
       >
         404

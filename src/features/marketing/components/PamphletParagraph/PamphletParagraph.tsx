@@ -99,7 +99,11 @@ export function PamphletParagraph({
 
       {img && <ResponsiveImage {...img} />}
 
-      <Typography sx={{ mb: 4 }} variant={variant} color="primary.main">
+      <Typography
+        sx={{ mb: 4, fontWeight: 800, letterSpacing: '-0.02em' }}
+        variant={variant}
+        color="text.primary"
+      >
         <SoftWrap text={title} />
       </Typography>
 

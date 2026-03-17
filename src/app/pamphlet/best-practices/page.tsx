@@ -77,7 +77,15 @@ export default function BestPracticesPage(): React.ReactElement {
                 backgroundColor: 'background.paper',
               }}
             >
-              <Typography variant="h2" sx={{ mb: 4, color: 'primary.main' }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  mb: 4,
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: 'text.primary',
+                }}
+              >
                 {section.title}
               </Typography>
               <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
@@ -105,7 +113,6 @@ export default function BestPracticesPage(): React.ReactElement {
           ))}
         </Box>
       </Box>
-      
     </>
   );
 }

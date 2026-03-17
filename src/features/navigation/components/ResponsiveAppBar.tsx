@@ -66,6 +66,14 @@ function MenuDesktop(): React.ReactElement {
               mx: 1,
               backgroundColor: 'primary.contrastText',
               p: 0,
+              width: '48px',
+              height: '48px',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              '&:hover': {
+                backgroundColor: 'primary.contrastText',
+                transform: 'scale(1.08)',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+              },
             }}
           >
             {item.icon(sxDesktopIcon)}
