@@ -164,14 +164,13 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
         console.warn('Geolocation failed or blocked by browser:', e.message);
       }
 
-      // Fallback: stop watching if we get a timeout, permission denied, or too many mysterious failures
-      if (e.code === 1 || e.code === 3 || e.code === 2 || errorCount > 3) {
+      // Fallback: stop watching ONLY if the user explicitly denied permission (code 1)
+      if (e.code === 1) {
         map.stopLocate();
-
-        // If live tracking completely fails and we never established a position,
-        // we leave the map alone so the user can just browse normally where they scrolled.
-        // Or if this is the first load, map store persists user's last known location.
       }
+
+      // Let Leaflet keep trying in the background for timeouts (code 3) or unavailable (code 2),
+      // but we don't force panning or show obnoxious errors.
     };
 
     map.on('locationfound', onLocationFound);
@@ -199,15 +198,14 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       window.location.hostname === '127.0.0.1';
 
     if (isSecureContext) {
-      // Stop any existing watch before starting a new one
       map.stopLocate();
       // Start watching user location continuously.
       map.locate({
         watch: true,
-        enableHighAccuracy: false, // Prevents endless timeouts on poor connections / emulators
+        enableHighAccuracy: true, // Need true for mobile devices to supply directional heading
         timeout: 10000,
-        maximumAge: 30000,
-        setView: false,
+        maximumAge: 15000,
+        setView: false, // Don't auto-pan on every single tiny GPS update
       });
     } else {
       console.warn(
@@ -216,27 +214,5 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
     }
   }, [map]);
 
-  const panToUser = useCallback(() => {
-    if (userMarkerRef.current) {
-      map.flyTo(userMarkerRef.current.getLatLng(), 15, { animate: true });
-    } else {
-      // If we are on an insecure context (HTTP local network), browser blocks geolocation completely without asking.
-      const isSecureContext =
-        window.location.protocol === 'https:' ||
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1';
-
-      if (!isSecureContext) {
-        alert(
-          'Location access is blocked by your browser on insecure networks. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
-        );
-        return;
-      }
-
-      // Fallback single locate if watch failed or hasn't fired yet
-      map.locate({ setView: true, maxZoom: 15, enableHighAccuracy: true });
-    }
-  }, [map]);
-
-  return { locateUser, panToUser };
+  return { locateUser };
 }

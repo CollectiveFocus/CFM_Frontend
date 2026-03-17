@@ -64,6 +64,16 @@ body {
     'TeX Gyre', TeXGyre, Arial, sans-serif !important;
 }
 
+/* Offset Leaflet's bottom controls so they don't hide behind mobile floating pill */
+.leaflet-bottom {
+  margin-bottom: 85px;
+}
+@media (min-width: 900px) {
+  .leaflet-bottom {
+    margin-bottom: 20px;
+  }
+}
+
 /* Smooth zoom transition */
 .leaflet-fade-anim .leaflet-tile,
 .leaflet-zoom-anim .leaflet-tile {

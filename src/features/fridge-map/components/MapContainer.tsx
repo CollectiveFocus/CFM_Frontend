@@ -24,36 +24,58 @@ interface MapProps {
 const defaultMapCenter: [number, number] = [40.697759, -73.927282];
 const defaultZoom = 13.2;
 
-function LocateUserControl({
-  onLocate,
-}: {
-  onLocate: () => void;
-}): React.ReactElement {
+function LocateUserControl(): React.ReactElement | null {
+  const map = useMap();
+  const userLocation = useMapStore((state) => state.userLocation);
+
+  const handleLocate = () => {
+    if (userLocation) {
+      map.flyTo(userLocation, 15, { animate: true, duration: 1.0 });
+    } else {
+      const isSecureContext =
+        window.location.protocol === 'https:' ||
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
+
+      if (!isSecureContext) {
+        alert(
+          'Location access is blocked by your browser on insecure networks. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
+        );
+        return;
+      }
+      map.locate({ setView: true, maxZoom: 15, enableHighAccuracy: false });
+    }
+  };
+
   return (
     <Box
       sx={{
         position: 'absolute',
-        bottom: { xs: 85, md: 24 }, // On mobile keep it above the floating toggle pill
-        right: 16,
+        bottom: { xs: 170, md: 100 }, // Cleanly stack exactly above the 70px tall Leaflet Zoom Controls
+        right: 10,
         zIndex: 1000,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
       }}
     >
       <Tooltip title="Locate Me" placement="left">
         <IconButton
-          onClick={onLocate}
+          onClick={handleLocate}
           sx={{
             backgroundColor: 'background.paper',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-            borderRadius: '50%',
-            width: 44,
-            height: 44,
+            boxShadow: '0 1px 5px rgba(0,0,0,0.65)', // Match Leaflet exact shadow
+            borderRadius: '4px',
+            width: 34,
+            height: 34,
+            border: '2px solid rgba(0,0,0,0.2)',
             '&:hover': {
-              backgroundColor: '#f5f5f5',
+              backgroundColor: '#f4f4f4',
             },
           }}
           aria-label="Locate me"
         >
-          <MyLocationIcon sx={{ color: 'text.primary', fontSize: 22 }} />
+          <MyLocationIcon sx={{ color: 'text.primary', fontSize: 18 }} />
         </IconButton>
       </Tooltip>
     </Box>
@@ -63,22 +85,19 @@ function LocateUserControl({
 interface MapControllerProps {
   fridges: Fridge[];
   selectedFridgeId: string | null;
-  setPanToUserAction: (fn: () => void) => void;
 }
 
 function MapController({
   fridges,
   selectedFridgeId,
-  setPanToUserAction,
 }: MapControllerProps): null {
-  const { locateUser, panToUser } = useMapSync({ fridges, selectedFridgeId });
+  const { locateUser } = useMapSync({ fridges, selectedFridgeId });
   const setCenter = useMapStore((state) => state.setCenter);
   const setZoom = useMapStore((state) => state.setZoom);
   const map = useMap();
 
   React.useEffect(() => {
     locateUser();
-    setPanToUserAction(() => panToUser);
 
     let moveTimeout: NodeJS.Timeout;
     const handleMoveEnd = () => {
@@ -108,7 +127,6 @@ export function MapContainer({
   selectedFridgeId,
   onMarkerClick,
 }: MapProps): React.ReactElement | null {
-  const [panToUser, setPanToUser] = React.useState<(() => void) | null>(null);
   const [lng, setLng] = React.useState('en');
   const [isClient, setIsClient] = React.useState(false);
   const initialCenter = useMapStore((state) => state.center);
@@ -137,13 +155,9 @@ export function MapContainer({
         scrollWheelZoom={true}
         zoomControl={false}
       >
-        <ZoomControl position="topright" />
-        <LocateUserControl onLocate={() => panToUser?.()} />
-        <MapController
-          fridges={fridges}
-          selectedFridgeId={selectedFridgeId}
-          setPanToUserAction={setPanToUser}
-        />
+        <ZoomControl position="bottomright" />
+        <LocateUserControl />
+        <MapController fridges={fridges} selectedFridgeId={selectedFridgeId} />
         <TileLayer
           attribution="&copy; Fridge Finder"
           url={`https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=${lng}`}
