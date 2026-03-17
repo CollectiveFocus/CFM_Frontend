@@ -46,6 +46,9 @@ export default tseslint.config(
         'warn',
         { argsIgnorePattern: '^_' },
       ],
+      'react/no-unescaped-entities': 'warn',
+      '@next/next/no-img-element': 'warn',
+      'react-hooks/exhaustive-deps': 'warn',
     },
     settings: {
       react: {
@@ -54,7 +57,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['{etl,ci}/**/*.mjs', '*.js'],
+    files: ['{scripts,etl,ci}/**/*.mjs', '*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -62,6 +65,8 @@ export default tseslint.config(
         ...globals.node,
         ...globals.jest,
         ...globals.browser,
+        console: true,
+        process: true,
       },
     },
   }

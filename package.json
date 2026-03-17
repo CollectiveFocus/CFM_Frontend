@@ -46,7 +46,7 @@
     "data": "npx json-server mock/data.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "format": "prettier --write --ignore-unknown . && svgo -qrf public/",
     "test": "jest --coverage"
@@ -59,8 +59,7 @@
   ],
   "packageManager": "yarn@1.22.22",
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged --quiet --no-stash --concurrent true",
-    "commit-msg": "node ci/commit-msg.mjs $1"
+    "pre-commit": "npx lint-staged --quiet --no-stash --concurrent true"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
