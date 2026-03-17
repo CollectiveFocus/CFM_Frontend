@@ -1,7 +1,15 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import Image from 'next/image';
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  Link as MuiLink,
+} from '@mui/material';
+import { NextLink } from '../NextLink/NextLink';
 
 interface PageFooterProps {
   scrollButton?: boolean;
@@ -10,34 +18,121 @@ interface PageFooterProps {
 export function PageFooter({
   scrollButton = false,
 }: PageFooterProps): React.ReactElement {
-  const sxFooter = {
-    padding: '4px 16px',
-    backgroundColor: 'transparent',
-    color: 'text.secondary',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderTop: '1px solid rgba(0,0,0,0.06)',
-    mt: 'auto',
-  };
-
   return (
-    <Box component="footer" sx={sxFooter}>
-      <Typography
-        sx={{
-          fontSize: '0.65rem',
-          opacity: 0.8,
-          textAlign: 'center',
-          lineHeight: 1.2,
-          maxWidth: 800,
-          m: 0,
-        }}
-      >
-        &copy; 2022-2025 Fridge Finder. All rights reserved. We may use cookies
-        for storing information to help provide you with a better, faster, and
-        safer experience and for SEO purposes.
-      </Typography>
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: 'background.paper',
+        borderTop: '1px solid',
+        borderColor: 'rgba(0,0,0,0.06)',
+        py: { xs: 4, md: 6 },
+        mt: 'auto',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={4}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <MuiLink component={NextLink} href="/" aria-label="Go to Home page">
+              <Image
+                alt="Fridge Finder logo"
+                src="/brand/logo.svg"
+                width={90}
+                height={40}
+                style={{ objectFit: 'contain' }}
+              />
+            </MuiLink>
+          </Box>
+
+          <Stack
+            direction="row"
+            spacing={{ xs: 3, sm: 4 }}
+            flexWrap="wrap"
+            justifyContent="center"
+          >
+            <MuiLink
+              component={NextLink}
+              href="/browse"
+              color="text.secondary"
+              underline="none"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+              variant="body2"
+              fontWeight={600}
+            >
+              Map
+            </MuiLink>
+            <MuiLink
+              component={NextLink}
+              href="/pamphlet/about"
+              color="text.secondary"
+              underline="none"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+              variant="body2"
+              fontWeight={600}
+            >
+              About
+            </MuiLink>
+            <MuiLink
+              component={NextLink}
+              href="/pamphlet/best-practices"
+              color="text.secondary"
+              underline="none"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+              variant="body2"
+              fontWeight={600}
+            >
+              Guidelines
+            </MuiLink>
+            <MuiLink
+              component={NextLink}
+              href="/user/contact"
+              color="text.secondary"
+              underline="none"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+              variant="body2"
+              fontWeight={600}
+            >
+              Contact
+            </MuiLink>
+          </Stack>
+        </Stack>
+
+        <Box
+          sx={{
+            mt: 4,
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: 2,
+          }}
+        >
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{ textAlign: 'center', fontWeight: 500 }}
+          >
+            &copy; 2022-{new Date().getFullYear()} Fridge Finder. All rights
+            reserved.
+          </Typography>
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{
+              maxWidth: { xs: '100%', md: 500 },
+              textAlign: { xs: 'center', md: 'right' },
+              lineHeight: 1.6,
+            }}
+          >
+            We may use cookies for storing information to help provide you with
+            a better, faster, and safer experience and for SEO purposes.
+          </Typography>
+        </Box>
+      </Container>
     </Box>
   );
 }
