@@ -89,37 +89,71 @@ export function MarkerLayer({
               click: () => onMarkerClick?.(id),
             }}
           >
-            <Popup className="custom-popup">
-              <div style={{ fontFamily: 'inherit', padding: '4px' }}>
-                <strong style={{ fontSize: '1rem', color: '#222' }}>
+            <Popup className="custom-popup" minWidth={220}>
+              <div style={{ fontFamily: 'inherit', padding: '8px 4px' }}>
+                <strong
+                  style={{
+                    fontSize: '1.1rem',
+                    color: '#111',
+                    display: 'block',
+                    marginBottom: '4px',
+                  }}
+                >
                   {name}
                 </strong>
                 <p
                   style={{
-                    margin: '4px 0 12px 0',
-                    color: '#666',
-                    fontSize: '0.85rem',
+                    margin: '0 0 16px 0',
+                    color: '#555',
+                    fontSize: '0.9rem',
+                    lineHeight: 1.4,
                   }}
                 >
                   {location.street}
                 </p>
-                <a
-                  href={`/fridge/${id}`}
+                <div
                   style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    backgroundColor: '#1543D4',
-                    color: '#fff',
-                    textDecoration: 'none',
-                    padding: '6px 12px',
-                    borderRadius: '24px',
-                    fontWeight: 'bold',
-                    fontSize: '0.85rem',
-                    textTransform: 'uppercase',
+                    display: 'flex',
+                    gap: '8px',
+                    flexDirection: 'column',
                   }}
                 >
-                  View Details
-                </a>
+                  <a
+                    href={`/fridge/${id}/report`}
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      backgroundColor: '#1543D4',
+                      color: '#fff',
+                      textDecoration: 'none',
+                      padding: '8px 12px',
+                      borderRadius: '24px',
+                      fontWeight: 'bold',
+                      fontSize: '0.85rem',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Update Status
+                  </a>
+                  <a
+                    href={`/fridge/${id}`}
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      backgroundColor: 'transparent',
+                      color: '#1543D4',
+                      border: '1px solid #1543D4',
+                      textDecoration: 'none',
+                      padding: '8px 12px',
+                      borderRadius: '24px',
+                      fontWeight: 'bold',
+                      fontSize: '0.85rem',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    View Details
+                  </a>
+                </div>
               </div>
             </Popup>
           </Marker>

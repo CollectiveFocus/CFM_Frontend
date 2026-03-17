@@ -7,6 +7,75 @@ import { Search as SearchIcon } from '@mui/icons-material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
 import {
+  MapLegendPinLocationIcon,
+  MapLegendConditionDirtyIcon,
+  MapLegendConditionOutOfOrderIcon,
+  MapLegendPinNotAtLocationIcon,
+  MapLegendPinGhostIcon,
+  MapLegendPinNoReportIcon,
+} from 'theme/icons';
+import { pinColor } from 'theme/palette';
+import { Fridge } from 'types/domain';
+
+function FridgeMobileStatus({
+  report,
+}: {
+  report: Fridge['report'];
+}): React.ReactElement | null {
+  if (!report) {
+    return (
+      <MapLegendPinNoReportIcon
+        sx={{ width: 16, height: 16, color: pinColor.reportUnavailable }}
+      />
+    );
+  }
+
+  const { condition, foodPercentage } = report;
+
+  if (condition === 'not at location') {
+    return (
+      <MapLegendPinNotAtLocationIcon
+        sx={{ width: 16, height: 16, color: pinColor.fridgeNotAtLocation }}
+      />
+    );
+  }
+
+  if (condition === 'ghost') {
+    return (
+      <MapLegendPinGhostIcon
+        sx={{ width: 16, height: 16, color: pinColor.fridgeGhost }}
+      />
+    );
+  }
+
+  const foodColors = [
+    pinColor.itemsEmpty,
+    pinColor.itemsFew,
+    pinColor.itemsMany,
+    pinColor.itemsFull,
+  ];
+
+  const foodColor = foodColors[foodPercentage] || foodColors[0];
+
+  return (
+    <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
+      <MapLegendPinLocationIcon
+        sx={{ width: 16, height: 16, color: foodColor }}
+      />
+      {condition === 'dirty' && (
+        <MapLegendConditionDirtyIcon
+          sx={{ width: 16, height: 16, color: pinColor.fridgeOperation }}
+        />
+      )}
+      {condition === 'out of order' && (
+        <MapLegendConditionOutOfOrderIcon
+          sx={{ width: 16, height: 16, color: pinColor.fridgeOperation }}
+        />
+      )}
+    </Box>
+  );
+}
+import {
   MapToggle,
   MapView,
 } from 'features/fridge-map/components/MapToggle/MapToggle';
@@ -90,8 +159,17 @@ export default function BrowsePage(): React.ReactElement {
                           setSelectedFridgeId(fridge.id);
                           setSearchQuery(''); // Clear search on select to see the map
                         }}
-                        sx={{ py: 1.5, px: 2 }}
+                        sx={{
+                          py: 1.5,
+                          px: 2,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                        }}
                       >
+                        <Box sx={{ flexShrink: 0 }}>
+                          <FridgeMobileStatus report={fridge.report} />
+                        </Box>
                         <ListItemText
                           primary={fridge.name}
                           primaryTypographyProps={{

@@ -5,6 +5,15 @@ import {
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
 } from '@mui/icons-material';
+import {
+  MapLegendPinLocationIcon,
+  MapLegendConditionDirtyIcon,
+  MapLegendConditionOutOfOrderIcon,
+  MapLegendPinNotAtLocationIcon,
+  MapLegendPinGhostIcon,
+  MapLegendPinNoReportIcon,
+} from 'theme/icons';
+import { pinColor } from 'theme/palette';
 import { ButtonLink } from 'components/ui';
 import { Fridge, Location as LocationType } from 'types/domain';
 
@@ -25,12 +34,12 @@ interface LocationInfoProps {
 
 function LocationInfo({ location }: LocationInfoProps): React.ReactElement {
   return (
-    <Stack direction="row" spacing={2} alignItems="center">
+    <Stack direction="row" spacing={2} alignItems="flex-start">
       <LocationOnOutlinedIcon
-        sx={{ color: 'text.secondary', fontSize: '1.25rem' }}
+        sx={{ color: 'text.secondary', fontSize: '1.5rem', mt: '2px' }}
       />
       <Typography
-        sx={{ fontSize: ['0.95rem'], color: 'text.secondary', lineHeight: 1.4 }}
+        sx={{ fontSize: ['1rem'], color: 'text.primary', lineHeight: 1.5 }}
       >
         {location.street}
         <br />
@@ -54,8 +63,8 @@ function InstagramInfo({
 
   return (
     <Stack direction="row" spacing={2} alignItems="center">
-      <InstagramIcon sx={{ color: 'text.secondary', fontSize: '1.25rem' }} />
-      <Typography sx={{ fontSize: ['0.95rem'], color: 'text.secondary' }}>
+      <InstagramIcon sx={{ color: 'text.secondary', fontSize: '1.5rem' }} />
+      <Typography sx={{ fontSize: ['1rem'], color: 'text.primary' }}>
         @{handle}
       </Typography>
     </Stack>
@@ -69,8 +78,8 @@ interface LastUpdateInfoProps {
 function LastUpdateInfo({ date }: LastUpdateInfoProps): React.ReactElement {
   return (
     <Stack direction="row" spacing={2} alignItems="center">
-      <CalendarIcon sx={{ color: 'text.secondary', fontSize: '1.25rem' }} />
-      <Typography sx={{ fontSize: ['0.95rem'], color: 'text.secondary' }}>
+      <CalendarIcon sx={{ color: 'text.secondary', fontSize: '1.5rem' }} />
+      <Typography sx={{ fontSize: ['1rem'], color: 'text.primary' }}>
         Last Update: {formatDate(date)}
       </Typography>
     </Stack>
@@ -82,35 +91,108 @@ function FridgeStatus({
 }: {
   report: Fridge['report'];
 }): React.ReactElement | null {
-  if (!report) return null;
+  if (!report) {
+    return (
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+        <MapLegendPinNoReportIcon
+          sx={{ width: 24, height: 24, color: pinColor.reportUnavailable }}
+        />
+        <Typography
+          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+        >
+          No status
+        </Typography>
+      </Box>
+    );
+  }
+
+  const { condition, foodPercentage } = report;
+
+  if (condition === 'not at location') {
+    return (
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+        <MapLegendPinNotAtLocationIcon
+          sx={{ width: 24, height: 24, color: pinColor.fridgeNotAtLocation }}
+        />
+        <Typography
+          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+        >
+          Not at location
+        </Typography>
+      </Box>
+    );
+  }
+
+  if (condition === 'ghost') {
+    return (
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+        <MapLegendPinGhostIcon
+          sx={{ width: 24, height: 24, color: pinColor.fridgeGhost }}
+        />
+        <Typography
+          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+        >
+          Ghost Fridge
+        </Typography>
+      </Box>
+    );
+  }
+
   const foodLevels = ['Empty', 'Few Items', 'Many Items', 'Full'];
-  const foodText = foodLevels[report.foodPercentage] || 'Unknown';
-  const condition = report.condition === 'good' ? null : report.condition;
+  const foodColors = [
+    pinColor.itemsEmpty,
+    pinColor.itemsFew,
+    pinColor.itemsMany,
+    pinColor.itemsFull,
+  ];
+
+  const foodText = foodLevels[foodPercentage] || 'Unknown';
+  const foodColor = foodColors[foodPercentage] || foodColors[0];
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
-      <Chip
-        label={foodText}
-        size="small"
-        sx={{
-          fontWeight: 600,
-          backgroundColor: 'rgba(0, 0, 0, 0.05)',
-          color: 'text.primary',
-          borderRadius: 2,
-        }}
-      />
-      {condition && (
-        <Chip
-          label={condition}
-          size="small"
-          color="error"
-          variant="outlined"
-          sx={{
-            fontWeight: 600,
-            textTransform: 'capitalize',
-            borderRadius: 2,
-          }}
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 2,
+        mt: 0.5,
+        alignItems: 'center',
+      }}
+    >
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+        <MapLegendPinLocationIcon
+          sx={{ width: 24, height: 24, color: foodColor }}
         />
+        <Typography
+          sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'text.secondary' }}
+        >
+          {foodText}
+        </Typography>
+      </Box>
+
+      {condition === 'dirty' && (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+          <MapLegendConditionDirtyIcon
+            sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
+          />
+          <Typography
+            sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'error.main' }}
+          >
+            Needs cleaning
+          </Typography>
+        </Box>
+      )}
+      {condition === 'out of order' && (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+          <MapLegendConditionOutOfOrderIcon
+            sx={{ width: 24, height: 24, color: pinColor.fridgeOperation }}
+          />
+          <Typography
+            sx={{ fontSize: '0.9rem', fontWeight: 600, color: 'error.main' }}
+          >
+            Needs repairs
+          </Typography>
+        </Box>
       )}
     </Box>
   );
@@ -156,24 +238,19 @@ export function FridgeList({ fridges }: FridgeListProps): React.ReactElement {
                 ) : null}
               </Stack>
             </Stack>
-            <Stack
-              direction={{ xs: 'column', sm: 'row' }}
-              width="100%"
-              spacing={2}
-              sx={{ mt: 1 }}
-            >
+            <Stack direction="row" width="100%" spacing={2} sx={{ mt: 1 }}>
               <ButtonLink
                 variant="outlined"
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
-                sx={{ fontSize: ['0.95rem'], flex: 1 }}
+                sx={{ fontSize: ['0.85rem'], flex: 1, py: 0.5 }}
                 title={'More Info'}
               />
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}/report`}
                 aria-label={`Update Status on ${fridge.name}`}
-                sx={{ fontSize: ['0.95rem'], flex: 1 }}
+                sx={{ fontSize: ['0.85rem'], flex: 1, py: 0.5 }}
                 title={'Update Status'}
               />
             </Stack>
