@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Box, Typography, Divider, IconButton } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { Box, Typography, Divider } from '@mui/material';
 
 import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
 import {

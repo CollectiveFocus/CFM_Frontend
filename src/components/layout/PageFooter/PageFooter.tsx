@@ -11,13 +11,7 @@ import {
 } from '@mui/material';
 import { NextLink } from 'components/ui';
 
-interface PageFooterProps {
-  scrollButton?: boolean;
-}
-
-export function PageFooter({
-  scrollButton = false,
-}: PageFooterProps): React.ReactElement {
+export function PageFooter(): React.ReactElement {
   return (
     <Box
       component="footer"
