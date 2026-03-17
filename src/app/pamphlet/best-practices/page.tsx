@@ -1,8 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Box, Typography, Paper } from '@mui/material';
-
-import { CheckCircleOutline as CheckIcon } from '@mui/icons-material';
+import { Box, Typography } from '@mui/material';
 
 const practices = [
   {
@@ -40,76 +38,126 @@ export default function BestPracticesPage(): React.ReactElement {
     <>
       <Box
         sx={{
-          maxWidth: 900,
+          maxWidth: 1200,
           mx: 'auto',
           px: { xs: 2, sm: 4, md: 6 },
-          py: { xs: 6, md: 10 },
+          py: { xs: 8, md: 12 },
           width: '100%',
         }}
       >
-        <Typography variant="h1" sx={{ textAlign: 'center', mb: 2 }}>
-          Best Practices
-        </Typography>
-        <Typography
-          variant="body1"
+        <Box sx={{ textAlign: 'center', mb: 10, maxWidth: 700, mx: 'auto' }}>
+          <Typography
+            variant="overline"
+            sx={{
+              display: 'block',
+              mb: 2,
+              color: 'primary.main',
+              fontWeight: 700,
+              letterSpacing: 2,
+            }}
+          >
+            COMMUNITY GUIDELINES
+          </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              mb: 3,
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              color: 'text.primary',
+            }}
+          >
+            Best Practices
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: 'text.secondary',
+              fontSize: '1.25rem',
+              lineHeight: 1.6,
+            }}
+          >
+            Please follow these guidelines when interacting with community
+            fridges to keep them safe, clean, and accessible to everyone in the
+            neighborhood.
+          </Typography>
+        </Box>
+
+        <Box
           sx={{
-            textAlign: 'center',
-            color: 'text.secondary',
-            mb: 8,
-            maxWidth: 600,
-            mx: 'auto',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' },
+            gap: { xs: 8, md: 10 },
           }}
         >
-          Please follow these guidelines when interacting with community fridges
-          to keep them safe, clean, and accessible to everyone in the
-          neighborhood.
-        </Typography>
-
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {practices.map((section, index) => (
-            <Paper
+            <Box
               key={index}
-              elevation={0}
               sx={{
                 p: { xs: 4, md: 6 },
                 borderRadius: 4,
-                border: '1px solid rgba(0,0,0,0.05)',
-                backgroundColor: 'background.paper',
+                backgroundColor: 'rgba(0,0,0,0.02)',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
-              <Typography
-                variant="h2"
-                sx={{
-                  mb: 4,
-                  fontWeight: 800,
-                  letterSpacing: '-0.02em',
-                  color: 'text.primary',
-                }}
+              <Box
+                sx={{ display: 'flex', alignItems: 'center', gap: 3, mb: 6 }}
               >
-                {section.title}
-              </Typography>
-              <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontWeight: 800,
+                    letterSpacing: '-0.02em',
+                    color: 'text.primary',
+                    m: 0,
+                  }}
+                >
+                  {section.title}
+                </Typography>
+              </Box>
+
+              <Box
+                component="ul"
+                sx={{ listStyle: 'none', p: 0, m: 0, flexGrow: 1 }}
+              >
                 {section.content.map((item, i) => (
                   <Box
                     component="li"
                     key={i}
-                    sx={{ display: 'flex', alignItems: 'flex-start', mb: 3 }}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      mb: 4,
+                      position: 'relative',
+                      pl: 5,
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        left: 0,
+                        top: 10,
+                        width: 8,
+                        height: 8,
+                        borderRadius: '50%',
+                        backgroundColor: 'primary.main',
+                        opacity: 0.8,
+                      },
+                    }}
                   >
-                    <CheckIcon
+                    <Typography
+                      variant="body1"
                       sx={{
-                        color: 'primary.main',
-                        mr: 2,
-                        mt: 0.5,
-                        flexShrink: 0,
+                        lineHeight: 1.7,
+                        color: 'text.primary',
+                        fontSize: '1.05rem',
                       }}
-                    />
-                    <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
+                    >
                       {item}
                     </Typography>
                   </Box>
                 ))}
               </Box>
-            </Paper>
+            </Box>
           ))}
         </Box>
       </Box>
