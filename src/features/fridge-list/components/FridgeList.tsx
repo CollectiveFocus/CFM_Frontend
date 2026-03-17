@@ -4,7 +4,7 @@ import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
-  RoomOutlined as RoomIcon,
+  ArrowForward as ArrowForwardIcon,
 } from '@mui/icons-material';
 import {
   MapLegendPinLocationIcon,
@@ -281,7 +281,7 @@ export const FridgeList = React.memo(function FridgeList({
                   color: 'primary.main',
                   '& .action-icon': {
                     color: 'primary.main',
-                    transform: 'translateY(-2px)',
+                    transform: 'translateX(4px)',
                   },
                 },
               }}
@@ -303,10 +303,10 @@ export const FridgeList = React.memo(function FridgeList({
               >
                 {fridge.name}
               </Typography>
-              <RoomIcon
+              <ArrowForwardIcon
                 className="action-icon"
                 sx={{
-                  fontSize: '1.3rem',
+                  fontSize: '1.4rem',
                   color: 'text.secondary',
                   transition: 'all 0.2s ease',
                 }}
