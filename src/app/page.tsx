@@ -115,7 +115,7 @@ export default function HomePage(): React.ReactElement {
           >
             {paragraphCard.h3.map((card, index) => (
               <Grid
-                key={'Grid' + index}
+                key={card.title}
                 size={{
                   xs: 12,
                   sm: 8,

@@ -31,6 +31,9 @@ export const designColor = {
   magneticGray: grayscale.gradient[3],
   neroGray: grayscale.gradient[4],
   black: '#000000',
+  borderSubtle: 'rgba(0,0,0,0.1)',
+  mutedText: '#838383',
+  dividerMuted: '#999999',
   blue: {
     dark: '#1543D4',
     darkShade: ['#040B25'],

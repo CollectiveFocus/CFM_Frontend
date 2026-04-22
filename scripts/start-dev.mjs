@@ -32,6 +32,7 @@ async function main() {
     ...process.env,
     PORT: nextPort.toString(),
     NEXT_PUBLIC_FF_API_URL: mockUrl,
+    NEXT_PUBLIC_USERS_API_URL: mockUrl,
   };
 
   const command = `npx concurrently --names "MOCK,NEXT" --prefix-colors "yellow,green" --kill-others "npx json-server mock/data.json --routes mock/server-routes.json --host 0.0.0.0 --port ${mockPort}" "npx next dev --turbopack --experimental-https -p ${nextPort}"`;

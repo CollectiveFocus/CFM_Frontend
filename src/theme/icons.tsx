@@ -6,7 +6,7 @@ export function AboutIcon(props: SvgIconProps): React.ReactElement {
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M10.912 13.542a4.524 4.524 0 0 1-6.398 0 4.524 4.524 0 1 1 6.398 0z"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -14,7 +14,7 @@ export function AboutIcon(props: SvgIconProps): React.ReactElement {
       <circle cx="8.708" cy="9" r=".569" fill="#222" />
       <path
         d="M19.158 13.542a4.524 4.524 0 1 1-6.399-6.398 4.524 4.524 0 0 1 6.398 6.398Z"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -22,13 +22,13 @@ export function AboutIcon(props: SvgIconProps): React.ReactElement {
       <circle cx="16.953" cy="9" r=".569" fill="#222" />
       <path
         d="M15.034 19.086a4.725 4.725 0 1 1-6.681-6.682 4.725 4.725 0 0 1 6.681 6.682Z"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
       <path
         d="M9.17 15.894c1.748 1.26 3.548 1.113 5.047 0m-.675-5.41c1.675 1.207 3.398 1.067 4.833 0m-13.079 0c1.675 1.207 3.398 1.067 4.834 0"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -42,10 +42,7 @@ export function ContactUsIcon(props: SvgIconProps): React.ReactElement {
   return (
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <g stroke="#222" strokeWidth=".837">
-        <path
-          fill="#e3f2fd"
-          d="m15.2 6.311-1.417 11.127-3.064-4.218-5.1-1.077Z"
-        />
+        <path fill="#FFF" d="m15.2 6.311-1.417 11.127-3.064-4.218-5.1-1.077Z" />
         <path fill="none" d="m15.2 6.311-4.48 6.91" />
       </g>
     </SvgIcon>
@@ -57,7 +54,7 @@ export function FridgeAddIcon(props: SvgIconProps): React.ReactElement {
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M7.726 8.843c0-.446.362-.808.809-.808h5.23c.446 0 .807.362.807.808v9.13a.808.808 0 0 1-.808.809h-5.23a.808.808 0 0 1-.808-.808z"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -76,7 +73,7 @@ export function FridgeFindIcon(props: SvgIconProps): React.ReactElement {
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
         d="M7.726 8.843c0-.446.362-.808.809-.808h5.23c.446 0 .807.362.807.808v9.13a.808.808 0 0 1-.808.809h-5.23a.808.808 0 0 1-.808-.808z"
-        fill="#e3f2fd"
+        fill="#FFF"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -90,7 +87,7 @@ export function FridgeFindIcon(props: SvgIconProps): React.ReactElement {
         cx="14.301"
         cy="8.055"
         r="2.63"
-        fill="#52c2ff66"
+        fill="#e3f2fd"
         stroke="#222"
         strokeWidth=".986"
       />
@@ -103,11 +100,11 @@ export function GetInvolvedIcon(props: SvgIconProps): React.ReactElement {
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <g stroke="#222">
         <path
-          fill="#e3f2fd"
+          fill="#FFF"
           d="m11.883 12.647-2.529 2.177m1.311 1.652 2.529-2.176m-2.69-3.254-2.529 2.176m1.379 1.602c-.441.38-1.11.33-1.49-.111a1.06 1.06 0 0 1 .111-1.49m2.757 3.203a1.058 1.058 0 0 1-1.378-1.602m-1.379-1.602c-.44.38-1.11.33-1.49-.111a1.06 1.06 0 0 1 .112-1.49l3.527-3.081 2.73-2.172a2.127 2.127 0 0 1 2.89.24l2.719 2.998a2.124 2.124 0 0 1-.173 3.025l-3.718 3.27-2.528 2.177c-.44.38-1.11.33-1.49-.111a1.058 1.058 0 0 1 .111-1.49"
         />
         <path
-          fill="#8da1b0"
+          fill="#e3f2fd"
           d="M5.397 10.94a1.658 1.658 0 0 1 .167-2.35c.95-.813 1.896-1.632 2.841-2.45a1.949 1.949 0 0 1 2.634.083c.808.723 1.492 1.56 2.2 2.378a1.157 1.157 0 1 1-1.753 1.513L9.845 8.237"
         />
       </g>
@@ -126,7 +123,7 @@ export function GuidelineIcon(props: SvgIconProps): React.ReactElement {
         stroke="#222"
         strokeWidth=".837"
         rx=".558"
-        fill="#e3f2fd"
+        fill="#FFF"
       />
       <path
         d="M10.884 8.372h3.907m-5.582 0h.838m-.838 1.675h.838m-.838 1.674h.838m-.838 1.674h.838m-.838 1.675h.838m.837-5.023h3.907m-3.907 1.674h3.907m-3.907 1.674h3.907m-3.907 1.675h3.907"
@@ -144,7 +141,7 @@ export function HomeIcon(props: SvgIconProps): React.ReactElement {
         d="M6.698 9.99 12 5.303l5.302 4.689v7.367c0 .355-.124.696-.345.947a1.11 1.11 0 0 1-.833.393H7.875c-.312 0-.612-.142-.833-.393a1.438 1.438 0 0 1-.344-.947Z"
         stroke="#222"
         strokeWidth=".986"
-        fill="#e3f2fd"
+        fill="#FFF"
       />
       <path
         d="M9.21 13.083c1.933 1.393 3.923 1.232 5.58 0"
@@ -337,5 +334,40 @@ export function StatusIcon(props: SvgIconProps): React.ReactElement {
       <circle cx="10.813" cy="9.707" r=".555" fill="#222" />
       <circle cx="13.008" cy="9.707" r=".555" fill="#222" />
     </SvgIcon>
+  );
+}
+
+export function GoogleIcon({
+  width = 20,
+  height = 20,
+}: {
+  width?: number;
+  height?: number;
+}): React.ReactElement {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19.6 10.227c0-.709-.064-1.39-.182-2.045H10v3.868h5.382a4.6 4.6 0 01-1.996 3.018v2.51h3.232c1.891-1.742 2.982-4.305 2.982-7.35z"
+        fill="#4285F4"
+      />
+      <path
+        d="M10 20c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.595-4.123H1.064v2.59A9.996 9.996 0 0010 20z"
+        fill="#34A853"
+      />
+      <path
+        d="M4.405 11.9c-.2-.6-.314-1.24-.314-1.9 0-.66.114-1.3.314-1.9V5.51H1.064A9.996 9.996 0 000 10c0 1.614.386 3.14 1.064 4.49l3.34-2.59z"
+        fill="#FBBC05"
+      />
+      <path
+        d="M10 3.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C14.959.99 12.695 0 10 0 6.09 0 2.71 2.24 1.064 5.51l3.34 2.59C5.19 5.737 7.395 3.977 10 3.977z"
+        fill="#EA4335"
+      />
+    </svg>
   );
 }

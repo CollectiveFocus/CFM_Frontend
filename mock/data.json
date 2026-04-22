@@ -1,4 +1,21 @@
 {
+  "users": [
+    {
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "email": "jean.paul.ruben@gmail.com",
+      "id": 1
+    },
+    {
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "email": "jean.paul.ruben@gmail.com",
+      "id": 2
+    },
+    {
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "email": "jean.paul.ruben@gmail.com",
+      "id": 3
+    }
+  ],
   "fridges": [
     {
       "id": "barriofridge1",
@@ -199,7 +216,7 @@
         "instagram": "https://www.instagram.com/kwtfridge/",
         "website": "https://www.kwtmutualaid.com/get-involved/fridge"
       },
-      "notes": "\ud83c\udf4f Fridge: Church Ave btwn Ocean Parkway & East 5th",
+      "notes": "🍏 Fridge: Church Ave btwn Ocean Parkway & East 5th",
       "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/149d1240-69a3-4963-9d12-efc64bbcb46e.webp",
       "last_edited": "1761958757",
       "verified": true
@@ -219,7 +236,7 @@
         "instagram": "https://www.instagram.com/hopecommunityfridge",
         "website": "https://linktr.ee/hopecommunityfridge"
       },
-      "notes": "\ud83d\udcaa\ud83e\udd6bFighting food insecurity & waste\ud83e\udd6c\u2728. We are a \ud83c\udf08 Mutual Aid.",
+      "notes": "💪🥫Fighting food insecurity & waste🥬✨. We are a 🌈 Mutual Aid.",
       "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/9604c861-2bca-494b-8a8c-ba782052e38a.webp",
       "last_edited": "1761931949",
       "verified": true

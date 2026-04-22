@@ -42,23 +42,9 @@ export function PageHero({
       <Image
         priority
         fill
-        style={{ objectFit: 'cover', opacity: title || subtitle ? 0.7 : 1 }}
+        style={{ objectFit: 'cover' }}
         alt={img.alt}
         src={img.src}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            title || subtitle
-              ? 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)'
-              : 'linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4))',
-          zIndex: 0,
-        }}
       />
 
       <Container

@@ -7,9 +7,8 @@ import { PageFooter } from '../PageFooter/PageFooter';
 export function FooterWrapper(): React.ReactElement | null {
   const pathname = usePathname();
 
-  // The user specified that the map (browse) page should never have a footer.
   // Other pages should all display it globally.
-  if (pathname === '/browse') {
+  if (!pathname || pathname === '/browse' || pathname.startsWith('/auth')) {
     return null;
   }
 

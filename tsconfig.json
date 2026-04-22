@@ -17,6 +17,7 @@
     "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
+      "config/*": ["config/*"],
       "features/*": ["features/*"],
       "hooks/*": ["hooks/*"],
       "store/*": ["store/*"],
