@@ -1,4 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
+import { FirebaseError } from 'firebase/app';
 import { signInWithPopup } from 'firebase/auth';
 import { registerNewUser } from 'features/auth/utils/registerNewUser';
 import { useGoogleAuth } from '../useGoogleAuth';
@@ -55,9 +56,7 @@ describe('cancelled popup', () => {
   it.each([['auth/popup-closed-by-user'], ['auth/cancelled-popup-request']])(
     'sets no error for %s',
     async (code) => {
-      mockSignInWithPopup.mockRejectedValue(
-        Object.assign(new Error(code), { code })
-      );
+      mockSignInWithPopup.mockRejectedValue(new FirebaseError(code, code));
 
       const { result } = renderHook(() => useGoogleAuth());
 
@@ -91,9 +90,7 @@ describe('error message mapping', () => {
   test.each(cases)(
     '%s maps to the correct message',
     async (code, expectedMessage) => {
-      mockSignInWithPopup.mockRejectedValue(
-        Object.assign(new Error(code), { code })
-      );
+      mockSignInWithPopup.mockRejectedValue(new FirebaseError(code, code));
 
       const { result } = renderHook(() => useGoogleAuth());
 
@@ -106,9 +103,9 @@ describe('error message mapping', () => {
     }
   );
 
-  it('falls back to err.message for unknown error codes', async () => {
+  it('returns a generic message for unknown error codes', async () => {
     mockSignInWithPopup.mockRejectedValue(
-      Object.assign(new Error('Unexpected failure'), { code: 'auth/unknown' })
+      new FirebaseError('auth/unknown', 'Unexpected failure')
     );
 
     const { result } = renderHook(() => useGoogleAuth());
@@ -117,6 +114,6 @@ describe('error message mapping', () => {
       await result.current.signInWithGoogle();
     });
 
-    expect(result.current.error).toBe('Unexpected failure');
+    expect(result.current.error).toBe('An unexpected error occurred.');
   });
 });

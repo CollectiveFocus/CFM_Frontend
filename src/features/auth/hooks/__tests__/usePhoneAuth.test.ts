@@ -1,4 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
+import { FirebaseError } from 'firebase/app';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import { registerNewUser } from 'features/auth/utils/registerNewUser';
 import { usePhoneAuth } from '../usePhoneAuth';
@@ -56,7 +57,7 @@ describe('sendOtp', () => {
 
   it('sets status to error and sets error message on failure', async () => {
     mockSignInWithPhoneNumber.mockRejectedValue(
-      Object.assign(new Error('invalid'), { code: 'auth/invalid-phone-number' })
+      new FirebaseError('auth/invalid-phone-number', 'invalid')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -74,7 +75,7 @@ describe('sendOtp', () => {
 
   it('clears the recaptcha instance on failure', async () => {
     mockSignInWithPhoneNumber.mockRejectedValue(
-      Object.assign(new Error('fail'), { code: 'auth/captcha-check-failed' })
+      new FirebaseError('auth/captcha-check-failed', 'fail')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -112,9 +113,7 @@ describe('verifyOtp', () => {
 
   it('returns false and sets error message for an invalid code', async () => {
     mockConfirmation.confirm.mockRejectedValue(
-      Object.assign(new Error('wrong code'), {
-        code: 'auth/invalid-verification-code',
-      })
+      new FirebaseError('auth/invalid-verification-code', 'wrong code')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -135,7 +134,7 @@ describe('verifyOtp', () => {
 
   it('returns false and sets error message for an expired code', async () => {
     mockConfirmation.confirm.mockRejectedValue(
-      Object.assign(new Error('expired'), { code: 'auth/code-expired' })
+      new FirebaseError('auth/code-expired', 'expired')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -157,9 +156,7 @@ describe('verifyOtp', () => {
 
   it('returns false and sets error message for a session-expired error', async () => {
     mockConfirmation.confirm.mockRejectedValue(
-      Object.assign(new Error('session expired'), {
-        code: 'auth/session-expired',
-      })
+      new FirebaseError('auth/session-expired', 'session expired')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -195,7 +192,7 @@ describe('verifyOtp', () => {
 describe('reset', () => {
   it('clears otpSent, status, and error', async () => {
     mockSignInWithPhoneNumber.mockRejectedValue(
-      Object.assign(new Error('too many'), { code: 'auth/too-many-requests' })
+      new FirebaseError('auth/too-many-requests', 'too many')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -231,7 +228,7 @@ describe('error message mapping', () => {
     '%s maps to the correct message',
     async (code, expectedMessage) => {
       mockSignInWithPhoneNumber.mockRejectedValue(
-        Object.assign(new Error(code), { code })
+        new FirebaseError(code, code)
       );
 
       const { result } = renderHook(() => usePhoneAuth());
@@ -244,11 +241,9 @@ describe('error message mapping', () => {
     }
   );
 
-  it('falls back to err.message for unknown error codes', async () => {
+  it('returns a generic message for unknown error codes', async () => {
     mockSignInWithPhoneNumber.mockRejectedValue(
-      Object.assign(new Error('Something unusual happened'), {
-        code: 'auth/unknown-code',
-      })
+      new FirebaseError('auth/unknown-code', 'Something unusual happened')
     );
 
     const { result } = renderHook(() => usePhoneAuth());
@@ -257,6 +252,6 @@ describe('error message mapping', () => {
       await result.current.sendOtp('+15551234567', 'recaptcha-container');
     });
 
-    expect(result.current.error).toBe('Something unusual happened');
+    expect(result.current.error).toBe('An unexpected error occurred.');
   });
 });

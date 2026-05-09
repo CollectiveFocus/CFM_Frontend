@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FirebaseError } from 'firebase/app';
 import {
   sendSignInLinkToEmail,
   isSignInWithEmailLink,
@@ -14,20 +15,24 @@ type EmailStatus = 'idle' | 'loading' | 'success' | 'error';
 type ConfirmResult = 'success' | 'needs-email' | 'error';
 
 interface UseEmailAuthReturn {
-  sendSignInLink: (email: string) => Promise<void>;
+  sendSignInLink: (email: string, returnPath?: string) => Promise<void>;
   confirmSignIn: (emailOverride?: string) => Promise<ConfirmResult>;
   reset: () => void;
   status: EmailStatus;
   error: string | null;
 }
 
-const SIGN_IN_EMAIL_KEY = 'ff-signin-email';
+export const SIGN_IN_EMAIL_KEY = 'ff-signin-email';
+export const SIGN_IN_RETURN_KEY = 'ff-signin-return';
 
 export function useEmailAuth(): UseEmailAuthReturn {
   const [status, setStatus] = useState<EmailStatus>('idle');
   const [error, setError] = useState<string | null>(null);
 
-  const sendSignInLink = async (email: string): Promise<void> => {
+  const sendSignInLink = async (
+    email: string,
+    returnPath?: string
+  ): Promise<void> => {
     setStatus('loading');
     setError(null);
     try {
@@ -37,6 +42,9 @@ export function useEmailAuth(): UseEmailAuthReturn {
       };
       await sendSignInLinkToEmail(auth, email, actionCodeSettings);
       window.localStorage.setItem(SIGN_IN_EMAIL_KEY, email);
+      if (returnPath) {
+        window.localStorage.setItem(SIGN_IN_RETURN_KEY, returnPath);
+      }
       setStatus('success');
     } catch (err) {
       setError(getAuthErrorMessage(err));
@@ -81,9 +89,8 @@ export function useEmailAuth(): UseEmailAuthReturn {
 }
 
 function getAuthErrorMessage(err: unknown): string {
-  if (err instanceof Error) {
-    const code = (err as { code?: string }).code;
-    switch (code) {
+  if (err instanceof FirebaseError) {
+    switch (err.code) {
       case 'auth/invalid-email':
         return 'Invalid email address.';
       case 'auth/invalid-action-code':

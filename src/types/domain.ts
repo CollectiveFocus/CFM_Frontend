@@ -42,3 +42,21 @@ export interface ApiFridge extends Omit<Fridge, 'report'> {
 }
 
 export type AppStatus = 'idle' | 'loading' | 'success' | 'error' | 'empty';
+
+export interface UserFridgeNotificationPreferences {
+  dirty: boolean;
+  outOfOrder: boolean;
+  noFood: boolean;
+  hasFood: boolean;
+}
+
+export interface ContactTypePreferences {
+  email: UserFridgeNotificationPreferences;
+  device: UserFridgeNotificationPreferences;
+}
+
+export interface UserFridgeNotification {
+  userId: string;
+  fridgeId: string;
+  contactTypePreferences: ContactTypePreferences;
+}

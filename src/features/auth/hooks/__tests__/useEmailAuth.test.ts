@@ -1,11 +1,12 @@
 import { renderHook, act } from '@testing-library/react';
+import { FirebaseError } from 'firebase/app';
 import {
   sendSignInLinkToEmail,
   isSignInWithEmailLink,
   signInWithEmailLink,
 } from 'firebase/auth';
 import { registerNewUser } from 'features/auth/utils/registerNewUser';
-import { useEmailAuth } from '../useEmailAuth';
+import { useEmailAuth, SIGN_IN_EMAIL_KEY } from '../useEmailAuth';
 
 jest.mock('firebase/auth', () => ({
   sendSignInLinkToEmail: jest.fn(),
@@ -23,8 +24,6 @@ const mockSendSignInLinkToEmail = sendSignInLinkToEmail as jest.Mock;
 const mockIsSignInWithEmailLink = isSignInWithEmailLink as jest.Mock;
 const mockSignInWithEmailLink = signInWithEmailLink as jest.Mock;
 const mockRegisterNewUser = registerNewUser as jest.Mock;
-
-const SIGN_IN_EMAIL_KEY = 'ff-signin-email';
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -49,9 +48,10 @@ describe('sendSignInLink', () => {
   });
 
   it('sets status to error and sets the error message on failure', async () => {
-    const firebaseError = Object.assign(new Error('Something went wrong'), {
-      code: 'auth/invalid-email',
-    });
+    const firebaseError = new FirebaseError(
+      'auth/invalid-email',
+      'Something went wrong'
+    );
     mockSendSignInLinkToEmail.mockRejectedValue(firebaseError);
 
     const { result } = renderHook(() => useEmailAuth());
@@ -130,9 +130,10 @@ describe('confirmSignIn', () => {
 
   it("returns 'error' and sets the error message on failure", async () => {
     localStorage.setItem(SIGN_IN_EMAIL_KEY, 'user@example.com');
-    const firebaseError = Object.assign(new Error('Link expired'), {
-      code: 'auth/expired-action-code',
-    });
+    const firebaseError = new FirebaseError(
+      'auth/expired-action-code',
+      'Link expired'
+    );
     mockSignInWithEmailLink.mockRejectedValue(firebaseError);
 
     const { result } = renderHook(() => useEmailAuth());
@@ -152,7 +153,7 @@ describe('confirmSignIn', () => {
 describe('reset', () => {
   it('resets status and error back to idle/null', async () => {
     mockSendSignInLinkToEmail.mockRejectedValue(
-      Object.assign(new Error('fail'), { code: 'auth/invalid-email' })
+      new FirebaseError('auth/invalid-email', 'fail')
     );
 
     const { result } = renderHook(() => useEmailAuth());
@@ -189,7 +190,7 @@ describe('error message mapping', () => {
     '%s maps to the correct message',
     async (code, expectedMessage) => {
       mockSendSignInLinkToEmail.mockRejectedValue(
-        Object.assign(new Error(code), { code })
+        new FirebaseError(code, code)
       );
 
       const { result } = renderHook(() => useEmailAuth());
@@ -202,11 +203,9 @@ describe('error message mapping', () => {
     }
   );
 
-  it('falls back to err.message for unknown error codes', async () => {
+  it('falls back to err.message for unknown FirebaseError codes', async () => {
     mockSendSignInLinkToEmail.mockRejectedValue(
-      Object.assign(new Error('Something unusual happened'), {
-        code: 'auth/unknown-code',
-      })
+      new FirebaseError('auth/unknown-code', 'Something unusual happened')
     );
 
     const { result } = renderHook(() => useEmailAuth());

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -32,9 +32,17 @@ import { GoogleSignInButton } from './GoogleSignInButton';
 import { PhoneOtpCard } from './PhoneOtpCard';
 import { subtextSx } from '../auth.styles';
 
-export function SignInForm() {
+export function SignInForm({
+  onSuccess,
+  returnPath,
+}: {
+  onSuccess?: () => void;
+  returnPath?: string;
+} = {}) {
   const router = useRouter();
   const authStatus = useAuthStore((s) => s.status);
+  const onSuccessRef = useRef(onSuccess);
+  onSuccessRef.current = onSuccess;
 
   const [signInType, setSignInType] = useState<'email' | 'phone'>('email');
   const [submittedEmail, setSubmittedEmail] = useState('');
@@ -72,8 +80,14 @@ export function SignInForm() {
 
   useEffect(() => {
     if (authStatus === 'authenticated') {
-      router.replace('/');
+      if (onSuccessRef.current) {
+        onSuccessRef.current();
+      } else {
+        router.replace('/');
+      }
     }
+    // onSuccess is intentionally excluded — read via ref to avoid re-firing on re-renders
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authStatus, router]);
 
   const resetForm = () => {
@@ -86,7 +100,7 @@ export function SignInForm() {
 
   const onSubmit = async (data: EmailFormData) => {
     setSubmittedEmail(data.email);
-    await sendSignInLink(data.email);
+    await sendSignInLink(data.email, returnPath);
   };
 
   const onSubmitPhone = async (data: PhoneFormData) => {
@@ -108,7 +122,10 @@ export function SignInForm() {
         phoneError={phoneError}
         isLoading={phoneStatus === 'loading'}
         onVerifyOtp={verifyOtp}
-        onSuccess={() => router.replace('/')}
+        onSuccess={() => {
+          if (onSuccessRef.current) onSuccessRef.current();
+          else router.replace('/');
+        }}
         onTryAgain={phoneReset}
       />
     );
@@ -302,6 +319,10 @@ export function SignInForm() {
               py: 2.5,
               fontWeight: 700,
               textTransform: 'none',
+              '&.Mui-disabled': {
+                bgcolor: designColor.blue.disabled,
+                color: '#fff',
+              },
             }}
           >
             {emailStatus === 'loading' || phoneStatus === 'loading'

@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-const REQUIRED_ENV_VARS = ['NEXT_PUBLIC_USERS_API_URL'];
+const REQUIRED_ENV_VARS = [
+  'NEXT_PUBLIC_USERS_API_URL',
+  'NEXT_PUBLIC_NOTIFICATIONS_API_URL',
+];
 
 // Skip env checks during test runs — tests set env vars themselves via isolateModules.
 if (process.env.NODE_ENV !== 'test') {

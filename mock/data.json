@@ -2,18 +2,8 @@
   "users": [
     {
       "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
-      "email": "jean.paul.ruben@gmail.com",
+      "email": "test@fridgefinder.com",
       "id": 1
-    },
-    {
-      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
-      "email": "jean.paul.ruben@gmail.com",
-      "id": 2
-    },
-    {
-      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
-      "email": "jean.paul.ruben@gmail.com",
-      "id": 3
     }
   ],
   "fridges": [
@@ -702,5 +692,121 @@
     }
   ],
   "contact": [],
-  "photo": []
+  "photo": [],
+  "fridge-notifications": [
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_barriofridge1",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "barriofridge1",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": true,
+          "outOfOrder": true,
+          "noFood": true,
+          "hasFood": false
+        },
+        "device": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": false
+        }
+      }
+    },
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_barriofridge2",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "barriofridge2",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": true,
+          "hasFood": true
+        },
+        "device": {
+          "dirty": true,
+          "outOfOrder": false,
+          "noFood": true,
+          "hasFood": false
+        }
+      }
+    },
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_harlemcommunityfridge",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "harlemcommunityfridge",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": true,
+          "outOfOrder": true,
+          "noFood": true,
+          "hasFood": true
+        },
+        "device": {
+          "dirty": true,
+          "outOfOrder": true,
+          "noFood": true,
+          "hasFood": true
+        }
+      }
+    },
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_collectivefocusresourcehub",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "collectivefocusresourcehub",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": true
+        },
+        "device": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": true
+        }
+      }
+    },
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_vancouver_community_fridge",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "vancouver_community_fridge",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": true,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": false
+        },
+        "device": {
+          "dirty": false,
+          "outOfOrder": true,
+          "noFood": false,
+          "hasFood": false
+        }
+      }
+    },
+    {
+      "id": "i8ReAmQxN7OFIVbDTgDECvAPV6iA_kitsilano_free_fridge",
+      "userId": "i8ReAmQxN7OFIVbDTgDECvAPV6iA",
+      "fridgeId": "kitsilano_free_fridge",
+      "contactTypePreferences": {
+        "email": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": false
+        },
+        "device": {
+          "dirty": false,
+          "outOfOrder": false,
+          "noFood": false,
+          "hasFood": false
+        }
+      }
+    }
+  ]
 }

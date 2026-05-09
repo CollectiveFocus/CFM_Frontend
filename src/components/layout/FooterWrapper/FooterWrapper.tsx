@@ -8,7 +8,12 @@ export function FooterWrapper(): React.ReactElement | null {
   const pathname = usePathname();
 
   // Other pages should all display it globally.
-  if (!pathname || pathname === '/browse' || pathname.startsWith('/auth')) {
+  if (
+    !pathname ||
+    pathname === '/browse' ||
+    pathname.startsWith('/auth') ||
+    pathname.endsWith('/notifications')
+  ) {
     return null;
   }
 

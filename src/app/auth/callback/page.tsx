@@ -12,7 +12,7 @@ import {
   Alert,
   Typography,
 } from '@mui/material';
-import { useEmailAuth } from 'features/auth';
+import { useEmailAuth, SIGN_IN_RETURN_KEY } from 'features/auth';
 import { designColor } from 'theme/palette';
 
 export default function AuthCallbackPage() {
@@ -25,7 +25,9 @@ export default function AuthCallbackPage() {
     const trySignIn = async () => {
       const result = await confirmSignIn();
       if (result === 'success') {
-        router.replace('/');
+        const returnTo = window.localStorage.getItem(SIGN_IN_RETURN_KEY) ?? '/';
+        window.localStorage.removeItem(SIGN_IN_RETURN_KEY);
+        router.replace(returnTo);
       } else if (result === 'needs-email') {
         setNeedsEmail(true);
       }
@@ -41,7 +43,9 @@ export default function AuthCallbackPage() {
     e.preventDefault();
     const success = await confirmSignIn(emailInput);
     if (success === 'success') {
-      router.replace('/');
+      const returnTo = window.localStorage.getItem(SIGN_IN_RETURN_KEY) ?? '/';
+      window.localStorage.removeItem(SIGN_IN_RETURN_KEY);
+      router.replace(returnTo);
     }
   };
 

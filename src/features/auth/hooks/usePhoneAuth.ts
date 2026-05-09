@@ -6,6 +6,7 @@ import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
 } from 'firebase/auth';
+import { FirebaseError } from 'firebase/app';
 import { auth } from 'config/firebase';
 import { registerNewUser } from '../utils/registerNewUser';
 
@@ -86,9 +87,8 @@ export function usePhoneAuth(): UsePhoneAuthReturn {
 }
 
 function getPhoneErrorMessage(err: unknown): string {
-  if (err instanceof Error) {
-    const code = (err as { code?: string }).code;
-    switch (code) {
+  if (err instanceof FirebaseError) {
+    switch (err.code) {
       case 'auth/invalid-phone-number':
         return 'Invalid phone number. Please include your country code (e.g. +1 555 000 0000).';
       case 'auth/too-many-requests':
@@ -103,7 +103,7 @@ function getPhoneErrorMessage(err: unknown): string {
       case 'auth/session-expired':
         return 'This code has expired. Please request a new one.';
       default:
-        return err.message;
+        return 'An unexpected error occurred.';
     }
   }
   return 'An unexpected error occurred.';

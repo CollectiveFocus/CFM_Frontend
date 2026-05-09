@@ -38,6 +38,13 @@ export const designColor = {
     dark: '#1543D4',
     darkShade: ['#040B25'],
     light: '#88B3FF',
+    disabled: '#8CA0EA',
+    shadow: 'rgba(21, 67, 212, 0.2)',
+    shadowHover: 'rgba(21, 67, 212, 0.3)',
+    shadowSubtle: 'rgba(21, 67, 212, 0.15)',
+  },
+  red: {
+    danger: '#FF6262',
   },
 };
 

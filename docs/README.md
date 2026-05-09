@@ -106,4 +106,5 @@ Fridge Finder is based out of Brooklyn, New York. Our goal is to make it easy fo
    NEXT_PUBLIC_FIREBASE_APP_ID=
    NEXT_PUBLIC_FIREBASE_USE_EMULATOR=false
    NEXT_PUBLIC_USERS_API_URL=https://users-api-dev.communityfridgefinder.com
+   NEXT_PUBLIC_NOTIFICATIONS_API_URL=https://notifications-api-dev.communityfridgefinder.com
    ```

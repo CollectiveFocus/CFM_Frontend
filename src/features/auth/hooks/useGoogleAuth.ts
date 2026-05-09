@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { FirebaseError } from 'firebase/app';
 import { auth } from 'config/firebase';
 import { registerNewUser } from '../utils/registerNewUser';
 
@@ -42,7 +43,7 @@ export function useGoogleAuth(): UseGoogleAuthReturn {
       // onAuthStateChanged in AuthProvider picks up the signed-in user;
       // SignInForm's authStatus effect handles the redirect.
     } catch (err) {
-      const code = (err as { code?: string }).code;
+      const code = err instanceof FirebaseError ? err.code : null;
       const cancelled =
         code === 'auth/popup-closed-by-user' ||
         code === 'auth/cancelled-popup-request';
@@ -61,9 +62,8 @@ export function useGoogleAuth(): UseGoogleAuthReturn {
 }
 
 function getGoogleErrorMessage(err: unknown): string {
-  if (err instanceof Error) {
-    const code = (err as { code?: string }).code;
-    switch (code) {
+  if (err instanceof FirebaseError) {
+    switch (err.code) {
       case 'auth/popup-blocked':
         return 'Pop-up was blocked by your browser. Please allow pop-ups for this site and try again.';
       case 'auth/account-exists-with-different-credential':
@@ -71,7 +71,7 @@ function getGoogleErrorMessage(err: unknown): string {
       case 'auth/network-request-failed':
         return 'Network error. Please check your connection and try again.';
       default:
-        return err.message;
+        return 'An unexpected error occurred.';
     }
   }
   return 'An unexpected error occurred.';

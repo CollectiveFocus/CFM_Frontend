@@ -48,3 +48,5 @@ firebase-debug.*.log
 *.tsbuildinfo
 
 certificates
+package-lock.json
+
