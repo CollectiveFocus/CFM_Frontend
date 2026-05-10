@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
-import AnchorLink from 'next/link';
 import { LinkEmailModal, SignInModal } from 'features/auth';
 import { BrandButton, SuccessToast } from 'components/ui';
+import { BackLinkButton } from 'components/shared/BackLinkButton';
 import {
   Alert,
   Box,
@@ -15,7 +15,6 @@ import {
   Typography,
 } from '@mui/material';
 import {
-  ArrowBack as ArrowBackIcon,
   PhoneAndroid as PhoneIcon,
   MailOutline as MailIcon,
 } from '@mui/icons-material';
@@ -186,30 +185,8 @@ export function FridgeNotificationsForm({
           py: { xs: 2, md: 4 },
         }}
       >
-        {/* TODO: back Link should be standardized across pages.. also this back link has to change most likely... */}
         {/* Back link */}
-        <Button
-          component={AnchorLink}
-          href={`/fridge/${fridgeId}`}
-          variant="text"
-          startIcon={<ArrowBackIcon />}
-          sx={{
-            pl: 0,
-            mt: 0.5,
-            mb: 0.5,
-            color: 'primary.main',
-            opacity: 0.85,
-            textTransform: 'none',
-            fontWeight: 600,
-            '&:hover': {
-              color: 'primary.main',
-              opacity: 1,
-              bgcolor: 'transparent',
-            },
-          }}
-        >
-          Go To Fridge
-        </Button>
+        <BackLinkButton label="Go To Fridge" href={`/fridge/${fridgeId}`} />
 
         {/* Error alert */}
         {error && (

@@ -127,10 +127,11 @@
       "verified": false,
       "latestFridgeReport": {
         "fridgeId": "collectivefocusresourcehub",
-        "epochTimestamp": "1761978283",
-        "timestamp": "2025-11-01T06:24:43Z",
+        "epochTimestamp": "1746981600",
+        "timestamp": "2026-05-09T12:00:00.000Z",
         "condition": "dirty",
-        "foodPercentage": 3
+        "foodPercentage": 3,
+        "notes": "Lots of preparred meals and bagels"
       },
       "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/collective_focus_reg.webp"
     },
@@ -229,7 +230,15 @@
       "notes": "💪🥫Fighting food insecurity & waste🥬✨. We are a 🌈 Mutual Aid.",
       "photoUrl": "https://community-fridge-map-images-prod.s3.amazonaws.com/9604c861-2bca-494b-8a8c-ba782052e38a.webp",
       "last_edited": "1761931949",
-      "verified": true
+      "verified": true,
+      "latestFridgeReport": {
+        "fridgeId": "Vt4Ilq",
+        "epochTimestamp": "1762000000",
+        "timestamp": "2025-11-01T12:26:40Z",
+        "condition": "good",
+        "foodPercentage": 2,
+        "notes": "Stocked with canned goods and fresh produce."
+      }
     },
     {
       "id": "vancouver_community_fridge",
@@ -545,6 +554,13 @@
       "notes": "",
       "foodPercentage": 3,
       "timestamp": "2022-11-10T08:35:17.902Z",
+      "fridgeId": "collectivefocusresourcehub"
+    },
+    {
+      "condition": "dirty",
+      "notes": "Needs cleaning soon",
+      "foodPercentage": 3,
+      "timestamp": "2026-05-09T12:00:00.000Z",
       "fridgeId": "collectivefocusresourcehub"
     },
     {

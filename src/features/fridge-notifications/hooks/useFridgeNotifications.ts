@@ -35,6 +35,9 @@ export function useFridgeNotifications(
   useEffect(() => {
     if (!user) {
       setStatus('idle');
+      setIsFollowing(false);
+      setSavedPreferences(null);
+      setIsInitializing(false);
       return;
     }
 
@@ -42,6 +45,7 @@ export function useFridgeNotifications(
 
     async function load() {
       try {
+        setIsInitializing(true);
         setStatus('loading');
         const idToken = await user!.getIdToken();
         const prefs = await getFridgeNotifications(
