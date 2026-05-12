@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import { FeedbackCard } from 'components/ui';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
 
@@ -16,9 +16,15 @@ export default function FridgeReportPage(): React.ReactElement {
     DisplayStatus.Form
   );
   const params = useParams();
-  const fridgeId = params.id as string;
+  const searchParams = useSearchParams();
+  const fridgeId = (params?.id ?? '') as string;
+  const fromParam = searchParams?.get('from') ?? '';
+  const isAllowedFrom =
+    fromParam === '/browse' || /^\/fridge\/[^/]+$/.test(fromParam);
+  const cancelTo = isAllowedFrom ? fromParam : '/browse';
+  const fridgeName = searchParams?.get('name') ?? undefined;
 
-  const postReportUrl = `/v1/reports`;
+  const postReportUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/${fridgeId}/reports`;
 
   async function handleSubmit(values: ReportFormData) {
     try {
@@ -48,7 +54,14 @@ export default function FridgeReportPage(): React.ReactElement {
   function renderContent(): React.ReactNode {
     switch (displayStatus) {
       case DisplayStatus.Form:
-        return <ReportForm fridgeId={fridgeId} onSubmit={handleSubmit} />;
+        return (
+          <ReportForm
+            fridgeId={fridgeId}
+            fridgeName={fridgeName}
+            onSubmit={handleSubmit}
+            cancelTo={cancelTo}
+          />
+        );
       case DisplayStatus.Success:
         return (
           <FeedbackCard

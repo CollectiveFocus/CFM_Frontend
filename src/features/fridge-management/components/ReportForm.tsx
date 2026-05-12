@@ -17,39 +17,78 @@ import {
   Typography,
   Box,
 } from '@mui/material';
-
 import { ButtonLink } from 'components/ui';
+import { MapLegendPinLocationIcon } from 'theme/icons';
+import { pinColor } from 'theme/palette';
 import { reportSchema, ReportFormData } from '../schemas/fridge.schema';
-import Image from 'next/image';
 
 interface ReportFormProps {
   fridgeId: string;
+  fridgeName?: string;
   onSubmit: (data: ReportFormData) => void;
   initialValues?: Partial<ReportFormData>;
+  cancelTo?: string;
+}
+
+function FoodLevelLabel({ color, label }: { color: string; label: string }) {
+  return (
+    <Box
+      sx={{
+        display: 'inline-flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 0.25,
+      }}
+    >
+      <MapLegendPinLocationIcon
+        sx={{ fontSize: { xs: '26px', sm: '27px', md: '29px' }, color }}
+      />
+      <Box component="span">{label}</Box>
+    </Box>
+  );
 }
 
 const sliderMarks = [
-  { value: 0, label: 'Empty' },
-  { value: 1, label: 'A Few Items' },
-  { value: 2, label: 'Many Items' },
-  { value: 3, label: 'Full' },
+  {
+    value: 0,
+    label: <FoodLevelLabel color={pinColor.itemsEmpty} label="Empty" />,
+  },
+  {
+    value: 1,
+    label: <FoodLevelLabel color={pinColor.itemsFew} label="Few Items" />,
+  },
+  {
+    value: 2,
+    label: <FoodLevelLabel color={pinColor.itemsMany} label="Many Items" />,
+  },
+  {
+    value: 3,
+    label: <FoodLevelLabel color={pinColor.itemsFull} label="Full" />,
+  },
 ];
 
 const fridgeSliderStyles = {
   mx: 'auto',
   width: 7 / 8,
+  mt: 5,
   '.MuiSlider-markLabel': {
-    fontSize: 12,
+    fontSize: { xs: 12, sm: 13, md: 14 },
+    top: 0,
+    transform: 'translateX(-50%) translateY(-100%) translateY(4px)',
   },
   '.MuiSlider-markLabelActive': {
-    fontSize: 12,
+    fontSize: { xs: 12, sm: 13, md: 14 },
+    top: 0,
+    transform: 'translateX(-50%) translateY(-100%) translateY(4px)',
   },
 };
 
 export function ReportForm({
   fridgeId,
+  fridgeName,
   onSubmit,
   initialValues,
+  cancelTo = '/browse',
 }: ReportFormProps): React.ReactElement {
   const {
     register,
@@ -70,86 +109,77 @@ export function ReportForm({
     <Box
       sx={{
         width: '100%',
-        py: { xs: 4, md: 10 },
+        pt: { xs: 0, md: 0.5 },
+        pb: { xs: 4, md: 6 },
         px: { xs: 2, sm: 4 },
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
       }}
     >
       <Box
         sx={{
           mx: 'auto',
           maxWidth: 650,
-          width: '100%',
+          width: { xs: 'calc(100% - 20px)', sm: '100%' },
         }}
       >
-        <Stack spacing={4}>
-          <Box sx={{ textAlign: 'center', mb: 2 }}>
+        <Stack spacing={2}>
+          <Box sx={{ textAlign: 'left', mb: 2 }}>
             <Typography
-              variant="overline"
+              variant="h3"
               sx={{
-                display: 'block',
                 mb: 1,
-                color: 'primary.main',
                 fontWeight: 700,
-                letterSpacing: 1.5,
-              }}
-            >
-              COMMUNITY UPDATE
-            </Typography>
-            <Typography
-              variant="h1"
-              sx={{
-                mb: 2,
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
                 color: 'text.primary',
-                fontSize: { xs: '2.5rem', md: '3.5rem' },
               }}
             >
-              Report Status
+              Fridge Status Report
             </Typography>
             <Typography
-              variant="h5"
+              variant="body1"
               sx={{
-                mb: 4,
-                color: 'text.secondary',
                 fontWeight: 600,
               }}
             >
-              {fridgeId}
+              {fridgeName ?? fridgeId}
             </Typography>
+            <Divider
+              orientation="horizontal"
+              flexItem
+              sx={{ mt: 0, width: '100%', opacity: 0.2 }}
+            />
           </Box>
 
-          <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-            <Stack direction="column" spacing={5}>
-              <FormControl component="fieldset">
-                <FormLabel
-                  sx={{
-                    mb: 3,
-                    fontWeight: 700,
-                    color: 'text.primary',
-                    fontSize: '1.1rem',
-                  }}
-                >
-                  Condition
-                </FormLabel>
+          <Box
+            component="form"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            sx={{ ml: 4, mt: 0 }}
+          >
+            <Stack direction="column" spacing={2} mt={0}>
+              <FormLabel
+                sx={{
+                  mt: 0,
+                  mb: 0,
+                  fontSize: { xs: '1rem', md: '1.05rem' },
+                  fontWeight: 500,
+                  color: 'text.primary',
+                }}
+              >
+                Select if applicable:
+              </FormLabel>
+              <FormControl component="fieldset" sx={{ mt: -0.5 }}>
                 <Controller
                   name="condition"
                   control={control}
                   render={({ field }) => (
-                    <RadioGroup {...field} sx={{ gap: 1 }}>
+                    <RadioGroup {...field} sx={{ gap: 0 }}>
                       <FormControlLabel
                         control={<Radio />}
                         value="good"
                         label="Fridge is in good condition"
-                      />
-                      <FormControlLabel
-                        control={<Radio />}
-                        value="dirty"
-                        label="Fridge needs cleaning"
                       />
                       <FormControlLabel
                         control={<Radio />}
@@ -158,26 +188,33 @@ export function ReportForm({
                       />
                       <FormControlLabel
                         control={<Radio />}
-                        value="not at location"
-                        label="Fridge is temporarily unavailable"
+                        value="dirty"
+                        label="Fridge needs cleaning"
                       />
                       <FormControlLabel
                         control={<Radio />}
+                        value="not at location"
+                        label="Fridge is not at location"
+                      />
+                      {/* We will be migrating all ghost fridges to "not at location"
+                      disabling for now */}
+                      {/* <FormControlLabel
+                        control={<Radio />}
                         value="ghost"
                         label="Fridge is permanently unavailable"
-                      />
+                      /> */}
                     </RadioGroup>
                   )}
                 />
               </FormControl>
 
-              <FormControl sx={{ pt: 2, pb: 4 }}>
+              <FormControl sx={{ mb: -1 }}>
                 <FormLabel
                   sx={{
-                    mb: 4,
-                    fontWeight: 700,
+                    fontSize: { xs: '1rem', md: '1.05rem' },
+                    fontWeight: 500,
                     color: 'text.primary',
-                    fontSize: '1.1rem',
+                    mb: { xs: 8, sm: 8.5, md: 9 },
                   }}
                 >
                   How full is the fridge?
@@ -210,39 +247,38 @@ export function ReportForm({
                 {...register('notes')}
                 error={!!errors.notes}
                 helperText={errors.notes?.message}
-                sx={{ backgroundColor: 'background.paper' }}
+                sx={{
+                  backgroundColor: 'background.paper',
+                  mt: '-8px !important',
+                  '@media (max-width: 390px)': {
+                    '& .MuiInputBase-inputMultiline': {
+                      height: '72px !important',
+                    },
+                  },
+                }}
               />
 
               <Stack
-                direction={{ xs: 'column-reverse', sm: 'row' }}
-                justifyContent="flex-end"
-                alignItems="center"
-                spacing={3}
-                pt={2}
+                direction="row"
+                justifyContent="space-between"
+                alignItems="stretch"
+                spacing={4}
+                pt={4}
               >
                 <ButtonLink
                   aria-label="Return to map page"
                   variant="outlined"
-                  to="/browse"
+                  to={cancelTo}
                   title="Cancel"
-                  sx={{
-                    width: { xs: '100%', sm: 'auto' },
-                    minWidth: 140,
-                    px: 4,
-                  }}
+                  sx={{ flex: 1, minWidth: 0 }}
                 />
                 <Button
                   aria-label="Submit status update"
                   variant="contained"
                   type="submit"
-                  size="large"
-                  sx={{
-                    width: { xs: '100%', sm: 'auto' },
-                    minWidth: 180,
-                    px: 4,
-                  }}
+                  sx={{ flex: 1 }}
                 >
-                  Confirm Update
+                  Confirm
                 </Button>
               </Stack>
             </Stack>

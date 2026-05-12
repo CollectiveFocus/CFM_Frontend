@@ -554,7 +554,7 @@ interface ReportContainerProps {
   report?: FridgeReport | null;
 }
 
-function ReportContainer({
+export function ReportContainer({
   report,
 }: ReportContainerProps): React.ReactElement | null {
   if (!report) return null;
@@ -633,12 +633,12 @@ function ReportContainer({
 // ---------------------------------------------------------------------------
 export interface FridgeInformationProps {
   fridge: Fridge;
-  report?: FridgeReport | null;
+  fridgeReportSection?: React.ReactNode;
 }
 
 export function FridgeInformation({
   fridge,
-  report,
+  fridgeReportSection,
 }: FridgeInformationProps): React.ReactElement {
   return (
     <>
@@ -651,7 +651,7 @@ export function FridgeInformation({
           mb={{ xs: '72px', md: 4 }}
         >
           <FridgeContainer fridge={fridge} />
-          <ReportContainer report={report} />
+          {fridgeReportSection}
 
           <Divider sx={{ opacity: 0.2 }} />
 
@@ -701,7 +701,7 @@ export function FridgeInformation({
           <ButtonLink
             aria-label="Click to report the status of the fridge"
             variant="contained"
-            to={`/fridge/${fridge.id}/report`}
+            to={`/fridge/${fridge.id}/report?from=${encodeURIComponent(`/fridge/${fridge.id}`)}&name=${encodeURIComponent(fridge.name)}`}
             title="Update Status"
             sx={{
               width: 'calc(100% - 16px)',
@@ -749,7 +749,7 @@ export function FridgeInformation({
         <ButtonLink
           aria-label="Click to report the status of the fridge"
           variant="contained"
-          to={`/fridge/${fridge.id}/report`}
+          to={`/fridge/${fridge.id}/report?from=${encodeURIComponent(`/fridge/${fridge.id}`)}&name=${encodeURIComponent(fridge.name)}`}
           title="Update Status"
           sx={{
             width: '96%',

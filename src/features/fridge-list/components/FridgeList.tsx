@@ -354,7 +354,7 @@ export const FridgeList = React.memo(function FridgeList({
               />
               <ButtonLink
                 variant="contained"
-                to={`/fridge/${fridge.id}/report`}
+                to={`/fridge/${fridge.id}/report?from=${encodeURIComponent('/browse')}&name=${encodeURIComponent(fridge.name)}`}
                 aria-label={`Update Status on ${fridge.name}`}
                 sx={{
                   fontSize: '0.85rem',

@@ -20,15 +20,13 @@ export default function Error({
   return (
     <Box
       sx={{
-        flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
         textAlign: 'center',
-        px: 2,
-        py: 8,
-        minHeight: 'calc(100vh - 200px)',
+        maxWidth: 600,
+        mx: 'auto',
+        p: { xs: 4, md: 6 },
       }}
     >
       <Box sx={{ mb: 4 }}>

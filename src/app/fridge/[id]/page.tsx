@@ -1,8 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { FridgeInformation } from 'features/fridge-details';
-import { Fridge, FridgeReport } from 'types/domain';
+import {
+  FridgeInformation,
+  FridgeReportSection,
+} from 'features/fridge-details';
+import { Fridge } from 'types/domain';
 
 interface FridgePageProps {
   params: Promise<{ id: string }>;
@@ -10,32 +13,20 @@ interface FridgePageProps {
 
 const baseUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/`;
 
-async function getFridgeRecord(id: string): Promise<{
-  fridge: Fridge | null;
-  report: FridgeReport | null;
-}> {
+async function getFridgeInfo(id: string): Promise<Fridge | null> {
   try {
     const response = await fetch(`${baseUrl}${id}`, {
       headers: { Accept: 'application/json' },
-      next: { revalidate: 60 },
+      next: { revalidate: 3600 },
     });
 
-    if (!response.ok) {
-      return { fridge: null, report: null };
-    }
+    if (!response.ok) return null;
 
     const apiFridge = await response.json();
-    const report: FridgeReport | null = apiFridge.latestFridgeReport || null;
-
-    const fridge: Fridge = {
-      ...apiFridge,
-      report,
-    };
-
-    return { fridge, report };
+    return { ...apiFridge, report: null };
   } catch (error) {
     console.error(`Failed to fetch fridge ${id}:`, error);
-    return { fridge: null, report: null };
+    return null;
   }
 }
 
@@ -43,7 +34,7 @@ export async function generateMetadata({
   params,
 }: FridgePageProps): Promise<Metadata> {
   const { id } = await params;
-  const { fridge } = await getFridgeRecord(id);
+  const fridge = await getFridgeInfo(id);
 
   return {
     title: fridge ? `Fridge Finder: ${fridge.name}` : 'Fridge Not Found',
@@ -54,11 +45,16 @@ export default async function FridgePage({
   params,
 }: FridgePageProps): Promise<React.ReactElement> {
   const { id } = await params;
-  const { fridge, report } = await getFridgeRecord(id);
+  const fridge = await getFridgeInfo(id);
 
   if (!fridge) {
     notFound();
   }
 
-  return <FridgeInformation fridge={fridge} report={report} />;
+  return (
+    <FridgeInformation
+      fridge={fridge}
+      fridgeReportSection={<FridgeReportSection fridgeId={id} />}
+    />
+  );
 }

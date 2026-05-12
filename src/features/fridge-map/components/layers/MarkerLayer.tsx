@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import Leaflet from 'leaflet';
@@ -124,8 +125,8 @@ export function MarkerLayer({
                     flexDirection: 'column',
                   }}
                 >
-                  <a
-                    href={`/fridge/${id}/report`}
+                  <Link
+                    href={`/fridge/${id}/report?from=${encodeURIComponent('/browse')}&name=${encodeURIComponent(name)}`}
                     style={{
                       display: 'block',
                       textAlign: 'center',
@@ -140,8 +141,8 @@ export function MarkerLayer({
                     }}
                   >
                     Update Status
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href={`/fridge/${id}`}
                     style={{
                       display: 'block',
@@ -158,7 +159,7 @@ export function MarkerLayer({
                     }}
                   >
                     View Details
-                  </a>
+                  </Link>
                 </div>
               </div>
             </Popup>

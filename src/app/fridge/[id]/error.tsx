@@ -21,10 +21,10 @@ export default function Error({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '60vh',
-        p: 3,
         textAlign: 'center',
+        maxWidth: 600,
+        mx: 'auto',
+        p: { xs: 4, md: 6 },
       }}
     >
       <ErrorIcon sx={{ fontSize: 80, color: 'error.main', mb: 2 }} />

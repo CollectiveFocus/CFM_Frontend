@@ -39,6 +39,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/user/fridge/report/:fridgeId',
+        destination: '/fridge/:fridgeId/report',
+        permanent: true, // HTTP 301 redirect for SEO preservation
+      },
+    ];
+  },
 };
 
 export default nextConfig;
