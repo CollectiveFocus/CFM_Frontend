@@ -102,12 +102,17 @@ const MemoizedMap = React.memo(DynamicMap);
 
 export default function BrowsePage(): React.ReactElement {
   const { fridges, status, error, fetchFridges } = useFridgeStore();
-  const { selectedFridgeId, setSelectedFridgeId } = useMapStore();
+  const setSelectedFridgeId = useMapStore((state) => state.setSelectedFridgeId);
   const [currentView, setCurrentView] = useState<MapView>('map');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const { searchQuery, setSearchQuery, filteredFridges, isSearching } =
-    useFridgeSearch(fridges);
+  const {
+    searchQuery,
+    setSearchQuery,
+    filteredFridges,
+    mapFridges,
+    isSearching,
+  } = useFridgeSearch(fridges);
 
   const availableHeight = useWindowHeight();
 
@@ -313,11 +318,7 @@ export default function BrowsePage(): React.ReactElement {
           height: '100%',
         }}
       >
-        <MemoizedMap
-          fridges={filteredFridges}
-          selectedFridgeId={selectedFridgeId}
-          onMarkerClick={setSelectedFridgeId}
-        />
+        <MemoizedMap fridges={mapFridges} onMarkerClick={setSelectedFridgeId} />
       </Box>
 
       {/* Map Toggle (Mobile Only) */}

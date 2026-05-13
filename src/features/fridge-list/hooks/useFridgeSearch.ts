@@ -1,4 +1,11 @@
-import { useState, useMemo, useDeferredValue, useRef } from 'react';
+import {
+  useState,
+  useMemo,
+  useDeferredValue,
+  useRef,
+  useEffect,
+  startTransition,
+} from 'react';
 import Fuse from 'fuse.js';
 import { Fridge } from 'types/domain';
 import { useMapStore } from 'store/useMapStore';
@@ -14,29 +21,57 @@ export function useFridgeSearch(fridges: Fridge[]) {
   const deferredQuery = useDeferredValue(searchQuery);
   const isSearching = searchQuery !== deferredQuery;
 
-  const center = useMapStore((state) => state.center);
+  // Subscribe to center changes via vanilla Zustand subscribe instead of a React selector.
+  // This avoids re-rendering BrowsePage on every setCenter call (which fires after every pan).
+  // We only trigger a re-render when the user moves more than 1km, and mark it as
+  // non-urgent via startTransition so it never blocks map painting.
+  const initialCenter = useMapStore.getState().center;
+  const lastSortCenter = useRef<[number, number] | null>(initialCenter);
+  const [sortCenter, setSortCenter] = useState<[number, number] | null>(
+    initialCenter
+  );
 
-  // We don't want the fridge list to aggressively reshuffle and re-render every time
-  // the map is panned even 1 pixel. This establishes a "sticky" center that only updates
-  // when the user moves the map by more than 1 kilometer, keeping the UI rock solid.
-  const lastSortCenter = useRef<[number, number] | null>(center);
+  const fridgesRef = useRef(fridges);
+  useEffect(() => {
+    fridgesRef.current = fridges;
+  }, [fridges]);
 
-  const sortCenter = useMemo(() => {
-    if (!center) return null;
-    if (!lastSortCenter.current) {
-      lastSortCenter.current = center;
-      return center;
-    }
+  useEffect(() => {
+    let prevSelectedId: string | null = useMapStore.getState().selectedFridgeId;
 
-    const dist = deltaInMeters(center, lastSortCenter.current);
-    if (dist > 1000) {
-      // 1 km threshold to trigger a list re-sort
-      lastSortCenter.current = center;
-      return center;
-    }
+    return useMapStore.subscribe((state) => {
+      // Re-sort around clicked fridge — but deferred by one frame so setView paints first
+      if (state.selectedFridgeId && state.selectedFridgeId !== prevSelectedId) {
+        prevSelectedId = state.selectedFridgeId;
+        const fridge = fridgesRef.current.find(
+          (f) => f.id === state.selectedFridgeId
+        );
+        if (fridge) {
+          const coords: [number, number] = [
+            fridge.location.geoLat,
+            fridge.location.geoLng,
+          ];
+          lastSortCenter.current = coords;
+          setTimeout(() => startTransition(() => setSortCenter(coords)), 300);
+        }
+        return;
+      }
+      prevSelectedId = state.selectedFridgeId;
 
-    return lastSortCenter.current;
-  }, [center]);
+      // Re-sort around map center only when user pans more than 1km
+      const newCenter = state.center;
+      if (!lastSortCenter.current) {
+        lastSortCenter.current = newCenter;
+        startTransition(() => setSortCenter(newCenter));
+        return;
+      }
+      const dist = deltaInMeters(newCenter, lastSortCenter.current);
+      if (dist > 1000) {
+        lastSortCenter.current = newCenter;
+        startTransition(() => setSortCenter(newCenter));
+      }
+    });
+  }, []);
 
   const fuse = useMemo(() => {
     return new Fuse(fridges, {
@@ -80,10 +115,18 @@ export function useFridgeSearch(fridges: Fridge[]) {
     return resultList;
   }, [deferredQuery, fuse, fridges, sortCenter]);
 
+  // Filtered but NOT sorted — order is irrelevant for map markers.
+  // Keeping this separate means sort-only reorders don't bust React.memo on the map.
+  const mapFridges = useMemo(() => {
+    if (!deferredQuery) return fridges;
+    return fuse.search(deferredQuery).map((result) => result.item);
+  }, [deferredQuery, fuse, fridges]);
+
   return {
     searchQuery,
     setSearchQuery,
     filteredFridges,
+    mapFridges,
     isSearching,
   };
 }

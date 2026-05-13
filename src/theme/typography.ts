@@ -1,5 +1,6 @@
 const typography = {
   fontFamily: [
+    'var(--font-inter)',
     'Inter',
     '"Helvetica Neue"',
     'HelveticaNeue',

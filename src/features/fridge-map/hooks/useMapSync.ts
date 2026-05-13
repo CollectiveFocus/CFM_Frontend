@@ -7,7 +7,6 @@ import { useMapStore } from 'store/useMapStore';
 
 interface UseMapSyncProps {
   fridges: Fridge[];
-  selectedFridgeId: string | null;
 }
 
 function createUserIcon(heading: number | null): L.DivIcon {
@@ -34,13 +33,14 @@ function createUserIcon(heading: number | null): L.DivIcon {
   });
 }
 
-export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
+export function useMapSync({ fridges }: UseMapSyncProps) {
   const map = useMap();
   const userMarkerRef = useRef<L.Marker | null>(null);
   const userAccuracyRef = useRef<L.Circle | null>(null);
   const isFirstLocationFound = useRef(true);
   const setUserLocation = useMapStore((state) => state.setUserLocation);
   const userLocation = useMapStore((state) => state.userLocation);
+  const selectedFridgeId = useMapStore((state) => state.selectedFridgeId);
 
   const fridgesRef = useRef(fridges);
 
@@ -56,13 +56,10 @@ export function useMapSync({ fridges, selectedFridgeId }: UseMapSyncProps) {
       const fridge = fridgesRef.current.find((f) => f.id === selectedFridgeId);
       if (fridge) {
         lastFlyToId.current = selectedFridgeId;
-        // Small delay to ensure popup renders smoothly before panning
-        setTimeout(() => {
-          map.flyTo([fridge.location.geoLat, fridge.location.geoLng], 15, {
-            animate: true,
-            duration: 0.5,
-          });
-        }, 100);
+        map.setView(
+          [fridge.location.geoLat, fridge.location.geoLng],
+          Math.max(map.getZoom(), 13)
+        );
       }
     } else if (!selectedFridgeId) {
       lastFlyToId.current = null;

@@ -36,45 +36,14 @@ interface LocationInfoProps {
 function LocationInfo({ location }: LocationInfoProps): React.ReactElement {
   const addressString = `${location.street}, ${location.city}, ${location.state} ${location.zip}`;
 
-  const [mapsUrl, setMapsUrl] = React.useState(
-    `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addressString)}`
-  );
-
-  React.useEffect(() => {
-    const isApple = /(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent);
-    if (isApple) {
-      setMapsUrl(
-        `http://maps.apple.com/?daddr=${encodeURIComponent(addressString)}`
-      );
-    }
-  }, [addressString]);
-
   return (
     <Stack direction="row" spacing={2} alignItems="center">
       <LocationOnOutlinedIcon
         sx={{ color: 'text.secondary', fontSize: '1.5rem' }}
       />
-      <Box component="address" sx={{ fontStyle: 'normal', m: 0 }}>
-        <Typography
-          component="a"
-          href={mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            fontSize: ['1rem'],
-            color: 'text.primary',
-            lineHeight: 1.4,
-            textDecoration: 'none',
-            display: 'block',
-            '&:hover': {
-              color: 'primary.main',
-              textDecoration: 'underline',
-            },
-          }}
-        >
-          {addressString}
-        </Typography>
-      </Box>
+      <Typography sx={{ fontSize: '1rem', color: 'text.primary' }}>
+        {addressString}
+      </Typography>
     </Stack>
   );
 }
@@ -123,7 +92,7 @@ function LastUpdateInfo({ date }: LastUpdateInfoProps): React.ReactElement {
   return (
     <Stack direction="row" spacing={2} alignItems="center">
       <CalendarIcon sx={{ color: 'text.secondary', fontSize: '1.5rem' }} />
-      <Typography sx={{ fontSize: ['1rem'], color: 'text.primary' }}>
+      <Typography sx={{ fontSize: '1rem', color: 'text.primary' }}>
         Last Update: {formatDate(date)}
       </Typography>
     </Stack>
@@ -316,56 +285,33 @@ export const FridgeList = React.memo(function FridgeList({
             <FridgeStatus report={fridge.report} />
 
             <Box sx={{ mt: 1 }}>
-              <LocationInfo location={fridge.location} />
-              {fridge.maintainer?.instagram ? (
-                <Box sx={{ mt: 1 }}>
-                  <InstagramInfo instagramUrl={fridge.maintainer.instagram} />
-                </Box>
-              ) : null}
               {fridge.report ? (
-                <Box sx={{ mt: 1 }}>
-                  <LastUpdateInfo date={fridge.report.timestamp} />
-                </Box>
+                <LastUpdateInfo date={fridge.report.timestamp} />
               ) : null}
+              <Box sx={{ mt: 1 }}>
+                <LocationInfo location={fridge.location} />
+              </Box>
             </Box>
 
             <Stack
               direction="row"
               width="100%"
-              justifyContent="flex-end"
+              justifyContent="flex-start"
               spacing={2}
               sx={{ mt: 2 }}
             >
               <ButtonLink
-                variant="outlined"
+                variant="contained"
                 to={`/fridge/${fridge.id}`}
                 aria-label={`Details on ${fridge.name}`}
-                sx={{
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  textTransform: 'none',
-                  px: 4,
-                  py: 0.75,
-                  flex: 'none',
-                  borderRadius: 24,
-                  minWidth: 'auto',
-                }}
-                title="More info"
+                sx={{ fontSize: '0.85rem', py: 1.5, px: 4 }}
+                title="View Profile"
               />
               <ButtonLink
                 variant="contained"
                 to={`/fridge/${fridge.id}/report?from=${encodeURIComponent('/browse')}&name=${encodeURIComponent(fridge.name)}`}
                 aria-label={`Update Status on ${fridge.name}`}
-                sx={{
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  textTransform: 'none',
-                  px: 4,
-                  py: 0.75,
-                  flex: 'none',
-                  borderRadius: 24,
-                  minWidth: 'auto',
-                }}
+                sx={{ fontSize: '0.85rem', py: 1.5, px: 4 }}
                 title="Update status"
               />
             </Stack>

@@ -1,29 +1,11 @@
-import {
-  createTheme,
-  responsiveFontSizes,
-  Theme,
-  TypographyVariantsOptions,
-} from '@mui/material/styles';
+import { createTheme, responsiveFontSizes, Theme } from '@mui/material/styles';
 
 import palette, { applyAlpha, designColor } from './palette';
 import typography from './typography';
 
 let theme: Theme = createTheme({
   palette,
-  typography: {
-    ...(typography as TypographyVariantsOptions),
-    fontFamily: [
-      'var(--font-inter)',
-      'Inter',
-      '"Helvetica Neue"',
-      'HelveticaNeue',
-      'Helvetica',
-      '"TeX Gyre"',
-      'TeXGyre',
-      'Arial',
-      'sans-serif',
-    ].join(','),
-  },
+  typography,
   spacing: 4,
   components: {
     MuiCssBaseline: {

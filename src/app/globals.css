@@ -64,6 +64,14 @@ body {
     'TeX Gyre', TeXGyre, Arial, sans-serif !important;
 }
 
+/* Larger popup close button */
+.leaflet-popup-close-button {
+  font-size: 22px !important;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 26px !important;
+}
+
 /* Offset Leaflet's zoom and locate controls so they don't hide behind mobile floating pill */
 .leaflet-control-zoom {
   margin-bottom: 85px !important;

@@ -17,7 +17,6 @@ import { LocateUserControl } from './LocateUserControl';
 
 interface MapProps {
   fridges: Fridge[];
-  selectedFridgeId: string | null;
   onMarkerClick?: (id: string) => void;
 }
 
@@ -26,14 +25,10 @@ const defaultZoom = 13.2;
 
 interface MapControllerProps {
   fridges: Fridge[];
-  selectedFridgeId: string | null;
 }
 
-function MapController({
-  fridges,
-  selectedFridgeId,
-}: MapControllerProps): null {
-  const { locateUser } = useMapSync({ fridges, selectedFridgeId });
+function MapController({ fridges }: MapControllerProps): null {
+  const { locateUser } = useMapSync({ fridges });
   const setCenter = useMapStore((state) => state.setCenter);
   const setZoom = useMapStore((state) => state.setZoom);
   const map = useMap();
@@ -66,7 +61,6 @@ function MapController({
 
 export function MapContainer({
   fridges,
-  selectedFridgeId,
   onMarkerClick,
 }: MapProps): React.ReactElement | null {
   const [lng, setLng] = React.useState('en');
@@ -99,7 +93,7 @@ export function MapContainer({
       >
         <ZoomControl position="bottomright" />
         <LocateUserControl />
-        <MapController fridges={fridges} selectedFridgeId={selectedFridgeId} />
+        <MapController fridges={fridges} />
         <TileLayer
           attribution="&copy; Fridge Finder"
           url={`https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=${lng}`}

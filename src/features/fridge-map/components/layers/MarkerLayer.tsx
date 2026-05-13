@@ -1,12 +1,14 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
+import React, { useEffect, useRef } from 'react';
+import { Stack, Typography } from '@mui/material';
 import { Marker, Popup } from 'react-leaflet';
+import { ButtonLink } from 'components/ui';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import Leaflet from 'leaflet';
 import { Fridge } from 'types/domain';
 import { pinColor } from 'theme/palette';
+import { useMapStore } from 'store/useMapStore';
 import {
   svgDecorationDirty,
   svgDecorationOutOfOrder,
@@ -73,6 +75,25 @@ export function MarkerLayer({
   fridges,
   onMarkerClick,
 }: MarkerLayerProps): React.ReactElement {
+  const markerRefs = useRef<Map<string, Leaflet.Marker>>(new Map());
+  const navigatingFromPopupRef = useRef(false);
+  const selectedFridgeId = useMapStore((state) => state.selectedFridgeId);
+  const setSelectedFridgeId = useMapStore((state) => state.setSelectedFridgeId);
+
+  useEffect(() => {
+    if (!selectedFridgeId) return;
+    const id = selectedFridgeId;
+    // setTimeout(0) defers openPopup() to the next event-loop tick.
+    // React's render and Leaflet's internal DOM setup (onAdd, popup binding)
+    // both run synchronously after mount — calling openPopup() in the same
+    // tick would silently fail. Yielding here ensures Leaflet has finished
+    // its own initialization before we issue the imperative call.
+    const timer = setTimeout(() => {
+      markerRefs.current.get(id)?.openPopup();
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [selectedFridgeId]);
+
   const markers = React.useMemo(() => {
     return fridges
       .filter((fridge) => fridge.location.geoLat && fridge.location.geoLng)
@@ -86,95 +107,79 @@ export function MarkerLayer({
             key={id}
             position={[location.geoLat, location.geoLng]}
             icon={iconFrom(condition, foodPercentage)}
+            ref={(ref) => {
+              if (ref) markerRefs.current.set(id, ref);
+              else markerRefs.current.delete(id);
+            }}
             eventHandlers={{
-              click: () => {
-                // Update Zustand store so MapSync can pan the camera naturally
-                // without forcing Leaflet to aggressively hijack the Viewport
-                if (onMarkerClick) {
-                  onMarkerClick(id);
+              click: () => onMarkerClick?.(id),
+              popupclose: () => {
+                if (navigatingFromPopupRef.current) {
+                  navigatingFromPopupRef.current = false;
+                  return;
                 }
+                setSelectedFridgeId(null);
               },
             }}
           >
-            <Popup className="custom-popup" minWidth={220} autoPan={false}>
-              <div style={{ fontFamily: 'inherit', padding: '8px 4px' }}>
-                <strong
-                  style={{
-                    fontSize: '1.1rem',
-                    color: '#111',
-                    display: 'block',
-                    marginBottom: '4px',
+            <Popup autoPan={false}>
+              <Typography
+                variant="caption"
+                sx={{
+                  fontSize: '1.18rem',
+                  fontWeight: 700,
+                  letterSpacing: 0.5,
+                }}
+              >
+                {name}
+              </Typography>
+              <br />
+              <Typography
+                variant="body2"
+                component="span"
+                sx={{ fontSize: '1rem', margin: 0 }}
+              >
+                {location.street}
+                <br />
+                {location.city}, {location.state} {location.zip}
+              </Typography>
+              <Stack direction="row" spacing={3} sx={{ mt: 3 }}>
+                <ButtonLink
+                  variant="contained"
+                  to={`/fridge/${id}`}
+                  aria-label={`View Profile of ${name}`}
+                  sx={{ fontSize: '0.85rem', px: 3, py: 1.5 }}
+                  style={{ color: 'white' }}
+                  title="View Profile"
+                  onClick={() => {
+                    navigatingFromPopupRef.current = true;
                   }}
-                >
-                  {name}
-                </strong>
-                <p
-                  style={{
-                    margin: '0 0 16px 0',
-                    color: '#555',
-                    fontSize: '0.9rem',
-                    lineHeight: 1.4,
+                />
+                <ButtonLink
+                  variant="contained"
+                  to={`/fridge/${id}/report?from=${encodeURIComponent('/browse')}&name=${encodeURIComponent(name)}`}
+                  aria-label={`Update status of ${name}`}
+                  sx={{ fontSize: '0.85rem', px: 3, py: 1.5 }}
+                  style={{ color: 'white' }}
+                  title="Update Status"
+                  onClick={() => {
+                    navigatingFromPopupRef.current = true;
                   }}
-                >
-                  {location.street}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: '8px',
-                    flexDirection: 'column',
-                  }}
-                >
-                  <Link
-                    href={`/fridge/${id}/report?from=${encodeURIComponent('/browse')}&name=${encodeURIComponent(name)}`}
-                    style={{
-                      display: 'block',
-                      textAlign: 'center',
-                      backgroundColor: '#1543D4',
-                      color: '#fff',
-                      textDecoration: 'none',
-                      padding: '8px 12px',
-                      borderRadius: '24px',
-                      fontWeight: 'bold',
-                      fontSize: '0.85rem',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    Update Status
-                  </Link>
-                  <Link
-                    href={`/fridge/${id}`}
-                    style={{
-                      display: 'block',
-                      textAlign: 'center',
-                      backgroundColor: 'transparent',
-                      color: '#1543D4',
-                      border: '1px solid #1543D4',
-                      textDecoration: 'none',
-                      padding: '8px 12px',
-                      borderRadius: '24px',
-                      fontWeight: 'bold',
-                      fontSize: '0.85rem',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
+                />
+              </Stack>
             </Popup>
           </Marker>
         );
       });
-  }, [fridges, onMarkerClick]);
+  }, [fridges, onMarkerClick, setSelectedFridgeId]);
 
   return (
     <MarkerClusterGroup
       chunkedLoading
       spiderfyOnMaxZoom={true}
       showCoverageOnHover={false}
-      maxClusterRadius={20}
-      disableClusteringAtZoom={16}
+      maxClusterRadius={15}
+      disableClusteringAtZoom={15}
     >
       {markers}
     </MarkerClusterGroup>
