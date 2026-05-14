@@ -28,6 +28,7 @@ function ResponsiveImage({
           position: 'relative',
           width: '100%',
           aspectRatio: '3 / 2',
+          height: { xs: 200, sm: 400, lg: 500 },
         }}
       >
         <Image
@@ -35,7 +36,7 @@ function ResponsiveImage({
           alt={alt}
           fill
           style={{ objectFit: 'cover', borderRadius: '8px' }}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
+          sizes="100vw"
         />
       </Box>
       {attribution && (
@@ -56,7 +57,7 @@ function ResponsiveImage({
   );
 }
 
-interface PamphletParagraphProps {
+export interface PamphletParagraphProps {
   title?: string;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   img?: ResponsiveImageProps;
@@ -73,10 +74,8 @@ interface PamphletParagraphProps {
 }
 
 const sxParagraphMargin = {
-  my: { xs: 6, md: 8 },
-  mx: 'auto',
-  px: { xs: 2, sm: 4, md: 6 },
-  maxWidth: 800,
+  mb: 7,
+  mx: { xs: 10, lg: 15, xl: 20 },
 };
 
 function DividerGrey(): React.ReactElement {
@@ -102,11 +101,7 @@ export function PamphletParagraph({
       {img && <ResponsiveImage {...img} />}
 
       {title && (
-        <Typography
-          sx={{ mb: 4, fontWeight: 800, letterSpacing: '-0.02em' }}
-          variant={variant}
-          color="text.primary"
-        >
+        <Typography sx={{ mt: 7, mb: 7 }} variant={variant}>
           <SoftWrap text={title} />
         </Typography>
       )}
@@ -115,17 +110,13 @@ export function PamphletParagraph({
 
       {body &&
         body.map((val, index) => (
-          <Typography
-            variant="body1"
-            sx={{ mb: 2, lineHeight: 1.7 }}
-            key={`${index}_PamphletParagraph`}
-          >
+          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
             {val}
           </Typography>
         ))}
 
       {button && (
-        <Box textAlign="center" sx={{ mt: 6 }}>
+        <Box textAlign="center" sx={{ mt: 7 }}>
           <ButtonLink
             variant={button.variant || 'contained'}
             to={button.to}
