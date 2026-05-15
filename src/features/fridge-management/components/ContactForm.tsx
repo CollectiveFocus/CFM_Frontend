@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -11,7 +12,6 @@ import {
   Paper,
   Box,
 } from '@mui/material';
-import { ButtonLink } from 'components/ui';
 import { contactSchema, ContactFormData } from '../schemas/fridge.schema';
 
 interface ContactFormProps {
@@ -38,16 +38,31 @@ export function ContactForm({
     },
   });
 
+  const router = useRouter();
+
+  function handleCancel() {
+    if (
+      typeof window !== 'undefined' &&
+      document.referrer &&
+      new URL(document.referrer).origin === window.location.origin
+    ) {
+      router.back();
+    } else {
+      router.push('/');
+    }
+  }
+
   return (
     <Box
       sx={{
         width: '100%',
-        py: { xs: 4, md: 10 },
+        pt: { xs: 4, md: 6 },
+        pb: { xs: 4, md: 10 },
         px: { xs: 2, sm: 4 },
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
       }}
     >
       <Box
@@ -62,26 +77,19 @@ export function ContactForm({
             <Typography
               variant="h1"
               sx={{
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
                 color: 'text.primary',
                 mb: 2,
-                fontSize: { xs: '2.5rem', md: '3.5rem' },
               }}
             >
               Contact Us
             </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ fontSize: '1.125rem' }}
-            >
+            <Typography variant="body1">
               Got a question or feedback? We'd love to hear from you.
             </Typography>
           </Box>
 
           <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
-            <Stack direction="column" spacing={4}>
+            <Stack direction="column" spacing={4} mx={4} mb={4}>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={4}>
                 <TextField
                   fullWidth
@@ -123,24 +131,22 @@ export function ContactForm({
                 sx={{ backgroundColor: 'background.paper' }}
               />
               <Stack
-                direction={{ xs: 'column-reverse', sm: 'row' }}
+                direction="row"
                 justifyContent="space-between"
-                spacing={3}
-                pt={2}
+                spacing={4}
+                pt={4}
               >
-                <ButtonLink
-                  aria-label="Click to return to home page"
+                <Button
+                  aria-label="Click to go back"
                   variant="outlined"
-                  to="/"
-                  title="Cancel"
-                  sx={{ flex: { xs: 1, sm: 'none' }, minWidth: 140 }}
-                />
+                  onClick={handleCancel}
+                >
+                  Cancel
+                </Button>
                 <Button
                   aria-label="Click to send an email to Fridge Finder"
                   variant="contained"
                   type="submit"
-                  size="large"
-                  sx={{ flex: { xs: 1, sm: 'none' }, minWidth: 180 }}
                 >
                   Send Message
                 </Button>
