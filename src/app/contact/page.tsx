@@ -3,7 +3,7 @@
 import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { FeedbackCard } from 'components/ui';
-import { ContactForm, ContactFormData } from 'features/fridge-management';
+import { ContactForm, ContactFormData } from 'features/contact';
 
 enum DisplayStatus {
   Form = 0,

@@ -12,7 +12,7 @@ import {
   Paper,
   Box,
 } from '@mui/material';
-import { contactSchema, ContactFormData } from '../schemas/fridge.schema';
+import { contactSchema, ContactFormData } from '../schemas/contact.schema';
 
 interface ContactFormProps {
   onSubmit: (data: ContactFormData) => void;
