@@ -2,16 +2,19 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Grid, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
-import { TitleCard } from 'features/marketing';
+import { PamphletParagraph, TitleCard } from 'features/marketing';
 
 const pageContent = {
   pageHero: {
-    title: 'Get Involved!',
-    subtitle: 'There are many ways to support the future of the fridges.',
     img: {
       src: '/hero/get-involved.webp',
       alt: 'Volunteers in front of a community fridge',
     },
+  },
+  introParagraph: {
+    title: 'Get Involved!',
+    body: ['There are many ways to support the future of the fridges.'],
+    variant: 'h1' as const,
   },
   titleCards: [
     {
@@ -70,14 +73,22 @@ export const metadata: Metadata = {
 };
 
 export default function GetInvolvedPage(): React.ReactElement {
-  const { pageHero, titleCards } = pageContent;
+  const { pageHero, introParagraph, titleCards } = pageContent;
   return (
-    <>
+    <div>
       <PageHero {...pageHero} />
+      <PamphletParagraph
+        sx={{
+          textAlign: 'center',
+          mb: 0,
+          '& .MuiTypography-h1': { mt: 4, mb: 2 },
+        }}
+        {...introParagraph}
+      />
       <Box
         sx={{
           px: { xs: 2, sm: 4, md: 6 },
-          py: { xs: 8, md: 10 },
+          py: { xs: 4, md: 6 },
           mx: 'auto',
           maxWidth: 1200,
         }}
@@ -91,9 +102,8 @@ export default function GetInvolvedPage(): React.ReactElement {
             <Grid
               key={index}
               size={{
-                xs: 12,
-                sm: 6,
-                md: 4,
+                xs: 6,
+                sm: 4,
               }}
               display="flex"
               justifyContent="center"
@@ -103,6 +113,6 @@ export default function GetInvolvedPage(): React.ReactElement {
           ))}
         </Grid>
       </Box>
-    </>
+    </div>
   );
 }

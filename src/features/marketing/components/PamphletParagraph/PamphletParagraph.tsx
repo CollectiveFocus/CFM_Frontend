@@ -75,7 +75,12 @@ export interface PamphletParagraphProps {
 
 const sxParagraphMargin = {
   mb: 7,
-  mx: { xs: 10, lg: 15, xl: 20 },
+  width: '100%',
+  maxWidth: 900,
+  mx: 'auto',
+  px: { xs: 2, sm: 4 },
+  textAlign: 'left' as const,
+  boxSizing: 'border-box' as const,
 };
 
 function DividerGrey(): React.ReactElement {
@@ -110,7 +115,11 @@ export function PamphletParagraph({
 
       {body &&
         body.map((val, index) => (
-          <Typography variant="body1" key={`${index}_PamphletParagraph`}>
+          <Typography
+            variant="body1"
+            key={`${index}_PamphletParagraph`}
+            sx={{ lineHeight: 1.7, mb: 2 }}
+          >
             {val}
           </Typography>
         ))}

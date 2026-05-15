@@ -1,9 +1,13 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { Box, Typography } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  CardActionArea,
+  Typography,
+} from '@mui/material';
 import { NextLink } from 'components/ui';
 
 interface TitleCardProps {
@@ -21,85 +25,42 @@ export function TitleCard({
   link,
 }: TitleCardProps): React.ReactElement {
   return (
-    <Box
-      component={NextLink}
-      href={link}
-      aria-label={title}
+    <Card
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textDecoration: 'none',
-        width: '100%',
-        maxWidth: 280,
-        p: { xs: 3, md: 4 },
-        borderRadius: 4,
-        backgroundColor: 'transparent',
-        transition: 'background-color 0.2s ease',
+        width: { xs: '10em', sm: '12em' },
+        height: { xs: '11em', sm: '13em' },
+        backgroundColor: 'secondary.main',
         '&:hover': {
-          backgroundColor: 'rgba(0,0,0,0.02)',
-          '& .title-text': {
-            color: 'primary.main',
-          },
-          '& .arrow-icon': {
-            color: 'primary.main',
-            transform: 'translateX(6px)',
-          },
+          filter: 'brightness(0.90)',
         },
       }}
     >
-      <Box
+      <CardActionArea
+        component={NextLink}
+        href={link}
+        aria-label={title}
         sx={{
+          width: 'inherit',
+          height: 'inherit',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: { xs: 100, md: 120 },
-          mb: 3,
+          flexDirection: 'column',
         }}
       >
-        <Image
-          src={img.src}
+        <CardMedia
+          component="img"
+          image={img.src}
           alt={img.alt}
-          width={120}
-          height={120}
-          style={{ width: 'auto', height: '100%', objectFit: 'contain' }}
-        />
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 1.5,
-        }}
-      >
-        <Typography
-          className="title-text"
-          variant="h4"
           sx={{
-            textAlign: 'center',
-            fontWeight: 800,
-            color: 'text.primary',
-            letterSpacing: '-0.02em',
-            transition: 'color 0.2s ease',
-            lineHeight: 1.3,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          {title}
-        </Typography>
-        <ArrowForwardIcon
-          className="arrow-icon"
-          sx={{
-            color: 'text.secondary',
-            transition: 'all 0.2s ease',
-            fontSize: '1.6rem',
-            strokeWidth: 2,
+            width: 'auto',
+            height: 'auto',
           }}
         />
-      </Box>
-    </Box>
+        <CardContent sx={{ p: 0 }}>
+          <Typography variant="h6" textAlign="center" pt={2}>
+            {title}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }

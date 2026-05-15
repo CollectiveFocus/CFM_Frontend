@@ -53,6 +53,7 @@ export default function RootLayout({
                 flexGrow: 1,
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'stretch',
                 '& > *': {
                   flexGrow: 1,
                   display: 'flex',

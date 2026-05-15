@@ -1,6 +1,5 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Box } from '@mui/material';
 import { PamphletParagraph } from 'features/marketing';
 import type { PamphletParagraphProps } from 'features/marketing/components/PamphletParagraph/PamphletParagraph';
 
@@ -81,14 +80,7 @@ const pageContent: { content: PamphletParagraphProps[] } = {
 export default function AboutPage(): React.ReactElement {
   const { content } = pageContent;
   return (
-    <Box
-      sx={{
-        width: '100%',
-        maxWidth: { md: 900, lg: 1100 },
-        mx: 'auto',
-        px: { sm: 6 },
-      }}
-    >
+    <div>
       {content.map((paragraph, index) => (
         <PamphletParagraph
           {...paragraph}
@@ -96,6 +88,6 @@ export default function AboutPage(): React.ReactElement {
           hasDivider={index > 0}
         />
       ))}
-    </Box>
+    </div>
   );
 }
