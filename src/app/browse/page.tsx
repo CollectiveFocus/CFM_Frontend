@@ -19,7 +19,6 @@ import {
   MapToggle,
   MapView,
 } from 'features/fridge-map/components/MapToggle/MapToggle';
-import { useWindowHeight } from 'hooks/useWindowHeight';
 import { useFridgeStore } from 'store/useFridgeStore';
 import { useMapStore } from 'store/useMapStore';
 import { StateBoundary } from 'components/shared/StateBoundary';
@@ -114,8 +113,6 @@ export default function BrowsePage(): React.ReactElement {
     isSearching,
   } = useFridgeSearch(fridges);
 
-  const availableHeight = useWindowHeight();
-
   useEffect(() => {
     fetchFridges();
   }, [fetchFridges]);
@@ -125,7 +122,7 @@ export default function BrowsePage(): React.ReactElement {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        height: availableHeight || '100svh',
+        height: '100dvh',
         marginTop: '-64px', // Offset the appbar since this needs to be truly full screen
         paddingTop: '64px',
         position: 'relative',
