@@ -122,10 +122,9 @@ export default function BrowsePage(): React.ReactElement {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        height: '100dvh',
-        marginTop: '-64px', // Offset the appbar since this needs to be truly full screen
-        paddingTop: '64px',
-        position: 'relative',
+        position: 'fixed',
+        inset: 0,
+        paddingTop: '64px', // Push content below the sticky AppBar
         backgroundColor: 'background.paper',
       }}
     >
