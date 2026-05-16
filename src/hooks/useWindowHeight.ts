@@ -21,7 +21,11 @@ export function useWindowHeight(appBarId: string = 'AppBar'): number {
     setAvailableHeight(calculateAvailableHeight());
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.visualViewport?.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.visualViewport?.removeEventListener('resize', handleResize);
+    };
   }, [calculateAvailableHeight]);
 
   return availableHeight;

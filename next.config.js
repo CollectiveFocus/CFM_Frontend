@@ -23,6 +23,11 @@ const nextConfig = {
         hostname: 'community-fridge-map-images-prod.s3.amazonaws.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'community-fridge-map-images-dev.s3.amazonaws.com',
+        pathname: '/**',
+      },
     ],
   },
   compiler: {

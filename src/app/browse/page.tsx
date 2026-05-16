@@ -125,7 +125,7 @@ export default function BrowsePage(): React.ReactElement {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        height: availableHeight || '100dvh', // Use 100dvh for better mobile Safari handling
+        height: availableHeight || '100svh',
         marginTop: '-64px', // Offset the appbar since this needs to be truly full screen
         paddingTop: '64px',
         position: 'relative',
