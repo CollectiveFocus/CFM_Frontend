@@ -124,7 +124,7 @@ export default function BrowsePage(): React.ReactElement {
         flexDirection: 'row',
         position: 'fixed',
         inset: 0,
-        paddingTop: '64px', // Push content below the sticky AppBar
+        paddingTop: { xs: '56px', sm: '64px' }, // MUI Toolbar is 56px on mobile, 64px on desktop
         backgroundColor: 'background.paper',
       }}
     >
@@ -135,7 +135,7 @@ export default function BrowsePage(): React.ReactElement {
             sx={{
               display: { xs: 'block', md: 'none' },
               position: 'absolute',
-              top: 80, // Sit below the AppBar
+              top: { xs: 72, sm: 80 }, // AppBar (56/64px) + 16px gap
               left: 16,
               right: 16,
               zIndex: 1000,
