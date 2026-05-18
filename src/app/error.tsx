@@ -46,8 +46,8 @@ export default function Error({
         color="text.secondary"
         sx={{ mb: 6, maxWidth: 500 }}
       >
-        We encountered an unexpected error while trying to process your request.
-        Our team has been notified.
+        We encountered an unexpected error while trying to process your request,
+        please try again or contact us if the problem persists.
       </Typography>
 
       <Stack

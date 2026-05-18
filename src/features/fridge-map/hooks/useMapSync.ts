@@ -43,10 +43,15 @@ export function useMapSync({ fridges }: UseMapSyncProps) {
   const selectedFridgeId = useMapStore((state) => state.selectedFridgeId);
 
   const fridgesRef = useRef(fridges);
+  const selectedFridgeIdRef = useRef(selectedFridgeId);
 
   useEffect(() => {
     fridgesRef.current = fridges;
   }, [fridges]);
+
+  useEffect(() => {
+    selectedFridgeIdRef.current = selectedFridgeId;
+  }, [selectedFridgeId]);
 
   const lastFlyToId = useRef<string | null>(null);
 
@@ -79,7 +84,7 @@ export function useMapSync({ fridges }: UseMapSyncProps) {
       } else {
         userMarkerRef.current = L.marker(userPosition, {
           icon: createUserIcon(heading || null),
-          zIndexOffset: 1000, // Make sure user dot is above other markers
+          zIndexOffset: -100, // Render below fridge markers
         }).addTo(map);
       }
 
@@ -102,7 +107,7 @@ export function useMapSync({ fridges }: UseMapSyncProps) {
         isFirstLocationFound.current = false;
 
         // If they already have a selected fridge, let that logic handle the pan
-        if (selectedFridgeId) return;
+        if (selectedFridgeIdRef.current) return;
 
         const defaultCenter: [number, number] = [40.697759, -73.927282];
         const maxDistMeters = 200000;
@@ -147,7 +152,7 @@ export function useMapSync({ fridges }: UseMapSyncProps) {
         }
       }
     },
-    [map, selectedFridgeId, setUserLocation]
+    [map, setUserLocation]
   );
 
   useEffect(() => {

@@ -4,12 +4,46 @@ import {
   useDeferredValue,
   useRef,
   useEffect,
+  useCallback,
   startTransition,
 } from 'react';
 import Fuse from 'fuse.js';
 import { Fridge } from 'types/domain';
 import { useMapStore } from 'store/useMapStore';
 import { deltaInMeters } from 'utils/geo';
+
+export type FoodLevelFilter = 'full' | 'many' | 'few' | 'empty';
+export type ConditionFilter =
+  | 'no-data'
+  | 'not-at-location'
+  | 'dirty'
+  | 'out-of-order'
+  | 'ghost';
+export type FilterKey = FoodLevelFilter | ConditionFilter;
+
+function fridgeMatchesFilter(fridge: Fridge, filter: FilterKey): boolean {
+  const r = fridge.report;
+  switch (filter) {
+    case 'no-data':
+      return r === null;
+    case 'not-at-location':
+      return r?.condition === 'not at location';
+    case 'dirty':
+      return r?.condition === 'dirty';
+    case 'out-of-order':
+      return r?.condition === 'out of order';
+    case 'ghost':
+      return r?.condition === 'ghost';
+    case 'full':
+      return r !== null && r.foodPercentage === 3;
+    case 'many':
+      return r !== null && r.foodPercentage === 2;
+    case 'few':
+      return r !== null && r.foodPercentage === 1;
+    case 'empty':
+      return r !== null && r.foodPercentage === 0;
+  }
+}
 
 export function useFridgeSearch(fridges: Fridge[]) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,6 +54,16 @@ export function useFridgeSearch(fridges: Fridge[]) {
   // It completely eliminates the need for arbitrary `setTimeout` debounces.
   const deferredQuery = useDeferredValue(searchQuery);
   const isSearching = searchQuery !== deferredQuery;
+
+  const [activeFilters, setActiveFilters] = useState<Set<FilterKey>>(new Set());
+  const toggleFilter = useCallback((filter: FilterKey) => {
+    setActiveFilters((prev) => {
+      const next = new Set(prev);
+      if (next.has(filter)) next.delete(filter);
+      else next.add(filter);
+      return next;
+    });
+  }, []);
 
   // Subscribe to center changes via vanilla Zustand subscribe instead of a React selector.
   // This avoids re-rendering BrowsePage on every setCenter call (which fires after every pan).
@@ -75,13 +119,7 @@ export function useFridgeSearch(fridges: Fridge[]) {
 
   const fuse = useMemo(() => {
     return new Fuse(fridges, {
-      keys: [
-        'name',
-        'location.street',
-        'location.city',
-        'location.zip',
-        'notes',
-      ],
+      keys: ['name', 'location.street', 'location.city', 'location.zip'],
       threshold: 0.3,
       distance: 100,
     });
@@ -112,15 +150,47 @@ export function useFridgeSearch(fridges: Fridge[]) {
       resultList = fuse.search(deferredQuery).map((result) => result.item);
     }
 
+    // 3. Two-gate filter:
+    //   Ghost gate  — ghost fridges are hidden by default; only shown when explicitly opted in.
+    //   Regular gate — non-ghost fridges pass freely when no non-ghost filters are active,
+    //                  or must match at least one active non-ghost filter.
+    const showGhost = activeFilters.has('ghost');
+    const nonGhostFilters = ([...activeFilters] as FilterKey[]).filter(
+      (f) => f !== 'ghost'
+    );
+    resultList = resultList.filter((fridge) => {
+      const isGhost = fridge.report?.condition === 'ghost';
+      if (isGhost) return showGhost;
+      if (nonGhostFilters.length > 0) {
+        return nonGhostFilters.some((f) => fridgeMatchesFilter(fridge, f));
+      }
+      return true;
+    });
+
     return resultList;
-  }, [deferredQuery, fuse, fridges, sortCenter]);
+  }, [deferredQuery, fuse, fridges, sortCenter, activeFilters]);
 
   // Filtered but NOT sorted — order is irrelevant for map markers.
   // Keeping this separate means sort-only reorders don't bust React.memo on the map.
   const mapFridges = useMemo(() => {
-    if (!deferredQuery) return fridges;
-    return fuse.search(deferredQuery).map((result) => result.item);
-  }, [deferredQuery, fuse, fridges]);
+    let result = fridges;
+    if (deferredQuery) {
+      result = fuse.search(deferredQuery).map((r) => r.item);
+    }
+    const showGhost = activeFilters.has('ghost');
+    const nonGhostFilters = ([...activeFilters] as FilterKey[]).filter(
+      (f) => f !== 'ghost'
+    );
+    result = result.filter((fridge) => {
+      const isGhost = fridge.report?.condition === 'ghost';
+      if (isGhost) return showGhost;
+      if (nonGhostFilters.length > 0) {
+        return nonGhostFilters.some((f) => fridgeMatchesFilter(fridge, f));
+      }
+      return true;
+    });
+    return result;
+  }, [deferredQuery, fuse, fridges, activeFilters]);
 
   return {
     searchQuery,
@@ -128,5 +198,7 @@ export function useFridgeSearch(fridges: Fridge[]) {
     filteredFridges,
     mapFridges,
     isSearching,
+    activeFilters,
+    toggleFilter,
   };
 }

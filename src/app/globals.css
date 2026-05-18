@@ -72,16 +72,6 @@ body {
   line-height: 26px !important;
 }
 
-/* Offset Leaflet's zoom and locate controls so they don't hide behind mobile floating pill */
-.leaflet-control-zoom {
-  margin-bottom: 85px !important;
-}
-@media (min-width: 900px) {
-  .leaflet-control-zoom {
-    margin-bottom: 20px !important;
-  }
-}
-
 /* Smooth zoom transition */
 .leaflet-fade-anim .leaflet-tile,
 .leaflet-zoom-anim .leaflet-tile {

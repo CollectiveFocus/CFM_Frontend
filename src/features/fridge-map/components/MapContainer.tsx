@@ -4,7 +4,6 @@ import React from 'react';
 import {
   MapContainer as LeafletMapContainer,
   TileLayer,
-  ZoomControl,
   useMap,
 } from 'react-leaflet';
 import { Box } from '@mui/material';
@@ -13,11 +12,26 @@ import { MarkerLayer } from './layers/MarkerLayer';
 import { LegendDrawer } from './LegendDrawer';
 import { useMapSync } from '../hooks/useMapSync';
 import { useMapStore } from 'store/useMapStore';
-import { LocateUserControl } from './LocateUserControl';
 
 interface MapProps {
   fridges: Fridge[];
   onMarkerClick?: (id: string) => void;
+  mapRef?: React.RefObject<import('leaflet').Map | null>;
+}
+
+function MapRefCapture({
+  mapRef,
+}: {
+  mapRef: React.RefObject<import('leaflet').Map | null>;
+}): null {
+  const map = useMap();
+  React.useEffect(() => {
+    mapRef.current = map;
+    return () => {
+      mapRef.current = null;
+    };
+  }, [map, mapRef]);
+  return null;
 }
 
 const defaultMapCenter: [number, number] = [40.697759, -73.927282];
@@ -34,6 +48,8 @@ function MapController({ fridges }: MapControllerProps): null {
   const map = useMap();
 
   React.useEffect(() => {
+    // Auto-locate on mount for browsers that allow it (Chrome, Firefox).
+    // Safari silently ignores this — users can tap the crosshair button instead.
     locateUser();
 
     let moveTimeout: NodeJS.Timeout;
@@ -62,6 +78,7 @@ function MapController({ fridges }: MapControllerProps): null {
 export function MapContainer({
   fridges,
   onMarkerClick,
+  mapRef,
 }: MapProps): React.ReactElement | null {
   const [lng, setLng] = React.useState('en');
   const [isClient, setIsClient] = React.useState(false);
@@ -91,8 +108,7 @@ export function MapContainer({
         scrollWheelZoom={true}
         zoomControl={false}
       >
-        <ZoomControl position="bottomright" />
-        <LocateUserControl />
+        {mapRef && <MapRefCapture mapRef={mapRef} />}
         <MapController fridges={fridges} />
         <TileLayer
           attribution="&copy; Fridge Finder"

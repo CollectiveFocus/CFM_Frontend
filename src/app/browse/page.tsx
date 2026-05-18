@@ -1,10 +1,28 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import type { Map as LeafletMap } from 'leaflet';
 import dynamic from 'next/dynamic';
-import { Box, Typography, Divider } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Divider,
+  Fab,
+  Badge,
+  Stack,
+  Tooltip,
+} from '@mui/material';
+import {
+  Tune as TuneIcon,
+  MyLocation as MyLocationIcon,
+} from '@mui/icons-material';
 
-import { FridgeList, SearchMap, useFridgeSearch } from 'features/fridge-list';
+import {
+  FridgeList,
+  FilterPills,
+  SearchMap,
+  useFridgeSearch,
+} from 'features/fridge-list';
 import {
   MapLegendPinLocationIcon,
   MapLegendConditionDirtyIcon,
@@ -102,8 +120,40 @@ const MemoizedMap = React.memo(DynamicMap);
 export default function BrowsePage(): React.ReactElement {
   const { fridges, status, error, fetchFridges } = useFridgeStore();
   const setSelectedFridgeId = useMapStore((state) => state.setSelectedFridgeId);
+  const userLocation = useMapStore((state) => state.userLocation);
   const [currentView, setCurrentView] = useState<MapView>('map');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+  const mapRef = useRef<LeafletMap | null>(null);
+
+  const handleLocate = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const map = mapRef.current;
+      if (!map) return;
+      if (userLocation) {
+        map.flyTo(userLocation, 15, { animate: true, duration: 1.0 });
+        return;
+      }
+      if (!navigator.geolocation) return;
+      navigator.geolocation.getCurrentPosition(
+        () => {
+          map.stopLocate();
+          map.locate({
+            watch: true,
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 15000,
+            setView: true,
+            maxZoom: 15,
+          });
+        },
+        () => {}
+      );
+    },
+    [userLocation]
+  );
 
   const {
     searchQuery,
@@ -111,6 +161,8 @@ export default function BrowsePage(): React.ReactElement {
     filteredFridges,
     mapFridges,
     isSearching,
+    activeFilters,
+    toggleFilter,
   } = useFridgeSearch(fridges);
 
   useEffect(() => {
@@ -150,6 +202,13 @@ export default function BrowsePage(): React.ReactElement {
               onFocus={() => setIsDropdownOpen(true)}
               hideCloseIcon
             />
+            {showFilters && (
+              <FilterPills
+                activeFilters={activeFilters}
+                onToggle={toggleFilter}
+                sx={{ mt: 1 }}
+              />
+            )}
             {searchQuery.length > 0 && isDropdownOpen && (
               <Box
                 sx={{
@@ -277,6 +336,11 @@ export default function BrowsePage(): React.ReactElement {
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
             hideCloseIcon
+            sx={{ mb: 1.5 }}
+          />
+          <FilterPills
+            activeFilters={activeFilters}
+            onToggle={toggleFilter}
             sx={{ mb: { xs: 2, md: 3 } }}
           />
         </Box>
@@ -314,7 +378,77 @@ export default function BrowsePage(): React.ReactElement {
           height: '100%',
         }}
       >
-        <MemoizedMap fridges={mapFridges} onMarkerClick={setSelectedFridgeId} />
+        <MemoizedMap
+          fridges={mapFridges}
+          onMarkerClick={setSelectedFridgeId}
+          mapRef={mapRef}
+        />
+        {/* Floating button stack — bottom-right corner of map */}
+        <Stack
+          direction="column"
+          spacing={1.5}
+          sx={{
+            position: 'absolute',
+            bottom: 32,
+            right: 10,
+            zIndex: 1000,
+            alignItems: 'center',
+          }}
+        >
+          {/* Locate button — always visible */}
+          <Tooltip title="Find my location" placement="left">
+            <Box
+              onDoubleClick={(e) => e.stopPropagation()}
+              onMouseDown={(e) => e.stopPropagation()}
+              onMouseUp={(e) => e.stopPropagation()}
+            >
+              <Fab
+                onClick={handleLocate}
+                size="medium"
+                aria-label="Find my location"
+                sx={{
+                  backgroundColor: 'white',
+                  color: userLocation ? 'primary.main' : 'text.secondary',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                  width: 48,
+                  height: 48,
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    boxShadow: 'none',
+                  },
+                }}
+              >
+                <MyLocationIcon sx={{ fontSize: 24 }} />
+              </Fab>
+            </Box>
+          </Tooltip>
+          {/* Filter toggle — mobile only */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <Badge badgeContent={activeFilters.size} color="primary">
+              <Fab
+                size="medium"
+                onClick={() => setShowFilters((p) => !p)}
+                aria-label="Toggle filters"
+                sx={{
+                  backgroundColor: showFilters ? 'primary.main' : 'white',
+                  backdropFilter: 'blur(8px)',
+                  color: showFilters ? 'white' : 'text.secondary',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                  width: 48,
+                  height: 48,
+                  '&:hover, &:focus, &:focus-visible, &.Mui-focusVisible, &:active':
+                    {
+                      backgroundColor: showFilters ? 'primary.main' : 'white',
+                      color: showFilters ? 'white' : 'text.secondary',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                    },
+                }}
+              >
+                <TuneIcon sx={{ fontSize: 24 }} />
+              </Fab>
+            </Badge>
+          </Box>
+        </Stack>
       </Box>
 
       {/* Map Toggle (Mobile Only) */}

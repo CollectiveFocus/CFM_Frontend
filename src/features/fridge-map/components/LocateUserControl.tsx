@@ -2,7 +2,7 @@ import React from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { createPortal } from 'react-dom';
-import { IconButton, Tooltip } from '@mui/material';
+import { Box, Fab, Tooltip } from '@mui/material';
 import { MyLocation as MyLocationIcon } from '@mui/icons-material';
 import { useMapStore } from 'store/useMapStore';
 
@@ -45,20 +45,32 @@ export function LocateUserControl({
 
       if (userLocation) {
         map.flyTo(userLocation, 15, { animate: true, duration: 1.0 });
-      } else {
-        const isSecureContext =
-          window.location.protocol === 'https:' ||
-          window.location.hostname === 'localhost' ||
-          window.location.hostname === '127.0.0.1';
-
-        if (!isSecureContext) {
-          alert(
-            'Location access is blocked by your browser on insecure networks. To test live location on a phone, use a secure HTTPS tunnel (like ngrok) or localhost.'
-          );
-          return;
-        }
-        map.locate({ setView: true, maxZoom: 15, enableHighAccuracy: false });
+        return;
       }
+
+      if (!navigator.geolocation) return;
+
+      // Call navigator.geolocation directly first — Safari requires geolocation to be
+      // initiated in the synchronous call stack of a user gesture. Leaflet's map.locate()
+      // does internal processing before reaching navigator.geolocation, which can break
+      // Safari's gesture chain. This direct call triggers the iOS permission prompt reliably.
+      navigator.geolocation.getCurrentPosition(
+        () => {
+          // Permission granted — start Leaflet's full watch mode so the blue dot appears
+          map.stopLocate();
+          map.locate({
+            watch: true,
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 15000,
+            setView: true,
+            maxZoom: 15,
+          });
+        },
+        () => {
+          // Permission denied or error — nothing to do
+        }
+      );
     },
     [map, userLocation]
   );
@@ -66,27 +78,31 @@ export function LocateUserControl({
   if (!container) return null;
 
   return createPortal(
-    <Tooltip title="Locate Me" placement="left">
-      <IconButton
-        onClick={handleLocate}
+    <Tooltip title="Find my location" placement="left">
+      <Box
         onDoubleClick={(e) => e.stopPropagation()}
         onMouseDown={(e) => e.stopPropagation()}
         onMouseUp={(e) => e.stopPropagation()}
-        sx={{
-          backgroundColor: 'background.paper',
-          boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
-          borderRadius: '4px',
-          width: 34,
-          height: 34,
-          border: '2px solid rgba(0,0,0,0.2)',
-          '&:hover': {
-            backgroundColor: '#f4f4f4',
-          },
-        }}
-        aria-label="Locate me"
       >
-        <MyLocationIcon sx={{ color: 'text.primary', fontSize: 18 }} />
-      </IconButton>
+        <Fab
+          onClick={handleLocate}
+          size="small"
+          aria-label="Find my location"
+          sx={{
+            backgroundColor: 'white',
+            color: userLocation ? 'primary.main' : 'text.secondary',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+            width: 40,
+            height: 40,
+            '&:hover': {
+              backgroundColor: '#f0f4ff',
+              color: 'primary.main',
+            },
+          }}
+        >
+          <MyLocationIcon sx={{ fontSize: 20 }} />
+        </Fab>
+      </Box>
     </Tooltip>,
     container
   );
