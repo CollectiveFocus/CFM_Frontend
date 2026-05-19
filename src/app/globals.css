@@ -64,6 +64,11 @@ body {
     'TeX Gyre', TeXGyre, Arial, sans-serif !important;
 }
 
+/* Remove popup fade-in/out animation so it closes instantly */
+.leaflet-fade-anim .leaflet-popup {
+  transition: none !important;
+}
+
 /* Larger popup close button */
 .leaflet-popup-close-button {
   font-size: 22px !important;

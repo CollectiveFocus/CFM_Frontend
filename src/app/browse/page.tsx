@@ -165,6 +165,15 @@ export default function BrowsePage(): React.ReactElement {
     toggleFilter,
   } = useFridgeSearch(fridges);
 
+  // Snapshot of mapFridges that only updates when the map is visible.
+  const [mapFridgesSnapshot, setMapFridgesSnapshot] =
+    useState<Fridge[]>(mapFridges);
+  useEffect(() => {
+    if (currentView === 'map') {
+      setMapFridgesSnapshot(mapFridges);
+    }
+  }, [mapFridges, currentView]);
+
   useEffect(() => {
     fetchFridges();
   }, [fetchFridges]);
@@ -379,7 +388,7 @@ export default function BrowsePage(): React.ReactElement {
         }}
       >
         <MemoizedMap
-          fridges={mapFridges}
+          fridges={mapFridgesSnapshot}
           onMarkerClick={setSelectedFridgeId}
           mapRef={mapRef}
         />
