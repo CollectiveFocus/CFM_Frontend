@@ -79,7 +79,7 @@ export function PageFooter(): React.ReactElement {
               variant="body2"
               fontWeight={600}
             >
-              Guidelines
+              Best Practices
             </MuiLink>
             <MuiLink
               component={NextLink}

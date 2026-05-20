@@ -37,6 +37,8 @@ export const designColor = {
   blue: {
     dark: '#1543D4',
     darkShade: ['#040B25'],
+    navy: '#002F64',
+    pale: '#D6E3FF',
     light: '#88B3FF',
     disabled: '#8CA0EA',
     shadow: 'rgba(21, 67, 212, 0.2)',

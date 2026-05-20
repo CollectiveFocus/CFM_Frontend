@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Box, Typography, Card, CardContent, CardActions } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { ButtonLink } from 'components/ui';
 
 interface ParagraphCardProps {
@@ -16,6 +16,9 @@ interface ParagraphCardProps {
   title: string;
   text: string;
   link: string;
+  buttonTitle?: string;
+  buttonSx?: object;
+  imgMaxWidth?: number;
 }
 
 export function ParagraphCard({
@@ -24,6 +27,9 @@ export function ParagraphCard({
   title,
   text,
   link,
+  buttonTitle = 'Learn More',
+  buttonSx,
+  imgMaxWidth,
 }: ParagraphCardProps): React.ReactElement {
   if (variant === 'h2') {
     return (
@@ -43,7 +49,7 @@ export function ParagraphCard({
           <Typography variant="h2">{title}</Typography>
         </Box>
 
-        <Box sx={{ width: '100%', maxWidth: 400, mx: 'auto' }}>
+        <Box sx={{ width: '100%', maxWidth: imgMaxWidth ?? 400, mx: 'auto' }}>
           <Image
             src={img.src}
             alt={img.alt}
@@ -71,9 +77,18 @@ export function ParagraphCard({
           <ButtonLink
             to={link}
             variant="outlined"
-            aria-label={title}
-            sx={{ width: '100%', maxWidth: '345px', mt: 4 }}
-            title={'LEARN MORE'}
+            aria-label={buttonTitle}
+            sx={{
+              width: '100%',
+              maxWidth: '345px',
+              mt: 4,
+              textTransform: 'none',
+              fontWeight: 600,
+              '&.MuiButton-outlined': { border: 'none' },
+              '&:hover': { opacity: 0.9 },
+              ...buttonSx,
+            }}
+            title={buttonTitle}
           />
         </Box>
       </Box>
@@ -98,7 +113,7 @@ export function ParagraphCard({
             height={img.height}
             style={{
               width: '100%',
-              maxWidth: '160px',
+              maxWidth: imgMaxWidth ? `${imgMaxWidth}px` : '160px',
               height: 'auto',
               objectFit: 'contain',
             }}
@@ -118,12 +133,17 @@ export function ParagraphCard({
           <ButtonLink
             to={link}
             variant="outlined"
-            aria-label={title}
+            aria-label={buttonTitle}
             sx={{
               width: '100%',
               mt: 'auto',
+              textTransform: 'none',
+              fontWeight: 600,
+              '&.MuiButton-outlined': { border: 'none' },
+              '&:hover': { opacity: 0.9 },
+              ...buttonSx,
             }}
-            title={'LEARN MORE'}
+            title={buttonTitle}
           />
         </Box>
       </Box>

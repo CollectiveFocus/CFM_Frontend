@@ -12,6 +12,7 @@ interface PageHeroProps {
   };
   title?: string;
   subtitle?: string;
+  overlay?: boolean;
   button?: {
     to: string | object;
     'aria-label': string;
@@ -20,10 +21,14 @@ interface PageHeroProps {
   };
 }
 
+// Opacity for the hero overlay — lightens the image to improve text/button contrast
+const HERO_OVERLAY_OPACITY = 0.4;
+
 export function PageHero({
   img,
   title,
   subtitle,
+  overlay,
   button,
 }: PageHeroProps): React.ReactElement {
   return (
@@ -46,6 +51,18 @@ export function PageHero({
         alt={img.alt}
         src={img.src}
       />
+
+      {/* Light overlay to improve button contrast */}
+      {overlay && (
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            backgroundColor: `rgba(255, 255, 255, ${HERO_OVERLAY_OPACITY})`,
+            zIndex: 0,
+          }}
+        />
+      )}
 
       <Container
         maxWidth="lg"
