@@ -6,6 +6,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ResponsiveAppBar } from 'features/navigation';
 import { Providers } from 'components/shared/Providers';
 import { FooterWrapper } from 'components/layout';
+import { designColor } from 'theme/palette';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   initialScale: 1,
   width: 'device-width',
+  themeColor: designColor.blue.light,
 };
 
 export default function RootLayout({
