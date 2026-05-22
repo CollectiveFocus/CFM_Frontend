@@ -136,21 +136,14 @@ export default function BrowsePage(): React.ReactElement {
         map.flyTo(userLocation, 15, { animate: true, duration: 1.0 });
         return;
       }
-      if (!navigator.geolocation) return;
-      navigator.geolocation.getCurrentPosition(
-        () => {
-          map.stopLocate();
-          map.locate({
-            watch: true,
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 15000,
-            setView: true,
-            maxZoom: 15,
-          });
-        },
-        () => {}
-      );
+      map.locate({
+        watch: true,
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 15000,
+        setView: true,
+        maxZoom: 15,
+      });
     },
     [userLocation]
   );
