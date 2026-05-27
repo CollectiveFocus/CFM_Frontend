@@ -1,4 +1,5 @@
 import React from 'react';
+import NextLink from 'next/link';
 import { Grid, Typography, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
 import { PamphletParagraph, ParagraphCard } from 'features/marketing';
@@ -107,9 +108,15 @@ export default function HomePage(): React.ReactElement {
       <PageHero {...pageHero} overlay />
       <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph}>
         <Typography variant="body1" sx={{ lineHeight: 1.7, mb: 2 }}>
-          Fridge Finder can help you find community fridges containing free food
-          near you. Click <strong>Find A Fridge</strong> to explore the full map
-          and list of fridges.
+          Fridge Finder helps you find community fridges with free food near
+          you. Select <strong>Find A Fridge</strong> to explore the full map and
+          list of fridges. New here? Read our{' '}
+          <NextLink
+            href="/pamphlet/best-practices"
+            style={{ color: designColor.blue.interactive }}
+          >
+            <strong>Best Practices</strong>
+          </NextLink>
         </Typography>
       </PamphletParagraph>
 

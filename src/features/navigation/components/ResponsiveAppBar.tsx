@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import {
   AppBar,
   Box,
@@ -17,16 +18,21 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  ChevronRight as ChevronRightIcon,
+} from '@mui/icons-material';
+import { alpha } from '@mui/material/styles';
 
 import { NextLink } from 'components/ui';
 import { useAuthStore } from 'store/useAuthStore';
+import { designColor } from 'theme/palette';
 import {
   AboutIcon,
   ContactUsIcon,
   FridgeFindIcon,
   GetInvolvedIcon,
-  GuidelineIcon,
   HomeIcon,
   MyFridgesIcon,
 } from 'theme/icons';
@@ -35,11 +41,6 @@ const menuItems = [
   { icon: HomeIcon, title: 'Home', link: '/' },
   { icon: FridgeFindIcon, title: 'Find a Fridge', link: '/browse' },
   { icon: AboutIcon, title: 'About', link: '/pamphlet/about' },
-  {
-    icon: GuidelineIcon,
-    title: 'Best Practices',
-    link: '/pamphlet/best-practices',
-  },
   {
     icon: GetInvolvedIcon,
     title: 'Get Involved',
@@ -69,13 +70,18 @@ const iconCircleBaseSx = {
 
 const navLabelSx = {
   color: 'text.primary',
-  fontWeight: 550,
+  fontWeight: 500,
   fontSize: '0.6875rem',
   lineHeight: 1.2,
   textAlign: 'center',
   whiteSpace: 'normal',
   wordBreak: 'break-word',
 } as const;
+
+const mobileActiveBg = alpha(designColor.blue.dark, 0.06);
+const mobileActiveHoverBg = alpha(designColor.blue.dark, 0.09);
+const mobileHoverBg = alpha('#000000', 0.04);
+const navDividerColor = alpha('#000000', 0.12);
 
 function PlumAvatar({ size = 40 }: { size?: number }): React.ReactElement {
   return (
@@ -112,10 +118,9 @@ function ProfileButton({ size = 40 }: ProfileButtonProps): React.ReactElement {
         sx={{
           p: 0,
           borderRadius: '50%',
-          transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          transition: 'transform 0.2s ease',
           '&:hover': {
             transform: 'scale(1.08)',
-            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
           },
         }}
       >
@@ -129,19 +134,23 @@ const sxDesktopIcon: { sx: SvgIconProps['sx'] } = {
   sx: { width: '40px', height: '40px' },
 };
 const sxMobileIcon: { sx: SvgIconProps['sx'] } = {
-  sx: { width: '36px', height: '36px' },
+  sx: { width: '44px', height: '44px' },
 };
 
 interface NavDesktopItemProps {
-  icon: React.ComponentType<SvgIconProps>;
+  icon?: React.ComponentType<SvgIconProps>;
+  iconNode?: React.ReactNode;
   title: string;
   link: string;
+  isActive?: boolean;
 }
 
 function NavDesktopItem({
   icon: Icon,
+  iconNode,
   title,
   link,
+  isActive = false,
 }: NavDesktopItemProps): React.ReactElement {
   return (
     <IconButton
@@ -156,9 +165,10 @@ function NavDesktopItem({
         flexDirection: 'column',
         alignItems: 'center',
         gap: 0.5,
-        borderRadius: '8px',
+        borderRadius: '10px',
         width: '78px',
         height: 'auto',
+        transform: isActive ? 'scale(1.08)' : 'scale(1)',
         transition: 'transform 0.2s ease',
         '&:hover': {
           backgroundColor: 'transparent',
@@ -166,10 +176,19 @@ function NavDesktopItem({
         },
       }}
     >
-      <Box sx={{ ...iconCircleBaseSx, width: '42px', height: '42px' }}>
-        <Icon {...sxDesktopIcon} />
-      </Box>
-      <Typography variant="caption" sx={navLabelSx}>
+      {iconNode ?? (
+        <Box sx={{ ...iconCircleBaseSx, width: '42px', height: '42px' }}>
+          {Icon && <Icon {...sxDesktopIcon} />}
+        </Box>
+      )}
+      <Typography
+        variant="caption"
+        sx={{
+          ...navLabelSx,
+          color: isActive ? designColor.blue.dark : 'text.primary',
+          fontWeight: isActive ? 600 : 500,
+        }}
+      >
         {title}
       </Typography>
     </IconButton>
@@ -183,6 +202,7 @@ interface MenuDesktopProps {
 function MenuDesktop({
   isAuthenticated,
 }: MenuDesktopProps): React.ReactElement {
+  const pathname = usePathname();
   return (
     <>
       {menuItems.slice(menuDesktopFirstItem).map((item) => (
@@ -191,29 +211,35 @@ function MenuDesktop({
           icon={item.icon}
           title={item.title}
           link={item.link}
+          isActive={pathname === item.link}
         />
       ))}
+      {isAuthenticated && (
+        <Divider
+          orientation="vertical"
+          flexItem
+          sx={{
+            mx: 1.5,
+            borderColor: navDividerColor,
+            alignSelf: 'center',
+            height: 40,
+          }}
+        />
+      )}
       {isAuthenticated ? (
         <>
           <NavDesktopItem
             icon={MyFridgesIcon}
             title="My Fridges"
             link="/my-fridges"
+            isActive={pathname === '/my-fridges'}
           />
-          <Box
-            sx={{
-              ml: 5,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 0.5,
-            }}
-          >
-            <ProfileButton size={42} />
-            <Typography variant="caption" sx={navLabelSx}>
-              Profile
-            </Typography>
-          </Box>
+          <NavDesktopItem
+            iconNode={<PlumAvatar size={42} />}
+            title="Profile"
+            link="/profile"
+            isActive={pathname === '/profile'}
+          />
         </>
       ) : (
         <Button
@@ -230,6 +256,60 @@ function MenuDesktop({
   );
 }
 
+interface MobileMenuRowProps {
+  label: string;
+  link: string;
+  isActive: boolean;
+  icon: React.ReactNode;
+  onClick: () => void;
+}
+
+function MobileMenuRow({
+  label,
+  link,
+  isActive,
+  icon,
+  onClick,
+}: MobileMenuRowProps): React.ReactElement {
+  return (
+    <ListItem disablePadding>
+      <IconButton
+        aria-label={label}
+        component={NextLink}
+        href={link}
+        onClick={onClick}
+        sx={{
+          width: '100%',
+          justifyContent: 'space-between',
+          borderRadius: 0,
+          px: 4,
+          py: 2,
+          borderLeft: '3px solid',
+          borderColor: isActive ? 'primary.main' : 'transparent',
+          bgcolor: isActive ? mobileActiveBg : 'transparent',
+          '&:hover': {
+            bgcolor: isActive ? mobileActiveHoverBg : mobileHoverBg,
+          },
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <ListItemIcon sx={{ minWidth: 60 }}>{icon}</ListItemIcon>
+          <Typography
+            sx={{
+              color: isActive ? designColor.blue.dark : 'text.primary',
+              fontWeight: isActive ? 600 : 500,
+              fontSize: '1.0625rem',
+            }}
+          >
+            {label}
+          </Typography>
+        </Box>
+        <ChevronRightIcon sx={{ color: 'text.secondary', opacity: 0.4 }} />
+      </IconButton>
+    </ListItem>
+  );
+}
+
 interface MenuMobileProps {
   onItemClick: () => void;
   isAuthenticated: boolean;
@@ -239,6 +319,7 @@ function MenuMobile({
   onItemClick,
   isAuthenticated,
 }: MenuMobileProps): React.ReactElement {
+  const pathname = usePathname();
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, pt: 1.5 }}>
@@ -252,32 +333,18 @@ function MenuMobile({
       </Box>
       <List disablePadding>
         {menuItems.map(({ icon: Icon, title, link }) => (
-          <ListItem key={title} disablePadding>
-            <IconButton
-              aria-label={title}
-              component={NextLink}
-              href={link}
-              onClick={onItemClick}
-              sx={{
-                width: '100%',
-                justifyContent: 'flex-start',
-                borderRadius: 0,
-                px: 4,
-                py: 2,
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 56 }}>
-                <Box
-                  sx={{ ...iconCircleBaseSx, width: '40px', height: '40px' }}
-                >
-                  <Icon {...sxMobileIcon} />
-                </Box>
-              </ListItemIcon>
-              <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>
-                {title}
-              </Typography>
-            </IconButton>
-          </ListItem>
+          <MobileMenuRow
+            key={title}
+            label={title}
+            link={link}
+            isActive={pathname === link}
+            icon={
+              <Box sx={{ ...iconCircleBaseSx, width: '48px', height: '48px' }}>
+                <Icon {...sxMobileIcon} />
+              </Box>
+            }
+            onClick={onItemClick}
+          />
         ))}
       </List>
 
@@ -300,54 +367,24 @@ function MenuMobile({
           >
             My Account
           </Typography>
-          <ListItem disablePadding>
-            <IconButton
-              aria-label="My Fridges"
-              component={NextLink}
-              href="/my-fridges"
-              onClick={onItemClick}
-              sx={{
-                width: '100%',
-                justifyContent: 'flex-start',
-                borderRadius: 0,
-                px: 4,
-                py: 2,
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 56 }}>
-                <Box
-                  sx={{ ...iconCircleBaseSx, width: '40px', height: '40px' }}
-                >
-                  <MyFridgesIcon sx={{ width: '36px', height: '36px' }} />
-                </Box>
-              </ListItemIcon>
-              <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>
-                My Fridges
-              </Typography>
-            </IconButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <IconButton
-              aria-label="Profile"
-              component={NextLink}
-              href="/profile"
-              onClick={onItemClick}
-              sx={{
-                width: '100%',
-                justifyContent: 'flex-start',
-                borderRadius: 0,
-                px: 4,
-                py: 2,
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 56 }}>
-                <PlumAvatar size={40} />
-              </ListItemIcon>
-              <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>
-                Profile
-              </Typography>
-            </IconButton>
-          </ListItem>
+          <MobileMenuRow
+            label="My Fridges"
+            link="/my-fridges"
+            isActive={pathname === '/my-fridges'}
+            icon={
+              <Box sx={{ ...iconCircleBaseSx, width: '48px', height: '48px' }}>
+                <MyFridgesIcon {...sxMobileIcon} />
+              </Box>
+            }
+            onClick={onItemClick}
+          />
+          <MobileMenuRow
+            label="Profile"
+            link="/profile"
+            isActive={pathname === '/profile'}
+            icon={<PlumAvatar size={48} />}
+            onClick={onItemClick}
+          />
         </Box>
       ) : (
         <Box sx={{ mt: 'auto', px: 8, mb: 8 }}>
