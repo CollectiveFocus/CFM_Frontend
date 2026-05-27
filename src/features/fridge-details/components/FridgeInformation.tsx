@@ -16,14 +16,17 @@ import { ButtonLink, SoftWrap } from 'components/ui';
 import { BackLinkButton } from 'components/shared/BackLinkButton';
 import { ShareButton } from './ShareButton';
 import { FollowButton } from './FollowButton';
+import { LocalTimestamp } from './LocalTimestamp';
 import { Fridge, FridgeReport, Maintainer } from 'types/domain';
 import {
   MapLegendConditionDirtyIcon,
   MapLegendConditionOutOfOrderIcon,
+  MapLegendPinLocationIcon,
   MapLegendPinNotAtLocationIcon,
   MapLegendPinGhostIcon,
 } from 'theme/icons';
 import { pinColor, designColor } from 'theme/palette';
+import { foodLevelConfig } from 'config/foodLevel';
 
 // ---------------------------------------------------------------------------
 // Condition map
@@ -40,71 +43,6 @@ const enumCondition: Record<string, { text: string }> = {
 // Condition icons (imported from theme/icons)
 // ---------------------------------------------------------------------------
 
-function FoodLevelIcon({
-  foodLevel,
-  style,
-}: {
-  foodLevel: string;
-  style?: React.CSSProperties;
-}): React.ReactElement {
-  const levelLower = foodLevel.toLowerCase();
-
-  const getMouthPath = (): string => {
-    if (levelLower.includes('full') && !levelLower.includes('half'))
-      return 'M8.5 13c2.5 2.5 5 2.5 7 0';
-    if (levelLower.includes('many'))
-      return 'M9.132 13.372c1.988 1.727 4.032 1.526 5.736 0';
-    if (levelLower.includes('half')) return 'M9.5 13.5c1.5 1.2 3 1.2 4.5 0';
-    if (levelLower.includes('low') || levelLower.includes('few'))
-      return 'M9.5 14c1.5 -0.5 3 -0.5 4.5 0';
-    if (levelLower.includes('empty')) return 'M9 14.5c1.5 -1.5 4 -1.5 5.5 0';
-    return 'M9.5 13.5c1.5 0 3 0 4.5 0';
-  };
-
-  const getBg = (): string => {
-    if (levelLower.includes('full') && !levelLower.includes('half'))
-      return pinColor.itemsFull;
-    if (levelLower.includes('half')) return pinColor.itemsMany;
-    if (levelLower.includes('low') || levelLower.includes('few'))
-      return pinColor.itemsFew;
-    if (levelLower.includes('empty')) return pinColor.itemsEmpty;
-    if (levelLower.includes('many')) return pinColor.itemsMany;
-    return pinColor.itemsEmpty;
-  };
-
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="5.5 3.5 13 17"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={style}
-    >
-      <rect
-        x="6"
-        y="4"
-        width="12"
-        height="16"
-        rx="2"
-        stroke={designColor.neroGray}
-        strokeWidth="1"
-        fill={getBg()}
-      />
-      <path
-        stroke={designColor.neroGray}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        d={getMouthPath()}
-      />
-      <circle cx="8.5" cy="11.5" r="1.19" fill={designColor.red.danger} />
-      <circle cx="15.5" cy="11.5" r="1.19" fill={designColor.red.danger} />
-      <circle cx="10" cy="9" r=".555" fill={designColor.neroGray} />
-      <circle cx="14" cy="9" r=".555" fill={designColor.neroGray} />
-    </svg>
-  );
-}
-
 function ConditionIcon({
   condition,
 }: {
@@ -114,18 +52,30 @@ function ConditionIcon({
   if (c === 'dirty')
     return (
       <MapLegendConditionDirtyIcon
-        sx={{ width: 28, height: 28, color: '#666666', flexShrink: 0 }}
+        sx={{
+          width: 28,
+          height: 28,
+          color: designColor.conditionIcon,
+          flexShrink: 0,
+        }}
       />
     );
   if (c === 'out of order')
     return (
       <MapLegendConditionOutOfOrderIcon
-        sx={{ width: 28, height: 28, color: '#666666', flexShrink: 0 }}
+        sx={{
+          width: 28,
+          height: 28,
+          color: designColor.conditionIcon,
+          flexShrink: 0,
+        }}
       />
     );
   if (c === 'good')
     return (
-      <CheckCircleIcon sx={{ color: '#10B981', fontSize: 28, flexShrink: 0 }} />
+      <CheckCircleIcon
+        sx={{ color: designColor.green.success, fontSize: 28, flexShrink: 0 }}
+      />
     );
   if (c === 'not at location')
     return (
@@ -299,12 +249,47 @@ function LinkLine({
 }
 
 // ---------------------------------------------------------------------------
+// Section label — small uppercase heading with indented content beneath it
+// ---------------------------------------------------------------------------
+function SectionDivider({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}): React.ReactElement {
+  return (
+    <Box>
+      <Stack direction="row" alignItems="center" gap={1.5} mb={2}>
+        <Typography
+          variant="caption"
+          sx={{
+            fontWeight: 700,
+            letterSpacing: '0.1em',
+            color: designColor.mutedText,
+            textTransform: 'uppercase',
+            fontSize: '0.65rem',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {label}
+        </Typography>
+        <Divider sx={{ flex: 1, opacity: 0.2 }} />
+      </Stack>
+      <Stack direction="column" spacing={3}>
+        {children}
+      </Stack>
+    </Box>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Info line (icon + bold label + value)
 // ---------------------------------------------------------------------------
 interface InfoRowProps {
   icon: React.ReactElement;
   label: string;
-  value: string;
+  value: React.ReactNode;
 }
 
 function InfoRow({ icon, label, value }: InfoRowProps): React.ReactElement {
@@ -323,7 +308,7 @@ function InfoRow({ icon, label, value }: InfoRowProps): React.ReactElement {
       </Box>
       <Typography variant="body1">
         <CaptionLabel caption={label} />
-        <SoftWrap text={value} />
+        {typeof value === 'string' ? <SoftWrap text={value} /> : value}
       </Typography>
     </Stack>
   );
@@ -378,10 +363,12 @@ function NotesRow({
 // ---------------------------------------------------------------------------
 interface FridgeContainerProps {
   fridge: Fridge;
+  from?: string;
 }
 
 function FridgeContainer({
   fridge,
+  from,
 }: FridgeContainerProps): React.ReactElement | null {
   if (!fridge) return null;
 
@@ -398,7 +385,10 @@ function FridgeContainer({
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
       {/* Back button + name/address — grouped tight */}
       <Box>
-        <BackLinkButton label="Back to Map" href="/browse" />
+        <BackLinkButton
+          label={from === 'my-fridges' ? 'Back to My Fridges' : 'Back to Map'}
+          href={from === 'my-fridges' ? '/my-fridges' : '/browse'}
+        />
         <Box>
           <Typography
             variant="h3"
@@ -498,63 +488,54 @@ export function ReportContainer({
     notes = null,
   } = report;
 
-  const reportDate = new Date(timestamp).toLocaleTimeString([], {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const reportDate = <LocalTimestamp timestamp={timestamp} />;
 
-  const foodAvailable: Record<number, string> = {
-    0: 'Empty',
-    1: 'Few items',
-    2: 'Many Items',
-    3: 'Full',
-  };
-
-  const foodLabel = foodAvailable[foodPercentage] ?? 'Unknown';
   const conditionLabel = enumCondition[condition]?.text ?? condition;
+
+  const foodEntry = foodLevelConfig[foodPercentage];
+  const foodLabel = foodEntry?.label ?? 'Unknown';
+  const foodColor = foodEntry?.color ?? pinColor.itemsEmpty;
 
   return (
     <>
-      <Divider sx={{ width: '100%', opacity: 0.2 }} />
-
-      {/* Report info rows */}
-      <InfoRow
-        icon={
-          <CalendarMonthIcon
-            sx={{ fontSize: '1.67rem', color: designColor.neroGray }}
-          />
-        }
-        label="Latest Report"
-        value={reportDate}
-      />
-      <InfoRow
-        icon={<ConditionIcon condition={condition} />}
-        label="Condition"
-        value={conditionLabel}
-      />
-      <InfoRow
-        icon={<FoodLevelIcon foodLevel={foodLabel} />}
-        label="Food Level"
-        value={foodLabel}
-      />
-      <NotesRow
-        icon={
-          <ChatBubbleOutlineOutlinedIcon
-            sx={{ fontSize: '1.67rem', color: designColor.neroGray }}
-          />
-        }
-        label="Notes"
-        text={notes}
-      />
-
-      {/* Report photo last */}
-      <ImageContainer
-        src={photoUrl}
-        alt="Picture of the food within the fridge"
-      />
+      <SectionDivider label="Status">
+        <InfoRow
+          icon={
+            <CalendarMonthIcon
+              sx={{ fontSize: '1.67rem', color: designColor.neroGray }}
+            />
+          }
+          label="Latest Report"
+          value={reportDate}
+        />
+        <InfoRow
+          icon={<ConditionIcon condition={condition} />}
+          label="Condition"
+          value={conditionLabel}
+        />
+        <InfoRow
+          icon={
+            <MapLegendPinLocationIcon
+              sx={{ width: 32, height: 32, color: foodColor }}
+            />
+          }
+          label="Food Level"
+          value={foodLabel}
+        />
+        <NotesRow
+          icon={
+            <ChatBubbleOutlineOutlinedIcon
+              sx={{ fontSize: '1.67rem', color: designColor.neroGray }}
+            />
+          }
+          label="Notes"
+          text={notes}
+        />
+        <ImageContainer
+          src={photoUrl}
+          alt="Picture of the food within the fridge"
+        />
+      </SectionDivider>
     </>
   );
 }
@@ -565,11 +546,13 @@ export function ReportContainer({
 export interface FridgeInformationProps {
   fridge: Fridge;
   fridgeReportSection?: React.ReactNode;
+  from?: string;
 }
 
 export function FridgeInformation({
   fridge,
   fridgeReportSection,
+  from,
 }: FridgeInformationProps): React.ReactElement {
   return (
     <>
@@ -581,50 +564,47 @@ export function FridgeInformation({
           pt={2}
           mb={{ xs: '72px', md: 4 }}
         >
-          <FridgeContainer fridge={fridge} />
+          <FridgeContainer fridge={fridge} from={from} />
           {fridgeReportSection}
 
-          <Divider sx={{ opacity: 0.2 }} />
-
-          {/* Details / notes */}
-          {fridge.notes && (
-            <Stack direction="row" alignItems="flex-start" gap="12px">
-              <InfoOutlinedIcon
-                sx={{
-                  fontSize: '1.83rem',
-                  color: '#666',
-                  flexShrink: 0,
-                  mt: '2px',
-                }}
-              />
-              <Box>
-                <Typography
-                  component="span"
-                  sx={{ fontWeight: 700, color: designColor.neroGray }}
-                >
-                  Details:
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ color: designColor.neroGray, mt: 0.5 }}
-                >
-                  {fridge.notes}
-                </Typography>
-              </Box>
-            </Stack>
-          )}
-
-          {/* Social links */}
-          <LinkLine
-            icon={InstagramIcon}
-            obj={fridge.maintainer ?? null}
-            url="instagram"
-          />
-          <LinkLine
-            icon={LanguageIcon}
-            obj={fridge.maintainer ?? null}
-            url="website"
-          />
+          <SectionDivider label="Fridge Host Info">
+            {fridge.notes && (
+              <Stack direction="row" alignItems="flex-start" gap="12px">
+                <InfoOutlinedIcon
+                  sx={{
+                    fontSize: '1.83rem',
+                    color: '#666',
+                    flexShrink: 0,
+                    mt: '2px',
+                  }}
+                />
+                <Box>
+                  <Typography
+                    component="span"
+                    sx={{ fontWeight: 700, color: designColor.neroGray }}
+                  >
+                    Details:
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{ color: designColor.neroGray, mt: 0.5 }}
+                  >
+                    {fridge.notes}
+                  </Typography>
+                </Box>
+              </Stack>
+            )}
+            <LinkLine
+              icon={InstagramIcon}
+              obj={fridge.maintainer ?? null}
+              url="instagram"
+            />
+            <LinkLine
+              icon={LanguageIcon}
+              obj={fridge.maintainer ?? null}
+              url="website"
+            />
+          </SectionDivider>
         </Stack>
 
         {/* Desktop inline Update Status button */}

@@ -28,6 +28,7 @@ import {
   GetInvolvedIcon,
   GuidelineIcon,
   HomeIcon,
+  MyFridgesIcon,
 } from 'theme/icons';
 
 const menuItems = [
@@ -132,13 +133,13 @@ const sxMobileIcon: { sx: SvgIconProps['sx'] } = {
 };
 
 interface NavDesktopItemProps {
-  icon: (props: SvgIconProps) => React.ReactElement;
+  icon: React.ComponentType<SvgIconProps>;
   title: string;
   link: string;
 }
 
 function NavDesktopItem({
-  icon,
+  icon: Icon,
   title,
   link,
 }: NavDesktopItemProps): React.ReactElement {
@@ -166,7 +167,7 @@ function NavDesktopItem({
       }}
     >
       <Box sx={{ ...iconCircleBaseSx, width: '42px', height: '42px' }}>
-        {icon(sxDesktopIcon)}
+        <Icon {...sxDesktopIcon} />
       </Box>
       <Typography variant="caption" sx={navLabelSx}>
         {title}
@@ -193,20 +194,27 @@ function MenuDesktop({
         />
       ))}
       {isAuthenticated ? (
-        <Box
-          sx={{
-            ml: 5,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 0.5,
-          }}
-        >
-          <ProfileButton size={42} />
-          <Typography variant="caption" sx={navLabelSx}>
-            Profile
-          </Typography>
-        </Box>
+        <>
+          <NavDesktopItem
+            icon={MyFridgesIcon}
+            title="My Fridges"
+            link="/my-fridges"
+          />
+          <Box
+            sx={{
+              ml: 5,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 0.5,
+            }}
+          >
+            <ProfileButton size={42} />
+            <Typography variant="caption" sx={navLabelSx}>
+              Profile
+            </Typography>
+          </Box>
+        </>
       ) : (
         <Button
           component={NextLink}
@@ -243,12 +251,12 @@ function MenuMobile({
         </IconButton>
       </Box>
       <List disablePadding>
-        {menuItems.map((item) => (
-          <ListItem key={item.title} disablePadding>
+        {menuItems.map(({ icon: Icon, title, link }) => (
+          <ListItem key={title} disablePadding>
             <IconButton
-              aria-label={item.title}
+              aria-label={title}
               component={NextLink}
-              href={item.link}
+              href={link}
               onClick={onItemClick}
               sx={{
                 width: '100%',
@@ -262,11 +270,11 @@ function MenuMobile({
                 <Box
                   sx={{ ...iconCircleBaseSx, width: '40px', height: '40px' }}
                 >
-                  {item.icon(sxMobileIcon)}
+                  <Icon {...sxMobileIcon} />
                 </Box>
               </ListItemIcon>
               <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>
-                {item.title}
+                {title}
               </Typography>
             </IconButton>
           </ListItem>
@@ -292,6 +300,32 @@ function MenuMobile({
           >
             My Account
           </Typography>
+          <ListItem disablePadding>
+            <IconButton
+              aria-label="My Fridges"
+              component={NextLink}
+              href="/my-fridges"
+              onClick={onItemClick}
+              sx={{
+                width: '100%',
+                justifyContent: 'flex-start',
+                borderRadius: 0,
+                px: 4,
+                py: 2,
+              }}
+            >
+              <ListItemIcon sx={{ minWidth: 56 }}>
+                <Box
+                  sx={{ ...iconCircleBaseSx, width: '40px', height: '40px' }}
+                >
+                  <MyFridgesIcon sx={{ width: '36px', height: '36px' }} />
+                </Box>
+              </ListItemIcon>
+              <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>
+                My Fridges
+              </Typography>
+            </IconButton>
+          </ListItem>
           <ListItem disablePadding>
             <IconButton
               aria-label="Profile"

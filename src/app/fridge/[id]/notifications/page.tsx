@@ -5,7 +5,7 @@ import { FridgeNotificationsForm } from 'features/fridge-notifications';
 
 interface NotificationsPageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ name?: string }>;
+  searchParams: Promise<{ name?: string; from?: string }>;
 }
 
 export default function NotificationsPage({
@@ -13,7 +13,9 @@ export default function NotificationsPage({
   searchParams,
 }: NotificationsPageProps) {
   const { id } = use(params);
-  const { name } = use(searchParams);
+  const { name, from } = use(searchParams);
 
-  return <FridgeNotificationsForm fridgeId={id} fridgeName={name} />;
+  return (
+    <FridgeNotificationsForm fridgeId={id} fridgeName={name} from={from} />
+  );
 }

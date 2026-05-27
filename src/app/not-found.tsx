@@ -11,11 +11,11 @@ export default function NotFound() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: { xs: 'center', md: 'flex-start' },
         textAlign: 'center',
         px: 2,
-        py: 8,
-        minHeight: 'calc(100vh - 200px)',
+        pt: { xs: 0, md: 8 },
+        pb: { xs: 9, md: 8 },
       }}
     >
       <Box sx={{ mb: 4 }}>

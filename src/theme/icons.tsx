@@ -156,6 +156,44 @@ export function HomeIcon(props: SvgIconProps): React.ReactElement {
   );
 }
 
+export function MyFridgesIcon(props: SvgIconProps): React.ReactElement {
+  return (
+    <SvgIcon viewBox="0 0 42.5354 42.5354" {...props}>
+      {/* Fridge body */}
+      <path
+        d="M13.2 11.2 C13.2 10.7 13.6 10.3 14.1 10.3 H25.4 C25.9 10.3 26.3 10.7 26.3 11.2 V31.2 C26.3 31.7 25.9 32.1 25.4 32.1 H14.1 C13.6 32.1 13.2 31.7 13.2 31.2 Z"
+        fill="#FFF"
+        stroke="#222222"
+        strokeWidth="1.5"
+      />
+      {/* Separator line (freezer/main divide — sits higher for short top, long bottom) */}
+      <path d="M13.1641 19.5H26.2977" stroke="#222222" strokeWidth="1.5" />
+      {/* Upper door handle (in freezer section) */}
+      <path
+        d="M15.8271 13.5V15"
+        stroke="#222222"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+      {/* Lower door handle */}
+      <path
+        d="M15.8271 24.0295V25.5272"
+        stroke="#222222"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+      {/* Heart */}
+      <path
+        d="M28.5513 10.3c-1.2 0-2.3.5-3.1 1.3-.8-.8-1.9-1.3-3.1-1.3-2.4 0-4.3 1.9-4.3 4.3 0 3.2 3.5 6 7.4 8.5 3.9-2.5 7.4-5.3 7.4-8.5 0-2.4-1.9-4.3-4.3-4.3z"
+        fill="#ff6666"
+        stroke="#ff6666"
+        strokeWidth="0.8"
+        transform="translate(1, -2)"
+      />
+    </SvgIcon>
+  );
+}
+
 /**
  * The svgUrl icons are template strings that will be URL encoded.
  */

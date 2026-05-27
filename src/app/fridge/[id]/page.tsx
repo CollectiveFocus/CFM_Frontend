@@ -5,13 +5,27 @@ import {
   FridgeInformation,
   FridgeReportSection,
 } from 'features/fridge-details';
-import { Fridge } from 'types/domain';
+import { ApiFridge, Fridge } from 'types/domain';
 
 interface FridgePageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ from?: string }>;
 }
 
 const baseUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/`;
+
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  try {
+    const response = await fetch(baseUrl, {
+      headers: { Accept: 'application/json' },
+    });
+    if (!response.ok) return [];
+    const fridges: ApiFridge[] = await response.json();
+    return fridges.map((f) => ({ id: f.id }));
+  } catch {
+    return [];
+  }
+}
 
 async function getFridgeInfo(id: string): Promise<Fridge | null> {
   try {
@@ -43,8 +57,10 @@ export async function generateMetadata({
 
 export default async function FridgePage({
   params,
+  searchParams,
 }: FridgePageProps): Promise<React.ReactElement> {
   const { id } = await params;
+  const { from } = await searchParams;
   const fridge = await getFridgeInfo(id);
 
   if (!fridge) {
@@ -54,6 +70,7 @@ export default async function FridgePage({
   return (
     <FridgeInformation
       fridge={fridge}
+      from={from}
       fridgeReportSection={<FridgeReportSection fridgeId={id} />}
     />
   );

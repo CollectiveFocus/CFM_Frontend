@@ -20,7 +20,9 @@ export default function FridgeReportPage(): React.ReactElement {
   const fridgeId = (params?.id ?? '') as string;
   const fromParam = searchParams?.get('from') ?? '';
   const isAllowedFrom =
-    fromParam === '/browse' || /^\/fridge\/[^/]+$/.test(fromParam);
+    fromParam === '/browse' ||
+    fromParam === '/my-fridges' ||
+    /^\/fridge\/[^/]+$/.test(fromParam);
   const cancelTo = isAllowedFrom ? fromParam : '/browse';
   const fridgeName = searchParams?.get('name') ?? undefined;
 

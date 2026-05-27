@@ -15,6 +15,7 @@ import {
   MapLegendPinNoReportIcon,
 } from 'theme/icons';
 import { pinColor } from 'theme/palette';
+import { foodLevelConfig } from 'config/foodLevel';
 import { ButtonLink } from 'components/ui';
 import { Fridge, Location as LocationType } from 'types/domain';
 
@@ -151,16 +152,9 @@ function FridgeStatus({
     );
   }
 
-  const foodLevels = ['Empty', 'Few Items', 'Many Items', 'Full'];
-  const foodColors = [
-    pinColor.itemsEmpty,
-    pinColor.itemsFew,
-    pinColor.itemsMany,
-    pinColor.itemsFull,
-  ];
-
-  const foodText = foodLevels[foodPercentage] || 'Unknown';
-  const foodColor = foodColors[foodPercentage] || foodColors[0];
+  const foodEntry = foodLevelConfig[foodPercentage];
+  const foodText = foodEntry?.label ?? 'Unknown';
+  const foodColor = foodEntry?.color ?? pinColor.itemsEmpty;
 
   return (
     <Box

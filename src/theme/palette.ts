@@ -32,10 +32,14 @@ export const designColor = {
   neroGray: grayscale.gradient[4],
   black: '#000000',
   borderSubtle: 'rgba(0,0,0,0.1)',
+  borderGray: '#E6E7EB',
   mutedText: '#838383',
+  secondaryText: '#696969',
+  conditionIcon: '#666666',
   dividerMuted: '#999999',
   blue: {
     dark: '#1543D4',
+    interactive: '#2563eb',
     darkShade: ['#040B25'],
     navy: '#002F64',
     pale: '#D6E3FF',
@@ -47,6 +51,9 @@ export const designColor = {
   },
   red: {
     danger: '#FF6262',
+  },
+  green: {
+    success: '#10B981',
   },
 };
 

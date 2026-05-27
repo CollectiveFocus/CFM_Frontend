@@ -52,6 +52,24 @@ export async function deleteFridgeNotifications(
   }
 }
 
+export async function getAllUserNotifications(
+  userId: string,
+  idToken: string
+): Promise<UserFridgeNotification[]> {
+  if (!NOTIFICATIONS_API_URL) {
+    throw new Error('NEXT_PUBLIC_NOTIFICATIONS_API_URL is not set');
+  }
+  const res = await fetch(
+    `${NOTIFICATIONS_API_URL}/v1/users/${userId}/fridge-notifications`,
+    { headers: authHeaders(idToken) }
+  );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch notifications: ${res.statusText}`);
+  }
+  const data = await res.json();
+  return data.notifications ?? [];
+}
+
 export async function saveFridgeNotifications(
   userId: string,
   fridgeId: string,

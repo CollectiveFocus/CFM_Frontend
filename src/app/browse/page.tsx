@@ -403,6 +403,8 @@ export default function BrowsePage(): React.ReactElement {
               onDoubleClick={(e) => e.stopPropagation()}
               onMouseDown={(e) => e.stopPropagation()}
               onMouseUp={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
             >
               <Fab
                 onClick={handleLocate}

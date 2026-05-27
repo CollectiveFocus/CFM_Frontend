@@ -46,6 +46,8 @@ const makeFridgeResponse = (overrides = {}) => ({
 });
 
 const makeParams = (id: string) => Promise.resolve({ id });
+const makeSearchParams = (overrides: Record<string, string> = {}) =>
+  Promise.resolve(overrides);
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -64,7 +66,10 @@ describe('FridgePage — happy path', () => {
       json: async () => makeFridgeResponse(),
     });
 
-    const jsx = await FridgePage({ params: makeParams('fridge-42') });
+    const jsx = await FridgePage({
+      params: makeParams('fridge-42'),
+      searchParams: makeSearchParams(),
+    });
     const { getByTestId } = render(jsx);
 
     expect(getByTestId('fridge-name')).toHaveTextContent('The Green Fridge');
@@ -76,7 +81,10 @@ describe('FridgePage — happy path', () => {
       json: async () => makeFridgeResponse(),
     });
 
-    const jsx = await FridgePage({ params: makeParams('fridge-42') });
+    const jsx = await FridgePage({
+      params: makeParams('fridge-42'),
+      searchParams: makeSearchParams(),
+    });
     const { getByTestId } = render(jsx);
 
     expect(getByTestId('report-section')).toHaveAttribute(
@@ -91,7 +99,10 @@ describe('FridgePage — happy path', () => {
       json: async () => makeFridgeResponse(),
     });
 
-    await FridgePage({ params: makeParams('fridge-99') });
+    await FridgePage({
+      params: makeParams('fridge-99'),
+      searchParams: makeSearchParams(),
+    });
 
     expect(mockFetch).toHaveBeenCalledWith(
       'https://api.example.com/v1/fridges/fridge-99',
@@ -105,7 +116,10 @@ describe('FridgePage — not found', () => {
     mockFetch.mockResolvedValue({ ok: false });
 
     await expect(
-      FridgePage({ params: makeParams('fridge-42') })
+      FridgePage({
+        params: makeParams('fridge-42'),
+        searchParams: makeSearchParams(),
+      })
     ).rejects.toThrow('NEXT_NOT_FOUND');
 
     expect(notFound).toHaveBeenCalled();
@@ -115,7 +129,10 @@ describe('FridgePage — not found', () => {
     mockFetch.mockRejectedValue(new Error('Network error'));
 
     await expect(
-      FridgePage({ params: makeParams('fridge-42') })
+      FridgePage({
+        params: makeParams('fridge-42'),
+        searchParams: makeSearchParams(),
+      })
     ).rejects.toThrow('NEXT_NOT_FOUND');
 
     expect(notFound).toHaveBeenCalled();

@@ -29,6 +29,7 @@ import { useFridgeNotifications } from '../hooks/useFridgeNotifications';
 interface FridgeNotificationsFormProps {
   fridgeId: string;
   fridgeName?: string;
+  from?: string;
 }
 
 type FormValues = {
@@ -75,13 +76,13 @@ const contactTypeButtonSx = (active: boolean) => ({
   height: 40,
   borderRadius: 2.5,
   border: '1px solid',
-  borderColor: active ? 'primary.main' : designColor.lightSilver,
-  bgcolor: active ? 'primary.main' : 'background.paper',
+  borderColor: active ? designColor.blue.interactive : designColor.lightSilver,
+  bgcolor: active ? designColor.blue.interactive : 'background.paper',
   color: active ? designColor.white : designColor.mutedText,
   transition: 'all 0.15s ease',
   '&:hover': {
-    bgcolor: active ? 'primary.main' : designColor.whiteSmoke,
-    borderColor: 'primary.main',
+    bgcolor: active ? designColor.blue.interactive : designColor.whiteSmoke,
+    borderColor: designColor.blue.interactive,
   },
 });
 
@@ -103,6 +104,7 @@ function ContactTypeHeader({ name }: { name: string }) {
 export function FridgeNotificationsForm({
   fridgeId,
   fridgeName,
+  from,
 }: FridgeNotificationsFormProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -186,7 +188,10 @@ export function FridgeNotificationsForm({
         }}
       >
         {/* Back link */}
-        <BackLinkButton label="Go To Fridge" href={`/fridge/${fridgeId}`} />
+        <BackLinkButton
+          label={from === 'my-fridges' ? 'Go To My Fridges' : 'Go To Fridge'}
+          href={from === 'my-fridges' ? '/my-fridges' : `/fridge/${fridgeId}`}
+        />
 
         {/* Error alert */}
         {error && (
@@ -350,12 +355,12 @@ export function FridgeNotificationsForm({
                   fontSize: { xs: '0.95rem', md: '1rem' },
                   textTransform: 'none',
                   '&.MuiButton-outlined': {
-                    borderColor: designColor.lightSilver,
-                    color: designColor.neroGray,
+                    borderColor: designColor.borderGray,
+                    color: designColor.secondaryText,
                   },
                   '&:hover': {
                     bgcolor: designColor.whiteSmoke,
-                    borderColor: designColor.lightSilver,
+                    borderColor: designColor.borderGray,
                   },
                 }}
               >
