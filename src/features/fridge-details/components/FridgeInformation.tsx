@@ -13,7 +13,7 @@ import {
 } from '@mui/icons-material';
 
 import { ButtonLink, SoftWrap } from 'components/ui';
-import { BackLinkButton } from 'components/shared/BackLinkButton';
+import { FridgeBackButton } from './FridgeBackButton';
 import { ShareButton } from './ShareButton';
 import { FollowButton } from './FollowButton';
 import { LocalTimestamp } from './LocalTimestamp';
@@ -363,12 +363,10 @@ function NotesRow({
 // ---------------------------------------------------------------------------
 interface FridgeContainerProps {
   fridge: Fridge;
-  from?: string;
 }
 
 function FridgeContainer({
   fridge,
-  from,
 }: FridgeContainerProps): React.ReactElement | null {
   if (!fridge) return null;
 
@@ -385,10 +383,7 @@ function FridgeContainer({
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
       {/* Back button + name/address — grouped tight */}
       <Box>
-        <BackLinkButton
-          label={from === 'my-fridges' ? 'Go to My Fridges' : 'Go to Map'}
-          href={from === 'my-fridges' ? '/my-fridges' : '/browse'}
-        />
+        <FridgeBackButton />
         <Box>
           <Typography
             variant="h3"
@@ -546,13 +541,11 @@ export function ReportContainer({
 export interface FridgeInformationProps {
   fridge: Fridge;
   fridgeReportSection?: React.ReactNode;
-  from?: string;
 }
 
 export function FridgeInformation({
   fridge,
   fridgeReportSection,
-  from,
 }: FridgeInformationProps): React.ReactElement {
   return (
     <>
@@ -564,7 +557,7 @@ export function FridgeInformation({
           pt={2}
           mb={{ xs: '72px', md: 4 }}
         >
-          <FridgeContainer fridge={fridge} from={from} />
+          <FridgeContainer fridge={fridge} />
           {fridgeReportSection}
 
           <SectionDivider label="Fridge Host Info">

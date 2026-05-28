@@ -9,7 +9,6 @@ import { ApiFridge, Fridge } from 'types/domain';
 
 interface FridgePageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ from?: string }>;
 }
 
 const baseUrl = `${process.env.NEXT_PUBLIC_FF_API_URL}/v1/fridges/`;
@@ -57,10 +56,8 @@ export async function generateMetadata({
 
 export default async function FridgePage({
   params,
-  searchParams,
 }: FridgePageProps): Promise<React.ReactElement> {
   const { id } = await params;
-  const { from } = await searchParams;
   const fridge = await getFridgeInfo(id);
 
   if (!fridge) {
@@ -70,7 +67,6 @@ export default async function FridgePage({
   return (
     <FridgeInformation
       fridge={fridge}
-      from={from}
       fridgeReportSection={<FridgeReportSection fridgeId={id} />}
     />
   );
