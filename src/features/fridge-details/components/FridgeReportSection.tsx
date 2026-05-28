@@ -1,4 +1,6 @@
-import React, { Suspense } from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import { FridgeReport } from 'types/domain';
@@ -30,23 +32,19 @@ function ReportSkeleton(): React.ReactElement {
   );
 }
 
-async function ReportFetcher({
-  fridgeId,
-}: {
-  fridgeId: string;
-}): Promise<React.ReactElement> {
-  const report = await getFridgeReport(fridgeId);
-  return <ReportContainer report={report} />;
-}
-
 export function FridgeReportSection({
   fridgeId,
 }: {
   fridgeId: string;
 }): React.ReactElement {
-  return (
-    <Suspense fallback={<ReportSkeleton />}>
-      <ReportFetcher fridgeId={fridgeId} />
-    </Suspense>
+  const [report, setReport] = useState<FridgeReport | null | undefined>(
+    undefined
   );
+
+  useEffect(() => {
+    getFridgeReport(fridgeId).then(setReport);
+  }, [fridgeId]);
+
+  if (report === undefined) return <ReportSkeleton />;
+  return <ReportContainer report={report} />;
 }
