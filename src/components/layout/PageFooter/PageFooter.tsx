@@ -110,7 +110,7 @@ export function PageFooter(): React.ReactElement {
             color="text.secondary"
             sx={{ textAlign: 'center', fontWeight: 500 }}
           >
-            &copy; 2022-{new Date().getFullYear()} Fridge Finder. All rights
+            &copy; 2022-{new Date().getFullYear()} FridgeFinder. All rights
             reserved.
           </Typography>
           <Typography
@@ -122,8 +122,7 @@ export function PageFooter(): React.ReactElement {
               lineHeight: 1.6,
             }}
           >
-            We may use cookies for storing information to help provide you with
-            a better, faster, and safer experience and for SEO purposes.
+            We use cookies to understand how people find and use the site.
           </Typography>
         </Box>
       </Container>
