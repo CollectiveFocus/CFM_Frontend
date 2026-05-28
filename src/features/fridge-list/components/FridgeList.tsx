@@ -27,6 +27,7 @@ import {
 import { pinColor, designColor } from 'theme/palette';
 import { foodLevelConfig } from 'config/foodLevel';
 import { ButtonLink, NextLink } from 'components/ui';
+import { useAnalytics } from 'hooks/useAnalytics';
 import { Fridge, Location as LocationType } from 'types/domain';
 
 function formatDate(isoString: string): string {
@@ -214,6 +215,7 @@ export const FridgeList = React.memo(function FridgeList({
   fridges,
   onFridgeSelect,
 }: FridgeListProps): React.ReactElement {
+  const { trackEvent } = useAnalytics();
   return (
     <List disablePadding>
       {fridges.map((fridge, fridgeIndex) => (
@@ -303,6 +305,13 @@ export const FridgeList = React.memo(function FridgeList({
                 aria-label={`Details on ${fridge.name}`}
                 sx={{ fontSize: '0.85rem', py: 1.5, px: 4 }}
                 title="View Profile"
+                onClick={() =>
+                  trackEvent({
+                    action: 'fridge_profile_view',
+                    category: 'fridge_browse',
+                    label: 'list',
+                  })
+                }
               />
               <ButtonLink
                 variant="contained"
@@ -316,6 +325,13 @@ export const FridgeList = React.memo(function FridgeList({
                   aria-label={`Notifications for ${fridge.name}`}
                   component={NextLink}
                   href={`/fridge/${fridge.id}/notifications?name=${encodeURIComponent(fridge.name)}&from=browse`}
+                  onClick={() =>
+                    trackEvent({
+                      action: 'fridge_bell_click',
+                      category: 'fridge_browse',
+                      label: fridge.id,
+                    })
+                  }
                   sx={{
                     borderRadius: '50%',
                     backgroundColor: designColor.whiteSmoke,

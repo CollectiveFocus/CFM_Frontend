@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import {
@@ -122,7 +120,7 @@ export function PageFooter(): React.ReactElement {
               lineHeight: 1.6,
             }}
           >
-            We use cookies to understand how people find and use the site.
+            We may use cookies to understand how people find and use the site.
           </Typography>
         </Box>
       </Container>

@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { Box, Fab, Tooltip } from '@mui/material';
 import { MyLocation as MyLocationIcon } from '@mui/icons-material';
 import { useMapStore } from 'store/useMapStore';
+import { useAnalytics } from 'hooks/useAnalytics';
 
 interface LocateUserControlProps {
   position?: 'topleft' | 'topright' | 'bottomleft' | 'bottomright';
@@ -16,6 +17,7 @@ export function LocateUserControl({
   const map = useMap();
   const [container, setContainer] = React.useState<HTMLDivElement | null>(null);
   const userLocation = useMapStore((state) => state.userLocation);
+  const { trackEvent } = useAnalytics();
 
   React.useEffect(() => {
     const div = L.DomUtil.create('div');
@@ -42,6 +44,11 @@ export function LocateUserControl({
     (e: React.MouseEvent) => {
       e.preventDefault();
       e.stopPropagation();
+      trackEvent({
+        action: 'map_locate_user',
+        category: 'fridge_map',
+        label: userLocation ? 'recenter' : 'locate',
+      });
 
       if (userLocation) {
         map.flyTo(userLocation, 15, { animate: true, duration: 1.0 });

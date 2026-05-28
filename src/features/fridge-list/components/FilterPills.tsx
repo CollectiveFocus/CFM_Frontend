@@ -13,6 +13,7 @@ import {
 } from 'theme/icons';
 import { pinColor } from 'theme/palette';
 import { FilterKey } from '../hooks/useFridgeSearch';
+import { useAnalytics } from 'hooks/useAnalytics';
 
 const FILTER_DEFS: Array<{
   key: FilterKey;
@@ -87,6 +88,7 @@ export function FilterPills({
   onToggle,
   sx,
 }: FilterPillsProps): React.ReactElement {
+  const { trackEvent } = useAnalytics();
   return (
     <Box
       sx={{
@@ -108,7 +110,14 @@ export function FilterPills({
             key={key}
             label={label}
             icon={makeIcon()}
-            onClick={() => onToggle(key)}
+            onClick={() => {
+              trackEvent({
+                action: 'fridge_filter_toggle',
+                category: 'fridge_browse',
+                label: key,
+              });
+              onToggle(key);
+            }}
             variant="outlined"
             sx={{
               flexShrink: 0,

@@ -39,6 +39,7 @@ import {
 } from 'features/fridge-map/components/MapToggle/MapToggle';
 import { useFridgeStore } from 'store/useFridgeStore';
 import { useMapStore } from 'store/useMapStore';
+import { useAnalytics } from 'hooks/useAnalytics';
 import { StateBoundary } from 'components/shared/StateBoundary';
 import { FridgeListSkeleton } from 'components/shared/skeletons/FridgeSkeletons';
 import {
@@ -121,10 +122,12 @@ export default function BrowsePage(): React.ReactElement {
   const { fridges, status, error, fetchFridges } = useFridgeStore();
   const setSelectedFridgeId = useMapStore((state) => state.setSelectedFridgeId);
   const userLocation = useMapStore((state) => state.userLocation);
+  const { trackEvent } = useAnalytics();
   const [currentView, setCurrentView] = useState<MapView>('map');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const mapRef = useRef<LeafletMap | null>(null);
+  const hasTrackedSearch = useRef(false);
 
   const handleLocate = useCallback(
     (e: React.MouseEvent) => {
@@ -170,6 +173,20 @@ export default function BrowsePage(): React.ReactElement {
   useEffect(() => {
     fetchFridges();
   }, [fetchFridges]);
+
+  useEffect(() => {
+    if (searchQuery.length === 1 && !hasTrackedSearch.current) {
+      hasTrackedSearch.current = true;
+      trackEvent({
+        action: 'search_start',
+        category: 'fridge_browse',
+        label: 'search_bar',
+      });
+    }
+    if (searchQuery.length === 0) {
+      hasTrackedSearch.current = false;
+    }
+  }, [searchQuery, trackEvent]);
 
   return (
     <Box
@@ -235,6 +252,11 @@ export default function BrowsePage(): React.ReactElement {
                         <ListItemButton
                           divider={i !== filteredFridges.length - 1}
                           onClick={() => {
+                            trackEvent({
+                              action: 'search_result_select',
+                              category: 'fridge_browse',
+                              label: fridge.id,
+                            });
                             setSelectedFridgeId(fridge.id);
                             setIsDropdownOpen(false); // Just hide dropdown, keep query
                           }}
@@ -434,7 +456,15 @@ export default function BrowsePage(): React.ReactElement {
             <Badge badgeContent={activeFilters.size} color="primary">
               <Fab
                 size="medium"
-                onClick={() => setShowFilters((p) => !p)}
+                onClick={() => {
+                  const next = !showFilters;
+                  trackEvent({
+                    action: 'filter_panel_toggle',
+                    category: 'fridge_browse',
+                    label: next ? 'open' : 'close',
+                  });
+                  setShowFilters(next);
+                }}
                 aria-label="Toggle filters"
                 sx={{
                   backgroundColor: showFilters

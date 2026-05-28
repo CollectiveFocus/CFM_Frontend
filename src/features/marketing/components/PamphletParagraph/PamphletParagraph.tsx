@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Box, Divider, Typography, SxProps, Theme } from '@mui/material';

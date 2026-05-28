@@ -26,6 +26,7 @@ import {
 import { alpha } from '@mui/material/styles';
 
 import { NextLink } from 'components/ui';
+import { useAnalytics } from 'hooks/useAnalytics';
 import { useAuthStore } from 'store/useAuthStore';
 import { designColor } from 'theme/palette';
 import {
@@ -152,12 +153,20 @@ function NavDesktopItem({
   link,
   isActive = false,
 }: NavDesktopItemProps): React.ReactElement {
+  const { trackEvent } = useAnalytics();
   return (
     <IconButton
       aria-label={title}
       component={NextLink}
       href={link}
       disableRipple
+      onClick={() =>
+        trackEvent({
+          action: 'nav_link_click',
+          category: 'navigation',
+          label: title,
+        })
+      }
       sx={{
         mx: 1.5,
         backgroundColor: 'transparent',
@@ -271,13 +280,21 @@ function MobileMenuRow({
   icon,
   onClick,
 }: MobileMenuRowProps): React.ReactElement {
+  const { trackEvent } = useAnalytics();
   return (
     <ListItem disablePadding>
       <IconButton
         aria-label={label}
         component={NextLink}
         href={link}
-        onClick={onClick}
+        onClick={() => {
+          trackEvent({
+            action: 'nav_link_click',
+            category: 'navigation',
+            label,
+          });
+          onClick();
+        }}
         sx={{
           width: '100%',
           justifyContent: 'space-between',

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Box, Typography, Fab } from '@mui/material';
+import { useAnalytics } from 'hooks/useAnalytics';
 import {
   MapOutlined as MapIcon,
   FormatListBulletedOutlined as ListIcon,
@@ -18,6 +19,7 @@ export function MapToggle({
   currentView,
   setView,
 }: MapToggleProps): React.ReactElement {
+  const { trackEvent } = useAnalytics();
   return (
     <Box
       sx={{
@@ -34,7 +36,15 @@ export function MapToggle({
       <Fab
         variant="extended"
         color="primary"
-        onClick={() => setView(currentView === 'map' ? 'list' : 'map')}
+        onClick={() => {
+          const newView = currentView === 'map' ? 'list' : 'map';
+          trackEvent({
+            action: 'browse_view_toggle',
+            category: 'fridge_browse',
+            label: newView,
+          });
+          setView(newView);
+        }}
         sx={{
           textTransform: 'none',
           boxShadow: '0 4px 16px rgba(0,0,0,0.18)',

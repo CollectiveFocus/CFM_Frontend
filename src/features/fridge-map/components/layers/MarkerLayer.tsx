@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Stack, Typography } from '@mui/material';
 import { Marker, Popup } from 'react-leaflet';
 import { ButtonLink } from 'components/ui';
+import { useAnalytics } from 'hooks/useAnalytics';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import Leaflet from 'leaflet';
 import { Fridge } from 'types/domain';
@@ -79,6 +80,7 @@ export function MarkerLayer({
   const navigatingFromPopupRef = useRef(false);
   const selectedFridgeId = useMapStore((state) => state.selectedFridgeId);
   const setSelectedFridgeId = useMapStore((state) => state.setSelectedFridgeId);
+  const { trackEvent } = useAnalytics();
 
   useEffect(() => {
     if (!selectedFridgeId) return;
@@ -153,6 +155,11 @@ export function MarkerLayer({
                   title="View Profile"
                   onClick={() => {
                     navigatingFromPopupRef.current = true;
+                    trackEvent({
+                      action: 'fridge_profile_view',
+                      category: 'fridge_browse',
+                      label: 'map',
+                    });
                   }}
                 />
                 <ButtonLink
