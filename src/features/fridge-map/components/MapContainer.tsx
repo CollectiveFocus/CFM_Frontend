@@ -17,6 +17,7 @@ interface MapProps {
   fridges: Fridge[];
   onMarkerClick?: (id: string) => void;
   mapRef?: React.RefObject<import('leaflet').Map | null>;
+  hideLegend?: boolean;
 }
 
 function MapRefCapture({
@@ -79,6 +80,7 @@ export function MapContainer({
   fridges,
   onMarkerClick,
   mapRef,
+  hideLegend = false,
 }: MapProps): React.ReactElement | null {
   const [lng, setLng] = React.useState('en');
   const [isClient, setIsClient] = React.useState(false);
@@ -118,7 +120,7 @@ export function MapContainer({
         />
         <MarkerLayer fridges={fridges} onMarkerClick={onMarkerClick} />
       </LeafletMapContainer>
-      <LegendDrawer />
+      {!hideLegend && <LegendDrawer />}
     </Box>
   );
 }

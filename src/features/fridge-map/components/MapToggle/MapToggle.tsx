@@ -37,7 +37,7 @@ export function MapToggle({
         onClick={() => setView(currentView === 'map' ? 'list' : 'map')}
         sx={{
           textTransform: 'none',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
           px: 4,
           height: 48,
           borderRadius: 24,

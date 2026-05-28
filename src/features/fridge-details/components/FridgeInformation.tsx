@@ -386,7 +386,7 @@ function FridgeContainer({
       {/* Back button + name/address — grouped tight */}
       <Box>
         <BackLinkButton
-          label={from === 'my-fridges' ? 'Back to My Fridges' : 'Back to Map'}
+          label={from === 'my-fridges' ? 'Go to My Fridges' : 'Go to Map'}
           href={from === 'my-fridges' ? '/my-fridges' : '/browse'}
         />
         <Box>

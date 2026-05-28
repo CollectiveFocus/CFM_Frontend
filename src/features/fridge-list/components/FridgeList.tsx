@@ -1,10 +1,20 @@
 import React from 'react';
-import { List, ListItem, Stack, Typography, Chip, Box } from '@mui/material';
+import {
+  IconButton,
+  List,
+  ListItem,
+  Stack,
+  Tooltip,
+  Typography,
+  Chip,
+  Box,
+} from '@mui/material';
 import {
   CalendarMonthOutlined as CalendarIcon,
   Instagram as InstagramIcon,
   LocationOnOutlined as LocationOnOutlinedIcon,
   ArrowForward as ArrowForwardIcon,
+  NotificationsOutlined as NotificationsOutlinedIcon,
 } from '@mui/icons-material';
 import {
   MapLegendPinLocationIcon,
@@ -14,9 +24,9 @@ import {
   MapLegendPinGhostIcon,
   MapLegendPinNoReportIcon,
 } from 'theme/icons';
-import { pinColor } from 'theme/palette';
+import { pinColor, designColor } from 'theme/palette';
 import { foodLevelConfig } from 'config/foodLevel';
-import { ButtonLink } from 'components/ui';
+import { ButtonLink, NextLink } from 'components/ui';
 import { Fridge, Location as LocationType } from 'types/domain';
 
 function formatDate(isoString: string): string {
@@ -100,6 +110,27 @@ function LastUpdateInfo({ date }: LastUpdateInfoProps): React.ReactElement {
   );
 }
 
+function StatusRow({
+  icon: Icon,
+  color,
+  label,
+}: {
+  icon: React.ElementType;
+  color: string;
+  label: string;
+}) {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Icon sx={{ width: 28, height: 28, color }} />
+      <Typography
+        sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
+      >
+        {label}
+      </Typography>
+    </Box>
+  );
+}
+
 function FridgeStatus({
   report,
 }: {
@@ -107,16 +138,11 @@ function FridgeStatus({
 }): React.ReactElement | null {
   if (!report) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
-        <MapLegendPinNoReportIcon
-          sx={{ width: 28, height: 28, color: pinColor.reportUnavailable }}
-        />
-        <Typography
-          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
-        >
-          No status
-        </Typography>
-      </Box>
+      <StatusRow
+        icon={MapLegendPinNoReportIcon}
+        color={pinColor.reportUnavailable}
+        label="No status"
+      />
     );
   }
 
@@ -124,31 +150,21 @@ function FridgeStatus({
 
   if (condition === 'not at location') {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
-        <MapLegendPinNotAtLocationIcon
-          sx={{ width: 28, height: 28, color: pinColor.fridgeNotAtLocation }}
-        />
-        <Typography
-          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
-        >
-          Not at location
-        </Typography>
-      </Box>
+      <StatusRow
+        icon={MapLegendPinNotAtLocationIcon}
+        color={pinColor.fridgeNotAtLocation}
+        label="Not at location"
+      />
     );
   }
 
   if (condition === 'ghost') {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
-        <MapLegendPinGhostIcon
-          sx={{ width: 28, height: 28, color: pinColor.fridgeGhost }}
-        />
-        <Typography
-          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
-        >
-          Ghost Fridge
-        </Typography>
-      </Box>
+      <StatusRow
+        icon={MapLegendPinGhostIcon}
+        color={pinColor.fridgeGhost}
+        label="Ghost Fridge"
+      />
     );
   }
 
@@ -162,44 +178,28 @@ function FridgeStatus({
         display: 'flex',
         flexWrap: 'wrap',
         gap: 3,
-        mt: 0.5,
         alignItems: 'center',
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <MapLegendPinLocationIcon
-          sx={{ width: 28, height: 28, color: foodColor }}
-        />
-        <Typography
-          sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.secondary' }}
-        >
-          {foodText}
-        </Typography>
-      </Box>
+      <StatusRow
+        icon={MapLegendPinLocationIcon}
+        color={foodColor}
+        label={foodText}
+      />
 
       {condition === 'dirty' && (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <MapLegendConditionDirtyIcon
-            sx={{ width: 28, height: 28, color: pinColor.fridgeOperation }}
-          />
-          <Typography
-            sx={{ fontSize: '1rem', fontWeight: 600, color: 'error.main' }}
-          >
-            Needs cleaning
-          </Typography>
-        </Box>
+        <StatusRow
+          icon={MapLegendConditionDirtyIcon}
+          color={pinColor.fridgeOperation}
+          label="Needs cleaning"
+        />
       )}
       {condition === 'out of order' && (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <MapLegendConditionOutOfOrderIcon
-            sx={{ width: 28, height: 28, color: pinColor.fridgeOperation }}
-          />
-          <Typography
-            sx={{ fontSize: '1rem', fontWeight: 600, color: 'error.main' }}
-          >
-            Needs repairs
-          </Typography>
-        </Box>
+        <StatusRow
+          icon={MapLegendConditionOutOfOrderIcon}
+          color={pinColor.fridgeOperation}
+          label="Needs repairs"
+        />
       )}
     </Box>
   );
@@ -276,7 +276,9 @@ export const FridgeList = React.memo(function FridgeList({
               />
             </Box>
 
-            <FridgeStatus report={fridge.report} />
+            <Box sx={{ mt: 0.5 }}>
+              <FridgeStatus report={fridge.report} />
+            </Box>
 
             <Box sx={{ mt: 1 }}>
               {fridge.report ? (
@@ -291,6 +293,7 @@ export const FridgeList = React.memo(function FridgeList({
               direction="row"
               width="100%"
               justifyContent="flex-start"
+              alignItems="center"
               spacing={2}
               sx={{ mt: 2 }}
             >
@@ -308,6 +311,29 @@ export const FridgeList = React.memo(function FridgeList({
                 sx={{ fontSize: '0.85rem', py: 1.5, px: 4 }}
                 title="Update status"
               />
+              <Tooltip title="Notifications">
+                <IconButton
+                  aria-label={`Notifications for ${fridge.name}`}
+                  component={NextLink}
+                  href={`/fridge/${fridge.id}/notifications?name=${encodeURIComponent(fridge.name)}&from=browse`}
+                  sx={{
+                    borderRadius: '50%',
+                    backgroundColor: designColor.whiteSmoke,
+                    color: designColor.secondaryText,
+                    border: `1px solid ${designColor.borderGray}`,
+                    flexShrink: 0,
+                    width: 44,
+                    height: 44,
+                    transition: 'background-color 0.2s ease, color 0.2s ease',
+                    '&:hover': {
+                      backgroundColor: designColor.borderGray,
+                      color: designColor.neroGray,
+                    },
+                  }}
+                >
+                  <NotificationsOutlinedIcon sx={{ fontSize: '1.35rem' }} />
+                </IconButton>
+              </Tooltip>
             </Stack>
           </Stack>
         </ListItem>

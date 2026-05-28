@@ -25,6 +25,7 @@ import {
 import { useAuthStore } from 'store/useAuthStore';
 import { designColor } from 'theme/palette';
 import { useFridgeNotifications } from '../hooks/useFridgeNotifications';
+import { getBackDestination } from '../utils/getBackDestination';
 
 interface FridgeNotificationsFormProps {
   fridgeId: string;
@@ -175,6 +176,8 @@ export function FridgeNotificationsForm({
 
   const displayName = fridgeName ?? fridgeId;
 
+  const backDestination = getBackDestination(from, fridgeId);
+
   return (
     <Box>
       <Box
@@ -189,8 +192,8 @@ export function FridgeNotificationsForm({
       >
         {/* Back link */}
         <BackLinkButton
-          label={from === 'my-fridges' ? 'Go To My Fridges' : 'Go To Fridge'}
-          href={from === 'my-fridges' ? '/my-fridges' : `/fridge/${fridgeId}`}
+          label={backDestination.label}
+          href={backDestination.href}
         />
 
         {/* Error alert */}
@@ -319,54 +322,31 @@ export function FridgeNotificationsForm({
 
           {/* Action buttons */}
           <Box display="flex" gap={1.5} mt={3}>
-            {isFollowing ? (
-              <Button
-                variant="outlined"
-                onClick={handleUnfollow}
-                sx={{
-                  flex: 1,
-                  py: 1.75,
-                  borderRadius: 3,
-                  fontWeight: 600,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                  textTransform: 'none',
-                  '&.MuiButton-outlined': {
-                    borderColor: designColor.lightSilver,
-                    color: designColor.mutedText,
-                  },
-                  '&:hover': {
-                    bgcolor: designColor.red.danger,
-                    borderColor: designColor.red.danger,
-                    color: designColor.white,
-                  },
-                }}
-              >
-                Unfollow
-              </Button>
-            ) : (
-              <Button
-                variant="outlined"
-                onClick={() => router.push(`/fridge/${fridgeId}`)}
-                sx={{
-                  flex: 1,
-                  py: 1.75,
-                  borderRadius: 3,
-                  fontWeight: 600,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                  textTransform: 'none',
-                  '&.MuiButton-outlined': {
-                    borderColor: designColor.borderGray,
-                    color: designColor.secondaryText,
-                  },
-                  '&:hover': {
-                    bgcolor: designColor.whiteSmoke,
-                    borderColor: designColor.borderGray,
-                  },
-                }}
-              >
-                Cancel
-              </Button>
-            )}
+            <Button
+              variant="text"
+              onClick={() => router.push(backDestination.href)}
+              sx={{
+                flex: 1,
+                py: 1.75,
+                borderRadius: 3,
+                fontWeight: 600,
+                fontSize: { xs: '0.95rem', md: '1rem' },
+                textTransform: 'none',
+                bgcolor: designColor.whiteSmoke,
+                color: designColor.secondaryText,
+                border: `1px solid ${designColor.borderGray}`,
+                boxShadow: 'none',
+                transition: 'background-color 0.2s ease, color 0.2s ease',
+                '&:hover': {
+                  bgcolor: designColor.borderGray,
+                  color: designColor.neroGray,
+                  border: `1px solid ${designColor.borderGray}`,
+                  boxShadow: 'none',
+                },
+              }}
+            >
+              Cancel
+            </Button>
 
             <BrandButton
               type="button"
@@ -393,19 +373,26 @@ export function FridgeNotificationsForm({
             </BrandButton>
           </Box>
 
-          <Typography
-            sx={{
-              fontWeight: 500,
-              display: 'block',
-              textAlign: 'center',
-              lineHeight: 1.6,
-              color: designColor.mutedText,
-              fontSize: { xs: '0.8rem', md: '0.825rem' },
-              mt: 4,
-            }}
-          >
-            You can update preferences anytime from the fridge profile page
-          </Typography>
+          {isFollowing && (
+            <Box display="flex" justifyContent="center" mt={1.5}>
+              <Button
+                variant="text"
+                onClick={handleUnfollow}
+                sx={{
+                  textTransform: 'none',
+                  fontWeight: 500,
+                  fontSize: { xs: '0.875rem', md: '0.9rem' },
+                  color: designColor.red.danger,
+                  '&:hover': {
+                    bgcolor: 'transparent',
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                Unfollow Fridge
+              </Button>
+            </Box>
+          )}
         </Box>
 
         <LinkEmailModal

@@ -189,3 +189,16 @@ describe('fridge status display', () => {
     expect(screen.getByText('Needs repairs')).toBeInTheDocument();
   });
 });
+
+describe('notifications link', () => {
+  it('renders a notifications link with the fridge id, encoded name, and from=browse', () => {
+    render(<FridgeList fridges={[baseFridge]} />);
+    const link = screen.getByRole('link', {
+      name: /notifications for test fridge/i,
+    });
+    const href = link.getAttribute('href') ?? '';
+    expect(href).toContain('/fridge/fridge-1/notifications');
+    expect(href).toContain('name=Test%20Fridge');
+    expect(href).toContain('from=browse');
+  });
+});

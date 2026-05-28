@@ -31,7 +31,7 @@ import {
   MapLegendPinGhostIcon,
   MapLegendPinNoReportIcon,
 } from 'theme/icons';
-import { pinColor } from 'theme/palette';
+import { pinColor, designColor } from 'theme/palette';
 import { Fridge } from 'types/domain';
 import {
   MapToggle,
@@ -384,6 +384,7 @@ export default function BrowsePage(): React.ReactElement {
           fridges={mapFridgesSnapshot}
           onMarkerClick={setSelectedFridgeId}
           mapRef={mapRef}
+          hideLegend={currentView === 'list'}
         />
         {/* Floating button stack — bottom-right corner of map */}
         <Stack
@@ -412,7 +413,9 @@ export default function BrowsePage(): React.ReactElement {
                 aria-label="Find my location"
                 sx={{
                   backgroundColor: 'white',
-                  color: userLocation ? 'primary.main' : 'text.secondary',
+                  color: userLocation
+                    ? designColor.blue.interactive
+                    : 'text.secondary',
                   boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
                   width: 48,
                   height: 48,
@@ -434,7 +437,9 @@ export default function BrowsePage(): React.ReactElement {
                 onClick={() => setShowFilters((p) => !p)}
                 aria-label="Toggle filters"
                 sx={{
-                  backgroundColor: showFilters ? 'primary.main' : 'white',
+                  backgroundColor: showFilters
+                    ? designColor.blue.interactive
+                    : 'white',
                   backdropFilter: 'blur(8px)',
                   color: showFilters ? 'white' : 'text.secondary',
                   boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
@@ -442,7 +447,9 @@ export default function BrowsePage(): React.ReactElement {
                   height: 48,
                   '&:hover, &:focus, &:focus-visible, &.Mui-focusVisible, &:active':
                     {
-                      backgroundColor: showFilters ? 'primary.main' : 'white',
+                      backgroundColor: showFilters
+                        ? designColor.blue.interactive
+                        : 'white',
                       color: showFilters ? 'white' : 'text.secondary',
                       boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
                     },
