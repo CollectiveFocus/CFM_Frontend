@@ -8,6 +8,12 @@ jest.mock('next/navigation', () => ({
   useSearchParams: jest.fn(),
 }));
 
+const mockInvalidate = jest.fn();
+jest.mock('store/useFridgeStore', () => ({
+  useFridgeStore: (selector: (s: { invalidate: jest.Mock }) => unknown) =>
+    selector({ invalidate: mockInvalidate }),
+}));
+
 // Mock the heavy child components — we test the page logic, not the form UI
 jest.mock('features/fridge-management', () => ({
   ReportForm: ({
@@ -154,6 +160,15 @@ describe('form submission — success', () => {
     });
   });
 
+  it('calls invalidate on the fridge store so the next browse visit re-fetches', async () => {
+    render(<FridgeReportPage />);
+    screen.getByRole('button', { name: 'submit' }).click();
+
+    await waitFor(() => {
+      expect(mockInvalidate).toHaveBeenCalledTimes(1);
+    });
+  });
+
   it('POSTs to the correct URL', async () => {
     process.env.NEXT_PUBLIC_FF_API_URL = 'https://api.example.com';
     render(<FridgeReportPage />);
@@ -188,6 +203,17 @@ describe('form submission — error', () => {
     await waitFor(() => {
       expect(screen.getByTestId('feedback-form')).toHaveTextContent('Error');
     });
+  });
+
+  it('does not call invalidate when the submission fails', async () => {
+    mockFetch.mockResolvedValue({ ok: false });
+    render(<FridgeReportPage />);
+    screen.getByRole('button', { name: 'submit' }).click();
+
+    await waitFor(() => {
+      expect(screen.getByTestId('feedback-form')).toHaveTextContent('Error');
+    });
+    expect(mockInvalidate).not.toHaveBeenCalled();
   });
 
   it('shows the Error FeedbackCard when the fetch throws', async () => {

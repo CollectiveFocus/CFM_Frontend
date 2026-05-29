@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { FeedbackCard } from 'components/ui';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
+import { useFridgeStore } from 'store/useFridgeStore';
 
 enum DisplayStatus {
   Form = 0,
@@ -15,6 +16,7 @@ export default function FridgeReportPage(): React.ReactElement {
   const [displayStatus, setDisplayStatus] = useState<DisplayStatus>(
     DisplayStatus.Form
   );
+  const invalidateFridges = useFridgeStore((s) => s.invalidate);
   const params = useParams();
   const searchParams = useSearchParams();
   const fridgeId = (params?.id ?? '') as string;
@@ -43,6 +45,7 @@ export default function FridgeReportPage(): React.ReactElement {
       });
 
       if (response.ok) {
+        invalidateFridges();
         setDisplayStatus(DisplayStatus.Success);
       } else {
         setDisplayStatus(DisplayStatus.Error);
