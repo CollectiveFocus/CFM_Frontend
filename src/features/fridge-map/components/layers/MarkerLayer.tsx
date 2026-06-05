@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Stack, Typography } from '@mui/material';
-import { Marker, Popup } from 'react-leaflet';
+import { Marker, Popup, useMap } from 'react-leaflet';
 import { ButtonLink } from 'components/ui';
 import { useAnalytics } from 'hooks/useAnalytics';
 import MarkerClusterGroup from 'react-leaflet-cluster';
@@ -76,6 +76,7 @@ export function MarkerLayer({
   fridges,
   onMarkerClick,
 }: MarkerLayerProps): React.ReactElement {
+  const map = useMap();
   const markerRefs = useRef<Map<string, Leaflet.Marker>>(new Map());
   const navigatingFromPopupRef = useRef(false);
   const selectedFridgeId = useMapStore((state) => state.selectedFridgeId);
@@ -85,16 +86,20 @@ export function MarkerLayer({
   useEffect(() => {
     if (!selectedFridgeId) return;
     const id = selectedFridgeId;
-    // setTimeout(0) defers openPopup() to the next event-loop tick.
-    // React's render and Leaflet's internal DOM setup (onAdd, popup binding)
-    // both run synchronously after mount — calling openPopup() in the same
-    // tick would silently fail. Yielding here ensures Leaflet has finished
-    // its own initialization before we issue the imperative call.
-    const timer = setTimeout(() => {
+    // Use requestAnimationFrame instead of setTimeout(0).
+    // setTimeout(0) fires before the browser's layout pass, so Leaflet's
+    // invalidateSize() still reads stale 0×0 dimensions when the map has just
+    // remounted (e.g. navigating back from a fridge detail page). rAF fires
+    // *after* the browser has calculated layout for the new frame, so
+    // invalidateSize() gets the real container dimensions and openPopup()
+    // positions the popup correctly on the very first render.
+    let rafId: number;
+    rafId = requestAnimationFrame(() => {
+      map.invalidateSize({ pan: false });
       markerRefs.current.get(id)?.openPopup();
-    }, 0);
-    return () => clearTimeout(timer);
-  }, [selectedFridgeId]);
+    });
+    return () => cancelAnimationFrame(rafId);
+  }, [selectedFridgeId, map]);
 
   const markers = React.useMemo(() => {
     return fridges

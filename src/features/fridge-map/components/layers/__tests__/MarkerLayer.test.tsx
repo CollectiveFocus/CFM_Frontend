@@ -27,6 +27,9 @@ jest.mock('react-leaflet', () => {
     },
     Popup: ({ children }: { children: React.ReactNode }) =>
       React.createElement('div', { 'data-testid': 'popup' }, children),
+    useMap: () => ({
+      invalidateSize: jest.fn(),
+    }),
   };
 });
 
