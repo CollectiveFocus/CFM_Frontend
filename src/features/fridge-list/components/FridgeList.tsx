@@ -335,7 +335,7 @@ export const FridgeList = React.memo(function FridgeList({
                   sx={{
                     borderRadius: '50%',
                     backgroundColor: designColor.whiteSmoke,
-                    color: designColor.secondaryText,
+                    color: designColor.secondaryText, //could be #555
                     border: `1px solid ${designColor.borderGray}`,
                     flexShrink: 0,
                     width: 44,

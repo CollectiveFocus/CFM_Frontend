@@ -5,8 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Box,
-  CircularProgress,
+  Divider,
   IconButton,
+  Skeleton,
   Stack,
   SvgIconProps,
   Typography,
@@ -20,6 +21,7 @@ import {
 import { ButtonLink } from 'components/ui';
 import { useAuthStore } from 'store/useAuthStore';
 import { useFridgeStore } from 'store/useFridgeStore';
+import { useFollowingStore } from 'store/useFollowingStore';
 import {
   MapLegendConditionDirtyIcon,
   MapLegendConditionOutOfOrderIcon,
@@ -138,15 +140,7 @@ function FridgeCard({ fridge }: { fridge: Fridge }): React.ReactElement {
   const profileHref = `/fridge/${id}?from=my-fridges`;
 
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.paper',
-        borderRadius: 4,
-        border: '1px solid',
-        borderColor: designColor.lightSilver,
-        overflow: 'hidden',
-      }}
-    >
+    <Box>
       <Box sx={{ px: { xs: 2.5, sm: 4 }, py: { xs: 3, sm: 4 } }}>
         {/* Header: name / address + time pill */}
         <Box
@@ -252,7 +246,7 @@ function FridgeCard({ fridge }: { fridge: Fridge }): React.ReactElement {
             variant="outlined"
             to={profileHref}
             aria-label={`View profile for ${name}`}
-            title="View Profile"
+            title="VIEW PROFILE"
             sx={{
               flex: 1,
               borderRadius: '999px',
@@ -276,7 +270,7 @@ function FridgeCard({ fridge }: { fridge: Fridge }): React.ReactElement {
             variant="contained"
             to={reportHref}
             aria-label={`Update status for ${name}`}
-            title="Update Status"
+            title="UPDATE STATUS"
             sx={{
               flex: 1,
               borderRadius: '999px',
@@ -329,15 +323,92 @@ function LoadingState(): React.ReactElement {
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: { xs: 'center', md: 'flex-start' },
+        alignSelf: 'center',
         width: '100%',
-        pt: { xs: 0, md: 12 },
+        maxWidth: 650,
+        px: { xs: 3.5, sm: 2 },
+        pt: { xs: 2, md: 4 },
+        pb: { xs: 18, md: 6 },
       }}
     >
-      <CircularProgress />
+      {/* Header */}
+      <Box sx={{ mb: 0, mt: 2 }}>
+        <Typography
+          sx={{
+            fontSize: { xs: '1.25rem', sm: '1.5rem' },
+            fontWeight: 700,
+            color: designColor.neroGray,
+            mb: 0.25,
+            textAlign: 'center',
+          }}
+        >
+          My Fridges
+        </Typography>
+      </Box>
+
+      {/* Skeleton cards */}
+      <Box>
+        {[0, 1, 2].map((i) => (
+          <React.Fragment key={i}>
+            {i > 0 && <Divider sx={{ borderColor: designColor.whiteSmoke }} />}
+            <Box sx={{ px: { xs: 2.5, sm: 4 }, py: { xs: 3, sm: 4 } }}>
+              {/* Name + time pill */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                  mb: 1,
+                }}
+              >
+                <Box sx={{ flex: 1, mr: 2 }}>
+                  <Skeleton variant="text" width="55%" height={26} />
+                  <Skeleton
+                    variant="text"
+                    width="75%"
+                    height={18}
+                    sx={{ mt: 0.5 }}
+                  />
+                </Box>
+                <Skeleton
+                  variant="rounded"
+                  width={72}
+                  height={24}
+                  sx={{ borderRadius: 999, mt: 0.5 }}
+                />
+              </Box>
+
+              {/* Status badge */}
+              <Skeleton
+                variant="rounded"
+                width={96}
+                height={20}
+                sx={{ borderRadius: 999, mb: 2 }}
+              />
+
+              {/* Action buttons */}
+              <Stack direction="row" gap={1}>
+                <Skeleton
+                  variant="rounded"
+                  height={38}
+                  sx={{ flex: 1, borderRadius: 999 }}
+                />
+                <Skeleton
+                  variant="rounded"
+                  height={38}
+                  sx={{ flex: 1, borderRadius: 999 }}
+                />
+                <Skeleton
+                  variant="rounded"
+                  width={38}
+                  height={38}
+                  sx={{ borderRadius: 3, flexShrink: 0 }}
+                />
+              </Stack>
+            </Box>
+          </React.Fragment>
+        ))}
+      </Box>
     </Box>
   );
 }
@@ -424,42 +495,19 @@ export function MyFridgesPage(): React.ReactElement {
     fetchFridges,
     getFridgeById,
   } = useFridgeStore();
-  const [notifications, setNotifications] = useState<UserFridgeNotification[]>(
-    []
-  );
-  const [notifStatus, setNotifStatus] = useState<
-    'loading' | 'success' | 'error'
-  >('loading');
+  const {
+    notifications,
+    status: notifStatus,
+    fetch: fetchFollowing,
+  } = useFollowingStore();
 
   useEffect(() => {
     fetchFridges();
   }, [fetchFridges]);
 
   useEffect(() => {
-    if (!user) return;
-
-    let cancelled = false;
-    const currentUser = user;
-
-    async function load() {
-      try {
-        setNotifStatus('loading');
-        const idToken = await currentUser.getIdToken();
-        const data = await getAllUserNotifications(currentUser.uid, idToken);
-        if (!cancelled) {
-          setNotifications(data);
-          setNotifStatus('success');
-        }
-      } catch {
-        if (!cancelled) setNotifStatus('error');
-      }
-    }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, [user]);
+    fetchFollowing();
+  }, [fetchFollowing, user]);
 
   if (authStatus === 'loading') {
     return <LoadingState />;
@@ -478,6 +526,7 @@ export function MyFridgesPage(): React.ReactElement {
 
   const isLoading =
     notifStatus === 'loading' ||
+    (notifStatus === 'idle' && authStatus === 'authenticated') ||
     fridgeStatus === 'loading' ||
     fridgeStatus === 'idle';
 
@@ -506,35 +555,33 @@ export function MyFridgesPage(): React.ReactElement {
         alignSelf: 'center',
         width: '100%',
         maxWidth: 650,
-        px: { xs: 3.5, sm: 2 },
+        px: { xs: 1, sm: 2 },
         pt: { xs: 2, md: 4 },
         pb: { xs: 18, md: 6 },
       }}
     >
-      <Box sx={{ mb: 4 }}>
+      <Box sx={{ mb: 0, mt: 1 }}>
         <Typography
           sx={{
             fontSize: { xs: '1.25rem', sm: '1.5rem' },
             fontWeight: 700,
             color: designColor.neroGray,
             mb: 0.25,
+            textAlign: 'center',
           }}
         >
           My Fridges
         </Typography>
-        <Typography
-          variant="body2"
-          sx={{ color: 'text.secondary', fontWeight: 500 }}
-        >
-          Community fridges you follow
-        </Typography>
       </Box>
 
-      <Stack spacing={2.5}>
-        {followedFridges.map((fridge) => (
-          <FridgeCard key={fridge.id} fridge={fridge} />
+      <Box>
+        {followedFridges.map((fridge, i) => (
+          <React.Fragment key={fridge.id}>
+            {i > 0 && <Divider sx={{ borderColor: designColor.whiteSmoke }} />}
+            <FridgeCard fridge={fridge} />
+          </React.Fragment>
         ))}
-      </Stack>
+      </Box>
 
       <Box sx={{ mt: 5, display: 'flex', justifyContent: 'center' }}>
         <ButtonLink

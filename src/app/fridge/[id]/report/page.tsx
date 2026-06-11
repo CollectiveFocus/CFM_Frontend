@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { FeedbackCard } from 'components/ui';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
 import { useFridgeStore } from 'store/useFridgeStore';
+import { useAuthStore } from 'store/useAuthStore';
 
 enum DisplayStatus {
   Form = 0,
@@ -17,6 +18,7 @@ export default function FridgeReportPage(): React.ReactElement {
     DisplayStatus.Form
   );
   const invalidateFridges = useFridgeStore((s) => s.invalidate);
+  const user = useAuthStore((s) => s.user);
   const params = useParams();
   const searchParams = useSearchParams();
   const fridgeId = (params?.id ?? '') as string;
@@ -36,6 +38,7 @@ export default function FridgeReportPage(): React.ReactElement {
         ...values,
         fridgeId,
         timestamp: new Date().toISOString(),
+        ...(user?.uid ? { userId: user.uid } : {}),
       };
 
       const response = await fetch(postReportUrl, {

@@ -18,15 +18,6 @@ export default function NotFound() {
         pb: { xs: 9, md: 8 },
       }}
     >
-      <Box sx={{ mb: 4 }}>
-        <Image
-          src="/card/paragraph/pearTomatoAndFridge.svg"
-          alt="Pear and tomato dancing with a fridge"
-          width={250}
-          height={190}
-          style={{ objectFit: 'contain' }}
-        />
-      </Box>
       <Typography
         variant="h1"
         color="text.primary"

@@ -29,9 +29,6 @@ let theme: Theme = createTheme({
           textTransform: 'uppercase',
           padding: '8px 24px',
           fontWeight: 700,
-          '&:hover': {
-            borderColor: designColor.blue.dark,
-          },
           '&.MuiButton-outlined': {
             color: designColor.neroGray,
             borderColor: designColor.blue.dark,

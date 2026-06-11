@@ -333,7 +333,7 @@ export function FridgeNotificationsForm({
                 fontSize: { xs: '0.95rem', md: '1rem' },
                 textTransform: 'none',
                 bgcolor: designColor.whiteSmoke,
-                color: designColor.secondaryText,
+                color: designColor.secondaryText, //Consider #555 here
                 border: `1px solid ${designColor.borderGray}`,
                 boxShadow: 'none',
                 transition: 'background-color 0.2s ease, color 0.2s ease',

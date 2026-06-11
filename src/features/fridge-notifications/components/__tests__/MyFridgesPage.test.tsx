@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { MyFridgesPage } from '../MyFridgesPage';
 import { useAuthStore } from 'store/useAuthStore';
 import { useFridgeStore } from 'store/useFridgeStore';
-import { getAllUserNotifications } from '../../utils/fridgeNotificationsApi';
+import { useFollowingStore } from 'store/useFollowingStore';
 import { Fridge } from 'types/domain';
 
 // ---------------------------------------------------------------------------
@@ -45,9 +45,7 @@ jest.mock('theme/icons', () => ({
 
 jest.mock('store/useAuthStore', () => ({ useAuthStore: jest.fn() }));
 jest.mock('store/useFridgeStore', () => ({ useFridgeStore: jest.fn() }));
-jest.mock('../../utils/fridgeNotificationsApi', () => ({
-  getAllUserNotifications: jest.fn(),
-}));
+jest.mock('store/useFollowingStore', () => ({ useFollowingStore: jest.fn() }));
 
 // ---------------------------------------------------------------------------
 // Typed mock references
@@ -55,7 +53,7 @@ jest.mock('../../utils/fridgeNotificationsApi', () => ({
 
 const mockUseAuthStore = useAuthStore as unknown as jest.Mock;
 const mockUseFridgeStore = useFridgeStore as unknown as jest.Mock;
-const mockGetAllUserNotifications = getAllUserNotifications as jest.Mock;
+const mockUseFollowingStore = useFollowingStore as unknown as jest.Mock;
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -94,6 +92,7 @@ const mockNotification = {
 };
 
 const mockFetchFridges = jest.fn().mockResolvedValue(undefined);
+const mockFetchFollowing = jest.fn().mockResolvedValue(undefined);
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -103,6 +102,8 @@ function setupStores({
   authStatus = 'authenticated' as const,
   user = mockUser as typeof mockUser | null,
   fridgeStatus = 'success' as string,
+  notifStatus = 'success' as string,
+  notifications = [mockNotification],
   getFridgeById = jest.fn().mockReturnValue(baseFridge),
 } = {}) {
   mockUseAuthStore.mockReturnValue({ user, status: authStatus });
@@ -110,6 +111,11 @@ function setupStores({
     status: fridgeStatus,
     fetchFridges: mockFetchFridges,
     getFridgeById,
+  });
+  mockUseFollowingStore.mockReturnValue({
+    notifications,
+    status: notifStatus,
+    fetch: mockFetchFollowing,
   });
 }
 
@@ -124,20 +130,19 @@ beforeEach(() => {
 
 describe('MyFridgesPage', () => {
   describe('auth loading state', () => {
-    it('renders a loading spinner while auth status is loading', () => {
+    it('renders loading skeletons while auth status is loading', () => {
       setupStores({ authStatus: 'loading', user: null });
-      mockGetAllUserNotifications.mockReturnValue(new Promise(() => {}));
+      const { container } = render(<MyFridgesPage />);
 
-      render(<MyFridgesPage />);
-
-      expect(screen.getByRole('progressbar')).toBeInTheDocument();
+      expect(
+        container.querySelectorAll('.MuiSkeleton-root').length
+      ).toBeGreaterThan(0);
     });
   });
 
   describe('unauthenticated state', () => {
     it('renders a sign-in empty state when the user is not authenticated', () => {
       setupStores({ authStatus: 'unauthenticated', user: null });
-      mockGetAllUserNotifications.mockReturnValue(new Promise(() => {}));
 
       render(<MyFridgesPage />);
 
@@ -151,30 +156,31 @@ describe('MyFridgesPage', () => {
   });
 
   describe('data loading state', () => {
-    it('renders a loading spinner while fridge data is still loading', () => {
+    it('renders loading skeletons while fridge data is still loading', () => {
       setupStores({ fridgeStatus: 'loading' });
-      mockGetAllUserNotifications.mockReturnValue(new Promise(() => {}));
+      const { container } = render(<MyFridgesPage />);
 
-      render(<MyFridgesPage />);
-
-      expect(screen.getByRole('progressbar')).toBeInTheDocument();
+      expect(
+        container.querySelectorAll('.MuiSkeleton-root').length
+      ).toBeGreaterThan(0);
     });
 
-    it('renders a loading spinner while notifications have not resolved', () => {
-      setupStores();
-      // Never resolves — keeps notifStatus as 'loading'
-      mockGetAllUserNotifications.mockReturnValue(new Promise(() => {}));
+    it('renders loading skeletons while notifications have not resolved', () => {
+      setupStores({ notifStatus: 'loading' });
+      const { container } = render(<MyFridgesPage />);
 
-      render(<MyFridgesPage />);
-
-      expect(screen.getByRole('progressbar')).toBeInTheDocument();
+      expect(
+        container.querySelectorAll('.MuiSkeleton-root').length
+      ).toBeGreaterThan(0);
     });
   });
 
   describe('empty state', () => {
     it('shows the browse CTA when the user follows no fridges', async () => {
-      setupStores({ getFridgeById: jest.fn().mockReturnValue(undefined) });
-      mockGetAllUserNotifications.mockResolvedValue([]);
+      setupStores({
+        notifications: [],
+        getFridgeById: jest.fn().mockReturnValue(undefined),
+      });
 
       render(<MyFridgesPage />);
 
@@ -192,7 +198,6 @@ describe('MyFridgesPage', () => {
   describe('populated fridge list', () => {
     it('renders the fridge name when a followed fridge is loaded', async () => {
       setupStores();
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -203,7 +208,6 @@ describe('MyFridgesPage', () => {
 
     it('shows the "Find More Fridges" button when the list is populated', async () => {
       setupStores();
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -216,7 +220,6 @@ describe('MyFridgesPage', () => {
 
     it('shows the fridge street address', async () => {
       setupStores();
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -233,7 +236,6 @@ describe('MyFridgesPage', () => {
         report: { ...baseFridge.report!, condition: 'dirty' },
       };
       setupStores({ getFridgeById: jest.fn().mockReturnValue(dirtyFridge) });
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -250,7 +252,6 @@ describe('MyFridgesPage', () => {
       setupStores({
         getFridgeById: jest.fn().mockReturnValue(outOfOrderFridge),
       });
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -261,7 +262,6 @@ describe('MyFridgesPage', () => {
 
     it('does not show a condition badge for a fridge with good condition', async () => {
       setupStores(); // baseFridge has condition: 'good'
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -282,7 +282,6 @@ describe('MyFridgesPage', () => {
       setupStores({
         getFridgeById: jest.fn().mockReturnValue(unknownConditionFridge),
       });
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 
@@ -299,7 +298,6 @@ describe('MyFridgesPage', () => {
     it('shows "No status" when the fridge has no report', async () => {
       const noReportFridge: Fridge = { ...baseFridge, report: null };
       setupStores({ getFridgeById: jest.fn().mockReturnValue(noReportFridge) });
-      mockGetAllUserNotifications.mockResolvedValue([mockNotification]);
 
       render(<MyFridgesPage />);
 

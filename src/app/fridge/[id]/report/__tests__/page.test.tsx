@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor, act } from '@testing-library/react';
 import { useParams, useSearchParams } from 'next/navigation';
-import FridgeReportPage from '../page';
 
 jest.mock('next/navigation', () => ({
   useParams: jest.fn(),
@@ -12,6 +11,11 @@ const mockInvalidate = jest.fn();
 jest.mock('store/useFridgeStore', () => ({
   useFridgeStore: (selector: (s: { invalidate: jest.Mock }) => unknown) =>
     selector({ invalidate: mockInvalidate }),
+}));
+
+jest.mock('store/useAuthStore', () => ({
+  useAuthStore: (selector: (s: { user: null }) => unknown) =>
+    selector({ user: null }),
 }));
 
 // Mock the heavy child components — we test the page logic, not the form UI
@@ -62,7 +66,12 @@ jest.mock('components/ui', () => ({
 }));
 
 const mockFetch = jest.fn();
-global.fetch = mockFetch;
+(globalThis as { fetch: jest.Mock }).fetch = mockFetch;
+
+// Import after mocks are in place so fetch is always defined.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { default: FridgeReportPage } =
+  require('../page') as typeof import('../page');
 
 const mockUseParams = useParams as jest.Mock;
 const mockUseSearchParams = useSearchParams as jest.Mock;
@@ -73,6 +82,7 @@ const mockSearchParams = (params: Record<string, string | null>) => ({
 
 beforeEach(() => {
   jest.clearAllMocks();
+  (globalThis as { fetch: jest.Mock }).fetch = mockFetch;
   mockUseParams.mockReturnValue({ id: 'fridge-42' });
   mockUseSearchParams.mockReturnValue(mockSearchParams({}));
 });
