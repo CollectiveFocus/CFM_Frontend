@@ -63,11 +63,14 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            // max-age=0: always revalidate on next request
-            // stale-while-revalidate=86400: serve stale for up to 24h while
-            // revalidating in background. Content only changes on deploy, so
-            // 24h staleness is fine — the CDN warmup script re-primes on every push.
-            value: 'public, max-age=0, stale-while-revalidate=86400',
+            // s-maxage=86400: tells CloudFront (and other CDNs) to cache for 24h.
+            // max-age=0: browser always revalidates with CloudFront (gets fast 304).
+            // stale-while-revalidate=86400: after 24h, CloudFront serves stale while
+            // revalidating in background — giving a 48h total cold-start-free window.
+            // Content only changes on deploy; the CDN warmup script forces a fresh
+            // cache after each push so users never see stale post-deploy content.
+            value:
+              'public, s-maxage=86400, max-age=0, stale-while-revalidate=86400',
           },
         ],
       },
