@@ -73,11 +73,9 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
     "@mui/material-nextjs": "^7.3.8",
-    "concurrently": "^9.2.1",
     "firebase": "^12.11.0",
     "fuse.js": "^7.1.0",
     "leaflet": "^1.8.0",
-    "lint-staged": "^16.2.7",
     "next": "^16.0.10",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -85,7 +83,6 @@
     "react-leaflet": "^5.0.0",
     "react-leaflet-cluster": "^4.0.0",
     "react-window": "^2.2.7",
-    "svgo": "^4.0.0",
     "use-debounce": "^10.1.0",
     "zod": "^4.3.6",
     "zustand": "^5.0.8"
@@ -112,7 +109,10 @@
     "jest-environment-jsdom": "^30.2.0",
     "json-server": "0.17.4",
     "prettier": "^3.6.2",
+    "concurrently": "^9.2.1",
+    "lint-staged": "^16.2.7",
     "simple-git-hooks": "^2.7.0",
+    "svgo": "^4.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
   }
