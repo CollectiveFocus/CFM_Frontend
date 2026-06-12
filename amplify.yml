@@ -8,13 +8,8 @@ frontend:
     build:
       commands:
         - yarn build
-        # Copy static assets into the standalone directory.
-        # next/standalone only includes the server runtime — client JS bundles
-        # and public files must be copied manually or the deployed app will 404.
-        - cp -r .next/static .next/standalone/.next/static
-        - cp -r public .next/standalone/public
   artifacts:
-    baseDirectory: .next/standalone
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
