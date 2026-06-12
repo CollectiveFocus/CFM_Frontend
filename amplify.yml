@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - node -v
+        - yarn install
+    build:
+      commands:
+        - yarn build
+        # Copy static assets into the standalone directory.
+        # next/standalone only includes the server runtime — client JS bundles
+        # and public files must be copied manually or the deployed app will 404.
+        - cp -r .next/static .next/standalone/.next/static
+        - cp -r public .next/standalone/public
+  artifacts:
+    baseDirectory: .next/standalone
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*

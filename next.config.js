@@ -16,6 +16,10 @@ if (process.env.NODE_ENV !== 'test') {
 
 const nextConfig = {
   reactStrictMode: true,
+  // Standalone output produces a minimal server bundle for the Lambda.
+  // Only enabled in CI (Amplify sets CI=true) — local builds skip the slow
+  // @vercel/nft file-tracing step and stay fast.
+  ...(process.env.CI ? { output: 'standalone' } : {}),
   // Prevent Firebase (client-only SDK) from being bundled into the Lambda
   // server bundle. Instead Node.js requires it from node_modules at runtime,
   // removing ~220KB from the server bundle parse phase → faster cold starts.
