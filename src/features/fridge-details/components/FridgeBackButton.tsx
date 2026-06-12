@@ -6,7 +6,7 @@ import { BackLinkButton } from 'components/shared/BackLinkButton';
 
 export function FridgeBackButton(): React.ReactElement {
   const searchParams = useSearchParams();
-  const from = searchParams.get('from');
+  const from = searchParams?.get('from');
 
   return (
     <BackLinkButton

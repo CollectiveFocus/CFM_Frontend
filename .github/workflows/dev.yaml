@@ -95,3 +95,30 @@ jobs:
       - name: Run Lint
         run: |
           yarn lint || true
+
+  Warm_CDN:
+    # Runs only on direct pushes (not PRs) so we warm after real deploys only.
+    # Amplify deploys in parallel with CI and typically finishes in 2-3 minutes.
+    # We wait 3 minutes to give Amplify time to complete CDN propagation before
+    # warming the edges.
+    # To enable: add WARM_BASE_URL as a GitHub Actions secret pointing to the
+    # Amplify branch URL (e.g. https://u2-jp.d1zqbru9k8x5eq.amplifyapp.com).
+    if: github.event_name == 'push'
+    needs:
+      - Run_Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '22.20.0'
+
+      - name: Wait for Amplify deployment
+        run: sleep 300
+
+      - name: Warm CDN edge caches
+        if: env.WARM_BASE_URL != ''
+        env:
+          WARM_BASE_URL: ${{ secrets.WARM_BASE_URL }}
+        run: node scripts/warm-cdn.mjs
+        continue-on-error: true

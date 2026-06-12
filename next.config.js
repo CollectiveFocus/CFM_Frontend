@@ -53,6 +53,26 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        // Apply stale-while-revalidate to all static page routes.
+        // Excludes /fridge/* (managed by Next.js ISR revalidate: 3600) and
+        // /_next/* (static assets already have immutable cache headers).
+        source: '/((?!fridge|_next|api).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            // max-age=0: always revalidate on next request
+            // stale-while-revalidate=86400: serve stale for up to 24h while
+            // revalidating in background. Content only changes on deploy, so
+            // 24h staleness is fine — the CDN warmup script re-primes on every push.
+            value: 'public, max-age=0, stale-while-revalidate=86400',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

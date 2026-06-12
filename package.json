@@ -45,6 +45,7 @@
     "dev-auto-port": "node scripts/start-dev.mjs",
     "web": "next dev",
     "data": "npx json-server mock/data.json --routes mock/server-routes.json --host 127.0.0.1 --port 3050",
+    "warm:cdn": "node scripts/warm-cdn.mjs",
     "emulators": "firebase emulators:start --only auth",
     "build": "next build",
     "start": "next start",
