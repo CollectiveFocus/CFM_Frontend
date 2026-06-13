@@ -46,7 +46,7 @@ export const useMapStore = create<MapState>()(
       partialize: (state) => ({
         center: state.center,
         zoom: state.zoom,
-        userLocation: state.userLocation,
+        // userLocation: state.userLocation,//NOTE: intentionally not persisted
       }),
     }
   )

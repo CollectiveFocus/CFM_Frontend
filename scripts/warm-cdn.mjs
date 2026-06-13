@@ -30,7 +30,6 @@ async function hit(url) {
   const start = performance.now();
   const response = await fetch(url, {
     method: 'GET',
-    headers: { 'cache-control': 'no-cache' },
   });
   const end = performance.now();
 

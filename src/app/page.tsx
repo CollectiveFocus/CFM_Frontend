@@ -109,7 +109,7 @@ export default function HomePage(): React.ReactElement {
       <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph}>
         <Typography variant="body1" sx={{ lineHeight: 1.7, mb: 2 }}>
           Fridge Finder helps you find community fridges with free food near
-          you. Select <strong>Find A Fridge</strong> to explore the full map and
+          you. Click <strong>Find A Fridge</strong> to explore the full map and
           list of fridges. New here? Read our{' '}
           <NextLink
             href="/pamphlet/best-practices"

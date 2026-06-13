@@ -253,25 +253,25 @@ function StatsGrid({ actionStats }: { actionStats: UserActionStats | null }) {
   const stats = [
     {
       key: 'points',
-      value: actionStats ? Number(actionStats.totalPoints) : '-',
+      value: actionStats ? Number(actionStats.totalPoints) : '0',
       label: 'Points',
       Icon: PointsIcon,
     },
     {
       key: 'reported',
-      value: actionStats ? Number(actionStats.fridgeReportCount) : '-',
+      value: actionStats ? Number(actionStats.fridgeReportCount) : '0',
       label: 'Reported',
       Icon: ReportedIcon,
     },
     {
       key: 'cleaned',
-      value: actionStats ? Number(actionStats.cleanedCount) : '-',
+      value: actionStats ? Number(actionStats.cleanedCount) : '0',
       label: 'Cleaned',
       Icon: CleanedIcon,
     },
     {
       key: 'filled',
-      value: actionStats ? Number(actionStats.filledCount) : '-',
+      value: actionStats ? Number(actionStats.filledCount) : '0',
       label: 'Filled',
       Icon: FilledIcon,
     },

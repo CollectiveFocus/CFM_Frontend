@@ -88,11 +88,8 @@ export function MarkerLayer({
     const id = selectedFridgeId;
     // Use requestAnimationFrame instead of setTimeout(0).
     // setTimeout(0) fires before the browser's layout pass, so Leaflet's
-    // invalidateSize() still reads stale 0×0 dimensions when the map has just
-    // remounted (e.g. navigating back from a fridge detail page). rAF fires
-    // *after* the browser has calculated layout for the new frame, so
-    // invalidateSize() gets the real container dimensions and openPopup()
-    // positions the popup correctly on the very first render.
+    // invalidateSize() can still read stale dimensions when the map has just
+    // remounted (e.g. after navigating back). rAF runs after layout.
     let rafId: number;
     rafId = requestAnimationFrame(() => {
       map.invalidateSize({ pan: false });
@@ -120,6 +117,12 @@ export function MarkerLayer({
             }}
             eventHandlers={{
               click: () => onMarkerClick?.(id),
+              popupopen: () => {
+                requestAnimationFrame(() => {
+                  map.invalidateSize({ pan: false });
+                  markerRefs.current.get(id)?.getPopup()?.update();
+                });
+              },
               popupclose: () => {
                 if (navigatingFromPopupRef.current) {
                   navigatingFromPopupRef.current = false;
@@ -129,7 +132,7 @@ export function MarkerLayer({
               },
             }}
           >
-            <Popup autoPan={false}>
+            <Popup autoPan={false} minWidth={260} maxWidth={320}>
               <Typography
                 variant="caption"
                 sx={{
