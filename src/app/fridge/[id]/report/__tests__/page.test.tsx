@@ -8,14 +8,32 @@ jest.mock('next/navigation', () => ({
 }));
 
 const mockInvalidate = jest.fn();
+const mockUpdateFridgeReport = jest.fn();
 jest.mock('store/useFridgeStore', () => ({
-  useFridgeStore: (selector: (s: { invalidate: jest.Mock }) => unknown) =>
-    selector({ invalidate: mockInvalidate }),
+  useFridgeStore: (
+    selector: (s: {
+      invalidate: jest.Mock;
+      updateFridgeReport: jest.Mock;
+    }) => unknown
+  ) =>
+    selector({
+      invalidate: mockInvalidate,
+      updateFridgeReport: mockUpdateFridgeReport,
+    }),
 }));
 
 jest.mock('store/useAuthStore', () => ({
-  useAuthStore: (selector: (s: { user: null }) => unknown) =>
-    selector({ user: null }),
+  useAuthStore: (
+    selector: (s: {
+      user: { uid: string; getIdToken: () => Promise<string> } | null;
+      userProfile: { userType: string } | null;
+    }) => unknown
+  ) =>
+    selector({
+      user: null,
+      userProfile: null,
+    }),
+  updateCachedUserProfile: jest.fn(),
 }));
 
 // Mock the heavy child components — we test the page logic, not the form UI
@@ -179,6 +197,22 @@ describe('form submission — success', () => {
     });
   });
 
+  it('optimistically patches the fridge report in store after successful submit', async () => {
+    render(<FridgeReportPage />);
+    screen.getByRole('button', { name: 'submit' }).click();
+
+    await waitFor(() => {
+      expect(mockUpdateFridgeReport).toHaveBeenCalledWith(
+        'fridge-42',
+        expect.objectContaining({
+          fridgeId: 'fridge-42',
+          condition: 'good',
+          foodPercentage: 2,
+        })
+      );
+    });
+  });
+
   it('POSTs to the correct URL', async () => {
     process.env.NEXT_PUBLIC_FF_API_URL = 'https://api.example.com';
     render(<FridgeReportPage />);
@@ -201,6 +235,75 @@ describe('form submission — success', () => {
       expect(body.fridgeId).toBe('fridge-42');
       expect(typeof body.timestamp).toBe('string');
     });
+  });
+
+  it('promotes Neighbor users to Volunteer after a successful report', async () => {
+    process.env.NEXT_PUBLIC_USERS_API_URL = 'https://users.example.com';
+    const getIdToken = jest.fn().mockResolvedValue('id-token-abc');
+    jest
+      .spyOn(require('store/useAuthStore'), 'useAuthStore')
+      .mockImplementation(
+        (
+          selector: (s: {
+            user: { uid: string; getIdToken: () => Promise<string> } | null;
+            userProfile: { userType: string } | null;
+          }) => unknown
+        ) =>
+          selector({
+            user: { uid: 'user-123', getIdToken },
+            userProfile: { userType: 'Neighbor' },
+          })
+      );
+
+    render(<FridgeReportPage />);
+    screen.getByRole('button', { name: 'submit' }).click();
+
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith(
+        'https://users.example.com/v1/users/user-123',
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer id-token-abc',
+          },
+          body: JSON.stringify({ userType: 'Volunteer' }),
+        }
+      );
+    });
+  });
+
+  it('does not promote users when userType is not Neighbor', async () => {
+    process.env.NEXT_PUBLIC_USERS_API_URL = 'https://users.example.com';
+    const getIdToken = jest.fn().mockResolvedValue('id-token-abc');
+    jest
+      .spyOn(require('store/useAuthStore'), 'useAuthStore')
+      .mockImplementation(
+        (
+          selector: (s: {
+            user: { uid: string; getIdToken: () => Promise<string> } | null;
+            userProfile: { userType: string } | null;
+          }) => unknown
+        ) =>
+          selector({
+            user: { uid: 'user-123', getIdToken },
+            userProfile: { userType: 'Volunteer' },
+          })
+      );
+
+    render(<FridgeReportPage />);
+    screen.getByRole('button', { name: 'submit' }).click();
+
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith(
+        expect.stringContaining('/v1/fridges/fridge-42/reports'),
+        expect.objectContaining({ method: 'POST' })
+      );
+    });
+    expect(mockFetch).not.toHaveBeenCalledWith(
+      'https://users.example.com/v1/users/user-123',
+      expect.objectContaining({ method: 'PATCH' })
+    );
   });
 });
 

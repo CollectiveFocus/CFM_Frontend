@@ -289,3 +289,36 @@ describe('getFridgeById', () => {
     ).toBeUndefined();
   });
 });
+
+describe('updateFridgeReport', () => {
+  it('updates report for a matching fridge id', () => {
+    useFridgeStore.setState({ fridges: [mockFridge] });
+
+    const report = {
+      fridgeId: 'fridge-1',
+      timestamp: '2026-06-15T00:00:00.000Z',
+      condition: 'good',
+      foodPercentage: 3,
+      notes: 'Restocked',
+    };
+
+    useFridgeStore.getState().updateFridgeReport('fridge-1', report);
+
+    expect(useFridgeStore.getState().fridges[0].report).toEqual(report);
+  });
+
+  it('does nothing when fridge id does not exist', () => {
+    useFridgeStore.setState({ fridges: [mockFridge] });
+
+    const report = {
+      fridgeId: 'missing-id',
+      timestamp: '2026-06-15T00:00:00.000Z',
+      condition: 'good',
+      foodPercentage: 2,
+    };
+
+    useFridgeStore.getState().updateFridgeReport('missing-id', report);
+
+    expect(useFridgeStore.getState().fridges[0].report).toBeNull();
+  });
+});

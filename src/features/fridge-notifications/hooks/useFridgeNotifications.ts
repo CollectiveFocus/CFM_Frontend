@@ -114,15 +114,14 @@ export function useFridgeNotifications(
         return {
           notifications,
           status: notifications.length > 0 ? 'success' : 'empty',
-          lastUpdated: Date.now(),
           ownerUserId: user.uid,
         };
       });
 
       setIsFollowing(true);
       setSavedPreferences(savedNotification);
-      // Ensure dependent views (profile count, my-fridges) refetch fresh data.
-      useFollowingStore.getState().invalidate();
+      // Revalidate in the background without blocking immediate optimistic UI.
+      void useFollowingStore.getState().fetch();
       setStatus('success');
       return true;
     } catch (err) {
@@ -154,15 +153,14 @@ export function useFridgeNotifications(
         return {
           notifications,
           status: notifications.length > 0 ? 'success' : 'empty',
-          lastUpdated: Date.now(),
           ownerUserId: user.uid,
         };
       });
 
       setIsFollowing(false);
       setSavedPreferences(null);
-      // Ensure dependent views (profile count, my-fridges) refetch fresh data.
-      useFollowingStore.getState().invalidate();
+      // Revalidate in the background without blocking immediate optimistic UI.
+      void useFollowingStore.getState().fetch();
       setStatus('idle');
       return true;
     } catch (err) {

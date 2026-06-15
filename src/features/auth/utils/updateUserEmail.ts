@@ -1,4 +1,5 @@
 import { User } from 'firebase/auth';
+import { updateCachedUserProfile } from 'store/useAuthStore';
 
 const USERS_API_URL = process.env.NEXT_PUBLIC_USERS_API_URL;
 
@@ -26,5 +27,8 @@ export async function updateUserEmail(
     console.error(
       `[updateUserEmail] API error ${res.status}: ${res.statusText}`
     );
+    return;
   }
+
+  updateCachedUserProfile(user.uid, { email });
 }

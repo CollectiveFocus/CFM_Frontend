@@ -34,6 +34,27 @@ export const clearUserProfileCache = (userId: string): void => {
   inFlightProfileRequests.delete(userId);
 };
 
+export const updateCachedUserProfile = (
+  userId: string,
+  updates: Partial<AppUserProfile>
+): void => {
+  const cachedProfile = userProfileCache.get(userId);
+  const activeProfile = useAuthStore.getState().userProfile;
+  const activeUserId = useAuthStore.getState().user?.uid;
+
+  if (cachedProfile) {
+    userProfileCache.set(userId, { ...cachedProfile, ...updates });
+  } else if (activeUserId === userId && activeProfile) {
+    userProfileCache.set(userId, { ...activeProfile, ...updates });
+  }
+
+  if (activeUserId === userId && activeProfile) {
+    useAuthStore.setState({
+      userProfile: { ...activeProfile, ...updates },
+    });
+  }
+};
+
 type LoadUserProfileResult =
   | { profile: AppUserProfile; status: 'success' }
   | { profile: null; status: 'not-found' }

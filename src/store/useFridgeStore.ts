@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Fridge, ApiFridge, AppStatus } from 'types/domain';
+import { Fridge, ApiFridge, AppStatus, FridgeReport } from 'types/domain';
 import { apiClient } from 'utils/api-client';
 
 interface FridgeState {
@@ -10,6 +10,7 @@ interface FridgeState {
 
   fetchFridges: () => Promise<void>;
   getFridgeById: (id: string) => Fridge | undefined;
+  updateFridgeReport: (id: string, report: FridgeReport) => void;
   // Call after a successful report submission so the next fetchFridges
   // bypasses the TTL and returns fresh data.
   invalidate: () => void;
@@ -87,6 +88,13 @@ export const useFridgeStore = create<FridgeState>((set, get) => ({
   getFridgeById: (id: string) => {
     return get().fridges.find((f) => f.id === id);
   },
+
+  updateFridgeReport: (id: string, report: FridgeReport) =>
+    set((state) => ({
+      fridges: state.fridges.map((fridge) =>
+        fridge.id === id ? { ...fridge, report } : fridge
+      ),
+    })),
 
   invalidate: () => set({ lastUpdated: null }),
 }));

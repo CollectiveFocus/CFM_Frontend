@@ -13,6 +13,7 @@ jest.mock('firebase/auth', () => ({
 
 let useAuthStore: typeof import('../useAuthStore').useAuthStore;
 let clearUserProfileCache: typeof import('../useAuthStore').clearUserProfileCache;
+let updateCachedUserProfile: typeof import('../useAuthStore').updateCachedUserProfile;
 
 const mockUser = {
   uid: 'user-123',
@@ -30,7 +31,8 @@ const profileResponse = {
 
 describe('useAuthStore profile cache', () => {
   beforeAll(async () => {
-    ({ useAuthStore, clearUserProfileCache } = await import('../useAuthStore'));
+    ({ useAuthStore, clearUserProfileCache, updateCachedUserProfile } =
+      await import('../useAuthStore'));
   });
 
   beforeEach(() => {
@@ -71,5 +73,19 @@ describe('useAuthStore profile cache', () => {
     expect(global.fetch).toHaveBeenCalledTimes(2);
     expect(useAuthStore.getState().userProfile).toEqual(profileResponse.user);
     expect(useAuthStore.getState().userProfileStatus).toBe('success');
+  });
+
+  it('updates cached and active profile when userType changes', async () => {
+    await useAuthStore.getState().fetchUserProfile(mockUser);
+
+    updateCachedUserProfile('user-123', { userType: 'Volunteer' });
+
+    expect(useAuthStore.getState().userProfile?.userType).toBe('Volunteer');
+
+    useAuthStore.setState({ userProfile: null, userProfileStatus: 'idle' });
+    await useAuthStore.getState().fetchUserProfile(mockUser);
+
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    expect(useAuthStore.getState().userProfile?.userType).toBe('Volunteer');
   });
 });

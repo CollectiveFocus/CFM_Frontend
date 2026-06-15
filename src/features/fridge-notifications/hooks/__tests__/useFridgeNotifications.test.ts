@@ -33,7 +33,7 @@ const mockUseFollowingStore = useFollowingStore as unknown as {
   getState: jest.Mock;
   setState: jest.Mock;
 };
-const mockInvalidateFollowing = jest.fn();
+const mockFetchFollowing = jest.fn().mockResolvedValue(undefined);
 
 const mockUser = {
   uid: 'user-1',
@@ -43,7 +43,7 @@ const mockUser = {
 beforeEach(() => {
   jest.clearAllMocks();
   mockUseFollowingStore.getState.mockReturnValue({
-    invalidate: mockInvalidateFollowing,
+    fetch: mockFetchFollowing,
   });
   mockUseFollowingStore.setState.mockImplementation(() => undefined);
 });
@@ -123,7 +123,7 @@ describe('useFridgeNotifications', () => {
     expect(result.current.isFollowing).toBe(true);
     expect(result.current.status).toBe('success');
     expect(mockUseFollowingStore.setState).toHaveBeenCalledTimes(1);
-    expect(mockInvalidateFollowing).toHaveBeenCalledTimes(1);
+    expect(mockFetchFollowing).toHaveBeenCalledWith();
   });
 
   it('unfollows and clears saved preferences', async () => {
@@ -157,6 +157,6 @@ describe('useFridgeNotifications', () => {
     expect(result.current.savedPreferences).toBeNull();
     expect(result.current.status).toBe('idle');
     expect(mockUseFollowingStore.setState).toHaveBeenCalledTimes(1);
-    expect(mockInvalidateFollowing).toHaveBeenCalledTimes(1);
+    expect(mockFetchFollowing).toHaveBeenCalledWith();
   });
 });

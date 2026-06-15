@@ -6,22 +6,17 @@ import { useAuthStore } from './useAuthStore';
 interface FollowingState {
   notifications: UserFridgeNotification[];
   status: AppStatus;
-  lastUpdated: number | null;
   ownerUserId: string | null;
 
   fetch: () => Promise<void>;
-  invalidate: () => void;
   reset: () => void;
 }
-
-const FOLLOWING_CACHE_TTL_MS = 1 * 60 * 1000; // 1 minute
 
 let isFetching = false;
 
 export const useFollowingStore = create<FollowingState>((set, get) => ({
   notifications: [],
   status: 'idle',
-  lastUpdated: null,
   ownerUserId: null,
 
   fetch: async () => {
@@ -32,41 +27,27 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
       set({
         notifications: [],
         status: 'idle',
-        lastUpdated: null,
         ownerUserId: null,
       });
       isFetching = false;
       return;
     }
 
+    const requestUserId = user.uid;
+
     if (ownerUserId !== null && ownerUserId !== user.uid) {
       set({
         notifications: [],
         status: 'idle',
-        lastUpdated: null,
         ownerUserId: user.uid,
       });
-    }
-
-    const {
-      notifications,
-      lastUpdated,
-      ownerUserId: currentOwnerUserId,
-    } = get();
-
-    // TTL guard: skip if we have fresh data
-    if (
-      currentOwnerUserId === user.uid &&
-      notifications.length > 0 &&
-      lastUpdated !== null &&
-      Date.now() - lastUpdated < FOLLOWING_CACHE_TTL_MS
-    ) {
-      return;
     }
 
     // In-flight guard: deduplicate concurrent calls
     if (isFetching) return;
     isFetching = true;
+
+    const { notifications } = get();
 
     if (notifications.length === 0) {
       set({ status: 'loading' });
@@ -74,14 +55,36 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
 
     try {
       const idToken = await user.getIdToken();
-      const data = await getAllUserNotifications(user.uid, idToken);
+
+      const latestUserBeforeFetch = useAuthStore.getState().user;
+      if (
+        !latestUserBeforeFetch ||
+        latestUserBeforeFetch.uid !== requestUserId
+      ) {
+        return;
+      }
+
+      const data = await getAllUserNotifications(requestUserId, idToken);
+
+      const latestUserBeforeCommit = useAuthStore.getState().user;
+      if (
+        !latestUserBeforeCommit ||
+        latestUserBeforeCommit.uid !== requestUserId
+      ) {
+        return;
+      }
+
       set({
         notifications: data,
         status: data.length > 0 ? 'success' : 'empty',
-        lastUpdated: Date.now(),
-        ownerUserId: user.uid,
+        ownerUserId: requestUserId,
       });
     } catch {
+      const latestUserOnError = useAuthStore.getState().user;
+      if (!latestUserOnError || latestUserOnError.uid !== requestUserId) {
+        return;
+      }
+
       if (get().notifications.length === 0) {
         set({ status: 'error' });
       }
@@ -90,12 +93,10 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
     }
   },
 
-  invalidate: () => set({ lastUpdated: null }),
   reset: () =>
     set({
       notifications: [],
       status: 'idle',
-      lastUpdated: null,
       ownerUserId: null,
     }),
 }));

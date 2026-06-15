@@ -2,7 +2,11 @@ import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
-import { clearUserProfileCache, useAuthStore } from 'store/useAuthStore';
+import {
+  clearUserProfileCache,
+  updateCachedUserProfile,
+  useAuthStore,
+} from 'store/useAuthStore';
 import { useFollowingStore } from 'store/useFollowingStore';
 
 const TEST_USERS_API_BASE_URL = 'https://users-api-fake.test.com';
@@ -40,10 +44,12 @@ jest.mock('config/firebase', () => ({
 jest.mock('store/useAuthStore', () => {
   const mockUseAuthStore = jest.fn();
   mockUseAuthStore.setState = jest.fn();
+  mockUseAuthStore.getState = jest.fn();
 
   return {
     useAuthStore: mockUseAuthStore,
     clearUserProfileCache: jest.fn(),
+    updateCachedUserProfile: jest.fn(),
   };
 });
 
@@ -62,7 +68,9 @@ const mockUseRouter = useRouter as jest.Mock;
 const mockSignOut = signOut as jest.Mock;
 const mockUseAuthStore = useAuthStore as unknown as jest.Mock & {
   setState: jest.Mock;
+  getState: jest.Mock;
 };
+const mockUpdateCachedUserProfile = updateCachedUserProfile as jest.Mock;
 const mockUseFollowingStore = useFollowingStore as unknown as jest.Mock;
 const mockResetFollowing = jest.fn();
 const mockFetchUserProfile = jest.fn();
@@ -103,6 +111,9 @@ describe('SettingsPage delete flow', () => {
           fetchUserProfile: mockFetchUserProfile,
         })
     );
+    mockUseAuthStore.getState.mockReturnValue({
+      fetchUserProfile: mockFetchUserProfile,
+    });
 
     mockUseFollowingStore.mockImplementation(
       (selector: (state: unknown) => unknown) =>
@@ -141,6 +152,28 @@ describe('SettingsPage delete flow', () => {
       });
       expect(mockSignOut).toHaveBeenCalledTimes(1);
       expect(mockReplace).toHaveBeenCalledWith('/auth/signin');
+    });
+  });
+
+  it('updates cached profile settings after successful notification PATCH', async () => {
+    render(<SettingsPage />);
+
+    fireEvent.click(screen.getByRole('button', { name: /notifications/i }));
+    fireEvent.click(
+      screen.getByRole('switch', { name: /push notifications/i })
+    );
+
+    await waitFor(() => {
+      expect(global.fetch).toHaveBeenCalledWith(
+        `${TEST_USERS_API_BASE_URL}/v1/users/user-123`,
+        expect.objectContaining({ method: 'PATCH' })
+      );
+    });
+
+    expect(mockUpdateCachedUserProfile).toHaveBeenCalledWith('user-123', {
+      settings: {
+        pushNotificationEnabled: true,
+      },
     });
   });
 });

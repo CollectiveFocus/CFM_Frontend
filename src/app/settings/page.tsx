@@ -33,7 +33,11 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import { signOut } from 'firebase/auth';
 import { auth } from 'config/firebase';
 import { SuccessToast } from 'components/ui';
-import { clearUserProfileCache, useAuthStore } from 'store/useAuthStore';
+import {
+  clearUserProfileCache,
+  updateCachedUserProfile,
+  useAuthStore,
+} from 'store/useAuthStore';
 import { useFollowingStore } from 'store/useFollowingStore';
 import { designColor } from 'theme/palette';
 
@@ -143,7 +147,6 @@ export default function SettingsPage(): React.ReactElement {
   const authStatus = useAuthStore((state) => state.status);
   const user = useAuthStore((state) => state.user);
   const userProfile = useAuthStore((state) => state.userProfile);
-  const fetchUserProfile = useAuthStore((state) => state.fetchUserProfile);
   const resetFollowing = useFollowingStore((state) => state.reset);
   const [appearanceOpen, setAppearanceOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
@@ -167,10 +170,11 @@ export default function SettingsPage(): React.ReactElement {
   }, [authStatus, router, user]);
 
   useEffect(() => {
+    const fetchUserProfile = useAuthStore.getState().fetchUserProfile;
     if (authStatus === 'authenticated' && user) {
       void fetchUserProfile(user);
     }
-  }, [authStatus, fetchUserProfile, user]);
+  }, [authStatus, user]);
 
   if (authStatus !== 'authenticated' || !user) {
     return (
@@ -296,7 +300,12 @@ export default function SettingsPage(): React.ReactElement {
           : 'Email Notifications';
       const settingState = value ? 'Enabled' : 'Disabled';
       showSuccessToast(`${settingLabel} ${settingState}`);
-      await fetchUserProfile(user);
+      updateCachedUserProfile(user.uid, {
+        settings: {
+          ...(userProfile?.settings ?? {}),
+          [key]: value,
+        },
+      });
     } catch (error) {
       const fallbackMessage =
         key === 'pushNotificationEnabled'

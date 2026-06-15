@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { FeedbackCard } from 'components/ui';
+import { promoteNeighborToVolunteer } from 'features/auth/utils/promoteNeighborToVolunteer';
 import { ReportForm, ReportFormData } from 'features/fridge-management';
 import { useFridgeStore } from 'store/useFridgeStore';
 import { useAuthStore } from 'store/useAuthStore';
+import { FridgeReport } from 'types/domain';
 
 enum DisplayStatus {
   Form = 0,
@@ -18,7 +20,9 @@ export default function FridgeReportPage(): React.ReactElement {
     DisplayStatus.Form
   );
   const invalidateFridges = useFridgeStore((s) => s.invalidate);
+  const updateFridgeReport = useFridgeStore((s) => s.updateFridgeReport);
   const user = useAuthStore((s) => s.user);
+  const userProfile = useAuthStore((s) => s.userProfile);
   const params = useParams();
   const searchParams = useSearchParams();
   const fridgeId = (params?.id ?? '') as string;
@@ -48,7 +52,17 @@ export default function FridgeReportPage(): React.ReactElement {
       });
 
       if (response.ok) {
+        const optimisticReport: FridgeReport = {
+          fridgeId,
+          timestamp: payload.timestamp,
+          condition: values.condition,
+          foodPercentage: values.foodPercentage,
+          ...(values.notes ? { notes: values.notes } : {}),
+        };
+
+        updateFridgeReport(fridgeId, optimisticReport);
         invalidateFridges();
+        void promoteNeighborToVolunteer(user, userProfile?.userType);
         setDisplayStatus(DisplayStatus.Success);
       } else {
         setDisplayStatus(DisplayStatus.Error);
