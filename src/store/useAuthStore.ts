@@ -15,6 +15,12 @@ export interface AppUserProfile {
   phoneNumber?: string;
   zipcode?: string;
   points?: number;
+  settings?: {
+    pushNotificationEnabled?: boolean;
+    emailNotificationEnabled?: boolean;
+    // Used by native clients; web does not currently render this setting.
+    geofenceEnabled?: boolean;
+  };
 }
 
 const userProfileCache = new Map<string, AppUserProfile>();
@@ -23,55 +29,78 @@ const inFlightProfileRequests = new Map<
   Promise<AppUserProfile | null>
 >();
 
-async function loadUserProfile(user: User): Promise<AppUserProfile | null> {
+export const clearUserProfileCache = (userId: string): void => {
+  userProfileCache.delete(userId);
+  inFlightProfileRequests.delete(userId);
+};
+
+type LoadUserProfileResult =
+  | { profile: AppUserProfile; status: 'success' }
+  | { profile: null; status: 'not-found' }
+  | { profile: null; status: 'error' };
+
+async function loadUserProfile(user: User): Promise<LoadUserProfileResult> {
   if (!USERS_API_URL) {
     console.error('[useAuthStore] NEXT_PUBLIC_USERS_API_URL is not set');
-    return null;
+    return { profile: null, status: 'error' };
   }
 
   const cachedProfile = userProfileCache.get(user.uid);
   if (cachedProfile) {
-    return cachedProfile;
+    return { profile: cachedProfile, status: 'success' };
   }
 
   const existingRequest = inFlightProfileRequests.get(user.uid);
   if (existingRequest) {
-    return existingRequest;
+    const existingProfile = await existingRequest;
+    if (existingProfile) {
+      return { profile: existingProfile, status: 'success' };
+    }
+
+    return { profile: null, status: 'not-found' };
   }
 
   const request = (async () => {
-    try {
-      const idToken = await user.getIdToken();
-      const response = await fetch(`${USERS_API_URL}/v1/users/${user.uid}`, {
-        headers: {
-          Authorization: `Bearer ${idToken}`,
-        },
-      });
+    const idToken = await user.getIdToken();
+    const response = await fetch(`${USERS_API_URL}/v1/users/${user.uid}`, {
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
 
-      if (!response.ok) {
-        console.error(
-          `[useAuthStore] Failed to load user profile ${response.status}: ${response.statusText}`
-        );
-        return null;
-      }
-
-      const data = (await response.json()) as { user?: AppUserProfile };
-      if (!data.user) {
-        return null;
-      }
-
-      userProfileCache.set(user.uid, data.user);
-      return data.user;
-    } catch (error) {
-      console.error('[useAuthStore] Failed to load user profile', error);
+    if (response.status === 404) {
       return null;
-    } finally {
-      inFlightProfileRequests.delete(user.uid);
     }
+
+    if (!response.ok) {
+      throw new Error(
+        `[useAuthStore] Failed to load user profile ${response.status}: ${response.statusText}`
+      );
+    }
+
+    const data = (await response.json()) as { user?: AppUserProfile };
+    if (!data.user) {
+      return null;
+    }
+
+    userProfileCache.set(user.uid, data.user);
+    return data.user;
   })();
 
   inFlightProfileRequests.set(user.uid, request);
-  return request;
+  try {
+    const profile = await request;
+    if (profile) {
+      return { profile, status: 'success' };
+    }
+
+    return { profile: null, status: 'not-found' };
+  } catch (error) {
+    console.error('[useAuthStore] Failed to load user profile', error);
+    return { profile: null, status: 'error' };
+  } finally {
+    inFlightProfileRequests.delete(user.uid);
+  }
 }
 
 interface AuthState {
@@ -95,15 +124,20 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
 
     set({ userProfileStatus: 'loading' });
-    const profile = await loadUserProfile(user);
+    const result = await loadUserProfile(user);
+
+    if (result.status === 'not-found') {
+      set({ userProfile: null, userProfileStatus: 'idle' });
+      return;
+    }
 
     if (useAuthStore.getState().user?.uid !== user.uid) {
       return;
     }
 
     set({
-      userProfile: profile,
-      userProfileStatus: profile ? 'success' : 'error',
+      userProfile: result.profile,
+      userProfileStatus: result.status,
     });
   },
 }));

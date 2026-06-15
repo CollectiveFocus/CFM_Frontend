@@ -13,6 +13,7 @@ export async function registerNewUser(
   credential: UserCredential
 ): Promise<void> {
   const { user } = credential;
+
   const idToken = await user.getIdToken();
 
   const body: Record<string, string> = { userId: user.uid };

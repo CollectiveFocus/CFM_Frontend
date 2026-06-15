@@ -1,7 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/navigation';
-import { signOut } from 'firebase/auth';
 import { useAuthStore } from 'store/useAuthStore';
 import { useFollowingStore } from 'store/useFollowingStore';
 
@@ -36,9 +35,7 @@ jest.mock('next/image', () => ({
   ),
 }));
 
-jest.mock('firebase/auth', () => ({
-  signOut: jest.fn(),
-}));
+jest.mock('firebase/auth', () => ({}));
 
 jest.mock('config/firebase', () => ({
   auth: {},
@@ -52,12 +49,9 @@ jest.mock('store/useFollowingStore', () => ({
   useFollowingStore: jest.fn(),
 }));
 
-// Import after env + mocks are set so module-level constants initialize correctly.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { default: ProfilePage } = require('../page') as typeof import('../page');
+let ProfilePage: typeof import('../page').default;
 
 const mockUseRouter = useRouter as jest.Mock;
-const mockSignOut = signOut as jest.Mock;
 const mockUseAuthStore = useAuthStore as unknown as jest.Mock;
 const mockUseFollowingStore = useFollowingStore as unknown as jest.Mock;
 const mockFetchFollowing = jest.fn();
@@ -74,6 +68,10 @@ const mockUserProfile = {
 };
 
 describe('ProfilePage', () => {
+  beforeAll(async () => {
+    ({ default: ProfilePage } = await import('../page'));
+  });
+
   beforeEach(() => {
     jest.clearAllMocks();
 
@@ -82,6 +80,7 @@ describe('ProfilePage', () => {
     mockUseAuthStore.mockImplementation(
       (selector: (state: unknown) => unknown) =>
         selector({
+          status: 'authenticated',
           user: mockUser,
           userProfile: mockUserProfile,
         })
@@ -136,16 +135,13 @@ describe('ProfilePage', () => {
     expect(screen.getByText('Filled')).toBeInTheDocument();
   });
 
-  it('signs out and redirects to home', async () => {
-    mockSignOut.mockResolvedValue(undefined);
-
-    render(<ProfilePage />);
-
-    fireEvent.click(screen.getByRole('button', { name: /sign out/i }));
+  it('links to the settings page from the gear icon', async () => {
+    const { container } = render(<ProfilePage />);
 
     await waitFor(() => {
-      expect(mockSignOut).toHaveBeenCalledTimes(1);
-      expect(mockPush).toHaveBeenCalledWith('/');
+      expect(global.fetch).toHaveBeenCalledTimes(1);
     });
+
+    expect(container.querySelector('a[href="/settings"]')).toBeInTheDocument();
   });
 });

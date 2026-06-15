@@ -7,9 +7,11 @@ interface FollowingState {
   notifications: UserFridgeNotification[];
   status: AppStatus;
   lastUpdated: number | null;
+  ownerUserId: string | null;
 
   fetch: () => Promise<void>;
   invalidate: () => void;
+  reset: () => void;
 }
 
 const FOLLOWING_CACHE_TTL_MS = 1 * 60 * 1000; // 1 minute
@@ -20,12 +22,41 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
   notifications: [],
   status: 'idle',
   lastUpdated: null,
+  ownerUserId: null,
 
   fetch: async () => {
-    const { notifications, lastUpdated } = get();
+    const { ownerUserId } = get();
+
+    const user = useAuthStore.getState().user;
+    if (!user) {
+      set({
+        notifications: [],
+        status: 'idle',
+        lastUpdated: null,
+        ownerUserId: null,
+      });
+      isFetching = false;
+      return;
+    }
+
+    if (ownerUserId !== null && ownerUserId !== user.uid) {
+      set({
+        notifications: [],
+        status: 'idle',
+        lastUpdated: null,
+        ownerUserId: user.uid,
+      });
+    }
+
+    const {
+      notifications,
+      lastUpdated,
+      ownerUserId: currentOwnerUserId,
+    } = get();
 
     // TTL guard: skip if we have fresh data
     if (
+      currentOwnerUserId === user.uid &&
       notifications.length > 0 &&
       lastUpdated !== null &&
       Date.now() - lastUpdated < FOLLOWING_CACHE_TTL_MS
@@ -36,12 +67,6 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
     // In-flight guard: deduplicate concurrent calls
     if (isFetching) return;
     isFetching = true;
-
-    const user = useAuthStore.getState().user;
-    if (!user) {
-      isFetching = false;
-      return;
-    }
 
     if (notifications.length === 0) {
       set({ status: 'loading' });
@@ -54,6 +79,7 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
         notifications: data,
         status: data.length > 0 ? 'success' : 'empty',
         lastUpdated: Date.now(),
+        ownerUserId: user.uid,
       });
     } catch {
       if (get().notifications.length === 0) {
@@ -65,4 +91,11 @@ export const useFollowingStore = create<FollowingState>((set, get) => ({
   },
 
   invalidate: () => set({ lastUpdated: null }),
+  reset: () =>
+    set({
+      notifications: [],
+      status: 'idle',
+      lastUpdated: null,
+      ownerUserId: null,
+    }),
 }));

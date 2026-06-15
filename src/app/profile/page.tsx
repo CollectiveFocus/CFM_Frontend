@@ -7,8 +7,6 @@ import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { signOut } from 'firebase/auth';
-import { auth } from 'config/firebase';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from 'store/useAuthStore';
 import { useFollowingStore } from 'store/useFollowingStore';
@@ -56,6 +54,7 @@ const lightControlSx = {
 // ════════════════════════════════════════════════════════════════
 export default function ProfilePage() {
   const router = useRouter();
+  const authStatus = useAuthStore((s) => s.status);
   const user = useAuthStore((s) => s.user);
   const userProfile = useAuthStore((s) => s.userProfile);
   const followingCount = useFollowingStore((s) => s.notifications.length);
@@ -66,13 +65,33 @@ export default function ProfilePage() {
   const profileUserType = userProfile?.userType ?? '...';
 
   useEffect(() => {
-    fetchFollowing();
-  }, [fetchFollowing, user?.uid]);
+    if (authStatus === 'unauthenticated' && !user) {
+      router.replace('/auth/signin');
+    }
+  }, [authStatus, router, user]);
 
-  const onSignOut = async () => {
-    await signOut(auth);
-    router.push('/');
-  };
+  useEffect(() => {
+    if (authStatus === 'authenticated') {
+      fetchFollowing();
+    }
+  }, [authStatus, fetchFollowing, user?.uid]);
+
+  useEffect(() => {
+    if (authStatus === 'authenticated' && user && !userProfile) {
+      void useAuthStore.getState().fetchUserProfile(user);
+    }
+  }, [authStatus, user, userProfile]);
+
+  if (authStatus !== 'authenticated' || !user) {
+    return (
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: pageGradient, //TODO: should be the default page gradient
+        }}
+      />
+    );
+  }
 
   return (
     <Box
@@ -80,7 +99,7 @@ export default function ProfilePage() {
         minHeight: '100vh',
         background: pageGradient,
         pt: { xs: 0, md: 6 },
-        pb: 8,
+        pb: { xs: 3, md: 5 },
       }}
     >
       <Box
@@ -95,7 +114,6 @@ export default function ProfilePage() {
             border: { md: `1px solid ${designColor.lightSilver}` },
             boxShadow: { md: '0 10px 30px rgba(0,0,0,0.15)' },
             background: fridgeGradient,
-            minHeight: 760,
           }}
         >
           {/* Subtle horizontal texture */}
@@ -214,7 +232,7 @@ export default function ProfilePage() {
               pl: 5,
               pr: 7,
               pt: 4,
-              pb: 8,
+              pb: 5,
             }}
           >
             {/* Activity */}
@@ -229,18 +247,6 @@ export default function ProfilePage() {
               <ComingSoonPlaceholder height={96} />
             </Box>
           </Box>
-        </Box>
-
-        {/* Sign out (kept available; placement TBD) */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-          <Button
-            variant="text"
-            color="error"
-            onClick={onSignOut}
-            sx={{ textTransform: 'none', fontWeight: 600 }}
-          >
-            Sign out
-          </Button>
         </Box>
       </Box>
     </Box>
@@ -555,14 +561,14 @@ function PolaroidAvatar() {
 // ─── Illustration placeholders ───────────────────────────────────
 
 function useActionStats(uid: string | undefined): UserActionStats | null {
-  const [actionStats, setActionStats] = useState<UserActionStats | null>(null);
+  const [fetchedStatsByUid, setFetchedStatsByUid] = useState<
+    Record<string, UserActionStats>
+  >({});
+  const cachedStats = uid ? (statsCache.get(uid) ?? null) : null;
+  const actionStats = uid ? (fetchedStatsByUid[uid] ?? cachedStats) : null;
 
   useEffect(() => {
     if (!uid) return;
-
-    // Show cached value immediately if available
-    const cached = statsCache.get(uid);
-    if (cached) setActionStats(cached);
 
     // Always revalidate in background
     fetch(`${USER_STATS_BASE_URL}/${uid}`)
@@ -573,8 +579,19 @@ function useActionStats(uid: string | undefined): UserActionStats | null {
         const current = statsCache.get(uid);
         if (JSON.stringify(current) !== JSON.stringify(data)) {
           statsCache.set(uid, data);
-          setActionStats(data);
         }
+
+        setFetchedStatsByUid((prev) => {
+          const previousStats = prev[uid];
+          if (JSON.stringify(previousStats) === JSON.stringify(data)) {
+            return prev;
+          }
+
+          return {
+            ...prev,
+            [uid]: data,
+          };
+        });
       })
       .catch(() => {});
   }, [uid]);

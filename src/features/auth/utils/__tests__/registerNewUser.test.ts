@@ -96,13 +96,11 @@ describe('registerNewUser (URL set)', () => {
   });
 
   it('logs an error on an unexpected non-ok response', async () => {
-    global.fetch = jest
-      .fn()
-      .mockResolvedValue({
-        ok: false,
-        status: 500,
-        statusText: 'Internal Server Error',
-      });
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
     await registerNewUser(makeCredential({}));
 
     expect(console.error).toHaveBeenCalledWith(
