@@ -151,6 +151,7 @@ export default function SettingsPage(): React.ReactElement {
   const [appearanceOpen, setAppearanceOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<ThemeMode>('system');
   const [notificationOverrides, setNotificationOverrides] =
@@ -407,10 +408,12 @@ export default function SettingsPage(): React.ReactElement {
                 const isAccount = item.key === 'account';
                 const isNotifications = item.key === 'notifications';
                 const isAppearance = item.key === 'appearance';
+                const isHelp = item.key === 'help';
                 const isExpanded =
                   (isAppearance && appearanceOpen) ||
                   (isAccount && accountOpen) ||
-                  (isNotifications && notificationsOpen);
+                  (isNotifications && notificationsOpen) ||
+                  (isHelp && helpOpen);
                 const showDivider =
                   index < section.items.length - 1 && !isExpanded;
                 const ItemIcon = item.icon;
@@ -427,7 +430,9 @@ export default function SettingsPage(): React.ReactElement {
                             ? () => setNotificationsOpen((prev) => !prev)
                             : isAppearance
                               ? () => setAppearanceOpen((prev) => !prev)
-                              : undefined
+                              : isHelp
+                                ? () => setHelpOpen((prev) => !prev)
+                                : undefined
                       }
                       sx={{
                         borderRadius: 0,
@@ -499,7 +504,8 @@ export default function SettingsPage(): React.ReactElement {
                           transform:
                             (isAppearance && appearanceOpen) ||
                             (isAccount && accountOpen) ||
-                            (isNotifications && notificationsOpen)
+                            (isNotifications && notificationsOpen) ||
+                            (isHelp && helpOpen)
                               ? 'rotate(90deg)'
                               : 'rotate(0deg)',
                         }}
@@ -613,6 +619,25 @@ export default function SettingsPage(): React.ReactElement {
                               </Typography>
                             </Button>
                           </Box>
+                        </Stack>
+                      </Box>
+                    )}
+
+                    {isHelp && helpOpen && (
+                      <Box
+                        sx={{
+                          px: { xs: 3.5, md: 4 },
+                          pb: { xs: 3.5, md: 4 },
+                          pt: { xs: 2, md: 2.25 },
+                          backgroundColor: settingsPageColors.panelBg,
+                        }}
+                      >
+                        <Stack spacing={1.1} alignItems="flex-start">
+                          <HelpFeedbackLink href="/faqs" label="FAQs" />
+                          <HelpFeedbackLink
+                            href="/contact"
+                            label="Contact Us"
+                          />
                         </Stack>
                       </Box>
                     )}
@@ -946,6 +971,35 @@ function NotificationToggleRow({
         labelPlacement="start"
       />
     </Box>
+  );
+}
+
+function HelpFeedbackLink({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}): React.ReactElement {
+  return (
+    <Typography
+      component={NextLink}
+      href={href}
+      sx={{
+        color: settingsPageColors.backLinkColor,
+        fontSize: { xs: '1rem' },
+        px: 5,
+        py: 1,
+        fontWeight: 600,
+        lineHeight: 1.35,
+        textDecoration: 'none',
+        '&:hover': {
+          textDecoration: 'underline',
+        },
+      }}
+    >
+      {label}
+    </Typography>
   );
 }
 
