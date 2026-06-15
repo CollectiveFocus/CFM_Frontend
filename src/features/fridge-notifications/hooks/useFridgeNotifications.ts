@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuthStore } from 'store/useAuthStore';
+import { useFollowingStore } from 'store/useFollowingStore';
 import {
   UserFridgeNotification,
   ContactTypePreferences,
@@ -91,12 +92,37 @@ export function useFridgeNotifications(
         preferences,
         method
       );
-      setIsFollowing(true);
-      setSavedPreferences({
+      const savedNotification: UserFridgeNotification = {
         userId: user.uid,
         fridgeId,
         contactTypePreferences: preferences,
+      };
+
+      // Optimistically update shared following cache for immediate UI feedback.
+      useFollowingStore.setState((state) => {
+        const existingIndex = state.notifications.findIndex(
+          (notification) => notification.fridgeId === fridgeId
+        );
+
+        const notifications = [...state.notifications];
+        if (existingIndex >= 0) {
+          notifications[existingIndex] = savedNotification;
+        } else {
+          notifications.push(savedNotification);
+        }
+
+        return {
+          notifications,
+          status: notifications.length > 0 ? 'success' : 'empty',
+          lastUpdated: Date.now(),
+          ownerUserId: user.uid,
+        };
       });
+
+      setIsFollowing(true);
+      setSavedPreferences(savedNotification);
+      // Ensure dependent views (profile count, my-fridges) refetch fresh data.
+      useFollowingStore.getState().invalidate();
       setStatus('success');
       return true;
     } catch (err) {
@@ -118,8 +144,25 @@ export function useFridgeNotifications(
       setError(null);
       const idToken = await user.getIdToken();
       await deleteFridgeNotifications(user.uid, fridgeId, idToken);
+
+      // Optimistically update shared following cache for immediate UI feedback.
+      useFollowingStore.setState((state) => {
+        const notifications = state.notifications.filter(
+          (notification) => notification.fridgeId !== fridgeId
+        );
+
+        return {
+          notifications,
+          status: notifications.length > 0 ? 'success' : 'empty',
+          lastUpdated: Date.now(),
+          ownerUserId: user.uid,
+        };
+      });
+
       setIsFollowing(false);
       setSavedPreferences(null);
+      // Ensure dependent views (profile count, my-fridges) refetch fresh data.
+      useFollowingStore.getState().invalidate();
       setStatus('idle');
       return true;
     } catch (err) {

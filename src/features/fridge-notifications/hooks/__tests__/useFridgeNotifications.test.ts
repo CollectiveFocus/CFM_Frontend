@@ -6,6 +6,7 @@ import {
   deleteFridgeNotifications,
 } from '../../utils/fridgeNotificationsApi';
 import { useAuthStore } from 'store/useAuthStore';
+import { useFollowingStore } from 'store/useFollowingStore';
 
 jest.mock('../../utils/fridgeNotificationsApi', () => ({
   getFridgeNotifications: jest.fn(),
@@ -17,10 +18,22 @@ jest.mock('store/useAuthStore', () => ({
   useAuthStore: jest.fn(),
 }));
 
+jest.mock('store/useFollowingStore', () => ({
+  useFollowingStore: Object.assign(jest.fn(), {
+    getState: jest.fn(),
+    setState: jest.fn(),
+  }),
+}));
+
 const mockGetFridgeNotifications = getFridgeNotifications as jest.Mock;
 const mockSaveFridgeNotifications = saveFridgeNotifications as jest.Mock;
 const mockDeleteFridgeNotifications = deleteFridgeNotifications as jest.Mock;
 const mockUseAuthStore = useAuthStore as unknown as jest.Mock;
+const mockUseFollowingStore = useFollowingStore as unknown as {
+  getState: jest.Mock;
+  setState: jest.Mock;
+};
+const mockInvalidateFollowing = jest.fn();
 
 const mockUser = {
   uid: 'user-1',
@@ -29,6 +42,10 @@ const mockUser = {
 
 beforeEach(() => {
   jest.clearAllMocks();
+  mockUseFollowingStore.getState.mockReturnValue({
+    invalidate: mockInvalidateFollowing,
+  });
+  mockUseFollowingStore.setState.mockImplementation(() => undefined);
 });
 
 describe('useFridgeNotifications', () => {
@@ -105,6 +122,8 @@ describe('useFridgeNotifications', () => {
     );
     expect(result.current.isFollowing).toBe(true);
     expect(result.current.status).toBe('success');
+    expect(mockUseFollowingStore.setState).toHaveBeenCalledTimes(1);
+    expect(mockInvalidateFollowing).toHaveBeenCalledTimes(1);
   });
 
   it('unfollows and clears saved preferences', async () => {
@@ -137,5 +156,7 @@ describe('useFridgeNotifications', () => {
     expect(result.current.isFollowing).toBe(false);
     expect(result.current.savedPreferences).toBeNull();
     expect(result.current.status).toBe('idle');
+    expect(mockUseFollowingStore.setState).toHaveBeenCalledTimes(1);
+    expect(mockInvalidateFollowing).toHaveBeenCalledTimes(1);
   });
 });
