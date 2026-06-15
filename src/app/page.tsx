@@ -2,7 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { Grid, Typography, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
-import { PamphletParagraph, ParagraphCard } from 'features/marketing';
+import { ParagraphCard } from 'features/marketing';
 import { designColor } from 'theme/palette';
 
 const darkButtonSx = {
@@ -23,7 +23,7 @@ const lightButtonSx = {
 const pageContent = {
   pageHero: {
     img: {
-      src: '/hero/index.webp',
+      src: '/hero/index_3.webp',
       alt: 'Picture of a New York fridge map',
     },
     button: {
@@ -33,9 +33,12 @@ const pageContent = {
       variant: 'contained' as const,
     },
   },
-  introParagraph: {
-    variant: 'h1' as const,
+  homepageIntro: {
     title: 'Take what you need. Leave what you can.',
+    image: {
+      src: '/hero/home_page_fridge.webp',
+      alt: 'Community fridge stocked with food',
+    },
   },
   paragraphCard: {
     h2: {
@@ -101,24 +104,133 @@ const pageContent = {
   },
 };
 
+type HomepageIntroProps = typeof pageContent.homepageIntro;
+
+function HomepageIntro({
+  title,
+  image,
+}: HomepageIntroProps): React.ReactElement {
+  return (
+    <Box
+      sx={{
+        py: { xs: 3, md: 3 },
+        px: { xs: 2, sm: 4 },
+      }}
+    >
+      <Box
+        sx={{
+          mx: 'auto',
+          maxWidth: 1200,
+        }}
+      >
+        <Grid
+          container
+          alignItems="center"
+          spacing={{ xs: 6, md: 4 }}
+          justifyContent="space-between"
+        >
+          <Grid
+            size={{
+              xs: 12,
+              md: 7,
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: { xs: '1.75rem', md: '2.75rem' },
+                lineHeight: 1.1,
+                textAlign: { xs: 'center', md: 'left' },
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: { md: '1.30rem' },
+                lineHeight: 1.65,
+                mt: 4,
+                textAlign: { xs: 'center', md: 'left' },
+              }}
+            >
+              Fridge Finder helps you find community fridges near you. Click{' '}
+              <strong>Find A Fridge</strong> to explore the full map. New here?{' '}
+              Read our{' '}
+              <NextLink
+                href="/pamphlet/best-practices"
+                style={{ color: designColor.blue.interactive }}
+              >
+                <strong>Best practices</strong>
+              </NextLink>
+            </Typography>
+          </Grid>
+
+          <Grid
+            size={{
+              xs: 12,
+              md: 5,
+            }}
+            sx={{
+              display: 'flex',
+              justifyContent: { xs: 'center', md: 'flex-end' },
+            }}
+          >
+            <Box
+              sx={{
+                position: 'relative',
+                width: { xs: 300, sm: 360, md: 430 },
+                height: { xs: 320, sm: 380, md: 430 },
+              }}
+            >
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: { xs: 24, sm: 28, md: 40 },
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: { xs: 230, sm: 275, md: 310 },
+                  height: { xs: 230, sm: 275, md: 310 },
+                  borderRadius: '50%',
+                  backgroundColor: '#F3F4FA',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'visible',
+                }}
+              >
+                <Box
+                  component="img"
+                  src={image.src}
+                  alt={image.alt}
+                  sx={{
+                    width: 'auto',
+                    height: { xs: 250, sm: 300, md: 350 },
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
+}
+
 export default function HomePage(): React.ReactElement {
-  const { pageHero, introParagraph, paragraphCard } = pageContent;
+  const { pageHero, homepageIntro, paragraphCard } = pageContent;
   return (
     <>
-      <PageHero {...pageHero} overlay />
-      <PamphletParagraph sx={{ textAlign: 'center' }} {...introParagraph}>
-        <Typography variant="body1" sx={{ lineHeight: 1.7, mb: 2 }}>
-          Fridge Finder helps you find community fridges with free food near
-          you. Click <strong>Find A Fridge</strong> to explore the full map and
-          list of fridges. New here? Read our{' '}
-          <NextLink
-            href="/pamphlet/best-practices"
-            style={{ color: designColor.blue.interactive }}
-          >
-            <strong>Best Practices</strong>
-          </NextLink>
-        </Typography>
-      </PamphletParagraph>
+      <PageHero
+        {...pageHero}
+        overlay
+        sx={{
+          height: { xs: '55vh', md: '425px' },
+        }}
+      />
+
+      <HomepageIntro {...homepageIntro} />
 
       <Box sx={{ px: { xs: 2, sm: 4 }, mb: 8, mx: 'auto', maxWidth: 1200 }}>
         <Grid container direction="row" justifyContent="center" spacing={4}>

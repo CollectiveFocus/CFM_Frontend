@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box, Typography, Container } from '@mui/material';
+import { SxProps, Theme } from '@mui/material/styles';
 import { ButtonLink } from 'components/ui';
 
 interface PageHeroProps {
@@ -8,6 +9,7 @@ interface PageHeroProps {
     src: string;
     alt: string;
   };
+  sx?: SxProps<Theme>;
   title?: string;
   subtitle?: string;
   overlay?: boolean;
@@ -20,10 +22,11 @@ interface PageHeroProps {
 }
 
 // Opacity for the hero overlay — lightens the image to improve text/button contrast
-const HERO_OVERLAY_OPACITY = 0.4;
+const HERO_OVERLAY_OPACITY = 0.3;
 
 export function PageHero({
   img,
+  sx,
   title,
   subtitle,
   overlay,
@@ -40,6 +43,7 @@ export function PageHero({
         position: 'relative',
         overflow: 'hidden',
         bgcolor: '#000',
+        ...(sx as SxProps<Theme>),
       }}
     >
       <Image
