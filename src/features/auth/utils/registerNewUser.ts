@@ -1,6 +1,7 @@
-import { UserCredential } from 'firebase/auth';
+import { UserCredential, getAdditionalUserInfo } from 'firebase/auth';
 
 const USERS_API_URL = process.env.NEXT_PUBLIC_USERS_API_URL;
+export const NEW_USER_ONBOARDING_KEY = 'ff-new-user-onboarding';
 
 /**
  * Ensures a user record exists in our database after every sign-in.
@@ -12,6 +13,11 @@ const USERS_API_URL = process.env.NEXT_PUBLIC_USERS_API_URL;
 export async function registerNewUser(
   credential: UserCredential
 ): Promise<void> {
+  const additionalUserInfo = getAdditionalUserInfo(credential);
+  if (additionalUserInfo?.isNewUser) {
+    window.localStorage.setItem(NEW_USER_ONBOARDING_KEY, 'pending');
+  }
+
   const { user } = credential;
 
   const idToken = await user.getIdToken();

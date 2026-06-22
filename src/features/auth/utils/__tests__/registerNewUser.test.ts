@@ -1,5 +1,7 @@
 import type { UserCredential } from 'firebase/auth';
 
+const NEW_USER_ONBOARDING_KEY = 'ff-new-user-onboarding';
+
 // registerNewUser is loaded fresh per describe block via jest.isolateModules so
 // we can control NEXT_PUBLIC_USERS_API_URL before the module-level const is captured.
 
@@ -10,6 +12,7 @@ function makeCredential(
     uid?: string;
     email?: string | null;
     phoneNumber?: string | null;
+    isNewUser?: boolean;
   } = {}
 ): UserCredential {
   return {
@@ -20,14 +23,23 @@ function makeCredential(
       phoneNumber: overrides.phoneNumber ?? null,
       getIdToken: jest.fn().mockResolvedValue('id-token-abc'),
     },
+    _tokenResponse:
+      overrides.isNewUser === undefined
+        ? undefined
+        : { isNewUser: overrides.isNewUser },
   } as unknown as UserCredential;
 }
 
 describe('registerNewUser (URL set)', () => {
   let registerNewUser: (cred: UserCredential) => Promise<void>;
+  let getAdditionalUserInfoMock: jest.Mock;
 
   beforeEach(() => {
     process.env.NEXT_PUBLIC_USERS_API_URL = TEST_API_URL;
+    getAdditionalUserInfoMock = jest.fn().mockReturnValue(null);
+    jest.doMock('firebase/auth', () => ({
+      getAdditionalUserInfo: getAdditionalUserInfoMock,
+    }));
     jest.isolateModules(() => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       ({ registerNewUser } = require('../registerNewUser'));
@@ -40,6 +52,27 @@ describe('registerNewUser (URL set)', () => {
 
   afterEach(() => {
     jest.restoreAllMocks();
+    jest.resetModules();
+    jest.unmock('firebase/auth');
+    window.localStorage.clear();
+  });
+
+  it('sets onboarding key to pending when Firebase marks user as new', async () => {
+    getAdditionalUserInfoMock.mockReturnValue({ isNewUser: true });
+
+    await registerNewUser(makeCredential({ isNewUser: true }));
+
+    expect(window.localStorage.getItem(NEW_USER_ONBOARDING_KEY)).toBe(
+      'pending'
+    );
+  });
+
+  it('does not set onboarding key when Firebase marks user as existing', async () => {
+    getAdditionalUserInfoMock.mockReturnValue({ isNewUser: false });
+
+    await registerNewUser(makeCredential({ isNewUser: false }));
+
+    expect(window.localStorage.getItem(NEW_USER_ONBOARDING_KEY)).toBeNull();
   });
 
   it('POSTs to /v1/users with userId and email', async () => {
@@ -124,6 +157,9 @@ describe('registerNewUser (URL not set)', () => {
 
   beforeEach(() => {
     delete process.env.NEXT_PUBLIC_USERS_API_URL;
+    jest.doMock('firebase/auth', () => ({
+      getAdditionalUserInfo: jest.fn().mockReturnValue(null),
+    }));
     jest.isolateModules(() => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       ({ registerNewUser } = require('../registerNewUser'));
@@ -135,6 +171,8 @@ describe('registerNewUser (URL not set)', () => {
   afterEach(() => {
     process.env.NEXT_PUBLIC_USERS_API_URL = TEST_API_URL;
     jest.restoreAllMocks();
+    jest.resetModules();
+    jest.unmock('firebase/auth');
   });
 
   it('does not call fetch and logs an error', async () => {

@@ -76,7 +76,7 @@ const sxParagraphMargin = {
   width: '100%',
   maxWidth: 900,
   mx: 'auto',
-  px: { xs: 2, sm: 4 },
+  px: { xs: 3, sm: 6 },
   textAlign: 'left' as const,
   boxSizing: 'border-box' as const,
 };

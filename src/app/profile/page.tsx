@@ -183,8 +183,9 @@ export default function ProfilePage() {
             {/* Stats 2x2 grid */}
             <StatsGrid actionStats={actionStats} />
 
+            {/* TODO: uncomment the Edit Profile page is implemented */}
             {/* Action buttons */}
-            <Stack direction="row" spacing={1.5} sx={{ mt: 3 }}>
+            {/* <Stack direction="row" spacing={1.5} sx={{ mt: 3 }}>
               <Button
                 component={NextLink}
                 href="/profile/edit"
@@ -202,7 +203,7 @@ export default function ProfilePage() {
               >
                 Edit Profile
               </Button>
-            </Stack>
+            </Stack> */}
           </Box>
 
           {/* ── Divider (freezer / fridge) ──────────────────────── */}

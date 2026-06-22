@@ -2,7 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { Grid, Typography, Box } from '@mui/material';
 import { PageHero } from 'components/layout';
-import { ParagraphCard } from 'features/marketing';
+import { NewUserWelcomeFlowGate, ParagraphCard } from 'features/marketing';
 import { designColor } from 'theme/palette';
 
 const darkButtonSx = {
@@ -222,6 +222,8 @@ export default function HomePage(): React.ReactElement {
   const { pageHero, homepageIntro, paragraphCard } = pageContent;
   return (
     <>
+      <NewUserWelcomeFlowGate />
+
       <PageHero
         {...pageHero}
         overlay
