@@ -1,21 +1,24 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { NewUserWelcomeFlow } from '../NewUserWelcomeFlow';
 
 const NEW_USER_ONBOARDING_KEY = 'ff-new-user-onboarding';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
+  usePathname: jest.fn(),
 }));
 
 const mockPush = jest.fn();
 const mockUseRouter = useRouter as jest.Mock;
+const mockUsePathname = usePathname as jest.Mock;
 
 describe('NewUserWelcomeFlow', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     window.localStorage.clear();
     mockUseRouter.mockReturnValue({ push: mockPush });
+    mockUsePathname.mockReturnValue('/browse');
   });
 
   it('renders first step content when open', () => {
@@ -66,5 +69,37 @@ describe('NewUserWelcomeFlow', () => {
       'completed'
     );
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('uses Continue as final CTA on fridge pages', () => {
+    mockUsePathname.mockReturnValue('/fridge/abc123');
+    render(<NewUserWelcomeFlow open onClose={jest.fn()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+
+    expect(
+      screen.getByRole('button', {
+        name: 'Continue',
+      })
+    ).toBeInTheDocument();
+  });
+
+  it('does not navigate on final Continue from Notification Preferences source', () => {
+    const onClose = jest.fn();
+    mockUsePathname.mockReturnValue('/fridge/abc123');
+    render(<NewUserWelcomeFlow open onClose={onClose} />);
+
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
+
+    expect(mockPush).not.toHaveBeenCalled();
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(window.localStorage.getItem(NEW_USER_ONBOARDING_KEY)).toBe(
+      'completed'
+    );
   });
 });

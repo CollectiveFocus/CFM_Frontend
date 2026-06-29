@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { alpha } from '@mui/material/styles';
 import {
   Box,
@@ -26,6 +26,8 @@ const FOLLOW_VIDEO_SRC = '/onboarding/follow_steps.mp4';
 const STATS_IMAGE_SRC = '/onboarding/profile_preview.webp';
 const ENDING_IMAGE_SRC = '/onboarding/ending.svg';
 const THEME_BACKGROUND = '#EEF3FF';
+const DEFAULT_FINAL_CTA_LABEL = 'Find a Fridge ->';
+const FRIDGE_ROUTE_PREFIX = '/fridge';
 
 const steps = ['welcome', 'follow', 'stats', 'map'] as const;
 type StepId = (typeof steps)[number];
@@ -392,6 +394,7 @@ export function NewUserWelcomeFlow({
   onClose,
 }: NewUserWelcomeFlowProps): React.ReactElement {
   const router = useRouter();
+  const pathname = usePathname();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [activeStep, setActiveStep] = useState(0);
@@ -401,15 +404,23 @@ export function NewUserWelcomeFlow({
     [activeStep]
   );
 
+  const isFridgeRoute = !!pathname?.startsWith(FRIDGE_ROUTE_PREFIX);
+
+  const finalCtaLabel = isFridgeRoute ? 'Continue' : DEFAULT_FINAL_CTA_LABEL;
+
   const completeFlow = () => {
-    window.localStorage.setItem(NEW_USER_ONBOARDING_KEY, 'completed');
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(NEW_USER_ONBOARDING_KEY, 'completed');
+    }
     onClose();
   };
 
   const handleNext = () => {
     if (isLastStep) {
       completeFlow();
-      router.push('/browse');
+      if (!isFridgeRoute) {
+        router.push('/browse');
+      }
       return;
     }
     setActiveStep((step) => step + 1);
@@ -528,7 +539,7 @@ export function NewUserWelcomeFlow({
               letterSpacing: '0.02em',
             }}
           >
-            {isLastStep ? 'Find a Fridge ->' : 'Next'}
+            {isLastStep ? finalCtaLabel : 'Next'}
           </BrandButton>
 
           {activeStep > 0 ? (

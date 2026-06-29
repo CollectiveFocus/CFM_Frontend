@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { LinkEmailModal, SignInModal } from 'features/auth';
+import { NewUserWelcomeFlowGate } from 'features/marketing';
 import { BrandButton, SuccessToast } from 'components/ui';
 import { BackLinkButton } from 'components/shared/BackLinkButton';
 import {
@@ -406,6 +407,8 @@ export function FridgeNotificationsForm({
           onClose={() => setSignInOpen(false)}
           returnPath={pathname ?? undefined}
         />
+
+        <NewUserWelcomeFlowGate />
 
         <SuccessToast
           open={toastOpen}

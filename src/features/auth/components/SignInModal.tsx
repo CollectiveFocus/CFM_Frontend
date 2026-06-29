@@ -32,17 +32,19 @@ export function SignInModal({ open, onClose, returnPath }: SignInModalProps) {
       fullWidth
       // Full-screen on mobile, centered sheet on desktop
       fullScreen={isMobile}
-      PaperProps={{
-        sx: {
-          borderRadius: { xs: 0, sm: 4 },
-          pt: 1,
-          pb: 2,
-          // Full height + full width on mobile
-          m: { xs: 0, sm: 4 },
-          width: { xs: '100%', sm: 560 },
-          maxWidth: { xs: '100%', sm: 560 },
-          maxHeight: { xs: '100%', sm: 'calc(100% - 64px)' },
-          '& .MuiDialogContent-root': { px: { xs: 3, sm: 5 }, pt: 0 },
+      slotProps={{
+        paper: {
+          sx: {
+            borderRadius: { xs: 0, sm: 4 },
+            pt: 1,
+            pb: 2,
+            // Full height + full width on mobile
+            m: { xs: 0, sm: 4 },
+            width: { xs: '100%', sm: 560 },
+            maxWidth: { xs: '100%', sm: 560 },
+            maxHeight: { xs: '100%', sm: 'calc(100% - 64px)' },
+            '& .MuiDialogContent-root': { px: { xs: 3, sm: 5 }, pt: 0 },
+          },
         },
       }}
     >
