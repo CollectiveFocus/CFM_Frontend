@@ -22,7 +22,7 @@ import { BrandButton } from 'components/ui';
 import { NEW_USER_ONBOARDING_KEY } from 'features/auth/utils/registerNewUser';
 import { designColor } from 'theme/palette';
 
-const FOLLOW_VIDEO_SRC = '/onboarding/follow_steps.mp4';
+const FOLLOW_VIDEO_SRC = '/onboarding/follow_steps_7.mp4';
 const STATS_IMAGE_SRC = '/onboarding/profile_preview.webp';
 const ENDING_IMAGE_SRC = '/onboarding/ending.svg';
 const THEME_BACKGROUND = '#EEF3FF';
