@@ -16,7 +16,9 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
+  Link as MuiLink,
 } from '@mui/material';
+import { NextLink } from 'components/ui';
 import {
   emailSchema,
   EmailFormData,
@@ -355,7 +357,11 @@ export function SignInForm({
       {/* Subtext */}
       <Typography sx={subtextSx}>
         By continuing, you agree to our User Agreement and acknowledge that you
-        understand the Privacy Policy.
+        understand the{' '}
+        <MuiLink component={NextLink} href="/privacy" underline="hover">
+          Privacy Policy
+        </MuiLink>
+        .
       </Typography>
       <div id="recaptcha-container" />
     </Box>

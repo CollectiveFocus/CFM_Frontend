@@ -92,6 +92,17 @@ export function PageFooter(): React.ReactElement {
             </MuiLink>
             <MuiLink
               component={NextLink}
+              href="/privacy"
+              color="text.secondary"
+              underline="none"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+              variant="body2"
+              fontWeight={600}
+            >
+              Privacy
+            </MuiLink>
+            <MuiLink
+              component={NextLink}
               href="/contact"
               color="text.secondary"
               underline="none"
