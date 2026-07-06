@@ -26,9 +26,9 @@ interface UserActionStats {
 const statsCache = new Map<string, UserActionStats>();
 
 // ─── Theme constants for the fridge card ─────────────────────────
-const FRIDGE_COLORS = ['#c8e6d8', '#a8d5c0', '#95c9b2'] as const;
-const LABEL_COLOR = '#1a5c42';
-const AVATAR_BG = '#2a7a5e';
+const FRIDGE_COLORS = ['#c5d8ff', '#a8c3f8', '#88b3ff'] as const;
+const LABEL_COLOR = '#1a3d7a';
+const AVATAR_BG = '#4a7ab5';
 const MAGNET_COLOR = '#d45d5d';
 
 const GLASS_SURFACE = 'rgba(255,255,255,0.9)';
@@ -533,11 +533,11 @@ function PolaroidAvatar() {
           }}
         >
           <Image
-            src="/card/paragraph/plum.svg"
+            src="/card/paragraph/peach.svg"
             alt="Profile"
             width={50}
             height={50}
-            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+            style={{ objectFit: 'contain', width: '90%', height: '90%' }}
           />
         </Box>
       </Box>

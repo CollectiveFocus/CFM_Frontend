@@ -95,11 +95,11 @@ function PlumAvatar({ size = 40 }: { size?: number }): React.ReactElement {
       }}
     >
       <Image
-        src="/card/paragraph/plum.svg"
+        src="/card/paragraph/peach.svg"
         alt="Profile"
         width={size}
         height={size}
-        style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+        style={{ objectFit: 'contain', width: '90%', height: '90%' }}
       />
     </Box>
   );
