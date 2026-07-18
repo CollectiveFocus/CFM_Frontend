@@ -75,23 +75,25 @@ const SETTINGS_SECTIONS: { title: string; items: SettingsItem[] }[] = [
         label: 'Notifications',
         description: 'Push & email preferences',
       },
-      {
-        key: 'appearance',
-        icon: DarkModeOutlinedIcon,
-        label: 'Appearance',
-        description: 'Theme & display',
-      },
+      // TODO: Re-enable appearance settings when implemented
+      // {
+      //   key: 'appearance',
+      //   icon: DarkModeOutlinedIcon,
+      //   label: 'Appearance',
+      //   description: 'Theme & display',
+      // },
     ],
   },
   {
     title: 'Support',
     items: [
-      {
-        key: 'privacy',
-        icon: ShieldOutlinedIcon,
-        label: 'Privacy',
-        description: 'Data & visibility settings',
-      },
+      // TODO: Re-enable privacy settings when implemented
+      // {
+      //   key: 'privacy',
+      //   icon: ShieldOutlinedIcon,
+      //   label: 'Privacy',
+      //   description: 'Data & visibility settings',
+      // },
       {
         key: 'help',
         icon: HelpOutlineIcon,
