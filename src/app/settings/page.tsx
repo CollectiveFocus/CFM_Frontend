@@ -42,9 +42,7 @@ import { useFollowingStore } from 'store/useFollowingStore';
 import { designColor } from 'theme/palette';
 
 type ThemeMode = 'light' | 'dark' | 'system';
-type NotificationSettingKey =
-  | 'pushNotificationEnabled'
-  | 'emailNotificationEnabled';
+type NotificationSettingKey = 'emailNotificationEnabled';
 type NotificationSettingsOverride = Partial<
   Record<NotificationSettingKey, boolean>
 >;
@@ -73,7 +71,7 @@ const SETTINGS_SECTIONS: { title: string; items: SettingsItem[] }[] = [
         key: 'notifications',
         icon: NotificationsNoneIcon,
         label: 'Notifications',
-        description: 'Push & email preferences',
+        description: 'Email preferences',
       },
       // TODO: Re-enable appearance settings when implemented
       // {
@@ -191,9 +189,6 @@ export default function SettingsPage(): React.ReactElement {
   const accountPhoneNumber =
     userProfile?.phoneNumber ?? user?.phoneNumber ?? null;
   const profileSettings = userProfile?.settings;
-  const pushNotificationEnabled =
-    notificationOverrides.pushNotificationEnabled ??
-    Boolean(profileSettings?.pushNotificationEnabled);
   const emailNotificationEnabled =
     notificationOverrides.emailNotificationEnabled ??
     Boolean(profileSettings?.emailNotificationEnabled);
@@ -297,10 +292,7 @@ export default function SettingsPage(): React.ReactElement {
         throw new Error(`Failed to update settings (${response.status})`);
       }
 
-      const settingLabel =
-        key === 'pushNotificationEnabled'
-          ? 'Push Notifications'
-          : 'Email Notifications';
+      const settingLabel = 'Email Notifications';
       const settingState = value ? 'Enabled' : 'Disabled';
       showSuccessToast(`${settingLabel} ${settingState}`);
       updateCachedUserProfile(user.uid, {
@@ -311,9 +303,7 @@ export default function SettingsPage(): React.ReactElement {
       });
     } catch (error) {
       const fallbackMessage =
-        key === 'pushNotificationEnabled'
-          ? 'Could not update push notifications. Please try again.'
-          : 'Could not update email notifications. Please try again.';
+        'Could not update email notifications. Please try again.';
 
       showErrorSnackbar(
         error instanceof Error ? error.message : fallbackMessage
@@ -524,24 +514,6 @@ export default function SettingsPage(): React.ReactElement {
                         }}
                       >
                         <Stack spacing={1.25}>
-                          <NotificationToggleRow
-                            label="Push notifications"
-                            checked={pushNotificationEnabled}
-                            disabled={Boolean(
-                              pendingSettings.pushNotificationEnabled
-                            )}
-                            onChange={(checked) => {
-                              setNotificationOverrides((prev) => ({
-                                ...prev,
-                                pushNotificationEnabled: checked,
-                              }));
-                              void updateNotificationSetting(
-                                'pushNotificationEnabled',
-                                checked
-                              );
-                            }}
-                          />
-
                           <NotificationToggleRow
                             label="Email notifications"
                             checked={emailNotificationEnabled}

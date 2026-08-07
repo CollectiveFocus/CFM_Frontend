@@ -160,7 +160,7 @@ describe('SettingsPage delete flow', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /notifications/i }));
     fireEvent.click(
-      screen.getByRole('switch', { name: /push notifications/i })
+      screen.getByRole('switch', { name: /email notifications/i })
     );
 
     await waitFor(() => {
@@ -172,7 +172,7 @@ describe('SettingsPage delete flow', () => {
 
     expect(mockUpdateCachedUserProfile).toHaveBeenCalledWith('user-123', {
       settings: {
-        pushNotificationEnabled: true,
+        emailNotificationEnabled: true,
       },
     });
   });

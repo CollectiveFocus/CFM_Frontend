@@ -16,7 +16,6 @@ export interface AppUserProfile {
   zipcode?: string;
   points?: number;
   settings?: {
-    pushNotificationEnabled?: boolean;
     emailNotificationEnabled?: boolean;
     // Used by native clients; web does not currently render this setting.
     geofenceEnabled?: boolean;
